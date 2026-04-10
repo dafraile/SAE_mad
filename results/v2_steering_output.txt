@@ -1,0 +1,4 @@
+v2 Steering Experiment Results - 2026-04-10
+Instance: RTX PRO 6000 (vast.ai), $1.04/hr
+Model: Gemma 3 1B IT, SAE: Layer 22, 16k, medium
+

@@ -1,0 +1,172 @@
+{
+  "metadata": {
+    "description": "Parallel trilingual corpus for SAE feature analysis",
+    "author": "David",
+    "version": "0.1",
+    "notes": "Texts should be idiomatic in each language, NOT word-for-word translations. 50-150 tokens each."
+  },
+  "parallel_triples": [
+    {
+      "id": "neutral_01",
+      "topic": "gravity",
+      "cultural_weight": "neutral",
+      "text_en": "Objects fall toward the ground because of gravity. The heavier an object is, the more gravitational pull it exerts, but all objects fall at the same rate in a vacuum regardless of their mass.",
+      "text_es": "REPLACE WITH IDIOMATIC SPANISH",
+      "text_fr": "REPLACE WITH IDIOMATIC FRENCH"
+    },
+    {
+      "id": "neutral_02",
+      "topic": "water_cycle",
+      "cultural_weight": "neutral",
+      "text_en": "REPLACE",
+      "text_es": "REPLACE",
+      "text_fr": "REPLACE"
+    },
+    {
+      "id": "neutral_03",
+      "topic": "mathematics",
+      "cultural_weight": "neutral",
+      "text_en": "REPLACE",
+      "text_es": "REPLACE",
+      "text_fr": "REPLACE"
+    },
+    {
+      "id": "neutral_04",
+      "topic": "human_sleep",
+      "cultural_weight": "neutral",
+      "text_en": "REPLACE",
+      "text_es": "REPLACE",
+      "text_fr": "REPLACE"
+    },
+    {
+      "id": "neutral_05",
+      "topic": "ocean_geography",
+      "cultural_weight": "neutral",
+      "text_en": "REPLACE",
+      "text_es": "REPLACE",
+      "text_fr": "REPLACE"
+    },
+    {
+      "id": "moderate_01",
+      "topic": "bread_baking",
+      "cultural_weight": "moderate",
+      "text_en": "REPLACE",
+      "text_es": "REPLACE",
+      "text_fr": "REPLACE"
+    },
+    {
+      "id": "moderate_02",
+      "topic": "novel_reading",
+      "cultural_weight": "moderate",
+      "text_en": "REPLACE",
+      "text_es": "REPLACE",
+      "text_fr": "REPLACE"
+    },
+    {
+      "id": "moderate_03",
+      "topic": "family_meals",
+      "cultural_weight": "moderate",
+      "text_en": "REPLACE",
+      "text_es": "REPLACE",
+      "text_fr": "REPLACE"
+    },
+    {
+      "id": "moderate_04",
+      "topic": "holiday_traditions",
+      "cultural_weight": "moderate",
+      "text_en": "REPLACE",
+      "text_es": "REPLACE",
+      "text_fr": "REPLACE"
+    },
+    {
+      "id": "moderate_05",
+      "topic": "wine_or_coffee",
+      "cultural_weight": "moderate",
+      "text_en": "REPLACE",
+      "text_es": "REPLACE",
+      "text_fr": "REPLACE"
+    },
+    {
+      "id": "strong_01",
+      "topic": "bullfighting",
+      "cultural_weight": "strong",
+      "cultural_tag": "spanish",
+      "text_en": "REPLACE",
+      "text_es": "REPLACE",
+      "text_fr": "REPLACE"
+    },
+    {
+      "id": "strong_02",
+      "topic": "flamenco",
+      "cultural_weight": "strong",
+      "cultural_tag": "spanish",
+      "text_en": "REPLACE",
+      "text_es": "REPLACE",
+      "text_fr": "REPLACE"
+    },
+    {
+      "id": "strong_03",
+      "topic": "french_cheese",
+      "cultural_weight": "strong",
+      "cultural_tag": "french",
+      "text_en": "REPLACE",
+      "text_es": "REPLACE",
+      "text_fr": "REPLACE"
+    },
+    {
+      "id": "strong_04",
+      "topic": "thanksgiving",
+      "cultural_weight": "strong",
+      "cultural_tag": "english",
+      "text_en": "REPLACE",
+      "text_es": "REPLACE",
+      "text_fr": "REPLACE"
+    },
+    {
+      "id": "strong_05",
+      "topic": "dia_de_muertos",
+      "cultural_weight": "strong",
+      "cultural_tag": "spanish",
+      "text_en": "REPLACE",
+      "text_es": "REPLACE",
+      "text_fr": "REPLACE"
+    }
+  ],
+  "cross_cultural": [
+    {
+      "id": "cross_01",
+      "topic": "bullfighting",
+      "cultural_tag": "spanish",
+      "language_of_text": "en",
+      "text": "REPLACE - English text about bullfighting"
+    },
+    {
+      "id": "cross_02",
+      "topic": "french_cheese",
+      "cultural_tag": "french",
+      "language_of_text": "es",
+      "text": "REPLACE - Spanish text about French cheese"
+    },
+    {
+      "id": "cross_03",
+      "topic": "flamenco",
+      "cultural_tag": "spanish",
+      "language_of_text": "fr",
+      "text": "REPLACE - French text about flamenco"
+    },
+    {
+      "id": "cross_04",
+      "topic": "thanksgiving",
+      "cultural_tag": "english",
+      "language_of_text": "es",
+      "text": "REPLACE - Spanish text about Thanksgiving"
+    },
+    {
+      "id": "cross_05",
+      "topic": "dia_de_muertos",
+      "cultural_tag": "spanish",
+      "language_of_text": "fr",
+      "text": "REPLACE - French text about Dia de Muertos"
+    }
+  ]
+}

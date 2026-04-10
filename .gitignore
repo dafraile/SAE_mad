@@ -1,0 +1,23 @@
+# Environment and secrets
+.env
+*.key
+
+# Large cached files (re-generable from scripts)
+remote_cache/
+*.pt
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS
+.DS_Store
+.Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Claude Code internal
+.claude/

@@ -1,0 +1,1611 @@
+Welcome to vast.ai. If authentication fails, try again after a few seconds, and double check your ssh key.
+Have fun!
+Loading corpus from corpus.json...
+  32 parallel triples, 17 cross-cultural items
+
+--- Loading model and SAEs ---
+Loading model via HuggingFace transformers (memory-efficient)...
+`torch_dtype` is deprecated! Use `dtype` instead!
+  Loaded. Hidden size: 1152, Layers: 26
+Loading SAEs for layers [7, 13, 22]...
+  Layer 7: d_sae=16384
+  Layer 13: d_sae=16384
+  Layer 22: d_sae=16384
+
+--- Tokenization Audit ---
+ID              Topic              EN    ES    FR  Max/Min
+-----------------------------------------------------------------
+neutral_01      gravity            55    61    69    1.25x
+neutral_02      water_cycle        44    52    55    1.25x
+neutral_03      prime_numbers      43    52    55    1.28x
+neutral_04      human_sleep        45    64    58    1.42x
+neutral_05      pacific_ocean      50    62    77    1.54x
+neutral_06      photosynthesis     44    60    71    1.61x
+neutral_07      earthquakes        44    63    70    1.59x
+neutral_08      color_of_sky       45    59    61    1.36x
+neutral_09      human_memory       48    61    69    1.44x
+neutral_10      migration_birds    47    54    71    1.51x
+moderate_01     bread_baking       48    59    66    1.38x
+moderate_02     reading_novels     40    43    54    1.35x
+moderate_03     family_meals       44    50    69    1.57x
+moderate_04     holiday_traditions    42    49    68    1.62x
+moderate_05     coffee_culture     47    56    62    1.32x
+moderate_06     street_markets     46    66    74    1.61x
+moderate_07     childhood_games    56    63    84    1.50x
+moderate_08     rainy_days         55    65    74    1.35x
+moderate_09     learning_instrument    47    54    63    1.34x
+moderate_10     old_photographs    50    67    71    1.42x
+strong_01       bullfighting       53    63    73    1.38x
+strong_02       flamenco           52    60    74    1.42x
+strong_03       french_cheese      52    66    62    1.27x
+strong_04       thanksgiving       56    70    81    1.45x
+strong_05       dia_de_muertos     55    68    74    1.35x
+strong_06       french_wine        55    68    69    1.25x
+strong_07       siesta             58    76    89    1.53x
+strong_08       british_humor      55    75    81    1.47x
+strong_09       mate_ritual        66    72    89    1.35x
+strong_10       parisian_cafe      52    59    74    1.42x
+strong_11       tapas              65    67    83    1.28x
+strong_12       bastille_day       53    69    65    1.30x
+(Items with >2x ratio flagged with !!!)
+
+=== Collecting Activations ===
+  [1/96] neutral_01_en... 55 tokens, L0=[23.18181800842285, 69.0727310180664, 75.85454559326172]
+  [2/96] neutral_01_es... 61 tokens, L0=[24.295082092285156, 70.52458953857422, 71.18032836914062]
+  [3/96] neutral_01_fr... 69 tokens, L0=[24.65217399597168, 70.0, 71.05796813964844]
+  [4/96] neutral_02_en... 44 tokens, L0=[21.81818199157715, 65.86363983154297, 71.31818389892578]
+  [5/96] neutral_02_es... 52 tokens, L0=[23.230770111083984, 69.09615325927734, 69.88461303710938]
+  [6/96] neutral_02_fr... 55 tokens, L0=[24.9818172454834, 70.25454711914062, 79.14545440673828]
+  [7/96] neutral_03_en... 43 tokens, L0=[21.302326202392578, 65.3255844116211, 71.09302520751953]
+  [8/96] neutral_03_es... 52 tokens, L0=[23.365385055541992, 67.75, 71.5]
+  [9/96] neutral_03_fr... 55 tokens, L0=[24.472726821899414, 69.69091033935547, 82.63636016845703]
+  [10/96] neutral_04_en... 45 tokens, L0=[24.822221755981445, 70.73332977294922, 67.71111297607422]
+  [11/96] neutral_04_es... 64 tokens, L0=[24.09375, 69.84375, 64.890625]
+  [12/96] neutral_04_fr... 58 tokens, L0=[24.70689582824707, 71.31034851074219, 66.44827270507812]
+  [13/96] neutral_05_en... 50 tokens, L0=[23.399999618530273, 72.04000091552734, 82.19999694824219]
+  [14/96] neutral_05_es... 62 tokens, L0=[22.516128540039062, 72.24193572998047, 76.12903594970703]
+  [15/96] neutral_05_fr... 77 tokens, L0=[24.96103858947754, 76.19480895996094, 84.20779418945312]
+  [16/96] neutral_06_en... 44 tokens, L0=[22.81818199157715, 66.0227279663086, 77.15908813476562]
+  [17/96] neutral_06_es... 60 tokens, L0=[23.41666603088379, 68.53333282470703, 79.69999694824219]
+  [18/96] neutral_06_fr... 71 tokens, L0=[25.253520965576172, 70.4507064819336, 80.66197204589844]
+  [19/96] neutral_07_en... 44 tokens, L0=[22.159090042114258, 67.95454406738281, 76.0]
+  [20/96] neutral_07_es... 63 tokens, L0=[23.841270446777344, 66.66666412353516, 72.53968048095703]
+  [21/96] neutral_07_fr... 70 tokens, L0=[25.828571319580078, 70.95714569091797, 77.71428680419922]
+  [22/96] neutral_08_en... 45 tokens, L0=[21.799999237060547, 70.93333435058594, 80.0]
+  [23/96] neutral_08_es... 59 tokens, L0=[24.93220329284668, 71.47457885742188, 69.88135528564453]
+  [24/96] neutral_08_fr... 61 tokens, L0=[24.95081901550293, 72.55738067626953, 79.59016418457031]
+  [25/96] neutral_09_en... 48 tokens, L0=[20.89583396911621, 69.79166412353516, 71.29166412353516]
+  [26/96] neutral_09_es... 61 tokens, L0=[23.295082092285156, 71.96721649169922, 67.6229476928711]
+  [27/96] neutral_09_fr... 69 tokens, L0=[23.492753982543945, 72.3768081665039, 75.159423828125]
+  [28/96] neutral_10_en... 47 tokens, L0=[22.76595687866211, 67.36170196533203, 75.10638427734375]
+  [29/96] neutral_10_es... 54 tokens, L0=[24.425926208496094, 71.87036895751953, 70.74073791503906]
+  [30/96] neutral_10_fr... 71 tokens, L0=[25.845069885253906, 74.47887420654297, 79.5492935180664]
+  [31/96] moderate_01_en... 48 tokens, L0=[22.97916603088379, 67.625, 72.6875]
+  [32/96] moderate_01_es... 59 tokens, L0=[25.966102600097656, 67.94915008544922, 69.05084991455078]
+  [33/96] moderate_01_fr... 66 tokens, L0=[25.515151977539062, 68.31818389892578, 85.21212005615234]
+  [34/96] moderate_02_en... 40 tokens, L0=[20.75, 72.80000305175781, 64.3499984741211]
+  [35/96] moderate_02_es... 43 tokens, L0=[23.465116500854492, 74.25581359863281, 68.9534912109375]
+  [36/96] moderate_02_fr... 54 tokens, L0=[23.370370864868164, 72.16666412353516, 72.0]
+  [37/96] moderate_03_en... 44 tokens, L0=[20.590909957885742, 64.25, 72.36363983154297]
+  [38/96] moderate_03_es... 50 tokens, L0=[22.520000457763672, 68.26000213623047, 69.73999786376953]
+  [39/96] moderate_03_fr... 69 tokens, L0=[22.68115997314453, 62.159420013427734, 72.6231918334961]
+  [40/96] moderate_04_en... 42 tokens, L0=[22.214284896850586, 67.5, 70.02381134033203]
+  [41/96] moderate_04_es... 49 tokens, L0=[24.204082489013672, 70.14286041259766, 66.9795913696289]
+  [42/96] moderate_04_fr... 68 tokens, L0=[23.47058868408203, 68.36764526367188, 78.8382339477539]
+  [43/96] moderate_05_en... 47 tokens, L0=[20.787233352661133, 65.19149017333984, 63.51063919067383]
+  [44/96] moderate_05_es... 56 tokens, L0=[21.660715103149414, 66.32142639160156, 60.58928680419922]
+  [45/96] moderate_05_fr... 62 tokens, L0=[24.30645179748535, 68.98387145996094, 75.09677124023438]
+  [46/96] moderate_06_en... 46 tokens, L0=[20.521739959716797, 68.4565200805664, 76.08695983886719]
+  [47/96] moderate_06_es... 66 tokens, L0=[25.590909957885742, 68.40908813476562, 73.7272720336914]
+  [48/96] moderate_06_fr... 74 tokens, L0=[25.783782958984375, 71.9459457397461, 77.89189147949219]
+  [49/96] moderate_07_en... 56 tokens, L0=[21.64285659790039, 69.78571319580078, 73.58928680419922]
+  [50/96] moderate_07_es... 63 tokens, L0=[23.492063522338867, 68.31745910644531, 66.71428680419922]
+  [51/96] moderate_07_fr... 84 tokens, L0=[25.5238094329834, 74.07142639160156, 78.52381134033203]
+  [52/96] moderate_08_en... 55 tokens, L0=[22.272727966308594, 66.14545440673828, 63.599998474121094]
+  [53/96] moderate_08_es... 65 tokens, L0=[22.96923065185547, 68.43077087402344, 66.52307891845703]
+  [54/96] moderate_08_fr... 74 tokens, L0=[27.189189910888672, 72.3108139038086, 77.02702331542969]
+  [55/96] moderate_09_en... 47 tokens, L0=[19.978723526000977, 67.1276626586914, 68.68085479736328]
+  [56/96] moderate_09_es... 54 tokens, L0=[22.11111068725586, 67.27777862548828, 69.48148345947266]
+  [57/96] moderate_09_fr... 63 tokens, L0=[23.66666603088379, 73.0793685913086, 78.34920501708984]
+  [58/96] moderate_10_en... 50 tokens, L0=[19.940000534057617, 69.44000244140625, 71.08000183105469]
+  [59/96] moderate_10_es... 67 tokens, L0=[23.238805770874023, 70.5671615600586, 69.11940002441406]
+  [60/96] moderate_10_fr... 71 tokens, L0=[24.690141677856445, 71.18309783935547, 79.32394409179688]
+  [61/96] strong_01_en... 53 tokens, L0=[21.69811248779297, 71.20755004882812, 72.28302001953125]
+  [62/96] strong_01_es... 63 tokens, L0=[25.58730125427246, 72.87301635742188, 75.84127044677734]
+  [63/96] strong_01_fr... 73 tokens, L0=[25.424657821655273, 76.54794311523438, 82.123291015625]
+  [64/96] strong_02_en... 52 tokens, L0=[21.230770111083984, 67.03845977783203, 64.28845977783203]
+  [65/96] strong_02_es... 60 tokens, L0=[22.183332443237305, 68.08333587646484, 68.06666564941406]
+  [66/96] strong_02_fr... 74 tokens, L0=[22.91891860961914, 69.56756591796875, 71.90540313720703]
+  [67/96] strong_03_en... 52 tokens, L0=[21.230770111083984, 68.65384674072266, 61.96154022216797]
+  [68/96] strong_03_es... 66 tokens, L0=[25.42424201965332, 73.7272720336914, 69.51515197753906]
+  [69/96] strong_03_fr... 62 tokens, L0=[24.661291122436523, 71.93548583984375, 75.43548583984375]
+  [70/96] strong_04_en... 56 tokens, L0=[23.446428298950195, 69.60713958740234, 80.91071319580078]
+  [71/96] strong_04_es... 70 tokens, L0=[23.828571319580078, 76.92857360839844, 69.80000305175781]
+  [72/96] strong_04_fr... 81 tokens, L0=[26.716049194335938, 73.74073791503906, 79.49382781982422]
+  [73/96] strong_05_en... 55 tokens, L0=[23.07272720336914, 73.01818084716797, 73.0]
+  [74/96] strong_05_es... 68 tokens, L0=[24.205883026123047, 76.97058868408203, 77.95587921142578]
+  [75/96] strong_05_fr... 74 tokens, L0=[26.027027130126953, 74.70270538330078, 73.0540542602539]
+  [76/96] strong_06_en... 55 tokens, L0=[21.799999237060547, 68.50909423828125, 67.56363677978516]
+  [77/96] strong_06_es... 68 tokens, L0=[21.16176414489746, 67.95587921142578, 61.45588302612305]
+  [78/96] strong_06_fr... 69 tokens, L0=[23.420289993286133, 70.66666412353516, 72.24637603759766]
+  [79/96] strong_07_en... 58 tokens, L0=[21.965517044067383, 69.6551742553711, 65.37931060791016]
+  [80/96] strong_07_es... 76 tokens, L0=[23.013158798217773, 73.42105102539062, 71.7368392944336]
+  [81/96] strong_07_fr... 89 tokens, L0=[26.775279998779297, 74.6966323852539, 72.3033676147461]
+  [82/96] strong_08_en... 55 tokens, L0=[22.654544830322266, 70.16363525390625, 70.70909118652344]
+  [83/96] strong_08_es... 75 tokens, L0=[24.14666748046875, 70.78666687011719, 69.62666320800781]
+  [84/96] strong_08_fr... 81 tokens, L0=[26.50617218017578, 72.03704071044922, 73.81481170654297]
+  [85/96] strong_09_en... 66 tokens, L0=[21.878787994384766, 73.54545593261719, 60.04545593261719]
+  [86/96] strong_09_es... 72 tokens, L0=[23.73611068725586, 72.41666412353516, 67.77777862548828]
+  [87/96] strong_09_fr... 89 tokens, L0=[26.089887619018555, 78.01123809814453, 72.38201904296875]
+  [88/96] strong_10_en... 52 tokens, L0=[20.269229888916016, 61.11538314819336, 62.596153259277344]
+  [89/96] strong_10_es... 59 tokens, L0=[22.966102600097656, 69.33898162841797, 62.88135528564453]
+  [90/96] strong_10_fr... 74 tokens, L0=[25.5, 68.90540313720703, 67.56756591796875]
+  [91/96] strong_11_en... 65 tokens, L0=[22.369230270385742, 68.33846282958984, 65.78461456298828]
+  [92/96] strong_11_es... 67 tokens, L0=[24.73134422302246, 69.3880615234375, 72.64179229736328]
+  [93/96] strong_11_fr... 83 tokens, L0=[24.048192977905273, 71.02409362792969, 74.81927490234375]
+  [94/96] strong_12_en... 53 tokens, L0=[24.547170639038086, 68.92453002929688, 70.0943374633789]
+  [95/96] strong_12_es... 69 tokens, L0=[26.057971954345703, 72.10144805908203, 68.1159439086914]
+  [96/96] strong_12_fr... 65 tokens, L0=[24.58461570739746, 71.36923217773438, 74.86154174804688]
+  [cross] cross_01a... 61 tokens
+  [cross] cross_01b... 66 tokens
+  [cross] cross_02... 80 tokens
+  [cross] cross_03a... 75 tokens
+  [cross] cross_03b... 75 tokens
+  [cross] cross_04... 74 tokens
+  [cross] cross_05... 85 tokens
+  [cross] cross_06a... 66 tokens
+  [cross] cross_06b... 74 tokens
+  [cross] cross_07... 97 tokens
+  [cross] cross_08a... 72 tokens
+  [cross] cross_08b... 72 tokens
+  [cross] cross_09... 90 tokens
+  [cross] cross_10... 74 tokens
+  [cross] cross_11a... 66 tokens
+  [cross] cross_11b... 68 tokens
+  [cross] cross_12... 81 tokens
+
+Saving activations to cached_activations.pt...
+Saved.
+
+============================================================
+SANITY CHECKS
+============================================================
+
+--- Check 1: SAE Reconstruction Quality ---
+  Text: Objects fall toward the ground because of gravity....
+    Layer 7: cos_sim=0.9986, MSE=42.146908
+    Layer 13: cos_sim=0.9977, MSE=371.045441
+    Layer 22: cos_sim=0.9862, MSE=6193.885742
+  Text: Los objetos caen al suelo por la gravedad. En el v...
+    Layer 7: cos_sim=0.9981, MSE=50.975380
+    Layer 13: cos_sim=0.9974, MSE=359.812103
+    Layer 22: cos_sim=0.9864, MSE=6325.794922
+
+--- Check 2: Feature Sparsity ---
+  Layer 7: avg L0 = 23.7 features per token
+  Layer 13: avg L0 = 70.0 features per token
+  Layer 22: avg L0 = 73.7 features per token
+
+--- Check 3: Chat Template Sensitivity ---
+  Layer 7: cos_sim(plain_text, chat_template) = 0.9997
+
+--- Sanity checks complete ---
+
+============================================================
+ANALYSIS 1: Cross-lingual Representation Similarity
+============================================================
+
+ Layer       EN-ES       EN-FR       ES-FR
+------------------------------------------
+     7      0.9992      0.9987      0.9994
+    13      0.9993      0.9992      0.9995
+    22      0.9876      0.9865      0.9858
+
+  [neutral]
+    Layer 7: EN-ES=0.9992  EN-FR=0.9988  ES-FR=0.9995
+    Layer 13: EN-ES=0.9994  EN-FR=0.9992  ES-FR=0.9996
+    Layer 22: EN-ES=0.9876  EN-FR=0.9860  ES-FR=0.9868
+
+  [moderate]
+    Layer 7: EN-ES=0.9992  EN-FR=0.9986  ES-FR=0.9994
+    Layer 13: EN-ES=0.9993  EN-FR=0.9991  ES-FR=0.9996
+    Layer 22: EN-ES=0.9870  EN-FR=0.9858  ES-FR=0.9846
+
+  [strong]
+    Layer 7: EN-ES=0.9992  EN-FR=0.9987  ES-FR=0.9994
+    Layer 13: EN-ES=0.9993  EN-FR=0.9991  ES-FR=0.9995
+    Layer 22: EN-ES=0.9882  EN-FR=0.9875  ES-FR=0.9859
+
+Saved plot: results/analysis1_similarity.png
+
+============================================================
+ANALYSIS 1b: Mean-pooled vs Last-token Similarity
+============================================================
+
+ Layer   Mean-pool    Last-tok     Delta
+----------------------------------------
+     7      0.9991      0.9973   +0.0018
+    13      0.9993      0.9975   +0.0018
+    22      0.9866      0.9672   +0.0194
+
+If last-token shows lower similarity, mean-pooling was hiding
+language-specific structure. If both are 0.999+, the convergence is real.
+
+============================================================
+ANALYSIS 2: Language-specific vs Language-agnostic Features
+============================================================
+
+--- Layer 7 ---
+
+  Top EN-specific features (fire rate, other_avg, mean_act):
+    Feature   574: rate=0.94, other=0.44, act=0.4563
+    Feature 14790: rate=0.94, other=0.45, act=0.6472
+    Feature   870: rate=0.84, other=0.34, act=1.2272
+    Feature   824: rate=0.75, other=0.25, act=0.8941
+    Feature  2365: rate=0.62, other=0.05, act=1.0128
+    Feature    56: rate=0.50, other=0.14, act=0.8819
+    Feature  1721: rate=0.50, other=0.14, act=0.4782
+    Feature  3524: rate=0.47, other=0.22, act=0.8114
+    Feature  1001: rate=0.38, other=0.06, act=0.4733
+    Feature   238: rate=0.34, other=0.12, act=0.3900
+    Feature   308: rate=0.34, other=0.16, act=0.2637
+    Feature   504: rate=0.34, other=0.16, act=0.6875
+    Feature  1156: rate=0.34, other=0.00, act=0.3784
+    Feature  1522: rate=0.31, other=0.12, act=0.3908
+    Feature  1844: rate=0.31, other=0.06, act=0.2454
+
+  Top ES-specific features (fire rate, other_avg, mean_act):
+    Feature  6380: rate=0.75, other=0.36, act=2.3517
+    Feature  4538: rate=0.72, other=0.33, act=0.9228
+    Feature  8954: rate=0.72, other=0.28, act=0.8869
+    Feature  9787: rate=0.69, other=0.25, act=1.3859
+    Feature  2313: rate=0.62, other=0.03, act=0.3508
+    Feature  5956: rate=0.62, other=0.14, act=0.3061
+    Feature 13287: rate=0.56, other=0.22, act=1.1824
+    Feature  4738: rate=0.53, other=0.16, act=0.5479
+    Feature  3618: rate=0.50, other=0.19, act=0.4893
+    Feature     8: rate=0.47, other=0.19, act=0.3700
+    Feature  1513: rate=0.47, other=0.19, act=0.3762
+    Feature  1548: rate=0.47, other=0.19, act=0.4424
+    Feature  5876: rate=0.44, other=0.17, act=0.3624
+    Feature   119: rate=0.41, other=0.14, act=0.4003
+    Feature  1823: rate=0.41, other=0.17, act=0.2642
+
+  Top FR-specific features (fire rate, other_avg, mean_act):
+    Feature   545: rate=1.00, other=0.38, act=3.5251
+    Feature  1455: rate=1.00, other=0.44, act=2.7809
+    Feature  4215: rate=1.00, other=0.48, act=4.5550
+    Feature  6954: rate=1.00, other=0.09, act=1.6246
+    Feature  9293: rate=1.00, other=0.30, act=14.4752
+    Feature 10036: rate=1.00, other=0.14, act=2.9644
+    Feature   300: rate=0.97, other=0.05, act=1.5241
+    Feature   229: rate=0.94, other=0.31, act=5.8304
+    Feature 10449: rate=0.94, other=0.38, act=1.4642
+    Feature  4696: rate=0.91, other=0.34, act=0.8728
+    Feature  6412: rate=0.91, other=0.03, act=2.8591
+    Feature 12134: rate=0.91, other=0.00, act=2.5731
+    Feature   716: rate=0.88, other=0.38, act=1.3845
+    Feature  1347: rate=0.88, other=0.25, act=0.4755
+    Feature  2282: rate=0.88, other=0.36, act=0.7783
+
+  Top language-agnostic features (min_rate, mean_act):
+    Feature   140: min_rate=1.00, act=62.5867
+    Feature    98: min_rate=1.00, act=57.7934
+    Feature   106: min_rate=1.00, act=51.6194
+    Feature   419: min_rate=1.00, act=50.1810
+    Feature   226: min_rate=1.00, act=45.1950
+    Feature   372: min_rate=1.00, act=38.2055
+    Feature   228: min_rate=1.00, act=38.0276
+    Feature   478: min_rate=1.00, act=37.0204
+    Feature   115: min_rate=1.00, act=35.6445
+    Feature   395: min_rate=1.00, act=25.8468
+    Feature   423: min_rate=1.00, act=25.6187
+    Feature   376: min_rate=1.00, act=22.9379
+    Feature   243: min_rate=1.00, act=22.1371
+    Feature   173: min_rate=1.00, act=21.9833
+    Feature   244: min_rate=1.00, act=21.9479
+
+  Summary: 166 language-specific, 368 language-agnostic features
+
+--- Layer 13 ---
+
+  Top EN-specific features (fire rate, other_avg, mean_act):
+    Feature   302: rate=0.94, other=0.19, act=5.6737
+    Feature   770: rate=0.94, other=0.44, act=0.8403
+    Feature  1486: rate=0.94, other=0.44, act=0.7027
+    Feature  2343: rate=0.94, other=0.44, act=0.7856
+    Feature  3549: rate=0.94, other=0.44, act=1.0688
+    Feature 16038: rate=0.94, other=0.44, act=1.1047
+    Feature  8276: rate=0.84, other=0.38, act=4.3460
+    Feature  3461: rate=0.81, other=0.33, act=1.1221
+    Feature  1290: rate=0.78, other=0.23, act=1.9518
+    Feature  3505: rate=0.59, other=0.22, act=1.0235
+    Feature   653: rate=0.56, other=0.25, act=1.2120
+    Feature  1772: rate=0.53, other=0.20, act=1.1316
+    Feature   525: rate=0.50, other=0.17, act=0.6561
+    Feature   656: rate=0.47, other=0.11, act=0.8176
+    Feature  3925: rate=0.47, other=0.20, act=1.1323
+
+  Top ES-specific features (fire rate, other_avg, mean_act):
+    Feature 13822: rate=0.94, other=0.39, act=3.5807
+    Feature  3957: rate=0.91, other=0.38, act=4.9686
+    Feature 14516: rate=0.84, other=0.41, act=2.1890
+    Feature  1064: rate=0.81, other=0.17, act=0.8142
+    Feature 13839: rate=0.72, other=0.25, act=0.8591
+    Feature  1227: rate=0.69, other=0.28, act=0.4970
+    Feature  7003: rate=0.69, other=0.05, act=0.7475
+    Feature  3507: rate=0.62, other=0.23, act=2.2533
+    Feature   712: rate=0.59, other=0.25, act=0.8581
+    Feature  4664: rate=0.56, other=0.12, act=0.4721
+    Feature 15024: rate=0.56, other=0.27, act=0.4905
+    Feature 11123: rate=0.53, other=0.17, act=1.6110
+    Feature  1000: rate=0.50, other=0.19, act=0.4277
+    Feature  2579: rate=0.47, other=0.20, act=0.6137
+    Feature 15623: rate=0.47, other=0.17, act=0.4311
+
+  Top FR-specific features (fire rate, other_avg, mean_act):
+    Feature   112: rate=1.00, other=0.36, act=8.7990
+    Feature   412: rate=1.00, other=0.45, act=5.5416
+    Feature  1562: rate=1.00, other=0.48, act=20.1873
+    Feature  6855: rate=1.00, other=0.41, act=105.2807
+    Feature  1480: rate=0.97, other=0.31, act=8.9357
+    Feature  2186: rate=0.97, other=0.33, act=3.8828
+    Feature   224: rate=0.94, other=0.12, act=5.1491
+    Feature   522: rate=0.94, other=0.33, act=3.9874
+    Feature 13769: rate=0.94, other=0.42, act=2.6782
+    Feature  3568: rate=0.91, other=0.44, act=4.2023
+    Feature  5342: rate=0.91, other=0.41, act=1.0257
+    Feature   619: rate=0.88, other=0.12, act=3.2557
+    Feature  5483: rate=0.88, other=0.42, act=1.9205
+    Feature    42: rate=0.81, other=0.23, act=2.4286
+    Feature    61: rate=0.81, other=0.11, act=3.0162
+
+  Top language-agnostic features (min_rate, mean_act):
+    Feature   419: min_rate=1.00, act=84.9938
+    Feature   115: min_rate=1.00, act=81.2882
+    Feature   160: min_rate=1.00, act=77.1418
+    Feature   206: min_rate=1.00, act=67.7056
+    Feature   374: min_rate=1.00, act=60.4834
+    Feature   131: min_rate=1.00, act=58.1448
+    Feature   502: min_rate=1.00, act=56.2897
+    Feature   257: min_rate=1.00, act=55.7844
+    Feature   111: min_rate=0.53, act=54.8589
+    Feature   118: min_rate=1.00, act=54.6644
+    Feature   475: min_rate=1.00, act=49.0546
+    Feature   132: min_rate=1.00, act=48.3990
+    Feature   143: min_rate=1.00, act=43.0560
+    Feature   431: min_rate=1.00, act=41.5510
+    Feature    92: min_rate=0.97, act=41.4359
+
+  Summary: 209 language-specific, 1020 language-agnostic features
+
+--- Layer 22 ---
+
+  Top EN-specific features (fire rate, other_avg, mean_act):
+    Feature   873: rate=0.94, other=0.34, act=14.0114
+    Feature  4730: rate=0.94, other=0.44, act=3.8687
+    Feature   243: rate=0.75, other=0.33, act=8.6383
+    Feature   520: rate=0.75, other=0.16, act=9.4932
+    Feature    74: rate=0.72, other=0.28, act=16.9957
+    Feature   365: rate=0.72, other=0.31, act=7.8520
+    Feature   370: rate=0.72, other=0.23, act=14.9055
+    Feature   828: rate=0.72, other=0.19, act=13.0509
+    Feature  1108: rate=0.69, other=0.28, act=6.9648
+    Feature  2284: rate=0.66, other=0.25, act=9.1864
+    Feature  2381: rate=0.62, other=0.09, act=7.9235
+    Feature  4617: rate=0.62, other=0.08, act=9.8697
+    Feature  6801: rate=0.62, other=0.05, act=4.2418
+    Feature   195: rate=0.59, other=0.28, act=12.6956
+    Feature   974: rate=0.59, other=0.28, act=14.4309
+
+  Top ES-specific features (fire rate, other_avg, mean_act):
+    Feature   857: rate=1.00, other=0.06, act=383.0281
+    Feature  3779: rate=1.00, other=0.48, act=45.2719
+    Feature  5085: rate=1.00, other=0.44, act=31.2351
+    Feature  7734: rate=1.00, other=0.11, act=37.8331
+    Feature 11399: rate=1.00, other=0.48, act=32.7291
+    Feature  7093: rate=0.97, other=0.47, act=48.2161
+    Feature 14584: rate=0.97, other=0.45, act=39.5347
+    Feature  2373: rate=0.94, other=0.38, act=62.4976
+    Feature  4985: rate=0.94, other=0.34, act=26.0481
+    Feature  3474: rate=0.91, other=0.28, act=22.2886
+    Feature  4897: rate=0.91, other=0.31, act=16.8801
+    Feature  5807: rate=0.91, other=0.39, act=21.3273
+    Feature  6784: rate=0.91, other=0.44, act=25.9734
+    Feature  9949: rate=0.91, other=0.39, act=22.7947
+    Feature 11563: rate=0.91, other=0.44, act=31.8637
+
+  Top FR-specific features (fire rate, other_avg, mean_act):
+    Feature   959: rate=1.00, other=0.47, act=10.9019
+    Feature  1207: rate=1.00, other=0.14, act=1782.1588
+    Feature  1536: rate=1.00, other=0.38, act=112.1159
+    Feature  3201: rate=1.00, other=0.06, act=191.7702
+    Feature  3357: rate=1.00, other=0.02, act=126.0044
+    Feature  4178: rate=1.00, other=0.47, act=100.9719
+    Feature  5869: rate=1.00, other=0.05, act=153.2290
+    Feature  6611: rate=1.00, other=0.48, act=42.9119
+    Feature  8401: rate=1.00, other=0.11, act=76.9688
+    Feature 11948: rate=1.00, other=0.48, act=23.8680
+    Feature 12865: rate=1.00, other=0.00, act=31.5875
+    Feature 13131: rate=1.00, other=0.47, act=49.8636
+    Feature 13650: rate=1.00, other=0.00, act=99.1833
+    Feature 14240: rate=1.00, other=0.00, act=146.6819
+    Feature   485: rate=0.97, other=0.08, act=28.1685
+
+  Top language-agnostic features (min_rate, mean_act):
+    Feature   369: min_rate=1.00, act=185.9168
+    Feature   186: min_rate=1.00, act=177.5716
+    Feature   475: min_rate=1.00, act=168.6872
+    Feature   347: min_rate=1.00, act=152.7593
+    Feature    17: min_rate=0.69, act=110.2609
+    Feature   376: min_rate=0.88, act=108.5032
+    Feature     8: min_rate=1.00, act=90.9390
+    Feature   463: min_rate=1.00, act=89.2243
+    Feature   437: min_rate=1.00, act=86.4627
+    Feature   413: min_rate=1.00, act=84.1597
+    Feature   144: min_rate=1.00, act=81.2725
+    Feature    53: min_rate=1.00, act=80.3345
+    Feature   598: min_rate=0.72, act=78.7721
+    Feature    20: min_rate=1.00, act=78.6150
+    Feature    46: min_rate=1.00, act=71.6891
+
+  Summary: 936 language-specific, 914 language-agnostic features
+
+============================================================
+ANALYSIS 3: Culture-Language Entanglement (THE KEY ONE)
+============================================================
+
+--- Layer 7 ---
+  cross_01a: spanish culture in en text
+    Cultural features firing: 9/20 = 45.00%
+    Baseline (neutral en): 6.50%
+    Ratio: 6.92x --> ENTANGLED
+  cross_01b: spanish culture in en text
+    Cultural features firing: 2/20 = 10.00%
+    Baseline (neutral en): 6.50%
+    Ratio: 1.54x --> SEPARABLE
+  cross_02: french culture in es text
+    Cultural features firing: 8/20 = 40.00%
+    Baseline (neutral es): 36.50%
+    Ratio: 1.10x --> SEPARABLE
+  cross_03a: spanish culture in fr text
+    Cultural features firing: 7/20 = 35.00%
+    Baseline (neutral fr): 28.00%
+    Ratio: 1.25x --> SEPARABLE
+  cross_03b: spanish culture in fr text
+    Cultural features firing: 6/20 = 30.00%
+    Baseline (neutral fr): 28.00%
+    Ratio: 1.07x --> SEPARABLE
+  cross_04: english culture in es text
+    Cultural features firing: 3/16 = 18.75%
+    Baseline (neutral es): 21.25%
+    Ratio: 0.88x --> SEPARABLE
+  cross_05: spanish culture in fr text
+    Cultural features firing: 10/20 = 50.00%
+    Baseline (neutral fr): 28.00%
+    Ratio: 1.79x --> SEPARABLE
+  cross_06a: french culture in en text
+    Cultural features firing: 8/20 = 40.00%
+    Baseline (neutral en): 5.50%
+    Ratio: 7.27x --> ENTANGLED
+  cross_06b: french culture in en text
+    Cultural features firing: 8/20 = 40.00%
+    Baseline (neutral en): 5.50%
+    Ratio: 7.27x --> ENTANGLED
+  cross_07: spanish culture in fr text
+    Cultural features firing: 9/20 = 45.00%
+    Baseline (neutral fr): 28.00%
+    Ratio: 1.61x --> SEPARABLE
+  cross_08a: spanish culture in en text
+    Cultural features firing: 3/20 = 15.00%
+    Baseline (neutral en): 6.50%
+    Ratio: 2.31x --> ENTANGLED
+  cross_08b: spanish culture in en text
+    Cultural features firing: 1/20 = 5.00%
+    Baseline (neutral en): 6.50%
+    Ratio: 0.77x --> SEPARABLE
+  cross_09: english culture in fr text
+    Cultural features firing: 3/16 = 18.75%
+    Baseline (neutral fr): 17.50%
+    Ratio: 1.07x --> SEPARABLE
+  cross_10: french culture in es text
+    Cultural features firing: 12/20 = 60.00%
+    Baseline (neutral es): 36.50%
+    Ratio: 1.64x --> SEPARABLE
+  cross_11a: spanish culture in en text
+    Cultural features firing: 3/20 = 15.00%
+    Baseline (neutral en): 6.50%
+    Ratio: 2.31x --> ENTANGLED
+  cross_11b: spanish culture in en text
+    Cultural features firing: 2/20 = 10.00%
+    Baseline (neutral en): 6.50%
+    Ratio: 1.54x --> SEPARABLE
+  cross_12: french culture in es text
+    Cultural features firing: 13/20 = 65.00%
+    Baseline (neutral es): 36.50%
+    Ratio: 1.78x --> SEPARABLE
+
+--- Layer 13 ---
+  cross_01a: spanish culture in en text
+    Cultural features firing: 4/20 = 20.00%
+    Baseline (neutral en): 5.50%
+    Ratio: 3.64x --> ENTANGLED
+  cross_01b: spanish culture in en text
+    Cultural features firing: 2/20 = 10.00%
+    Baseline (neutral en): 5.50%
+    Ratio: 1.82x --> SEPARABLE
+  cross_02: french culture in es text
+    Cultural features firing: 13/20 = 65.00%
+    Baseline (neutral es): 48.00%
+    Ratio: 1.35x --> SEPARABLE
+  cross_03a: spanish culture in fr text
+    Cultural features firing: 6/20 = 30.00%
+    Baseline (neutral fr): 29.50%
+    Ratio: 1.02x --> SEPARABLE
+  cross_03b: spanish culture in fr text
+    Cultural features firing: 7/20 = 35.00%
+    Baseline (neutral fr): 29.50%
+    Ratio: 1.19x --> SEPARABLE
+  cross_04: english culture in es text
+    Cultural features firing: 6/20 = 30.00%
+    Baseline (neutral es): 37.00%
+    Ratio: 0.81x --> SEPARABLE
+  cross_05: spanish culture in fr text
+    Cultural features firing: 9/20 = 45.00%
+    Baseline (neutral fr): 29.50%
+    Ratio: 1.53x --> SEPARABLE
+  cross_06a: french culture in en text
+    Cultural features firing: 4/20 = 20.00%
+    Baseline (neutral en): 13.50%
+    Ratio: 1.48x --> SEPARABLE
+  cross_06b: french culture in en text
+    Cultural features firing: 8/20 = 40.00%
+    Baseline (neutral en): 13.50%
+    Ratio: 2.96x --> ENTANGLED
+  cross_07: spanish culture in fr text
+    Cultural features firing: 8/20 = 40.00%
+    Baseline (neutral fr): 29.50%
+    Ratio: 1.36x --> SEPARABLE
+  cross_08a: spanish culture in en text
+    Cultural features firing: 8/20 = 40.00%
+    Baseline (neutral en): 5.50%
+    Ratio: 7.27x --> ENTANGLED
+  cross_08b: spanish culture in en text
+    Cultural features firing: 4/20 = 20.00%
+    Baseline (neutral en): 5.50%
+    Ratio: 3.64x --> ENTANGLED
+  cross_09: english culture in fr text
+    Cultural features firing: 4/20 = 20.00%
+    Baseline (neutral fr): 17.00%
+    Ratio: 1.18x --> SEPARABLE
+  cross_10: french culture in es text
+    Cultural features firing: 11/20 = 55.00%
+    Baseline (neutral es): 48.00%
+    Ratio: 1.15x --> SEPARABLE
+  cross_11a: spanish culture in en text
+    Cultural features firing: 4/20 = 20.00%
+    Baseline (neutral en): 5.50%
+    Ratio: 3.64x --> ENTANGLED
+  cross_11b: spanish culture in en text
+    Cultural features firing: 2/20 = 10.00%
+    Baseline (neutral en): 5.50%
+    Ratio: 1.82x --> SEPARABLE
+  cross_12: french culture in es text
+    Cultural features firing: 13/20 = 65.00%
+    Baseline (neutral es): 48.00%
+    Ratio: 1.35x --> SEPARABLE
+
+--- Layer 22 ---
+  cross_01a: spanish culture in en text
+    Cultural features firing: 2/20 = 10.00%
+    Baseline (neutral en): 1.00%
+    Ratio: 10.00x --> ENTANGLED
+  cross_01b: spanish culture in en text
+    Cultural features firing: 1/20 = 5.00%
+    Baseline (neutral en): 1.00%
+    Ratio: 5.00x --> ENTANGLED
+  cross_02: french culture in es text
+    Cultural features firing: 14/20 = 70.00%
+    Baseline (neutral es): 41.50%
+    Ratio: 1.69x --> SEPARABLE
+  cross_03a: spanish culture in fr text
+    Cultural features firing: 14/20 = 70.00%
+    Baseline (neutral fr): 66.00%
+    Ratio: 1.06x --> SEPARABLE
+  cross_03b: spanish culture in fr text
+    Cultural features firing: 16/20 = 80.00%
+    Baseline (neutral fr): 66.00%
+    Ratio: 1.21x --> SEPARABLE
+  cross_04: english culture in es text
+    Cultural features firing: 6/20 = 30.00%
+    Baseline (neutral es): 23.00%
+    Ratio: 1.30x --> SEPARABLE
+  cross_05: spanish culture in fr text
+    Cultural features firing: 16/20 = 80.00%
+    Baseline (neutral fr): 66.00%
+    Ratio: 1.21x --> SEPARABLE
+  cross_06a: french culture in en text
+    Cultural features firing: 5/20 = 25.00%
+    Baseline (neutral en): 8.00%
+    Ratio: 3.12x --> ENTANGLED
+  cross_06b: french culture in en text
+    Cultural features firing: 3/20 = 15.00%
+    Baseline (neutral en): 8.00%
+    Ratio: 1.87x --> SEPARABLE
+  cross_07: spanish culture in fr text
+    Cultural features firing: 16/20 = 80.00%
+    Baseline (neutral fr): 66.00%
+    Ratio: 1.21x --> SEPARABLE
+  cross_08a: spanish culture in en text
+    Cultural features firing: 1/20 = 5.00%
+    Baseline (neutral en): 1.00%
+    Ratio: 5.00x --> ENTANGLED
+  cross_08b: spanish culture in en text
+    Cultural features firing: 1/20 = 5.00%
+    Baseline (neutral en): 1.00%
+    Ratio: 5.00x --> ENTANGLED
+  cross_09: english culture in fr text
+    Cultural features firing: 6/20 = 30.00%
+    Baseline (neutral fr): 22.00%
+    Ratio: 1.36x --> SEPARABLE
+  cross_10: french culture in es text
+    Cultural features firing: 9/20 = 45.00%
+    Baseline (neutral es): 41.50%
+    Ratio: 1.08x --> SEPARABLE
+  cross_11a: spanish culture in en text
+    Cultural features firing: 1/20 = 5.00%
+    Baseline (neutral en): 1.00%
+    Ratio: 5.00x --> ENTANGLED
+  cross_11b: spanish culture in en text
+    Cultural features firing: 0/20 = 0.00%
+    Baseline (neutral en): 1.00%
+    Ratio: 0.00x --> SEPARABLE
+  cross_12: french culture in es text
+    Cultural features firing: 8/20 = 40.00%
+    Baseline (neutral es): 41.50%
+    Ratio: 0.96x --> SEPARABLE
+
+========================================
+OVERALL: Average cross-cultural/baseline ratio = 2.46x
+VERDICT: Language and culture appear ENTANGLED in feature space.
+v2 implication: Cross-lingual routing won't be clean. Consider
+  entity-property composition or moving to v3 multimodal earlier.
+========================================
+
+============================================================
+ANALYSIS 3b: Loanword vs No-Loanword Entanglement
+============================================================
+
+--- Layer 7 ---
+  [LOANWORD] cross_01a: spanish in en -> 9/20 = 45%
+  [NATIVE  ] cross_01b: spanish in en -> 2/20 = 10%
+  [LOANWORD] cross_02: french in es -> 8/20 = 40%
+  [LOANWORD] cross_03a: spanish in fr -> 7/20 = 35%
+  [NATIVE  ] cross_03b: spanish in fr -> 6/20 = 30%
+  [LOANWORD] cross_04: english in es -> 3/16 = 19%
+  [LOANWORD] cross_05: spanish in fr -> 10/20 = 50%
+  [LOANWORD] cross_06a: french in en -> 8/20 = 40%
+  [NATIVE  ] cross_06b: french in en -> 8/20 = 40%
+  [LOANWORD] cross_07: spanish in fr -> 9/20 = 45%
+  [LOANWORD] cross_08a: spanish in en -> 3/20 = 15%
+  [NATIVE  ] cross_08b: spanish in en -> 1/20 = 5%
+  [LOANWORD] cross_09: english in fr -> 3/16 = 19%
+  [LOANWORD] cross_10: french in es -> 12/20 = 60%
+  [LOANWORD] cross_11a: spanish in en -> 3/20 = 15%
+  [NATIVE  ] cross_11b: spanish in en -> 2/20 = 10%
+  [LOANWORD] cross_12: french in es -> 13/20 = 65%
+
+--- Layer 13 ---
+  [LOANWORD] cross_01a: spanish in en -> 4/20 = 20%
+  [NATIVE  ] cross_01b: spanish in en -> 2/20 = 10%
+  [LOANWORD] cross_02: french in es -> 13/20 = 65%
+  [LOANWORD] cross_03a: spanish in fr -> 6/20 = 30%
+  [NATIVE  ] cross_03b: spanish in fr -> 7/20 = 35%
+  [LOANWORD] cross_04: english in es -> 6/20 = 30%
+  [LOANWORD] cross_05: spanish in fr -> 9/20 = 45%
+  [LOANWORD] cross_06a: french in en -> 4/20 = 20%
+  [NATIVE  ] cross_06b: french in en -> 8/20 = 40%
+  [LOANWORD] cross_07: spanish in fr -> 8/20 = 40%
+  [LOANWORD] cross_08a: spanish in en -> 8/20 = 40%
+  [NATIVE  ] cross_08b: spanish in en -> 4/20 = 20%
+  [LOANWORD] cross_09: english in fr -> 4/20 = 20%
+  [LOANWORD] cross_10: french in es -> 11/20 = 55%
+  [LOANWORD] cross_11a: spanish in en -> 4/20 = 20%
+  [NATIVE  ] cross_11b: spanish in en -> 2/20 = 10%
+  [LOANWORD] cross_12: french in es -> 13/20 = 65%
+
+--- Layer 22 ---
+  [LOANWORD] cross_01a: spanish in en -> 2/20 = 10%
+  [NATIVE  ] cross_01b: spanish in en -> 1/20 = 5%
+  [LOANWORD] cross_02: french in es -> 14/20 = 70%
+  [LOANWORD] cross_03a: spanish in fr -> 14/20 = 70%
+  [NATIVE  ] cross_03b: spanish in fr -> 16/20 = 80%
+  [LOANWORD] cross_04: english in es -> 6/20 = 30%
+  [LOANWORD] cross_05: spanish in fr -> 16/20 = 80%
+  [LOANWORD] cross_06a: french in en -> 5/20 = 25%
+  [NATIVE  ] cross_06b: french in en -> 3/20 = 15%
+  [LOANWORD] cross_07: spanish in fr -> 16/20 = 80%
+  [LOANWORD] cross_08a: spanish in en -> 1/20 = 5%
+  [NATIVE  ] cross_08b: spanish in en -> 1/20 = 5%
+  [LOANWORD] cross_09: english in fr -> 6/20 = 30%
+  [LOANWORD] cross_10: french in es -> 9/20 = 45%
+  [LOANWORD] cross_11a: spanish in en -> 1/20 = 5%
+  [NATIVE  ] cross_11b: spanish in en -> 0/20 = 0%
+  [LOANWORD] cross_12: french in es -> 8/20 = 40%
+
+==================================================
+With loanwords:    avg fire rate = 38.5% (n=36)
+Without loanwords: avg fire rate = 21.0% (n=15)
+Difference: +17.5% -> Loanwords AMPLIFY entanglement.
+The entanglement is partly lexical routing through borrowed vocabulary.
+==================================================
+
+============================================================
+ANALYSIS 4: Per-Token Feature Attribution
+============================================================
+
+Layer 22 - Top 5 features per language, with their peak tokens:
+
+  === EN-specific features ===
+
+  Feature 873 (rate=94%, other=34%):
+    neutral_01_en: pos39=439.5, pos32=250.9, pos49=248.0
+    neutral_01_es: pos51=250.3
+    neutral_02_en: pos11=327.9
+    neutral_02_es: pos18=213.2
+    neutral_04_en: pos15=193.4
+    neutral_04_es: pos62=218.5
+    neutral_05_en: pos9=456.5, pos29=227.2
+    neutral_05_fr: pos18=173.8
+    neutral_06_en: pos26=179.4
+    neutral_07_en: pos20=655.1, pos11=419.1, pos12=181.0
+    neutral_07_es: pos31=307.5
+    neutral_07_fr: pos22=206.8, pos37=179.6
+    neutral_08_en: pos43=316.8, pos9=213.8
+    neutral_08_es: pos45=221.7, pos57=185.7, pos16=163.2
+    neutral_09_en: pos32=824.3, pos15=392.7, pos25=361.3
+    neutral_09_es: pos40=309.6
+    neutral_09_fr: pos46=227.6
+    neutral_10_en: pos17=410.9, pos21=282.5
+    moderate_01_en: pos19=410.8, pos36=293.3, pos26=225.9
+    moderate_01_es: pos9=239.0
+    moderate_01_fr: pos36=180.5
+    moderate_02_en: pos4=310.7, pos22=184.6
+    moderate_03_en: pos40=330.3, pos33=276.4, pos32=208.3
+    moderate_04_en: pos14=310.4, pos7=297.4
+    moderate_04_es: pos9=230.9, pos15=171.7
+    moderate_05_en: pos35=407.3, pos38=261.1, pos16=217.4
+    moderate_05_es: pos44=183.8
+    moderate_06_en: pos11=556.1
+    moderate_07_en: pos5=514.6, pos36=226.2
+    moderate_08_en: pos27=499.6, pos20=353.4
+    moderate_09_en: pos4=317.1, pos20=262.1
+    moderate_09_es: pos25=205.0
+    moderate_10_en: pos22=225.6, pos27=188.9
+    strong_02_en: pos50=423.4, pos7=239.4, pos13=165.4
+    strong_02_es: pos17=169.3
+    strong_03_en: pos15=315.5, pos49=253.0, pos28=227.5
+    strong_04_en: pos32=476.5, pos17=210.5
+    strong_05_en: pos50=375.0, pos43=170.2
+    strong_05_es: pos21=210.9
+    strong_06_en: pos26=449.1, pos8=294.0, pos29=209.4
+    strong_06_es: pos34=345.3
+    strong_07_en: pos25=297.5
+    strong_08_en: pos43=173.8
+    strong_09_en: pos28=319.3, pos5=307.6, pos39=301.1
+    strong_09_es: pos22=160.5
+    strong_10_en: pos25=484.3, pos3=279.3
+    strong_10_es: pos28=178.6
+    strong_11_en: pos26=383.1, pos40=353.0, pos17=282.2
+    strong_11_es: pos57=211.4, pos27=201.1, pos17=162.9
+    strong_12_en: pos46=324.8, pos17=228.8, pos21=205.4
+    strong_12_es: pos67=187.9
+    strong_12_fr: pos63=203.5
+    [LW] cross_01a: pos16=632.7, pos19=281.0, pos29=264.4
+    [NAT] cross_01b: pos16=686.2, pos52=390.7, pos24=314.2
+    [LW] cross_02: pos37=160.6
+    [LW] cross_06a: pos53=399.5
+    [NAT] cross_06b: pos51=534.0, pos18=287.1, pos67=186.7
+    [LW] cross_08a: pos63=618.3, pos22=394.7, pos51=367.9
+    [NAT] cross_08b: pos63=564.7, pos22=406.5, pos9=379.2
+    [LW] cross_10: pos41=215.0
+    [LW] cross_11a: pos27=411.9, pos52=273.0, pos28=223.3
+    [NAT] cross_11b: pos54=446.8, pos28=298.5, pos50=230.4
+    [LW] cross_12: pos27=247.3, pos30=209.8
+
+  Feature 4730 (rate=94%, other=44%):
+    neutral_01_en: pos0=201.6
+    neutral_01_es: pos0=201.6
+    neutral_02_en: pos0=201.6
+    neutral_02_es: pos0=201.6
+    neutral_02_fr: pos0=201.6
+    neutral_03_en: pos0=201.6
+    neutral_03_es: pos0=201.6
+    neutral_03_fr: pos0=201.6
+    neutral_04_en: pos0=201.6
+    neutral_04_es: pos0=201.6
+    neutral_04_fr: pos0=201.6
+    neutral_05_en: pos0=201.6
+    neutral_05_es: pos0=201.6
+    neutral_06_en: pos0=201.6
+    neutral_06_es: pos0=201.6
+    neutral_07_en: pos0=201.6
+    neutral_07_es: pos0=201.6
+    neutral_08_en: pos0=201.6
+    neutral_08_es: pos0=201.6
+    neutral_08_fr: pos0=201.6
+    neutral_09_en: pos0=201.6
+    neutral_09_es: pos0=201.6
+    neutral_10_en: pos0=201.6
+    neutral_10_es: pos0=201.6
+    moderate_01_en: pos0=201.6
+    moderate_01_es: pos0=201.6
+    moderate_02_en: pos0=201.6
+    moderate_02_es: pos0=201.6
+    moderate_02_fr: pos0=201.6
+    moderate_03_en: pos0=201.6
+    moderate_03_es: pos0=201.6
+    moderate_04_en: pos0=201.6
+    moderate_04_es: pos0=201.6
+    moderate_05_en: pos0=201.6
+    moderate_05_es: pos0=201.6
+    moderate_05_fr: pos0=201.6
+    moderate_06_en: pos0=201.6
+    moderate_07_en: pos0=201.6
+    moderate_07_es: pos0=201.6
+    moderate_08_en: pos0=201.6
+    moderate_09_en: pos0=201.6
+    moderate_09_es: pos0=201.6
+    moderate_09_fr: pos0=201.6
+    moderate_10_en: pos0=201.6
+    strong_01_en: pos0=201.6
+    strong_01_es: pos0=201.6
+    strong_02_en: pos0=201.6
+    strong_02_es: pos0=201.6
+    strong_03_en: pos0=201.6
+    strong_03_fr: pos0=201.6
+    strong_04_en: pos0=201.6
+    strong_05_en: pos0=201.6
+    strong_06_en: pos0=201.6
+    strong_07_en: pos0=201.6
+    strong_08_en: pos0=201.6
+    strong_10_en: pos0=201.6
+    strong_10_es: pos0=201.6
+    strong_12_en: pos0=201.6
+    [LW] cross_01a: pos0=201.6
+
+  Feature 243 (rate=75%, other=33%):
+    neutral_01_en: pos45=248.7, pos48=156.5, pos42=149.5
+    neutral_02_en: pos38=143.4
+    neutral_03_en: pos34=258.1
+    neutral_04_en: pos36=992.4, pos41=933.6, pos40=818.5
+    neutral_04_es: pos52=858.2, pos58=814.7, pos55=648.5
+    neutral_04_fr: pos53=697.4, pos47=582.7, pos50=579.6
+    neutral_05_en: pos36=216.9
+    neutral_06_en: pos39=152.6
+    neutral_06_es: pos36=143.8
+    neutral_06_fr: pos45=250.1, pos64=190.0
+    neutral_09_en: pos30=497.1, pos42=296.8, pos38=293.5
+    neutral_09_es: pos14=220.6, pos52=218.8, pos22=189.5
+    neutral_09_fr: pos34=146.3
+    neutral_10_en: pos39=154.9
+    moderate_03_en: pos24=245.0
+    moderate_04_en: pos20=173.8
+    moderate_04_es: pos11=181.7
+    moderate_05_en: pos37=173.1, pos33=159.4
+    moderate_05_es: pos10=149.8
+    moderate_06_en: pos43=237.1
+    moderate_06_es: pos18=160.0, pos63=155.4
+    moderate_07_en: pos49=342.4, pos46=184.6
+    moderate_07_fr: pos58=296.9
+    moderate_08_es: pos61=332.6, pos62=285.9, pos48=244.7
+    moderate_09_en: pos12=196.6
+    moderate_09_es: pos15=235.2, pos16=223.4, pos32=200.9
+    moderate_10_en: pos25=234.1
+    moderate_10_es: pos19=184.9
+    strong_01_en: pos25=559.6
+    strong_01_es: pos58=146.6
+    strong_03_en: pos38=180.7
+    strong_03_es: pos63=218.4, pos23=163.1
+    strong_04_en: pos52=198.5, pos50=169.7, pos36=147.5
+    strong_05_es: pos23=442.2
+    strong_07_en: pos19=278.8
+    strong_07_es: pos65=379.7, pos66=357.3, pos60=220.7
+    strong_08_en: pos35=440.5
+    strong_08_es: pos46=188.5, pos30=186.4
+    strong_09_en: pos60=239.8, pos63=164.6, pos43=163.3
+    strong_09_es: pos53=241.2
+    strong_10_en: pos45=265.5, pos47=190.6, pos43=158.9
+    strong_10_es: pos51=151.8
+    strong_10_fr: pos52=202.3
+    strong_11_en: pos33=248.4
+    strong_12_en: pos19=301.5, pos36=143.1
+    [NAT] cross_01b: pos54=352.7, pos50=295.4, pos60=179.3
+    [LW] cross_02: pos33=175.8
+    [LW] cross_04: pos46=201.4, pos68=171.7, pos48=149.5
+    [LW] cross_06a: pos30=358.0, pos10=251.0
+    [NAT] cross_06b: pos34=486.9, pos11=229.6, pos16=207.8
+    [LW] cross_12: pos58=254.0
+
+  Feature 520 (rate=75%, other=16%):
+    neutral_01_en: pos20=250.9, pos21=200.4, pos29=165.1
+    neutral_02_en: pos37=225.4, pos18=225.0, pos32=220.5
+    neutral_02_fr: pos30=222.9, pos33=197.1, pos27=192.1
+    neutral_03_en: pos7=448.2, pos8=397.7
+    neutral_04_en: pos16=275.7, pos8=227.0
+    neutral_04_es: pos48=231.9
+    neutral_04_fr: pos42=254.4
+    neutral_05_en: pos15=353.1, pos21=279.4, pos20=185.2
+    neutral_06_en: pos6=275.7, pos42=254.8, pos9=181.1
+    neutral_07_en: pos7=218.8, pos20=211.0, pos15=206.8
+    neutral_08_en: pos6=171.5
+    neutral_09_en: pos25=240.9, pos15=195.1
+    moderate_01_en: pos5=350.6, pos8=185.1
+    moderate_01_fr: pos60=173.8
+    moderate_02_en: pos22=386.1, pos26=319.1
+    moderate_03_en: pos17=323.5, pos6=184.6, pos20=169.9
+    moderate_04_en: pos19=250.7, pos38=186.9
+    moderate_05_en: pos38=309.3
+    moderate_08_en: pos43=190.1, pos45=189.9, pos30=179.0
+    moderate_09_en: pos7=701.9
+    moderate_10_en: pos44=169.0
+    strong_01_en: pos48=300.2
+    strong_03_en: pos6=174.1, pos37=170.9
+    strong_04_en: pos1=474.5, pos34=205.9
+    strong_04_fr: pos1=467.9
+    strong_05_en: pos16=359.0, pos36=322.0, pos50=280.5
+    strong_07_es: pos61=209.0
+    strong_09_en: pos34=231.7
+    strong_09_es: pos38=674.4
+    strong_09_fr: pos54=714.5
+    strong_11_en: pos11=234.0, pos36=186.4
+    strong_11_es: pos17=216.2
+    strong_11_fr: pos25=761.3
+    strong_12_en: pos34=166.1
+    [LW] cross_02: pos16=402.8
+    [LW] cross_04: pos60=309.4
+
+  Feature 74 (rate=72%, other=28%):
+    neutral_01_en: pos15=363.3
+    neutral_04_en: pos1=835.4
+    neutral_04_es: pos3=564.8
+    neutral_06_en: pos1=534.2
+    neutral_07_en: pos6=313.9, pos26=244.6, pos36=217.9
+    neutral_08_en: pos9=532.7, pos6=121.3
+    neutral_09_en: pos45=1173.9, pos12=398.0, pos17=396.1
+    neutral_10_en: pos33=840.7, pos3=824.9, pos25=678.4
+    neutral_10_es: pos28=244.3, pos37=187.2
+    moderate_01_en: pos32=505.6
+    moderate_02_en: pos17=540.0, pos36=298.7, pos35=256.3
+    moderate_03_en: pos36=917.0, pos37=745.8, pos16=653.2
+    moderate_03_es: pos41=378.0
+    moderate_03_fr: pos59=281.8
+    moderate_06_en: pos14=442.5, pos5=417.0
+    moderate_07_en: pos6=680.2, pos2=630.7, pos7=162.3
+    moderate_08_en: pos51=796.2
+    moderate_08_es: pos60=161.8
+    moderate_08_fr: pos69=174.3
+    moderate_09_en: pos29=719.5
+    moderate_09_es: pos34=203.0
+    moderate_10_en: pos8=1024.6, pos46=389.7, pos38=364.2
+    moderate_10_es: pos50=309.3, pos54=129.5
+    moderate_10_fr: pos11=177.5
+    strong_01_en: pos28=1127.0, pos41=845.7
+    strong_01_es: pos34=314.4, pos33=243.1, pos49=160.7
+    strong_03_es: pos16=652.4
+    strong_03_fr: pos14=514.3
+    strong_04_en: pos12=1016.8, pos10=868.7
+    strong_04_es: pos17=342.8
+    strong_04_fr: pos18=174.8
+    strong_05_en: pos11=626.1
+    strong_05_es: pos13=189.6
+    strong_06_en: pos23=201.9
+    strong_07_en: pos38=759.6, pos37=274.7, pos25=148.0
+    strong_07_es: pos49=236.0
+    strong_08_en: pos46=1001.5, pos18=186.7
+    strong_08_es: pos62=422.2
+    strong_08_fr: pos67=484.9
+    strong_09_en: pos53=238.1
+    strong_10_en: pos10=854.3, pos29=198.6
+    [LW] cross_01a: pos35=441.4
+    [NAT] cross_01b: pos28=309.0
+    [LW] cross_04: pos7=287.1, pos6=272.7
+    [LW] cross_05: pos56=290.7
+    [LW] cross_08a: pos24=309.7
+    [NAT] cross_08b: pos24=233.2
+    [LW] cross_09: pos19=367.8, pos28=316.3, pos21=140.2
+    [LW] cross_11a: pos23=482.8, pos11=430.6
+    [NAT] cross_11b: pos23=454.0, pos11=426.3
+
+  === ES-specific features ===
+
+  Feature 857 (rate=100%, other=6%):
+    neutral_01_es: pos58=847.9, pos23=808.5, pos22=774.6
+    neutral_02_es: pos37=1003.2, pos35=878.2, pos26=801.2
+    neutral_03_es: pos10=832.4, pos12=828.7, pos7=766.1
+    neutral_03_fr: pos2=263.4
+    neutral_04_es: pos6=1050.6, pos14=944.2, pos10=909.0
+    neutral_05_es: pos41=1149.7, pos16=1032.9, pos40=1016.5
+    neutral_06_es: pos7=727.8, pos23=709.4, pos16=679.0
+    neutral_07_es: pos27=853.9, pos61=849.4, pos44=848.2
+    neutral_08_es: pos40=771.7, pos49=767.6, pos50=751.0
+    neutral_09_es: pos25=716.1, pos41=682.8, pos53=681.0
+    neutral_10_es: pos7=826.8, pos45=825.1, pos43=812.1
+    moderate_01_es: pos5=935.9, pos17=915.0, pos34=908.8
+    moderate_02_es: pos11=895.4, pos30=893.1, pos21=884.0
+    moderate_03_es: pos45=956.6, pos20=775.9, pos42=745.7
+    moderate_04_es: pos11=978.9, pos17=968.0, pos5=818.6
+    moderate_05_es: pos38=809.3, pos4=727.2, pos35=707.0
+    moderate_06_es: pos19=870.0, pos4=742.1, pos55=731.1
+    moderate_07_es: pos25=885.8, pos52=835.6, pos50=832.1
+    moderate_08_es: pos42=922.1, pos26=897.5, pos27=807.7
+    moderate_09_es: pos31=1019.7, pos22=821.3, pos41=792.9
+    moderate_10_es: pos55=998.9, pos12=927.0, pos62=870.2
+    strong_01_es: pos31=848.4, pos10=812.3, pos32=811.5
+    strong_01_fr: pos5=359.7, pos4=350.7, pos3=335.8
+    strong_02_es: pos8=766.1, pos32=750.6, pos10=747.7
+    strong_03_es: pos35=1084.2, pos7=918.7, pos64=803.4
+    strong_04_es: pos15=865.7, pos21=848.0, pos34=802.9
+    strong_05_es: pos63=1005.0, pos46=1000.3, pos45=962.0
+    strong_06_es: pos30=772.6, pos54=638.8, pos67=628.3
+    strong_07_es: pos61=819.0, pos53=796.5, pos10=761.4
+    strong_07_fr: pos3=523.3, pos2=339.0
+    strong_08_es: pos31=825.9, pos25=721.9, pos13=712.0
+    strong_09_en: pos56=234.1, pos57=231.7
+    strong_09_es: pos38=1435.3, pos39=995.4, pos12=791.0
+    strong_10_es: pos41=780.7, pos28=761.5, pos13=755.6
+    strong_11_es: pos36=1205.6, pos48=1109.2, pos11=987.7
+    strong_12_es: pos6=1245.2, pos4=1122.6, pos5=1014.7
+    [LW] cross_01a: pos24=526.9, pos58=441.6, pos25=402.2
+    [LW] cross_02: pos16=1242.3, pos78=876.4, pos17=870.4
+    [LW] cross_03a: pos36=348.3
+    [LW] cross_04: pos2=1121.5, pos9=941.5, pos16=852.9
+    [LW] cross_10: pos8=912.4, pos34=870.4, pos37=853.2
+    [LW] cross_12: pos6=1245.2, pos4=1122.6, pos5=1014.7
+
+  Feature 3779 (rate=100%, other=48%):
+    neutral_01_es: pos28=1169.0, pos17=1056.2, pos4=911.6
+    neutral_01_fr: pos19=1139.8, pos20=935.6, pos4=825.8
+    neutral_02_es: pos15=1218.9, pos40=1154.1, pos26=1102.3
+    neutral_02_fr: pos15=1221.7, pos7=926.0, pos28=910.5
+    neutral_03_es: pos45=1049.8, pos7=877.3, pos48=556.0
+    neutral_03_fr: pos6=924.9, pos7=866.5, pos47=853.7
+    neutral_04_es: pos51=1025.0, pos24=752.8, pos4=531.6
+    neutral_04_fr: pos45=918.7, pos2=570.8, pos18=541.1
+    neutral_05_es: pos39=969.1, pos59=923.5, pos15=802.2
+    neutral_05_fr: pos50=948.7, pos74=770.2, pos21=653.9
+    neutral_06_es: pos3=638.6, pos7=400.2, pos16=388.5
+    neutral_06_fr: pos5=834.8, pos27=531.7, pos20=428.0
+    neutral_07_es: pos28=1383.9, pos12=1374.8, pos4=1232.9
+    neutral_07_fr: pos34=1219.0, pos5=1209.2, pos14=1186.7
+    neutral_08_es: pos43=1160.1, pos13=1004.3, pos20=721.5
+    neutral_08_fr: pos14=1038.0, pos45=1003.7, pos56=777.9
+    neutral_09_es: pos5=1052.6, pos21=960.2, pos35=737.5
+    neutral_09_fr: pos6=1122.3, pos5=973.8, pos26=858.0
+    neutral_10_es: pos14=1352.5, pos39=1013.3, pos6=855.0
+    neutral_10_fr: pos21=1296.4, pos47=1052.8, pos9=811.2
+    moderate_01_es: pos20=470.1
+    moderate_01_fr: pos60=849.6, pos42=819.4, pos28=487.5
+    moderate_02_es: pos21=1085.3, pos41=780.0, pos7=415.7
+    moderate_02_fr: pos25=940.2, pos52=867.1, pos51=770.7
+    moderate_03_es: pos48=595.1, pos21=556.4, pos43=505.7
+    moderate_03_fr: pos43=550.7, pos5=464.4, pos28=410.2
+    moderate_04_es: pos39=800.5, pos27=797.9, pos45=527.5
+    moderate_04_fr: pos44=659.5, pos57=612.5, pos22=423.6
+    moderate_05_es: pos33=365.4
+    moderate_06_es: pos47=753.9, pos32=731.4, pos62=561.0
+    moderate_06_fr: pos41=743.0, pos70=588.4, pos28=537.2
+    moderate_07_es: pos60=670.2, pos57=435.4, pos54=320.4
+    moderate_07_fr: pos7=727.2, pos81=318.0
+    moderate_08_es: pos26=844.4, pos52=532.4, pos36=478.8
+    moderate_08_fr: pos71=756.7, pos58=721.8, pos54=534.3
+    moderate_09_es: pos39=798.7, pos41=408.0, pos44=362.4
+    moderate_09_fr: pos44=844.5, pos36=724.3, pos41=696.0
+    moderate_10_es: pos38=617.8, pos52=545.2, pos47=533.1
+    moderate_10_fr: pos13=777.5, pos36=671.7, pos35=568.4
+    strong_01_es: pos40=769.2, pos28=390.4, pos58=379.4
+    strong_01_fr: pos46=492.3, pos71=409.8, pos31=300.4
+    strong_02_es: pos16=1283.0, pos29=995.8, pos46=391.4
+    strong_02_fr: pos26=1181.9, pos38=374.7, pos57=369.4
+    strong_03_es: pos18=396.0, pos3=346.5
+    strong_03_fr: pos3=656.7, pos15=558.7, pos50=316.4
+    strong_04_es: pos63=478.6, pos18=323.1, pos49=277.0
+    strong_04_fr: pos75=358.0, pos20=325.2, pos53=305.3
+    strong_05_es: pos15=704.8
+    strong_05_fr: pos48=699.6, pos17=523.6
+    strong_06_es: pos55=525.5, pos61=441.9, pos8=396.4
+    strong_06_fr: pos62=418.7, pos39=412.3, pos55=400.8
+    strong_07_es: pos25=795.4, pos68=600.4, pos52=553.5
+    strong_07_fr: pos68=851.8, pos58=721.2, pos74=712.3
+    strong_08_es: pos5=1366.0, pos50=724.2, pos60=702.1
+    strong_08_fr: pos6=987.7, pos47=661.7, pos71=597.1
+    strong_09_es: pos36=608.9, pos65=579.4, pos59=526.7
+    strong_09_fr: pos52=735.9, pos66=604.1, pos56=524.7
+    strong_10_es: pos13=887.4, pos37=507.6, pos26=408.7
+    strong_10_fr: pos18=639.7, pos8=387.8, pos41=345.5
+    strong_11_es: pos41=487.5, pos24=464.0, pos11=461.9
+    strong_11_fr: pos59=562.0, pos77=513.9, pos54=486.1
+    strong_12_es: pos46=1124.1, pos25=558.8, pos20=404.7
+    strong_12_fr: pos40=919.9, pos19=528.0, pos13=334.4
+    [LW] cross_02: pos14=1534.3, pos75=1224.6, pos5=311.9
+    [LW] cross_03a: pos63=933.5, pos39=926.3, pos12=870.0
+    [NAT] cross_03b: pos40=985.3, pos64=899.9, pos42=516.2
+    [LW] cross_04: pos44=838.9, pos10=655.5, pos16=593.2
+    [LW] cross_05: pos11=940.2, pos34=597.3, pos50=528.2
+    [LW] cross_07: pos41=855.3, pos95=850.7, pos47=832.5
+    [LW] cross_09: pos21=1097.2, pos42=803.5, pos55=565.8
+    [LW] cross_10: pos8=656.7, pos71=627.9, pos55=562.1
+    [LW] cross_12: pos40=703.3, pos60=693.5, pos73=588.1
+
+  Feature 5085 (rate=100%, other=44%):
+    neutral_01_es: pos53=962.0, pos54=699.4, pos20=550.3
+    neutral_01_fr: pos62=563.9, pos26=282.8
+    neutral_02_es: pos34=488.0
+    neutral_02_fr: pos16=259.4, pos21=247.4
+    neutral_03_es: pos47=951.2, pos45=423.2, pos11=382.9
+    neutral_03_fr: pos51=580.8, pos47=479.7, pos44=406.5
+    neutral_04_es: pos21=336.9, pos24=326.7, pos51=313.8
+    neutral_04_fr: pos15=329.2, pos2=260.7
+    neutral_05_es: pos43=293.3
+    neutral_06_es: pos3=565.2, pos53=563.8, pos11=548.9
+    neutral_06_fr: pos5=455.6, pos14=340.6
+    neutral_07_es: pos29=314.4
+    neutral_07_fr: pos35=398.3, pos61=256.5, pos26=245.8
+    neutral_08_es: pos55=852.1, pos43=486.8, pos47=430.3
+    neutral_08_fr: pos56=675.0, pos45=302.8, pos14=288.0
+    neutral_09_es: pos35=687.0, pos16=577.5, pos38=530.4
+    neutral_09_fr: pos41=537.7, pos44=439.8, pos19=356.9
+    neutral_10_es: pos30=937.5, pos18=405.9, pos52=383.9
+    moderate_01_es: pos8=658.1, pos20=620.6, pos38=376.1
+    moderate_01_fr: pos12=510.7, pos28=345.0
+    moderate_02_es: pos20=1075.7, pos40=813.0, pos7=718.2
+    moderate_02_fr: pos1=463.9, pos10=310.0
+    moderate_03_es: pos43=617.3, pos46=451.4, pos24=418.6
+    moderate_03_fr: pos43=563.3, pos61=447.9, pos34=406.7
+    moderate_04_es: pos6=590.5, pos43=463.0, pos39=453.0
+    moderate_04_fr: pos5=477.3, pos32=371.7, pos22=310.7
+    moderate_05_es: pos35=1187.4, pos45=342.9, pos37=314.7
+    moderate_06_es: pos62=703.7, pos20=680.4, pos8=384.1
+    moderate_06_fr: pos12=486.8, pos70=453.6, pos14=413.5
+    moderate_07_es: pos54=505.6, pos3=450.0, pos23=449.7
+    moderate_07_fr: pos67=373.3
+    moderate_08_es: pos36=684.9, pos39=569.9, pos49=417.0
+    moderate_08_fr: pos39=320.2
+    moderate_09_es: pos43=668.7, pos3=642.6, pos35=496.2
+    moderate_09_fr: pos46=509.8, pos2=357.5
+    moderate_10_es: pos47=522.8, pos5=381.4, pos41=346.1
+    moderate_10_fr: pos39=345.0, pos35=316.2, pos36=268.7
+    strong_01_es: pos59=315.1
+    strong_01_fr: pos69=255.1
+    strong_02_es: pos24=352.6
+    strong_02_fr: pos28=276.3
+    strong_03_es: pos60=1077.8, pos56=631.2, pos55=577.0
+    strong_03_fr: pos15=526.3, pos55=391.3, pos3=244.0
+    strong_04_es: pos44=520.9, pos18=368.1, pos63=255.2
+    strong_04_fr: pos20=369.1, pos53=354.6
+    strong_05_es: pos15=372.6
+    strong_05_fr: pos16=393.6
+    strong_06_es: pos31=605.7, pos24=458.2, pos21=342.4
+    strong_06_fr: pos30=496.3
+    strong_07_es: pos55=415.1, pos40=337.3, pos23=262.5
+    strong_08_es: pos41=761.0, pos19=522.2, pos63=345.3
+    strong_08_fr: pos39=673.1, pos65=291.8, pos20=266.8
+    strong_09_es: pos46=1140.7, pos65=623.3, pos59=312.3
+    strong_09_fr: pos62=512.6, pos81=487.1, pos85=427.7
+    strong_10_es: pos26=519.9, pos37=509.5, pos21=459.7
+    strong_10_fr: pos31=596.9, pos27=402.1
+    strong_11_es: pos33=578.1, pos36=539.6, pos29=404.1
+    strong_11_fr: pos16=451.8, pos46=402.2, pos47=378.6
+    strong_12_es: pos24=572.7, pos20=407.0
+    strong_12_fr: pos13=249.6
+    [LW] cross_02: pos5=612.3, pos22=584.1, pos47=313.6
+    [LW] cross_03a: pos23=695.5, pos53=365.0, pos64=313.8
+    [NAT] cross_03b: pos25=616.9, pos54=377.3, pos1=306.4
+    [LW] cross_04: pos57=331.7
+    [LW] cross_05: pos65=459.3, pos34=379.8, pos50=369.4
+    [LW] cross_07: pos77=531.5, pos55=403.3, pos1=305.6
+    [LW] cross_09: pos80=521.6
+    [LW] cross_10: pos43=918.6, pos15=740.3, pos31=700.9
+    [LW] cross_12: pos73=732.5, pos33=579.1, pos15=418.3
+
+  Feature 7734 (rate=100%, other=11%):
+    neutral_01_es: pos10=949.8, pos24=844.4, pos60=680.3
+    neutral_01_fr: pos12=303.1
+    neutral_02_es: pos31=713.1, pos51=568.4
+    neutral_03_es: pos51=986.4, pos38=771.7, pos16=587.8
+    neutral_04_es: pos45=1080.6, pos17=1022.2, pos63=809.7
+    neutral_05_es: pos24=967.3, pos61=835.7, pos53=344.6
+    neutral_06_es: pos26=905.6, pos59=782.3, pos47=262.1
+    neutral_07_es: pos39=975.4, pos62=850.9, pos50=447.0
+    neutral_07_fr: pos45=357.1
+    neutral_08_es: pos25=839.2, pos58=558.0, pos6=406.5
+    neutral_09_es: pos11=960.2, pos41=830.9, pos60=627.1
+    neutral_10_es: pos35=1053.9, pos53=789.8
+    neutral_10_fr: pos43=319.5
+    moderate_01_es: pos58=900.0, pos12=862.2, pos35=803.7
+    moderate_02_es: pos13=753.1, pos42=734.1
+    moderate_03_es: pos31=752.7, pos49=738.7, pos35=429.7
+    moderate_04_es: pos48=798.4, pos10=654.7, pos34=366.2
+    moderate_05_es: pos13=881.3, pos55=777.6, pos28=646.4
+    moderate_06_es: pos55=692.9, pos65=564.6
+    moderate_07_es: pos13=929.4, pos62=765.8, pos30=490.6
+    moderate_08_es: pos43=611.8, pos12=605.8, pos64=512.1
+    moderate_09_es: pos14=883.2, pos26=756.4, pos53=647.8
+    moderate_10_es: pos44=770.9, pos16=690.8, pos66=623.8
+    strong_01_es: pos62=718.2, pos29=627.6
+    strong_02_es: pos27=764.1, pos59=685.7, pos8=654.1
+    strong_02_fr: pos11=283.9
+    strong_03_es: pos27=812.5, pos53=588.2, pos65=493.7
+    strong_04_es: pos40=873.9, pos69=555.0, pos49=403.0
+    strong_05_es: pos48=731.0, pos67=462.5
+    strong_06_es: pos45=903.7, pos12=901.2, pos67=684.3
+    strong_06_fr: pos43=279.5
+    strong_07_es: pos41=823.2, pos75=690.1, pos12=677.8
+    strong_07_fr: pos13=569.9, pos46=292.3
+    strong_08_es: pos74=818.3, pos55=807.7, pos34=739.1
+    strong_09_es: pos17=935.6, pos55=794.8, pos71=727.1
+    strong_09_fr: pos27=277.9
+    strong_10_es: pos9=710.6, pos29=674.8, pos38=652.5
+    strong_11_es: pos38=728.5, pos66=571.8, pos10=519.7
+    strong_12_es: pos30=794.5, pos68=702.9
+    [LW] cross_02: pos19=924.2, pos53=811.3, pos79=611.2
+    [LW] cross_04: pos37=811.4, pos73=694.1, pos53=408.7
+    [LW] cross_10: pos56=706.1, pos73=624.1, pos13=549.7
+    [LW] cross_12: pos44=633.8, pos80=566.2, pos20=515.8
+
+  Feature 11399 (rate=100%, other=48%):
+    neutral_01_es: pos13=448.8, pos48=368.9, pos56=269.5
+    neutral_01_fr: pos15=491.8, pos56=320.2, pos55=306.6
+    neutral_02_es: pos33=482.4, pos31=287.3
+    neutral_02_fr: pos38=572.8, pos47=466.6, pos46=218.4
+    neutral_03_es: pos13=889.9, pos48=777.2, pos14=762.6
+    neutral_03_fr: pos13=965.5, pos51=821.9, pos11=706.7
+    neutral_04_es: pos21=514.0, pos45=330.8, pos56=310.7
+    neutral_04_fr: pos54=498.1, pos29=468.2, pos15=428.4
+    neutral_05_es: pos27=551.2, pos8=489.5, pos26=469.1
+    neutral_05_fr: pos12=706.5, pos14=663.7, pos41=656.4
+    neutral_06_es: pos48=352.3, pos28=305.5, pos45=285.3
+    neutral_06_fr: pos35=523.8, pos36=440.4, pos58=367.8
+    neutral_07_es: pos62=229.1, pos29=220.5, pos39=216.9
+    neutral_08_es: pos4=323.4, pos36=285.5, pos55=283.3
+    neutral_08_fr: pos3=517.1, pos31=413.8, pos2=355.0
+    neutral_09_es: pos54=391.2, pos17=299.0, pos40=284.0
+    neutral_09_fr: pos35=525.8, pos21=452.0, pos46=419.9
+    neutral_10_es: pos50=546.5, pos20=397.0, pos21=329.5
+    neutral_10_fr: pos66=726.1, pos28=357.4, pos41=295.0
+    moderate_01_es: pos47=380.8, pos17=327.3, pos56=292.8
+    moderate_01_fr: pos57=412.7, pos6=408.0, pos24=345.9
+    moderate_02_es: pos25=255.2
+    moderate_02_fr: pos33=447.5, pos35=435.5, pos29=350.6
+    moderate_03_es: pos13=368.9, pos14=264.4
+    moderate_03_fr: pos64=312.6, pos47=285.1, pos55=284.3
+    moderate_04_es: pos45=530.1, pos31=343.4, pos9=313.1
+    moderate_04_fr: pos64=546.2, pos47=462.5, pos7=447.7
+    moderate_05_es: pos47=334.3, pos17=333.6, pos5=290.7
+    moderate_05_fr: pos50=566.4, pos25=464.4, pos26=442.2
+    moderate_06_es: pos58=251.3
+    moderate_06_fr: pos65=297.3, pos66=272.5
+    moderate_07_es: pos45=495.9, pos34=406.7, pos40=268.8
+    moderate_07_fr: pos42=417.5, pos83=268.3, pos52=261.3
+    moderate_08_es: pos9=398.9, pos41=344.6, pos50=286.3
+    moderate_08_fr: pos12=585.4, pos5=443.6, pos6=322.0
+    moderate_09_es: pos31=567.2, pos50=331.4, pos52=319.0
+    moderate_09_fr: pos20=576.1, pos31=496.0, pos9=449.8
+    moderate_10_es: pos40=485.4, pos41=255.0
+    moderate_10_fr: pos38=563.4, pos7=326.9, pos39=319.2
+    strong_01_es: pos39=255.3
+    strong_01_fr: pos44=391.8, pos15=373.9, pos45=311.9
+    strong_02_es: pos10=356.1, pos45=352.0, pos12=343.0
+    strong_02_fr: pos55=485.2, pos17=406.7, pos15=371.5
+    strong_03_es: pos30=424.2, pos42=323.3, pos15=233.8
+    strong_03_fr: pos38=521.5, pos24=429.7, pos45=381.6
+    strong_04_es: pos10=683.9, pos13=601.8, pos12=339.5
+    strong_04_fr: pos6=599.2, pos71=525.7, pos69=483.7
+    strong_05_es: pos2=266.0, pos59=220.0
+    strong_05_fr: pos2=398.3, pos6=237.0
+    strong_06_es: pos36=504.2, pos32=407.5, pos14=401.2
+    strong_06_fr: pos35=663.2, pos50=509.2, pos31=435.4
+    strong_07_es: pos30=351.2, pos15=337.3, pos34=245.2
+    strong_07_fr: pos35=364.9, pos62=313.9, pos30=281.9
+    strong_08_es: pos66=448.2, pos3=319.3, pos57=309.1
+    strong_08_fr: pos31=528.8, pos76=510.4, pos33=476.5
+    strong_09_es: pos46=427.7, pos59=348.0, pos60=321.3
+    strong_09_fr: pos83=524.2, pos38=474.5, pos39=403.3
+    strong_10_es: pos56=299.8, pos54=291.4, pos32=265.6
+    strong_10_fr: pos37=353.5, pos3=349.4, pos71=346.0
+    strong_11_es: pos44=279.1, pos18=264.6, pos51=247.8
+    strong_11_fr: pos49=584.3, pos80=558.1, pos59=380.0
+    strong_12_es: pos36=352.9, pos8=284.1, pos4=247.3
+    strong_12_fr: pos29=356.9, pos28=288.3, pos39=273.9
+    [LW] cross_02: pos40=387.0, pos47=383.5, pos31=317.8
+    [LW] cross_03a: pos57=429.3, pos67=363.7, pos21=347.2
+    [NAT] cross_03b: pos58=414.0, pos68=323.8, pos23=322.6
+    [LW] cross_04: pos2=237.6
+    [LW] cross_05: pos30=351.2, pos5=317.4, pos80=207.3
+    [LW] cross_07: pos52=677.4, pos51=327.5, pos88=230.8
+    [LW] cross_09: pos63=599.9, pos68=545.5, pos53=526.6
+    [LW] cross_10: pos58=398.0, pos54=333.2, pos23=304.0
+    [LW] cross_12: pos12=331.8, pos64=265.8, pos4=247.3
+
+  === FR-specific features ===
+
+  Feature 959 (rate=100%, other=47%):
+    neutral_01_es: pos1=381.2, pos51=367.7
+    neutral_01_fr: pos34=343.9
+    neutral_02_es: pos4=318.6, pos2=226.8
+    neutral_02_fr: pos43=335.1, pos6=300.8, pos1=235.0
+    neutral_03_es: pos1=378.7, pos2=259.0
+    neutral_03_fr: pos1=378.7, pos48=262.5, pos26=218.2
+    neutral_04_es: pos1=381.2, pos10=228.7
+    neutral_04_fr: pos19=229.8, pos12=209.8
+    neutral_05_fr: pos3=330.2, pos58=237.0, pos1=231.2
+    neutral_06_es: pos1=266.4
+    neutral_06_fr: pos54=298.2
+    neutral_07_es: pos1=381.2, pos33=315.0, pos34=281.9
+    neutral_07_fr: pos40=411.1, pos19=372.9, pos41=349.4
+    neutral_08_es: pos51=208.8
+    neutral_08_fr: pos22=319.6, pos10=298.5, pos39=291.0
+    neutral_09_en: pos38=256.5, pos1=244.8
+    neutral_09_fr: pos15=474.8, pos62=373.8
+    neutral_10_es: pos25=236.8, pos24=222.2
+    neutral_10_fr: pos55=324.6, pos4=232.6, pos32=216.5
+    moderate_01_es: pos1=267.4, pos25=251.8, pos19=216.3
+    moderate_01_fr: pos19=267.2, pos2=244.6
+    moderate_02_fr: pos27=223.3
+    moderate_03_en: pos1=209.3
+    moderate_03_es: pos1=266.4
+    moderate_03_fr: pos8=300.1, pos24=221.5
+    moderate_04_es: pos1=266.4
+    moderate_04_fr: pos29=325.6, pos13=281.3, pos26=208.5
+    moderate_05_fr: pos15=235.3, pos6=228.5
+    moderate_06_es: pos35=325.9
+    moderate_06_fr: pos9=363.0, pos17=323.2, pos48=275.0
+    moderate_07_en: pos20=541.5, pos15=259.2
+    moderate_07_fr: pos40=317.7, pos49=264.6, pos57=261.6
+    moderate_08_es: pos1=262.7, pos25=255.6
+    moderate_08_fr: pos44=354.9, pos59=292.5, pos2=244.6
+    moderate_09_en: pos31=243.1
+    moderate_09_fr: pos60=380.3, pos1=238.5
+    moderate_10_es: pos51=288.0, pos1=265.1
+    moderate_10_fr: pos50=432.2, pos67=308.8, pos30=271.5
+    strong_01_es: pos52=300.3
+    strong_01_fr: pos60=369.9, pos25=345.8
+    strong_02_en: pos34=274.5
+    strong_02_fr: pos25=315.6, pos7=314.0, pos18=298.9
+    strong_03_fr: pos25=225.4, pos30=223.2, pos54=214.6
+    strong_04_fr: pos28=407.6, pos65=338.5, pos74=276.5
+    strong_05_es: pos30=249.2
+    strong_05_fr: pos42=286.4
+    strong_06_en: pos1=213.3
+    strong_06_es: pos64=213.4
+    strong_06_fr: pos9=254.8
+    strong_07_en: pos3=219.1, pos2=210.3
+    strong_07_fr: pos83=391.0, pos41=383.6, pos9=267.5
+    strong_08_es: pos72=216.6
+    strong_08_fr: pos1=231.2, pos13=215.8
+    strong_09_en: pos56=248.5, pos29=235.7, pos10=230.6
+    strong_09_fr: pos18=235.6, pos23=218.9
+    strong_10_es: pos22=296.6, pos25=219.3
+    strong_10_fr: pos50=255.6
+    strong_11_en: pos1=365.6, pos2=228.1
+    strong_11_es: pos1=265.1, pos35=261.1
+    strong_11_fr: pos35=323.7, pos68=259.4
+    strong_12_en: pos4=290.2, pos6=241.2
+    strong_12_fr: pos48=294.4, pos15=275.1
+    [LW] cross_02: pos41=261.7
+    [LW] cross_06a: pos16=212.7
+    [LW] cross_07: pos78=432.5, pos82=354.1, pos4=295.8
+    [LW] cross_08a: pos41=268.3, pos20=262.2
+    [NAT] cross_08b: pos20=222.8
+    [LW] cross_09: pos81=319.2, pos16=284.2, pos1=231.2
+    [LW] cross_10: pos54=216.2
+    [NAT] cross_11b: pos33=229.0, pos32=208.4
+    [LW] cross_12: pos14=221.7
+
+  Feature 1207 (rate=100%, other=14%):
+    neutral_01_fr: pos17=2669.1, pos24=2525.8, pos59=2518.5
+    neutral_02_fr: pos46=2878.8, pos47=2599.8, pos36=2513.7
+    neutral_03_fr: pos33=2667.5, pos48=2485.0, pos39=2469.6
+    neutral_04_fr: pos11=2766.2, pos17=2637.8, pos39=2636.3
+    neutral_05_fr: pos8=2613.3, pos62=2541.8, pos37=2475.8
+    neutral_06_es: pos39=203.1
+    neutral_06_fr: pos57=2766.2, pos60=2688.8, pos36=2628.7
+    neutral_07_fr: pos59=2679.6, pos58=2618.2, pos54=2555.8
+    neutral_08_fr: pos54=2897.4, pos42=2620.5, pos49=2527.3
+    neutral_09_es: pos1=280.7, pos2=270.3
+    neutral_09_fr: pos39=2974.5, pos40=2853.7, pos57=2783.2
+    neutral_10_es: pos1=244.9
+    neutral_10_fr: pos17=2811.2, pos63=2786.6, pos43=2594.2
+    moderate_01_fr: pos45=2858.5, pos65=2850.3, pos11=2793.2
+    moderate_02_fr: pos9=2886.3, pos8=2853.8, pos37=2845.1
+    moderate_03_fr: pos59=2970.6, pos29=2849.1, pos13=2838.5
+    moderate_04_fr: pos55=3079.7, pos60=2974.6, pos41=2604.2
+    moderate_05_fr: pos23=2956.1, pos38=2900.2, pos61=2684.8
+    moderate_06_fr: pos68=2976.1, pos67=2856.4, pos70=2813.7
+    moderate_07_fr: pos65=3217.9, pos64=2762.7, pos77=2745.0
+    moderate_08_fr: pos69=3065.8, pos37=2958.4, pos55=2888.5
+    moderate_09_fr: pos34=3096.4, pos27=3058.8, pos53=3008.5
+    moderate_10_fr: pos43=3171.2, pos33=2921.1, pos23=2888.0
+    strong_01_es: pos1=280.7, pos5=196.2
+    strong_01_fr: pos39=3093.3, pos29=2821.0, pos16=2787.1
+    strong_02_fr: pos22=2834.5, pos6=2682.9, pos26=2665.5
+    strong_03_es: pos3=390.7, pos2=196.6
+    strong_03_fr: pos53=2781.7, pos35=2764.4, pos40=2705.3
+    strong_04_fr: pos18=2881.4, pos57=2808.4, pos73=2792.8
+    strong_05_fr: pos58=2810.3, pos54=2731.8, pos62=2616.4
+    strong_06_en: pos12=343.2, pos13=225.3
+    strong_06_es: pos8=441.2, pos16=282.6, pos2=269.3
+    strong_06_fr: pos29=2972.3, pos7=2776.7, pos37=2710.6
+    strong_07_es: pos1=261.0
+    strong_07_fr: pos44=2951.6, pos35=2711.2, pos36=2706.7
+    strong_08_fr: pos67=2841.2, pos6=2741.3, pos40=2690.5
+    strong_09_fr: pos65=2780.4, pos84=2749.4, pos80=2704.7
+    strong_10_fr: pos48=2754.9, pos38=2751.7, pos5=2735.3
+    strong_11_fr: pos58=3117.9, pos56=2930.7, pos22=2869.0
+    strong_12_en: pos31=520.2, pos30=452.2, pos29=299.2
+    strong_12_fr: pos39=2563.1, pos6=2469.3, pos12=2464.1
+    [LW] cross_02: pos48=392.0, pos30=357.0, pos41=349.1
+    [LW] cross_03a: pos61=2986.9, pos33=2848.6, pos60=2806.4
+    [NAT] cross_03b: pos62=2949.7, pos35=2855.7, pos38=2775.6
+    [LW] cross_05: pos63=2972.6, pos32=2872.7, pos30=2871.5
+    [LW] cross_06a: pos18=333.8, pos17=303.7, pos16=231.8
+    [LW] cross_07: pos66=3071.0, pos16=2763.6, pos53=2760.0
+    [LW] cross_09: pos19=3339.8, pos28=3105.9, pos30=3077.2
+
+  Feature 1536 (rate=100%, other=38%):
+    neutral_01_fr: pos5=357.2, pos13=304.1, pos43=288.3
+    neutral_02_es: pos29=216.2
+    neutral_02_fr: pos52=418.0, pos2=316.3, pos17=298.8
+    neutral_03_fr: pos50=302.5, pos54=290.9, pos23=273.2
+    neutral_04_es: pos14=187.2
+    neutral_04_fr: pos6=300.9, pos4=269.9, pos3=212.6
+    neutral_05_fr: pos59=406.6, pos58=373.3, pos28=339.7
+    neutral_06_es: pos15=246.7, pos50=211.3, pos37=188.1
+    neutral_06_fr: pos67=300.8, pos61=261.6, pos44=226.2
+    neutral_07_es: pos58=238.9
+    neutral_07_fr: pos19=309.9, pos64=294.5, pos60=280.3
+    neutral_08_fr: pos32=449.9, pos10=323.0, pos46=291.8
+    neutral_09_fr: pos53=329.2, pos68=207.4, pos47=189.0
+    neutral_10_fr: pos2=321.2, pos33=271.3, pos10=266.7
+    moderate_01_en: pos40=327.9, pos35=235.6, pos39=217.3
+    moderate_01_es: pos46=314.3, pos52=281.4, pos45=247.4
+    moderate_01_fr: pos55=710.4, pos54=585.5, pos50=532.2
+    moderate_02_fr: pos1=472.5, pos47=350.7, pos35=346.6
+    moderate_03_en: pos36=242.7, pos41=217.8, pos5=187.9
+    moderate_03_fr: pos7=642.9, pos47=578.9, pos49=432.5
+    moderate_04_fr: pos33=631.2, pos32=570.6, pos23=540.8
+    moderate_05_fr: pos13=378.4, pos47=270.0, pos15=256.3
+    moderate_06_es: pos18=214.3
+    moderate_06_fr: pos18=606.9, pos19=519.3, pos4=496.3
+    moderate_07_fr: pos23=484.6, pos25=471.2, pos26=422.9
+    moderate_08_es: pos28=184.6
+    moderate_08_fr: pos16=444.3, pos30=435.1, pos22=409.9
+    moderate_09_fr: pos17=292.9, pos40=289.9, pos38=276.2
+    moderate_10_fr: pos63=506.6, pos3=460.0, pos67=327.7
+    strong_01_fr: pos11=443.6, pos62=405.1, pos72=321.5
+    strong_02_en: pos12=182.3
+    strong_02_es: pos32=457.3
+    strong_02_fr: pos41=641.1, pos43=337.8, pos27=333.4
+    strong_03_en: pos24=1212.3, pos23=1153.4, pos20=1076.9
+    strong_03_es: pos31=1050.8, pos33=756.0, pos10=695.7
+    strong_03_fr: pos28=896.7, pos27=870.6, pos45=783.5
+    strong_04_en: pos20=189.4
+    strong_04_fr: pos35=431.2, pos37=414.2, pos45=403.1
+    strong_05_fr: pos61=489.6, pos2=472.1, pos3=393.6
+    strong_06_en: pos12=1293.0, pos39=1015.5, pos6=1010.5
+    strong_06_es: pos44=1002.0, pos15=937.3, pos13=905.9
+    strong_06_fr: pos51=1065.9, pos32=920.0, pos16=875.0
+    strong_07_en: pos45=354.7, pos44=352.0, pos41=274.7
+    strong_07_es: pos62=206.6
+    strong_07_fr: pos61=535.8, pos60=529.1, pos26=527.9
+    strong_08_fr: pos58=373.9, pos2=316.6, pos49=296.3
+    strong_09_en: pos30=200.7
+    strong_09_fr: pos78=388.4, pos20=265.2, pos88=260.2
+    strong_10_en: pos2=1101.4, pos14=704.4, pos24=584.4
+    strong_10_es: pos3=775.0, pos4=690.5, pos58=438.2
+    strong_10_fr: pos10=870.3, pos3=741.9, pos11=718.8
+    strong_11_en: pos2=320.8, pos7=287.6, pos8=197.2
+    strong_11_fr: pos8=463.7, pos12=455.2, pos7=408.4
+    strong_12_en: pos28=1763.2, pos27=1717.5, pos49=1704.3
+    strong_12_es: pos38=1645.1, pos66=1570.6, pos61=1147.2
+    strong_12_fr: pos62=1382.1, pos58=1317.1, pos32=1246.3
+    [LW] cross_01a: pos5=245.4, pos8=234.7, pos54=226.1
+    [LW] cross_02: pos44=1443.8, pos41=1256.9, pos51=1244.2
+    [LW] cross_03a: pos27=382.6, pos29=337.1, pos3=328.9
+    [NAT] cross_03b: pos6=507.5, pos7=448.8, pos29=376.3
+    [LW] cross_05: pos69=459.0, pos4=459.0, pos6=386.7
+    [LW] cross_06a: pos17=1225.4, pos16=1047.5, pos18=995.4
+    [NAT] cross_06b: pos17=1134.7, pos50=793.4, pos42=727.1
+    [LW] cross_07: pos5=590.5, pos34=556.5, pos4=547.7
+    [LW] cross_08a: pos8=248.3, pos16=211.6, pos52=194.6
+    [NAT] cross_08b: pos10=200.6, pos7=188.5
+    [LW] cross_09: pos15=498.0, pos2=316.6, pos23=298.7
+    [LW] cross_10: pos27=1405.5, pos28=1326.7, pos5=787.6
+    [LW] cross_12: pos28=912.6, pos56=819.6, pos54=702.7
+
+  Feature 3201 (rate=100%, other=6%):
+    neutral_01_fr: pos10=786.1, pos43=742.7, pos9=696.7
+    neutral_02_fr: pos8=1079.2, pos12=956.7, pos50=949.6
+    neutral_03_fr: pos29=900.0, pos41=885.2, pos36=785.6
+    neutral_04_fr: pos37=885.4, pos47=840.6, pos43=822.4
+    neutral_05_fr: pos32=946.0, pos60=873.4, pos17=817.9
+    neutral_06_fr: pos43=1163.3, pos38=886.2, pos68=743.0
+    neutral_07_fr: pos62=1124.0, pos41=1076.9, pos7=931.7
+    neutral_08_fr: pos50=1002.8, pos27=998.5, pos26=891.7
+    neutral_09_es: pos1=328.6
+    neutral_09_fr: pos29=1032.1, pos52=1007.8, pos13=782.5
+    neutral_10_fr: pos32=1064.9, pos2=965.7, pos44=960.0
+    moderate_01_fr: pos36=975.1, pos20=921.5, pos59=859.3
+    moderate_02_fr: pos40=1255.9, pos45=1163.6, pos20=1118.2
+    moderate_03_fr: pos44=1313.3, pos16=1201.4, pos58=1197.4
+    moderate_04_fr: pos33=1209.0, pos52=1137.7, pos58=919.3
+    moderate_05_fr: pos16=972.0, pos30=895.0, pos20=891.3
+    moderate_06_fr: pos22=1211.6, pos71=1203.9, pos35=1188.3
+    moderate_07_fr: pos9=1073.9, pos33=1048.7, pos41=997.7
+    moderate_08_fr: pos48=1262.8, pos64=1116.7, pos30=1052.1
+    moderate_09_fr: pos33=1069.3, pos13=995.8, pos14=983.2
+    moderate_10_fr: pos48=1256.0, pos28=1225.7, pos16=1162.9
+    strong_01_es: pos1=328.6, pos51=225.3
+    strong_01_fr: pos32=1256.5, pos59=1102.2, pos22=950.2
+    strong_02_fr: pos58=1293.6, pos19=1069.0, pos60=921.3
+    strong_03_fr: pos56=1105.3, pos41=1076.8, pos9=1060.6
+    strong_04_fr: pos77=1359.0, pos78=1141.2, pos51=1031.7
+    strong_05_fr: pos59=1083.2, pos55=946.2, pos7=929.1
+    strong_06_es: pos1=319.5
+    strong_06_fr: pos64=1271.8, pos57=1246.3, pos59=1050.2
+    strong_07_es: pos1=319.5
+    strong_07_fr: pos38=1289.8, pos37=1136.7, pos70=1068.9
+    strong_08_fr: pos54=1010.3, pos36=988.1, pos42=841.1
+    strong_09_fr: pos5=981.4, pos48=848.1, pos43=825.5
+    strong_10_fr: pos32=1116.4, pos59=1082.2, pos19=801.6
+    strong_11_fr: pos40=1005.0, pos74=949.0, pos6=916.0
+    strong_12_fr: pos45=1003.5, pos33=957.9, pos53=935.7
+    [LW] cross_02: pos33=390.0, pos28=240.1
+    [LW] cross_03a: pos14=1012.9, pos58=987.8, pos2=897.8
+    [NAT] cross_03b: pos17=1041.7, pos59=1001.0, pos44=949.6
+    [LW] cross_05: pos12=1156.1, pos81=1004.9, pos77=976.9
+    [LW] cross_07: pos56=1137.9, pos17=1069.5, pos20=1042.6
+    [LW] cross_09: pos75=1058.5, pos22=948.4, pos77=896.1
+
+  Feature 3357 (rate=100%, other=2%):
+    neutral_01_fr: pos17=1043.1, pos60=823.6, pos59=703.9
+    neutral_02_fr: pos26=1015.6, pos20=882.7, pos25=759.1
+    neutral_03_fr: pos45=1116.1, pos43=951.2, pos5=869.2
+    neutral_04_fr: pos33=1080.1, pos9=1001.7, pos17=856.0
+    neutral_05_fr: pos72=1213.2, pos71=1176.2, pos49=921.0
+    neutral_06_fr: pos56=1101.4, pos60=1030.3, pos57=576.1
+    neutral_07_fr: pos59=1199.4, pos31=1116.6, pos32=1105.7
+    neutral_08_fr: pos44=1214.4, pos48=1114.2, pos42=887.0
+    neutral_09_fr: pos17=1355.0, pos23=1322.4, pos40=1287.0
+    neutral_10_fr: pos67=1207.2, pos64=958.6, pos68=930.4
+    moderate_01_fr: pos11=1433.9, pos26=1115.0, pos40=1084.1
+    moderate_02_es: pos39=241.3
+    moderate_02_fr: pos49=1471.0, pos9=1426.2, pos23=1370.0
+    moderate_03_fr: pos33=1527.7, pos41=1495.5, pos26=1463.3
+    moderate_04_fr: pos41=1340.5, pos30=1130.5, pos60=1099.6
+    moderate_05_fr: pos36=1310.4, pos33=1199.3, pos32=1188.3
+    moderate_06_fr: pos11=1611.7, pos67=1345.2, pos68=1276.7
+    moderate_07_fr: pos65=1229.8, pos77=974.7, pos80=911.7
+    moderate_08_fr: pos37=1473.5, pos7=1439.5, pos70=1408.4
+    moderate_09_fr: pos37=1364.2, pos43=1358.4, pos45=1180.6
+    moderate_10_fr: pos44=1516.3, pos52=1491.5, pos53=1433.2
+    strong_01_fr: pos40=1302.1, pos56=1297.1, pos39=1195.6
+    strong_02_fr: pos24=1085.7, pos22=1074.1, pos56=855.2
+    strong_03_fr: pos14=1202.7, pos54=1117.2, pos33=784.3
+    strong_04_fr: pos18=1346.5, pos73=1155.1, pos74=666.1
+    strong_05_fr: pos46=1097.1, pos15=958.5, pos47=444.4
+    strong_06_fr: pos29=871.5, pos23=814.7, pos37=725.0
+    strong_07_fr: pos44=1352.9, pos43=1261.9, pos67=1207.0
+    strong_08_fr: pos67=1339.0, pos19=1297.5, pos38=1243.7
+    strong_09_fr: pos72=1325.8, pos73=1200.4, pos77=1112.0
+    strong_10_fr: pos13=1458.1, pos38=1383.4, pos39=1378.8
+    strong_11_fr: pos37=1241.0, pos58=1187.5, pos75=1114.8
+    strong_12_fr: pos12=864.1, pos17=707.0, pos38=475.0
+    [LW] cross_03a: pos60=1282.6, pos11=1227.8, pos61=1071.1
+    [NAT] cross_03b: pos61=1304.7, pos38=1123.4, pos62=1090.4
+    [LW] cross_05: pos64=1539.1, pos48=1342.6, pos75=1254.7
+    [LW] cross_07: pos66=1386.4, pos46=1236.0, pos76=1200.2
+    [LW] cross_09: pos85=1663.0, pos79=1580.2, pos83=1433.0
+
+
+=== All analyses complete. Results in results/ ===

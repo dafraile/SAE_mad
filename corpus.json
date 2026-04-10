@@ -1,0 +1,417 @@
+{
+  "metadata": {
+    "description": "Parallel trilingual corpus for SAE feature analysis. LLM-generated, pending human review for naturalness.",
+    "author": "Claude (seed) + David (review)",
+    "version": "0.2-seed",
+    "review_status": "Reviewed",
+    "target": "30-40 parallel triples + 10-15 cross-cultural items"
+  },
+  "parallel_triples": [
+    {
+      "id": "neutral_01",
+      "topic": "gravity",
+      "cultural_weight": "neutral",
+      "text_en": "Objects fall toward the ground because of gravity. In a vacuum, all objects accelerate at the same rate regardless of their mass. This was famously demonstrated on the Moon during the Apollo 15 mission, when a hammer and a feather hit the ground at the same time.",
+      "text_es": "Los objetos caen al suelo por la gravedad. En el vacío, todos aceleran igual sin importar cuánto pesen. Esto se demostró de forma célebre en la Luna durante el Apolo 15, cuando un martillo y una pluma tocaron el suelo al mismo tiempo.",
+      "text_fr": "Les objets tombent au sol à cause de la gravité. Dans le vide, ils accélèrent tous au même rythme, peu importe leur masse. C'est ce qu'a montré de façon spectaculaire la mission Apollo 15 sur la Lune, quand un marteau et une plume ont touché le sol en même temps."
+    },
+    {
+      "id": "neutral_02",
+      "topic": "water_cycle",
+      "cultural_weight": "neutral",
+      "text_en": "Water evaporates from oceans and lakes, rises into the atmosphere, forms clouds, and eventually falls back as rain or snow. This continuous cycle has been operating for billions of years and is essential for all life on Earth.",
+      "text_es": "El agua se evapora de los océanos y lagos, sube a la atmósfera, forma nubes y termina cayendo como lluvia o nieve. Este ciclo lleva miles de millones de años funcionando y es fundamental para toda la vida en la Tierra.",
+      "text_fr": "L'eau s'évapore des océans et des lacs, monte dans l'atmosphère, forme des nuages, puis retombe sous forme de pluie ou de neige. Ce cycle tourne depuis des milliards d'années et reste indispensable à toute vie sur Terre."
+    },
+    {
+      "id": "neutral_03",
+      "topic": "prime_numbers",
+      "cultural_weight": "neutral",
+      "text_en": "A prime number can only be divided evenly by one and itself. The distribution of primes among the integers is one of the deepest mysteries in mathematics, and no formula can predict exactly where the next prime will appear.",
+      "text_es": "Un número primo solo se puede dividir de forma exacta entre uno y sí mismo. La distribución de los primos entre los enteros es uno de los misterios más profundos de las matemáticas, y no existe ninguna fórmula que prediga dónde aparecerá el siguiente.",
+      "text_fr": "Un nombre premier ne se divise que par un et par lui-même. La répartition des nombres premiers parmi les entiers reste l'un des mystères les plus profonds des mathématiques, et aucune formule ne permet de prédire où apparaîtra le prochain."
+    },
+    {
+      "id": "neutral_04",
+      "topic": "human_sleep",
+      "cultural_weight": "neutral",
+      "text_en": "Humans spend roughly a third of their lives sleeping. During sleep, the brain cycles through several stages, including deep sleep and REM sleep, when most dreaming occurs. Chronic sleep deprivation impairs memory, judgment, and immune function.",
+      "text_es": "Los seres humanos pasan más o menos un tercio de su vida durmiendo. Durante el sueño, el cerebro pasa por varias etapas, incluyendo el sueño profundo y el sueño REM, donde ocurre la mayoría de los sueños. La falta crónica de sueño afecta la memoria, el juicio y las defensas del cuerpo.",
+      "text_fr": "On passe environ un tiers de sa vie à dormir. Pendant le sommeil, le cerveau traverse plusieurs phases, dont le sommeil profond et le sommeil paradoxal, où se produisent la plupart des rêves. Le manque chronique de sommeil nuit à la mémoire, au jugement et au système immunitaire."
+    },
+    {
+      "id": "neutral_05",
+      "topic": "pacific_ocean",
+      "cultural_weight": "neutral",
+      "text_en": "The Pacific Ocean is the largest and deepest ocean on Earth, covering more area than all the land surfaces combined. Its deepest point, the Mariana Trench, plunges nearly eleven kilometers below sea level, a depth so extreme that sunlight never reaches it.",
+      "text_es": "El océano Pacífico es el más grande y profundo de la Tierra, y cubre más superficie que todos los continentes juntos. Su punto más hondo, la fosa de las Marianas, baja casi once kilómetros bajo el nivel del mar, una profundidad tan extrema que la luz del sol jamás llega allí.",
+      "text_fr": "L'océan Pacifique est le plus vaste et le plus profond de la planète. Il couvre à lui seul plus de surface que l'ensemble des terres émergées. Son point le plus profond, la fosse des Mariannes, descend à près de onze kilomètres sous le niveau de la mer, si loin que la lumière du soleil n'y parvient jamais."
+    },
+    {
+      "id": "neutral_06",
+      "topic": "photosynthesis",
+      "cultural_weight": "neutral",
+      "text_en": "Plants convert sunlight, water, and carbon dioxide into sugar and oxygen through photosynthesis. This process is the foundation of nearly every food chain on Earth, and the oxygen it produces is what makes the atmosphere breathable for animals.",
+      "text_es": "Las plantas convierten la luz del sol, el agua y el dióxido de carbono en azúcar y oxígeno mediante la fotosíntesis. Este proceso es la base de casi todas las cadenas alimenticias de la Tierra, y el oxígeno que genera es lo que hace respirable la atmósfera para los animales.",
+      "text_fr": "Les plantes transforment la lumière du soleil, l'eau et le dioxyde de carbone en sucre et en oxygène grâce à la photosynthèse. Ce mécanisme est à la base de presque toutes les chaînes alimentaires sur Terre, et l'oxygène qu'il produit est ce qui rend l'atmosphère respirable pour les animaux."
+    },
+    {
+      "id": "neutral_07",
+      "topic": "earthquakes",
+      "cultural_weight": "neutral",
+      "text_en": "Earthquakes happen when tectonic plates shift suddenly along a fault line, releasing energy that travels through the ground as seismic waves. Most earthquakes are too small to feel, but the largest ones can level entire cities in seconds.",
+      "text_es": "Los terremotos ocurren cuando las placas tectónicas se desplazan bruscamente a lo largo de una falla, liberando energía que viaja por el suelo en forma de ondas sísmicas. La mayoría son tan pequeños que ni se sienten, pero los más grandes pueden arrasar ciudades enteras en segundos.",
+      "text_fr": "Les séismes se produisent quand les plaques tectoniques se déplacent brusquement le long d'une faille, libérant de l'énergie qui se propage dans le sol sous forme d'ondes sismiques. La plupart passent inaperçus, mais les plus violents peuvent raser des villes entières en quelques secondes."
+    },
+    {
+      "id": "neutral_08",
+      "topic": "color_of_sky",
+      "cultural_weight": "neutral",
+      "text_en": "The sky appears blue because molecules in the atmosphere scatter short-wavelength blue light more than other colors. At sunset, sunlight travels through more atmosphere, scattering away the blue and leaving the reds and oranges that paint the horizon.",
+      "text_es": "El cielo se ve azul porque las moléculas de la atmósfera dispersan la luz azul de onda corta más que los otros colores. Al atardecer, la luz del sol recorre más atmósfera, lo que dispersa el azul y deja los rojos y naranjas que pintan el horizonte.",
+      "text_fr": "Le ciel paraît bleu parce que les molécules de l'atmosphère diffusent davantage la lumière bleue à courte longueur d'onde que les autres couleurs. Au coucher du soleil, la lumière traverse plus d'atmosphère, ce qui disperse le bleu et laisse les rouges et les oranges colorer l'horizon."
+    },
+    {
+      "id": "neutral_09",
+      "topic": "human_memory",
+      "cultural_weight": "neutral",
+      "text_en": "Human memory is not like a video recording. Every time we recall an event, we reconstruct it from fragments, and the act of remembering can subtly alter the memory itself. This is why eyewitness testimony is far less reliable than people assume.",
+      "text_es": "La memoria humana no funciona como una grabación de video. Cada vez que recordamos algo, lo reconstruimos a partir de fragmentos, y el propio acto de recordar puede alterar sutilmente el recuerdo. Por eso el testimonio de testigos oculares es mucho menos fiable de lo que la gente cree.",
+      "text_fr": "La mémoire humaine ne fonctionne pas comme un enregistrement vidéo. Chaque fois qu'on se rappelle un événement, on le reconstruit à partir de fragments, et l'acte même de se souvenir peut modifier subtilement le souvenir. C'est pourquoi les témoignages oculaires sont bien moins fiables qu'on ne le pense."
+    },
+    {
+      "id": "neutral_10",
+      "topic": "migration_birds",
+      "cultural_weight": "neutral",
+      "text_en": "Many bird species migrate thousands of kilometers each year, navigating by the stars, the Earth's magnetic field, and landmarks they memorized on previous trips. Some species fly nonstop for days over open ocean with no place to rest.",
+      "text_es": "Muchas especies de aves migran miles de kilómetros cada año, orientándose por las estrellas, el campo magnético terrestre y puntos de referencia que memorizaron en viajes anteriores. Algunas especies vuelan sin parar durante días sobre mar abierto, sin ningún lugar donde descansar.",
+      "text_fr": "De nombreuses espèces d'oiseaux migrent sur des milliers de kilomètres chaque année, s'orientant grâce aux étoiles, au champ magnétique terrestre et à des repères mémorisés lors de voyages précédents. Certaines espèces volent sans escale pendant des jours au-dessus de l'océan, sans aucun endroit où se poser."
+    },
+    {
+      "id": "moderate_01",
+      "topic": "bread_baking",
+      "cultural_weight": "moderate",
+      "text_en": "There is something deeply satisfying about baking bread at home. The smell of fresh bread filling the kitchen, the crackle of the crust as it cools. Every culture has its own bread tradition, from sourdough to flatbread to sweet rolls.",
+      "text_es": "Hay algo profundamente satisfactorio en hornear pan en casa. El olor del pan recién hecho que llena la cocina, el crujido de la corteza al enfriarse. Cada cultura tiene su propia tradición panadera, desde el pan de masa madre hasta la tortilla o el pan dulce.",
+      "text_fr": "Il y a quelque chose de profondément satisfaisant à faire son pain soi-même. L'odeur du pain frais qui envahit la cuisine, le craquement de la croûte en refroidissant. Chaque culture a sa tradition boulangère, de la baguette au pain plat en passant par la brioche."
+    },
+    {
+      "id": "moderate_02",
+      "topic": "reading_novels",
+      "cultural_weight": "moderate",
+      "text_en": "Reading a great novel is like living another life for a few hours. The best novels let you inhabit the minds of people completely different from yourself, across time periods and continents you will never visit.",
+      "text_es": "Leer una gran novela es como vivir otra vida durante unas horas. Las mejores novelas te permiten meterte en la cabeza de personas completamente distintas a ti, en épocas y continentes que jamás visitarás.",
+      "text_fr": "Lire un grand roman, c'est comme vivre une autre vie le temps de quelques heures. Les meilleurs romans vous plongent dans l'esprit de gens radicalement différents de vous, à travers des époques et des continents que vous ne visiterez jamais."
+    },
+    {
+      "id": "moderate_03",
+      "topic": "family_meals",
+      "cultural_weight": "moderate",
+      "text_en": "Family meals are about much more than food. They are a daily ritual where people reconnect, share stories, and pass down traditions. In many cultures, the dinner table is where children first learn the art of conversation.",
+      "text_es": "Las comidas en familia son mucho más que comida. Son un ritual diario donde uno se reencuentra, se cuentan historias y se transmiten tradiciones. En muchas culturas, la mesa es donde los niños aprenden por primera vez a conversar.",
+      "text_fr": "Les repas en famille vont bien au-delà de la nourriture. Ce sont des rituels quotidiens où l'on se retrouve, où l'on échange des histoires et où l'on transmet des traditions. Dans beaucoup de cultures, c'est à table que les enfants apprennent l'art de la conversation."
+    },
+    {
+      "id": "moderate_04",
+      "topic": "holiday_traditions",
+      "cultural_weight": "moderate",
+      "text_en": "Holiday traditions give rhythm to the year. Whether it is decorating a tree in December, lighting candles for eight nights, or gathering for a harvest feast, these rituals connect generations and mark the passage of time.",
+      "text_es": "Las tradiciones festivas le dan ritmo al año. Ya sea decorar un árbol en diciembre, encender velas durante ocho noches o reunirse para un banquete de cosecha, estos rituales conectan generaciones y marcan el paso del tiempo.",
+      "text_fr": "Les fêtes et traditions donnent son rythme à l'année. Qu'il s'agisse de décorer un sapin en décembre, d'allumer des bougies pendant huit soirs ou de se rassembler pour un repas de récolte, ces rituels relient les générations et scandent le passage du temps."
+    },
+    {
+      "id": "moderate_05",
+      "topic": "coffee_culture",
+      "cultural_weight": "moderate",
+      "text_en": "Coffee is far more than a caffeine delivery system. In many places, the coffee break is a sacred social ritual. The way coffee is prepared and served reveals something about a culture's relationship with time, conversation, and hospitality.",
+      "text_es": "El café es mucho más que un vehículo para la cafeína. En muchos lugares, la pausa del café es un ritual social sagrado. La forma de prepararlo y servirlo dice mucho sobre la relación de una cultura con el tiempo, la conversación y la hospitalidad.",
+      "text_fr": "Le café est bien plus qu'un simple excitant. Dans beaucoup d'endroits, la pause café est un rituel social sacré. La façon de le préparer et de le servir en dit long sur le rapport d'une culture au temps, à la conversation et à l'hospitalité."
+    },
+    {
+      "id": "moderate_06",
+      "topic": "street_markets",
+      "cultural_weight": "moderate",
+      "text_en": "Street markets are where you feel the pulse of a city. The vendors calling out their prices, the colors of fresh produce stacked in careful pyramids, the smell of spices mixing with grilled meat. No supermarket can replicate that experience.",
+      "text_es": "En los mercados callejeros se siente el pulso de una ciudad. Los vendedores pregonando sus precios, los colores de la fruta fresca apilada en pirámides cuidadosas, el olor de las especias mezclado con la carne a la parrilla. Ningún supermercado puede replicar esa experiencia.",
+      "text_fr": "C'est dans les marchés de rue qu'on sent battre le pouls d'une ville. Les marchands qui interpellent les passants, les couleurs des fruits et légumes empilés en pyramides soignées, l'odeur des épices mêlée à celle des grillades. Aucun supermarché ne peut reproduire cette expérience."
+    },
+    {
+      "id": "moderate_07",
+      "topic": "childhood_games",
+      "cultural_weight": "moderate",
+      "text_en": "Every generation thinks the games they played as children were the best. Hide and seek, tag, jumping rope, marbles. These games needed no equipment, no screens, just a group of kids and an open space, and they taught cooperation and fair play without anyone realizing it.",
+      "text_es": "Cada generación cree que los juegos de su infancia eran los mejores. Las escondidas, la roña, saltar la cuerda, las canicas. No se necesitaba equipo ni pantallas, solo un grupo de niños y un espacio abierto, y sin darse cuenta uno aprendía a cooperar y a jugar limpio.",
+      "text_fr": "Chaque génération est persuadée que les jeux de son enfance étaient les meilleurs. Cache-cache, chat, corde à sauter, billes. Ces jeux n'avaient besoin ni d'équipement ni d'écran, juste d'un groupe d'enfants et d'un bout de terrain, et ils enseignaient la coopération et le fair-play sans que personne s'en rende compte."
+    },
+    {
+      "id": "moderate_08",
+      "topic": "rainy_days",
+      "cultural_weight": "moderate",
+      "text_en": "There is a particular pleasure in being indoors on a rainy day. The sound of rain on the roof, the gray light through the window, the excuse to slow down and do nothing productive. Rainy days give us permission to rest in a way that sunny days never do.",
+      "text_es": "Hay un placer particular en estar adentro un día de lluvia. El sonido de la lluvia en el techo, la luz gris que entra por la ventana, la excusa para frenar y no hacer nada productivo. Los días de lluvia nos dan permiso para descansar de un modo que los días soleados jamás lo hacen.",
+      "text_fr": "Il y a un plaisir particulier à rester chez soi un jour de pluie. Le bruit de la pluie sur le toit, la lumière grise à travers la fenêtre, l'excuse pour ralentir et ne rien faire d'utile. Les jours de pluie nous autorisent à nous reposer d'une façon que les journées ensoleillées ne permettent jamais."
+    },
+    {
+      "id": "moderate_09",
+      "topic": "learning_instrument",
+      "cultural_weight": "moderate",
+      "text_en": "Learning a musical instrument is an exercise in patience. The early weeks are painful for everyone in the house. But there comes a moment when the fingers stop fumbling and start making music, and that moment is worth all the struggle.",
+      "text_es": "Aprender a tocar un instrumento es un ejercicio de paciencia. Las primeras semanas son dolorosas para todos en la casa. Pero llega un momento en que los dedos dejan de tropezar y empiezan a hacer música, y ese momento vale todo el esfuerzo.",
+      "text_fr": "Apprendre un instrument de musique est un exercice de patience. Les premières semaines sont pénibles pour tout le monde à la maison. Mais il arrive un moment où les doigts cessent de trébucher et se mettent à faire de la musique, et ce moment-là vaut toute la peine du monde."
+    },
+    {
+      "id": "moderate_10",
+      "topic": "old_photographs",
+      "cultural_weight": "moderate",
+      "text_en": "Old photographs have a power that digital photos rarely match. The faded colors, the slightly blurred faces, the clothing styles that anchor a moment in time. They remind us that the people in them were once as vivid and alive as we are now.",
+      "text_es": "Las fotos viejas tienen un poder que las fotos digitales rara vez igualan. Los colores desvanecidos, los rostros ligeramente borrosos, los estilos de ropa que anclan un momento en el tiempo. Nos recuerdan que las personas que aparecen en ellas alguna vez fueron tan vivas y reales como nosotros ahora.",
+      "text_fr": "Les vieilles photos ont un pouvoir que les photos numériques atteignent rarement. Les couleurs passées, les visages légèrement flous, les vêtements d'époque qui ancrent un instant dans le temps. Elles nous rappellent que les gens qu'on y voit étaient autrefois aussi vivants et réels que nous le sommes aujourd'hui."
+    },
+    {
+      "id": "strong_01",
+      "topic": "bullfighting",
+      "cultural_weight": "strong",
+      "cultural_tag": "spanish",
+      "text_en": "Bullfighting is a centuries-old tradition in Spain that mixes art, danger, and ritual in a way that provokes strong opinions. Supporters see it as a living art form tied to national identity; opponents see it as animal cruelty that belongs in the past.",
+      "text_es": "La tauromaquia es una tradición centenaria en España que mezcla arte, peligro y ritual de un modo que provoca opiniones encontradas. Sus defensores la ven como un arte vivo ligado a la identidad nacional; sus detractores la consideran una crueldad animal que debería quedar en el pasado.",
+      "text_fr": "La tauromachie est une tradition séculaire en Espagne, un spectacle qui mêle art, danger et rituel d'une manière qui suscite des opinions tranchées. Ses défenseurs y voient un art vivant lié à l'identité nationale; ses opposants y voient une cruauté envers les animaux qui n'a plus sa place."
+    },
+    {
+      "id": "strong_02",
+      "topic": "flamenco",
+      "cultural_weight": "strong",
+      "cultural_tag": "spanish",
+      "text_en": "Flamenco is not just a dance. It is an entire world of emotion expressed through rhythm, voice, and movement. Born in the south of Spain among Roma and Andalusian communities, it carries centuries of sorrow, pride, and defiance in every performance.",
+      "text_es": "El flamenco no es solo un baile. Es todo un universo de emociones expresado a través del ritmo, la voz y el movimiento. Nacido en el sur de España entre comunidades gitanas y andaluzas, lleva siglos de dolor, orgullo y rebeldía en cada actuación.",
+      "text_fr": "Le flamenco n'est pas qu'une danse. C'est tout un univers d'émotions qui s'exprime à travers le rythme, la voix et le mouvement. Né dans le sud de l'Espagne parmi les communautés roms et andalouses, il porte des siècles de douleur, de fierté et de défiance dans chaque représentation."
+    },
+    {
+      "id": "strong_03",
+      "topic": "french_cheese",
+      "cultural_weight": "strong",
+      "cultural_tag": "french",
+      "text_en": "France produces over four hundred varieties of cheese, and the French take this heritage extremely seriously. A proper cheese course at the end of a meal is not an optional luxury but an essential part of dining. To skip it would be like leaving a sentence unfinished.",
+      "text_es": "Francia produce más de cuatrocientas variedades de queso, y los franceses se toman esta herencia con una seriedad absoluta. Un buen plato de quesos al final de la comida no es un lujo prescindible sino una parte esencial de la experiencia. Saltárselo sería como dejar una frase a medias.",
+      "text_fr": "La France produit plus de quatre cents variétés de fromage, et les Français prennent cet héritage très au sérieux. Le plateau de fromages en fin de repas n'est pas un luxe facultatif mais une étape essentielle du repas. S'en passer, ce serait comme laisser une phrase inachevée."
+    },
+    {
+      "id": "strong_04",
+      "topic": "thanksgiving",
+      "cultural_weight": "strong",
+      "cultural_tag": "english",
+      "text_en": "Thanksgiving is the one day a year when millions of Americans eat essentially the same meal: roast turkey, stuffing, cranberry sauce, and pumpkin pie. The holiday celebrates gratitude, but it is also about the comforting power of a shared national ritual that cuts across all other divides.",
+      "text_es": "El Día de Acción de Gracias es el único día del año en que millones de estadounidenses comen básicamente lo mismo: pavo asado, relleno, salsa de arándanos y pay de calabaza. La festividad celebra la gratitud, pero también el poder reconfortante de un ritual nacional compartido que trasciende todas las demás divisiones.",
+      "text_fr": "Thanksgiving est le seul jour de l'année où des millions d'Américains mangent à peu près le même repas: dinde rôtie, farce, sauce aux canneberges et tarte à la citrouille. Cette fête célèbre la gratitude, mais aussi le pouvoir réconfortant d'un rituel national partagé qui transcende toutes les autres divisions."
+    },
+    {
+      "id": "strong_05",
+      "topic": "dia_de_muertos",
+      "cultural_weight": "strong",
+      "cultural_tag": "spanish",
+      "text_en": "The Day of the Dead is a Mexican celebration where families honor their deceased loved ones with altars, marigold flowers, sugar skulls, and the favorite foods of those who have passed. It is not a sad occasion but a joyful reunion between the living and the dead.",
+      "text_es": "El Día de los Muertos es una celebración mexicana donde las familias honran a sus seres queridos fallecidos con altares, flores de cempasúchil, calaveras de azúcar y la comida favorita de quienes ya se fueron. No es una ocasión triste sino un reencuentro alegre entre los vivos y los muertos.",
+      "text_fr": "Le Jour des Morts est une célébration mexicaine où les familles rendent hommage à leurs défunts avec des autels, des fleurs de souci, des crânes en sucre et les plats préférés de ceux qui sont partis. Ce n'est pas une occasion triste mais des retrouvailles joyeuses entre les vivants et les morts."
+    },
+    {
+      "id": "strong_06",
+      "topic": "french_wine",
+      "cultural_weight": "strong",
+      "cultural_tag": "french",
+      "text_en": "French wine culture is inseparable from the land. The concept of terroir, the idea that soil, climate, and tradition give each wine its unique character, is almost a philosophy of life. A Burgundy tastes like Burgundy because of centuries of accumulated knowledge about those specific hillsides.",
+      "text_es": "La cultura del vino en Francia es inseparable de la tierra. El concepto de terroir, la idea de que el suelo, el clima y la tradición le dan a cada vino su carácter único, es casi una filosofía de vida. Un Borgoña sabe a Borgoña gracias a siglos de conocimiento acumulado sobre esas laderas específicas.",
+      "text_fr": "La culture du vin en France est indissociable de la terre. Le terroir, cette idée que le sol, le climat et la tradition donnent à chaque vin son caractère unique, tient presque de la philosophie. Un bourgogne a le goût du bourgogne grâce à des siècles de savoir accumulé sur ces coteaux précis."
+    },
+    {
+      "id": "strong_07",
+      "topic": "siesta",
+      "cultural_weight": "strong",
+      "cultural_tag": "spanish",
+      "text_en": "The Spanish siesta is more than a nap. It is a recognition that the afternoon heat makes work impossible and that the body has its own rhythms worth respecting. In rural Spain, towns still go quiet after lunch, shutters close, and the streets empty until the cool of late afternoon.",
+      "text_es": "La siesta española es más que una cabezada. Es un reconocimiento de que el calor de la tarde hace imposible trabajar y de que el cuerpo tiene sus propios ritmos que vale la pena respetar. En la España rural, los pueblos aún se callan después de comer, se cierran las persianas y las calles se vacían hasta el fresco de la tarde.",
+      "text_fr": "La sieste espagnole est bien plus qu'un somme. C'est la reconnaissance que la chaleur de l'après-midi rend le travail impossible et que le corps a ses propres rythmes qu'il faut respecter. Dans l'Espagne rurale, les villages se taisent encore après le déjeuner, les volets se ferment et les rues se vident jusqu'à la fraîcheur de fin d'après-midi."
+    },
+    {
+      "id": "strong_08",
+      "topic": "british_humor",
+      "cultural_weight": "strong",
+      "cultural_tag": "english",
+      "text_en": "British humor relies on understatement, irony, and the ability to say the opposite of what you mean with a perfectly straight face. A situation that would provoke outrage elsewhere gets a raised eyebrow and a dry remark. This style confuses people who expect humor to be loud and obvious.",
+      "text_es": "El humor británico se basa en la subestimación, la ironía y la capacidad de decir lo contrario de lo que piensas con la cara más seria del mundo. Una situación que en otro lugar provocaría indignación recibe una ceja levantada y un comentario seco. Este estilo desconcierta a quienes esperan que el humor sea ruidoso y obvio.",
+      "text_fr": "L'humour britannique repose sur la litote, l'ironie et la capacité à dire le contraire de ce qu'on pense avec un visage parfaitement impassible. Une situation qui provoquerait l'indignation ailleurs se mérite un sourcil levé et une remarque pince-sans-rire. Ce style déroute ceux qui s'attendent à un humour bruyant et évident."
+    },
+    {
+      "id": "strong_09",
+      "topic": "mate_ritual",
+      "cultural_weight": "strong",
+      "cultural_tag": "spanish",
+      "text_en": "Mate is the shared drink of Argentina, Uruguay, and southern Brazil. It is not just a tea but a social ritual: the same gourd and bombilla pass from hand to hand in a circle, and refusing a turn is considered rude. The person who prepares it, the cebador, controls the pace and the conversation.",
+      "text_es": "El mate es la bebida compartida de Argentina, Uruguay y el sur de Brasil. No es solo un té sino un ritual social: el mismo mate y la misma bombilla pasan de mano en mano en ronda, y rechazar un turno se considera una falta de respeto. Quien lo prepara, el cebador, controla el ritmo y la conversación.",
+      "text_fr": "Le maté est la boisson partagée de l'Argentine, de l'Uruguay et du sud du Brésil. Ce n'est pas un simple thé mais un rituel social: la même calebasse et la même bombilla passent de main en main en cercle, et refuser son tour est considéré comme impoli. Celui qui le prépare, le cebador, donne le rythme et oriente la conversation."
+    },
+    {
+      "id": "strong_10",
+      "topic": "parisian_cafe",
+      "cultural_weight": "strong",
+      "cultural_tag": "french",
+      "text_en": "The Parisian cafe is a public living room. People sit for hours with a single espresso, reading, writing, watching the street. The waiter will never rush you. This is not inefficiency; it is a fundamentally different idea of what public space is for.",
+      "text_es": "El café parisino es un salón público. La gente se sienta durante horas con un solo espresso, leyendo, escribiendo, mirando la calle. El mesero jamás te apurará. No es ineficiencia; es una idea radicalmente distinta de para qué sirve el espacio público.",
+      "text_fr": "Le café parisien est un salon ouvert sur la rue. On s'y installe des heures avec un seul express, à lire, écrire, regarder les passants. Le serveur ne vous brusquera jamais. Ce n'est pas de l'inefficacité, c'est une conception fondamentalement différente de ce à quoi sert l'espace public."
+    },
+    {
+      "id": "strong_11",
+      "topic": "tapas",
+      "cultural_weight": "strong",
+      "cultural_tag": "spanish",
+      "text_en": "Tapas are not appetizers. In Spain, going out for tapas means moving from bar to bar with friends, standing at the counter, eating small plates, arguing about where to go next. The food matters, but what really matters is the ritual of being together in public, unhurried, with no fixed plan.",
+      "text_es": "Las tapas no son aperitivos. En España, salir de tapas es ir de bar en bar con amigos, pararse en la barra, comer platitos, discutir adónde ir después. La comida importa, pero lo que de verdad importa es el ritual de estar juntos en la calle, sin prisa, sin plan fijo.",
+      "text_fr": "Les tapas ne sont pas des amuse-bouches. En Espagne, sortir prendre des tapas, c'est aller de bar en bar avec des amis, rester debout au comptoir, manger de petites assiettes, se disputer sur où aller ensuite. La nourriture compte, mais ce qui compte vraiment, c'est le rituel d'être ensemble dehors, sans se presser, sans programme établi."
+    },
+    {
+      "id": "strong_12",
+      "topic": "bastille_day",
+      "cultural_weight": "strong",
+      "cultural_tag": "french",
+      "text_en": "Bastille Day on July 14th is the French national holiday celebrating the revolution that ended the monarchy. The morning military parade down the Champs-Elysees is followed by public dances, fireworks, and communal meals in every town and village across the country.",
+      "text_es": "El 14 de julio, día de la Bastilla, es la fiesta nacional francesa que celebra la revolución que puso fin a la monarquía. El desfile militar matutino por los Campos Elíseos es seguido por bailes populares, fuegos artificiales y comidas comunitarias en cada pueblo y aldea del país.",
+      "text_fr": "Le 14 juillet est la fête nationale française, qui célèbre la Révolution ayant mis fin à la monarchie. Le défilé militaire du matin sur les Champs-Élysées est suivi de bals populaires, de feux d'artifice et de repas partagés dans chaque ville et village du pays."
+    }
+  ],
+  "cross_cultural": [
+    {
+      "id": "cross_01a",
+      "topic": "bullfighting",
+      "cultural_tag": "spanish",
+      "language_of_text": "en",
+      "loanwords": true,
+      "text": "The corrida begins in the late afternoon when the sun casts long shadows across the arena. The matador enters in his traje de luces, the suit of lights, and the crowd falls silent. What follows is a carefully choreographed confrontation between human skill and animal power, divided into three acts called tercios."
+    },
+    {
+      "id": "cross_01b",
+      "topic": "bullfighting",
+      "cultural_tag": "spanish",
+      "language_of_text": "en",
+      "loanwords": false,
+      "text": "The fight begins in the late afternoon when the sun casts long shadows across the ring. The fighter enters in his glittering costume, and the crowd falls silent. What follows is a carefully choreographed confrontation between human skill and animal power, a tradition that has defined this country's identity for centuries and divided its people just as long."
+    },
+    {
+      "id": "cross_02",
+      "topic": "french_cheese",
+      "cultural_tag": "french",
+      "language_of_text": "es",
+      "loanwords": true,
+      "text": "El arte de afinar queso en Francia es un oficio que se transmite de generación en generación. Cada región tiene sus propias joyas: el Roquefort de las cuevas del Aveyron, el Camembert de Normandía, el Comté del Jura. Detrás de cada queso hay un terroir, un clima y siglos de saber hacer que no se pueden replicar en otro lado."
+    },
+    {
+      "id": "cross_03a",
+      "topic": "flamenco",
+      "cultural_tag": "spanish",
+      "language_of_text": "fr",
+      "loanwords": true,
+      "text": "Dans les tablaos de Séville, le flamenco se vit comme une expérience viscérale. Le cantaor lance son cri depuis le fond de l'âme, la bailaora frappe le sol avec une précision furieuse, et la guitare tisse entre eux un fil de notes qui semble vibrer dans l'air longtemps après la fin du spectacle."
+    },
+    {
+      "id": "cross_03b",
+      "topic": "flamenco",
+      "cultural_tag": "spanish",
+      "language_of_text": "fr",
+      "loanwords": false,
+      "text": "Dans les salles de spectacle de Séville, cette danse du sud se vit comme une expérience viscérale. Le chanteur lance son cri depuis le fond de l'âme, la danseuse frappe le sol avec une précision furieuse, et la guitare tisse entre eux un fil de notes qui semble vibrer dans l'air longtemps après la dernière note."
+    },
+    {
+      "id": "cross_04",
+      "topic": "thanksgiving",
+      "cultural_tag": "english",
+      "language_of_text": "es",
+      "text": "En noviembre, millones de familias estadounidenses se reúnen alrededor de una mesa cargada con pavo, puré de papas, salsa de arándanos y pay de calabaza. Es una tradición que se remonta a los peregrinos del Mayflower, aunque la versión moderna tiene más que ver con el fútbol americano por televisión y las compras del Black Friday.",
+      "loanwords": true
+    },
+    {
+      "id": "cross_05",
+      "topic": "dia_de_muertos",
+      "cultural_tag": "spanish",
+      "language_of_text": "fr",
+      "text": "Les autels du Jour des Morts se couvrent de photos, de bougies et de fleurs de cempasúchil dont le parfum est censé guider les âmes des défunts jusqu'à leur famille. On prépare les plats que les disparus aimaient de leur vivant et on passe la nuit au cimetière dans une atmosphère qui mêle recueillement et célébration.",
+      "loanwords": true
+    },
+    {
+      "id": "cross_06a",
+      "topic": "french_wine",
+      "cultural_tag": "french",
+      "language_of_text": "en",
+      "loanwords": true,
+      "text": "The vineyards of Burgundy are classified with an almost religious precision. A premier cru and a grand cru can be separated by a narrow dirt path, yet their wines taste completely different. The French call this terroir and treat it as something almost sacred, a connection between the land and what it produces that cannot be faked or replicated."
+    },
+    {
+      "id": "cross_06b",
+      "topic": "french_wine",
+      "cultural_tag": "french",
+      "language_of_text": "en",
+      "loanwords": false,
+      "text": "The vineyards in eastern France are classified with an almost religious precision. A top-ranked plot and a merely excellent one can be separated by a narrow dirt path, yet their wines taste completely different. The idea that soil, climate, and tradition give each wine its unique character is treated as something almost sacred, a bond between land and product that cannot be faked."
+    },
+    {
+      "id": "cross_07",
+      "topic": "siesta",
+      "cultural_tag": "spanish",
+      "language_of_text": "fr",
+      "text": "Dans les villages d'Andalousie, la sieste n'est pas une option mais une nécessité dictée par la chaleur écrasante de l'après-midi. Les rues se vident, les volets se ferment, et un silence étrange enveloppe les places où, quelques heures plus tôt, les gens discutaient bruyamment. La vie ne reprend qu'en fin d'après-midi, quand l'ombre s'allonge.",
+      "loanwords": true
+    },
+    {
+      "id": "cross_08a",
+      "topic": "tapas",
+      "cultural_tag": "spanish",
+      "language_of_text": "en",
+      "loanwords": true,
+      "text": "In the narrow streets of San Sebastian, every bar has its own specialty pintxos lined up on the counter. You point at what you want, eat it standing up, order a small glass of txakoli, and move on to the next bar. The whole evening is a slow migration through the old town, and nobody eats dinner before ten."
+    },
+    {
+      "id": "cross_08b",
+      "topic": "tapas",
+      "cultural_tag": "spanish",
+      "language_of_text": "en",
+      "loanwords": false,
+      "text": "In the narrow streets of this northern coastal city, every bar has its own specialty snacks lined up on the counter. You point at what you want, eat it standing up, order a small glass of local white wine, and move on to the next bar. The whole evening is a slow migration through the old town, and nobody eats dinner before ten."
+    },
+    {
+      "id": "cross_09",
+      "topic": "british_humor",
+      "cultural_tag": "english",
+      "language_of_text": "fr",
+      "text": "L'humour anglais est un art de la retenue. Là où d'autres cultures rient aux éclats, les Britanniques préfèrent le sourire en coin et la remarque assassine glissée comme si de rien n'était. Le comique naît du décalage entre ce qui est dit et ce qui est pensé, et il faut souvent une seconde de réflexion pour comprendre qu'on vient de se faire avoir.",
+      "loanwords": true
+    },
+    {
+      "id": "cross_10",
+      "topic": "parisian_cafe",
+      "cultural_tag": "french",
+      "language_of_text": "es",
+      "text": "En los cafés de París, sentarse es un acto político. Uno elige su mesa como elige su punto de vista: de cara a la calle para mirar a los paseantes, de espaldas al salón para tener intimidad, o en la terraza para ver y ser visto. Un café con leche puede durar toda la mañana y nadie te mirará mal.",
+      "loanwords": true
+    },
+    {
+      "id": "cross_11a",
+      "topic": "mate_ritual",
+      "cultural_tag": "spanish",
+      "language_of_text": "en",
+      "loanwords": true,
+      "text": "The mate circle has its own unwritten rules. You never say thank you until you want to stop drinking. You never stir the bombilla. The water must be hot but never boiling. And the cebador always drinks the first bitter mate before passing the gourd, because the first one tastes terrible and that is their sacrifice."
+    },
+    {
+      "id": "cross_11b",
+      "topic": "mate_ritual",
+      "cultural_tag": "spanish",
+      "language_of_text": "en",
+      "loanwords": false,
+      "text": "The tea circle has its own unwritten rules. You never say thank you until you want to stop drinking. You never stir the metal straw. The water must be hot but never boiling. And the person who prepares it always drinks the first bitter cup before passing the gourd, because the first one tastes terrible and that is their sacrifice."
+    },
+    {
+      "id": "cross_12",
+      "topic": "bastille_day",
+      "cultural_tag": "french",
+      "language_of_text": "es",
+      "text": "El 14 de julio por la noche, cada pueblo de Francia organiza su propio bal populaire. Se montan luces en la plaza del ayuntamiento, alguien pone música, y la gente baila hasta la madrugada. Es una de las pocas noches del año en que todas las generaciones se mezclan en el mismo espacio, y los fuegos artificiales iluminan incluso las aldeas más pequeñas.",
+      "loanwords": true
+    }
+  ]
+}
