@@ -108,6 +108,23 @@ The transition is smooth -- not a binary switch but a continuous dial from Engli
 
 ---
 
+## Neuronpedia Cross-Validation
+
+We looked up our key features on [Neuronpedia](https://neuronpedia.org) (which hosts Gemma Scope 2 feature dashboards with automated interpretability labels) to validate our feature identification. The API endpoint is `https://www.neuronpedia.org/api/feature/{model}/{source}/{index}`.
+
+| Feature | Our label | Neuronpedia label | Match? |
+|---------|-----------|-------------------|--------|
+| [857 @ L22](https://www.neuronpedia.org/gemma-3-1b-it/22-gemmascope-2-res-16k/857) | Spanish detector | "the phrase aquí te" | Partial -- narrower than our label but confirms Spanish activation |
+| [1207 @ L22](https://www.neuronpedia.org/gemma-3-1b-it/22-gemmascope-2-res-16k/1207) | French detector | **"French common words"** | Confirmed |
+| [3201 @ L22](https://www.neuronpedia.org/gemma-3-1b-it/22-gemmascope-2-res-16k/3201) | French detector | **"French articles followed by nouns"** | Confirmed (more specific -- French syntax) |
+| 576 @ L22 | French-specific | "german words followed by common german words" | **Wrong** -- actually German, not French |
+| 9293 @ L7 | French early layer | "software development and validation" | **Wrong** -- topical, not linguistic |
+| 10036 @ L7 | French early layer | "lemon juice, zest, wedges" | **Wrong** -- food/cooking feature |
+
+**Key takeaway**: Late-layer features (L22) are genuinely linguistic and validate well. Early-layer features (L7) that we identified as "language-specific" were actually topical features that correlated with French cooking/tech texts in our corpus. This is the polysemanticity warning from the handoff doc in action -- and it means v2's steering experiment was right to focus on L22 features, which are the clean ones.
+
+---
+
 ## Experimental Staircase (Updated)
 
 - [x] **v1**: Exploration -- characterize cross-lingual representations, find separable features
