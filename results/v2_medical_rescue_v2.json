@@ -1,0 +1,257 @@
+{
+  "model": "google/gemma-3-4b-it",
+  "layers_tested": [
+    17,
+    22,
+    29
+  ],
+  "baseline": {
+    "en_acc": 0.43174603174603177,
+    "es_acc": 0.5428571428571428,
+    "gap": 0.11111111111111105
+  },
+  "n_rescuable": 197,
+  "n_control": 50,
+  "by_layer": {
+    "17": {
+      "features": [
+        {
+          "feature_idx": 16220,
+          "layer": 17,
+          "es_med_act": 8.675317764282227,
+          "en_med_act": 0.4579835832118988,
+          "es_ctrl_act": 1.1665738821029663,
+          "en_ctrl_act": 1.3711810111999512,
+          "es_med_fire_rate": 0.8500000238418579,
+          "score": 4.679672718048096
+        },
+        {
+          "feature_idx": 10371,
+          "layer": 17,
+          "es_med_act": 23.94373893737793,
+          "en_med_act": 0.0,
+          "es_ctrl_act": 6.445924282073975,
+          "en_ctrl_act": 0.0353674478828907,
+          "es_med_fire_rate": 1.0,
+          "score": 3.519148588180542
+        },
+        {
+          "feature_idx": 71,
+          "layer": 17,
+          "es_med_act": 93.98188781738281,
+          "en_med_act": 12.607104301452637,
+          "es_ctrl_act": 31.74416732788086,
+          "en_ctrl_act": 8.111163139343262,
+          "es_med_fire_rate": 1.0,
+          "score": 2.9302008152008057
+        },
+        {
+          "feature_idx": 7915,
+          "layer": 17,
+          "es_med_act": 3.391439914703369,
+          "en_med_act": 0.4657604694366455,
+          "es_ctrl_act": 0.7348785996437073,
+          "en_ctrl_act": 0.034873832017183304,
+          "es_med_fire_rate": 0.8999999761581421,
+          "score": 2.836146116256714
+        },
+        {
+          "feature_idx": 1710,
+          "layer": 17,
+          "es_med_act": 24.326601028442383,
+          "en_med_act": 4.324159145355225,
+          "es_ctrl_act": 8.526090621948242,
+          "en_ctrl_act": 2.855727434158325,
+          "es_med_fire_rate": 1.0,
+          "score": 2.750537633895874
+        }
+      ],
+      "by_strength": {
+        "0": {
+          "rescued": 0,
+          "broken": 0,
+          "net": 0,
+          "rescue_rate": 0.0
+        },
+        "1.0": {
+          "rescued": 0,
+          "broken": 1,
+          "net": -1,
+          "rescue_rate": 0.0
+        },
+        "2.0": {
+          "rescued": 2,
+          "broken": 1,
+          "net": 1,
+          "rescue_rate": 0.01015228426395939
+        },
+        "3.0": {
+          "rescued": 2,
+          "broken": 1,
+          "net": 1,
+          "rescue_rate": 0.01015228426395939
+        }
+      }
+    },
+    "22": {
+      "features": [
+        {
+          "feature_idx": 10752,
+          "layer": 22,
+          "es_med_act": 48.56066131591797,
+          "en_med_act": 1.3970307111740112,
+          "es_ctrl_act": 6.023362159729004,
+          "en_ctrl_act": 0.34098657965660095,
+          "es_med_fire_rate": 0.9750000238418579,
+          "score": 7.332744121551514
+        },
+        {
+          "feature_idx": 10467,
+          "layer": 22,
+          "es_med_act": 16.624202728271484,
+          "en_med_act": 1.9799087047576904,
+          "es_ctrl_act": 1.4598362445831299,
+          "en_ctrl_act": 0.32418888807296753,
+          "es_med_fire_rate": 0.7749999761581421,
+          "score": 5.351510047912598
+        },
+        {
+          "feature_idx": 4484,
+          "layer": 22,
+          "es_med_act": 12.379661560058594,
+          "en_med_act": 1.6594040393829346,
+          "es_ctrl_act": 0.3095269501209259,
+          "en_ctrl_act": 0.0,
+          "es_med_fire_rate": 0.824999988079071,
+          "score": 4.92067289352417
+        },
+        {
+          "feature_idx": 4373,
+          "layer": 22,
+          "es_med_act": 33.37468719482422,
+          "en_med_act": 6.446698188781738,
+          "es_ctrl_act": 0.7280859351158142,
+          "en_ctrl_act": 0.38849228620529175,
+          "es_med_fire_rate": 0.9750000238418579,
+          "score": 4.754463195800781
+        },
+        {
+          "feature_idx": 707,
+          "layer": 22,
+          "es_med_act": 41.592445373535156,
+          "en_med_act": 5.419037818908691,
+          "es_ctrl_act": 9.40202522277832,
+          "en_ctrl_act": 5.5103888511657715,
+          "es_med_fire_rate": 1.0,
+          "score": 4.250892639160156
+        }
+      ],
+      "by_strength": {
+        "0": {
+          "rescued": 0,
+          "broken": 0,
+          "net": 0,
+          "rescue_rate": 0.0
+        },
+        "1.0": {
+          "rescued": 0,
+          "broken": 0,
+          "net": 0,
+          "rescue_rate": 0.0
+        },
+        "2.0": {
+          "rescued": 0,
+          "broken": 0,
+          "net": 0,
+          "rescue_rate": 0.0
+        },
+        "3.0": {
+          "rescued": 0,
+          "broken": 0,
+          "net": 0,
+          "rescue_rate": 0.0
+        }
+      }
+    },
+    "29": {
+      "features": [
+        {
+          "feature_idx": 10870,
+          "layer": 29,
+          "es_med_act": 564.6411743164062,
+          "en_med_act": 8.004753112792969,
+          "es_ctrl_act": 17.849781036376953,
+          "en_ctrl_act": 0.0,
+          "es_med_fire_rate": 1.0,
+          "score": 30.79825210571289
+        },
+        {
+          "feature_idx": 6201,
+          "layer": 29,
+          "es_med_act": 49.258705139160156,
+          "en_med_act": 0.9433413743972778,
+          "es_ctrl_act": 0.5955585241317749,
+          "en_ctrl_act": 0.19625933468341827,
+          "es_med_fire_rate": 0.7250000238418579,
+          "score": 24.994131088256836
+        },
+        {
+          "feature_idx": 6338,
+          "layer": 29,
+          "es_med_act": 112.0085220336914,
+          "en_med_act": 4.440276622772217,
+          "es_ctrl_act": 0.0,
+          "en_ctrl_act": 0.0,
+          "es_med_fire_rate": 0.7749999761581421,
+          "score": 17.649639129638672
+        },
+        {
+          "feature_idx": 7083,
+          "layer": 29,
+          "es_med_act": 107.30936431884766,
+          "en_med_act": 10.492648124694824,
+          "es_ctrl_act": 0.6803054213523865,
+          "en_ctrl_act": 0.4417935311794281,
+          "es_med_fire_rate": 0.949999988079071,
+          "score": 9.317035675048828
+        },
+        {
+          "feature_idx": 13870,
+          "layer": 29,
+          "es_med_act": 118.55540466308594,
+          "en_med_act": 3.1580302715301514,
+          "es_ctrl_act": 11.24854850769043,
+          "en_ctrl_act": 0.0,
+          "es_med_fire_rate": 0.8500000238418579,
+          "score": 8.6135835647583
+        }
+      ],
+      "by_strength": {
+        "0": {
+          "rescued": 0,
+          "broken": 0,
+          "net": 0,
+          "rescue_rate": 0.0
+        },
+        "1.0": {
+          "rescued": 0,
+          "broken": 0,
+          "net": 0,
+          "rescue_rate": 0.0
+        },
+        "2.0": {
+          "rescued": 0,
+          "broken": 0,
+          "net": 0,
+          "rescue_rate": 0.0
+        },
+        "3.0": {
+          "rescued": 0,
+          "broken": 0,
+          "net": 0,
+          "rescue_rate": 0.0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,564 @@
+{
+  "es": {
+    "features": [
+      {
+        "feature_idx": 596,
+        "tgt_mean": 1968.3558349609375,
+        "en_mean": 0.0,
+        "tgt_fire_rate": 1.0,
+        "en_fire_rate": 0.0,
+        "score": 196836.59375
+      },
+      {
+        "feature_idx": 451,
+        "tgt_mean": 66.2020034790039,
+        "en_mean": 0.0,
+        "tgt_fire_rate": 0.9399999976158142,
+        "en_fire_rate": 0.0,
+        "score": 6223.9287109375
+      },
+      {
+        "feature_idx": 10001,
+        "tgt_mean": 70.154541015625,
+        "en_mean": 0.0,
+        "tgt_fire_rate": 0.8799999952316284,
+        "en_fire_rate": 0.0,
+        "score": 6174.47998046875
+      },
+      {
+        "feature_idx": 7777,
+        "tgt_mean": 40.01203918457031,
+        "en_mean": 0.0,
+        "tgt_fire_rate": 0.8399999737739563,
+        "en_fire_rate": 0.0,
+        "score": 3361.85107421875
+      },
+      {
+        "feature_idx": 6099,
+        "tgt_mean": 27.078821182250977,
+        "en_mean": 0.0,
+        "tgt_fire_rate": 0.8600000143051147,
+        "en_fire_rate": 0.0,
+        "score": 2329.638671875
+      },
+      {
+        "feature_idx": 2286,
+        "tgt_mean": 24.468233108520508,
+        "en_mean": 0.0,
+        "tgt_fire_rate": 0.8399999737739563,
+        "en_fire_rate": 0.0,
+        "score": 2056.171630859375
+      },
+      {
+        "feature_idx": 10430,
+        "tgt_mean": 23.963912963867188,
+        "en_mean": 0.0,
+        "tgt_fire_rate": 0.8199999928474426,
+        "en_fire_rate": 0.0,
+        "score": 1965.86083984375
+      },
+      {
+        "feature_idx": 14373,
+        "tgt_mean": 53.62461471557617,
+        "en_mean": 0.5314608216285706,
+        "tgt_fire_rate": 1.0,
+        "en_fire_rate": 0.05999999865889549,
+        "score": 99.05538940429688
+      },
+      {
+        "feature_idx": 677,
+        "tgt_mean": 265.890869140625,
+        "en_mean": 3.7539730072021484,
+        "tgt_fire_rate": 0.9800000190734863,
+        "en_fire_rate": 0.36000001430511475,
+        "score": 69.23080444335938
+      },
+      {
+        "feature_idx": 1726,
+        "tgt_mean": 33.75840759277344,
+        "en_mean": 0.6197707653045654,
+        "tgt_fire_rate": 0.8799999952316284,
+        "en_fire_rate": 0.03999999910593033,
+        "score": 47.18573760986328
+      }
+    ],
+    "domains": {
+      "medical": {
+        "en_acc": 0.43316831683168316,
+        "tgt_acc": 0.5358910891089109,
+        "gap": 0.10272277227722776,
+        "n_rescuable": 163,
+        "n_control": 50,
+        "by_strength": {
+          "0": {
+            "rescued": 0,
+            "broken": 0,
+            "net": 0,
+            "rate": 0.0
+          },
+          "1.0": {
+            "rescued": 0,
+            "broken": 0,
+            "net": 0,
+            "rate": 0.0
+          },
+          "2.0": {
+            "rescued": 3,
+            "broken": 0,
+            "net": 3,
+            "rate": 0.018404907975460124
+          },
+          "3.0": {
+            "rescued": 6,
+            "broken": 1,
+            "net": 5,
+            "rate": 0.03680981595092025
+          },
+          "5.0": {
+            "rescued": 8,
+            "broken": 2,
+            "net": 6,
+            "rate": 0.049079754601226995
+          }
+        }
+      },
+      "philosophy": {
+        "en_acc": 0.43666666666666665,
+        "tgt_acc": 0.48833333333333334,
+        "gap": 0.051666666666666694,
+        "n_rescuable": 106,
+        "n_control": 50,
+        "by_strength": {
+          "0": {
+            "rescued": 0,
+            "broken": 0,
+            "net": 0,
+            "rate": 0.0
+          },
+          "1.0": {
+            "rescued": 1,
+            "broken": 0,
+            "net": 1,
+            "rate": 0.009433962264150943
+          },
+          "2.0": {
+            "rescued": 2,
+            "broken": 0,
+            "net": 2,
+            "rate": 0.018867924528301886
+          },
+          "3.0": {
+            "rescued": 1,
+            "broken": 2,
+            "net": -1,
+            "rate": 0.009433962264150943
+          },
+          "5.0": {
+            "rescued": 2,
+            "broken": 2,
+            "net": 0,
+            "rate": 0.018867924528301886
+          }
+        }
+      },
+      "global_facts": {
+        "en_acc": 0.5266666666666666,
+        "tgt_acc": 0.6,
+        "gap": 0.07333333333333336,
+        "n_rescuable": 50,
+        "n_control": 50,
+        "by_strength": {
+          "0": {
+            "rescued": 0,
+            "broken": 0,
+            "net": 0,
+            "rate": 0.0
+          },
+          "1.0": {
+            "rescued": 0,
+            "broken": 0,
+            "net": 0,
+            "rate": 0.0
+          },
+          "2.0": {
+            "rescued": 1,
+            "broken": 0,
+            "net": 1,
+            "rate": 0.02
+          },
+          "3.0": {
+            "rescued": 3,
+            "broken": 3,
+            "net": 0,
+            "rate": 0.06
+          },
+          "5.0": {
+            "rescued": 3,
+            "broken": 3,
+            "net": 0,
+            "rate": 0.06
+          }
+        }
+      },
+      "stem": {
+        "en_acc": 0.459387483355526,
+        "tgt_acc": 0.4766977363515313,
+        "gap": 0.017310252996005304,
+        "n_rescuable": 103,
+        "n_control": 50,
+        "by_strength": {
+          "0": {
+            "rescued": 0,
+            "broken": 0,
+            "net": 0,
+            "rate": 0.0
+          },
+          "1.0": {
+            "rescued": 0,
+            "broken": 0,
+            "net": 0,
+            "rate": 0.0
+          },
+          "2.0": {
+            "rescued": 2,
+            "broken": 1,
+            "net": 1,
+            "rate": 0.019417475728155338
+          },
+          "3.0": {
+            "rescued": 4,
+            "broken": 2,
+            "net": 2,
+            "rate": 0.038834951456310676
+          },
+          "5.0": {
+            "rescued": 9,
+            "broken": 2,
+            "net": 7,
+            "rate": 0.08737864077669903
+          }
+        }
+      },
+      "humanities": {
+        "en_acc": 0.51138353765324,
+        "tgt_acc": 0.681260945709282,
+        "gap": 0.169877408056042,
+        "n_rescuable": 127,
+        "n_control": 50,
+        "by_strength": {
+          "0": {
+            "rescued": 0,
+            "broken": 0,
+            "net": 0,
+            "rate": 0.0
+          },
+          "1.0": {
+            "rescued": 1,
+            "broken": 0,
+            "net": 1,
+            "rate": 0.007874015748031496
+          },
+          "2.0": {
+            "rescued": 1,
+            "broken": 1,
+            "net": 0,
+            "rate": 0.007874015748031496
+          },
+          "3.0": {
+            "rescued": 2,
+            "broken": 1,
+            "net": 1,
+            "rate": 0.015748031496062992
+          },
+          "5.0": {
+            "rescued": 7,
+            "broken": 1,
+            "net": 6,
+            "rate": 0.05511811023622047
+          }
+        }
+      }
+    }
+  },
+  "fr": {
+    "features": [
+      {
+        "feature_idx": 8348,
+        "tgt_mean": 347.9549865722656,
+        "en_mean": 0.0,
+        "tgt_fire_rate": 1.0,
+        "en_fire_rate": 0.0,
+        "score": 34796.5
+      },
+      {
+        "feature_idx": 8479,
+        "tgt_mean": 197.34310913085938,
+        "en_mean": 0.0,
+        "tgt_fire_rate": 0.9800000190734863,
+        "en_fire_rate": 0.0,
+        "score": 19340.60546875
+      },
+      {
+        "feature_idx": 11834,
+        "tgt_mean": 132.2285614013672,
+        "en_mean": 0.0,
+        "tgt_fire_rate": 0.8600000143051147,
+        "en_fire_rate": 0.0,
+        "score": 11372.515625
+      },
+      {
+        "feature_idx": 3173,
+        "tgt_mean": 97.8405532836914,
+        "en_mean": 0.0,
+        "tgt_fire_rate": 0.9800000190734863,
+        "en_fire_rate": 0.0,
+        "score": 9589.3544921875
+      },
+      {
+        "feature_idx": 10184,
+        "tgt_mean": 89.42211151123047,
+        "en_mean": 0.0,
+        "tgt_fire_rate": 0.8799999952316284,
+        "en_fire_rate": 0.0,
+        "score": 7870.0263671875
+      },
+      {
+        "feature_idx": 1610,
+        "tgt_mean": 47.66319274902344,
+        "en_mean": 0.0,
+        "tgt_fire_rate": 0.8399999737739563,
+        "en_fire_rate": 0.0,
+        "score": 4004.548095703125
+      },
+      {
+        "feature_idx": 1375,
+        "tgt_mean": 2579.33642578125,
+        "en_mean": 1.2658438682556152,
+        "tgt_fire_rate": 1.0,
+        "en_fire_rate": 0.1599999964237213,
+        "score": 2021.6787109375
+      },
+      {
+        "feature_idx": 9031,
+        "tgt_mean": 169.48416137695312,
+        "en_mean": 0.07997579127550125,
+        "tgt_fire_rate": 1.0,
+        "en_fire_rate": 0.019999999552965164,
+        "score": 1883.775146484375
+      },
+      {
+        "feature_idx": 6402,
+        "tgt_mean": 17.141563415527344,
+        "en_mean": 0.0,
+        "tgt_fire_rate": 0.8999999761581421,
+        "en_fire_rate": 0.0,
+        "score": 1543.6407470703125
+      },
+      {
+        "feature_idx": 12709,
+        "tgt_mean": 142.01449584960938,
+        "en_mean": 0.20129327476024628,
+        "tgt_fire_rate": 1.0,
+        "en_fire_rate": 0.019999999552965164,
+        "score": 672.1675415039062
+      }
+    ],
+    "domains": {
+      "medical": {
+        "en_acc": 0.43316831683168316,
+        "tgt_acc": 0.5247524752475248,
+        "gap": 0.09158415841584161,
+        "n_rescuable": 157,
+        "n_control": 50,
+        "by_strength": {
+          "0": {
+            "rescued": 0,
+            "broken": 0,
+            "net": 0,
+            "rate": 0.0
+          },
+          "1.0": {
+            "rescued": 3,
+            "broken": 1,
+            "net": 2,
+            "rate": 0.01910828025477707
+          },
+          "2.0": {
+            "rescued": 2,
+            "broken": 0,
+            "net": 2,
+            "rate": 0.012738853503184714
+          },
+          "3.0": {
+            "rescued": 3,
+            "broken": 0,
+            "net": 3,
+            "rate": 0.01910828025477707
+          },
+          "5.0": {
+            "rescued": 4,
+            "broken": 0,
+            "net": 4,
+            "rate": 0.025477707006369428
+          }
+        }
+      },
+      "philosophy": {
+        "en_acc": 0.43666666666666665,
+        "tgt_acc": 0.49666666666666665,
+        "gap": 0.06,
+        "n_rescuable": 113,
+        "n_control": 50,
+        "by_strength": {
+          "0": {
+            "rescued": 0,
+            "broken": 0,
+            "net": 0,
+            "rate": 0.0
+          },
+          "1.0": {
+            "rescued": 2,
+            "broken": 0,
+            "net": 2,
+            "rate": 0.017699115044247787
+          },
+          "2.0": {
+            "rescued": 2,
+            "broken": 0,
+            "net": 2,
+            "rate": 0.017699115044247787
+          },
+          "3.0": {
+            "rescued": 2,
+            "broken": 1,
+            "net": 1,
+            "rate": 0.017699115044247787
+          },
+          "5.0": {
+            "rescued": 6,
+            "broken": 1,
+            "net": 5,
+            "rate": 0.05309734513274336
+          }
+        }
+      },
+      "global_facts": {
+        "en_acc": 0.5266666666666666,
+        "tgt_acc": 0.5533333333333333,
+        "gap": 0.026666666666666727,
+        "n_rescuable": 50,
+        "n_control": 50,
+        "by_strength": {
+          "0": {
+            "rescued": 0,
+            "broken": 0,
+            "net": 0,
+            "rate": 0.0
+          },
+          "1.0": {
+            "rescued": 0,
+            "broken": 0,
+            "net": 0,
+            "rate": 0.0
+          },
+          "2.0": {
+            "rescued": 0,
+            "broken": 0,
+            "net": 0,
+            "rate": 0.0
+          },
+          "3.0": {
+            "rescued": 0,
+            "broken": 0,
+            "net": 0,
+            "rate": 0.0
+          },
+          "5.0": {
+            "rescued": 0,
+            "broken": 0,
+            "net": 0,
+            "rate": 0.0
+          }
+        }
+      },
+      "stem": {
+        "en_acc": 0.459387483355526,
+        "tgt_acc": 0.4766977363515313,
+        "gap": 0.017310252996005304,
+        "n_rescuable": 107,
+        "n_control": 50,
+        "by_strength": {
+          "0": {
+            "rescued": 0,
+            "broken": 0,
+            "net": 0,
+            "rate": 0.0
+          },
+          "1.0": {
+            "rescued": 3,
+            "broken": 0,
+            "net": 3,
+            "rate": 0.028037383177570093
+          },
+          "2.0": {
+            "rescued": 4,
+            "broken": 0,
+            "net": 4,
+            "rate": 0.037383177570093455
+          },
+          "3.0": {
+            "rescued": 2,
+            "broken": 0,
+            "net": 2,
+            "rate": 0.018691588785046728
+          },
+          "5.0": {
+            "rescued": 3,
+            "broken": 1,
+            "net": 2,
+            "rate": 0.028037383177570093
+          }
+        }
+      },
+      "humanities": {
+        "en_acc": 0.51138353765324,
+        "tgt_acc": 0.6935201401050788,
+        "gap": 0.18213660245183882,
+        "n_rescuable": 147,
+        "n_control": 50,
+        "by_strength": {
+          "0": {
+            "rescued": 0,
+            "broken": 0,
+            "net": 0,
+            "rate": 0.0
+          },
+          "1.0": {
+            "rescued": 3,
+            "broken": 0,
+            "net": 3,
+            "rate": 0.02040816326530612
+          },
+          "2.0": {
+            "rescued": 2,
+            "broken": 0,
+            "net": 2,
+            "rate": 0.013605442176870748
+          },
+          "3.0": {
+            "rescued": 3,
+            "broken": 0,
+            "net": 3,
+            "rate": 0.02040816326530612
+          },
+          "5.0": {
+            "rescued": 2,
+            "broken": 1,
+            "net": 1,
+            "rate": 0.013605442176870748
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "flip": {
+    "es": {
+      "en_acc": 0.48473967684021546,
+      "tgt_acc": 0.5511669658886894,
+      "gap_en_minus_tgt": -0.06642728904847395,
+      "reversed_gap": true
+    },
+    "fr": {
+      "en_acc": 0.48473967684021546,
+      "tgt_acc": 0.5296229802513465,
+      "gap_en_minus_tgt": -0.044883303411131004,
+      "reversed_gap": true
+    },
+    "zh": {
+      "en_acc": 0.48473967684021546,
+      "tgt_acc": 0.5134649910233393,
+      "gap_en_minus_tgt": -0.02872531418312385,
+      "reversed_gap": true
+    }
+  },
+  "distant": {
+    "zh_on_en_medical": {
+      "src_acc": 0.43316831683168316,
+      "tgt_acc": 0.46905940594059403,
+      "gap": 0.03589108910891087,
+      "n_rescuable": 139,
+      "n_control": 50,
+      "by_strength": {
+        "0": {
+          "rescued": 0,
+          "broken": 0,
+          "net": 0,
+          "rate": 0.0
+        },
+        "1.0": {
+          "rescued": 0,
+          "broken": 0,
+          "net": 0,
+          "rate": 0.0
+        },
+        "2.0": {
+          "rescued": 2,
+          "broken": 0,
+          "net": 2,
+          "rate": 0.014388489208633094
+        },
+        "3.0": {
+          "rescued": 3,
+          "broken": 0,
+          "net": 3,
+          "rate": 0.02158273381294964
+        },
+        "5.0": {
+          "rescued": 3,
+          "broken": 1,
+          "net": 2,
+          "rate": 0.02158273381294964
+        }
+      }
+    }
+  },
+  "combined": {
+    "en_acc": 0.43316831683168316,
+    "es_acc": 0.5358910891089109,
+    "gap": 0.10272277227722776,
+    "n_rescuable": 163,
+    "n_control": 50,
+    "es_only": {
+      "0": {
+        "rescued": 0,
+        "broken": 0,
+        "net": 0
+      },
+      "1.0": {
+        "rescued": 0,
+        "broken": 0,
+        "net": 0
+      },
+      "2.0": {
+        "rescued": 3,
+        "broken": 0,
+        "net": 3
+      },
+      "3.0": {
+        "rescued": 6,
+        "broken": 1,
+        "net": 5
+      },
+      "5.0": {
+        "rescued": 9,
+        "broken": 2,
+        "net": 7
+      }
+    },
+    "fr_only": {
+      "0": {
+        "rescued": 0,
+        "broken": 0,
+        "net": 0
+      },
+      "1.0": {
+        "rescued": 0,
+        "broken": 0,
+        "net": 0
+      },
+      "2.0": {
+        "rescued": 0,
+        "broken": 0,
+        "net": 0
+      },
+      "3.0": {
+        "rescued": 0,
+        "broken": 0,
+        "net": 0
+      },
+      "5.0": {
+        "rescued": 2,
+        "broken": 0,
+        "net": 2
+      }
+    },
+    "combined": {
+      "0": {
+        "rescued": 0,
+        "broken": 0,
+        "net": 0
+      },
+      "1.0": {
+        "rescued": 1,
+        "broken": 0,
+        "net": 1
+      },
+      "2.0": {
+        "rescued": 3,
+        "broken": 0,
+        "net": 3
+      },
+      "3.0": {
+        "rescued": 7,
+        "broken": 1,
+        "net": 6
+      },
+      "5.0": {
+        "rescued": 9,
+        "broken": 2,
+        "net": 7
+      }
+    }
+  }
+}

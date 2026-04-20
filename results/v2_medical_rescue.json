@@ -1,0 +1,135 @@
+{
+  "model": "google/gemma-3-4b-it",
+  "layer": 29,
+  "sae_id": "layer_29_width_16k_l0_medium",
+  "baseline": {
+    "en_acc": 0.43174603174603177,
+    "es_acc": 0.5428571428571428
+  },
+  "n_rescuable": 197,
+  "n_control": 50,
+  "candidate_features": [
+    {
+      "feature_idx": 596,
+      "es_mean_act": 2028.2742919921875,
+      "en_mean_act": 0.0,
+      "es_fire_rate": 1.0,
+      "en_fire_rate": 0.0,
+      "score": 202828.4375
+    },
+    {
+      "feature_idx": 10001,
+      "es_mean_act": 67.68982696533203,
+      "en_mean_act": 0.0,
+      "es_fire_rate": 1.0,
+      "en_fire_rate": 0.0,
+      "score": 6769.98291015625
+    },
+    {
+      "feature_idx": 451,
+      "es_mean_act": 62.66472625732422,
+      "en_mean_act": 0.0,
+      "es_fire_rate": 0.9666666388511658,
+      "en_fire_rate": 0.0,
+      "score": 6058.556640625
+    },
+    {
+      "feature_idx": 7777,
+      "es_mean_act": 39.631656646728516,
+      "en_mean_act": 0.0,
+      "es_fire_rate": 1.0,
+      "en_fire_rate": 0.0,
+      "score": 3964.16552734375
+    },
+    {
+      "feature_idx": 5666,
+      "es_mean_act": 40.57734298706055,
+      "en_mean_act": 0.0,
+      "es_fire_rate": 0.9666666388511658,
+      "en_fire_rate": 0.0,
+      "score": 3923.44287109375
+    },
+    {
+      "feature_idx": 2286,
+      "es_mean_act": 30.37044334411621,
+      "en_mean_act": 0.0,
+      "es_fire_rate": 1.0,
+      "en_fire_rate": 0.0,
+      "score": 3038.04443359375
+    },
+    {
+      "feature_idx": 9431,
+      "es_mean_act": 34.366844177246094,
+      "en_mean_act": 0.0,
+      "es_fire_rate": 0.8666666746139526,
+      "en_fire_rate": 0.0,
+      "score": 2979.326416015625
+    },
+    {
+      "feature_idx": 6099,
+      "es_mean_act": 28.06812858581543,
+      "en_mean_act": 0.0,
+      "es_fire_rate": 0.8666666746139526,
+      "en_fire_rate": 0.0,
+      "score": 2433.43798828125
+    },
+    {
+      "feature_idx": 10430,
+      "es_mean_act": 23.79433250427246,
+      "en_mean_act": 0.0,
+      "es_fire_rate": 0.9666666388511658,
+      "en_fire_rate": 0.0,
+      "score": 2301.08544921875
+    },
+    {
+      "feature_idx": 1726,
+      "es_mean_act": 20.257389068603516,
+      "en_mean_act": 0.0,
+      "es_fire_rate": 1.0,
+      "en_fire_rate": 0.0,
+      "score": 2026.739013671875
+    }
+  ],
+  "top_features_used": [
+    596,
+    10001,
+    451
+  ],
+  "results_by_strength": {
+    "0": {
+      "rescuable_now_correct": 0,
+      "control_still_correct": 50,
+      "rescue_rate": 0.0,
+      "break_rate": 0.0,
+      "net_fixed": 0
+    },
+    "1.0": {
+      "rescuable_now_correct": 0,
+      "control_still_correct": 50,
+      "rescue_rate": 0.0,
+      "break_rate": 0.0,
+      "net_fixed": 0
+    },
+    "2.0": {
+      "rescuable_now_correct": 5,
+      "control_still_correct": 50,
+      "rescue_rate": 0.025380710659898477,
+      "break_rate": 0.0,
+      "net_fixed": 5
+    },
+    "3.0": {
+      "rescuable_now_correct": 8,
+      "control_still_correct": 49,
+      "rescue_rate": 0.04060913705583756,
+      "break_rate": 0.02,
+      "net_fixed": 7
+    },
+    "5.0": {
+      "rescuable_now_correct": 11,
+      "control_still_correct": 48,
+      "rescue_rate": 0.05583756345177665,
+      "break_rate": 0.04,
+      "net_fixed": 9
+    }
+  }
+}
