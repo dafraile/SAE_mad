@@ -18,11 +18,12 @@ v3 addressed all of these with controlled replications. **Under proper evaluatio
 
 What remains real:
 
-- v1: Cross-lingual representation characterization (own corpus, unaffected)
-- v2 steering on 1B: SAE features causally control output language (Feature 857 → Spanish text)
-- v3: Language-agnostic medical content features exist in Gemma 3 4B at layer 29 (features 893, 12570, 12845), but ablation shows they are readouts — zeroing them changes accuracy by 0.00%
+- **v1** — Cross-lingual representation characterization using our own trilingual corpus (unaffected by the MMMLU issue)
+- **v2 steering on 1B** — SAE features causally control output language (Feature 857 at layer 22 → Spanish text on neutral English prompts, graded with strength)
+- **v3 domain feature identification** — Language-agnostic medical content features exist in Gemma 3 4B at layer 29 (features 893, 12570, 12845). They fire on medical content across EN/ES/FR (MCQ and free-form), zero on non-medical content, and more weakly on Arabic and Yoruba medical
+- **v3 null under controlled evaluation** — Neither amplifying nor ablating these features at layer 29 changes medical MCQ accuracy above the random-feature noise floor, across 5 tested rescue configurations
 
-The routing hypothesis is not refuted, but the simplest version of it (single-layer feature amplification) does not work.
+Precise scope of the null: we ruled out simple single-layer, single-feature amplification and single-layer, single-feature ablation at layer 29. Multi-layer, multi-feature, coordinated, or task-conditional interventions remain untested. The routing hypothesis is not refuted at its strongest — just the simplest version of it.
 
 ## Repo Structure
 

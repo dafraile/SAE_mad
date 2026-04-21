@@ -72,8 +72,10 @@ Using 6-condition contrastive analysis (EN/ES/FR × medical/non-medical), we ide
 
 These features also fire on Arabic medical content (weakly) and on free-form non-MCQ medical text (e.g., peaks on "myocardial", "renin", "ventral", "coccus"), and zero on free-form non-medical text (philosophy, history, economics, literature, geography). They are genuine cross-lingual cross-format medical content representations.
 
-### 5. These features are readouts, not drivers (v3 feature validation)
-Ablating features 893, 12570, and 12845 during MCQ inference — zeroing out their contribution to the residual stream — changed accuracy by **exactly 0.00%** across EN, ES, FR, on both medical and non-medical conditions. The features represent medical content but are not causally involved in answer selection.
+### 5. These features are not individually necessary under layer-29 ablation (v3 feature validation)
+Ablating features 893, 12570, and 12845 during MCQ inference — zeroing out their contribution to the residual stream at layer 29 — changed accuracy by **exactly 0.00%** across EN, ES, FR, on both medical and non-medical conditions.
+
+Precise claim: these features are **not individually necessary for medical MCQ accuracy under single-feature layer-29 ablation**, and they are **not sufficient for rescue under single-layer amplification** (established in v3 domain rescue above). "Readouts, not drivers" is a fair shorthand for this intervention regime, but we have not tested whether they become load-bearing under multi-feature, multi-layer, or coordinated-intervention conditions. The claim should stay local to what we tested.
 
 ---
 
@@ -103,16 +105,21 @@ The routing hypothesis at its simplest — amplify the right feature, retrieve t
 
 1. Features that *represent* a domain can exist (893, 12570 are genuine medical content features)
 2. Features that *control output language* exist (Feature 857 on 1B)
-3. But these two capacities do not obviously compose into "features that control knowledge retrieval"
-4. Ablation is a zero-op, which means the model isn't *using* these features to generate answers — knowledge access flows through pathways that don't pass through these specific SAE features in a way single-feature intervention can reach
+3. These two capacities do not obviously compose into "features that control knowledge retrieval" through the interventions we tested
+4. Layer-29 single-feature ablation of these medical-readout features is a zero-op on MCQ accuracy, which means the model does not individually require them at this layer for answer selection. That is a narrower statement than "the model is not using these features" — the features could still contribute under multi-feature, multi-layer, or task-conditional interventions we did not run.
 
 Possible reasons amplification failed that we did not test:
 - Knowledge access might require coordinated changes across multiple layers
 - SAE features might be lossy: the real knowledge-driving pathway might be in the residual components the SAE doesn't capture
 - The intervention point (layer 29, ~85% depth) might be too late — answer computation may have already occurred
 - Continuous steering vectors (activation differences) rather than discrete features might preserve more of the signal
+- Redundancy: other features may carry the same information, so single-feature ablation is masked
 
 These are hypotheses; we did not test them.
+
+### Concluding statement
+
+We identify highly selective, language-agnostic medical SAE features in Gemma 3 4B that activate across English, Spanish, and French, and more weakly in lower-resource languages such as Arabic and Yoruba. However, under controlled evaluation, neither amplifying nor ablating these features changes medical MCQ accuracy above the random-feature noise floor. These features appear to function as interpretable cross-lingual readouts of medical content rather than direct control points for capability transfer under simple single-layer intervention. Whether more elaborate interventions (multi-layer, coordinated, or task-conditional) could use them for rescue is an open question this project did not answer.
 
 ---
 
@@ -183,11 +190,12 @@ These are hypotheses; we did not test them.
 
 ## Honest Project Summary
 
-We started with a routing hypothesis, got excited by apparent cross-lingual rescue results that turned out to be artifacts of a data-loading bug, ran the controlled replications, and landed on a null. Along the way we validated that:
+We started with a routing hypothesis, got excited by apparent cross-lingual rescue results that turned out to be artifacts of a data-loading bug (MMMLU `default` is not English) compounded by subset evaluation and no random-feature control. We ran controlled replications and landed on a null. Along the way we validated that:
 
-1. SAE features can steer output language at small scale (real)
-2. Language-agnostic domain-selective SAE features exist in larger models (real)
-3. These features function as readouts, not as knobs for knowledge retrieval (tested, confirmed)
-4. Naive single-feature amplification does not rescue cross-lingual performance gaps under controlled evaluation (tested, confirmed)
+1. SAE features can steer output language at small scale (Feature 857 on 1B, real)
+2. Language-agnostic domain-selective SAE features exist in Gemma 3 4B at layer 29 (features 893, 12570, 12845 — real)
+3. These features generalize beyond the original MCQ setup to free-form medical text, across multiple languages (tested, confirmed)
+4. Simple single-layer clamping of these features does not improve weak-language medical MCQ performance above the random-feature noise floor (tested, confirmed)
+5. Single-feature ablation of these features at layer 29 does not measurably reduce medical MCQ accuracy (tested, confirmed)
 
-The original hypothesis is not refuted in its strongest form — we only ruled out the simplest intervention scheme. But we did not find a publishable positive signal, and the honest state of the project is that the easy version of the idea does not work.
+The routing hypothesis is not refuted in its strongest form — we only ruled out the simplest interventions (single-feature amplification, single-feature ablation, single layer). Multi-layer, multi-feature, or coordinated interventions remain untested. But the project did not produce a publishable positive signal, and the honest state of things is that the easy version of the idea does not work at this scale with these tools.
