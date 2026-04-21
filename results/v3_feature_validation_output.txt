@@ -1,0 +1,184 @@
+Welcome to vast.ai. If authentication fails, try again after a few seconds, and double check your ssh key.
+Have fun!
+======================================================================
+v3 FEATURE VALIDATION: Testing the language-agnostic medical features
+======================================================================
+
+--- Loading model + SAE ---
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:11<00:11, 11.36s/it]Fetching 2 files: 100%|██████████| 2/2 [00:11<00:00,  5.68s/it]
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   2%|▏         | 18/883 [00:00<00:05, 164.10it/s]Loading weights:   6%|▋         | 57/883 [00:00<00:02, 277.37it/s]Loading weights:  11%|█         | 96/883 [00:00<00:02, 311.37it/s]Loading weights:  15%|█▌        | 134/883 [00:00<00:02, 336.12it/s]Loading weights:  19%|█▉        | 172/883 [00:00<00:02, 349.75it/s]Loading weights:  24%|██▎       | 208/883 [00:00<00:01, 352.64it/s]Loading weights:  28%|██▊       | 244/883 [00:00<00:01, 348.27it/s]Loading weights:  32%|███▏      | 279/883 [00:00<00:01, 337.81it/s]Loading weights:  36%|███▌      | 316/883 [00:00<00:01, 345.19it/s]Loading weights:  40%|████      | 354/883 [00:01<00:01, 353.20it/s]Loading weights:  44%|████▍     | 390/883 [00:01<00:01, 354.38it/s]Loading weights:  48%|████▊     | 426/883 [00:01<00:01, 347.48it/s]Loading weights:  62%|██████▏   | 551/883 [00:01<00:00, 611.86it/s]Loading weights:  83%|████████▎ | 737/883 [00:01<00:00, 978.30it/s]Loading weights: 100%|██████████| 883/883 [00:01<00:00, 574.02it/s]
+  Model + SAE loaded. Target features: [12570, 893, 12845]
+
+======================================================================
+TEST 1: Top-activating tokens on free-form text
+======================================================================
+
+  Text [MED]: A 58-year-old man presents with chest pain radiating to the left arm, diaphoresi...
+    Feature 12570: max_act=3353.6, top tokens: [('▁in', 3353.6), ('▁left', 2670.0), ('▁the', 2549.6)]
+    Feature 893: max_act=1308.1, top tokens: [('▁myocardial', 1308.1), ('<bos>', 0.0), ('A', 0.0)]
+    Feature 12845: max_act=0.0, top tokens: [('<bos>', 0.0), ('A', 0.0), ('▁', 0.0)]
+
+  Text [MED]: The renin-angiotensin-aldosterone system regulates blood pressure and fluid bala...
+    Feature 12570: max_act=2128.0, top tokens: [('▁juxt', 2128.0), ('▁the', 1367.5), ('omer', 1268.8)]
+    Feature 893: max_act=6092.9, top tokens: [('ular', 6092.9), ('▁from', 5259.8), ('▁the', 4927.8)]
+    Feature 12845: max_act=0.0, top tokens: [('<bos>', 0.0), ('The', 0.0), ('▁renin', 0.0)]
+
+  Text [MED]: Beta-blockers reduce cardiac output and renin secretion, making them useful in t...
+    Feature 12570: max_act=0.0, top tokens: [('<bos>', 0.0), ('Beta', 0.0), ('-', 0.0)]
+    Feature 893: max_act=1511.7, top tokens: [('▁renin', 1511.7), ('▁secretion', 1396.3), ('▁exacerbate', 687.0)]
+    Feature 12845: max_act=0.0, top tokens: [('<bos>', 0.0), ('Beta', 0.0), ('-', 0.0)]
+
+  Text [MED]: The brachial plexus is formed by the ventral rami of spinal nerves C5 through T1...
+    Feature 12570: max_act=2555.5, top tokens: [('▁the', 2555.5), ('▁the', 2553.3), ('▁ventral', 2530.3)]
+    Feature 893: max_act=2865.7, top tokens: [('▁ventral', 2865.7), ('▁sensory', 2833.9), ('▁and', 2741.5)]
+    Feature 12845: max_act=1260.9, top tokens: [('▁C', 1260.9), ('▁the', 1207.5), ('▁supplies', 1133.4)]
+
+  Text [MED]: Staphylococcus aureus is a gram-positive coccus that appears in clusters. Methic...
+    Feature 12570: max_act=0.0, top tokens: [('<bos>', 0.0), ('St', 0.0), ('aphylococcus', 0.0)]
+    Feature 893: max_act=1193.6, top tokens: [('▁clusters', 1193.6), ('cus', 1134.6), ('▁coc', 1026.0)]
+    Feature 12845: max_act=0.0, top tokens: [('<bos>', 0.0), ('St', 0.0), ('aphylococcus', 0.0)]
+
+  Text [NONMED]: Kant's categorical imperative asserts that one should act only according to that...
+    Feature 12570: max_act=0.0, top tokens: [('<bos>', 0.0), ('Kant', 0.0), ("'", 0.0)]
+    Feature 893: max_act=0.0, top tokens: [('<bos>', 0.0), ('Kant', 0.0), ("'", 0.0)]
+    Feature 12845: max_act=0.0, top tokens: [('<bos>', 0.0), ('Kant', 0.0), ("'", 0.0)]
+
+  Text [NONMED]: The Treaty of Westphalia in 1648 ended the Thirty Years' War and established the...
+    Feature 12570: max_act=0.0, top tokens: [('<bos>', 0.0), ('The', 0.0), ('▁Treaty', 0.0)]
+    Feature 893: max_act=0.0, top tokens: [('<bos>', 0.0), ('The', 0.0), ('▁Treaty', 0.0)]
+    Feature 12845: max_act=0.0, top tokens: [('<bos>', 0.0), ('The', 0.0), ('▁Treaty', 0.0)]
+
+  Text [NONMED]: The Amazon rainforest covers approximately 5.5 million square kilometers across ...
+    Feature 12570: max_act=0.0, top tokens: [('<bos>', 0.0), ('The', 0.0), ('▁Amazon', 0.0)]
+    Feature 893: max_act=0.0, top tokens: [('<bos>', 0.0), ('The', 0.0), ('▁Amazon', 0.0)]
+    Feature 12845: max_act=0.0, top tokens: [('<bos>', 0.0), ('The', 0.0), ('▁Amazon', 0.0)]
+
+  Text [NONMED]: Inflation is sustained increase in the general price level of goods and services...
+    Feature 12570: max_act=0.0, top tokens: [('<bos>', 0.0), ('Inflation', 0.0), ('▁is', 0.0)]
+    Feature 893: max_act=0.0, top tokens: [('<bos>', 0.0), ('Inflation', 0.0), ('▁is', 0.0)]
+    Feature 12845: max_act=0.0, top tokens: [('<bos>', 0.0), ('Inflation', 0.0), ('▁is', 0.0)]
+
+  Text [NONMED]: Shakespeare's Hamlet explores themes of revenge, madness, and moral ambiguity. T...
+    Feature 12570: max_act=0.0, top tokens: [('<bos>', 0.0), ('Shakespeare', 0.0), ("'", 0.0)]
+    Feature 893: max_act=0.0, top tokens: [('<bos>', 0.0), ('Shakespeare', 0.0), ("'", 0.0)]
+    Feature 12845: max_act=0.0, top tokens: [('<bos>', 0.0), ('Shakespeare', 0.0), ("'", 0.0)]
+
+  SUMMARY (test 1):
+    Feature 12570: MED free-text max act avg=1607.4, NONMED max act avg=0.0, ratio=16074.1x
+    Feature 893: MED free-text max act avg=2594.4, NONMED max act avg=0.0, ratio=25944.0x
+    Feature 12845: MED free-text max act avg=252.2, NONMED max act avg=0.0, ratio=2521.7x
+
+--- Loading MMLU data ---
+Generating test split:   0%|          | 0/14042 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 14042/14042 [00:00<00:00, 418747.50 examples/s]
+Generating validation split:   0%|          | 0/1531 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 1531/1531 [00:00<00:00, 224778.75 examples/s]
+Generating dev split:   0%|          | 0/285 [00:00<?, ? examples/s]Generating dev split: 100%|██████████| 285/285 [00:00<00:00, 60262.99 examples/s]
+Generating auxiliary_train split:   0%|          | 0/99842 [00:00<?, ? examples/s]Generating auxiliary_train split:  10%|█         | 10000/99842 [00:00<00:00, 97376.41 examples/s]Generating auxiliary_train split:  22%|██▏       | 22000/99842 [00:00<00:00, 108507.20 examples/s]Generating auxiliary_train split:  35%|███▌      | 35000/99842 [00:00<00:00, 115081.91 examples/s]Generating auxiliary_train split:  51%|█████     | 51000/99842 [00:00<00:00, 127231.83 examples/s]Generating auxiliary_train split:  67%|██████▋   | 67000/99842 [00:00<00:00, 133538.76 examples/s]Generating auxiliary_train split: 100%|██████████| 99842/99842 [00:00<00:00, 157613.08 examples/s]
+Generating test split:   0%|          | 0/14042 [00:00<?, ? examples/s]Generating test split:  71%|███████   | 10000/14042 [00:00<00:00, 96381.34 examples/s]Generating test split: 100%|██████████| 14042/14042 [00:00<00:00, 75798.30 examples/s]
+Generating test split:   0%|          | 0/14042 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 14042/14042 [00:00<00:00, 78132.99 examples/s]Generating test split: 100%|██████████| 14042/14042 [00:00<00:00, 76841.53 examples/s]
+  Medical pairs: 945
+  Non-medical pairs: 582
+
+======================================================================
+TEST 2: Ablation - zero out target features
+======================================================================
+
+  Evaluating en...
+    en medical baseline...
+    [200/945] en-med-base: 53.5%
+    [400/945] en-med-base: 59.8%
+    [600/945] en-med-base: 59.3%
+    [800/945] en-med-base: 59.0%
+    en medical with ablation...
+    [200/945] en-med-ablate: 53.5%
+    [400/945] en-med-ablate: 59.8%
+    [600/945] en-med-ablate: 59.3%
+    [800/945] en-med-ablate: 59.0%
+    en non-medical baseline...
+    [200/582] en-nonmed-base: 65.5%
+    [400/582] en-nonmed-base: 66.2%
+    en non-medical with ablation...
+    [200/582] en-nonmed-ablate: 65.5%
+    [400/582] en-nonmed-ablate: 66.2%
+    en MED:    58.4% → 58.4%  Δ=+0.00%
+    en NONMED: 63.1% → 63.1%  Δ=+0.00%
+
+  Evaluating es...
+    es medical baseline...
+    [200/945] es-med-base: 55.0%
+    [400/945] es-med-base: 58.8%
+    [600/945] es-med-base: 56.7%
+    [800/945] es-med-base: 55.9%
+    es medical with ablation...
+    [200/945] es-med-ablate: 55.0%
+    [400/945] es-med-ablate: 58.8%
+    [600/945] es-med-ablate: 56.7%
+    [800/945] es-med-ablate: 55.9%
+    es non-medical baseline...
+    [200/582] es-nonmed-base: 60.0%
+    [400/582] es-nonmed-base: 62.0%
+    es non-medical with ablation...
+    [200/582] es-nonmed-ablate: 60.0%
+    [400/582] es-nonmed-ablate: 62.0%
+    es MED:    54.3% → 54.3%  Δ=+0.00%
+    es NONMED: 59.3% → 59.3%  Δ=+0.00%
+
+  Evaluating fr...
+    fr medical baseline...
+    [200/945] fr-med-base: 50.0%
+    [400/945] fr-med-base: 54.8%
+    [600/945] fr-med-base: 54.8%
+    [800/945] fr-med-base: 53.6%
+    fr medical with ablation...
+    [200/945] fr-med-ablate: 50.0%
+    [400/945] fr-med-ablate: 54.8%
+    [600/945] fr-med-ablate: 54.8%
+    [800/945] fr-med-ablate: 53.6%
+    fr non-medical baseline...
+    [200/582] fr-nonmed-base: 61.5%
+    [400/582] fr-nonmed-base: 61.8%
+    fr non-medical with ablation...
+    [200/582] fr-nonmed-ablate: 61.5%
+    [400/582] fr-nonmed-ablate: 61.8%
+    fr MED:    52.8% → 52.8%  Δ=+0.00%
+    fr NONMED: 59.5% → 59.5%  Δ=+0.00%
+
+======================================================================
+TEST 3: Free-form medical text activations
+======================================================================
+(Already collected in Test 1 -- summary here)
+  Feature 12570: med avg max=1607.4, nonmed avg max=0.0, ratio=16074.1x, fires on MED free text=60% → MEDICAL
+  Feature 893: med avg max=2594.4, nonmed avg max=0.0, ratio=25944.0x, fires on MED free text=100% → MEDICAL
+  Feature 12845: med avg max=252.2, nonmed avg max=0.0, ratio=2521.7x, fires on MED free text=20% → AMBIGUOUS
+
+======================================================================
+FINAL VERDICT
+======================================================================
+
+Test 1 (free-text medical activation): PASS (3/3 features activate preferentially on medical text)
+
+Test 2 (ablation hurts medical more): FAIL
+  Avg medical Δ under ablation: +0.00%
+  Avg non-medical Δ under ablation: +0.00%
+
+Test 3 (fires on non-MCQ medical text): FAIL (avg fire rate on medical free-text: 60%)
+
+----------------------------------------------------------------------
+INTERPRETATION: Mixed evidence. Inspect individual test results carefully.
+Traceback (most recent call last):
+  File "/root/v3_feature_validation.py", line 480, in <module>
+    main()
+  File "/root/v3_feature_validation.py", line 472, in main
+    json.dump(results, f, indent=2)
+  File "/usr/lib/python3.10/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/usr/lib/python3.10/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.10/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/usr/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bool is not JSON serializable

@@ -1,329 +1,193 @@
 # SAE-Guided Capability Routing: Experimental Findings
 
+**Status**: Project concluded. Rescue hypothesis not supported. Some real mechanistic findings remain.
+
 ## Research Question
 
-Can Sparse Autoencoder (SAE) features serve as routing signals for selectively activating shared-parameter computation in LLMs, analogous to how biological brains route information through parallel, cooperating subsystems?
+Can Sparse Autoencoder (SAE) features serve as routing signals for selectively activating shared-parameter computation in LLMs, analogous to how biological brains route information through cooperating subsystems?
 
-This project tests the preconditions for that hypothesis through a staircase of progressively more ambitious experiments on Gemma 3 1B IT using Gemma Scope 2 SAEs.
+The applied question we ended up testing: **can amplifying SAE features at inference time rescue cross-lingual performance gaps on knowledge-intensive tasks?**
+
+Short answer: **No, not via single-layer feature amplification.** Features that represent domain content exist and are identifiable, but ablating them doesn't hurt task performance and amplifying them doesn't improve it. The representation exists; the causal pathway from representation to answer selection does not go through these features in a way we can exploit.
 
 ## Setup
 
-- **Model**: `google/gemma-3-1b-it` (26 layers, hidden size 1152)
-- **SAEs**: Gemma Scope 2 (`google/gemma-scope-2-1b-it`), residual stream post, 16k width
-- **Target layers**: 7 (early, ~27%), 13 (middle, ~50%), 22 (late, ~85%)
-- **SAE releases**: `gemma-scope-2-1b-it-res` (layers 13/17/22, medium L0), `gemma-scope-2-1b-it-res-all` (all layers, small/big L0)
-- **Pipeline**: HuggingFace transformers for inference + manual hooks for activation extraction, SAELens for SAE encode/decode. HookedSAETransformer works for small runs but OOMs on large corpora.
+- **Models**: `google/gemma-3-1b-it` (26 layers, d_model=1152) for initial steering; `google/gemma-3-4b-it` (34 layers, d_model=2560) for the knowledge-transfer experiments
+- **SAEs**: Gemma Scope 2 residual-stream SAEs, layer 22 (1B) and layer 29 (4B), 16k width, medium L0
+- **Benchmark**: MMLU/MMMLU for cross-lingual MCQ evaluation
+- **Real English**: `cais/mmlu` (see critical note below)
+
+## Critical Methodological Note (added in v3)
+
+Our initial v2-medical experiments used MMMLU's `default` config as "English". **This config is not English** — it contains all 14 non-English language translations concatenated, with Arabic first. Our "English" filter returned the first N items per subject, which are Arabic. The initial finding of a "reverse gap" (non-English > English) was therefore Arabic-vs-Spanish, not English-vs-Spanish.
+
+Additional methodological issues in v2 surfaced by external review:
+- "Single feature" claim was actually top-3 or top-10 features
+- Net rescue was measured on a small subset, not the full benchmark
+- No random-feature control
+- Subject+position pairing between MMMLU configs was assumed but not verified
+
+v3 addressed all of these. Quantitative rescue claims from v2-medical are retracted.
 
 ---
 
-## v1: Cross-lingual Representation Exploration
+## What survives: validated claims
 
-**Goal**: Characterize how Gemma 3 1B represents semantically equivalent content across English, Spanish, and French. Determine whether language and culture are separable in feature space.
+### 1. Cross-lingual representation analysis (v1)
+Characterization of how Gemma 3 1B represents semantically equivalent content across EN/ES/FR using our own parallel corpus. Key findings:
+- Middle layers are strikingly language-agnostic (cosine similarity 0.999+)
+- SAE features expose structure that raw residual similarity hides
+- Language/culture entanglement is partial and has a depth signature: loanword-driven at shallow layers (lexical routing), concept-driven at late layers
 
-**Corpus**: 32 parallel triples (same idea in EN/ES/FR) across neutral, moderate, and strongly culturally-weighted topics, plus 17 cross-cultural items (e.g., English text about bullfighting). Cross-cultural items split into loanword (with Spanish/French vocabulary) and no-loanword (native vocabulary only) variants.
+Intact. Used our own corpus, not contaminated by the MMMLU issue.
 
-### Finding 1: The model's middle layers are strikingly language-agnostic
+### 2. Language-output steering on Gemma 3 1B (v2)
+Feature 857 at layer 22 causally steers output language: clamping it at 2x-5x of its natural activation on neutral English prompts produces smoothly graded Spanish output. Features 1207 and 3201 similarly steer toward French with different dynamic ranges.
 
-Cross-lingual cosine similarity of residual stream representations:
+Intact. This is a clean, small result: SAE features can be used to control the model's output language. It does NOT extend to controlling knowledge retrieval.
 
-| Layer | Mean-pooled | Last-token |
-|-------|-------------|------------|
-| 7     | 0.9991      | 0.9973     |
-| 13    | 0.9993      | 0.9975     |
-| 22    | 0.9866      | 0.9672     |
+### 3. Real multilingual baselines on Gemma 3 4B (v3)
+Measured against proper English from `cais/mmlu`:
 
-The expected "early divergent, middle convergent, late divergent" pattern is barely visible because the model is already highly convergent by layer 7. Cultural weight (neutral vs strong) makes almost no difference. Last-token representations show slightly more divergence than mean-pooled, especially at layer 22 (0.967 vs 0.987), confirming that mean-pooling partially masks language-specific structure.
+| Language | Medical accuracy | 95% CI | Gap vs EN |
+|----------|-----------------|--------|-----------|
+| English  | **58.4%** | [55.1, 61.5] | — |
+| Spanish  | 54.3% | [51.2, 57.6] | +4.1% |
+| French   | 52.8% | [49.5, 56.1] | +5.6% |
+| Hindi    | 48.5% | [45.5, 51.6] | +9.9% |
+| Arabic   | 43.2% | [40.1, 46.0] | **+15.2%** |
+| Swahili  | 39.5% | [36.5, 42.4] | **+18.9%** |
+| Yoruba   | 31.2% | [28.5, 34.2] | **+27.2%** |
 
-### Finding 2: SAE features are far more discriminating than cosine similarity
+English dominates as the literature predicts. The gap grows substantially for lower-resource languages.
 
-While raw residual cosine similarity is 0.999+ at layers 7-13, SAE feature decomposition reveals substantial language-specific structure:
+### 4. Language-agnostic domain-selective features exist (v3 domain + validation)
+Using 6-condition contrastive analysis (EN/ES/FR × medical/non-medical), we identified features that fire on medical content across all three trusted languages and zero on non-medical content:
 
-| Layer | Language-specific features | Language-agnostic features |
-|-------|--------------------------|---------------------------|
-| 7     | 148                      | 262                       |
-| 13    | 209                      | 1020                      |
-| 22    | **936**                  | 914                       |
+| Feature | EN med | ES med | FR med | EN nonmed | ES nonmed | FR nonmed |
+|---------|--------|--------|--------|-----------|-----------|-----------|
+| 893 | 833.6 | 541.8 | 536.2 | 0.0 | 0.0 | 0.1 |
+| 12570 | 606.0 | 365.7 | 330.0 | 0.0 | 0.0 | 0.0 |
+| 12845 | 234.7 | 149.0 | 128.6 | 0.0 | 0.0 | 0.0 |
 
-The jump from 209 to 936 language-specific features between layers 13 and 22 marks where the model's output-preparation machinery builds language-specific representations. This empirically demonstrates why SAE-based analysis is more informative than raw similarity metrics for this research question.
+These features also fire on Arabic medical content (weakly) and on free-form non-MCQ medical text (e.g., peaks on "myocardial", "renin", "ventral", "coccus"), and zero on free-form non-medical text (philosophy, history, economics, literature, geography). They are genuine cross-lingual cross-format medical content representations.
 
-**Key features discovered**:
-- Feature 857 (layer 22): fires on 100% of Spanish texts, 6% of others, mean activation 383. The cleanest language-specific feature found.
-- Feature 1207 (layer 22): fires on 100% of French texts, 14% of others, mean activation 1782. Very strong but high baseline activation.
-- Feature 3201 (layer 22): fires on 100% of French texts, 6% of others, mean activation 192.
-
-### Finding 3: Language and culture are partially entangled, and loanwords amplify it
-
-Overall cross-cultural/baseline ratio: **2.46x** (entangled).
-
-The loanword experiment (design suggestion from the planning conversation) produced a clean result:
-
-| Condition | Avg cultural feature fire rate | N |
-|-----------|-------------------------------|---|
-| With loanwords | 38.5% | 36 |
-| Without loanwords | 21.0% | 15 |
-
-**Loanwords amplify entanglement by +17.5 percentage points**, but the 21% fire rate on no-loanword items (vs ~6-8% baseline) shows genuine conceptual-cultural entanglement exists beyond lexical routing.
-
-### Finding 4: Layer depth distinguishes lexical from conceptual entanglement
-
-The most informative result from v1. For the bullfighting-in-English cross-cultural item:
-
-| Layer | With loanwords (corrida, matador) | Without loanwords (fighter, ring) |
-|-------|-----------------------------------|-----------------------------------|
-| 7     | 6.92x                             | 1.54x                             |
-| 13    | 3.64x                             | 1.82x                             |
-| 22    | 10.00x                            | **5.00x**                         |
-
-The loanword version is entangled at every layer (lexical routing -- the tokens themselves trigger Spanish features). The no-loanword version shows minimal entanglement at early layers but strong entanglement at layer 22 -- the signature of conceptual rather than lexical processing. Early layers see English tokens and shrug; late layers reconstruct the cultural concept and the language binding activates.
+### 5. These features are readouts, not drivers (v3 feature validation)
+Ablating features 893, 12570, and 12845 during MCQ inference — zeroing out their contribution to the residual stream — changed accuracy by **exactly 0.00%** across EN, ES, FR, on both medical and non-medical conditions. The features represent medical content but are not causally involved in answer selection.
 
 ---
 
-## v2: Feature Steering (Causal Control Test)
+## What is retracted
 
-**Goal**: Test the most basic precondition for the routing hypothesis -- do SAE features behave as causal control signals, or are they just correlates?
+- **v2-medical quantitative rescue claims** (+3 to +9 net rescues, "3-7% per cell", "single feature rescues cross-lingual gaps"): artifacts of Arabic mislabeled as English, subset evaluation, and no random-feature control
+- **Reversed multilingual gap** (ES > EN): was Arabic < Spanish, not English < Spanish
+- **"Cross-lingual knowledge transfer via SAE feature steering"** as the paper's headline claim: not supported by the controlled replication
 
-**Method**: Clamp Feature 857 (Spanish detector) to various multiples of its natural activation during autoregressive generation on neutral English prompts. Observe whether output shifts toward Spanish.
+## Null results (established under controlled conditions)
 
-### Finding 5: Features ARE causal control signals
+| Experiment | Feature type | Victim language | Net effect vs random control |
+|-----------|--------------|----------------|------------------------------|
+| v3 replication | ES language features → EN medical | English | Within noise floor (±0.2%) |
+| v3 low-resource | EN language features → YO medical | Yoruba | Within noise floor |
+| v3 low-resource | ES language features → YO medical | Yoruba | Within noise floor |
+| v3 domain rescue | Language-agnostic med features → AR medical | Arabic | Within noise floor |
+| v3 domain rescue | Language-agnostic med features → YO medical | Yoruba | Within noise floor |
 
-Feature 857 produces a clean, graded language shift:
-
-| Steering strength | Effect on "Water is made of" |
-|-------------------|-------------------------------|
-| 0x (baseline)     | "hydrogen and oxygen. The water cycle is a continuous process..." |
-| 0.5x              | No visible change |
-| 1.0x              | "hydrogen and oxygen atoms. The hydrogen atoms are very light..." (subtle content shift) |
-| 2.0x              | "hydrogen and oxygen atoms. The hydrogen atoms are very light and can easily escape..." |
-| **5.0x**          | **"H2O. H2O es un compuesto de dos atomos de hidrogeno y un atomo de oxigeno..."** |
-
-The transition is smooth -- not a binary switch but a continuous dial from English to code-mixed to full Spanish. This is exactly the behavior needed for a routing signal.
-
-**Feature 1207 (French)** also steers causally but with a caveat: at 2x, it produces coherent French ("de leur structure osseuse, leur large surface de peau..."). At 5x, it degenerates to repetitive output ("plus plus plus..."). This indicates routing must operate within a feature's natural dynamic range.
-
-**Feature 3201 (French)** barely steers at all, even at 5x. Not all language-specific features are equally useful as controls -- some are readouts rather than drivers.
-
-### Verdict
-
-**The routing hypothesis precondition is met.** At least some SAE features in Gemma 3 1B behave as genuine causal control signals that can smoothly redirect model behavior. Feature 857 specifically acts as a clean, graded language routing switch. This validates pursuing the full routing architecture in later experiments.
+Full-benchmark evaluation (all paired items), bootstrap 95% CIs, matched random-feature control in every case. **No experimental condition produced rescue above the random-feature baseline.**
 
 ---
 
-## Neuronpedia Cross-Validation
+## Interpretation
 
-We looked up our key features on [Neuronpedia](https://neuronpedia.org) (which hosts Gemma Scope 2 feature dashboards with automated interpretability labels) to validate our feature identification. The API endpoint is `https://www.neuronpedia.org/api/feature/{model}/{source}/{index}`.
+The routing hypothesis at its simplest — amplify the right feature, retrieve the knowledge — is **not supported at the single-layer-amplification scale in Gemma 3 4B**. The findings constrain what the mechanism would have to look like if it exists:
 
-| Feature | Our label | Neuronpedia label | Match? |
-|---------|-----------|-------------------|--------|
-| [857 @ L22](https://www.neuronpedia.org/gemma-3-1b-it/22-gemmascope-2-res-16k/857) | Spanish detector | "the phrase aquí te" | Partial -- narrower than our label but confirms Spanish activation |
-| [1207 @ L22](https://www.neuronpedia.org/gemma-3-1b-it/22-gemmascope-2-res-16k/1207) | French detector | **"French common words"** | Confirmed |
-| [3201 @ L22](https://www.neuronpedia.org/gemma-3-1b-it/22-gemmascope-2-res-16k/3201) | French detector | **"French articles followed by nouns"** | Confirmed (more specific -- French syntax) |
-| 576 @ L22 | French-specific | "german words followed by common german words" | **Wrong** -- actually German, not French |
-| 9293 @ L7 | French early layer | "software development and validation" | **Wrong** -- topical, not linguistic |
-| 10036 @ L7 | French early layer | "lemon juice, zest, wedges" | **Wrong** -- food/cooking feature |
+1. Features that *represent* a domain can exist (893, 12570 are genuine medical content features)
+2. Features that *control output language* exist (Feature 857 on 1B)
+3. But these two capacities do not obviously compose into "features that control knowledge retrieval"
+4. Ablation is a zero-op, which means the model isn't *using* these features to generate answers — knowledge access flows through pathways that don't pass through these specific SAE features in a way single-feature intervention can reach
 
-**Key takeaway**: Late-layer features (L22) are genuinely linguistic and validate well. Early-layer features (L7) that we identified as "language-specific" were actually topical features that correlated with French cooking/tech texts in our corpus. This is the polysemanticity warning from the handoff doc in action -- and it means v2's steering experiment was right to focus on L22 features, which are the clean ones.
+Possible reasons amplification failed that we did not test:
+- Knowledge access might require coordinated changes across multiple layers
+- SAE features might be lossy: the real knowledge-driving pathway might be in the residual components the SAE doesn't capture
+- The intervention point (layer 29, ~85% depth) might be too late — answer computation may have already occurred
+- Continuous steering vectors (activation differences) rather than discrete features might preserve more of the signal
 
----
-
-## v2-Medical: Cross-lingual Knowledge Transfer via Feature Steering
-
-**Goal**: Test whether SAE feature steering can transfer knowledge across languages in a practically meaningful setting. This became the main result of the project.
-
-### Setup
-
-- **Model**: `google/gemma-3-4b-it` (34 layers, d_model=2560) -- Gemma 3 1B was too close to random (~32% on 4-choice MCQ) to measure intervention effects.
-- **SAE**: `gemma-scope-2-4b-it-res`, layer 29 (85% depth), 16k width, medium L0.
-- **Benchmark**: OpenAI MMMLU (professional translations of MMLU) across multiple languages.
-- **Evaluation**: Answer likelihood scoring on 4-option MCQ. For each question, we compute P(A)/P(B)/P(C)/P(D) from the letter tokens after the prompt. No free generation.
-
-### Finding 6: Gemma 3 does NOT show the documented multilingual gap
-
-Standard expectation: LLMs perform worse on domain-specific tasks in non-English languages. Gemma 3 reverses this.
-
-| Condition | Accuracy |
-|-----------|----------|
-| English Medical | 42.9% |
-| **Spanish Medical** | **53.6%** (+10.7) |
-| English Control | 48.8% |
-| **Spanish Control** | **59.6%** (+10.8) |
-
-Medical-specific gap: **+0.1%** (essentially zero). The gap is general language quality, not domain knowledge loss. This ruled out our initial "rescue English medical with Spanish medical features" framing. We pivoted to the reverse direction: rescue English performance by amplifying Spanish features.
-
-### Finding 7: Single-feature amplification rescues 3-7% of cross-lingual gaps
-
-**Setup**: Identify "rescuable" questions (Spanish correct, English wrong). Amplify a single generic Spanish feature (feature 596 at L29, activation ~2000 on Spanish, ~0 on English) during English inference. Measure how many rescuable questions become correct.
-
-| Steering strength | Rescued | Broken | Net |
-|-------------------|---------|--------|-----|
-| 0x (baseline) | 0/197 | 0/50 | +0 |
-| 1x | 0/197 | 0/50 | +0 |
-| 2x | 5/197 | 0/50 | **+5** |
-| 3x | 8/197 | 1/50 | **+7** |
-| 5x | 11/197 | 2/50 | **+9** |
-
-The effect is **monotonic with strength**, rescue outpaces breakage at every level, and the 0x sanity check is clean. This is the signature of a real causal effect.
-
-### Finding 8: Domain-specific features perform WORSE than language-general ones
-
-We tested the design-Claude-recommended "targeted" approach: find features that fire on Spanish medical content specifically (high on ES-medical, low on EN-medical, low on ES-non-medical, low on EN-non-medical). We found genuinely clean features (e.g., Feature 10870 at L29: ES_med=564, EN_med=8, ES_ctrl=17, EN_ctrl=0 -- textbook ES-medical specific).
-
-| Approach | Best rescue |
-|----------|-------------|
-| Generic Spanish features | **+9** (5x, L29) |
-| ES-medical-specific features | +1 (2x, L17) |
-
-**Interpretation**: The clean medical-Spanish features are *readouts* of the routing state, not *drivers* of it. Amplifying them doesn't import the underlying capability. This rules out the "medical knowledge highway" hypothesis: knowledge isn't stored separately by language in Gemma 3. Only general language features transfer capability.
-
-### Finding 9: The rescue generalizes across 5 domains and 3 languages
-
-Same mechanism, different (language, domain) cells:
-
-**Spanish** (feature 596):
-
-| Domain | Gap | Best rescue | Strength |
-|--------|-----|-------------|----------|
-| Medical | +10.3% | +6 | 5x |
-| Philosophy | +5.2% | +2 | 2x |
-| Global facts | +7.3% | +1 | 2x |
-| STEM | +1.7% | +7 | 5x |
-| Humanities | +17.0% | +6 | 5x |
-
-**French** (feature 8348):
-
-| Domain | Gap | Best rescue | Strength |
-|--------|-----|-------------|----------|
-| Medical | +9.2% | +4 | 5x |
-| Philosophy | +6.0% | +5 | 5x |
-| Global facts | +2.7% | +0 | - |
-| STEM | +1.7% | +4 | 2x |
-| Humanities | +18.2% | +3 | 1x |
-
-**Chinese** (feature 191, ZH_CN medical only):
-
-| Domain | Gap | Best rescue | Strength |
-|--------|-----|-------------|----------|
-| Medical | +3.6% | +3 | 3x |
-
-Net positive rescue in 13/14 tested cells. The mechanism is universal across languages (including linguistically distant Chinese) and robust across domains.
-
-### Finding 10: English does not dominate even in coding (for Gemma 3)
-
-We hypothesized that coding/CS benchmarks would favor English (given overwhelmingly English programming documentation). We tested 5 CS subjects (college CS, HS CS, computer security, machine learning, electrical engineering).
-
-| Language | EN acc | Target acc | EN - Target |
-|----------|--------|------------|-------------|
-| ES | 48.5% | 55.1% | **-6.6%** |
-| FR | 48.5% | 53.0% | **-4.5%** |
-| ZH | 48.5% | 51.3% | **-2.9%** |
-
-English still loses, even in coding, across all three target languages. But there's a clear pattern: **the gap shrinks with linguistic distance from English**. This suggests Gemma 3's multilingual balance is uniform, not stochastic.
-
-### Finding 11: Features don't compose additively (ceiling effect)
-
-On English medical, we tested combining Spanish and French features:
-
-| Condition | Best rescue (5x) |
-|-----------|-----------------|
-| ES features only | +7 (9 rescued, 2 broken) |
-| FR features only | +2 |
-| **ES + FR combined** | **+7** (9 rescued, 2 broken) |
-
-Combining doesn't help. Likely causes:
-1. **Magnitude imbalance**: ES feature 596 has activation ~2000; FR features are ~200-250. ES dominates any combined intervention.
-2. **Redundant routing**: ES and FR features may push the residual toward the same "more multilingual" region. Additional features don't unlock more capability -- they hit a ceiling.
-
-This constrains the ensemble idea: the right architecture is probably "pick the best single target language and amplify its features" rather than "combine features from many languages."
+These are hypotheses; we did not test them.
 
 ---
 
-## Summary of Main Results
+## Experimental Timeline
 
-**The paper-worthy finding**: Cross-lingual performance gaps in LLMs can be partially closed via single-feature SAE steering. The mechanism:
-
-- Is causal (monotonic with strength, clean sanity checks)
-- Generalizes across 3 languages and 5 domains
-- Works best with **language-general** features, not domain-specific ones
-- Has a magnitude ceiling (~5-10% rescue rate per cell)
-- Does not stack additively across multiple languages
-
-**Negative results that sharpen the story**:
-
-- ES-medical-specific features rescue worse than generic ES features: rules out "domain-specific highways"
-- ES + FR combined = ES alone: rules out naive ensembling
-- English doesn't dominate even in CS on Gemma 3: Gemma 3 is an unusually balanced multilingual model
-
-**Open questions for future work**:
-
-- Multi-layer intervention
-- Magnitude-normalized feature combination
-- Generalization to models where English DOES dominate (Llama, Mistral) -- would need SAE training
-- Scaling behavior at Gemma 3 12B and 27B
+- [x] **v1**: Cross-lingual representation exploration (corpus-based)
+- [x] **v2 steering**: Causal language-output control on 1B (Feature 857 → Spanish output)
+- [x] **v2 medical**: Original rescue story — **results retracted**
+- [x] **v3 replication**: Controlled re-run with real English → null
+- [x] **v3 low-resource rescue**: EN/ES features → AR/YO → null
+- [x] **v3 domain rescue**: Language-agnostic medical features → AR/YO → null
+- [x] **v3 feature validation**: Target features are readouts, not drivers (ablation = 0)
+- [x] **Project closure**: This document
 
 ---
-
-## Experimental Staircase (Updated)
-
-- [x] **v1**: Exploration -- characterize cross-lingual representations, find separable features
-- [x] **v2 steering**: Verify features are causal controls (Feature 857 steers output to Spanish)
-- [x] **v2 medical**: Identify cross-lingual gap and rescue via feature steering
-- [x] **v2 generalization**: Confirm rescue works across languages and domains
-- [x] **v2 flip/distant/combined**: Test boundaries of the mechanism
-- [ ] **Paper writeup**: Workshop-style paper for interpretability venue
-- [ ] **v3**: Multi-layer intervention and magnitude normalization
-- [ ] **v4**: Test on models with EN-dominant gap (requires SAE training)
-- [ ] **v5**: Learned routing module on top of frozen model
-
----
-
-## Methodology Notes
-
-- **Mean-pooling vs last-token**: Mean-pooling slightly inflates cross-lingual similarity. Use last-token for sharper signal, especially at late layers.
-- **SAE reconstruction quality**: cosine similarity 0.998+ at layers 7 and 13, 0.987 at layer 22. Sufficient for analysis.
-- **HookedSAETransformer vs manual hooks**: HookedSAETransformer works for small batches but OOMs on 100+ item corpora due to weight conversion overhead. Use HuggingFace transformers + manual hooks for activation collection.
-- **Steering approach**: Add the steering delta (steered reconstruction minus original reconstruction) to the original residual, rather than replacing it. This preserves information not captured by the SAE.
-- **Feature activation ranges matter**: Feature 1207 (mean_act=1782) degenerates at 5x because the magnitude overwhelms the model. Feature 857 (mean_act=383) steers cleanly at 5x. Routing signals need to operate within the feature's natural dynamic range.
 
 ## Key Files
 
-### Research plan
+### Documentation
 | File | Purpose |
 |------|---------|
-| `sae_routing_experiment_handoff.md` | Original research plan from design conversation |
-| `FINDINGS.md` | This document -- all empirical findings |
+| `README.md` | Repo overview + reproduction instructions |
+| `FINDINGS.md` | This document |
+| `sae_routing_experiment_handoff.md` | Original research plan |
 
 ### Data
 | File | Purpose |
 |------|---------|
-| `corpus.json` | 32 parallel triples + 17 cross-cultural items (EN/ES/FR, proper accents) used in v1 |
-| `corpus_template.json` | Template for expanding the corpus |
+| `corpus.json` | v1 parallel trilingual corpus (EN/ES/FR) |
 
-### Experiment scripts
+### Scripts
 | File | Purpose |
 |------|---------|
-| `hw1-5_*.py` | Hello-world validation: model loading, SAE loading, pipeline tests |
-| `v1_exploration.py` | Cross-lingual similarity, feature identification, entanglement, loanword comparison, per-token attribution |
-| `v2_steering.py` | Causal control test: clamp features during generation (1B model, Spanish/French) |
-| `v2_medical_pilot.py` | Baseline: EN vs ES medical QA accuracy on 1B and 4B (go/no-go check) |
-| `v2_medical_rescue.py` | First rescue experiment: generic Spanish features on EN medical (4B) |
-| `v2_medical_rescue_v2.py` | Targeted rescue: ES-medical-specific features (negative result) |
-| `v2_generalization.py` | Rescue across 5 domains and 2 languages (ES, FR) |
-| `v2_flip_distant_combined.py` | Coding flip test + Chinese + combined ES+FR features |
+| `hw{1-5}_*.py` | Hello-world validation (model/SAE loading) |
+| `v1_exploration.py` | Cross-lingual similarity and feature characterization |
+| `v2_steering.py` | Language-output steering on 1B (VALID RESULT) |
+| `v2_medical_pilot.py` | 4B baseline — used broken MMMLU "default" |
+| `v2_medical_rescue.py` | Original rescue — **retracted** |
+| `v2_medical_rescue_v2.py` | Targeted features — **retracted** |
+| `v2_generalization.py` | Cross-domain/lang rescue — **retracted** |
+| `v2_flip_distant_combined.py` | Flip/combined — **retracted** |
+| `v3_replication.py` | Controlled replication with real English, full benchmark, random control |
+| `v3_lowresource_rescue.py` | EN→weak-language rescue attempts |
+| `v3_domain_rescue.py` | Language-agnostic medical feature identification + rescue |
+| `v3_feature_validation.py` | Three-test validation: top tokens, ablation, free-form medical |
 
 ### Infrastructure
 | File | Purpose |
 |------|---------|
-| `vast_gpu.sh` | Vast.ai instance management wrapper (search/launch/setup/destroy) |
-| `bootstrap_remote.sh` | One-command remote instance setup |
+| `vast_gpu.sh` | Vast.ai instance management |
+| `bootstrap_remote.sh` | Remote setup |
 
-### Results (all stored in `results/`)
-| File | Experiment | What's in it |
-|------|-----------|--------------|
-| `analysis1_similarity.png` | v1 | Cross-lingual cosine similarity plot |
-| `v1_full_output.txt` | v1 | Full stdout of v1 exploration (1611 lines) |
-| `v2_steering_output.txt` | v2 steering | Generation examples at various steering strengths |
-| `v2_medical_baseline.json` | Pilot on 1B | Per-subject accuracy, 4-condition breakdown |
-| `v2_medical_baseline_4b.json` | Pilot on 4B | Per-subject accuracy, 4-condition breakdown |
-| `v2_medical_rescue.json` | First rescue | Feature IDs, per-strength rescue/break counts |
-| `v2_medical_rescue_v2.json` | Targeted rescue | Features per layer, contrastive scores |
-| `v2_generalization.json` | 5 domains × 2 langs | Baseline + rescue per (language, domain) cell |
-| `v2_flip_distant_combined.json` | Extended tests | Coding + Chinese + ES/FR/combined |
+### Results
+| File | Experiment |
+|------|-----------|
+| `results/analysis1_similarity.png` | v1 cross-lingual similarity |
+| `results/v1_full_output.txt` | v1 full stdout |
+| `results/v2_steering_output.txt` | v2 steering generation examples (1B) |
+| `results/v2_medical_*.json` | v2 medical experiments (**retracted**) |
+| `results/v2_generalization.json` | v2 generalization (**retracted**) |
+| `results/v2_flip_distant_combined.json` | v2 flip/combined (**retracted**) |
+| `results/v3_replication.json` | v3 controlled replication (null) |
+| `results/v3_lowresource_rescue.json` | v3 weak-language rescue (null) |
+| `results/v3_domain_rescue.json` | v3 domain feature rescue (null) |
+| `results/v3_feature_validation_output.txt` | v3 validation (features are readouts) |
+
+---
+
+## Honest Project Summary
+
+We started with a routing hypothesis, got excited by apparent cross-lingual rescue results that turned out to be artifacts of a data-loading bug, ran the controlled replications, and landed on a null. Along the way we validated that:
+
+1. SAE features can steer output language at small scale (real)
+2. Language-agnostic domain-selective SAE features exist in larger models (real)
+3. These features function as readouts, not as knobs for knowledge retrieval (tested, confirmed)
+4. Naive single-feature amplification does not rescue cross-lingual performance gaps under controlled evaluation (tested, confirmed)
+
+The original hypothesis is not refuted in its strongest form — we only ruled out the simplest intervention scheme. But we did not find a publishable positive signal, and the honest state of the project is that the easy version of the idea does not work.

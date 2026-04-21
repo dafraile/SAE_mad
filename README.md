@@ -2,19 +2,27 @@
 
 Research project investigating whether Sparse Autoencoder (SAE) features can serve as routing signals for transferring capability across languages in large language models.
 
-**Status**: Complete findings for a short workshop paper. See [FINDINGS.md](FINDINGS.md) for results.
+**Status**: **Project concluded, null result.** Quantitative rescue claims from v2-medical are retracted. See [FINDINGS.md](FINDINGS.md) for full retraction, controlled replications, and final validated findings.
 
 ## TL;DR
 
-On Gemma 3 4B, we show that amplifying a single "Spanish language" SAE feature during English inference causally rescues 3-7% of the English-vs-Spanish performance gap on medical, STEM, and humanities MCQ benchmarks. The mechanism:
+We started with the hypothesis that amplifying language-specific SAE features at inference time could rescue cross-lingual performance gaps (e.g., improve Arabic medical QA by steering toward English features). Initial experiments (v2-medical) showed apparent rescue effects of 3-7%.
 
-- **Works across languages** (ES, FR, ZH -- including linguistically distant Chinese)
-- **Works across domains** (medical, philosophy, STEM, humanities, global facts)
-- **Is causal** (monotonic with steering strength, clean 0x sanity check)
-- **Requires language-general features** -- domain-specific features don't transfer
-- **Has a ceiling** -- combining ES + FR features gives no additional rescue beyond ES alone
+External review surfaced methodological issues:
+1. Our "English" baseline was actually Arabic (MMMLU `default` config is non-English)
+2. Rescue was measured on a small subset, not the full benchmark
+3. No random-feature control
+4. "Single feature" claim was actually multi-feature
 
-See [FINDINGS.md](FINDINGS.md) for the full experimental record.
+v3 addressed all of these with controlled replications. **Under proper evaluation, no rescue effect exists above the random-feature noise floor, in any of five tested configurations.**
+
+What remains real:
+
+- v1: Cross-lingual representation characterization (own corpus, unaffected)
+- v2 steering on 1B: SAE features causally control output language (Feature 857 → Spanish text)
+- v3: Language-agnostic medical content features exist in Gemma 3 4B at layer 29 (features 893, 12570, 12845), but ablation shows they are readouts — zeroing them changes accuracy by 0.00%
+
+The routing hypothesis is not refuted, but the simplest version of it (single-layer feature amplification) does not work.
 
 ## Repo Structure
 
