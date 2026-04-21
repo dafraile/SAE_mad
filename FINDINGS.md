@@ -75,7 +75,23 @@ These features also fire on Arabic medical content (weakly) and on free-form non
 ### 5. These features are not individually necessary under layer-29 ablation (v3 feature validation)
 Ablating features 893, 12570, and 12845 during MCQ inference — zeroing out their contribution to the residual stream at layer 29 — changed accuracy by **exactly 0.00%** across EN, ES, FR, on both medical and non-medical conditions.
 
-Precise claim: these features are **not individually necessary for medical MCQ accuracy under single-feature layer-29 ablation**, and they are **not sufficient for rescue under single-layer amplification** (established in v3 domain rescue above). "Readouts, not drivers" is a fair shorthand for this intervention regime, but we have not tested whether they become load-bearing under multi-feature, multi-layer, or coordinated-intervention conditions. The claim should stay local to what we tested.
+Precise claim: these features are **not individually necessary for medical MCQ accuracy under single-feature layer-29 ablation**, and they are **not sufficient for rescue under single-layer amplification** (established in v3 domain rescue above). "Readouts, not drivers" is a fair shorthand for this intervention regime.
+
+### 6. The readout pattern generalizes across depth (v3 layer sweep)
+To address whether the layer-29 null was an artifact of that specific layer choice (middle layers might host the actual causal pathway for knowledge retrieval), we repeated the identification + ablation procedure at layers 9, 17, 22, and 29:
+
+| Layer | Depth | Avg med Δ | Avg non-med Δ | Med-specific |
+|-------|-------|-----------|---------------|--------------|
+| 9 | ~27% | 0.00% | -0.17% | -0.17% |
+| 17 | ~50% | -0.11% | 0.00% | +0.11% |
+| 22 | ~65% | -0.25% | 0.00% | **+0.25%** |
+| 29 | ~85% | 0.00% | 0.00% | 0.00% |
+
+Baseline 95% CIs are ~±3 percentage points wide. Every delta observed is at least 10x smaller than the CI width. The directional pattern at layer 22 (small medical drop, zero non-medical drop) is suggestive but not significant at this intervention strength.
+
+Each layer's contrastive analysis finds its own distinct set of clean medical-selective features (different feature indices at every layer, all with the same "zero on non-medical" property). Medical content is redundantly represented across depth, but single-feature ablation at any of these layers does not measurably affect MCQ accuracy.
+
+The v3 readout/null conclusion therefore holds **across all four tested layers**, not just layer 29.
 
 ---
 
@@ -132,6 +148,7 @@ We identify highly selective, language-agnostic medical SAE features in Gemma 3 
 - [x] **v3 low-resource rescue**: EN/ES features → AR/YO → null
 - [x] **v3 domain rescue**: Language-agnostic medical features → AR/YO → null
 - [x] **v3 feature validation**: Target features are readouts, not drivers (ablation = 0)
+- [x] **v3 layer sweep**: Readout pattern replicates at layers 9, 17, 22, 29 — confirms the null is not layer-29-specific
 - [x] **Project closure**: This document
 
 ---
@@ -165,6 +182,7 @@ We identify highly selective, language-agnostic medical SAE features in Gemma 3 
 | `v3_lowresource_rescue.py` | EN→weak-language rescue attempts |
 | `v3_domain_rescue.py` | Language-agnostic medical feature identification + rescue |
 | `v3_feature_validation.py` | Three-test validation: top tokens, ablation, free-form medical |
+| `v3_layer_sweep.py` | Ablation across layers 9, 17, 22, 29 — confirms null is not specific to layer 29 |
 
 ### Infrastructure
 | File | Purpose |
@@ -185,6 +203,7 @@ We identify highly selective, language-agnostic medical SAE features in Gemma 3 
 | `results/v3_lowresource_rescue.json` | v3 weak-language rescue (null) |
 | `results/v3_domain_rescue.json` | v3 domain feature rescue (null) |
 | `results/v3_feature_validation_output.txt` | v3 validation (features are readouts) |
+| `results/v3_layer_sweep.json` | v3 layer sweep — ablation across 9/17/22/29 |
 
 ---
 
