@@ -57,13 +57,14 @@ Precise scope of the null: we ruled out simple single-layer, single-feature ampl
 ├── results/                               ← All experiment outputs
 │   ├── analysis1_similarity.png           ← v1 similarity plot
 │   ├── v1_full_output.txt                 ← v1 full stdout
-│   ├── v2_steering_output.txt             ← v2 generation examples
-│   ├── v2_medical_baseline.json           ← Pilot (1B)
-│   ├── v2_medical_baseline_4b.json        ← Pilot (4B)
-│   ├── v2_medical_rescue.json             ← First rescue result (+9)
-│   ├── v2_medical_rescue_v2.json          ← Targeted rescue (+1, negative)
-│   ├── v2_generalization.json             ← Cross-domain/language matrix
-│   └── v2_flip_distant_combined.json      ← Extended experiments
+│   ├── v2_steering_output.txt             ← v2 generation examples (1B, validated)
+│   ├── v2_medical_*.json                  ← v2 medical runs — RETRACTED (see FINDINGS.md)
+│   ├── v2_generalization.json             ← v2 generalization — RETRACTED
+│   ├── v2_flip_distant_combined.json      ← v2 extended — RETRACTED
+│   ├── v3_replication.json                ← Controlled replication (null)
+│   ├── v3_lowresource_rescue.json         ← Weak-language rescue (null)
+│   ├── v3_domain_rescue.json              ← Domain feature identification + rescue (null)
+│   └── v3_feature_validation_output.txt   ← Feature validation (readouts, not drivers)
 │
 └── remote_cache/                          ← Large cached files (gitignored)
     └── cached_activations.pt              ← v1 activations (~1.3GB)
@@ -116,13 +117,15 @@ Most experiments follow the same pattern:
 
 ### Recommended experiment order (if reproducing from scratch)
 
-1. `hw1_load_model.py` → `hw5_multilingual.py` -- Verify environment
-2. `v1_exploration.py` -- Build feature understanding (uses `corpus.json`)
-3. `v2_steering.py` -- Confirm features are causal (1B model)
-4. `v2_medical_pilot.py` -- Establish the reverse gap (both 1B and 4B)
-5. `v2_medical_rescue.py` -- Main result: generic feature rescue
-6. `v2_generalization.py` -- Generalization across domains/languages
-7. `v2_flip_distant_combined.py` -- Boundaries of the mechanism
+The v2-medical scripts are retained for historical completeness but their quantitative claims are retracted — see FINDINGS.md. For the validated results, run:
+
+1. `hw1_load_model.py` → `hw5_multilingual.py` — verify environment
+2. `v1_exploration.py` — cross-lingual representation analysis on our trilingual corpus (validated)
+3. `v2_steering.py` — causal language-output steering on 1B, Feature 857 → Spanish (validated)
+4. `v3_replication.py` — controlled replication with real English from `cais/mmlu`, full-benchmark eval, random-feature control (null result, correctly scoped)
+5. `v3_lowresource_rescue.py` — EN features → Arabic/Swahili/Yoruba medical (null)
+6. `v3_domain_rescue.py` — language-agnostic medical feature identification + rescue attempts (features identified, rescue null)
+7. `v3_feature_validation.py` — three-test validation: top tokens on free-form text, ablation, cross-format (features are cross-lingual cross-format medical readouts)
 
 ## Timing and Cost
 
@@ -132,36 +135,42 @@ Rough GPU cost estimates on vast.ai ($0.15-0.30/hr for 24GB GPUs):
 |------------|----------|------|
 | Hello-worlds (all) | ~5 min | $0.01 |
 | v1 exploration | ~15 min | $0.05 |
-| v2 steering | ~10 min | $0.03 |
-| v2 medical pilot (4B) | ~20 min | $0.10 |
-| v2 medical rescue | ~25 min | $0.12 |
-| v2 generalization | ~60 min | $0.25 |
-| v2 flip/distant/combined | ~75 min | $0.30 |
-| **Total (full pipeline)** | **~3.5 hours** | **~$1.00** |
+| v2 steering (1B) | ~10 min | $0.03 |
+| v3 replication | ~30 min | $0.15 |
+| v3 low-resource rescue | ~40 min | $0.20 |
+| v3 domain rescue | ~45 min | $0.22 |
+| v3 feature validation | ~30 min | $0.15 |
+| **Total (validated pipeline)** | **~3 hours** | **~$0.80** |
 
 ## Key Findings (see [FINDINGS.md](FINDINGS.md) for details)
 
-1. **Gemma 3 shows a reversed multilingual gap** -- non-English outperforms English across all tested domains, even CS/coding
-2. **Single SAE feature amplification rescues 3-7% of English underperformance**, causally and consistently
-3. **The mechanism is universal** across ES, FR, ZH and 5 tested domains
-4. **Language-general features work; domain-specific features don't** -- rules out "domain-specific knowledge highway"
-5. **Feature composition has a ceiling** -- combining ES+FR features doesn't exceed ES alone
-6. **Gap size scales with linguistic distance** -- Romance languages show bigger advantage over English than Chinese does
+**Validated positive findings:**
+
+1. **v1**: Cross-lingual representations in Gemma 3 1B show a depth signature — lexical/surface entanglement at shallow layers, conceptual entanglement at late layers
+2. **v2 steering (1B)**: Feature 857 at layer 22 is a graded, continuous dial for output language. Clamping at 2x–5x produces smoothly controllable Spanish output from neutral English prompts
+3. **v3 feature identification**: Language-agnostic, domain-selective medical features exist in Gemma 3 4B at layer 29 (features 893, 12570, 12845). They fire on medical content across EN/ES/FR in both MCQ and free-form text, fire weakly on Arabic medical, and fire zero on non-medical content. The six-condition contrastive discovery pipeline is reusable for other domains.
+
+**Null results, precisely scoped:**
+
+4. Single-feature layer-29 amplification of language or domain features does not rescue cross-lingual medical MCQ performance above the random-feature noise floor (five tested configurations, full benchmark, bootstrap 95% CIs)
+5. Single-feature layer-29 ablation of the identified medical features produces exactly 0.00% change in accuracy across EN/ES/FR medical and non-medical conditions
+
+**Retracted (see FINDINGS.md):**
+
+- All v2-medical quantitative rescue claims (e.g., "3-7% rescue", "reversed multilingual gap", "universal across languages/domains") — invalidated by a dataset bug (MMMLU `default` is not English) and other methodology gaps. The controlled replication in v3 found no effect.
 
 ## Citation
 
-If this work informs your research before we publish, please cite the repository:
+If this work informs your research, please cite the repository:
 
 ```
 @misc{fraile-navarro-2026-sae-cross-lingual,
   author = {Fraile Navarro, David},
-  title  = {SAE-Guided Cross-Lingual Knowledge Transfer in LLMs},
+  title  = {SAE-Guided Cross-Lingual Knowledge Transfer in LLMs: A Null Result with Preserved Findings},
   year   = {2026},
   url    = {https://github.com/dafraile/SAE_mad}
 }
 ```
-
-(A proper paper is in preparation.)
 
 ## License
 
