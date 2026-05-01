@@ -1,0 +1,514 @@
+{
+  "model": "google/gemma-3-4b-it",
+  "sae_repo": "google/gemma-scope-2-4b-it",
+  "layers": [
+    17,
+    29
+  ],
+  "n_cases": 60,
+  "by_layer": {
+    "17": {
+      "medical_features": [
+        9854,
+        368,
+        1539
+      ],
+      "n_features_total": 16384,
+      "avg_n_content_tokens_full": 326.0,
+      "avg_n_content_tokens_truncated_B": 267.0,
+      "tokens_dropped_per_B_prompt": 59.0,
+      "full_mean_pool": {
+        "diff_norm": 261.5313720703125,
+        "ranks": {
+          "9854": 2261,
+          "368": 955,
+          "1539": 236
+        },
+        "alignments": {
+          "9854": -0.030137814581394196,
+          "368": -0.04030187427997589,
+          "1539": -0.05738818272948265
+        },
+        "abs_alignments": {
+          "9854": 0.030137814581394196,
+          "368": 0.04030187427997589,
+          "1539": 0.05738818272948265
+        },
+        "top10": [
+          {
+            "feature": 13292,
+            "alignment": -0.15573152899742126,
+            "abs_alignment": 0.15573152899742126,
+            "is_medical": false
+          },
+          {
+            "feature": 1712,
+            "alignment": 0.15519265830516815,
+            "abs_alignment": 0.15519265830516815,
+            "is_medical": false
+          },
+          {
+            "feature": 712,
+            "alignment": 0.14846108853816986,
+            "abs_alignment": 0.14846108853816986,
+            "is_medical": false
+          },
+          {
+            "feature": 897,
+            "alignment": -0.12869201600551605,
+            "abs_alignment": 0.12869201600551605,
+            "is_medical": false
+          },
+          {
+            "feature": 10342,
+            "alignment": 0.12679608166217804,
+            "abs_alignment": 0.12679608166217804,
+            "is_medical": false
+          },
+          {
+            "feature": 14831,
+            "alignment": -0.11760477721691132,
+            "abs_alignment": 0.11760477721691132,
+            "is_medical": false
+          },
+          {
+            "feature": 12224,
+            "alignment": 0.11246085911989212,
+            "abs_alignment": 0.11246085911989212,
+            "is_medical": false
+          },
+          {
+            "feature": 346,
+            "alignment": 0.10661450773477554,
+            "abs_alignment": 0.10661450773477554,
+            "is_medical": false
+          },
+          {
+            "feature": 1052,
+            "alignment": 0.10412432998418808,
+            "abs_alignment": 0.10412432998418808,
+            "is_medical": false
+          },
+          {
+            "feature": 1875,
+            "alignment": -0.1040400043129921,
+            "abs_alignment": 0.1040400043129921,
+            "is_medical": false
+          }
+        ]
+      },
+      "truncated_mean_pool": {
+        "diff_norm": 0.0,
+        "ranks": {
+          "9854": 3295,
+          "368": 11201,
+          "1539": 11428
+        },
+        "alignments": {
+          "9854": 0.0,
+          "368": 0.0,
+          "1539": 0.0
+        },
+        "abs_alignments": {
+          "9854": 0.0,
+          "368": 0.0,
+          "1539": 0.0
+        },
+        "top10": [
+          {
+            "feature": 10928,
+            "alignment": 0.0,
+            "abs_alignment": 0.0,
+            "is_medical": false
+          },
+          {
+            "feature": 10913,
+            "alignment": 0.0,
+            "abs_alignment": 0.0,
+            "is_medical": false
+          },
+          {
+            "feature": 10914,
+            "alignment": 0.0,
+            "abs_alignment": 0.0,
+            "is_medical": false
+          },
+          {
+            "feature": 10915,
+            "alignment": 0.0,
+            "abs_alignment": 0.0,
+            "is_medical": false
+          },
+          {
+            "feature": 10916,
+            "alignment": 0.0,
+            "abs_alignment": 0.0,
+            "is_medical": false
+          },
+          {
+            "feature": 10917,
+            "alignment": 0.0,
+            "abs_alignment": 0.0,
+            "is_medical": false
+          },
+          {
+            "feature": 10918,
+            "alignment": 0.0,
+            "abs_alignment": 0.0,
+            "is_medical": false
+          },
+          {
+            "feature": 10919,
+            "alignment": 0.0,
+            "abs_alignment": 0.0,
+            "is_medical": false
+          },
+          {
+            "feature": 10920,
+            "alignment": 0.0,
+            "abs_alignment": 0.0,
+            "is_medical": false
+          },
+          {
+            "feature": 10921,
+            "alignment": 0.0,
+            "abs_alignment": 0.0,
+            "is_medical": false
+          }
+        ]
+      },
+      "max_pool": {
+        "diff_norm": 1086.605712890625,
+        "ranks": {
+          "9854": 4561,
+          "368": 1852,
+          "1539": 1490
+        },
+        "alignments": {
+          "9854": -0.020670125260949135,
+          "368": -0.030392663553357124,
+          "1539": -0.03253034129738808
+        },
+        "abs_alignments": {
+          "9854": 0.020670125260949135,
+          "368": 0.030392663553357124,
+          "1539": 0.03253034129738808
+        },
+        "top10": [
+          {
+            "feature": 1241,
+            "alignment": 0.10691364854574203,
+            "abs_alignment": 0.10691364854574203,
+            "is_medical": false
+          },
+          {
+            "feature": 2511,
+            "alignment": -0.10160825401544571,
+            "abs_alignment": 0.10160825401544571,
+            "is_medical": false
+          },
+          {
+            "feature": 14746,
+            "alignment": -0.09766681492328644,
+            "abs_alignment": 0.09766681492328644,
+            "is_medical": false
+          },
+          {
+            "feature": 864,
+            "alignment": -0.0928722470998764,
+            "abs_alignment": 0.0928722470998764,
+            "is_medical": false
+          },
+          {
+            "feature": 346,
+            "alignment": 0.09209424257278442,
+            "abs_alignment": 0.09209424257278442,
+            "is_medical": false
+          },
+          {
+            "feature": 15782,
+            "alignment": -0.08874327689409256,
+            "abs_alignment": 0.08874327689409256,
+            "is_medical": false
+          },
+          {
+            "feature": 6655,
+            "alignment": -0.08527608215808868,
+            "abs_alignment": 0.08527608215808868,
+            "is_medical": false
+          },
+          {
+            "feature": 16367,
+            "alignment": -0.07960061728954315,
+            "abs_alignment": 0.07960061728954315,
+            "is_medical": false
+          },
+          {
+            "feature": 1479,
+            "alignment": -0.07900745421648026,
+            "abs_alignment": 0.07900745421648026,
+            "is_medical": false
+          },
+          {
+            "feature": 3682,
+            "alignment": -0.07833069562911987,
+            "abs_alignment": 0.07833069562911987,
+            "is_medical": false
+          }
+        ]
+      }
+    },
+    "29": {
+      "medical_features": [
+        12570,
+        893,
+        12845
+      ],
+      "n_features_total": 16384,
+      "avg_n_content_tokens_full": 326.0,
+      "avg_n_content_tokens_truncated_B": 267.0,
+      "tokens_dropped_per_B_prompt": 59.0,
+      "full_mean_pool": {
+        "diff_norm": 1012.6605834960938,
+        "ranks": {
+          "12570": 10994,
+          "893": 470,
+          "12845": 2235
+        },
+        "alignments": {
+          "12570": -0.00793686043471098,
+          "893": -0.04407653212547302,
+          "12845": -0.02857496403157711
+        },
+        "abs_alignments": {
+          "12570": 0.00793686043471098,
+          "893": 0.04407653212547302,
+          "12845": 0.02857496403157711
+        },
+        "top10": [
+          {
+            "feature": 10012,
+            "alignment": 0.1419254094362259,
+            "abs_alignment": 0.1419254094362259,
+            "is_medical": false
+          },
+          {
+            "feature": 2014,
+            "alignment": -0.1309506893157959,
+            "abs_alignment": 0.1309506893157959,
+            "is_medical": false
+          },
+          {
+            "feature": 2123,
+            "alignment": 0.13080012798309326,
+            "abs_alignment": 0.13080012798309326,
+            "is_medical": false
+          },
+          {
+            "feature": 755,
+            "alignment": 0.1307211071252823,
+            "abs_alignment": 0.1307211071252823,
+            "is_medical": false
+          },
+          {
+            "feature": 121,
+            "alignment": -0.11625340580940247,
+            "abs_alignment": 0.11625340580940247,
+            "is_medical": false
+          },
+          {
+            "feature": 11769,
+            "alignment": -0.11416468769311905,
+            "abs_alignment": 0.11416468769311905,
+            "is_medical": false
+          },
+          {
+            "feature": 714,
+            "alignment": 0.10962605476379395,
+            "abs_alignment": 0.10962605476379395,
+            "is_medical": false
+          },
+          {
+            "feature": 5623,
+            "alignment": 0.10564584285020828,
+            "abs_alignment": 0.10564584285020828,
+            "is_medical": false
+          },
+          {
+            "feature": 16369,
+            "alignment": 0.10533209890127182,
+            "abs_alignment": 0.10533209890127182,
+            "is_medical": false
+          },
+          {
+            "feature": 736,
+            "alignment": -0.10328806191682816,
+            "abs_alignment": 0.10328806191682816,
+            "is_medical": false
+          }
+        ]
+      },
+      "truncated_mean_pool": {
+        "diff_norm": 0.0,
+        "ranks": {
+          "12570": 7099,
+          "893": 10718,
+          "12845": 6286
+        },
+        "alignments": {
+          "12570": 0.0,
+          "893": 0.0,
+          "12845": 0.0
+        },
+        "abs_alignments": {
+          "12570": 0.0,
+          "893": 0.0,
+          "12845": 0.0
+        },
+        "top10": [
+          {
+            "feature": 10928,
+            "alignment": 0.0,
+            "abs_alignment": 0.0,
+            "is_medical": false
+          },
+          {
+            "feature": 10913,
+            "alignment": 0.0,
+            "abs_alignment": 0.0,
+            "is_medical": false
+          },
+          {
+            "feature": 10914,
+            "alignment": 0.0,
+            "abs_alignment": 0.0,
+            "is_medical": false
+          },
+          {
+            "feature": 10915,
+            "alignment": 0.0,
+            "abs_alignment": 0.0,
+            "is_medical": false
+          },
+          {
+            "feature": 10916,
+            "alignment": 0.0,
+            "abs_alignment": 0.0,
+            "is_medical": false
+          },
+          {
+            "feature": 10917,
+            "alignment": 0.0,
+            "abs_alignment": 0.0,
+            "is_medical": false
+          },
+          {
+            "feature": 10918,
+            "alignment": 0.0,
+            "abs_alignment": 0.0,
+            "is_medical": false
+          },
+          {
+            "feature": 10919,
+            "alignment": 0.0,
+            "abs_alignment": 0.0,
+            "is_medical": false
+          },
+          {
+            "feature": 10920,
+            "alignment": 0.0,
+            "abs_alignment": 0.0,
+            "is_medical": false
+          },
+          {
+            "feature": 10921,
+            "alignment": 0.0,
+            "abs_alignment": 0.0,
+            "is_medical": false
+          }
+        ]
+      },
+      "max_pool": {
+        "diff_norm": 5026.5625,
+        "ranks": {
+          "12570": 2523,
+          "893": 7013,
+          "12845": 10008
+        },
+        "alignments": {
+          "12570": 0.026756923645734787,
+          "893": -0.014788012951612473,
+          "12845": 0.009388605132699013
+        },
+        "abs_alignments": {
+          "12570": 0.026756923645734787,
+          "893": 0.014788012951612473,
+          "12845": 0.009388605132699013
+        },
+        "top10": [
+          {
+            "feature": 3833,
+            "alignment": 0.08875696361064911,
+            "abs_alignment": 0.08875696361064911,
+            "is_medical": false
+          },
+          {
+            "feature": 10012,
+            "alignment": 0.08455771207809448,
+            "abs_alignment": 0.08455771207809448,
+            "is_medical": false
+          },
+          {
+            "feature": 980,
+            "alignment": 0.07998701184988022,
+            "abs_alignment": 0.07998701184988022,
+            "is_medical": false
+          },
+          {
+            "feature": 9485,
+            "alignment": -0.07946222275495529,
+            "abs_alignment": 0.07946222275495529,
+            "is_medical": false
+          },
+          {
+            "feature": 755,
+            "alignment": 0.07723215222358704,
+            "abs_alignment": 0.07723215222358704,
+            "is_medical": false
+          },
+          {
+            "feature": 15654,
+            "alignment": -0.07231756299734116,
+            "abs_alignment": 0.07231756299734116,
+            "is_medical": false
+          },
+          {
+            "feature": 10496,
+            "alignment": 0.07190379500389099,
+            "abs_alignment": 0.07190379500389099,
+            "is_medical": false
+          },
+          {
+            "feature": 1717,
+            "alignment": -0.07122615724802017,
+            "abs_alignment": 0.07122615724802017,
+            "is_medical": false
+          },
+          {
+            "feature": 1629,
+            "alignment": -0.07067946344614029,
+            "abs_alignment": 0.07067946344614029,
+            "is_medical": false
+          },
+          {
+            "feature": 5995,
+            "alignment": -0.06862827390432358,
+            "abs_alignment": 0.06862827390432358,
+            "is_medical": false
+          }
+        ]
+      }
+    }
+  },
+  "note": "Three aggregation strategies tested per layer: full mean-pool (reproduces Phase 2), length-controlled mean-pool (B truncated at 'Reply with exactly one letter only'), and max-pool over content tokens."
+}
