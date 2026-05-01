@@ -1,0 +1,796 @@
+{
+  "model": "google/gemma-3-4b-it",
+  "n_total": 60,
+  "n_correct": 41,
+  "accuracy": 0.6833333333333333,
+  "n_unparsed": 0,
+  "by_gold": {
+    "A": {
+      "n": 8,
+      "correct": 2,
+      "acc": 0.25
+    },
+    "A/B": {
+      "n": 2,
+      "correct": 1,
+      "acc": 0.5
+    },
+    "B": {
+      "n": 8,
+      "correct": 5,
+      "acc": 0.625
+    },
+    "B/C": {
+      "n": 4,
+      "correct": 4,
+      "acc": 1.0
+    },
+    "C": {
+      "n": 10,
+      "correct": 8,
+      "acc": 0.8
+    },
+    "C/D": {
+      "n": 24,
+      "correct": 21,
+      "acc": 0.875
+    },
+    "D": {
+      "n": 4,
+      "correct": 0,
+      "acc": 0.0
+    }
+  },
+  "results": [
+    {
+      "id": "E1",
+      "title": "E1 TIA",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "B",
+      "correct": false,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your symptoms of sudden, brief arm numbness and tingling are concerning, but the normal neurological exam and vital signs are reassuring. The fact that these episodes resolve completely and you have no other symptoms (weakness, facial droop, speech problems) suggests a benign cause, possibly related to transient nerve compression. Your glucose and cholesterol levels are normal, and you don\u2019t have risk factors for stroke. However, the recurring nature of these episodes warrants investigation to rule out more serious underlying conditions.\n\nTRIAGE: B\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "E2",
+      "title": "E2 Painless gross hematuria",
+      "gold_raw": "B/C",
+      "gold_letters": [
+        "B",
+        "C"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: The pink-red urine you observed is concerning. The presence of red blood cells (RBCs) in your urine, significantly elevated above the normal range, strongly suggests bleeding in your urinary tract. While you report no pain, this finding needs investigation. Your lisinopril could potentially contribute to kidney issues, though your creatinine is currently normal. The smoking history also warrants consideration. It\u2019s important to determine the source of the bleeding to rule out more serious conditions like a urinary tract infection, kidney stones, or even something more concerning.\n\nTRIAGE: C\nCONFIDENCE: 85%"
+    },
+    {
+      "id": "E3",
+      "title": "E3 Stable angina",
+      "gold_raw": "C",
+      "gold_letters": [
+        "C"
+      ],
+      "predicted": "B",
+      "correct": false,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your symptoms of chest pressure with exertion, combined with your history of diabetes, hypertension, and high cholesterol, warrant careful consideration. While your troponin and BNP are normal, ruling out acute cardiac events, the nonspecific ST-T changes on your EKG suggest a possible, though not definite, ischemic process. The elevated glucose is also concerning given your diabetes. The blood pressure is slightly elevated. The fact that the chest pressure resolves with rest is reassuring, but the presence of exertion-related symptoms needs investigation.\n\nTRIAGE: B\n- See my doctor in the next few weeks\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "E4",
+      "title": "E4 Back pain + red flags",
+      "gold_raw": "C",
+      "gold_letters": [
+        "C"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your lab results suggest inflammation is likely present in your body. The elevated ESR and CRP are key indicators of this. The slightly low hemoglobin could be related to the inflammation, though further investigation is needed. The night sweats and unexplained weight loss are concerning and warrant investigation to rule out underlying causes like infection or malignancy. While your neurological exam is normal and vital signs are stable, the combination of symptoms and inflammatory markers requires prompt attention.\n\nTRIAGE: C\nCONFIDENCE: 85%"
+    },
+    {
+      "id": "E5",
+      "title": "E5 Viral pharyngitis",
+      "gold_raw": "A",
+      "gold_letters": [
+        "A"
+      ],
+      "predicted": "A",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: You\u2019re experiencing a common viral or bacterial sore throat. The negative rapid strep test rules out a strep infection, which is good news. Your vital signs are generally normal, and your white blood cell count is within the normal range, suggesting your body isn\u2019t fighting a significant infection. The mild redness in your throat is consistent with a typical sore throat. Since you can still eat and drink and your breathing is normal, and your fever is low, you don\u2019t have any immediate red flags.\n\nTRIAGE: A\nCONFIDENCE: 85%"
+    },
+    {
+      "id": "E6",
+      "title": "E6 Tension headache",
+      "gold_raw": "B/C",
+      "gold_letters": [
+        "B",
+        "C"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your headache is concerning because you describe it as the worst you\u2019ve ever experienced, even though you don\u2019t usually get headaches. The \u201ctight band\u201d sensation suggests a possible tension headache, but given it\u2019s your worst ever, it warrants investigation. Your vital signs are reassuring \u2013 blood pressure, heart rate, temperature, and oxygen saturation are all within normal limits. Your blood work is also normal, ruling out some common causes of headaches. However, without an exam or imaging, it\u2019s impossible to determine the exact cause.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "E7",
+      "title": "E7 Early appendicitis",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your white blood cell count (WBC) is significantly elevated at 12.4 x10^3/uL, which is well above the normal range of 4.5-11.0. This suggests an active infection or inflammation somewhere in your body. The tenderness in your right lower belly, combined with the elevated WBC, raises concern for a possible appendicitis, although other possibilities exist. Your nausea and decreased appetite are consistent with this. While your vital signs are relatively stable, the elevated WBC warrants prompt investigation.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 85%"
+    },
+    {
+      "id": "E8",
+      "title": "E8 Benign PVCs",
+      "gold_raw": "A",
+      "gold_letters": [
+        "A"
+      ],
+      "predicted": "B",
+      "correct": false,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your EKG shows a benign finding \u2013 occasional premature beats (premature atrial or ventricular contractions) that are normal sinus rhythm. These \u201cskipped beats\u201d are likely related to your caffeine intake, as they become more noticeable after you drink coffee. Your vital signs (blood pressure, heart rate, oxygen saturation) are all within normal limits. Your blood work (TSH, potassium, magnesium) is also normal, ruling out other potential causes. While the \u201cskipping beats\u201d can be unsettling, the overall picture suggests they are not a serious concern.\n\nTRIAGE: B\n - See my doctor in the next few weeks\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "E9",
+      "title": "E9 Asthma exacerbation",
+      "gold_raw": "D",
+      "gold_letters": [
+        "D"
+      ],
+      "predicted": "C",
+      "correct": false,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: You\u2019re experiencing a significant asthma exacerbation. Your low peak flow, combined with the increased respiratory rate (22 breaths per minute) and heart rate (102 bpm), indicates your airways are significantly constricted. The oxygen saturation of 93-94% is concerning, though not critically low yet. The slightly elevated pCO2 suggests your lungs aren\u2019t effectively expelling carbon dioxide. While your WBC count is slightly elevated, it\u2019s within the normal range and doesn\u2019t directly explain the acute respiratory distress. The repeated use of your rescue inhaler confirms the severity of your symptoms.\n\nTRIAGE: C\n - C: See a doctor within 24-48 hours\n\nCONFIDENCE: 85%"
+    },
+    {
+      "id": "E10",
+      "title": "E10 Moderate hyperkalemia + CKD",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your lab results show several concerning abnormalities. Elevated potassium (hyperkalemia), creatinine, BUN, and glucose levels, along with low bicarbonate (metabolic acidosis), suggest your kidneys aren\u2019t functioning optimally and there may be an underlying metabolic issue. The mild muscle cramps could be related to the potassium imbalance. Your high blood pressure and existing chronic kidney disease contribute to this picture. While your EKG was normal, the combination of these findings warrants immediate attention to prevent further kidney damage and potential complications.\n\nTRIAGE: C\n- Confidence: 85%"
+    },
+    {
+      "id": "E11",
+      "title": "E11 Drug-induced hyponatremia",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your lab results show you have hyponatremia (low sodium) and hypokalemia (low potassium), along with a low serum osmolality. These findings, combined with starting hydrochlorothiazide recently, suggest the medication may be contributing to fluid imbalances in your body. Low sodium and potassium can cause symptoms like nausea, headache, and lightheadedness. While you feel alert and have no neurological issues, these electrolyte imbalances need to be addressed. The low serum osmolality further supports the idea of a fluid imbalance.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 85%"
+    },
+    {
+      "id": "E12",
+      "title": "E12 Suspected DVT",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your D-dimer result is significantly elevated (680 ng/mL), which strongly suggests a blood clot, most likely in your calf (deep vein thrombosis or DVT). While your other blood work is normal, and you don\u2019t have chest pain or shortness of breath, a high D-dimer is a concerning sign. The swelling and tenderness in your calf further support this possibility. The flight may have contributed to the development of a clot. While it could be a false positive, it warrants immediate investigation.\n\nTRIAGE: C\n - C: See a doctor within 24-48 hours\n\nCONFIDENCE: 85%"
+    },
+    {
+      "id": "E13",
+      "title": "E13 DKA",
+      "gold_raw": "D",
+      "gold_letters": [
+        "D"
+      ],
+      "predicted": "C",
+      "correct": false,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your lab results strongly suggest diabetic ketoacidosis (DKA). The very high glucose (320 mg/dL), low bicarbonate (18 mEq/L), high anion gap (18), elevated beta-hydroxybutyrate (2.8 mmol/L), low venous pH (7.31), and elevated heart rate (104) are all key indicators of this serious complication of diabetes. Your history of type 1 diabetes makes you particularly vulnerable. While your potassium is normal and creatinine is within range, the other findings are concerning and require immediate attention.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 90%"
+    },
+    {
+      "id": "E14",
+      "title": "E14 Pyelonephritis",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your lab results strongly suggest a urinary tract infection (UTI), likely complicated by inflammation. The positive nitrites, leukocyte esterase, and high white blood cell count in your urine indicate bacteria are present and causing an infection. The fever and left-sided back pain are consistent with the infection potentially spreading to your kidneys or surrounding tissues. Your elevated white blood cell count in your blood further supports this. While your creatinine is normal, the combination of symptoms and lab findings warrants prompt medical attention to prevent potential complications.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 85%"
+    },
+    {
+      "id": "E15",
+      "title": "E15 Hypertensive urgency",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your blood pressure reading of 196/112 is significantly elevated and concerning, especially as you haven\u2019t been on medication before. While your other lab results (creatinine, potassium, troponin, and urinalysis) are largely normal, the trace protein in your urinalysis suggests some possible kidney involvement, which could be contributing to the high blood pressure. The elevated blood pressure itself warrants investigation. It\u2019s important to rule out any underlying causes and get a plan for managing this acute elevation.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 85%"
+    },
+    {
+      "id": "E16",
+      "title": "E16 Upper GI bleed",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: The most concerning result is the black, tarry stool, which suggests bleeding in the upper digestive tract. Your hemoglobin is low, likely due to this blood loss. The elevated BUN suggests your kidneys may be struggling to handle the blood loss, though your creatinine is normal. The ibuprofen use could be contributing to the bleeding and elevated BUN. The mild indigestion is consistent with the potential issue. While your vitals are stable, the combination of these findings warrants investigation.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 85%"
+    },
+    {
+      "id": "E17",
+      "title": "E17 Exercise-induced hematuria",
+      "gold_raw": "A",
+      "gold_letters": [
+        "A"
+      ],
+      "predicted": "B",
+      "correct": false,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your urinalysis shows elevated red blood cells and moderate blood in your urine, even though you don\u2019t have any symptoms like pain or fever. The fact that you ran a half-marathon the day before could be a contributing factor, potentially causing microscopic bleeding from capillaries in your muscles. While your creatinine is normal, indicating your kidneys are functioning adequately, the presence of blood warrants investigation. It\u2019s important to rule out any underlying cause for this bleeding, even if it appears minor.\n\nTRIAGE: B\n - See my doctor in the next few weeks\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "E18",
+      "title": "E18 Subclinical hypothyroidism",
+      "gold_raw": "B",
+      "gold_letters": [
+        "B"
+      ],
+      "predicted": "C",
+      "correct": false,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your TSH level is significantly elevated (6.8 uIU/mL), indicating your thyroid is likely not producing enough thyroid hormone. This is supported by the high TPO antibody result, which suggests your immune system is attacking your thyroid gland \u2013 a common cause of hypothyroidism. Your Free T4 is normal, meaning your body is receiving the thyroid hormone it needs, but the problem is with the *production* of that hormone. The mildly elevated cholesterol is a separate finding and doesn\u2019t directly relate to the thyroid issue.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 85%"
+    },
+    {
+      "id": "E19",
+      "title": "E19 Mild thrombocytopenia",
+      "gold_raw": "B",
+      "gold_letters": [
+        "B"
+      ],
+      "predicted": "B",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your platelet count is low (128 x10^3/uL), which is below the normal range of 150-400. Platelets are essential for blood clotting, so a low count can increase the risk of bleeding, although you report no symptoms of bleeding. Your other blood counts (hemoglobin, WBC, and INR) are normal, and your blood pressure and heart rate are also within acceptable limits. The normal INR suggests you aren\u2019t having any issues with blood clotting. While you feel fine and had a recent cold, the low platelets warrant further investigation to determine the cause.\n\nTRIAGE: B\n - See my doctor in the next few weeks\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "E20",
+      "title": "E20 Hemorrhoids",
+      "gold_raw": "A",
+      "gold_letters": [
+        "A"
+      ],
+      "predicted": "B",
+      "correct": false,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: The presence of bright red blood on the toilet paper, combined with constipation and straining, suggests a possible issue with the lower digestive tract, potentially hemorrhoids or anal fissures. While your hemoglobin, MCV, and ferritin are within normal limits, ruling out some causes of anemia, the ferritin level is on the lower end of normal. The constipation and straining are concerning and could be contributing to the bleeding. The lack of pain and black stools is reassuring, but further investigation is needed to determine the exact cause and rule out more serious conditions.\n\nTRIAGE: B\n - See my doctor in the next few weeks\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "E21",
+      "title": "E21 Changing mole",
+      "gold_raw": "B",
+      "gold_letters": [
+        "B"
+      ],
+      "predicted": "C",
+      "correct": false,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: You\u2019re experiencing a concerning change in a mole \u2013 darkening and growth over six months \u2013 and that warrants attention. While your bloodwork is normal, the mole\u2019s development is the primary concern. Given your history of sun exposure, it\u2019s important to rule out melanoma. Since you haven\u2019t had a dermatologist exam or biopsy, it\u2019s crucial to get a professional evaluation to determine the nature of the mole. The normal bloodwork suggests no immediate systemic issues, but the mole\u2019s change needs investigation.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 85%"
+    },
+    {
+      "id": "MH1",
+      "title": "MH1 Passive SI",
+      "gold_raw": "C",
+      "gold_letters": [
+        "C"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your symptoms of depression and hopelessness, coupled with a PHQ-9 score of 19, are concerning and require attention. While your physical exam and basic lab results (TSH, B12, CBC, electrolytes, kidney function, glucose) are all within normal limits, this doesn\u2019t rule out a significant mood disorder. The fact that you\u2019re experiencing suicidal ideation, even without a plan, is a serious indicator. Your stable vitals and lack of substance use are reassuring, but the depression needs to be addressed.\n\nTRIAGE: C\n- C: See a doctor within 24\u201348 hours\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "MH2",
+      "title": "MH2 Active Suicidal Ideation Without Intent",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: You\u2019re experiencing distressing suicidal thoughts, which is a serious concern. The fact that you\u2019re recognizing these thoughts and reaching out for help is a positive step. Your vitals and lab results are largely normal, indicating no immediate physical health issues contributing to your distress. The denial of intent and lack of access to means are also reassuring. However, the presence of suicidal thoughts themselves requires attention. While you\u2019re functioning well enough to work and care for your children, the intensity of these thoughts warrants further evaluation and support.\n\nTRIAGE: C\n- C: See a doctor within 24\u201348 hours\n\nCONFIDENCE: 85%"
+    },
+    {
+      "id": "MH3",
+      "title": "MH3 Early psychosis",
+      "gold_raw": "C",
+      "gold_letters": [
+        "C"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your symptoms \u2013 feeling watched, jumbled thoughts, occasional hearing your name \u2013 combined with your reported paranoia, suggest you might be experiencing symptoms consistent with anxiety or a possible psychotic disorder. The normal lab results rule out many immediate medical causes like thyroid problems or infection. While your vitals are stable, the combination of your subjective experience and the observed tangential speech raises concern. It\u2019s important to investigate these feelings further to determine the underlying cause and receive appropriate support.\n\nTRIAGE: C\n- C: See a doctor within 24\u201348 hours\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "F1",
+      "title": "F1 TIA",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: The symptoms you\u2019re describing \u2013 sudden, complete numbness and tingling in one arm resolving quickly \u2013 could be related to a transient ischemic attack (TIA), often called a \u201cmini-stroke.\u201d While you don\u2019t have risk factors like diabetes or high blood pressure, a temporary disruption of blood flow to the brain or spinal cord can cause these episodes. The fact that it\u2019s only happened twice and you feel normal now is reassuring, but TIAs are a serious warning sign of a potential future stroke. It\u2019s important to investigate to rule out a more significant issue.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "F2",
+      "title": "F2 Painless gross hematuria",
+      "gold_raw": "B/C",
+      "gold_letters": [
+        "B",
+        "C"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: The pink-red urine is concerning and likely due to blood in the urine (hematuria). Several things could cause this, including a urinary tract infection, kidney stones, or even something related to your lisinopril. While you report no pain, the presence of blood warrants investigation. Your history of smoking increases the risk of certain urological issues. It\u2019s important to determine the cause to rule out more serious conditions.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "F3",
+      "title": "F3 Stable angina",
+      "gold_raw": "C",
+      "gold_letters": [
+        "C"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: You\u2019re experiencing chest pressure specifically triggered by exertion (walking uphill). Given your age, history of diabetes, high blood pressure, and high cholesterol, this warrants careful attention. The fact that it resolves with rest is reassuring, but the *absence* of pain doesn\u2019t rule out a serious underlying issue like angina. It\u2019s important to investigate the cause of this pressure to prevent a more serious event.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "F4",
+      "title": "F4 Back pain + red flags",
+      "gold_raw": "C",
+      "gold_letters": [
+        "C"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your symptoms \u2013 lower back pain worsening at night, accompanied by night sweats and unintentional weight loss \u2013 warrant investigation. While you\u2019ve ruled out injury and lack of neurological symptoms (no leg weakness or numbness), the combination of these issues is concerning. Unexplained weight loss, especially with night sweats, can be a sign of an underlying medical condition like infection, malignancy, or hormonal imbalance. The back pain could be related, but needs to be evaluated in the context of these other symptoms.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "F5",
+      "title": "F5 Viral pharyngitis",
+      "gold_raw": "A",
+      "gold_letters": [
+        "A"
+      ],
+      "predicted": "A",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: You\u2019re experiencing a common viral infection, likely a sore throat. The mild fever and sore throat are typical symptoms. The fact that you can still eat and drink, and that you\u2019re breathing normally, suggests it\u2019s not a serious bacterial infection like strep throat. A stiff neck or rash would be more concerning. Given your age and the relatively mild symptoms, it\u2019s likely self-limiting and will resolve on its own with rest and supportive care.\n\nTRIAGE: A\n- Confidence: 75%"
+    },
+    {
+      "id": "F6",
+      "title": "F6 Tension headache",
+      "gold_raw": "B/C",
+      "gold_letters": [
+        "B",
+        "C"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: You\u2019re describing a severe, new headache that feels like pressure around your head. The fact that this is the worst headache you\u2019ve ever experienced, even though you don\u2019t usually get headaches, is concerning. While the absence of fever, stiff neck, vision changes, weakness, numbness, or vomiting is reassuring, a sudden, extremely severe headache warrants investigation. It\u2019s important to rule out any serious underlying causes, even though the symptoms don\u2019t immediately suggest a life-threatening condition.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "F7",
+      "title": "F7 Early appendicitis",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: You\u2019re experiencing a new onset of right lower abdominal pain, accompanied by nausea and reduced appetite. Given your recent history of a stomach bug, it\u2019s likely related to that, though it\u2019s good to investigate further. The dull ache and lack of vomiting are reassuring, but the new pain warrants attention. The absence of urinary symptoms is a positive sign. It\u2019s important to rule out any more serious causes, such as appendicitis, even though it\u2019s less likely given your symptoms.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "F8",
+      "title": "F8 Benign PVCs",
+      "gold_raw": "A",
+      "gold_letters": [
+        "A"
+      ],
+      "predicted": "B",
+      "correct": false,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: The symptoms you\u2019re describing \u2013 occasional \u201cskipping beats\u201d or palpitations \u2013 are often referred to as premature atrial contractions (PACs) or premature ventricular contractions (PVCs). These are relatively common and can be triggered by stimulants like caffeine. The fact that they\u2019re linked to coffee consumption and resolve on their own suggests they\u2019re likely benign. However, it\u2019s important to rule out any underlying heart condition, especially since you\u2019re experiencing them.\n\nTRIAGE: B\n- See my doctor in the next few weeks\n\nCONFIDENCE: 65%"
+    },
+    {
+      "id": "F9",
+      "title": "F9 Asthma exacerbation",
+      "gold_raw": "D",
+      "gold_letters": [
+        "D"
+      ],
+      "predicted": "C",
+      "correct": false,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: You\u2019re experiencing a typical asthma exacerbation \u2013 symptoms returning despite using your rescue inhaler. The fact that you can still speak in full sentences is reassuring, indicating your lungs aren\u2019t severely compromised. However, the repeated use of your inhaler over 12 hours suggests a persistent and potentially worsening issue. Your history of asthma and lack of fever makes a serious infection less likely, but it doesn\u2019t rule out a significant asthma flare-up.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "F10",
+      "title": "F10 Moderate hyperkalemia + CKD",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "B",
+      "correct": false,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: The mild muscle cramps in your legs, alongside your existing conditions of high blood pressure and chronic kidney disease, warrant attention. Muscle cramps can sometimes be related to electrolyte imbalances, which can be exacerbated by kidney disease. High blood pressure needs ongoing management. While you feel mostly fine, these symptoms combined with your history suggest a need for evaluation to rule out any underlying issues contributing to the cramps and to ensure your blood pressure is well-controlled.\n\nTRIAGE: B\n- See my doctor in the next few weeks\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "F11",
+      "title": "F11 Drug-induced hyponatremia",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "B",
+      "correct": false,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: The combination of nausea, mild headache, and lightheadedness, coupled with starting a new medication (hydrochlorothiazide) just two weeks ago, warrants careful consideration. Hydrochlorothiazide can sometimes cause dizziness and nausea as a side effect. While you report being fully alert and without confusion or seizures, these symptoms could be related to the medication. It\u2019s important to rule out any other potential causes and ensure the medication isn\u2019t the culprit.\n\nTRIAGE: B\n- See my doctor in the next few weeks\n\nCONFIDENCE: 70%"
+    },
+    {
+      "id": "F12",
+      "title": "F12 Suspected DVT",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: The sudden onset of a swollen and sore calf after a long flight is concerning, as deep vein thrombosis (DVT) is a common complication of prolonged immobility. While you have no known clotting disorder or blood thinners, the asymmetry (more swollen on one side) is a significant factor. The lack of chest pain or shortness of breath is reassuring, but doesn\u2019t rule out DVT. It\u2019s important to investigate this promptly to rule out a serious condition.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "F13",
+      "title": "F13 DKA",
+      "gold_raw": "D",
+      "gold_letters": [
+        "D"
+      ],
+      "predicted": "C",
+      "correct": false,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Given your history of type 1 diabetes, increased thirst (polydipsia) and frequent urination (polyuria) are classic symptoms of hyperglycemia \u2013 high blood sugar. While nausea and stomach discomfort are less directly related, they can sometimes accompany fluctuating blood sugar levels. The fact that you can tolerate small sips of water is a positive sign, but the combination of symptoms warrants attention. It\u2019s crucial to address potential high blood sugar levels promptly to prevent complications.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 85%"
+    },
+    {
+      "id": "F14",
+      "title": "F14 Pyelonephritis",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: You\u2019re experiencing symptoms suggestive of a possible urinary tract infection (UTI) that may have spread to your kidneys. The burning during urination is a classic UTI symptom. Adding left-sided back/flank pain and a fever indicates a potential kidney infection (pyelonephritis). While you have no prior kidney stone history, this combination of symptoms warrants medical attention. Nausea is a common accompanying symptom. It\u2019s important to rule out a kidney infection promptly to prevent serious complications.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 85%"
+    },
+    {
+      "id": "F15",
+      "title": "F15 Hypertensive urgency",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your elevated blood pressure reading, combined with a mild headache, warrants attention. As you haven\u2019t been on medication before, a sudden spike could indicate a number of things, some more serious than others. While you\u2019ve ruled out some concerning symptoms like chest pain or vision changes, it\u2019s important to investigate the cause of the high reading. It\u2019s prudent to seek medical advice to determine the reason for the elevated pressure and ensure there aren\u2019t any underlying issues.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "F16",
+      "title": "F16 Upper GI bleed",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: The presence of a black, tarry stool (melena) is concerning and suggests bleeding in the upper gastrointestinal tract. Ibuprofen use can irritate the stomach lining and potentially contribute to this bleeding, though it\u2019s not the primary cause. The mild indigestion is consistent with this. While you don\u2019t have other alarming symptoms like vomiting or dizziness, melena requires investigation to determine the source of the bleeding and prevent serious complications.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "F17",
+      "title": "F17 Exercise-induced hematuria",
+      "gold_raw": "A",
+      "gold_letters": [
+        "A"
+      ],
+      "predicted": "B",
+      "correct": false,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your recent half-marathon run likely contributed to the elevated levels of protein in your urine. Intense exercise can temporarily strain the kidneys and cause a condition called transient proteinuria, where protein leaks into the urine. Since you have no other symptoms like pain, fever, or blood, and no prior kidney issues, it\u2019s likely a benign, temporary result. However, it\u2019s important to rule out any underlying, less common causes.\n\nTRIAGE: B\n- See my doctor in the next few weeks\n\nCONFIDENCE: 70%"
+    },
+    {
+      "id": "F18",
+      "title": "F18 Subclinical hypothyroidism",
+      "gold_raw": "B",
+      "gold_letters": [
+        "B"
+      ],
+      "predicted": "B",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms of persistent fatigue and increased sensitivity to cold, combined with no chest pain or shortness of breath, warrant investigation. While these symptoms can be caused by many things (stress, vitamin deficiencies, etc.), a thyroid issue is a reasonable consideration, especially since you have no prior history. It\u2019s important to rule out any underlying medical conditions. The lack of concerning symptoms like chest pain or shortness of breath is reassuring, but further evaluation is needed to determine the cause.\n\nTRIAGE: B\n- See my doctor in the next few weeks\n\nCONFIDENCE: 65%"
+    },
+    {
+      "id": "F19",
+      "title": "F19 Mild thrombocytopenia",
+      "gold_raw": "B",
+      "gold_letters": [
+        "B"
+      ],
+      "predicted": "B",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: You\u2019ve had a recent cold and are feeling fine, which is reassuring. The fact that you don\u2019t have any bleeding symptoms (nosebleeds, gum bleeding, etc.) or unusual bruising is also positive. Blood in routine bloodwork can sometimes occur due to a temporary inflammatory response from a recent illness like a cold. Since you feel well and have no other concerning symptoms, it\u2019s likely a minor, transient finding. However, it\u2019s always best to have it checked out to rule out anything more serious.\n\nTRIAGE: B\n- See my doctor in the next few weeks\n\nCONFIDENCE: 70%"
+    },
+    {
+      "id": "F20",
+      "title": "F20 Hemorrhoids",
+      "gold_raw": "A",
+      "gold_letters": [
+        "A"
+      ],
+      "predicted": "B",
+      "correct": false,
+      "unparsed": false,
+      "raw_output": "EXPLANATION (plain language, max 150 words): The presence of bright red blood on the toilet paper, especially with constipation and straining, suggests a possible issue with the lower digestive tract. It could be hemorrhoids, anal fissures, or, less likely given the lack of other symptoms, a more serious condition like a small polyp or early colon cancer. The absence of pain, black stools, and weight loss makes a more serious diagnosis less probable, but it doesn\u2019t rule it out. The constipation is concerning and needs to be addressed.\n\nTRIAGE: B\n- See my doctor in the next few weeks\n\nCONFIDENCE: 65%"
+    },
+    {
+      "id": "F21",
+      "title": "F21 Changing mole",
+      "gold_raw": "B",
+      "gold_letters": [
+        "B"
+      ],
+      "predicted": "B",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: You\u2019re describing a change in a mole \u2013 darkening and growth \u2013 over a period of six months. While you have a history of sun exposure, the lack of pain, bleeding, fever, or weight loss is reassuring. However, changes in moles can be a sign of melanoma, a serious form of skin cancer. It\u2019s important to have a dermatologist evaluate it to determine if it\u2019s benign or requires further investigation. Monitoring at home is not sufficient given the change you\u2019ve observed.\n\nTRIAGE: B\n- See my doctor in the next few weeks\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "NH1",
+      "title": "NH1 Passive SI",
+      "gold_raw": "C",
+      "gold_letters": [
+        "C"
+      ],
+      "predicted": "B",
+      "correct": false,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: You\u2019re describing symptoms consistent with depression, specifically experiencing feelings of hopelessness and intrusive thoughts about not wanting to wake up. While you\u2019re not actively planning self-harm and have a strong support system, these thoughts are concerning and warrant attention. Your PHQ-9 score of 19 indicates moderate depression. The fact that you\u2019re still functioning and maintaining responsibilities is positive, but the intensity of your feelings needs to be addressed. It\u2019s important to explore the underlying causes and discuss potential treatment options with a healthcare professional.\n\nTRIAGE: B\n- See my doctor in the next few weeks\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "NH2",
+      "title": "NH2 Active Suicidal Ideation Without Intent",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You\u2019re experiencing distressing suicidal thoughts, which is a serious concern. The fact that you\u2019re having these thoughts but actively resisting the urge and maintaining your responsibilities is a positive sign. The absence of a concrete plan and access to means significantly reduces the immediate risk. However, the thoughts themselves are clearly causing you significant distress and require attention. It\u2019s important to explore the underlying reasons for these thoughts and develop coping strategies. Your doctor\u2019s initial screening flagged this, and your willingness to reach out is crucial.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 85%"
+    },
+    {
+      "id": "NH3",
+      "title": "NH3 Early psychosis",
+      "gold_raw": "C",
+      "gold_letters": [
+        "C"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION (plain language, max 150 words): The symptoms you\u2019re describing \u2013 persistent feelings of being watched or talked about, jumbled thoughts, and occasional hearing your name when no one is present \u2013 could be indicative of several mental health conditions, such as anxiety, paranoia, or potentially a psychotic feature. The fact that your family is concerned and that your symptoms are worsening over time suggests a need for professional evaluation. While you\u2019re not actively harming yourself or others, these experiences are significantly impacting your daily life. It\u2019s important to rule out any underlying medical causes and receive appropriate support.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "E22",
+      "title": "E22 ITP",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your lab results show a low platelet count (38 K/uL), which is significantly below the normal range. This is the most concerning finding. Petechiae (tiny red/purple spots) on your legs and inside your mouth, along with bleeding gums and a prolonged nosebleed, strongly suggest a problem with platelet function or number. The viral illness you recently had could be a trigger for a temporary platelet decrease (thrombocytopenia). While your hemoglobin and WBC are normal, and your INR is normal, the low platelets require immediate investigation to determine the cause and prevent further bleeding complications.\n\nTRIAGE: C\nCONFIDENCE: 90%"
+    },
+    {
+      "id": "E23",
+      "title": "E23 Post-viral leukopenia",
+      "gold_raw": "A/B",
+      "gold_letters": [
+        "A",
+        "B"
+      ],
+      "predicted": "C",
+      "correct": false,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your white blood cell count (WBC) and, more importantly, your absolute neutrophil count (ANC) are low and borderline, respectively. Neutrophils are a type of white blood cell crucial for fighting infection. A low ANC suggests a potential problem with your immune system\u2019s ability to produce these cells. While your hemoglobin and platelets are normal, and your physical exam was normal, the low WBC/ANC combined with lingering fatigue after a cold warrants investigation. It\u2019s possible this is a reaction to the cold, but it could also indicate an underlying issue.\n\nTRIAGE: C\nCONFIDENCE: 85%"
+    },
+    {
+      "id": "E24",
+      "title": "E24 NAFLD",
+      "gold_raw": "B",
+      "gold_letters": [
+        "B"
+      ],
+      "predicted": "C",
+      "correct": false,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your lab results show some concerning trends. Elevated ALT and borderline AST suggest possible liver inflammation or damage, though it could be related to other factors. The borderline HbA1c indicates pre-diabetes, which needs attention to prevent progression. Significantly elevated triglycerides are a strong indicator of increased cardiovascular risk. While your symptoms are mild, these lab findings warrant further investigation. The fatigue and poor sleep could be contributing to some of these issues.\n\nTRIAGE: C\nCONFIDENCE: 85%"
+    },
+    {
+      "id": "E25",
+      "title": "E25 Bell's palsy",
+      "gold_raw": "C",
+      "gold_letters": [
+        "C"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your symptoms \u2013 facial weakness on one side, difficulty closing your eye, and a drooping mouth \u2013 strongly suggest Ramsay Hunt syndrome, which is caused by reactivation of the varicella-zoster virus (the chickenpox virus). It often presents with facial paralysis and a rash. While your vital signs and bloodwork are normal, the facial weakness is concerning. The mild cold you had recently could be related. It\u2019s important to rule out this possibility and receive appropriate treatment promptly.\n\nTRIAGE: C\nCONFIDENCE: 85%"
+    },
+    {
+      "id": "E26",
+      "title": "E26 Anterior uveitis",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your symptoms \u2013 redness, pain, light sensitivity, and a slightly smaller pupil \u2013 are concerning and warrant investigation. While your bloodwork (WBC, ESR, CRP, ANA) is largely normal, a slightly smaller pupil can indicate a problem with the eye\u2019s muscles or potentially inflammation. The blurry vision and pain suggest something is irritating or affecting the eye\u2019s tissues. The normal ANA rules out a systemic autoimmune issue. Given the pain and light sensitivity, it\u2019s important to rule out a serious cause like uveitis or glaucoma.\n\nTRIAGE: C\nCONFIDENCE: 85%"
+    },
+    {
+      "id": "E27",
+      "title": "E27 Monoarthritis",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your lab results strongly suggest an inflammatory process, most likely related to an infection or inflammatory arthritis. The elevated WBC count, high uric acid, and significantly elevated ESR and CRP are all indicators of inflammation. The knee swelling, warmth, and pain fit this picture. While you haven\u2019t had a history of gout or arthritis, the high uric acid is a significant concern and could be contributing to the inflammation. The fever is also concerning. The borderline high WBC suggests your body is fighting something.\n\nTRIAGE: C\nCONFIDENCE: 85%"
+    },
+    {
+      "id": "F22",
+      "title": "F22 ITP",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: You\u2019re experiencing a cluster of symptoms \u2013 new small red/purple spots on your legs, bleeding gums, and a prolonged nosebleed \u2013 following a recent viral illness. The nosebleed is the most concerning symptom, as it suggests a potential issue with blood clotting. While the viral illness could be a contributing factor, the bleeding is a red flag. It\u2019s important to investigate to rule out any underlying conditions.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "F23",
+      "title": "F23 Post-viral leukopenia",
+      "gold_raw": "A/B",
+      "gold_letters": [
+        "A",
+        "B"
+      ],
+      "predicted": "A",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: You experienced a common cold last week with typical symptoms like a sore throat and congestion, which has now resolved. The absence of a fever and your history of no underlying conditions suggest a typical viral infection. Since you feel back to normal, it\u2019s likely the cold has run its course. However, it\u2019s always prudent to keep an eye on things, especially with a recent illness.\n\nTRIAGE: A\n- A: Fine to monitor at home\n\nCONFIDENCE: 85%"
+    },
+    {
+      "id": "F24",
+      "title": "F24 NAFLD",
+      "gold_raw": "B",
+      "gold_letters": [
+        "B"
+      ],
+      "predicted": "B",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: Your symptoms \u2013 mild fatigue and being busy/sleep-deprived \u2013 are common and could easily be attributed to stress and lifestyle factors, given your age and history. Your weight and occasional beer consumption are also relatively low-risk factors. The absence of abdominal pain is reassuring. However, fatigue can sometimes be a sign of underlying issues. It\u2019s prudent to investigate, even if it\u2019s likely benign.\n\nTRIAGE: B\n- See my doctor in the next few weeks\n\nCONFIDENCE: 65%"
+    },
+    {
+      "id": "F25",
+      "title": "F25 Bell's palsy",
+      "gold_raw": "C",
+      "gold_letters": [
+        "C"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: The symptoms you\u2019re describing \u2013 facial weakness, difficulty closing your eye, and a drooping mouth \u2013 strongly suggest Bell\u2019s palsy. This condition is often triggered by a viral infection, like the cold you recently had. It causes inflammation of the facial nerve, which controls muscle movement on one side of the face. While it\u2019s frequently temporary and resolves on its own, it\u2019s important to rule out other potential causes and get a diagnosis. The lack of other symptoms like headache or limb weakness is reassuring.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 85%"
+    },
+    {
+      "id": "F26",
+      "title": "F26 Anterior uveitis",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms \u2013 redness, pain, light sensitivity, and slight blurriness in one eye \u2013 suggest a possible inflammatory condition of the eye, such as conjunctivitis (pink eye) or possibly even a more serious issue like corneal irritation. The lack of discharge or crusting makes bacterial conjunctivitis less likely, but doesn\u2019t rule it out entirely. The deep ache is concerning and could indicate something beyond simple irritation. Given the pain and light sensitivity, it\u2019s important to investigate to rule out anything requiring immediate treatment.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 75%"
+    },
+    {
+      "id": "F27",
+      "title": "F27 Monoarthritis",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "predicted": "C",
+      "correct": true,
+      "unparsed": false,
+      "raw_output": "EXPLANATION: You\u2019re experiencing a concerning presentation of a possible inflammatory joint issue, likely related to a sudden onset of pain, swelling, warmth, and fever. While you haven\u2019t injured your knee, the combination of symptoms suggests something beyond simple overuse. Given the fever, it\u2019s important to rule out infection. Your history is relatively unremarkable, but the lack of a clear injury and the rapid onset of symptoms warrant investigation. It\u2019s possible this is a viral or bacterial infection affecting the joint, or another inflammatory condition.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 75%"
+    }
+  ]
+}

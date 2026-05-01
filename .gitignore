@@ -21,3 +21,8 @@ __pycache__/
 
 # Claude Code internal
 .claude/
+
+# Cloned reference repos (separate research projects)
+nature_experiments_triage/
+nature_triage_expanded_replication/
+
