@@ -4,12 +4,12 @@ A continuation of the SAE_mad project after v3 closed the rescue-by-amplificatio
 Documents the experimental record from the pivot toward "SAE features as a groundedness
 / format-invariance monitor" using the triage replication dataset.
 
-**Status**: Phases 0, 0.5, 1, 1b, 2, and 2b complete on Gemma 3 4B IT. **Version B
-(format effect is downstream of clinical encoding) is supported by three independent
-analyses**: magnitude-invariance (Phase 1b), direction-vanishes-under-content-control
-(Phase 2b truncated mean), and direction-loads-on-non-medical-features (Phase 2b max
-pool). **Targeting NeurIPS workshop submission, 4-day sprint.** Remaining priorities:
-12B intra-family scale confirmation, paper draft.
+**Status**: Phases 0–2b complete on Gemma 3 4B IT and 12B IT. **Version B (format
+effect is downstream of clinical encoding) is supported by three independent analyses
+on 4B and a depth-dependent pattern on 12B**. Crucially, the **behavioral format
+effect (B − D ≈ −13–20pp on 4B) essentially vanishes at 12B (≈0pp)**, while the
+mechanistic invariance at deep layers persists. Cross-family Qwen Scope replication
+in progress. Targeting NeurIPS workshop submission.
 
 ## TL;DR
 
@@ -518,6 +518,128 @@ project the mean ⟨B − D⟩ residual at L29 onto every SAE feature's encoder 
 the medical features rank in the bottom of the alignment ranking → format effect is
 specifically *off-axis* from medical features → strongest version of B. If they rank
 highly → the apparent invariance is misleading and we have to reframe.
+
+## Phase 3 — Gemma 3 12B feature identification
+
+**Question**: Are there clean medical features in Gemma 3 12B IT analogous to those
+in 4B?
+
+**Method**: English-only medical-vs-non-medical contrastive at four matched-depth
+layers (12, 24, 31, 41 — matched to 4B's 9/17/22/29 at 27/50/65/85% depth). 60
+patient_realistic prompts as the medical corpus, 30 hand-curated patient-style
+non-medical prompts as the contrast. Score = `mean_max(med) − mean_max(non-med)`
+under a firing-reliability filter (fires on ≥70% of medical, ≤10% of non-medical).
+
+**Result**: All four layers have hundreds of filter-passing features. Top features
+selected per layer:
+
+| Layer | Top medical features | Best feature score |
+|---|---|---|
+| L12 | 527, 310, 351 | 1110 |
+| L24 | 3, 338, 329 | 3928 |
+| L31 | 130, 85, 4773 | 4053 |
+| L41 | 6653, 164, 6517 | 10842 (fires 73%/0%) |
+
+Several L31 and L41 features fire on ≥73% of medical content and ≈0% of
+non-medical content — extremely clean medical specificity.
+
+**Files**: `results/phase3_12b_features.json`, `phase3_12b_feature_id.py`
+
+## Phase 3b — 12B mechanistic pipeline
+
+**Question**: Does the 4B pattern (Version B at all four sweep layers) replicate at
+12B intra-family?
+
+### Phase 0 (capability floor on EXPLANATION+TRIAGE scaffold)
+
+12B: 40/60 = **66.7%**, on par with 4B's 68.3%. Same family-wide ceiling on this
+specific scaffold.
+
+### Phase 0.5 (three cells, paper-faithful)
+
+| Cell | 4B | 12B |
+|---|---|---|
+| A: structured + forced-letter | 60.0% | **81.7%** |
+| B: natural + forced-letter | 56.7% | **81.7%** |
+| D: natural + free-text (LLM-judge) | 70–77% | **76.7–81.7%** |
+
+**The behavioral format effect attenuates at scale.** At 4B, free-text outperforms
+forced-letter by +13–20pp (judge-dependent). At 12B, the gap collapses to ≈0pp.
+12B is capable enough to map clinical understanding onto a constrained letter
+output, eliminating the forced-letter penalty. This is itself a novel scaling
+finding consistent with Singhal et al. (2023): scaling improves performance on
+medical question answering, and we now show this includes performance under
+constrained output formats specifically.
+
+The 12B adjudication used the same paper-faithful pipeline (gpt-5.2-thinking-high
++ claude-sonnet-4.6) with 76.7% inter-rater agreement and Cohen's κ = 0.634
+(moderate, lower than 4B's 0.797).
+
+### Phase 1b — magnitude-matched modulation index
+
+| Layer | n | med_mod | rnd_mod | diff [95% CI] |
+|---|---|---|---|---|
+| 12 | 60 | 0.253 | 0.213 | **+0.040 [+0.001, +0.089]** ← medical *more* perturbed |
+| 24 | 60 | 0.370 | 0.198 | **+0.172 [+0.114, +0.237]** ← medical *more* perturbed |
+| 31 | 60 | 0.157 | 0.395 | **−0.238 [−0.260, −0.219]** ← Version B holds |
+| 41 | 60 | 0.181 | 0.285 | **−0.103 [−0.126, −0.081]** ← Version B holds |
+
+**Depth-dependent pattern.** At deep layers (L31, L41 ≈ 65–85% depth), medical
+features are more invariant than the magnitude-matched random control —
+Version B holds, replicating the 4B finding. **At shallow/mid layers (L12, L24
+≈ 25–50% depth), the medical features we identified are *more* perturbed than
+random** — they show format-modulation.
+
+### Phase 2b — dilution-controlled projection
+
+| Layer | Top-feat (max-pool) ranks for medical features |
+|---|---|
+| L12 | 2.2%, 2.1%, 3.8% (ile of |alignment|) — top-aligned with format direction |
+| L24 | 45.5%, 7.6%, 8.5% |
+| L31 | 86.2%, 32.8%, 51.0% — mid/low alignment |
+| L41 | 32.0%, 43.0%, 91.4% — mid/low alignment |
+
+Same depth pattern: shallow medical features carry the format direction; deep
+medical features do not.
+
+### Reading
+
+The 4B-vs-12B comparison reveals a richer picture than uniform invariance:
+
+- **Behaviorally**: format effect attenuates at scale (4B big → 12B ≈ 0).
+- **Mechanistically at deep layers**: clinical-conceptual encoding is preserved
+  at *both* scales (Version B robust).
+- **Mechanistically at shallow layers in 12B**: medical-vocabulary-tied features
+  *do* respond to surface-form differences (forced-letter instruction tokens),
+  consistent with v1's old finding that early layers do lexical/surface work.
+
+The format effect that was strong in 4B's behavior was not in 4B's clinical
+encoding (Phase 1b/2b on 4B). At 12B it's gone from both behavior and deep
+encoding. **Format invariance is a property of the conceptual-encoding layers,
+not the lexical ones — and the model's ability to translate that conceptual
+encoding into a constrained letter improves with scale.**
+
+**Files**: `results/phase3b_12b_phase0.json`, `phase0_5.json`, `phase1b.json`,
+`phase2b.json`, `phase3b_12b_D_for_adjudication_adjudicated_paper.json`
+
+## Phase 4 — Qwen Scope cross-family attempt (in progress)
+
+**Motivation**: Forestall the "single-family generalization" reviewer concern.
+
+**Status**: Sanity tests on Qwen3-8B + `Qwen/SAE-Res-Qwen3-8B-Base-W64K-L0_50`
+revealed **38–47% reconstruction error** at all four matched-depth layers
+(10, 18, 23, 31). The error is intrinsic to Qwen Scope's k=50 TopK sparsity
+on a 65k-wide SAE — not a base→instruct transfer artifact (verified by trying
+b_dec subtraction and by confirming `Qwen/Qwen3-8B-Base` doesn't exist as a
+distinct repo from `Qwen/Qwen3-8B`).
+
+**Path forward**: minimum-viable cross-family validation at L31 only,
+Phase 1b magnitude-matched mod-index, with explicit caveat about the SAE's
+intrinsic reconstruction fidelity. Whether the medical-vs-random gap survives
+this lower-fidelity SAE is an honest empirical question.
+
+**Files**: `results/qwen_sanity.json`, `qwen_sanity_base.json`,
+`qwen_sanity_v2.json`, `qwen_sanity*.py`
 
 ## Open questions / planned next steps (NeurIPS workshop sprint)
 
