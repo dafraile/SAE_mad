@@ -40,102 +40,99 @@ features as deployable, format-invariant monitors of clinical groundedness.
 ## 1. Introduction
 
 Large language models (LLMs) are increasingly evaluated for clinical roles.
-Singhal et al. demonstrated that with appropriate alignment, the same models
-can reach near-clinician agreement with scientific consensus on consumer
-medical questions, supporting the view that LLMs encode substantial clinical
-knowledge [CITE: Singhal et al. 2023 — Med-PaLM, MultiMedQA, *Nature*
-doi:10.1038/s41586-023-06291-2]. Subsequent work has tested this knowledge in
-more specific deployment settings, including triage. A recent benchmark of a
-consumer-facing health chatbot reported a 51.6% emergency-case under-triage
-rate, an alarming headline that has been cited as evidence that current LLMs
-are unsafe for triage applications [CITE: Ramaswamy et al. 2026 — *Nature
-Medicine* triage benchmark of ChatGPT Health; the headline 51.6% under-triage
-figure].
+Singhal et al.~\cite{singhal2023large} demonstrated that with appropriate
+alignment, the same models can reach near-clinician agreement with scientific
+consensus on consumer medical questions on multiple human-evaluation axes,
+supporting the view that LLMs encode substantial clinical knowledge — though
+the same study found persistent gaps on omission, possible harm, and bias.
+Subsequent work has tested this knowledge in more specific deployment
+settings, including triage. A recent benchmark of a consumer-facing health
+chatbot reported a 51.6\% emergency-case under-triage rate, an alarming
+headline that has been cited as evidence that current LLMs are unsafe for
+triage applications~\cite{ramaswamy2026chatgpt}.
 
 Behavioral replications have complicated this conclusion. The same clinical
 content, presented either as a structured clinical write-up with a
 forced-letter answer or as a first-person patient narrative answered freely,
-yields substantially different scoring outcomes — by 6–8 percentage points
-in pooled multi-model averages and considerably more on individual
-high-stakes cases [CITE: Fraile Navarro et al. 2026 — Matters Arising / paper-faithful
-replication; the natural-vs-structured Wilcoxon p<0.005 result and the
-DKA/asthma case-level breakdown]. Recent literature on prompt-format and
+yields substantially different scoring outcomes — significantly so in pooled
+multi-model averages, and considerably more on individual high-stakes
+cases~\cite{frailenavarro2026triage}. Recent literature on prompt-format and
 multiple-choice sensitivity in LLM benchmarks more generally has shown that
 constrained-output evaluations can systematically misrepresent underlying
-capability [CITE: e.g. Zheng et al. 2024 on MCQ format sensitivity; Pezeshkpour
-& Hruschka 2024 on MCQ ordering effects; Sclar et al. 2024 on prompt format
-sensitivity]. The triage failures are therefore at least partly a function of
-the evaluation, not the underlying model.
+capability: option-identifier and ordering biases inflate or suppress
+multiple-choice scores~\cite{zheng2024large,pezeshkpour2024large}, and prompt
+formatting alone can move accuracy by tens of points within the same
+model~\cite{sclar2024quantifying}. The triage failures are therefore at least
+partly a function of the evaluation, not the underlying model.
 
 This raises a mechanistic question that behavioral evidence cannot resolve.
 Either prompt format changes how the model represents the clinical case
-internally — call this **Version A**, in which constrained outputs reach back
-into clinical reasoning — or prompt format changes only how the model maps an
-already-formed clinical understanding into a final answer — call this
-**Version B**, in which the same internal representation produces different
-outputs only because of the constrained output stage. Version A would
-implicate clinical reasoning itself; Version B would localize the apparent
-failure in output mapping and recast the benchmark as measuring that mapping
-rather than the underlying capability. The two have very different
-implications for both deployment and evaluation methodology, and the
-distinction has not been tested mechanistically in the published literature
-[CITE: confirm — to our knowledge, no prior work has run an SAE-based
-distinction between reasoning and output-mapping on clinical triage. Closest
-prior: Anthropic's "On the Biology of a Large Language Model" / emotion-feature
-steering, which establishes the broader feature-as-readout vs feature-as-driver
-distinction that motivates our framing].
+internally — call this \textbf{Version A}, in which constrained outputs reach
+back into clinical reasoning — or prompt format changes only how the model
+maps an already-formed clinical understanding into a final answer — call this
+\textbf{Version B}, in which the same internal representation produces
+different outputs only because of the constrained output stage. Version A
+would implicate clinical reasoning itself; Version B would localize the
+apparent failure in output mapping and recast the benchmark as measuring that
+mapping rather than the underlying capability. The two have very different
+implications for both deployment and evaluation methodology, and to our
+knowledge no prior work has tested the distinction mechanistically on
+clinical triage. Closest precedent uses sparse-autoencoder–based attribution
+graphs to analyze internal mechanisms in production
+models~\cite{anthropic2025biology}.
 
 We provide that test. Sparse autoencoders (SAEs) decompose a model's
 residual stream into a sparse, overcomplete dictionary of features that have
-been shown to carry interpretable, content-tied signal [CITE: Bricken et al.
-2023 (Anthropic monosemanticity); Cunningham et al. 2023 (sparse coding for
-language models); Templeton et al. 2024 (Anthropic Claude 3 Sonnet feature
-analysis)]. Recent open releases — Gemma Scope and Gemma Scope 2 [CITE:
-Lieberum et al. 2024 (Gemma Scope); the Gemma Scope 2 release from Google
-DeepMind, 2025 — likely a tech report or blog post] and Qwen Scope [CITE:
-Qwen Scope blog post / tech report, qwen.ai/blog, 2026] — make this analysis
-available across multiple model families with different SAE training pipelines
-(JumpReLU [CITE: Rajamanoharan et al. 2024] vs k=50 TopK [CITE: Makhzani &
-Frey 2014; Gao et al. 2024]). We use these to ask, in three instruction-tuned
-models from two families, whether medical SAE features fire identically on
-identical clinical content across the two output-format conditions whose
-behavioral scoring diverges.
+been shown to carry interpretable, content-tied
+signal~\cite{bricken2023monosemanticity,cunningham2023sparse,templeton2024scaling}.
+Recent open releases — Gemma Scope on Gemma 2~\cite{lieberum2024gemma}, its
+successor Gemma Scope 2 covering Gemma
+3~\cite{deepmind2025gemmascope2,google2026gemmascope24bit}, and the
+recently released Qwen-Scope~\cite{qwen2026scope} — make this analysis
+available across multiple model families with different SAE training
+pipelines: JumpReLU SAEs trained on Gemma~\cite{rajamanoharan2024jumping} and
+$k$-sparse TopK SAEs ($k{=}50$) trained on
+Qwen~\cite{makhzani2013ksparse,gao2024scaling}. We use these to ask, in three
+instruction-tuned models from two families, whether medical SAE features fire
+identically on identical clinical content across the two output-format
+conditions whose behavioral scoring diverges.
 
-**Contributions.** We make three claims and back each with controlled,
-preregistered tests across Gemma 3 4B IT, Gemma 3 12B IT, and Qwen3-8B
-(60 paper-faithful clinical vignettes per model):
+\textbf{Contributions.} We make three claims and back each with controlled,
+preregistered tests across Gemma 3 4B IT, Gemma 3 12B IT, and Qwen3-8B (60
+paper-faithful clinical vignettes per model):
 
-1. **Magnitude invariance.** Medical-content SAE features fire within 0–4%
-   per token on identical clinical content across format conditions. Mean-pool
-   modulation indices are 10–25% for medical features versus 32–45% for
-   magnitude-matched random features in the same SAE basis. Bootstrap 95%
-   confidence intervals exclude zero in every cell of the layer × stratum
-   design across all three models.
+\begin{enumerate}
+\item \textbf{Magnitude invariance.} Medical-content SAE features fire within
+0--4\% per token on identical clinical content across format conditions.
+Mean-pool modulation indices are 10--25\% for medical features versus 32--45\%
+for magnitude-matched random features in the same SAE basis. Bootstrap 95\%
+confidence intervals exclude zero in every cell of the layer$\,\times\,$stratum
+design across all three models.
+\item \textbf{Direction analysis.} When prompt-length asymmetry is controlled
+(by truncating the longer prompt to identical content range), the
+residual-stream difference between conditions vanishes exactly; what survives
+in length-invariant max-pool aggregation loads onto non-medical features in
+the SAE basis rather than the medical ones.
+\item \textbf{Behavioral scaling.} The forced-letter penalty observed at 4B
+($+$13--20pp advantage for free-text in our paper-faithful adjudication)
+essentially vanishes at 12B ($\approx{}0$pp). This refines the Med-PaLM--era
+scaling claim~\cite{singhal2023large,wei2022emergent}: capability scaling
+closes the gap not just on internal medical knowledge but specifically on the
+model's ability to map that knowledge into a constrained output. Crucially,
+the \emph{mechanistic} invariance at deep layers persists across both scales.
+\end{enumerate}
 
-2. **Direction analysis.** When prompt-length asymmetry is controlled (by
-   truncating the longer prompt to identical content range), the
-   residual-stream difference between conditions vanishes exactly; what
-   survives in length-invariant max-pool aggregation loads onto non-medical
-   features in the SAE basis rather than the medical ones.
-
-3. **Behavioral scaling.** The forced-letter penalty observed at 4B (+13–20pp
-   advantage for free-text in our paper-faithful adjudication) essentially
-   vanishes at 12B (≈0pp). This refines the Med-PaLM-era scaling claim:
-   capability scaling closes the gap not just on internal medical knowledge
-   but specifically on the model's ability to map that knowledge into a
-   constrained output. Crucially, the *mechanistic* invariance at deep
-   layers persists across both scales.
-
-Together, these support Version B at scale and across families. The model's
-clinical encoding is preserved across the output formats whose accuracy
-scoring diverges; the failure mode the benchmark detects lives in output
-mapping. We discuss implications for clinical-AI evaluation methodology and
-propose deep-layer SAE features as a deployable, format-robust monitor of
-clinical groundedness — an application that plays to what SAE features have
-been shown to be (interpretable readouts) rather than what they cannot
-generally be made into (causally sufficient steering levers) [CITE: Turner
-et al. 2023 — ActAdd / steering vectors; possibly also Marks et al. 2024 on
-SAE feature ablation limits, or the v3 work in our own group's prior null].
+Together, these results support Version B at scale and across families. The
+model's clinical encoding is preserved across the output formats whose
+accuracy scoring diverges; the failure mode the benchmark detects lives in
+output mapping. We discuss implications for clinical-AI evaluation methodology
+and propose deep-layer SAE features as a deployable, format-robust monitor of
+clinical groundedness. The control-side analogue — modifying behavior using
+continuous activation differences rather than discrete feature
+interventions — has been studied separately~\cite{turner2023steering}, and
+recent work demonstrates SAE features can also serve as causal units for
+circuit-level editing in some settings~\cite{marks2024sparse}; our use of SAE
+features here is restricted to their well-supported readout role.
 
 
 ---
