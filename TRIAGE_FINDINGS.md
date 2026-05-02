@@ -4,12 +4,12 @@ A continuation of the SAE_mad project after v3 closed the rescue-by-amplificatio
 Documents the experimental record from the pivot toward "SAE features as a groundedness
 / format-invariance monitor" using the triage replication dataset.
 
-**Status**: Phases 0–2b complete on Gemma 3 4B IT and 12B IT. **Version B (format
-effect is downstream of clinical encoding) is supported by three independent analyses
-on 4B and a depth-dependent pattern on 12B**. Crucially, the **behavioral format
-effect (B − D ≈ −13–20pp on 4B) essentially vanishes at 12B (≈0pp)**, while the
-mechanistic invariance at deep layers persists. Cross-family Qwen Scope replication
-in progress. Targeting NeurIPS workshop submission.
+**Status**: Phases 0–4 complete on Gemma 3 4B IT, Gemma 3 12B IT, **and Qwen3-8B**.
+Three families' worth of evidence: Gemma 4B (JumpReLU SAE) shows the cleanest
+multi-layer Version B; Gemma 12B reveals the behavioral format effect attenuates
+at scale and a depth-dependent mechanistic pattern; Qwen3-8B (k=50 TopK SAE)
+replicates the deep-layer Version B at L31 despite the SAE's more aggressive
+sparsity. Targeting NeurIPS workshop submission.
 
 ## TL;DR
 
@@ -622,24 +622,78 @@ encoding into a constrained letter improves with scale.**
 **Files**: `results/phase3b_12b_phase0.json`, `phase0_5.json`, `phase1b.json`,
 `phase2b.json`, `phase3b_12b_D_for_adjudication_adjudicated_paper.json`
 
-## Phase 4 — Qwen Scope cross-family attempt (in progress)
+## Phase 4 — Qwen Scope cross-family validation
 
 **Motivation**: Forestall the "single-family generalization" reviewer concern.
 
-**Status**: Sanity tests on Qwen3-8B + `Qwen/SAE-Res-Qwen3-8B-Base-W64K-L0_50`
-revealed **38–47% reconstruction error** at all four matched-depth layers
-(10, 18, 23, 31). The error is intrinsic to Qwen Scope's k=50 TopK sparsity
-on a 65k-wide SAE — not a base→instruct transfer artifact (verified by trying
-b_dec subtraction and by confirming `Qwen/Qwen3-8B-Base` doesn't exist as a
-distinct repo from `Qwen/Qwen3-8B`).
+**Setup**:
+- Model: Qwen3-8B, fed B and D prompts as **raw text** (no chat template),
+  to avoid added structure between B and D conditions.
+- SAE: `Qwen/SAE-Res-Qwen3-8B-Base-W64K-L0_50` at **layer 31** only
+  (deepest layer with lowest reconstruction error: 38.5%).
+- Same 60 paper-canonical cases. B = `natural_forced_letter`, D = `patient_realistic`.
+- Feature ID: medical-vs-non-medical contrastive on the same 60+30 corpus
+  used in Phase 3, with k=50 TopK encode.
+- Phase 1b magnitude-matched mod-index. Phase 2b max-pool projection.
 
-**Path forward**: minimum-viable cross-family validation at L31 only,
-Phase 1b magnitude-matched mod-index, with explicit caveat about the SAE's
-intrinsic reconstruction fidelity. Whether the medical-vs-random gap survives
-this lower-fidelity SAE is an honest empirical question.
+**Caveat acknowledged in paper**: Qwen Scope uses k=50 TopK SAEs (50/65536
+features active per token = 0.076% sparsity, more aggressive than Gemma
+Scope's JumpReLU). This forces 38% relative L2 reconstruction error even
+on the SAE's training-distribution residuals. Whether the medical-vs-random
+gap survives this lower-fidelity SAE is an empirical question.
 
-**Files**: `results/qwen_sanity.json`, `qwen_sanity_base.json`,
-`qwen_sanity_v2.json`, `qwen_sanity*.py`
+### Medical features identified at L31
+
+519 features pass the "fires ≥70% medical, ≤10% non-medical" filter
+(comparable to Gemma 12B's 502 at L31). Top 3:
+
+| Feature | Med max-mean | Non max-mean | Fires med | Fires non |
+|---|---|---|---|---|
+| 29074 | 176.8 | **0.00** | 70% | **0%** |
+| 48973 | 153.6 | 3.26 | 100% | 7% |
+| 60699 | 141.0 | **0.00** | 78% | **0%** |
+
+Magnitudes are ~10× lower than Gemma Scope features at comparable layers
+(consistent with TopK constraint), but the firing-specificity signature is
+even cleaner — two of three top features fire on **zero** non-medical prompts.
+
+### Phase 1b magnitude-matched mod-index
+
+| | Mean | 95% CI |
+|---|---|---|
+| Medical (n=3) | 0.266 | — |
+| Magnitude-matched random (n=30) | 0.330 | — |
+| **Diff (medical − random)** | **−0.064** | **[−0.106, −0.024]** |
+
+CI excludes zero. **Medical features are more invariant than the
+magnitude-matched random control under the B↔D format change in
+Qwen3-8B.** Effect size is smaller than Gemma 4B L29 format_flipped
+(−0.305) and Gemma 12B L31 (−0.238), but the direction and statistical
+signal replicate.
+
+### Phase 2b max-pool projection (medical-feature ranks of 65536)
+
+- feat 29074: rank 58626 (89.5%-ile) — far from format direction
+- feat 60699: rank 40893 (62.4%-ile) — mid
+- feat 48973: rank 82 (0.1%-ile) — top-aligned
+
+Two of three medical features are clearly off the format direction; one is
+highly aligned — same mixed pattern as Gemma 4B L29 (feat 893 top-aligned,
+12570 low, 12845 mid). Consistent with the dilution-from-prompt-length
+artifact we identified earlier.
+
+### Verdict
+
+**Cross-family validation holds at deep-layer L31.** Across Gemma 3 (4B+12B,
+JumpReLU) and Qwen3 (8B, k=50 TopK), medical features at the deep-encoding
+layer are more invariant under format change than magnitude-matched random
+features in the same SAE basis. The Qwen Scope effect is smaller, consistent
+with the more aggressive sparsity constraint, but qualitatively replicates
+the Gemma pattern.
+
+**Files**: `results/phase4_qwen_L31.json`, `phase4_qwen_minimal.py`,
+plus the earlier `results/qwen_sanity*.json` for the recon-error
+characterization.
 
 ## Open questions / planned next steps (NeurIPS workshop sprint)
 
