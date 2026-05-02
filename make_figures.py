@@ -94,11 +94,11 @@ def fig1_behavioral():
     }
 
     fig, ax = plt.subplots(figsize=(5.6, 3.4))
-    cells = ["A", "B", "D"]
+    cells = ["A", "B", "D"]  # internal codebase keys (kept for back-compat)
     cell_labels = [
-        "A\nstructured\n+ letter",
-        "B\nnatural\n+ letter",
-        "D\nnatural\n+ free-text",
+        "SL\nstructured\n+ letter",
+        "NL\nnatural\n+ letter",
+        "NF\nnatural\n+ free-text",
     ]
     x = np.arange(len(cells))
     width = 0.36
@@ -126,7 +126,7 @@ def fig1_behavioral():
     ax.legend(loc="upper left", frameon=False, fontsize=9)
     ax.set_title("Behavioral phenomenon: format effect attenuates with scale",
                  fontsize=11, pad=8)
-    ax.text(0.02, -0.32, "Error bars: Wilson 95% CI. D-cell scoring: both LLM judges agree.",
+    ax.text(0.02, -0.32, "Error bars: Wilson 95% CI. NF (free-text) scored by paper-faithful LLM-as-judge (both judges agree).",
             transform=ax.transAxes, fontsize=8, style="italic", color="#555555")
     plt.tight_layout()
     plt.savefig(OUT_DIR / "fig1_behavioral.pdf", bbox_inches="tight")
@@ -270,11 +270,11 @@ def fig3_direction():
         ax1.text(b.get_x() + b.get_width()/2, b.get_height() + max(norms)*0.01,
                  f"{v:.1f}" if v > 0.01 else "0.00",
                  ha="center", va="bottom", fontsize=9, fontweight="bold" if v < 0.1 else "normal")
-    ax1.set_ylabel(r"$\|\langle r_B - r_D\rangle\|_2$", fontsize=11)
+    ax1.set_ylabel(r"$\|\langle r_{NL} - r_{NF}\rangle\|_2$", fontsize=11)
     ax1.set_title("Residual difference norm by aggregation (Gemma 4B L29)",
                   fontsize=10)
     ax1.tick_params(axis="x", labelsize=8.5)
-    ax1.text(0.02, 0.97, "B and D contain byte-identical clinical content;\n"
+    ax1.text(0.02, 0.97, "NL and NF contain byte-identical clinical content;\n"
                           "the only difference is whether the forced-letter\n"
                           "instruction block is appended.",
              transform=ax1.transAxes, fontsize=8, va="top", color="#444",
@@ -319,7 +319,7 @@ def fig3_direction():
                      color="#444")
     ax2.axhline(50, color="#999", linestyle="--", alpha=0.7, linewidth=1)
     ax2.set_ylim(-2, 102)
-    ax2.set_ylabel("Rank percentile of medical features\nin |alignment| with (B−D) max-pool")
+    ax2.set_ylabel("Rank percentile of medical features\nin |alignment| with (NL−NF) max-pool")
     ax2.set_xlabel("")
     ax2.set_title("Medical features are far from the format direction",
                   fontsize=10)

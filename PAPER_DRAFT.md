@@ -96,19 +96,27 @@ We use the 60 paper-canonical clinical vignettes from the paper-faithful
 replication corpus [TODO: cite Fraile Navarro 2026 / your prior work]. Each
 vignette is a clinical case in three pre-defined formats:
 
-- **A: structured + forced-letter.** Structured clinical write-up plus a terse
+- **SL — structured + forced-letter.** Structured clinical write-up plus a terse
   "Reply with exactly one letter only" instruction block.
-- **B: natural + forced-letter.** First-person patient narrative plus the same
+- **NL — natural + forced-letter.** First-person patient narrative plus the same
   forced-letter instruction.
-- **D: natural + free-text.** Identical patient narrative as B, ending with a
+- **NF — natural + free-text.** Identical patient narrative as NL, ending with a
   natural question and *no* output-format instruction.
 
-A critical property of the corpus: **B and D's clinical content is byte-identical**
+A critical property of the corpus: **NL and NF's clinical content is byte-identical**
 (1033 chars per case in our test). The only difference is whether the
 forced-letter instruction block (~50–60 tokens) is appended after the patient
-narrative. This affords a clean isolation of the format effect. Gold triage
-labels (A=monitor at home, B=see doctor in weeks, C=24–48h, D=ER) come with
-the dataset; some cases have edge-case dual labels (e.g., C/D).
+narrative. This affords a clean isolation of the format effect.
+
+The fourth cell of an input × output factorial — *structured + free-text* — is
+omitted because the paper-faithful corpus does not natively contain it; we treat
+it as future work. Three of the four 2 × 2 cells still let us isolate the output
+axis cleanly via the NL ↔ NF comparison (same input, format instruction varied).
+
+Gold triage labels (A=monitor at home, B=see doctor in weeks, C=24–48h, D=ER)
+come with the dataset; some cases have edge-case dual labels (e.g., C/D). Note
+that gold labels and cell codes use disjoint naming: gold is {A, B, C, D},
+cell codes are {SL, NL, NF}.
 
 ### 3.2 Models and SAEs
 
@@ -129,7 +137,7 @@ both chat-templated and raw-text inputs, with and without `b_dec` subtraction).
 ### 3.3 Behavioral test (Phase 0.5)
 
 For each model × cell × case, we generate the model's output via greedy decoding.
-Cells A and B have terse single-letter outputs; we extract via regex. Cell D has
+Cells SL and NL have terse single-letter outputs; we extract via regex. Cell NF has
 free-text outputs; we score using the paper-faithful adjudication pipeline
 [script `adjudicate_natural_paper_scale.py`] with two LLM judges (`gpt-5.2-thinking-high`
 and `claude-sonnet-4.6`). The adjudicator prompt uses the paper's native scale
@@ -148,15 +156,15 @@ over user content tokens. For Gemma we identify content tokens by chat-template
 boundaries (`<start_of_turn>user\n` to `<end_of_turn>`); for Qwen we feed raw
 text and pool over the entire input. Per case, we compute:
 
-- **Cosine similarity** between B and D feature vectors (over the medical
+- **Cosine similarity** between NL and NF feature vectors (over the medical
   feature subspace).
 - **Modulation index**:  
-  $\text{mod}(c) = \langle |a_D(f) - a_B(f)|\rangle_f \,/\, \langle (|a_B(f)| + |a_D(f)|)/2 \rangle_f$
+  $\text{mod}(c) = \langle |a_{NF}(f) - a_{NL}(f)|\rangle_f \,/\, \langle (|a_{NL}(f)| + |a_{NF}(f)|)/2 \rangle_f$
   where the average is over the relevant feature subset (medical or random).
   Lower = more invariant.
 
 The control is a set of 30 random features per layer, drawn with a frozen seed
-from the pool of features whose mean activation across the union of B+D content
+from the pool of features whose mean activation across the union of NL+NF content
 falls in the band `[0.5 × min(med_means), 2.0 × max(med_means)]`. This
 **magnitude-matches** the random pool to the medical features, removing the
 small-feature-noise inflation that would otherwise depress the random mod-index.
@@ -164,33 +172,33 @@ Pool sizes are typically 500–2200 features per layer per model.
 
 We stratify by Phase 0.5 + adjudicator outcomes:
 
-- **format_flipped**: B wrong AND both judges agree D right.
-- **both_right**: B correct AND both judges agree D correct.
-- **both_wrong**: B wrong AND both judges agree D wrong.
-- **B_only_right**: B correct AND not both judges right.
+- **format_flipped**: NL wrong AND both judges agree NF right.
+- **both_right**: NL correct AND both judges agree NF correct.
+- **both_wrong**: NL wrong AND both judges agree NF wrong.
+- **NL_only_right**: NL correct AND not both judges right.
 
 Bootstrap 95% confidence intervals (2,000 resamples) on the per-case
 medical-minus-random mod-index difference.
 
 ### 3.5 Direction-of-format-effect test (Phase 2b)
 
-To localize *where* the (B − D) residual-stream direction lives in the SAE
+To localize *where* the (NL − NF) residual-stream direction lives in the SAE
 basis, we project it onto each feature's encoder direction. We use three
 aggregations to control for prompt-length asymmetry:
 
-- **Full mean-pool**: B and D residuals pooled over their full user-content
-  ranges. Affected by B's longer content (it includes the forced-letter
+- **Full mean-pool**: NL and NF residuals pooled over their full user-content
+  ranges. Affected by NL's longer content (it includes the forced-letter
   instruction tokens).
-- **Length-controlled mean-pool**: B's content range truncated at the
-  literal `"Reply with exactly one letter only"` so B and D pool over
+- **Length-controlled mean-pool**: NL's content range truncated at the
+  literal `"Reply with exactly one letter only"` so NL and NF pool over
   identical content. Because the corpus has byte-identical clinical text
-  in B's prefix and D, this aggregation reduces (B − D) to the limit of
+  in NL's prefix and NF, this aggregation reduces (NL − NF) to the limit of
   numerical precision.
 - **Max-pool**: per-dimension max over content tokens, length-invariant
   by construction.
 
 For each aggregation we compute cosine alignment between the case-averaged
-(B − D) direction and each SAE feature's encoder direction `W_enc[:, f]`,
+(NL − NF) direction and each SAE feature's encoder direction `W_enc[:, f]`,
 rank features by `|alignment|`, and report where the medical features land.
 
 ### 3.6 Medical-feature identification
@@ -213,18 +221,18 @@ Cell-level accuracy on the 60 paper-canonical cases:
 
 | Cell | 4B | 12B |
 |---|---|---|
-| A: structured + forced-letter | 60.0% | **81.7%** |
-| B: natural + forced-letter | 56.7% | **81.7%** |
-| D: natural + free-text (GPT judge) | 71.7% | 81.7% |
-| D: natural + free-text (Claude judge) | 76.7% | 78.3% |
-| D: both judges agree correct | 70.0% | 76.7% |
+| SL: structured + forced-letter | 60.0% | **81.7%** |
+| NL: natural + forced-letter | 56.7% | **81.7%** |
+| NF: natural + free-text (GPT judge) | 71.7% | 81.7% |
+| NF: natural + free-text (Claude judge) | 76.7% | 78.3% |
+| NF: both judges agree correct | 70.0% | 76.7% |
 | Inter-rater agreement / κ | 88.3% / 0.797 | 76.7% / 0.634 |
 
-**On Gemma 4B, free-text Cell D outperforms forced-letter Cell B by +13–20pp
+**On Gemma 4B, free-text NF outperforms forced-letter NL by +13–20pp
 (judge-dependent).** This replicates the prior behavioral observation that
 constrained output formats penalize Gemma 4B's apparent triage capability.
 
-**On Gemma 12B, the gap essentially disappears (B vs D within 0–3pp across
+**On Gemma 12B, the gap essentially disappears (NL vs NF within 0–3pp across
 judges).** Twelve-billion-parameter Gemma is capable enough to map its clinical
 understanding onto a constrained letter output without the format penalty.
 This is a novel scaling finding consistent with Singhal et al. (2023):
@@ -286,24 +294,24 @@ the direction and statistical signal replicate.
 The Phase 1b mod-index is mean-pooled. We also report per-case max activations
 on the medical features at L29 of Gemma 4B for three example cases:
 
-| Case | Gold | B max | D max | Per-feature delta |
+| Case | Gold | NL max | NF max | Per-feature delta |
 |---|---|---|---|---|
 | E3 | C | [-0.0, 701.5, 883.0] | [-0.0, 700.5, 899.7] | 0.0% / 0.1% / 1.9% |
 | E4 | C | [974.5, 3423.3, 2341.0] | [974.5, 3434.3, 2380.3] | 0.0% / 0.3% / 1.7% |
 | E9 | D | [1054.6, 3215.8, 3000.6] | [1066.2, 3228.2, 3016.9] | 1.1% / 0.4% / 0.5% |
 
-When the model encounters the words "asthma" or "DKA" in B vs D, the medical
+When the model encounters the words "asthma" or "DKA" in NL vs NF, the medical
 features fire at essentially the same magnitude. The clinical representation
 is preserved at the per-token level; the small mean-pool mod-index residual is
 the ~50-token dilution from B's appended forced-letter instructions.
 
 ### 4.4 Direction analysis (Phase 2b)
 
-We examine where the (B − D) residual direction concentrates in the SAE basis,
+We examine where the (NL − NF) residual direction concentrates in the SAE basis,
 using three aggregations.
 
 **Length-controlled mean (clinical-content range matched).** Because B's
-prefix is byte-identical to D, the residual diff norm is exactly **0** at every
+prefix is byte-identical to NF, the residual diff norm is exactly **0** at every
 Gemma layer when we truncate B's pooling range to its clinical content. This
 is the strongest possible isolation: with input held constant, residuals are
 deterministically identical. No format effect exists at the residual level
@@ -333,7 +341,7 @@ clinical content.
 
 The format_flipped stratum (n=13 at 4B, where the format physically flipped the
 answer between B wrong and both-judges-D-right) is the most stringent. Per-token
-max activations on these cases are within 0–4% across B and D (table above for
+max activations on these cases are within 0–4% across NL and NF (table above for
 E3, E4, E9 — all in this stratum). Despite the model producing different letter
 outputs, the medical-feature signature on the clinical tokens is essentially
 identical. This is the cleanest evidence that the format effect operates
@@ -385,7 +393,7 @@ clinical understanding rather than format change.
   the generalization claim.
 - 60 vignettes — small for clinical-AI work, but matched to the
   paper-faithful replication corpus exactly (no subsetting).
-- LLM-as-judge dependence on Cell D scoring (mitigated by 76–88%
+- LLM-as-judge dependence on NF (free-text) scoring (mitigated by 76–88%
   inter-rater agreement, κ = 0.63–0.80, paper-native scale).
 - Mean-pool and max-pool aggregations only; richer schemes (attention-weighted)
   could surface different patterns.
