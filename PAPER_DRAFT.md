@@ -74,12 +74,29 @@ maps an already-formed clinical understanding into a final answer — call this
 different outputs only because of the constrained output stage. Version A
 would implicate clinical reasoning itself; Version B would localize the
 apparent failure in output mapping and recast the benchmark as measuring that
-mapping rather than the underlying capability. The two have very different
-implications for both deployment and evaluation methodology, and to our
-knowledge no prior work has tested the distinction mechanistically on
-clinical triage. Closest precedent uses sparse-autoencoder–based attribution
-graphs to analyze internal mechanisms in production
-models~\cite{anthropic2025biology}.
+mapping rather than the underlying capability.
+
+The distinction has well-established conceptual precedent. Probing-based
+methods recover knowledge beyond what model outputs reveal~\cite{burns2023discovering};
+model self-knowledge depends strongly on elicitation format~\cite{kadavath2022language};
+and verbalized reasoning can be unfaithful to the actual determinants of
+model predictions~\cite{turpin2023language}. In the clinical-triage setting
+specifically, concurrent work demonstrates a 53-percentage-point
+knowledge-action gap on Qwen 2.5 7B Instruct: linear probes discriminate
+hazardous from benign triage cases at 98.2\% AUROC while the same model's
+output sensitivity is only 45.1\%, and four mechanistic interventions —
+including SAE feature steering — fail to reliably correct the resulting
+errors~\cite{basu2026interpretability}. That work establishes that the
+gap is real and that current interpretability methods do not close it
+via direct intervention; complementary methodological work uses
+attribution-graph analysis to dissect internal mechanisms in production
+models more generally~\cite{anthropic2025biology}. We ask a different,
+more specific question: \emph{where} does the gap live mechanistically?
+By varying output format while holding clinical content byte-identical, we
+test whether the apparent failure arises within the clinical encoding itself
+or downstream of it. To our knowledge no prior work has tested
+format-induced representation invariance on clinically identical triage
+content using SAE features across multiple model families.
 
 We provide that test. Sparse autoencoders (SAEs) decompose a model's
 residual stream into a sparse, overcomplete dictionary of features that have
@@ -116,10 +133,11 @@ the SAE basis rather than the medical ones.
 \item \textbf{Behavioral scaling.} The forced-letter penalty observed at 4B
 ($+$13--20pp advantage for free-text in our paper-faithful adjudication)
 essentially vanishes at 12B ($\approx{}0$pp). This refines the Med-PaLM--era
-scaling claim~\cite{singhal2023large,wei2022emergent}: capability scaling
-closes the gap not just on internal medical knowledge but specifically on the
-model's ability to map that knowledge into a constrained output. Crucially,
-the \emph{mechanistic} invariance at deep layers persists across both scales.
+scaling claim~\cite{singhal2023large,singhal2025expert,wei2022emergent}:
+capability scaling closes the gap not just on internal medical knowledge but
+specifically on the model's ability to map that knowledge into a constrained
+output. Crucially, the \emph{mechanistic} invariance at deep layers persists
+across both scales.
 \end{enumerate}
 
 Together, these results support Version B at scale and across families. The
