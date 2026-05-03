@@ -1,177 +1,199 @@
-# SAE-Guided Cross-Lingual Knowledge Transfer in LLMs
+# SAE_mad — Mechanistic interpretability for clinical-AI evaluation
 
-Research project investigating whether Sparse Autoencoder (SAE) features can serve as routing signals for transferring capability across languages in large language models.
+A research repository spanning two related projects on sparse-autoencoder
+(SAE) features in instruction-tuned LLMs:
 
-**Status**: **Project concluded, null result.** Quantitative rescue claims from v2-medical are retracted. See [FINDINGS.md](FINDINGS.md) for full retraction, controlled replications, and final validated findings.
+1. **Phase 2 — SAE features as a format-invariance monitor (active work).**
+   Cross-family mechanistic test of whether the apparent triage failures of
+   consumer-facing LLMs under constrained-output evaluation are
+   *output-mapping* artifacts rather than failures of clinical reasoning.
+   Three models, two SAE training pipelines, full pipeline preregistered with
+   bootstrap controls. Targeting **EMNLP 2026** (submission via ARR May 25).
 
-## TL;DR
+2. **Phase 1 — SAE features for cross-lingual rescue (null result, complete).**
+   An earlier project that hypothesized SAE features could serve as routing
+   signals for cross-lingual capability transfer. Initial 3–7% "rescue"
+   results retracted after external review surfaced a dataset bug; controlled
+   replications across five configurations confirmed no effect above a
+   random-feature noise floor. The project closed cleanly with the null.
 
-We started with the hypothesis that amplifying language-specific SAE features at inference time could rescue cross-lingual performance gaps (e.g., improve Arabic medical QA by steering toward English features). Initial experiments (v2-medical) showed apparent rescue effects of 3-7%.
+The two phases share the core observation that emerged from Phase 1 and
+motivates Phase 2: **SAE features are reliable readouts of clinical
+content but are not, in our setting, individually causal levers** — a finding
+since corroborated by Basu et al. (2026), who report zero effect from SAE
+feature steering when trying to correct triage errors on a different model
+family.
 
-External review surfaced methodological issues:
-1. Our "English" baseline was actually Arabic (MMMLU `default` config is non-English)
-2. Rescue was measured on a small subset, not the full benchmark
-3. No random-feature control
-4. "Single feature" claim was actually multi-feature
+---
 
-v3 addressed all of these with controlled replications. **Under proper evaluation, no rescue effect exists above the random-feature noise floor, in any of five tested configurations.**
+## Phase 2 (active, SAE-as-detector) — TL;DR
 
-What remains real:
+**Question.** When a clinical LLM appears to fail under constrained
+forced-letter triage evaluation, has the model's *clinical representation*
+itself degraded, or is the failure introduced later when the representation is
+mapped into a constrained answer format? The behavioral side of this debate is
+already in the literature [Ramaswamy et al. 2026, *Nature Medicine*; Fraile
+Navarro et al. 2026, arXiv:2603.11413]; we test the mechanistic side.
 
-- **v1** — Cross-lingual representation characterization using our own trilingual corpus (unaffected by the MMMLU issue)
-- **v2 steering on 1B** — SAE features causally control output language (Feature 857 at layer 22 → Spanish text on neutral English prompts, graded with strength)
-- **v3 domain feature identification** — Language-agnostic medical content features exist in Gemma 3 4B at layer 29 (features 893, 12570, 12845). They fire on medical content across EN/ES/FR (MCQ and free-form), zero on non-medical content, and more weakly on Arabic and Yoruba medical
-- **v3 null under controlled evaluation** — Neither amplifying nor ablating these features at layer 29 changes medical MCQ accuracy above the random-feature noise floor, across 5 tested rescue configurations
+**Setup.** 60 clinically-canonical vignettes from a paper-faithful
+replication corpus, three cells (structured + forced-letter, natural +
+forced-letter, natural + free-text), where the forced-letter and free-text
+prompts share **byte-identical clinical content** and differ only in whether
+a forced-letter instruction block is appended. Three instruction-tuned
+models (Gemma 3 4B IT, Gemma 3 12B IT, Qwen3-8B) with their open SAE
+releases (Gemma Scope 2 JumpReLU; Qwen-Scope k=50 TopK).
 
-Precise scope of the null: we ruled out simple single-layer, single-feature amplification and single-layer, single-feature ablation at layer 29. Multi-layer, multi-feature, coordinated, or task-conditional interventions remain untested. The routing hypothesis is not refuted at its strongest — just the simplest version of it.
+**Findings.**
 
-## Repo Structure
+- **Magnitude invariance.** Medical-content SAE features fire within 0–4%
+  per token on identical clinical content across format conditions.
+  Mean-pool modulation indices are 10–25% for medical features versus 32–45%
+  for magnitude-matched random features in the same SAE basis. Bootstrap
+  95% CIs exclude zero in every cell of the layer × stratum design across
+  all three models.
+- **Direction analysis.** When prompt-length asymmetry is controlled
+  (truncating the longer prompt to identical content range), the
+  residual-stream difference between conditions vanishes exactly; what
+  survives in length-invariant max-pool aggregation loads onto **non-medical
+  features** in the SAE basis rather than the medical ones.
+- **Behavioral scaling.** The forced-letter penalty observed at 4B
+  (+13–20pp advantage for free-text in paper-faithful adjudication)
+  essentially vanishes at 12B (≈0pp). The mechanistic invariance at deep
+  layers persists across both scales.
+- **Cross-family replication.** The deep-layer invariance pattern replicates
+  on Qwen3-8B with Qwen-Scope SAEs at L31 despite the SAE's intrinsic ~38%
+  reconstruction error (a property of its k=50 TopK sparsity).
 
-```
-.
-├── README.md                              ← You are here
-├── FINDINGS.md                            ← Full empirical record (main artifact)
-├── sae_routing_experiment_handoff.md      ← Original research plan
-│
-├── corpus.json                            ← Parallel EN/ES/FR corpus for v1
-├── corpus_template.json                   ← Template for expanding the corpus
-│
-├── hw1_load_model.py                      ← Hello-world: model loading
-├── hw2_sae_bridge.py                      ← Hello-world: SAELens bridge test
-├── hw2b_fallback.py                       ← Hello-world: manual hooks fallback
-├── hw3_load_sae.py                        ← Hello-world: SAE loading
-├── hw4_end_to_end.py                      ← Hello-world: end-to-end test
-├── hw5_multilingual.py                    ← Hello-world: multilingual smoke test
-│
-├── v1_exploration.py                      ← Cross-lingual representation analysis
-├── v2_steering.py                         ← Causal control test (1B model)
-├── v2_medical_pilot.py                    ← Medical QA baseline (1B + 4B)
-├── v2_medical_rescue.py                   ← First rescue: generic ES features
-├── v2_medical_rescue_v2.py                ← Targeted rescue: ES-medical features
-├── v2_generalization.py                   ← 5 domains × 2 languages
-├── v2_flip_distant_combined.py            ← Coding + Chinese + combined features
-│
-├── vast_gpu.sh                            ← Vast.ai instance management
-├── bootstrap_remote.sh                    ← One-command remote setup
-│
-├── results/                               ← All experiment outputs
-│   ├── analysis1_similarity.png           ← v1 similarity plot
-│   ├── v1_full_output.txt                 ← v1 full stdout
-│   ├── v2_steering_output.txt             ← v2 generation examples (1B, validated)
-│   ├── v2_medical_*.json                  ← v2 medical runs — RETRACTED (see FINDINGS.md)
-│   ├── v2_generalization.json             ← v2 generalization — RETRACTED
-│   ├── v2_flip_distant_combined.json      ← v2 extended — RETRACTED
-│   ├── v3_replication.json                ← Controlled replication (null)
-│   ├── v3_lowresource_rescue.json         ← Weak-language rescue (null)
-│   ├── v3_domain_rescue.json              ← Domain feature identification + rescue (null)
-│   └── v3_feature_validation_output.txt   ← Feature validation (readouts, not drivers)
-│
-└── remote_cache/                          ← Large cached files (gitignored)
-    └── cached_activations.pt              ← v1 activations (~1.3GB)
-```
+Together these support the hypothesis that the model's clinical encoding
+is preserved across the output formats whose accuracy scoring diverges; the
+failure mode the benchmark detects lives in output mapping. SAE features
+emerge as a deployable, format-robust monitor of clinical groundedness.
 
-## Reproducing the Results
+**Full record.** [`TRIAGE_FINDINGS.md`](TRIAGE_FINDINGS.md) — phase-by-phase
+empirical record with bootstrap tables, sanity-check verdicts, and
+methodology lessons. [`PAPER_DRAFT.md`](PAPER_DRAFT.md) — workshop paper
+draft (in progress) with methods + results sections complete.
 
-### Environment
+---
 
-All experiments ran on vast.ai GPUs with the base image `nvidia/cuda:12.4.0-runtime-ubuntu22.04`. Dependencies installed via:
+## Phase 1 (closed null) — TL;DR
 
-```bash
-pip install torch transformers datasets accelerate sae-lens
-```
+**Hypothesis.** Amplifying language- or domain-specific SAE features at
+inference time could rescue cross-lingual performance gaps (e.g., improve
+Arabic medical QA by steering toward English features).
 
-Model: `google/gemma-3-4b-it` (gated -- requires HuggingFace auth)
-SAE: `google/gemma-scope-2-4b-it-res/layer_29_width_16k_l0_medium`
+**Initial result.** 3–7% rescue effects on a multilingual medical QA benchmark.
 
-### Running an experiment
+**External review.** Surfaced four methodological issues, the most serious
+being that our "English" baseline was actually Arabic — MMMLU's `default`
+config is non-English. Controlled replications using `cais/mmlu` for real
+English, full-benchmark evaluation, random-feature controls, and explicit
+single- vs multi-feature distinctions confirmed:
 
-Most experiments follow the same pattern:
+> **Under proper evaluation, no rescue effect exists above the random-feature
+> noise floor in any of five tested configurations.**
 
-1. Launch a vast.ai instance (22GB+ VRAM for 4B model):
-   ```bash
-   # Via /gpu slash command (see github.com/dafraile/claude-gpu-skill)
-   /gpu launch medium
-   ```
+**What survived as positive findings:**
 
-2. Bootstrap the instance:
-   ```bash
-   bash bootstrap_remote.sh <port> <ip>
-   ```
+- Cross-lingual representations in Gemma 3 1B show a depth signature
+  (lexical/surface at shallow layers, conceptual at late layers).
+- SAE features can causally control output language at the small scale
+  (Feature 857 at layer 22 of Gemma 3 1B → graded continuous dial for
+  Spanish output).
+- Language-agnostic medical-content features in Gemma 3 4B at layer 29
+  (features 893, 12570, 12845) fire on EN/ES/FR medical content and zero
+  on non-medical — these are the features Phase 2 builds on.
 
-3. Run the desired script:
-   ```bash
-   ssh -i ~/.ssh/vastai -p <port> root@<ip>
-   cd /root
-   python3 v2_medical_pilot.py  # or any other v2_*.py script
-   ```
+**Lessons captured for future work.** A `/sanity-check` skill (in
+`~/.claude/commands/`) was distilled from the failure mode that produced
+the original 3–7% rescue claim. It enforces an adversarial checklist on any
+result that supports the working hypothesis: did we verify the dataset that
+was actually loaded, do we have a real noise floor, what alternative story
+would also produce this result. The skill has subsequently caught two
+methodology-level issues in Phase 2 that smoke-testing alone would not have
+caught.
 
-4. Pull results back:
-   ```bash
-   scp -i ~/.ssh/vastai -P <port> root@<ip>:/root/results/*.json ./results/
-   ```
+**Full record.** [`FINDINGS.md`](FINDINGS.md) — complete empirical
+record including the retraction.
 
-5. Destroy the instance when done:
-   ```bash
-   /gpu destroy <instance_id>
-   ```
+---
 
-### Recommended experiment order (if reproducing from scratch)
+## Repo orientation
 
-The v2-medical scripts are retained for historical completeness but their quantitative claims are retracted — see FINDINGS.md. For the validated results, run:
+| File | Purpose |
+|---|---|
+| `TRIAGE_FINDINGS.md` | Phase 2 empirical record (519 lines) |
+| `PAPER_DRAFT.md` | Workshop paper draft (in progress) |
+| `references.bib` | Verified citations for the workshop paper |
+| `FINDINGS.md` | Phase 1 empirical record (the closed null) |
+| `figures/` | Camera-ready PDFs + PNG previews |
+| `phase0_*.py … phase4_*.py` | Phase 2 experimental scripts |
+| `v1_*.py, v2_*.py, v3_*.py` | Phase 1 experimental scripts |
+| `make_figures.py` | Regenerates all paper figures from `results/` |
+| `results/` | All experiment outputs (JSON + CSV) |
+| `nature_triage_expanded_replication/` | Cloned reference corpus (gitignored, see prior paper) |
 
-1. `hw1_load_model.py` → `hw5_multilingual.py` — verify environment
-2. `v1_exploration.py` — cross-lingual representation analysis on our trilingual corpus (validated)
-3. `v2_steering.py` — causal language-output steering on 1B, Feature 857 → Spanish (validated)
-4. `v3_replication.py` — controlled replication with real English from `cais/mmlu`, full-benchmark eval, random-feature control (null result, correctly scoped)
-5. `v3_lowresource_rescue.py` — EN features → Arabic/Swahili/Yoruba medical (null)
-6. `v3_domain_rescue.py` — language-agnostic medical feature identification + rescue attempts (features identified, rescue null)
-7. `v3_feature_validation.py` — three-test validation: top tokens on free-form text, ablation, cross-format (features are cross-lingual cross-format medical readouts)
+---
 
-## Timing and Cost
+## Reproducibility
 
-Rough GPU cost estimates on vast.ai ($0.15-0.30/hr for 24GB GPUs):
+Phase 2 experiments run on `vast.ai` GPUs (medium tier, 22–48 GB VRAM
+depending on model). Total Phase 2 GPU cost ≈ $5 across all three models
+including the cross-family Qwen run; LLM-as-judge adjudicator API cost ≈
+$2 across two adjudication runs. The figures in `figures/` regenerate
+deterministically from the committed `results/*.json`.
 
-| Experiment | Duration | Cost |
-|------------|----------|------|
-| Hello-worlds (all) | ~5 min | $0.01 |
-| v1 exploration | ~15 min | $0.05 |
-| v2 steering (1B) | ~10 min | $0.03 |
-| v3 replication | ~30 min | $0.15 |
-| v3 low-resource rescue | ~40 min | $0.20 |
-| v3 domain rescue | ~45 min | $0.22 |
-| v3 feature validation | ~30 min | $0.15 |
-| **Total (validated pipeline)** | **~3 hours** | **~$0.80** |
+The Phase 1 pipeline is documented in the older sections of `FINDINGS.md`
+and is fully reproducible end-to-end on a 22GB GPU in ~3 hours, ~$0.80.
 
-## Key Findings (see [FINDINGS.md](FINDINGS.md) for details)
+Models used (all gated on HuggingFace, requires HF auth):
+`google/gemma-3-4b-it`, `google/gemma-3-12b-it`, `Qwen/Qwen3-8B`.
 
-**Validated positive findings:**
+SAE releases used:
+- [`google/gemma-scope-2-4b-it`](https://huggingface.co/google/gemma-scope-2-4b-it) (JumpReLU, l0_medium, residual stream)
+- [`google/gemma-scope-2-12b-it`](https://huggingface.co/google/gemma-scope-2-12b-it) (JumpReLU, l0_medium, residual stream)
+- [`Qwen/SAE-Res-Qwen3-8B-Base-W64K-L0_50`](https://huggingface.co/Qwen/SAE-Res-Qwen3-8B-Base-W64K-L0_50) (TopK k=50, residual stream)
 
-1. **v1**: Cross-lingual representations in Gemma 3 1B show a depth signature — lexical/surface entanglement at shallow layers, conceptual entanglement at late layers
-2. **v2 steering (1B)**: Feature 857 at layer 22 is a graded, continuous dial for output language. Clamping at 2x–5x produces smoothly controllable Spanish output from neutral English prompts
-3. **v3 feature identification**: Language-agnostic, domain-selective medical features exist in Gemma 3 4B at layer 29 (features 893, 12570, 12845). They fire on medical content across EN/ES/FR in both MCQ and free-form text, fire weakly on Arabic medical, and fire zero on non-medical content. The six-condition contrastive discovery pipeline is reusable for other domains.
+---
 
-**Null results, precisely scoped:**
+## Related work
 
-4. Single-feature layer-29 amplification of language or domain features does not rescue cross-lingual medical MCQ performance above the random-feature noise floor (five tested configurations, full benchmark, bootstrap 95% CIs)
-5. Single-feature layer-29 ablation of the identified medical features produces exactly 0.00% change in accuracy across EN/ES/FR medical and non-medical conditions
+The Phase 2 work sits at the intersection of three literatures:
 
-**Retracted (see FINDINGS.md):**
+- **Consumer-AI clinical evaluation**: Ramaswamy et al. 2026, *Nature
+  Medicine*; Fraile Navarro et al. 2026, arXiv:2603.11413 (the prior
+  behavioral replication, our group); Basu et al. 2026, arXiv:2603.18353
+  (concurrent clinical-mechanistic work showing a 53pp knowledge-action gap
+  and SAE-feature-steering null on Qwen 2.5 7B).
+- **Prompt-format and constrained-output sensitivity**: Sclar et al. 2024;
+  Zheng et al. 2024; Pezeshkpour & Hruschka 2024.
+- **Mechanistic interpretability of LLMs**: Bricken et al. 2023;
+  Cunningham et al. 2023; Templeton et al. 2024; Lieberum et al. 2024
+  (Gemma Scope); Anthropic 2025 (attribution-graph biology); the
+  conceptual-precedent line through Burns 2023 (latent knowledge),
+  Kadavath 2022 (model self-knowledge), Turpin 2023 (unfaithful
+  verbalization).
 
-- All v2-medical quantitative rescue claims (e.g., "3-7% rescue", "reversed multilingual gap", "universal across languages/domains") — invalidated by a dataset bug (MMMLU `default` is not English) and other methodology gaps. The controlled replication in v3 found no effect.
+Full BibTeX in [`references.bib`](references.bib).
+
+---
 
 ## Citation
 
-If this work informs your research, please cite the repository:
-
-```
-@misc{fraile-navarro-2026-sae-cross-lingual,
-  author = {Fraile Navarro, David},
-  title  = {SAE-Guided Cross-Lingual Knowledge Transfer in LLMs: A Null Result with Preserved Findings},
+```bibtex
+@misc{frailenavarro2026saemad,
+  title  = {SAE features as a format-invariance monitor for clinical-AI
+            evaluation: cross-family mechanistic evidence},
+  author = {Fraile Navarro, David and Magrabi, Farah and Coiera, Enrico},
   year   = {2026},
-  url    = {https://github.com/dafraile/SAE_mad}
+  url    = {https://github.com/dafraile/SAE_mad},
+  note   = {Workshop paper in preparation (target: EMNLP 2026 via ARR).
+            See TRIAGE_FINDINGS.md for the full empirical record.}
 }
 ```
 
 ## License
 
-MIT. See handoff document for context on collaborative attribution.
+MIT. The `nature_triage_expanded_replication/` corpus is reproduced from
+the Phase 2 lead author's prior work (arXiv:2603.11413) under the same
+license; see that paper's repository for canonical access.
