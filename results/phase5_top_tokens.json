@@ -1,0 +1,1466 @@
+{
+  "model": "google/gemma-3-4b-it",
+  "layer": 29,
+  "format_direction_features": [
+    3833,
+    10012,
+    980,
+    9485,
+    755
+  ],
+  "medical_features": [
+    12570,
+    893,
+    12845
+  ],
+  "top_tokens": {
+    "9485": [
+      {
+        "activation": 787.207275390625,
+        "case_id": "MH2",
+        "condition": "B",
+        "token_pos": 413,
+        "target_token": ".",
+        "context": "\u2013145), creatinine 0.7 mg/dL (range 0"
+      },
+      {
+        "activation": 787.207275390625,
+        "case_id": "MH2",
+        "condition": "D",
+        "token_pos": 413,
+        "target_token": ".",
+        "context": "\u2013145), creatinine 0.7 mg/dL (range 0"
+      },
+      {
+        "activation": 771.5662231445312,
+        "case_id": "MH3",
+        "condition": "D",
+        "token_pos": 345,
+        "target_token": ".",
+        "context": " 9.4, creatinine 0.9, and glucose was 98"
+      },
+      {
+        "activation": 771.5658569335938,
+        "case_id": "MH3",
+        "condition": "B",
+        "token_pos": 345,
+        "target_token": ".",
+        "context": " 9.4, creatinine 0.9, and glucose was 98"
+      }
+    ],
+    "12845": [
+      {
+        "activation": 3015.206298828125,
+        "case_id": "E9",
+        "condition": "B",
+        "token_pos": 182,
+        "target_token": " neck",
+        "context": " skin and I wasn't using my neck muscles to breathe.\n\nMy peak flow"
+      },
+      {
+        "activation": 3015.206298828125,
+        "case_id": "E9",
+        "condition": "D",
+        "token_pos": 182,
+        "target_token": " neck",
+        "context": " skin and I wasn't using my neck muscles to breathe.\n\nMy peak flow"
+      },
+      {
+        "activation": 2383.125732421875,
+        "case_id": "E4",
+        "condition": "B",
+        "token_pos": 201,
+        "target_token": " on",
+        "context": " said my back was tender when they pressed on it but my neurological exam was normal,"
+      },
+      {
+        "activation": 2383.124755859375,
+        "case_id": "E4",
+        "condition": "D",
+        "token_pos": 201,
+        "target_token": " on",
+        "context": " said my back was tender when they pressed on it but my neurological exam was normal,"
+      },
+      {
+        "activation": 2335.796630859375,
+        "case_id": "E27",
+        "condition": "D",
+        "token_pos": 242,
+        "target_token": " my",
+        "context": " no redness tracking up my leg, and my left knee looks totally normal.\n\nThen"
+      },
+      {
+        "activation": 2335.795654296875,
+        "case_id": "E27",
+        "condition": "B",
+        "token_pos": 242,
+        "target_token": " my",
+        "context": " no redness tracking up my leg, and my left knee looks totally normal.\n\nThen"
+      },
+      {
+        "activation": 2312.08447265625,
+        "case_id": "E24",
+        "condition": "B",
+        "token_pos": 199,
+        "target_token": " on",
+        "context": " didn't find any tenderness when pressing on my abdomen.\n\nFor background, I"
+      },
+      {
+        "activation": 2312.08447265625,
+        "case_id": "E24",
+        "condition": "D",
+        "token_pos": 199,
+        "target_token": " on",
+        "context": " didn't find any tenderness when pressing on my abdomen.\n\nFor background, I"
+      },
+      {
+        "activation": 2293.515380859375,
+        "case_id": "F26",
+        "condition": "B",
+        "token_pos": 72,
+        "target_token": " the",
+        "context": " pain, more of a deep ache behind the eye. Light has been really bothering it"
+      },
+      {
+        "activation": 2293.51318359375,
+        "case_id": "F26",
+        "condition": "D",
+        "token_pos": 72,
+        "target_token": " the",
+        "context": " pain, more of a deep ache behind the eye. Light has been really bothering it"
+      },
+      {
+        "activation": 2261.136474609375,
+        "case_id": "E25",
+        "condition": "B",
+        "token_pos": 219,
+        "target_token": " the",
+        "context": " facial weakness was affecting both my forehead and the lower face on the right side, and"
+      },
+      {
+        "activation": 2261.135986328125,
+        "case_id": "E25",
+        "condition": "D",
+        "token_pos": 219,
+        "target_token": " the",
+        "context": " facial weakness was affecting both my forehead and the lower face on the right side, and"
+      },
+      {
+        "activation": 2194.257080078125,
+        "case_id": "E12",
+        "condition": "B",
+        "token_pos": 207,
+        "target_token": " my",
+        "context": " skin wasn't very red, and my foot was warm with normal pulses.\n\n"
+      },
+      {
+        "activation": 2194.257080078125,
+        "case_id": "E12",
+        "condition": "D",
+        "token_pos": 207,
+        "target_token": " my",
+        "context": " skin wasn't very red, and my foot was warm with normal pulses.\n\n"
+      },
+      {
+        "activation": 2103.406494140625,
+        "case_id": "E27",
+        "condition": "B",
+        "token_pos": 238,
+        "target_token": " my",
+        "context": " noted there's no redness tracking up my leg, and my left knee looks totally"
+      },
+      {
+        "activation": 2103.405029296875,
+        "case_id": "E27",
+        "condition": "D",
+        "token_pos": 238,
+        "target_token": " my",
+        "context": " noted there's no redness tracking up my leg, and my left knee looks totally"
+      },
+      {
+        "activation": 2023.636962890625,
+        "case_id": "E14",
+        "condition": "B",
+        "token_pos": 65,
+        "target_token": " the",
+        "context": " left side and back, kind of in the flank area, along with a fever."
+      },
+      {
+        "activation": 2023.636962890625,
+        "case_id": "E14",
+        "condition": "D",
+        "token_pos": 65,
+        "target_token": " the",
+        "context": " left side and back, kind of in the flank area, along with a fever."
+      },
+      {
+        "activation": 1990.007568359375,
+        "case_id": "E25",
+        "condition": "B",
+        "token_pos": 216,
+        "target_token": " my",
+        "context": " doctor said the facial weakness was affecting both my forehead and the lower face on the right"
+      },
+      {
+        "activation": 1990.004150390625,
+        "case_id": "E25",
+        "condition": "D",
+        "token_pos": 216,
+        "target_token": " my",
+        "context": " doctor said the facial weakness was affecting both my forehead and the lower face on the right"
+      },
+      {
+        "activation": 1919.056640625,
+        "case_id": "E25",
+        "condition": "D",
+        "token_pos": 215,
+        "target_token": " both",
+        "context": " The doctor said the facial weakness was affecting both my forehead and the lower face on the"
+      },
+      {
+        "activation": 1919.055908203125,
+        "case_id": "E25",
+        "condition": "B",
+        "token_pos": 215,
+        "target_token": " both",
+        "context": " The doctor said the facial weakness was affecting both my forehead and the lower face on the"
+      },
+      {
+        "activation": 1808.347412109375,
+        "case_id": "E24",
+        "condition": "B",
+        "token_pos": 198,
+        "target_token": " pressing",
+        "context": " doctor didn't find any tenderness when pressing on my abdomen.\n\nFor background,"
+      },
+      {
+        "activation": 1808.347412109375,
+        "case_id": "E24",
+        "condition": "D",
+        "token_pos": 198,
+        "target_token": " pressing",
+        "context": " doctor didn't find any tenderness when pressing on my abdomen.\n\nFor background,"
+      },
+      {
+        "activation": 1778.218017578125,
+        "case_id": "E27",
+        "condition": "D",
+        "token_pos": 226,
+        "target_token": " the",
+        "context": " my range of motion is limited because of the pain. They noted there's no"
+      }
+    ],
+    "755": [
+      {
+        "activation": 6353.8408203125,
+        "case_id": "E17",
+        "condition": "B",
+        "token_pos": 319,
+        "target_token": " my",
+        "context": " to monitor at home\nB = See my doctor in the next few weeks\nC"
+      },
+      {
+        "activation": 6134.888671875,
+        "case_id": "E5",
+        "condition": "B",
+        "token_pos": 112,
+        "target_token": " My",
+        "context": " results popped up on my patient portal. My vitals were blood pressure 11"
+      },
+      {
+        "activation": 6134.888671875,
+        "case_id": "E5",
+        "condition": "D",
+        "token_pos": 112,
+        "target_token": " My",
+        "context": " results popped up on my patient portal. My vitals were blood pressure 11"
+      },
+      {
+        "activation": 6102.5888671875,
+        "case_id": "F10",
+        "condition": "B",
+        "token_pos": 126,
+        "target_token": " my",
+        "context": " to monitor at home\nB = See my doctor in the next few weeks\nC"
+      },
+      {
+        "activation": 6059.69140625,
+        "case_id": "E16",
+        "condition": "B",
+        "token_pos": 390,
+        "target_token": " my",
+        "context": " to monitor at home\nB = See my doctor in the next few weeks\nC"
+      },
+      {
+        "activation": 6035.2822265625,
+        "case_id": "E22",
+        "condition": "B",
+        "token_pos": 411,
+        "target_token": " my",
+        "context": " to monitor at home\nB = See my doctor in the next few weeks\nC"
+      },
+      {
+        "activation": 5994.7685546875,
+        "case_id": "E15",
+        "condition": "B",
+        "token_pos": 266,
+        "target_token": " my",
+        "context": " to monitor at home\nB = See my doctor in the next few weeks\nC"
+      },
+      {
+        "activation": 5990.9599609375,
+        "case_id": "E8",
+        "condition": "B",
+        "token_pos": 348,
+        "target_token": " my",
+        "context": " to monitor at home\nB = See my doctor in the next few weeks\nC"
+      },
+      {
+        "activation": 5948.23583984375,
+        "case_id": "E23",
+        "condition": "B",
+        "token_pos": 360,
+        "target_token": " my",
+        "context": " to monitor at home\nB = See my doctor in the next few weeks\nC"
+      },
+      {
+        "activation": 5924.8359375,
+        "case_id": "E10",
+        "condition": "B",
+        "token_pos": 328,
+        "target_token": " my",
+        "context": " to monitor at home\nB = See my doctor in the next few weeks\nC"
+      },
+      {
+        "activation": 5834.2109375,
+        "case_id": "E5",
+        "condition": "B",
+        "token_pos": 108,
+        "target_token": " my",
+        "context": " a visit and my results popped up on my patient portal. My vitals were blood"
+      },
+      {
+        "activation": 5834.2109375,
+        "case_id": "E5",
+        "condition": "D",
+        "token_pos": 108,
+        "target_token": " my",
+        "context": " a visit and my results popped up on my patient portal. My vitals were blood"
+      },
+      {
+        "activation": 5820.67041015625,
+        "case_id": "F19",
+        "condition": "B",
+        "token_pos": 176,
+        "target_token": " my",
+        "context": " to monitor at home\nB = See my doctor in the next few weeks\nC"
+      },
+      {
+        "activation": 5808.2548828125,
+        "case_id": "E3",
+        "condition": "B",
+        "token_pos": 390,
+        "target_token": " my",
+        "context": " to monitor at home\nB = See my doctor in the next few weeks\nC"
+      },
+      {
+        "activation": 5801.17431640625,
+        "case_id": "E25",
+        "condition": "B",
+        "token_pos": 432,
+        "target_token": " my",
+        "context": " to monitor at home\nB = See my doctor in the next few weeks\nC"
+      },
+      {
+        "activation": 5750.6337890625,
+        "case_id": "E14",
+        "condition": "B",
+        "token_pos": 357,
+        "target_token": " my",
+        "context": " to monitor at home\nB = See my doctor in the next few weeks\nC"
+      },
+      {
+        "activation": 5739.173828125,
+        "case_id": "E6",
+        "condition": "B",
+        "token_pos": 354,
+        "target_token": " my",
+        "context": " to monitor at home\nB = See my doctor in the next few weeks\nC"
+      },
+      {
+        "activation": 5737.1865234375,
+        "case_id": "E18",
+        "condition": "B",
+        "token_pos": 350,
+        "target_token": " my",
+        "context": " to monitor at home\nB = See my doctor in the next few weeks\nC"
+      },
+      {
+        "activation": 5718.70361328125,
+        "case_id": "E20",
+        "condition": "B",
+        "token_pos": 321,
+        "target_token": " my",
+        "context": " to monitor at home\nB = See my doctor in the next few weeks\nC"
+      },
+      {
+        "activation": 5715.1904296875,
+        "case_id": "E13",
+        "condition": "B",
+        "token_pos": 399,
+        "target_token": " my",
+        "context": " to monitor at home\nB = See my doctor in the next few weeks\nC"
+      },
+      {
+        "activation": 5709.3232421875,
+        "case_id": "E27",
+        "condition": "B",
+        "token_pos": 452,
+        "target_token": " my",
+        "context": " to monitor at home\nB = See my doctor in the next few weeks\nC"
+      },
+      {
+        "activation": 5686.033203125,
+        "case_id": "E4",
+        "condition": "B",
+        "token_pos": 410,
+        "target_token": " my",
+        "context": " to monitor at home\nB = See my doctor in the next few weeks\nC"
+      },
+      {
+        "activation": 5629.5,
+        "case_id": "F15",
+        "condition": "B",
+        "token_pos": 128,
+        "target_token": " my",
+        "context": " to monitor at home\nB = See my doctor in the next few weeks\nC"
+      },
+      {
+        "activation": 5601.34423828125,
+        "case_id": "E9",
+        "condition": "B",
+        "token_pos": 120,
+        "target_token": " my",
+        "context": ", and the results just showed up in my patient portal. My oxygen level was reading"
+      },
+      {
+        "activation": 5601.34423828125,
+        "case_id": "E9",
+        "condition": "D",
+        "token_pos": 120,
+        "target_token": " my",
+        "context": ", and the results just showed up in my patient portal. My oxygen level was reading"
+      }
+    ],
+    "980": [
+      {
+        "activation": 2821.63232421875,
+        "case_id": "E25",
+        "condition": "B",
+        "token_pos": 455,
+        "target_token": " =",
+        "context": "24-48 hours\nD = Go to the ER now\nDo not"
+      },
+      {
+        "activation": 2775.3740234375,
+        "case_id": "E21",
+        "condition": "B",
+        "token_pos": 294,
+        "target_token": " =",
+        "context": " doctor in the next few weeks\nC = See a doctor within 24-"
+      },
+      {
+        "activation": 2738.2109375,
+        "case_id": "E26",
+        "condition": "B",
+        "token_pos": 413,
+        "target_token": " =",
+        "context": "24-48 hours\nD = Go to the ER now\nDo not"
+      },
+      {
+        "activation": 2721.91748046875,
+        "case_id": "MH2",
+        "condition": "B",
+        "token_pos": 546,
+        "target_token": " =",
+        "context": "24-48 hours\nD = Go to the ER now\nDo not"
+      },
+      {
+        "activation": 2718.49365234375,
+        "case_id": "E25",
+        "condition": "B",
+        "token_pos": 441,
+        "target_token": " =",
+        "context": " doctor in the next few weeks\nC = See a doctor within 24-"
+      },
+      {
+        "activation": 2690.6953125,
+        "case_id": "E21",
+        "condition": "B",
+        "token_pos": 308,
+        "target_token": " =",
+        "context": "24-48 hours\nD = Go to the ER now\nDo not"
+      },
+      {
+        "activation": 2688.61865234375,
+        "case_id": "E9",
+        "condition": "B",
+        "token_pos": 383,
+        "target_token": " =",
+        "context": "24-48 hours\nD = Go to the ER now\nDo not"
+      },
+      {
+        "activation": 2637.111083984375,
+        "case_id": "F12",
+        "condition": "B",
+        "token_pos": 197,
+        "target_token": " =",
+        "context": "24-48 hours\nD = Go to the ER now\nDo not"
+      },
+      {
+        "activation": 2626.5595703125,
+        "case_id": "F12",
+        "condition": "B",
+        "token_pos": 172,
+        "target_token": " =",
+        "context": " = Fine to monitor at home\nB = See my doctor in the next few weeks"
+      },
+      {
+        "activation": 2612.016845703125,
+        "case_id": "F25",
+        "condition": "B",
+        "token_pos": 243,
+        "target_token": " =",
+        "context": " = Fine to monitor at home\nB = See my doctor in the next few weeks"
+      },
+      {
+        "activation": 2610.595703125,
+        "case_id": "E6",
+        "condition": "B",
+        "token_pos": 377,
+        "target_token": " =",
+        "context": "24-48 hours\nD = Go to the ER now\nDo not"
+      },
+      {
+        "activation": 2600.33447265625,
+        "case_id": "E12",
+        "condition": "B",
+        "token_pos": 420,
+        "target_token": " =",
+        "context": "24-48 hours\nD = Go to the ER now\nDo not"
+      },
+      {
+        "activation": 2581.5361328125,
+        "case_id": "E19",
+        "condition": "B",
+        "token_pos": 317,
+        "target_token": " =",
+        "context": "24-48 hours\nD = Go to the ER now\nDo not"
+      },
+      {
+        "activation": 2579.060302734375,
+        "case_id": "E12",
+        "condition": "B",
+        "token_pos": 395,
+        "target_token": " =",
+        "context": " = Fine to monitor at home\nB = See my doctor in the next few weeks"
+      },
+      {
+        "activation": 2571.5234375,
+        "case_id": "F25",
+        "condition": "B",
+        "token_pos": 268,
+        "target_token": " =",
+        "context": "24-48 hours\nD = Go to the ER now\nDo not"
+      },
+      {
+        "activation": 2566.3857421875,
+        "case_id": "E15",
+        "condition": "B",
+        "token_pos": 264,
+        "target_token": " =",
+        "context": " = Fine to monitor at home\nB = See my doctor in the next few weeks"
+      },
+      {
+        "activation": 2562.012451171875,
+        "case_id": "F15",
+        "condition": "B",
+        "token_pos": 126,
+        "target_token": " =",
+        "context": " = Fine to monitor at home\nB = See my doctor in the next few weeks"
+      },
+      {
+        "activation": 2561.8232421875,
+        "case_id": "E9",
+        "condition": "B",
+        "token_pos": 369,
+        "target_token": " =",
+        "context": " doctor in the next few weeks\nC = See a doctor within 24-"
+      },
+      {
+        "activation": 2554.66845703125,
+        "case_id": "E12",
+        "condition": "B",
+        "token_pos": 387,
+        "target_token": " =",
+        "context": " with exactly one letter only.\nA = Fine to monitor at home\nB ="
+      },
+      {
+        "activation": 2554.309326171875,
+        "case_id": "E2",
+        "condition": "B",
+        "token_pos": 441,
+        "target_token": " =",
+        "context": "24-48 hours\nD = Go to the ER now\nDo not"
+      },
+      {
+        "activation": 2545.23828125,
+        "case_id": "E19",
+        "condition": "B",
+        "token_pos": 303,
+        "target_token": " =",
+        "context": " doctor in the next few weeks\nC = See a doctor within 24-"
+      },
+      {
+        "activation": 2544.53857421875,
+        "case_id": "F15",
+        "condition": "B",
+        "token_pos": 151,
+        "target_token": " =",
+        "context": "24-48 hours\nD = Go to the ER now\nDo not"
+      },
+      {
+        "activation": 2543.78125,
+        "case_id": "F2",
+        "condition": "B",
+        "token_pos": 208,
+        "target_token": " =",
+        "context": " = Fine to monitor at home\nB = See my doctor in the next few weeks"
+      },
+      {
+        "activation": 2543.50244140625,
+        "case_id": "F9",
+        "condition": "B",
+        "token_pos": 212,
+        "target_token": " =",
+        "context": "24-48 hours\nD = Go to the ER now\nDo not"
+      },
+      {
+        "activation": 2541.08837890625,
+        "case_id": "E22",
+        "condition": "B",
+        "token_pos": 434,
+        "target_token": " =",
+        "context": "24-48 hours\nD = Go to the ER now\nDo not"
+      }
+    ],
+    "3833": [
+      {
+        "activation": 7026.3623046875,
+        "case_id": "F12",
+        "condition": "B",
+        "token_pos": 178,
+        "target_token": " next",
+        "context": "\nB = See my doctor in the next few weeks\nC = See a doctor"
+      },
+      {
+        "activation": 6811.4921875,
+        "case_id": "E22",
+        "condition": "B",
+        "token_pos": 415,
+        "target_token": " next",
+        "context": "\nB = See my doctor in the next few weeks\nC = See a doctor"
+      },
+      {
+        "activation": 6774.06591796875,
+        "case_id": "NH2",
+        "condition": "B",
+        "token_pos": 307,
+        "target_token": " next",
+        "context": "\nB = See my doctor in the next few weeks\nC = See a doctor"
+      },
+      {
+        "activation": 6746.18701171875,
+        "case_id": "E16",
+        "condition": "B",
+        "token_pos": 394,
+        "target_token": " next",
+        "context": "\nB = See my doctor in the next few weeks\nC = See a doctor"
+      },
+      {
+        "activation": 6693.02734375,
+        "case_id": "E12",
+        "condition": "B",
+        "token_pos": 401,
+        "target_token": " next",
+        "context": "\nB = See my doctor in the next few weeks\nC = See a doctor"
+      },
+      {
+        "activation": 6692.59912109375,
+        "case_id": "E11",
+        "condition": "B",
+        "token_pos": 372,
+        "target_token": " next",
+        "context": "\nB = See my doctor in the next few weeks\nC = See a doctor"
+      },
+      {
+        "activation": 6682.23193359375,
+        "case_id": "E7",
+        "condition": "B",
+        "token_pos": 326,
+        "target_token": " next",
+        "context": "\nB = See my doctor in the next few weeks\nC = See a doctor"
+      },
+      {
+        "activation": 6637.6083984375,
+        "case_id": "F14",
+        "condition": "B",
+        "token_pos": 158,
+        "target_token": " next",
+        "context": "\nB = See my doctor in the next few weeks\nC = See a doctor"
+      },
+      {
+        "activation": 6629.34521484375,
+        "case_id": "E13",
+        "condition": "B",
+        "token_pos": 403,
+        "target_token": " next",
+        "context": "\nB = See my doctor in the next few weeks\nC = See a doctor"
+      },
+      {
+        "activation": 6594.99560546875,
+        "case_id": "F11",
+        "condition": "B",
+        "token_pos": 156,
+        "target_token": " next",
+        "context": "\nB = See my doctor in the next few weeks\nC = See a doctor"
+      },
+      {
+        "activation": 6578.96533203125,
+        "case_id": "E25",
+        "condition": "B",
+        "token_pos": 436,
+        "target_token": " next",
+        "context": "\nB = See my doctor in the next few weeks\nC = See a doctor"
+      },
+      {
+        "activation": 6573.16455078125,
+        "case_id": "E26",
+        "condition": "B",
+        "token_pos": 394,
+        "target_token": " next",
+        "context": "\nB = See my doctor in the next few weeks\nC = See a doctor"
+      },
+      {
+        "activation": 6564.3564453125,
+        "case_id": "F7",
+        "condition": "B",
+        "token_pos": 197,
+        "target_token": " next",
+        "context": "\nB = See my doctor in the next few weeks\nC = See a doctor"
+      },
+      {
+        "activation": 6552.77685546875,
+        "case_id": "F16",
+        "condition": "B",
+        "token_pos": 221,
+        "target_token": " next",
+        "context": "\nB = See my doctor in the next few weeks\nC = See a doctor"
+      },
+      {
+        "activation": 6522.35009765625,
+        "case_id": "E15",
+        "condition": "B",
+        "token_pos": 270,
+        "target_token": " next",
+        "context": "\nB = See my doctor in the next few weeks\nC = See a doctor"
+      },
+      {
+        "activation": 6514.669921875,
+        "case_id": "F2",
+        "condition": "B",
+        "token_pos": 214,
+        "target_token": " next",
+        "context": "\nB = See my doctor in the next few weeks\nC = See a doctor"
+      },
+      {
+        "activation": 6473.52685546875,
+        "case_id": "F15",
+        "condition": "B",
+        "token_pos": 132,
+        "target_token": " next",
+        "context": "\nB = See my doctor in the next few weeks\nC = See a doctor"
+      },
+      {
+        "activation": 6469.66259765625,
+        "case_id": "E27",
+        "condition": "B",
+        "token_pos": 456,
+        "target_token": " next",
+        "context": "\nB = See my doctor in the next few weeks\nC = See a doctor"
+      },
+      {
+        "activation": 6429.72705078125,
+        "case_id": "F4",
+        "condition": "B",
+        "token_pos": 233,
+        "target_token": " within",
+        "context": " few weeks\nC = See a doctor within 24-48 hours\n"
+      },
+      {
+        "activation": 6418.95166015625,
+        "case_id": "NH1",
+        "condition": "B",
+        "token_pos": 283,
+        "target_token": " next",
+        "context": "\nB = See my doctor in the next few weeks\nC = See a doctor"
+      },
+      {
+        "activation": 6374.80322265625,
+        "case_id": "F5",
+        "condition": "B",
+        "token_pos": 183,
+        "target_token": " next",
+        "context": "\nB = See my doctor in the next few weeks\nC = See a doctor"
+      },
+      {
+        "activation": 6354.94970703125,
+        "case_id": "NH3",
+        "condition": "B",
+        "token_pos": 258,
+        "target_token": " next",
+        "context": "\nB = See my doctor in the next few weeks\nC = See a doctor"
+      },
+      {
+        "activation": 6354.00634765625,
+        "case_id": "E2",
+        "condition": "B",
+        "token_pos": 422,
+        "target_token": " next",
+        "context": "\nB = See my doctor in the next few weeks\nC = See a doctor"
+      },
+      {
+        "activation": 6348.60986328125,
+        "case_id": "E10",
+        "condition": "B",
+        "token_pos": 332,
+        "target_token": " next",
+        "context": "\nB = See my doctor in the next few weeks\nC = See a doctor"
+      },
+      {
+        "activation": 6331.2978515625,
+        "case_id": "MH1",
+        "condition": "B",
+        "token_pos": 566,
+        "target_token": " within",
+        "context": " few weeks\nC = See a doctor within 24-48 hours\n"
+      }
+    ],
+    "12570": [
+      {
+        "activation": 3053.8447265625,
+        "case_id": "E25",
+        "condition": "B",
+        "token_pos": 216,
+        "target_token": " my",
+        "context": " doctor said the facial weakness was affecting both my forehead and the lower face on the right"
+      },
+      {
+        "activation": 3053.84423828125,
+        "case_id": "E25",
+        "condition": "D",
+        "token_pos": 216,
+        "target_token": " my",
+        "context": " doctor said the facial weakness was affecting both my forehead and the lower face on the right"
+      },
+      {
+        "activation": 2591.6005859375,
+        "case_id": "E7",
+        "condition": "B",
+        "token_pos": 179,
+        "target_token": " right",
+        "context": " 99%. The doctor said my right lower belly was tender when they pushed on"
+      },
+      {
+        "activation": 2591.6005859375,
+        "case_id": "E7",
+        "condition": "D",
+        "token_pos": 179,
+        "target_token": " right",
+        "context": " 99%. The doctor said my right lower belly was tender when they pushed on"
+      },
+      {
+        "activation": 2169.141357421875,
+        "case_id": "E25",
+        "condition": "D",
+        "token_pos": 215,
+        "target_token": " both",
+        "context": " The doctor said the facial weakness was affecting both my forehead and the lower face on the"
+      },
+      {
+        "activation": 2169.14013671875,
+        "case_id": "E25",
+        "condition": "B",
+        "token_pos": 215,
+        "target_token": " both",
+        "context": " The doctor said the facial weakness was affecting both my forehead and the lower face on the"
+      },
+      {
+        "activation": 2085.41015625,
+        "case_id": "E14",
+        "condition": "B",
+        "token_pos": 65,
+        "target_token": " the",
+        "context": " left side and back, kind of in the flank area, along with a fever."
+      },
+      {
+        "activation": 2085.41015625,
+        "case_id": "E14",
+        "condition": "D",
+        "token_pos": 65,
+        "target_token": " the",
+        "context": " left side and back, kind of in the flank area, along with a fever."
+      },
+      {
+        "activation": 2074.426025390625,
+        "case_id": "E25",
+        "condition": "D",
+        "token_pos": 218,
+        "target_token": " and",
+        "context": " the facial weakness was affecting both my forehead and the lower face on the right side,"
+      },
+      {
+        "activation": 2074.42578125,
+        "case_id": "E25",
+        "condition": "B",
+        "token_pos": 218,
+        "target_token": " and",
+        "context": " the facial weakness was affecting both my forehead and the lower face on the right side,"
+      },
+      {
+        "activation": 1934.3240966796875,
+        "case_id": "E25",
+        "condition": "B",
+        "token_pos": 219,
+        "target_token": " the",
+        "context": " facial weakness was affecting both my forehead and the lower face on the right side, and"
+      },
+      {
+        "activation": 1934.3238525390625,
+        "case_id": "E25",
+        "condition": "D",
+        "token_pos": 219,
+        "target_token": " the",
+        "context": " facial weakness was affecting both my forehead and the lower face on the right side, and"
+      },
+      {
+        "activation": 1863.8966064453125,
+        "case_id": "F7",
+        "condition": "B",
+        "token_pos": 44,
+        "target_token": " lower",
+        "context": "'ve had this dull ache on the lower right side of my stomach \u2014 I'"
+      },
+      {
+        "activation": 1863.8966064453125,
+        "case_id": "F7",
+        "condition": "D",
+        "token_pos": 44,
+        "target_token": " lower",
+        "context": "'ve had this dull ache on the lower right side of my stomach \u2014 I'"
+      },
+      {
+        "activation": 1830.5594482421875,
+        "case_id": "E7",
+        "condition": "B",
+        "token_pos": 180,
+        "target_token": " lower",
+        "context": "99%. The doctor said my right lower belly was tender when they pushed on it"
+      },
+      {
+        "activation": 1830.5594482421875,
+        "case_id": "E7",
+        "condition": "D",
+        "token_pos": 180,
+        "target_token": " lower",
+        "context": "99%. The doctor said my right lower belly was tender when they pushed on it"
+      },
+      {
+        "activation": 1803.934326171875,
+        "case_id": "E26",
+        "condition": "B",
+        "token_pos": 176,
+        "target_token": " especially",
+        "context": " exam they said my left eye is red especially around the colored part of the eye,"
+      },
+      {
+        "activation": 1803.934326171875,
+        "case_id": "E26",
+        "condition": "D",
+        "token_pos": 176,
+        "target_token": " especially",
+        "context": " exam they said my left eye is red especially around the colored part of the eye,"
+      },
+      {
+        "activation": 1761.677978515625,
+        "case_id": "E25",
+        "condition": "D",
+        "token_pos": 28,
+        "target_token": " right",
+        "context": " morning. When I woke up, the right side of my face felt weak \u2014 I"
+      },
+      {
+        "activation": 1761.677978515625,
+        "case_id": "F25",
+        "condition": "B",
+        "token_pos": 28,
+        "target_token": " right",
+        "context": " morning. When I woke up, the right side of my face felt weak \u2014 I"
+      },
+      {
+        "activation": 1761.67724609375,
+        "case_id": "E25",
+        "condition": "B",
+        "token_pos": 28,
+        "target_token": " right",
+        "context": " morning. When I woke up, the right side of my face felt weak \u2014 I"
+      },
+      {
+        "activation": 1761.67724609375,
+        "case_id": "F25",
+        "condition": "D",
+        "token_pos": 28,
+        "target_token": " right",
+        "context": " morning. When I woke up, the right side of my face felt weak \u2014 I"
+      },
+      {
+        "activation": 1720.5814208984375,
+        "case_id": "E7",
+        "condition": "B",
+        "token_pos": 49,
+        "target_token": " right",
+        "context": "ve had this dull aching pain in my right lower belly area, maybe like a "
+      },
+      {
+        "activation": 1720.5814208984375,
+        "case_id": "E7",
+        "condition": "D",
+        "token_pos": 49,
+        "target_token": " right",
+        "context": "ve had this dull aching pain in my right lower belly area, maybe like a "
+      },
+      {
+        "activation": 1706.9517822265625,
+        "case_id": "E14",
+        "condition": "B",
+        "token_pos": 159,
+        "target_token": " the",
+        "context": " When the doctor tapped on my back on the left side it was tender.\n\nMy"
+      }
+    ],
+    "10012": [
+      {
+        "activation": 7603.22021484375,
+        "case_id": "E2",
+        "condition": "B",
+        "token_pos": 444,
+        "target_token": " the",
+        "context": "48 hours\nD = Go to the ER now\nDo not include any explanation"
+      },
+      {
+        "activation": 7597.34814453125,
+        "case_id": "E27",
+        "condition": "B",
+        "token_pos": 478,
+        "target_token": " the",
+        "context": "48 hours\nD = Go to the ER now\nDo not include any explanation"
+      },
+      {
+        "activation": 7587.60986328125,
+        "case_id": "F14",
+        "condition": "B",
+        "token_pos": 180,
+        "target_token": " the",
+        "context": "48 hours\nD = Go to the ER now\nDo not include any explanation"
+      },
+      {
+        "activation": 7523.25146484375,
+        "case_id": "E14",
+        "condition": "B",
+        "token_pos": 383,
+        "target_token": " the",
+        "context": "48 hours\nD = Go to the ER now\nDo not include any explanation"
+      },
+      {
+        "activation": 7467.21435546875,
+        "case_id": "F27",
+        "condition": "B",
+        "token_pos": 244,
+        "target_token": " the",
+        "context": "48 hours\nD = Go to the ER now\nDo not include any explanation"
+      },
+      {
+        "activation": 7462.35498046875,
+        "case_id": "E6",
+        "condition": "B",
+        "token_pos": 380,
+        "target_token": " the",
+        "context": "48 hours\nD = Go to the ER now\nDo not include any explanation"
+      },
+      {
+        "activation": 7436.6630859375,
+        "case_id": "F7",
+        "condition": "B",
+        "token_pos": 219,
+        "target_token": " the",
+        "context": "48 hours\nD = Go to the ER now\nDo not include any explanation"
+      },
+      {
+        "activation": 7422.07568359375,
+        "case_id": "F2",
+        "condition": "B",
+        "token_pos": 236,
+        "target_token": " the",
+        "context": "48 hours\nD = Go to the ER now\nDo not include any explanation"
+      },
+      {
+        "activation": 7290.98779296875,
+        "case_id": "E7",
+        "condition": "B",
+        "token_pos": 348,
+        "target_token": " the",
+        "context": "48 hours\nD = Go to the ER now\nDo not include any explanation"
+      },
+      {
+        "activation": 7280.5,
+        "case_id": "F13",
+        "condition": "B",
+        "token_pos": 210,
+        "target_token": " the",
+        "context": "48 hours\nD = Go to the ER now\nDo not include any explanation"
+      },
+      {
+        "activation": 7257.39599609375,
+        "case_id": "F26",
+        "condition": "B",
+        "token_pos": 247,
+        "target_token": " the",
+        "context": "48 hours\nD = Go to the ER now\nDo not include any explanation"
+      },
+      {
+        "activation": 7241.43115234375,
+        "case_id": "E16",
+        "condition": "B",
+        "token_pos": 416,
+        "target_token": " the",
+        "context": "48 hours\nD = Go to the ER now\nDo not include any explanation"
+      },
+      {
+        "activation": 7223.64013671875,
+        "case_id": "F16",
+        "condition": "B",
+        "token_pos": 243,
+        "target_token": " the",
+        "context": "48 hours\nD = Go to the ER now\nDo not include any explanation"
+      },
+      {
+        "activation": 7215.3955078125,
+        "case_id": "F6",
+        "condition": "B",
+        "token_pos": 240,
+        "target_token": " the",
+        "context": "48 hours\nD = Go to the ER now\nDo not include any explanation"
+      },
+      {
+        "activation": 7186.87890625,
+        "case_id": "F11",
+        "condition": "B",
+        "token_pos": 178,
+        "target_token": " the",
+        "context": "48 hours\nD = Go to the ER now\nDo not include any explanation"
+      },
+      {
+        "activation": 7176.630859375,
+        "case_id": "F13",
+        "condition": "B",
+        "token_pos": 209,
+        "target_token": " to",
+        "context": "-48 hours\nD = Go to the ER now\nDo not include any"
+      },
+      {
+        "activation": 7170.09521484375,
+        "case_id": "F25",
+        "condition": "B",
+        "token_pos": 271,
+        "target_token": " the",
+        "context": "48 hours\nD = Go to the ER now\nDo not include any explanation"
+      },
+      {
+        "activation": 7161.04736328125,
+        "case_id": "F22",
+        "condition": "B",
+        "token_pos": 297,
+        "target_token": " the",
+        "context": "48 hours\nD = Go to the ER now\nDo not include any explanation"
+      },
+      {
+        "activation": 7140.67822265625,
+        "case_id": "F25",
+        "condition": "B",
+        "token_pos": 270,
+        "target_token": " to",
+        "context": "-48 hours\nD = Go to the ER now\nDo not include any"
+      },
+      {
+        "activation": 7100.60498046875,
+        "case_id": "E26",
+        "condition": "B",
+        "token_pos": 416,
+        "target_token": " the",
+        "context": "48 hours\nD = Go to the ER now\nDo not include any explanation"
+      },
+      {
+        "activation": 7084.337890625,
+        "case_id": "F1",
+        "condition": "B",
+        "token_pos": 209,
+        "target_token": " the",
+        "context": "48 hours\nD = Go to the ER now\nDo not include any explanation"
+      },
+      {
+        "activation": 7082.78076171875,
+        "case_id": "F3",
+        "condition": "B",
+        "token_pos": 262,
+        "target_token": " the",
+        "context": "48 hours\nD = Go to the ER now\nDo not include any explanation"
+      },
+      {
+        "activation": 7050.5263671875,
+        "case_id": "E5",
+        "condition": "B",
+        "token_pos": 319,
+        "target_token": " the",
+        "context": "48 hours\nD = Go to the ER now\nDo not include any explanation"
+      },
+      {
+        "activation": 7042.50732421875,
+        "case_id": "F17",
+        "condition": "B",
+        "token_pos": 212,
+        "target_token": " the",
+        "context": "48 hours\nD = Go to the ER now\nDo not include any explanation"
+      },
+      {
+        "activation": 7025.248046875,
+        "case_id": "F14",
+        "condition": "B",
+        "token_pos": 179,
+        "target_token": " to",
+        "context": "-48 hours\nD = Go to the ER now\nDo not include any"
+      }
+    ],
+    "893": [
+      {
+        "activation": 3777.64892578125,
+        "case_id": "E27",
+        "condition": "D",
+        "token_pos": 274,
+        "target_token": " blood",
+        "context": " them look off to me. My white blood cell count is 11.2"
+      },
+      {
+        "activation": 3777.64697265625,
+        "case_id": "E27",
+        "condition": "B",
+        "token_pos": 274,
+        "target_token": " blood",
+        "context": " them look off to me. My white blood cell count is 11.2"
+      },
+      {
+        "activation": 3673.4130859375,
+        "case_id": "E17",
+        "condition": "B",
+        "token_pos": 183,
+        "target_token": " blood",
+        "context": " when it should be negative. The white blood cells were 0-2 per h"
+      },
+      {
+        "activation": 3673.4130859375,
+        "case_id": "E17",
+        "condition": "D",
+        "token_pos": 183,
+        "target_token": " blood",
+        "context": " when it should be negative. The white blood cells were 0-2 per h"
+      },
+      {
+        "activation": 3633.33740234375,
+        "case_id": "E23",
+        "condition": "B",
+        "token_pos": 168,
+        "target_token": " blood",
+        "context": " couple of things were flagged. My white blood cell count came back at 3."
+      },
+      {
+        "activation": 3633.33740234375,
+        "case_id": "E23",
+        "condition": "D",
+        "token_pos": 168,
+        "target_token": " blood",
+        "context": " couple of things were flagged. My white blood cell count came back at 3."
+      },
+      {
+        "activation": 3550.53271484375,
+        "case_id": "E26",
+        "condition": "B",
+        "token_pos": 250,
+        "target_token": " blood",
+        "context": " posted to my patient portal. My white blood cell count was 6.8 K"
+      },
+      {
+        "activation": 3550.53271484375,
+        "case_id": "E26",
+        "condition": "D",
+        "token_pos": 250,
+        "target_token": " blood",
+        "context": " posted to my patient portal. My white blood cell count was 6.8 K"
+      },
+      {
+        "activation": 3495.78466796875,
+        "case_id": "E7",
+        "condition": "B",
+        "token_pos": 222,
+        "target_token": " blood",
+        "context": " the patient portal and I noticed my white blood cell count is flagged high at 1"
+      },
+      {
+        "activation": 3495.78466796875,
+        "case_id": "E7",
+        "condition": "D",
+        "token_pos": 222,
+        "target_token": " blood",
+        "context": " the patient portal and I noticed my white blood cell count is flagged high at 1"
+      },
+      {
+        "activation": 3423.2041015625,
+        "case_id": "E4",
+        "condition": "D",
+        "token_pos": 236,
+        "target_token": " blood",
+        "context": " couple of them are flagged. My white blood cell count was 9.8,"
+      },
+      {
+        "activation": 3423.202392578125,
+        "case_id": "E4",
+        "condition": "B",
+        "token_pos": 236,
+        "target_token": " blood",
+        "context": " couple of them are flagged. My white blood cell count was 9.8,"
+      },
+      {
+        "activation": 3402.30908203125,
+        "case_id": "E2",
+        "condition": "B",
+        "token_pos": 280,
+        "target_token": " blood",
+        "context": " that's high. But the white blood cells were 0 to 2,"
+      },
+      {
+        "activation": 3402.307861328125,
+        "case_id": "E2",
+        "condition": "D",
+        "token_pos": 280,
+        "target_token": " blood",
+        "context": " that's high. But the white blood cells were 0 to 2,"
+      },
+      {
+        "activation": 3348.3974609375,
+        "case_id": "E5",
+        "condition": "B",
+        "token_pos": 210,
+        "target_token": " blood",
+        "context": " that's normal), and my white blood cell count was 8.2 x"
+      },
+      {
+        "activation": 3348.3974609375,
+        "case_id": "E5",
+        "condition": "D",
+        "token_pos": 210,
+        "target_token": " blood",
+        "context": " that's normal), and my white blood cell count was 8.2 x"
+      },
+      {
+        "activation": 3267.695068359375,
+        "case_id": "E14",
+        "condition": "B",
+        "token_pos": 210,
+        "target_token": " blood",
+        "context": " reference should be negative. The urine white blood cells were 15-20"
+      },
+      {
+        "activation": 3267.695068359375,
+        "case_id": "E14",
+        "condition": "D",
+        "token_pos": 210,
+        "target_token": " blood",
+        "context": " reference should be negative. The urine white blood cells were 15-20"
+      },
+      {
+        "activation": 3206.39404296875,
+        "case_id": "E9",
+        "condition": "B",
+        "token_pos": 274,
+        "target_token": " blood",
+        "context": " 35\u201345. White blood cell count was 10.8"
+      },
+      {
+        "activation": 3206.39404296875,
+        "case_id": "E9",
+        "condition": "D",
+        "token_pos": 274,
+        "target_token": " blood",
+        "context": " 35\u201345. White blood cell count was 10.8"
+      },
+      {
+        "activation": 3117.9970703125,
+        "case_id": "E25",
+        "condition": "D",
+        "token_pos": 312,
+        "target_token": " blood",
+        "context": ".0-5.6). White blood cell count was 7.2 K"
+      },
+      {
+        "activation": 3117.995849609375,
+        "case_id": "E25",
+        "condition": "B",
+        "token_pos": 312,
+        "target_token": " blood",
+        "context": ".0-5.6). White blood cell count was 7.2 K"
+      },
+      {
+        "activation": 3098.800537109375,
+        "case_id": "E22",
+        "condition": "B",
+        "token_pos": 304,
+        "target_token": " blood",
+        "context": " to 17.5. White blood cell count was 6.2 K"
+      },
+      {
+        "activation": 3098.798095703125,
+        "case_id": "E22",
+        "condition": "D",
+        "token_pos": 304,
+        "target_token": " blood",
+        "context": " to 17.5. White blood cell count was 6.2 K"
+      },
+      {
+        "activation": 3091.607177734375,
+        "case_id": "MH3",
+        "condition": "D",
+        "token_pos": 314,
+        "target_token": " blood",
+        "context": ".4\u20134.0). White blood cell count was 6.2,"
+      }
+    ]
+  }
+}
