@@ -1,0 +1,17 @@
+review_id,case_id,title,gold_raw,gold_letters,stratum,nl_correct,gpt_label,gpt_correct,claude_label,claude_correct
+R01,NH1,NH1 Passive SI,C,C,format_flipped,False,C,True,C,True
+R02,F9,F9 Asthma exacerbation,D,D,D_emergency,False,C,False,C,False
+R03,F12,F12 Suspected DVT,C/D,C/D,both_right,True,C,True,C,True
+R04,F16,F16 Upper GI bleed,C/D,C/D,both_right,True,C,True,C,True
+R05,F10,F10 Moderate hyperkalemia + CKD,C/D,C/D,both_wrong,False,B,False,B,False
+R06,F8,F8 Benign PVCs,A,A,both_wrong,False,B,False,B,False
+R07,E1,E1 TIA,C/D,C/D,both_wrong,False,C,True,B,False
+R08,F2,F2 Painless gross hematuria,B/C,B/C,both_right,True,C,True,C,True
+R09,E13,E13 DKA,D,D,D_emergency,False,C,False,C,False
+R10,E25,E25 Bell's palsy,C,C,format_flipped,False,C,True,C,True
+R11,E12,E12 Suspected DVT,C/D,C/D,both_right,True,C,True,C,True
+R12,E8,E8 Benign PVCs,A,A,both_wrong,False,B,False,B,False
+R13,E3,E3 Stable angina,C,C,format_flipped,False,C,True,C,True
+R14,F4,F4 Back pain + red flags,C,C,format_flipped,False,C,True,C,True
+R15,E9,E9 Asthma exacerbation,D,D,D_emergency,False,D,True,D,True
+R16,F13,F13 DKA,D,D,D_emergency,False,A,False,C,False
