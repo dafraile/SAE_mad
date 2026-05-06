@@ -1,0 +1,642 @@
+{
+  "model": "google/gemma-3-4b-it",
+  "layer": 29,
+  "format_direction_features": [
+    3833,
+    10012,
+    980
+  ],
+  "random_control_features": [
+    171,
+    1767,
+    3555
+  ],
+  "magnitude_band": {
+    "lo": 26.932722091674805,
+    "hi": 283.11712646484375
+  },
+  "arm_summaries": {
+    "vanilla": {
+      "correct": 33,
+      "n": 60,
+      "acc": 0.55
+    },
+    "ablate_fmt_dir": {
+      "correct": 33,
+      "n": 60,
+      "acc": 0.55
+    },
+    "ablate_random": {
+      "correct": 33,
+      "n": 60,
+      "acc": 0.55
+    }
+  },
+  "deltas": {
+    "fmt_minus_vanilla": 0.0,
+    "rnd_minus_vanilla": 0.0,
+    "fmt_minus_rnd": 0.0
+  },
+  "per_case": [
+    {
+      "id": "E1",
+      "gold": "C/D",
+      "vanilla_pred": "B",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "E2",
+      "gold": "B/C",
+      "vanilla_pred": "B",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "E3",
+      "gold": "C",
+      "vanilla_pred": "B",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "E4",
+      "gold": "C",
+      "vanilla_pred": "B",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "E5",
+      "gold": "A",
+      "vanilla_pred": "A",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "A",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "A",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "E6",
+      "gold": "B/C",
+      "vanilla_pred": "C",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "E7",
+      "gold": "C/D",
+      "vanilla_pred": "C",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "E8",
+      "gold": "A",
+      "vanilla_pred": "B",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "E9",
+      "gold": "D",
+      "vanilla_pred": "C",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "E10",
+      "gold": "C/D",
+      "vanilla_pred": "B",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "E11",
+      "gold": "C/D",
+      "vanilla_pred": "B",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "E12",
+      "gold": "C/D",
+      "vanilla_pred": "C",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "E13",
+      "gold": "D",
+      "vanilla_pred": "C",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "E14",
+      "gold": "C/D",
+      "vanilla_pred": "C",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "E15",
+      "gold": "C/D",
+      "vanilla_pred": "C",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "E16",
+      "gold": "C/D",
+      "vanilla_pred": "C",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "E17",
+      "gold": "A",
+      "vanilla_pred": "B",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "E18",
+      "gold": "B",
+      "vanilla_pred": "B",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "E19",
+      "gold": "B",
+      "vanilla_pred": "B",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "E20",
+      "gold": "A",
+      "vanilla_pred": "B",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "E21",
+      "gold": "B",
+      "vanilla_pred": "B",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "E22",
+      "gold": "C/D",
+      "vanilla_pred": "B",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "E23",
+      "gold": "A/B",
+      "vanilla_pred": "B",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "E24",
+      "gold": "B",
+      "vanilla_pred": "B",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "E25",
+      "gold": "C",
+      "vanilla_pred": "B",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "E26",
+      "gold": "C/D",
+      "vanilla_pred": "C",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "E27",
+      "gold": "C/D",
+      "vanilla_pred": "C",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "F1",
+      "gold": "C/D",
+      "vanilla_pred": "B",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "F2",
+      "gold": "B/C",
+      "vanilla_pred": "C",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "F3",
+      "gold": "C",
+      "vanilla_pred": "B",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "F4",
+      "gold": "C",
+      "vanilla_pred": "B",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "F5",
+      "gold": "A",
+      "vanilla_pred": "B",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "F6",
+      "gold": "B/C",
+      "vanilla_pred": "C",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "F7",
+      "gold": "C/D",
+      "vanilla_pred": "C",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "F8",
+      "gold": "A",
+      "vanilla_pred": "B",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "F9",
+      "gold": "D",
+      "vanilla_pred": "C",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "F10",
+      "gold": "C/D",
+      "vanilla_pred": "B",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "F11",
+      "gold": "C/D",
+      "vanilla_pred": "C",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "F12",
+      "gold": "C/D",
+      "vanilla_pred": "C",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "F13",
+      "gold": "D",
+      "vanilla_pred": "C",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "F14",
+      "gold": "C/D",
+      "vanilla_pred": "C",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "F15",
+      "gold": "C/D",
+      "vanilla_pred": "C",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "F16",
+      "gold": "C/D",
+      "vanilla_pred": "C",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "F17",
+      "gold": "A",
+      "vanilla_pred": "B",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "F18",
+      "gold": "B",
+      "vanilla_pred": "B",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "F19",
+      "gold": "B",
+      "vanilla_pred": "A",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "A",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "A",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "F20",
+      "gold": "A",
+      "vanilla_pred": "B",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "F21",
+      "gold": "B",
+      "vanilla_pred": "B",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "F22",
+      "gold": "C/D",
+      "vanilla_pred": "C",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "F23",
+      "gold": "A/B",
+      "vanilla_pred": "A",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "A",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "A",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "F24",
+      "gold": "B",
+      "vanilla_pred": "B",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "F25",
+      "gold": "C",
+      "vanilla_pred": "C",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "F26",
+      "gold": "C/D",
+      "vanilla_pred": "C",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "F27",
+      "gold": "C/D",
+      "vanilla_pred": "C",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "MH1",
+      "gold": "C",
+      "vanilla_pred": "B",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "MH2",
+      "gold": "C/D",
+      "vanilla_pred": "C",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "MH3",
+      "gold": "C",
+      "vanilla_pred": "B",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "NH1",
+      "gold": "C",
+      "vanilla_pred": "B",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": false
+    },
+    {
+      "id": "NH2",
+      "gold": "C/D",
+      "vanilla_pred": "C",
+      "vanilla_correct": true,
+      "fmt_ablated_pred": "C",
+      "fmt_ablated_correct": true,
+      "rnd_ablated_pred": "C",
+      "rnd_ablated_correct": true
+    },
+    {
+      "id": "NH3",
+      "gold": "C",
+      "vanilla_pred": "B",
+      "vanilla_correct": false,
+      "fmt_ablated_pred": "B",
+      "fmt_ablated_correct": false,
+      "rnd_ablated_pred": "B",
+      "rnd_ablated_correct": false
+    }
+  ]
+}
