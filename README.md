@@ -30,10 +30,11 @@ family.
 
 **Question.** When a clinical LLM appears to fail under constrained
 forced-letter triage evaluation, has the model's *clinical representation*
-itself degraded, or is the failure introduced later when the representation is
-mapped into a constrained answer format? The behavioral side of this debate is
-already in the literature [Ramaswamy et al. 2026, *Nature Medicine*; Fraile
-Navarro et al. 2026, arXiv:2603.11413]; we test the mechanistic side.
+itself degraded, or is the failure introduced later when the representation
+is mapped into a constrained answer format? The behavioral side of this
+debate is already in the literature [Ramaswamy et al. 2026,
+*Nature Medicine*; Fraile Navarro et al. 2026, arXiv:2603.11413]; we test
+the mechanistic side.
 
 **Setup.** 60 clinically-canonical vignettes from a paper-faithful
 replication corpus, three cells (structured + forced-letter, natural +
@@ -43,36 +44,67 @@ a forced-letter instruction block is appended. Three instruction-tuned
 models (Gemma 3 4B IT, Gemma 3 12B IT, Qwen3-8B) with their open SAE
 releases (Gemma Scope 2 JumpReLU; Qwen-Scope k=50 TopK).
 
-**Findings.**
+**Headline finding.** **The model's clinical encoding of these cases is
+preserved across the format conditions whose accuracy scoring diverges.**
+The residual-stream direction along which the forced-letter and free-text
+conditions differ lives in SAE features that fire on the literal answer-key
+scaffold tokens themselves — not in the features that encode clinical
+content. The benchmark's apparent reasoning failures are therefore largely
+output-mapping artifacts at the small-and-mid scale, with the behavioral
+gap closing entirely by 12B.
 
-- **Magnitude invariance.** Medical-content SAE features fire within 0–4%
-  per token on identical clinical content across format conditions.
-  Mean-pool modulation indices are 10–25% for medical features versus 32–45%
-  for magnitude-matched random features in the same SAE basis. Bootstrap
-  95% CIs exclude zero in every cell of the layer × stratum design across
-  all three models.
-- **Direction analysis.** When prompt-length asymmetry is controlled
-  (truncating the longer prompt to identical content range), the
-  residual-stream difference between conditions vanishes exactly; what
-  survives in length-invariant max-pool aggregation loads onto **non-medical
-  features** in the SAE basis rather than the medical ones.
-- **Behavioral scaling.** The forced-letter penalty observed at 4B
-  (+13–20pp advantage for free-text in paper-faithful adjudication)
-  essentially vanishes at 12B (≈0pp). The mechanistic invariance at deep
-  layers persists across both scales.
-- **Cross-family replication.** The deep-layer invariance pattern replicates
-  on Qwen3-8B with Qwen-Scope SAEs at L31 despite the SAE's intrinsic ~38%
-  reconstruction error (a property of its k=50 TopK sparsity).
+This is supported by four independent pieces of evidence:
 
-Together these support the hypothesis that the model's clinical encoding
-is preserved across the output formats whose accuracy scoring diverges; the
-failure mode the benchmark detects lives in output mapping. SAE features
-emerge as a deployable, format-robust monitor of clinical groundedness.
+1. **Magnitude invariance.** Medical-content SAE features fire within 0–4%
+   per token on identical clinical content across format conditions.
+   Mean-pool modulation indices are 10–25% for medical features versus
+   32–45% for magnitude-matched random features in the same SAE basis;
+   bootstrap 95% CIs exclude zero in every cell of the layer × stratum
+   design across all three models.
+2. **Direction analysis.** When prompt-length asymmetry is controlled
+   (truncating the longer prompt to identical content range), the
+   residual-stream difference between conditions vanishes exactly; what
+   survives in length-invariant max-pool aggregation loads onto
+   **non-medical features**.
+3. **Feature-level interpretation.** The top features by alignment with
+   the (NL−NF) max-pool direction at Gemma 4B L29 fire *exclusively* in
+   NL on the literal forced-letter answer-key scaffold tokens — feature
+   3833 on "next" inside "B = See my doctor in the next few weeks",
+   feature 10012 on "the" inside "D = Go to the ER now", feature 980 on
+   the "=" symbol of the answer-key syntax. The format direction is
+   localized to features detecting prompt structure, not clinical content.
+4. **Causal-intervention nulls.** Neither discrete SAE-feature ablation
+   of the format-direction features (0/60 letter changes) nor continuous
+   ActAdd-style steering along the same direction (2/60 within-permissive-
+   gold changes at α corresponding to 6.7% of the residual norm) produces
+   meaningful behavioral shifts. The format direction is detectable and
+   interpretable but, at single-layer perturbation magnitudes, not
+   isolatable to a few features or a single residual direction with
+   sufficient causal control to drive outputs. This corroborates concurrent
+   work showing four mechanistic intervention methods fail on the same
+   task family on a different model [Basu et al. 2026, arXiv:2603.18353].
+
+**Cross-family + scaling extensions.** The deep-layer invariance replicates
+on Qwen3-8B with Qwen-Scope SAEs at L31 despite that SAE's intrinsic ~38%
+reconstruction error from its k=50 TopK sparsity. The forced-letter
+behavioral penalty observed at Gemma 4B (+13–20pp NF advantage in
+paper-faithful adjudication) essentially vanishes at Gemma 12B (≈0pp);
+the deep-layer mechanistic invariance persists across both scales.
+
+**Reading.** SAE features at the deep encoding layer are a deployable,
+format-invariant monitor of clinical groundedness — an application that
+plays to what SAE features are well-supported as (interpretable readouts
+of model state) rather than what intervention-based methods, including
+ours, struggle to make them into (causally-sufficient correctors of
+behavior).
 
 **Full record.** [`TRIAGE_FINDINGS.md`](TRIAGE_FINDINGS.md) — phase-by-phase
 empirical record with bootstrap tables, sanity-check verdicts, and
 methodology lessons. [`PAPER_DRAFT.md`](PAPER_DRAFT.md) — workshop paper
-draft (in progress) with methods + results sections complete.
+draft with all sections in prose form (currently AI-cadenced; the prose
+will be re-authored by the lead author before EMNLP submission).
+[`ABSTRACT_STRUCTURE.md`](ABSTRACT_STRUCTURE.md) — sentence-slot scaffold
+for the abstract.
 
 ---
 
@@ -118,20 +150,68 @@ record including the retraction.
 
 ---
 
-## Repo orientation
+## Repo orientation for collaborators
 
-| File | Purpose |
+If you've just been given access, here's what to read for what.
+
+**Just want the gist** → this README + the headline finding above. ~5 min.
+
+**Reviewer-level read** → [`TRIAGE_FINDINGS.md`](TRIAGE_FINDINGS.md), the
+empirical record. Phase-by-phase, with bootstrap tables, sanity-check
+verdicts, methodology lessons, and the convergent reading of Phases 5–7.
+~30 min.
+
+**Paper read** → [`PAPER_DRAFT.md`](PAPER_DRAFT.md). All sections in prose
+form, with figure references and citation keys. Disclaimer: prose voice is
+recognizably AI-cadenced and will be re-authored by the lead author before
+EMNLP submission per ACL paper-integrity policy. The structure, arguments,
+and findings are stable; the words are not. The
+[`ABSTRACT_STRUCTURE.md`](ABSTRACT_STRUCTURE.md) is a sentence-slot
+scaffold for the abstract written so the author can fill in voice.
+
+**Want to verify a specific claim in the paper** → look up the relevant
+phase in [`TRIAGE_FINDINGS.md`](TRIAGE_FINDINGS.md), then go to the
+matching `phase*.py` script and `results/phase*_*.json` output. The
+figure-generation pipeline is `make_figures.py` and `make_fig4.py`,
+which re-run deterministically from the JSONs.
+
+**Clinician adjudication package** (out for review at time of writing)
+→ [`clinician_package/`](clinician_package/). Sixteen blinded cases
+stratified by behavioral outcome; the unblinding key is in the same
+folder for our internal post-adjudication analysis.
+
+### File map
+
+| Path | Purpose |
 |---|---|
-| `TRIAGE_FINDINGS.md` | Phase 2 empirical record (519 lines) |
-| `PAPER_DRAFT.md` | Workshop paper draft (in progress) |
-| `references.bib` | Verified citations for the workshop paper |
+| `TRIAGE_FINDINGS.md` | Phase 2 empirical record (canonical lab notebook) |
+| `PAPER_DRAFT.md` | Workshop paper draft (full prose, awaiting author rewrite) |
+| `ABSTRACT_STRUCTURE.md` | Sentence-slot scaffold for the abstract |
+| `references.bib` | Verified BibTeX entries for paper citations |
 | `FINDINGS.md` | Phase 1 empirical record (the closed null) |
-| `figures/` | Camera-ready PDFs + PNG previews |
-| `phase0_*.py … phase4_*.py` | Phase 2 experimental scripts |
-| `v1_*.py, v2_*.py, v3_*.py` | Phase 1 experimental scripts |
-| `make_figures.py` | Regenerates all paper figures from `results/` |
+| `figures/` | `fig1`–`fig4` as PDF (vector, editable text) + PNG (preview) |
+| `make_figures.py`, `make_fig4.py` | Regenerate all paper figures from `results/*.json` |
+| `phase0_*.py` … `phase7_*.py` | Phase 2 experimental scripts (one per phase) |
+| `v1_*.py`, `v2_*.py`, `v3_*.py` | Phase 1 experimental scripts (closed null) |
+| `wire_adjudicator*.py` | Convert phase outputs to LLM-as-judge input format |
+| `build_clinician_package.py` | Build the blinded clinician adjudication CSV |
 | `results/` | All experiment outputs (JSON + CSV) |
-| `nature_triage_expanded_replication/` | Cloned reference corpus (gitignored, see prior paper) |
+| `clinician_package/` | Blinded adjudication package + unblinding key |
+| `nature_triage_expanded_replication/` | Cloned reference corpus (gitignored, see Fraile Navarro 2026) |
+
+### Phase index for the active project
+
+| Phase | What it tests | Result | Script | Output |
+|---|---|---|---|---|
+| 0 | Capability floor on EXPLANATION+TRIAGE scaffold | 4B 68%, 12B 67% | `phase0_capability_floor.py` | `results/phase0_capability_floor.json` |
+| 0.5 | Three-cell behavioral phenomenon (4B+12B) | NF outperforms NL by +13–20pp at 4B; gap closes at 12B | `phase0_5_three_cells.py`, `phase3b_12b_pipeline.py` | `results/phase0_5_*.json`, `results/phase3b_12b_*.json` |
+| 1b | Magnitude-matched mod-index invariance test | Medical features more invariant than random; CIs exclude zero | `phase1b_magnitude_matched.py` | `results/phase1b_magnitude_matched.json` |
+| 2b | Length-controlled + max-pool direction analysis | Length-controlled diff = 0 exactly; max-pool format direction loads on non-medical features | `phase2b_dilution_check.py` | `results/phase2b_dilution_check.json` |
+| 3 | 12B medical-feature identification | 4 layers, hundreds of filter-passing features each | `phase3_12b_feature_id.py` | `results/phase3_12b_features.json` |
+| 4 | Cross-family Qwen3-8B replication at L31 | Effect replicates with smaller magnitude (k=50 TopK noise) | `phase4_qwen_minimal.py` | `results/phase4_qwen_L31.json` |
+| 5 | Top-token analysis + restricted random pool | Format-direction features fire literally on forced-letter scaffold tokens | `phase5_top_tokens_and_restricted_random.py` | `results/phase5_top_tokens.json`, `results/phase5_restricted_random.json` |
+| 6 | SAE feature ablation (causal intervention I) | 0/60 letter changes; hook verified, perturbation 0.4% of residual | `phase6_causal_intervention.py`, `phase6_debug.py` | `results/phase6_causal_intervention.json` |
+| 7 | ActAdd-style steering at L29 (causal intervention II) | 2/60 within-gold shifts at α=4 (~6.7% perturbation); near-null | `phase7_steering_vector.py` | `results/phase7_steering_vector.json` |
 
 ---
 
