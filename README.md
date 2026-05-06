@@ -264,7 +264,7 @@ Full BibTeX in [`references.bib`](references.bib).
 @misc{frailenavarro2026saemad,
   title  = {SAE features as a format-invariance monitor for clinical-AI
             evaluation: cross-family mechanistic evidence},
-  author = {Fraile Navarro, David and Magrabi, Farah and Coiera, Enrico},
+  author = {Fraile Navarro, David},
   year   = {2026},
   url    = {https://github.com/dafraile/SAE_mad},
   note   = {Workshop paper in preparation (target: EMNLP 2026 via ARR).
