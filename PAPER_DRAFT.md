@@ -259,7 +259,7 @@ error at this layer, a property of the k=50 sparsity choice rather than a
 checkpoint-transfer artifact (verified by sanity tests showing identical error on
 both chat-templated and raw-text inputs, with and without `b_dec` subtraction).
 
-### 3.3 Behavioral test (Phase 0.5)
+### 3.3 Behavioral test
 
 For each model × cell × case, we generate the model's output via greedy decoding.
 Cells SL and NL have terse single-letter outputs; we extract via regex. Cell NF has
@@ -274,7 +274,7 @@ We report per-cell accuracy with permissive gold matching (gold "C/D" accepts
 either letter as correct). We also report the inter-rater agreement and Cohen's κ
 between the two judges as a calibration signal.
 
-### 3.4 Mechanistic invariance test (Phase 1b)
+### 3.4 Mechanistic invariance test
 
 For each (model, layer, case, condition) we mean-pool SAE feature activations
 over user content tokens. For Gemma we identify content tokens by chat-template
@@ -295,7 +295,7 @@ falls in the band `[0.5 × min(med_means), 2.0 × max(med_means)]`. This
 small-feature-noise inflation that would otherwise depress the random mod-index.
 Pool sizes are typically 500–2200 features per layer per model.
 
-We stratify by Phase 0.5 + adjudicator outcomes:
+We stratify by behavioral-test correctness × adjudicator-agreed correctness:
 
 - **format_flipped**: NL wrong AND both judges agree NF right.
 - **both_right**: NL correct AND both judges agree NF correct.
@@ -305,7 +305,7 @@ We stratify by Phase 0.5 + adjudicator outcomes:
 Bootstrap 95% confidence intervals (2,000 resamples) on the per-case
 medical-minus-random mod-index difference.
 
-### 3.5 Direction-of-format-effect test (Phase 2b)
+### 3.5 Direction-of-format-effect test
 
 To localize *where* the (NL − NF) residual-stream direction lives in the SAE
 basis, we project it onto each feature's encoder direction. We use three
@@ -368,7 +368,7 @@ The free-text gain on 4B is concentrated in mid-acuity cases (gold C and C/D)
 rather than in emergencies or low-acuity (see appendix table). The 12B
 attenuation is across-the-board.
 
-### 4.2 Mechanistic invariance — magnitude (Phase 1b)
+### 4.2 Mechanistic invariance — magnitude
 
 Bootstrap 95% CIs on (medical − random) modulation index, per layer × stratum:
 
@@ -416,7 +416,7 @@ the direction and statistical signal replicate.
 
 ### 4.3 Per-token alignment
 
-The Phase 1b mod-index is mean-pooled. We also report per-case max activations
+The mod-index above is mean-pooled. We also report per-case max activations
 on the medical features at L29 of Gemma 4B for three example cases:
 
 | Case | Gold | NL max | NF max | Per-feature delta |
@@ -430,7 +430,7 @@ features fire at essentially the same magnitude. The clinical representation
 is preserved at the per-token level; the small mean-pool mod-index residual is
 the ~50-token dilution from B's appended forced-letter instructions.
 
-### 4.4 Direction analysis (Phase 2b)
+### 4.4 Direction analysis
 
 We examine where the (NL − NF) residual direction concentrates in the SAE basis,
 using three aggregations.
@@ -442,7 +442,7 @@ is the strongest possible isolation: with input held constant, residuals are
 deterministically identical. No format effect exists at the residual level
 when content is held identical.
 
-**Full mean-pool (Phase 2 reproduction, length-confounded).** All medical
+**Full mean-pool (length-confounded).** All medical
 features show negative-signed alignment (the dilution-from-prompt-length
 signature). At Gemma 4B L29: medical-feature ranks 10994 (67%), 470 (3%),
 2235 (14%) of 16384.
@@ -487,7 +487,7 @@ than its clinical content.
 
 ### 4.6 Restricted random pool
 
-The Phase 1b magnitude-matched random control pool was permitted to
+The magnitude-matched random control pool above was permitted to
 include features that may not fire on clinical content. We tighten the
 control by additionally restricting the pool to features that fire on at
 least 25\% of the 120 prompts in the union NL${\,\cup\,}$NF. With this
@@ -520,7 +520,7 @@ invariance: in all three models the deep-layer medical features fire within
 mean-pool modulation indices 0.10--0.27 versus 0.30--0.43 for
 magnitude-matched random features in the same SAE basis (Section 4.2). The
 result survives a stricter control that further restricts the random pool to
-features that fire on clinical content (Section 4.3). (ii) Length-controlled
+features that fire on clinical content (Section 4.6). (ii) Length-controlled
 direction analysis: when prompt-length asymmetry is removed by truncating the
 forced-letter block from NL so its content range matches NF's exactly, the
 residual-stream difference between conditions vanishes to 0 at numerical
