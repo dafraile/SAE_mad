@@ -4,12 +4,23 @@ A continuation of the SAE_mad project after v3 closed the rescue-by-amplificatio
 Documents the experimental record from the pivot toward "SAE features as a groundedness
 / format-invariance monitor" using the triage replication dataset.
 
-**Status**: Phases 0–4 complete on Gemma 3 4B IT, Gemma 3 12B IT, **and Qwen3-8B**.
+**Status**: Phases 0–5 complete on Gemma 3 4B IT, Gemma 3 12B IT, **and Qwen3-8B**.
+Phase 6 (causal intervention via format-direction-feature ablation) running
+at the time of this update. Phase 1A clinician adjudication out for review.
+Targeting **EMNLP 2026 via ARR May 25**.
+
 Three families' worth of evidence: Gemma 4B (JumpReLU SAE) shows the cleanest
 multi-layer Version B; Gemma 12B reveals the behavioral format effect attenuates
 at scale and a depth-dependent mechanistic pattern; Qwen3-8B (k=50 TopK SAE)
 replicates the deep-layer Version B at L31 despite the SAE's more aggressive
-sparsity. Targeting NeurIPS workshop submission.
+sparsity. **Phase 5 names the format-direction features**: at 4B L29 the top
+features by alignment with the (NL−NF) max-pool direction are SAE features
+that fire exclusively on the forced-letter answer-key scaffold tokens
+themselves (feature 3833 on "next" inside "B = See my doctor in the next few
+weeks", feature 10012 on "the" inside "D = Go to the ER now", feature 980
+across the "=" syntax of the answer-key). The format effect is therefore not
+just "non-medical features somewhere"; it is specifically these
+forced-letter-scaffold-detector features.
 
 ## TL;DR
 
@@ -694,6 +705,100 @@ the Gemma pattern.
 **Files**: `results/phase4_qwen_L31.json`, `phase4_qwen_minimal.py`,
 plus the earlier `results/qwen_sanity*.json` for the recon-error
 characterization.
+
+## Phase 5 — Top-token analysis + restricted random pool
+
+Two follow-up analyses on Gemma 3 4B IT, L29.
+
+### Phase 5A — Top-token analysis of format-direction features
+
+For features 3833, 10012, 980, 9485, 755 (top-aligned with the (NL−NF)
+max-pool direction in Phase 2b), we collect per-token activations across
+all 60 cases × {NL, NF} prompts.
+
+**Result**: three of five fire exclusively on forced-letter scaffold tokens.
+
+| Feature | Top tokens | Top contexts (all NL) |
+|---|---|---|
+| 3833 | " next" | "B = See my doctor in the **next** few weeks" |
+| 10012 | " the" | "D = Go to **the** ER now Do not include any explanation" |
+| 980 | " =" | "B **=** See my doctor… C **=** See a doctor" |
+| 755 | " my" / " My" | mixed: answer-key text AND patient narrative ("**my** vitals", "**My** patient portal") |
+| 9485 | "." | numeric/decimal feature, fires equally NL and NF on lab values |
+
+For comparison, the v3-validated medical features fire on clinical-content
+tokens at identical magnitudes across NL and NF:
+
+| Feature | Top tokens | Top contexts (mixed NL/NF) |
+|---|---|---|
+| 12570 | " my", " right", " both" | clinical exam contexts ("facial weakness was affecting both my forehead", "right lower belly was tender") |
+| 893 | " blood" | lab-value contexts ("white **blood** cell count is 11.2", "white **blood** cells were 0-2 per") |
+| 12845 | " neck", " on" | exam contexts ("using my **neck** muscles to breathe", "tender when they pressed **on** it") |
+
+**Reading**: this converts the percentile-rank statement of Phase 2b
+into a feature-level mechanistic interpretation. The format direction
+in residual space is encoded by SAE features that detect the structural
+format of the prompt (its answer-key scaffold), not its clinical
+content. Medical features fire identically across conditions, confirming
+Phase 1b's magnitude invariance at the per-token level.
+
+### Phase 5B — Restricted random pool
+
+Phase 1b's magnitude-matched random pool was permitted to include
+features that may not fire on clinical content. We tighten the control
+by additionally restricting the pool to features that fire on at least
+25% of all 120 prompts (60 cases × 2 conditions). Re-run mod-index
+analysis at 4B L29.
+
+| Stratum | n | medical_mod | restricted-random_mod | diff [95% CI] |
+|---|---|---|---|---|
+| format_flipped | 13 | 0.107 | 0.304 | **−0.196 [−0.261, −0.135]** |
+| both_right | 29 | 0.152 | 0.341 | **−0.189 [−0.243, −0.139]** |
+| both_wrong | 13 | 0.083 | 0.380 | **−0.297 [−0.380, −0.225]** |
+
+Compared to Phase 1b at L29 (format_flipped diff −0.305, both_right
+−0.271, both_wrong −0.369), effect sizes shrink ~30–40% under the
+stricter control but remain robust with all bootstrap 95% CIs excluding
+zero.
+
+**Files**: `results/phase5_top_tokens.json`,
+`results/phase5_restricted_random.json`,
+`phase5_top_tokens_and_restricted_random.py`,
+`figures/fig4_top_tokens.{pdf,png}`.
+
+### Verdict
+
+**Strongest version of Version B yet**, supported by feature-level
+interpretability: the SAE features carrying the format direction are
+literally the ones that fire on the forced-letter answer-key scaffold
+tokens, not the medical-content features. Combined with Phase 2b's
+length-controlled diff = 0 result (when content is held identical, the
+residual stream is identical), this makes the Version B argument
+mechanistically explicit and defensible at the feature level rather
+than just at aggregate-statistic level.
+
+## Phase 6 — Causal intervention (running)
+
+**Question**: If we ablate features 3833, 10012, 980 at L29 during NL
+inference (subtract their SAE-reconstructed contribution from the
+residual stream), does the behavioral NL accuracy on the 60
+paper-canonical cases shift?
+
+**Setup**: three-arm comparison on the 60 NL prompts:
+- Arm 1: vanilla generation (no ablation, replicates Phase 0.5 cell A=NL)
+- Arm 2: ablate format-direction features (3833, 10012, 980)
+- Arm 3: ablate three magnitude-matched random control features
+
+**Predictions**:
+- *Stronger Version B*: ablation removes the "this prompt expects a
+  constrained letter answer" signal; NL accuracy drifts toward NF
+  baseline.
+- *Weaker version (consistent with Basu et al. 2026 and v3 nulls)*:
+  SAE feature ablation produces no meaningful behavioral change
+  because SAE features are readouts not drivers. Either result is
+  informative; we report the actual outcome.
+
+**Status**: running. Output will be at `results/phase6_causal_intervention.json`.
 
 ## Open questions / planned next steps (NeurIPS workshop sprint)
 
