@@ -113,14 +113,15 @@ def fig1_behavioral():
         yerr_hi = [hi - a for a, hi in zip(accs, ci_his)]
         ax.bar(x + offset, accs, width, label=model_name, color=color,
                yerr=[yerr_lo, yerr_hi], capsize=3, edgecolor="white", linewidth=0.5)
-        for xi, acc in zip(x + offset, accs):
-            ax.text(xi, acc + 0.01, f"{acc:.0%}", ha="center", va="bottom",
+        for xi, acc, hi in zip(x + offset, accs, ci_his):
+            # Place label above the upper CI, not on top of the bar
+            ax.text(xi, hi + 0.025, f"{acc:.0%}", ha="center", va="bottom",
                     fontsize=9)
 
     ax.set_xticks(x)
     ax.set_xticklabels(cell_labels)
     ax.set_ylabel("Triage accuracy")
-    ax.set_ylim(0, 1.0)
+    ax.set_ylim(0, 1.05)
     ax.set_yticks(np.arange(0, 1.01, 0.2))
     ax.set_yticklabels([f"{int(t*100)}%" for t in np.arange(0, 1.01, 0.2)])
     ax.legend(loc="upper left", frameon=False, fontsize=9)
@@ -312,11 +313,23 @@ def fig3_direction():
     sns.stripplot(data=df, x="model", y="rank_pct", hue="model",
                   size=10, ax=ax2, alpha=0.85, palette=["#5b8db8", "#3a76a8", "#1f4e6e"],
                   legend=False)
-    # Annotate features
-    for _, row in df.iterrows():
-        ax2.annotate(row["feature"], xy=(row["model"], row["rank_pct"]),
-                     xytext=(8, 0), textcoords="offset points", fontsize=7,
-                     color="#444")
+    # Annotate features with per-model collision-aware offsets
+    for model in df["model"].unique():
+        sub = df[df["model"] == model].sort_values("rank_pct")
+        last_y = -100.0
+        for _, row in sub.iterrows():
+            y = row["rank_pct"]
+            # If too close to previous label, offset upward by a fixed pixel amount
+            if y - last_y < 6:
+                offset_y = 12  # push label up
+            else:
+                offset_y = 0
+            last_y = max(last_y, y) + (1.0 if offset_y else 0.0)
+            ax2.annotate(row["feature"], xy=(row["model"], y),
+                         xytext=(8, offset_y), textcoords="offset points",
+                         fontsize=7, color="#444",
+                         arrowprops=dict(arrowstyle="-",
+                                         color="#bbb", lw=0.4) if offset_y else None)
     ax2.axhline(50, color="#999", linestyle="--", alpha=0.7, linewidth=1)
     ax2.set_ylim(-2, 102)
     ax2.set_ylabel("Rank percentile of medical features\nin |alignment| with (NL−NF) max-pool")
