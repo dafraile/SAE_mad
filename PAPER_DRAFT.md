@@ -157,36 +157,59 @@ features here is restricted to their well-supported readout role.
 
 ## 2. Background and Related Work
 
-[Brief — ~0.5 page]
+\textbf{Sparse autoencoders for representation analysis.} SAEs decompose a
+model's residual stream into a sparse, overcomplete dictionary of features
+that have been shown to be interpretable and content-tied~\cite{bricken2023monosemanticity,
+cunningham2023sparse,templeton2024scaling}. Two open release lines cover the
+families we use: \textit{Gemma Scope}~\cite{lieberum2024gemma} and
+its successor \textit{Gemma Scope 2}~\cite{deepmind2025gemmascope2,
+google2026gemmascope24bit} train JumpReLU SAEs~\cite{rajamanoharan2024jumping}
+on Gemma 2 and Gemma 3 respectively, using a per-feature learned threshold
+that allows graded activation; \textit{Qwen-Scope}~\cite{qwen2026scope}
+trains $k$-sparse TopK SAEs~\cite{makhzani2013ksparse,gao2024scaling} on
+Qwen3 base checkpoints with $k{=}50$ active features per token out of
+65{,}536 (0.076\% sparsity, more aggressive than Gemma Scope's
+$\sim{}60$--$100$ active at width 16k). The two pipelines therefore make
+different reconstruction--sparsity trade-offs; we treat this as a feature
+of our cross-family validation rather than a confound.
 
-### 2.1 Sparse autoencoders for representation analysis
+\textbf{Internal--external dissociation in LLMs.} The conceptual precedent
+for the distinction we test is well established. Probing methods recover
+knowledge beyond what model outputs reveal~\cite{burns2023discovering};
+self-knowledge depends on elicitation
+format~\cite{kadavath2022language}; and verbalized reasoning can be
+unfaithful to the actual determinants of model
+predictions~\cite{turpin2023language}. The Anthropic interpretability
+program has used attribution graphs over SAE features to dissect
+internal mechanisms in production models~\cite{anthropic2025biology}.
 
-SAEs decompose a model's residual stream into a sparse, overcomplete dictionary of
-features [Bricken 2023, Cunningham 2023]. Gemma Scope 2 [Lieberum 2025] uses
-JumpReLU SAEs, allowing graded per-feature activation gated by a learned threshold;
-Qwen Scope (released 2026) uses TopK SAEs [Makhzani 2014, Gao 2024], hard-capping
-the active feature count per token. The two pipelines make different sparsity
-trade-offs: Gemma Scope's JumpReLU permits ~60–100 features active per token at
-width 16k; Qwen Scope fixes 50 active out of 65,536 (0.076% sparsity).
+\textbf{LLM evaluation in clinical AI.} Med-PaLM established that LLMs
+encode substantial clinical knowledge~\cite{singhal2023large}, with
+follow-on work pushing further on alignment and
+factuality~\cite{singhal2025expert}. Specific benchmarks have probed
+failure modes, notably consumer-facing
+triage~\cite{ramaswamy2026chatgpt}, where a recent headline reported a
+51.6\% emergency-case under-triage rate. Behavioral replications by our
+group~\cite{frailenavarro2026triage} and concurrent mechanistic work on
+the same task~\cite{basu2026interpretability} both indicate that
+constrained-output evaluation is a major contributor to the apparent
+failure rates. The broader literature on prompt format and
+multiple-choice sensitivity in LLM benchmarks supports the same
+direction~\cite{zheng2024large,pezeshkpour2024large,sclar2024quantifying}.
 
-### 2.2 LLM evaluation in clinical AI
-
-Singhal et al. (2023) demonstrated that LLMs encode substantial clinical knowledge
-[Med-PaLM, MultiMedQA]. Subsequent benchmarks have probed specific failure modes,
-notably triage [Ramaswamy 2026, ...]. Behavioral replications have raised concerns
-about evaluation-format sensitivity: outcomes that look like reasoning failures
-under one prompt format may not replicate under another. Our work supplies
-mechanistic evidence for this dissociation.
-
-### 2.3 Steering vectors and the SAE-decomposition gap
-
-ActAdd [Turner 2023] demonstrates that activation differences between conditions
-can serve as continuous, causally-effective steering directions. Our paper uses
-SAEs not for steering but for *interpretation*: we project the activation
-difference between format conditions onto the SAE basis and ask whether
-domain-specific features carry it. This complements ActAdd's finding by
-identifying the basis directions that the format-difference signal is *not*
-loaded on.
+\textbf{Steering vectors and SAE features as causal levers.} ActAdd-style
+steering~\cite{turner2023steering} uses continuous activation differences
+between conditions as steering directions; sparse feature
+circuits~\cite{marks2024sparse} demonstrate that small sets of SAE
+features can serve as interpretable causal units for circuit-level
+editing in some settings. Our use of SAE features here is restricted to
+their well-supported readout role: we project activation differences onto
+the SAE basis and ask which features carry them, rather than using the
+SAE to intervene on model behavior. The complementary intervention path
+is studied separately, with prior null
+results~\cite{frailenavarro2026saemad,basu2026interpretability} indicating
+that single-feature SAE interventions have not, to date, produced
+reliable behavioral change in clinical question-answering.
 
 ---
 
@@ -195,7 +218,7 @@ loaded on.
 ### 3.1 Dataset
 
 We use the 60 paper-canonical clinical vignettes from the paper-faithful
-replication corpus [TODO: cite Fraile Navarro 2026 / your prior work]. Each
+replication corpus~\cite{frailenavarro2026triage}. Each
 vignette is a clinical case in three pre-defined formats:
 
 - **SL — structured + forced-letter.** Structured clinical write-up plus a terse
@@ -453,71 +476,179 @@ downstream of the clinical encoding rather than within it.
 
 ## 5. Discussion
 
-[~1 page; TODO]
+\textbf{Convergent evidence for Version B.} Three pieces of independent
+evidence converge on the same mechanistic conclusion. (i) Magnitude
+invariance: in all three models the deep-layer medical features fire within
+0--4\% per token on identical clinical content across format conditions, with
+mean-pool modulation indices 0.10--0.27 versus 0.30--0.43 for
+magnitude-matched random features in the same SAE basis (Section 4.2). The
+result survives a stricter control that further restricts the random pool to
+features that fire on clinical content (Section 4.3). (ii) Length-controlled
+direction analysis: when prompt-length asymmetry is removed by truncating the
+forced-letter block from NL so its content range matches NF's exactly, the
+residual-stream difference between conditions vanishes to 0 at numerical
+precision. The corpus property that NL's prefix is byte-identical to NF
+makes this isolation as clean as the data allows. (iii) Length-invariant
+direction analysis: the residual difference that survives max-pool
+aggregation loads on \emph{non-medical} features in the SAE basis, with
+medical features sitting at the 13--90\% percentile of $|$alignment$|$
+across the three models.
 
-The three-model picture supports a single mechanistic claim with a scale-aware
-nuance:
+\textbf{Top-token analysis names the format-direction features.} In Gemma 3
+4B IT at L29, the top features by alignment with the (NL${-}$NF) max-pool
+direction are 3833, 10012, and 980. Their top-activating tokens across
+$60\,{\times}\,2 = 120$ prompts are exclusively in NL, on the literal
+forced-letter scaffold tokens themselves: feature 3833 fires on
+``next'' inside ``\emph{B = See my doctor in the next few weeks}'',
+feature 10012 on ``the'' inside ``\emph{D = Go to the ER now Do not include
+any explanation}'', feature 980 on ``='' across the answer-key syntax.
+We can therefore localize the format effect at the feature level: it lives
+in features that detect the structural format of the prompt rather than
+its clinical content. The v3-validated medical features 12570, 893, and
+12845, by contrast, fire on clinical-content tokens (e.g., ``blood'' in
+lab-value contexts, ``facial weakness'', ``tender belly'') at identical
+magnitudes across NL and NF conditions.
 
-- **Clinical encoding is preserved across format change.** All three models
-  show medical-feature invariance at the deep encoding layer that exceeds
-  what a magnitude-matched random control predicts.
-- **The behavioral format penalty attenuates with scale.** What looks like a
-  format-induced reasoning failure at 4B becomes a near-zero gap at 12B —
-  consistent with Med-PaLM's scaling claim, refined: as the model scales,
-  the output-mapping circuit catches up with the preserved clinical encoding.
-- **The format effect, where it exists, lives downstream of clinical encoding.**
-  Length-controlled residuals show no format difference; max-pool residuals
-  show a format direction that loads on non-medical features.
+\textbf{Concurrent work.} Basu et al.~\cite{basu2026interpretability}
+demonstrate a 53-percentage-point knowledge--action gap on Qwen 2.5 7B
+Instruct using clinical triage vignettes: linear probes discriminate
+hazardous from benign cases at 98.2\% AUROC, whereas output sensitivity is
+only 45.1\%. They additionally show that four mechanistic interventions to
+\emph{correct} this gap, including SAE feature steering, fail to reliably
+do so. Our work provides the complementary localization their behavioral
+result invites: by varying output format while holding clinical content
+byte-identical, we show that the gap is preserved \emph{in the very
+direction that varies behaviorally}, and that the format-difference
+direction in residual space lives outside the medical-content subspace at
+the feature level. Where Basu et al. show that interpretability cannot
+\emph{fix} the gap by intervention, we show that interpretability can
+\emph{describe} where the gap lives.
 
-This is a stronger version of the Ramaswamy-replication policy claim. The
-benchmark's apparent reasoning failures are partially measurement artifact —
-the model's clinical signature on those failures is preserved.
+\textbf{Behavioral scaling and the depth-dependent mechanistic pattern.}
+The forced-letter penalty at Gemma 3 4B (NL accuracy 56.7\% vs NF 70--77\%)
+essentially vanishes at Gemma 3 12B (NL 81.7\% vs NF 76.7--81.7\%).
+Capability scaling closes the behavioral gap not by changing the clinical
+representation (which is preserved at both scales at deep layers) but by
+improving the output-mapping circuit's translation of that representation
+into a constrained letter answer. The 12B mechanistic data show a depth-
+dependent nuance: at deep layers (31, 41) Version B holds and medical
+features are more invariant than the magnitude-matched random control,
+but at shallow/mid layers (12, 24) the medical features we identify show
+\emph{larger} format-induced perturbation than random. The most plausible
+account, consistent with prior depth-of-processing observations, is that
+shallow features are bound to local lexical/surface forms while deep
+features encode the conceptualized clinical state. Format invariance is
+therefore a property of conceptual-encoding layers, not lexical ones,
+and the 4B finding generalizes to 12B specifically at depths $\geq{}65\%$.
 
-For deployment, SAE features at the deep encoding layer are a viable
-format-robust monitor of clinical groundedness. A real-time clinical chatbot
-checking medical-feature signatures against a calibrated reference distribution
-would be unaffected by the user's prompt format and would flag genuine drift in
-clinical understanding rather than format change.
+\textbf{Cross-family generality and the SAE fidelity trade-off.} The
+Qwen Scope SAE used for the cross-family validation has $\sim{}38\%$
+reconstruction error at the layer we use, an intrinsic consequence of
+its $k{=}50$ TopK sparsity choice rather than a checkpoint-transfer
+artifact. Despite this lower fidelity than Gemma Scope's JumpReLU SAEs,
+the medical-vs-random gap survives at L31 with a 95\% bootstrap
+confidence interval clearing zero. This is reassuring evidence that the
+result is not specific to Gemma Scope's training pipeline; the smaller
+Qwen effect size relative to Gemma is, conversely, the kind of
+shrinkage one would expect from a noisier dictionary, and we do not
+draw fine-grained comparisons across the two pipelines.
 
-[More to come on:
-- Why the depth-dependent pattern in 12B but not 4B (model architecture, scale)
-- Why the Qwen effect is smaller (TopK k=50 sparsity)
-- Limitations: see §6]
+\textbf{Implications for evaluation methodology.} Constrained-output
+clinical benchmarks~\cite{ramaswamy2026chatgpt} produce headline failure
+rates that depend on a property of the evaluation rather than the model's
+clinical reasoning. Behavioral
+replication~\cite{frailenavarro2026triage} has shown this in
+aggregate; our work shows that the model's internal clinical signature on
+those failures is preserved across format conditions whose accuracy
+scoring diverges. SAE features at the deep encoding layer are a candidate
+deployable monitor: a real-time clinical chatbot could check
+medical-feature signatures against a calibrated reference distribution
+and flag genuine drift in clinical understanding independently of any
+format change introduced by the calling application. The application plays
+to what SAE features have been shown to be (interpretable readouts) rather
+than what intervention-based methods including
+ours~\cite{frailenavarro2026saemad} and
+others~\cite{basu2026interpretability} have found difficult to make them
+into (causally-sufficient correctors).
 
 ---
 
 ## 6. Limitations
 
-[~0.5 page; TODO]
+\textbf{Scope of model coverage.} Three instruction-tuned models from two
+families, one clinical domain (consumer triage). Llama-Scope SAEs and
+Mistral-family SAEs were not used here; cross-family generalization
+beyond Gemma and Qwen is left to future work. The behavioral
+attenuation-with-scale finding rests on a single $4{\rightarrow}12$\,B
+within-family comparison.
 
-- Three models, two families, one clinical domain (triage). A larger
-  cross-family corpus (Llama Scope, Mistral SAEs) would further strengthen
-  the generalization claim.
-- 60 vignettes — small for clinical-AI work, but matched to the
-  paper-faithful replication corpus exactly (no subsetting).
-- LLM-as-judge dependence on NF (free-text) scoring (mitigated by 76–88%
-  inter-rater agreement, κ = 0.63–0.80, paper-native scale).
-- Mean-pool and max-pool aggregations only; richer schemes (attention-weighted)
-  could surface different patterns.
-- Qwen Scope's intrinsic 38% reconstruction error inflates the noise floor
-  for that model. A higher-fidelity Qwen-family SAE would tighten the cross-family
-  effect-size estimate.
-- Medical-feature identification uses a hand-curated 30-prompt non-medical
-  corpus for 12B and Qwen; a larger or programmatically generated corpus
-  could yield more or different features.
+\textbf{Sample size.} 60 paper-canonical vignettes per model, matched
+exactly to the paper-faithful replication corpus~\cite{frailenavarro2026triage}
+without subsetting. Stratum-level sample sizes are correspondingly small
+($n{=}13$ in the format-flipped stratum at 4B), which is reflected in the
+bootstrap confidence intervals reported throughout. We do not run
+multi-seed temperature-sampled behavioral runs; greedy decoding was used
+across the board.
+
+\textbf{LLM-as-judge dependence.} NF (free-text) scoring relies on two
+LLM judges (gpt-5.2-thinking-high and claude-sonnet-4.6) running the
+paper-faithful adjudication pipeline (paper-native A=home, D=ER scale).
+Inter-rater agreement is $76$--$88\%$ with Cohen's $\kappa$ in
+$[0.63, 0.80]$, calibrating the LLM judges against each other but not
+against a clinician. We additionally include a clinician-adjudicated
+subset of $\,n{=}16$ stratified cases (Appendix~A4) as ground-truth
+calibration of the LLM judges.
+
+\textbf{Mechanistic-method scope.} We use mean-pool and max-pool
+aggregations of per-token feature activations, magnitude-matched random
+baselines (in two variants: unrestricted and content-restricted), and
+encoder-direction projection. Richer aggregations (attention-weighted,
+context-conditional) and more sophisticated probing methods could surface
+patterns we miss. Our causal intervention experiment (Section~4.6 / 4.7)
+ablates the format-direction features named by Phase~5; a fuller
+intervention sweep over many feature subsets is out of scope for v1.
+
+\textbf{SAE fidelity.} Qwen Scope's intrinsic $\sim{}38\%$ relative L2
+reconstruction error at L31 is a property of its $k{=}50$ TopK sparsity
+rather than a checkpoint-transfer artifact, but it nonetheless raises
+the noise floor of every Qwen-side analysis we report. The cross-family
+effect-size shrinkage we observe could be partly attributable to this
+noise; a higher-fidelity Qwen-family SAE would let us decompose how much
+of the shrinkage is real cross-family attenuation versus measurement
+noise.
+
+\textbf{Feature-identification corpus.} Medical-feature identification at
+12B and Qwen uses a hand-curated 30-prompt non-medical contrastive
+corpus. A larger, programmatically-generated corpus could surface
+different features and tighten our magnitude-matched random pools.
 
 ## 7. Conclusion
 
-[~0.25 page; TODO]
+We test, mechanistically, whether the apparent failures of consumer-facing
+clinical LLMs under constrained-output triage benchmarks reflect degraded
+clinical reasoning or output-mapping artifacts. Across three
+instruction-tuned LLMs from two families (Gemma 3 4B IT, Gemma 3 12B IT,
+Qwen3-8B) and across two SAE training pipelines (JumpReLU on Gemma,
+$k{=}50$ TopK on Qwen), medical SAE features at the deep encoding layer
+are significantly more invariant under output-format change than
+magnitude-matched random features in the same SAE basis. When the
+prompt-length asymmetry between formats is controlled, the residual-stream
+difference vanishes; the residual-direction difference that survives
+length-invariant aggregation loads on non-medical features that we
+identify as firing on the forced-letter scaffold tokens themselves. The
+behavioral format penalty observed at 4B essentially vanishes at 12B,
+while the deep-layer mechanistic invariance persists across scales,
+families, and the depth at which clinical content is conceptually
+encoded.
 
-Across three instruction-tuned LLMs (Gemma 3 4B IT, Gemma 3 12B IT, Qwen3-8B),
-sparse autoencoder features at the deep encoding layer are more invariant
-under output-format change than magnitude-matched random features in the same
-SAE basis. The behavioral format penalty observed at 4B essentially vanishes
-at 12B, while the mechanistic invariance persists at deep layers across
-scales and families. SAE features are a deployable, format-invariant monitor
-of clinical groundedness, and apparent benchmark failures under constrained
-output formats may not reflect underlying reasoning deficits.
+The model's clinical encoding is preserved across the output formats
+whose accuracy scoring diverges: the failure mode the benchmark detects
+lives in output mapping, not in clinical reasoning. SAE features are a
+deployable, format-invariant monitor of clinical groundedness — an
+application that plays to what SAE features have been shown to be
+(interpretable readouts) and complements concurrent
+work~\cite{basu2026interpretability} showing that mechanistic
+interventions cannot directly close the resulting knowledge--action gap.
 
 ---
 
