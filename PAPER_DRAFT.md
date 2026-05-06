@@ -458,11 +458,48 @@ matching the mixed pattern in Gemma 4B L29.
 
 **Reading.** When length is controlled, no format effect exists in the residual
 stream. The format effect captured by length-invariant max-pooling lives in
-non-medical features in all three models — most plausibly features that fire
-on the appended forced-letter instruction tokens themselves rather than on the
-clinical content.
+non-medical features in all three models. Section~4.5 makes this concrete by
+naming the features and showing what they fire on.
 
-### 4.5 Stratification at 4B: format-flipped cases
+### 4.5 What the format-direction features actually fire on
+
+We identify the top features by absolute alignment with the (NL${-}$NF)
+max-pool direction at Gemma 3 4B IT, L29 — features 3833, 10012, and 980 —
+and inspect their top-activating (token, context) pairs across all 60
+cases ${\times}$ \{NL, NF\} prompts (Figure~4, left panel).
+\textbf{All three features fire exclusively in the NL condition, on the
+literal forced-letter answer-key scaffold tokens themselves}: feature 3833
+on the word ``next'' inside ``\emph{B = See my doctor in the [next] few
+weeks}'', feature 10012 on ``the'' inside ``\emph{D = Go to [the] ER now
+Do not include any explanation}'', feature 980 on ``='' across the
+answer-key syntax. The top-3 (NL, NF) firing counts per feature are
+$(3, 0)$ for each. By contrast, the v3-validated medical features 12570,
+893, and 12845 fire on clinical-content tokens (e.g., ``blood'' in
+lab-value contexts, ``neck''/``on'' in clinical-exam contexts, anatomical
+context for facial weakness) at identical magnitudes across NL and NF, with
+top-3 (NL, NF) firing counts that mix between conditions on the same
+clinical-content tokens (Figure~4, right panel).
+
+This converts the percentile-rank statement of Section~4.4 into a
+feature-level mechanistic interpretation: the format-direction is encoded
+by SAE features that detect the structural format of the prompt rather
+than its clinical content.
+
+### 4.6 Restricted random pool
+
+The Phase 1b magnitude-matched random control pool was permitted to
+include features that may not fire on clinical content. We tighten the
+control by additionally restricting the pool to features that fire on at
+least 25\% of the 120 prompts in the union NL${\,\cup\,}$NF. With this
+stricter control at Gemma 3 4B IT, L29, the medical${-}$random
+modulation-index gap shrinks but remains significant in every stratum:
+format-flipped diff $-0.196$ [95\% CI: $-0.261, -0.135$]; both-right
+$-0.189$ [$-0.243, -0.139$]; both-wrong $-0.297$ [$-0.380, -0.225$]. All
+CIs continue to exclude zero. The roughly $30$--$40\%$ shrinkage from the
+unrestricted bootstrap is the size we would expect from a more
+content-relevant random pool, and the qualitative direction is unchanged.
+
+### 4.7 Stratification at 4B: format-flipped cases
 
 The format_flipped stratum (n=13 at 4B, where the format physically flipped the
 answer between B wrong and both-judges-D-right) is the most stringent. Per-token
