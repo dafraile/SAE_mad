@@ -4,10 +4,9 @@ A continuation of the SAE_mad project after v3 closed the rescue-by-amplificatio
 Documents the experimental record from the pivot toward "SAE features as a groundedness
 / format-invariance monitor" using the triage replication dataset.
 
-**Status**: Phases 0–5 complete on Gemma 3 4B IT, Gemma 3 12B IT, **and Qwen3-8B**.
-Phase 6 (causal intervention via format-direction-feature ablation) running
-at the time of this update. Phase 1A clinician adjudication out for review.
-Targeting **EMNLP 2026 via ARR May 25**.
+**Status**: Phases 0–7 complete on Gemma 3 4B IT, Gemma 3 12B IT, **and Qwen3-8B**.
+Phase 1A clinician adjudication out for review. Targeting **EMNLP 2026 via
+ARR May 25**.
 
 Three families' worth of evidence: Gemma 4B (JumpReLU SAE) shows the cleanest
 multi-layer Version B; Gemma 12B reveals the behavioral format effect attenuates
@@ -777,28 +776,98 @@ residual stream is identical), this makes the Version B argument
 mechanistically explicit and defensible at the feature level rather
 than just at aggregate-statistic level.
 
-## Phase 6 — Causal intervention (running)
+## Phase 6 — SAE-feature ablation: null
 
 **Question**: If we ablate features 3833, 10012, 980 at L29 during NL
 inference (subtract their SAE-reconstructed contribution from the
 residual stream), does the behavioral NL accuracy on the 60
 paper-canonical cases shift?
 
-**Setup**: three-arm comparison on the 60 NL prompts:
-- Arm 1: vanilla generation (no ablation, replicates Phase 0.5 cell A=NL)
-- Arm 2: ablate format-direction features (3833, 10012, 980)
-- Arm 3: ablate three magnitude-matched random control features
+**Result**: 0/60 letter predictions changed in either ablation arm
+relative to vanilla NL (33/60 = 55.0% across all three arms):
 
-**Predictions**:
-- *Stronger Version B*: ablation removes the "this prompt expects a
-  constrained letter answer" signal; NL accuracy drifts toward NF
-  baseline.
-- *Weaker version (consistent with Basu et al. 2026 and v3 nulls)*:
-  SAE feature ablation produces no meaningful behavioral change
-  because SAE features are readouts not drivers. Either result is
-  informative; we report the actual outcome.
+| Arm | Correct | Accuracy |
+|---|---|---|
+| Vanilla NL | 33/60 | 55.0% |
+| Ablate format-direction (3833, 10012, 980) | 33/60 | 55.0% |
+| Ablate random control (171, 1767, 3555) | 33/60 | 55.0% |
 
-**Status**: running. Output will be at `results/phase6_causal_intervention.json`.
+**Diagnostic** (`phase6_debug.py`): the ablation hook IS firing and IS
+modifying the residual at the expected magnitude (mean 264 norm
+subtracted per token, peak 6,795 on the strongest answer-key tokens).
+However, the residual stream at L29 has per-token norm ~60,000 — the
+ablation magnitude is ~0.4% of the residual on average, peaking at
+~11% on the strongest answer-key token positions. Insufficient to flip
+the next-token argmax.
+
+**Reading**: the format direction is real, the features identified by
+Phase 5 are real, but discrete-feature ablation of three features at
+one layer is too small a perturbation to change letter outputs. This is
+consistent with concurrent work [Basu et al. 2026, who show four
+mechanistic intervention methods including SAE feature steering produce
+zero correction effect on similar clinical-triage tasks] and with our
+own v3 null on cross-lingual rescue.
+
+**Files**: `phase6_causal_intervention.py`, `phase6_debug.py`,
+`results/phase6_causal_intervention.json`.
+
+## Phase 7 — ActAdd-style steering: near-null
+
+**Question**: Does the *full* residual-space format direction at L29
+have causal weight? Phase 6 only touched 0.4% of the residual via three
+SAE features; Phase 7 tests whether the entire (NL−NF) direction —
+including the 99%+ of variance that the SAE basis doesn't isolate to a
+few features — has behavioral causal effect.
+
+**Setup**: compute v = mean(NL_residual) − mean(NF_residual) at L29
+across the 60 cases (||v|| = 1,012). During NL inference, hook L29 to
+add −α · v at all token positions for α ∈ {0, 0.5, 1.0, 2.0, 4.0}.
+Five arms × 60 cases = 300 generations.
+
+**Result**: accuracy 33/60 = 55.0% across all five α. Only 2/60 cases
+shift letter predictions (E6 and F2, both gold = B/C, both shifting
+C → B at α ∈ {2, 4}). Both shifts stay within the permissive gold range,
+so accuracy is unchanged. The shift direction is opposite to what
+NF-like behavior would predict (NF is more accurate on aggregate; the
+2-case shifts go toward less-urgent letters), consistent with noise
+rather than systematic causal signal at this perturbation magnitude
+(~6.7% of residual norm at α=4).
+
+**Reading**: even with continuous-direction steering — the kind of
+intervention specifically designed to capture the 99% of residual
+variance that SAE features miss — the format direction does not drive
+behavior at L29 with sufficient causal weight to flip letter outputs.
+
+**Files**: `phase7_steering_vector.py`,
+`results/phase7_steering_vector.json`.
+
+## Convergent reading of Phases 5–7
+
+Three independent results triangulate the readout-not-driver picture:
+
+1. **Phase 5A (top-token interpretation)** identifies *what* the format
+   direction is in feature space: SAE features that fire exclusively on
+   the literal forced-letter answer-key scaffold tokens.
+2. **Phase 6 (discrete SAE-feature ablation)** shows that subtracting
+   those features' contribution from the residual at L29 produces
+   exactly zero behavioral change across 60 cases.
+3. **Phase 7 (continuous ActAdd-style steering)** shows that subtracting
+   the full residual-space format direction at L29 produces near-zero
+   behavioral change (2/60 within-permissive-gold shifts at high α).
+
+Combined with concurrent work showing four mechanistic intervention
+methods fail on Qwen 2.5 7B triage [Basu et al. 2026] and our own prior
+null on cross-lingual rescue [v3 of this repo], the empirical picture
+is: SAE features and the residual directions they decompose are
+detectable, interpretable monitors of model state — but at the
+single-layer perturbation magnitudes we can apply without breaking
+generation, they are not causally sufficient intervention points to
+drive these output behaviors.
+
+This is, on its own, a contribution: the paper goes from "we describe
+where the format effect lives" (interpretive) to "we describe where it
+lives AND directly test interventions on that location, both of which
+confirm the readout-not-driver picture for this setting" (empirical).
 
 ## Open questions / planned next steps (NeurIPS workshop sprint)
 

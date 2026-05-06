@@ -501,19 +501,75 @@ content-relevant random pool, and the qualitative direction is unchanged.
 
 ### 4.7 Stratification at 4B: format-flipped cases
 
-The format_flipped stratum (n=13 at 4B, where the format physically flipped the
-answer between B wrong and both-judges-D-right) is the most stringent. Per-token
+The format-flipped stratum (n=13 at 4B, where the format physically flipped the
+answer between NL wrong and both-judges-NF-right) is the most stringent. Per-token
 max activations on these cases are within 0–4% across NL and NF (table above for
 E3, E4, E9 — all in this stratum). Despite the model producing different letter
 outputs, the medical-feature signature on the clinical tokens is essentially
 identical. This is the cleanest evidence that the format effect operates
 downstream of the clinical encoding rather than within it.
 
+### 4.8 Causal interventions on the format direction
+
+Sections 4.4--4.5 localize the format direction in residual space and name
+the SAE features that carry it. Whether intervening on that direction
+*causally* changes letter outputs is a separate, stronger claim. We test
+two intervention modalities at Gemma 3 4B IT, L29, on the same 60 NL
+prompts.
+
+\textbf{Discrete SAE-feature ablation.} For each NL forward pass we
+register a hook at L29 that subtracts the SAE-reconstructed contribution
+of the three top format-direction features identified in
+Section~4.5 (3833, 10012, 980). A control arm ablates three
+magnitude-matched random features in the same SAE basis. A separate
+diagnostic confirms the hook fires on every forward and modifies the
+residual at the expected magnitude (mean 264 norm subtracted per token,
+peak 6{,}795 norm on the strongest answer-key tokens). Result:
+\textbf{0/60 letter predictions change} in either ablation arm
+relative to vanilla NL (33/60 = 55.0\% in all three arms).
+The intervention is genuine but small relative to the L29 residual
+norm (${\sim}60{,}000$ per token); the ablation magnitude is ${\sim}0.4\%$
+of the residual on average and peaks at ${\sim}11\%$ on the strongest
+answer-key token positions, insufficient to flip the next-token argmax.
+
+\textbf{Continuous ActAdd-style steering.} A stronger intervention test
+that subtracts the full residual-space format direction rather than only
+its projection onto three discrete features. We compute
+$v = \langle r_{NL}\rangle - \langle r_{NF}\rangle$ at L29 (case-averaged
+mean residuals at content tokens; $\|v\| = 1{,}012$), then for each NL
+forward pass at $\alpha \in \{0, 0.5, 1.0, 2.0, 4.0\}$ register a hook
+that adds $-\alpha \cdot v$ to the L29 output at every token. Result:
+\textbf{accuracy is 33/60 = 55.0\% across all five $\alpha$}; only 2/60
+letter predictions change at $\alpha \in \{2, 4\}$ (cases E6 and F2,
+both gold = B/C, both shifting from C to B and remaining within the
+permissive gold range). The shift direction is opposite to what
+NF-like behavior would predict, consistent with noise rather than
+meaningful causal signal at this perturbation magnitude
+(${\sim}6.7\%$ of the L29 residual norm at $\alpha = 4$).
+
+\textbf{Reading.} Both intervention modalities produce near-null
+behavioral effects: the discrete-feature ablation cleanly null, the
+continuous direction subtraction with at most 2/60 prediction shifts
+that do not change accuracy. Combined with concurrent intervention
+results on a different model in the same task family
+\cite{basu2026interpretability} and our own prior null on a
+different clinical
+question~\cite{frailenavarro2026saemad}, three intervention modalities
+across three studies converge on a single conclusion: the format effect
+is detectable and interpretable in representation space but not, at
+the magnitude of perturbation we can apply without breaking generation,
+isolatable to a single layer/direction with sufficient causal control to
+drive the behavior. The deployment claim of this paper --- SAE features
+as a format-invariant monitor of clinical groundedness --- plays to
+their well-supported role as readouts; the complementary application
+of using these same features as causal steering levers is, on present
+evidence, not viable for this task at single-layer scale.
+
 ---
 
 ## 5. Discussion
 
-\textbf{Convergent evidence for Version B.} Three pieces of independent
+\textbf{Convergent evidence for Version B.} Four pieces of independent
 evidence converge on the same mechanistic conclusion. (i) Magnitude
 invariance: in all three models the deep-layer medical features fire within
 0--4\% per token on identical clinical content across format conditions, with
@@ -529,7 +585,14 @@ makes this isolation as clean as the data allows. (iii) Length-invariant
 direction analysis: the residual difference that survives max-pool
 aggregation loads on \emph{non-medical} features in the SAE basis, with
 medical features sitting at the 13--90\% percentile of $|$alignment$|$
-across the three models.
+across the three models. (iv) Causal-intervention nulls: discrete
+ablation of the top format-direction features (Section~4.8) and continuous
+ActAdd-style steering along the case-averaged format direction at L29
+both produce near-null behavioral effects (0/60 and 2/60 prediction
+shifts respectively), establishing that the format direction is detectable
+in representation space but not, at single-layer perturbation magnitudes,
+isolatable to a few features or a single residual direction with sufficient
+causal control to drive letter outputs.
 
 \textbf{Top-token analysis names the format-direction features.} In Gemma 3
 4B IT at L29, the top features by alignment with the (NL${-}$NF) max-pool
@@ -601,12 +664,27 @@ scoring diverges. SAE features at the deep encoding layer are a candidate
 deployable monitor: a real-time clinical chatbot could check
 medical-feature signatures against a calibrated reference distribution
 and flag genuine drift in clinical understanding independently of any
-format change introduced by the calling application. The application plays
-to what SAE features have been shown to be (interpretable readouts) rather
-than what intervention-based methods including
-ours~\cite{frailenavarro2026saemad} and
-others~\cite{basu2026interpretability} have found difficult to make them
-into (causally-sufficient correctors).
+format change introduced by the calling application.
+
+The application plays to what SAE features have been shown to be
+(interpretable readouts of model state) rather than what
+intervention-based approaches have struggled to make them into
+(causally-sufficient correctors of behavior). The two intervention
+experiments in Section~4.8 are direct evidence for this in our setting:
+discrete SAE-feature ablation and continuous ActAdd-style steering on
+the same residual direction both produce near-null behavioral effects,
+even when the features and direction we target are precisely those
+identified by the top-token analysis of Section~4.5. Combined with
+concurrent work showing four mechanistic intervention methods fail to
+reliably correct triage errors on a different
+model~\cite{basu2026interpretability} and our prior null on
+cross-lingual rescue~\cite{frailenavarro2026saemad}, the present
+evidence indicates that single-layer interventions on small numbers of
+features or single residual directions do not provide reliable causal
+control of these output behaviors. The monitoring application succeeds
+on what SAE features deliver well; an intervention application would
+require either richer multi-layer/multi-feature interventions, or
+modifying the output stage directly, neither of which we attempt here.
 
 ---
 
