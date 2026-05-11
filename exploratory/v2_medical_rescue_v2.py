@@ -431,9 +431,9 @@ def main():
             for l, res in all_results.items()
         },
     }
-    with open("/root/results/v2_medical_rescue_v2.json", "w") as f:
+    with open("results/v2_medical_rescue_v2.json", "w") as f:
         json.dump(output, f, indent=2)
-    print("\nResults saved to /root/results/v2_medical_rescue_v2.json")
+    print("\nResults saved to results/v2_medical_rescue_v2.json")
 
     del model
     for info in all_features_by_layer.values():

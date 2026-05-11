@@ -177,7 +177,7 @@ print(f"\n=== HW5 PASSED ===")
 print("Multilingual pipeline works. Key observations above.")
 print("\nNext steps:")
 print("  1. Draft your corpus.json (see corpus_template.json)")
-print("  2. Run the v1 exploration: python3 v1_exploration.py")
+print("  2. Run the v1 exploration: python3 exploratory/v1_exploration.py")
 
 del model, saes
 torch.cuda.empty_cache()

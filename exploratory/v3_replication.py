@@ -583,9 +583,9 @@ def main():
         "random_feature_results": random_results,
         "top3_results": top3_results,
     }
-    with open("/root/results/v3_replication.json", "w") as f:
+    with open("results/v3_replication.json", "w") as f:
         json.dump(output, f, indent=2)
-    print(f"\nSaved to /root/results/v3_replication.json")
+    print(f"\nSaved to results/v3_replication.json")
 
     del model, sae
     torch.cuda.empty_cache()

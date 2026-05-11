@@ -187,8 +187,8 @@ We identify highly selective, language-agnostic medical SAE features in Gemma 3 
 ### Infrastructure
 | File | Purpose |
 |------|---------|
-| `vast_gpu.sh` | Vast.ai instance management |
-| `bootstrap_remote.sh` | Remote setup |
+| `infra/vast_gpu.sh` | Vast.ai instance management |
+| `infra/bootstrap_remote.sh` | Remote setup |
 
 ### Results
 | File | Experiment |

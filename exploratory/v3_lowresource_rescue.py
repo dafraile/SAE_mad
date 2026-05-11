@@ -521,9 +521,9 @@ def main():
         "top3_en_results": top3_results,
         "spanish_results": spanish_results,
     }
-    with open("/root/results/v3_lowresource_rescue.json", "w") as f:
+    with open("results/v3_lowresource_rescue.json", "w") as f:
         json.dump(output, f, indent=2)
-    print(f"\nSaved to /root/results/v3_lowresource_rescue.json")
+    print(f"\nSaved to results/v3_lowresource_rescue.json")
 
     del model, sae
     torch.cuda.empty_cache()

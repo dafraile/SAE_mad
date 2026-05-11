@@ -267,9 +267,9 @@ def main():
         "es_control_results": es_ctrl_results,
     }
 
-    with open("results/v2_medical_baseline.json", "w") as f:
+    with open("results/v2_medical_baseline_4b.json", "w") as f:
         json.dump(output, f, indent=2)
-    print(f"\nDetailed results saved to results/v2_medical_baseline.json")
+    print(f"\nDetailed results saved to results/v2_medical_baseline_4b.json")
 
     del model, tokenizer
     torch.cuda.empty_cache()

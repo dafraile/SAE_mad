@@ -1,7 +1,7 @@
 """
 Generate the workshop paper figures from results/*.json.
 
-Outputs to figures/ as PDF (vector) + PNG (preview).
+Outputs to paper/figures/ as PDF (vector) + PNG (preview).
 
 Figures:
   fig1: behavioral phenomenon — three-cell accuracy on 4B and 12B
@@ -19,8 +19,15 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 import seaborn as sns
 
-OUT_DIR = Path("figures")
+ROOT = Path(__file__).resolve().parents[1]
+RESULTS_DIR = ROOT / "results"
+OUT_DIR = Path(__file__).resolve().parent / "figures"
 OUT_DIR.mkdir(exist_ok=True)
+
+
+def load_result(name: str):
+    with (RESULTS_DIR / name).open() as f:
+        return json.load(f)
 
 # Paper-friendly style
 sns.set_theme(style="whitegrid", context="paper", font_scale=1.05)
@@ -63,12 +70,12 @@ def wilson_ci(k, n, z=1.96):
 
 def fig1_behavioral():
     # 4B from results/phase0_5_three_cells.json + adjudicated paper-scale
-    p4b = json.load(open("results/phase0_5_three_cells.json"))
-    adj4b = json.load(open("results/phase0_5_D_for_adjudication_adjudicated_paper.json"))
+    p4b = load_result("phase0_5_three_cells.json")
+    adj4b = load_result("phase0_5_D_for_adjudication_adjudicated_paper.json")
 
     # 12B from results/phase3b_12b_phase0_5.json + adjudicated
-    p12b = json.load(open("results/phase3b_12b_phase0_5.json"))
-    adj12b = json.load(open("results/phase3b_12b_D_for_adjudication_adjudicated_paper.json"))
+    p12b = load_result("phase3b_12b_phase0_5.json")
+    adj12b = load_result("phase3b_12b_D_for_adjudication_adjudicated_paper.json")
 
     def stats_for(cell_results, judge_results=None, cell="A"):
         if cell in ("A", "B"):
@@ -142,9 +149,9 @@ def fig1_behavioral():
 
 def fig2_modindex():
     # Load 4B Phase 1b magnitude-matched
-    p1b_4b = json.load(open("results/phase1b_magnitude_matched.json"))
-    p1b_12b = json.load(open("results/phase3b_12b_phase1b.json"))
-    p4q = json.load(open("results/phase4_qwen_L31.json"))
+    p1b_4b = load_result("phase1b_magnitude_matched.json")
+    p1b_12b = load_result("phase3b_12b_phase1b.json")
+    p4q = load_result("phase4_qwen_L31.json")
 
     # Aggregate per (model, layer, stratum) the bootstrap-mean med, rnd, and diff.
     # For Gemma we use the format_flipped + both_right strata as the headline;
@@ -239,7 +246,7 @@ def fig2_modindex():
 
 def fig3_direction():
     # Use 4B L29 Phase 2b
-    p2b = json.load(open("results/phase2b_dilution_check.json"))
+    p2b = load_result("phase2b_dilution_check.json")
     info = p2b["by_layer"]["29"]
     med_feats = info["medical_features"]
     n_total = info["full_mean_pool"]["top10"][0]  # to derive — use saved data length
@@ -293,7 +300,7 @@ def fig3_direction():
                            "rank_pct": 100 * r / n_total_4b})
 
     # 12B L31
-    p12b_2b = json.load(open("results/phase3b_12b_phase2b.json"))
+    p12b_2b = load_result("phase3b_12b_phase2b.json")
     info12 = p12b_2b["by_layer"]["31"]
     for f in info12["medical_features"]:
         r = info12["max_pool"]["ranks"][str(f)]
@@ -301,7 +308,7 @@ def fig3_direction():
                            "rank_pct": 100 * r / 16384})
 
     # Qwen L31
-    p4q = json.load(open("results/phase4_qwen_L31.json"))
+    p4q = load_result("phase4_qwen_L31.json")
     for f in p4q["medical_features"]:
         r = p4q["phase2b_max_pool"]["medical_ranks"][str(f)]
         rows_ranks.append({"model": "Qwen3-8B\nL31", "feature": str(f),

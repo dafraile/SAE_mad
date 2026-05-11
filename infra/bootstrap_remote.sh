@@ -1,17 +1,18 @@
 #!/bin/bash
 # Bootstrap script: sets up a new vast.ai instance for SAE exploration.
 # Run from your local machine:
-#   bash bootstrap_remote.sh <port> <ip>
+#   bash infra/bootstrap_remote.sh <port> <ip>
 # Example:
-#   bash bootstrap_remote.sh 25791 140.150.159.2
+#   bash infra/bootstrap_remote.sh 25791 140.150.159.2
 
 set -e
 
-PORT="${1:?Usage: bootstrap_remote.sh <port> <ip>}"
-IP="${2:?Usage: bootstrap_remote.sh <port> <ip>}"
+PORT="${1:?Usage: infra/bootstrap_remote.sh <port> <ip>}"
+IP="${2:?Usage: infra/bootstrap_remote.sh <port> <ip>}"
 SSH="ssh -o IdentityFile=~/.ssh/id_rsa -p $PORT root@$IP"
 SCP="scp -o IdentityFile=~/.ssh/id_rsa -P $PORT"
-LOCAL_DIR="$(cd "$(dirname "$0")" && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 echo "=== Bootstrapping remote instance at $IP:$PORT ==="
 
@@ -21,12 +22,24 @@ $SSH bash -c '"pkill -9 -f vllm 2>/dev/null || true; mkdir -p /workspace/sae_mad
 
 # Step 2: Upload all project files
 echo "--- Step 2: Uploading files ---"
-$SCP "$LOCAL_DIR"/*.py "$LOCAL_DIR"/*.json "$LOCAL_DIR"/*.sh root@$IP:/workspace/sae_mad/
+UPLOAD_ITEMS=(README.md setup.sh exploratory paper results clinician_package infra)
+if [ -d "$PROJECT_ROOT/nature_triage_expanded_replication" ]; then
+    UPLOAD_ITEMS+=(nature_triage_expanded_replication)
+fi
+tar -C "$PROJECT_ROOT" \
+    --exclude '.git' \
+    --exclude '__pycache__' \
+    --exclude '*.pyc' \
+    --exclude '.DS_Store' \
+    --exclude '.venv' \
+    --exclude 'remote_cache/*' \
+    -czf - "${UPLOAD_ITEMS[@]}" \
+    | $SSH "tar -xzf - -C /workspace/sae_mad"
 
 # Step 3: Upload cached activations if they exist (saves re-running inference)
-if [ -f "$LOCAL_DIR/remote_cache/cached_activations.pt" ]; then
+if [ -f "$PROJECT_ROOT/remote_cache/cached_activations.pt" ]; then
     echo "--- Step 3: Uploading cached activations (502MB, may take a minute) ---"
-    $SCP "$LOCAL_DIR/remote_cache/cached_activations.pt" root@$IP:/workspace/sae_mad/
+    $SCP "$PROJECT_ROOT/remote_cache/cached_activations.pt" root@$IP:/workspace/sae_mad/
 else
     echo "--- Step 3: No cached activations to upload ---"
 fi
@@ -55,7 +68,7 @@ echo "SSH in with: ssh -p $PORT root@$IP"
 echo "Then: cd /workspace/sae_mad"
 echo ""
 echo "To re-run analysis only (using cached activations):"
-echo "  python3 v1_exploration.py --analyze"
+echo "  python3 exploratory/v1_exploration.py --analyze"
 echo ""
 echo "To re-run everything:"
-echo "  python3 v1_exploration.py"
+echo "  python3 exploratory/v1_exploration.py"

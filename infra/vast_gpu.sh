@@ -2,14 +2,14 @@
 # vast_gpu.sh -- Manage vast.ai GPU instances for research experiments
 #
 # Usage:
-#   bash vast_gpu.sh search [profile]     Search for offers matching a GPU profile
-#   bash vast_gpu.sh launch [profile]     Launch the cheapest matching instance
-#   bash vast_gpu.sh status               Show running instances
-#   bash vast_gpu.sh ssh [instance_id]    SSH into an instance
-#   bash vast_gpu.sh setup [instance_id]  Bootstrap an instance with project files
-#   bash vast_gpu.sh pull [instance_id]   Pull results/data from instance
-#   bash vast_gpu.sh destroy [instance_id] Destroy an instance
-#   bash vast_gpu.sh list-profiles        List available GPU profiles
+#   bash infra/vast_gpu.sh search [profile]     Search for offers matching a GPU profile
+#   bash infra/vast_gpu.sh launch [profile]     Launch the cheapest matching instance
+#   bash infra/vast_gpu.sh status               Show running instances
+#   bash infra/vast_gpu.sh ssh [instance_id]    SSH into an instance
+#   bash infra/vast_gpu.sh setup [instance_id]  Bootstrap an instance with project files
+#   bash infra/vast_gpu.sh pull [instance_id]   Pull results/data from instance
+#   bash infra/vast_gpu.sh destroy [instance_id] Destroy an instance
+#   bash infra/vast_gpu.sh list-profiles        List available GPU profiles
 #
 # GPU Profiles (pick the cheapest that fits your task):
 #   tiny    - 10GB+ VRAM (3060, 2080Ti) -- Gemma 3 1B, small SAE experiments
@@ -20,6 +20,7 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 SSH_KEY="$HOME/.ssh/id_rsa"
 
 # GPU profiles: min VRAM, reliability, and optional GPU name filter
@@ -85,8 +86,8 @@ case "$cmd" in
             --onstart-cmd "mkdir -p /workspace/sae_mad"
 
         echo ""
-        echo "Instance creating. Run 'bash vast_gpu.sh status' to check when it's ready."
-        echo "Once running, run 'bash vast_gpu.sh setup <instance_id>' to bootstrap."
+        echo "Instance creating. Run 'bash infra/vast_gpu.sh status' to check when it's ready."
+        echo "Once running, run 'bash infra/vast_gpu.sh setup <instance_id>' to bootstrap."
         ;;
 
     status)
@@ -97,8 +98,8 @@ case "$cmd" in
     ssh)
         instance_id="$arg"
         if [ "$instance_id" = "tiny" ] || [ -z "$instance_id" ]; then
-            echo "Usage: bash vast_gpu.sh ssh <instance_id>"
-            echo "Run 'bash vast_gpu.sh status' to find your instance ID."
+            echo "Usage: bash infra/vast_gpu.sh ssh <instance_id>"
+            echo "Run 'bash infra/vast_gpu.sh status' to find your instance ID."
             exit 1
         fi
 
@@ -117,7 +118,7 @@ else:
         PORT=$(echo "$SSH_INFO" | cut -d' ' -f2)
 
         if [ "$HOST" = "NOT_READY" ]; then
-            echo "Instance not ready yet. Check 'bash vast_gpu.sh status'."
+            echo "Instance not ready yet. Check 'bash infra/vast_gpu.sh status'."
             exit 1
         fi
 
@@ -128,7 +129,7 @@ else:
     setup)
         instance_id="$arg"
         if [ "$instance_id" = "tiny" ] || [ -z "$instance_id" ]; then
-            echo "Usage: bash vast_gpu.sh setup <instance_id>"
+            echo "Usage: bash infra/vast_gpu.sh setup <instance_id>"
             exit 1
         fi
 
@@ -158,12 +159,24 @@ else:
 
         # Upload project files
         echo "--- Uploading project files ---"
-        $SCP_CMD "$SCRIPT_DIR"/*.py "$SCRIPT_DIR"/*.json root@"$HOST":/workspace/sae_mad/ 2>/dev/null || true
+        UPLOAD_ITEMS=(README.md setup.sh exploratory paper results clinician_package infra)
+        if [ -d "$PROJECT_ROOT/nature_triage_expanded_replication" ]; then
+            UPLOAD_ITEMS+=(nature_triage_expanded_replication)
+        fi
+        tar -C "$PROJECT_ROOT" \
+            --exclude '.git' \
+            --exclude '__pycache__' \
+            --exclude '*.pyc' \
+            --exclude '.DS_Store' \
+            --exclude '.venv' \
+            --exclude 'remote_cache/*' \
+            -czf - "${UPLOAD_ITEMS[@]}" \
+            | $SSH_CMD "tar -xzf - -C /workspace/sae_mad"
 
         # Upload cached activations if they exist
-        if [ -f "$SCRIPT_DIR/remote_cache/cached_activations.pt" ]; then
+        if [ -f "$PROJECT_ROOT/remote_cache/cached_activations.pt" ]; then
             echo "--- Uploading cached activations (may take a minute) ---"
-            $SCP_CMD "$SCRIPT_DIR/remote_cache/cached_activations.pt" root@"$HOST":/workspace/sae_mad/
+            $SCP_CMD "$PROJECT_ROOT/remote_cache/cached_activations.pt" root@"$HOST":/workspace/sae_mad/
         fi
 
         # Set up HF token
@@ -186,14 +199,14 @@ else:
 
         echo ""
         echo "=== Setup complete! ==="
-        echo "SSH in: bash vast_gpu.sh ssh $instance_id"
-        echo "Then:   cd /workspace/sae_mad && python3 v1_exploration.py"
+        echo "SSH in: bash infra/vast_gpu.sh ssh $instance_id"
+        echo "Then:   cd /workspace/sae_mad && python3 paper/scripts/phase0_capability_floor.py"
         ;;
 
     pull)
         instance_id="$arg"
         if [ "$instance_id" = "tiny" ] || [ -z "$instance_id" ]; then
-            echo "Usage: bash vast_gpu.sh pull <instance_id>"
+            echo "Usage: bash infra/vast_gpu.sh pull <instance_id>"
             exit 1
         fi
 
@@ -208,15 +221,15 @@ print(f\"{info.get('ssh_host','')} {info.get('ssh_port','')}\")
         SCP_CMD="scp -i $SSH_KEY -P $PORT"
 
         echo "=== Pulling data from instance $instance_id ==="
-        mkdir -p "$SCRIPT_DIR/remote_cache" "$SCRIPT_DIR/results"
+        mkdir -p "$PROJECT_ROOT/remote_cache" "$PROJECT_ROOT/results"
 
         # Pull cached activations
         echo "--- Pulling cached activations ---"
-        $SCP_CMD root@"$HOST":/workspace/sae_mad/cached_activations.pt "$SCRIPT_DIR/remote_cache/" 2>/dev/null && echo "OK" || echo "Not found"
+        $SCP_CMD root@"$HOST":/workspace/sae_mad/cached_activations.pt "$PROJECT_ROOT/remote_cache/" 2>/dev/null && echo "OK" || echo "Not found"
 
         # Pull results
         echo "--- Pulling results ---"
-        $SCP_CMD root@"$HOST":/workspace/sae_mad/results/* "$SCRIPT_DIR/results/" 2>/dev/null && echo "OK" || echo "Not found"
+        $SCP_CMD root@"$HOST":/workspace/sae_mad/results/* "$PROJECT_ROOT/results/" 2>/dev/null && echo "OK" || echo "Not found"
 
         echo "=== Pull complete ==="
         ;;
@@ -224,7 +237,7 @@ print(f\"{info.get('ssh_host','')} {info.get('ssh_port','')}\")
     destroy)
         instance_id="$arg"
         if [ "$instance_id" = "tiny" ] || [ -z "$instance_id" ]; then
-            echo "Usage: bash vast_gpu.sh destroy <instance_id>"
+            echo "Usage: bash infra/vast_gpu.sh destroy <instance_id>"
             exit 1
         fi
         echo "Destroying instance $instance_id..."
@@ -248,12 +261,12 @@ print(f\"{info.get('ssh_host','')} {info.get('ssh_port','')}\")
         echo "Profiles: tiny (1B models), medium (4B), large (multi-model), huge (frontier)"
         echo ""
         echo "Typical workflow:"
-        echo "  bash vast_gpu.sh search tiny          # Find cheap GPUs"
-        echo "  bash vast_gpu.sh launch tiny          # Launch cheapest one"
-        echo "  bash vast_gpu.sh status               # Wait for 'running'"
-        echo "  bash vast_gpu.sh setup <id>           # Upload files + install deps"
-        echo "  bash vast_gpu.sh ssh <id>             # SSH in and work"
-        echo "  bash vast_gpu.sh pull <id>            # Save results locally"
-        echo "  bash vast_gpu.sh destroy <id>         # Clean up"
+        echo "  bash infra/vast_gpu.sh search tiny          # Find cheap GPUs"
+        echo "  bash infra/vast_gpu.sh launch tiny          # Launch cheapest one"
+        echo "  bash infra/vast_gpu.sh status               # Wait for 'running'"
+        echo "  bash infra/vast_gpu.sh setup <id>           # Upload files + deps"
+        echo "  bash infra/vast_gpu.sh ssh <id>             # SSH in and work"
+        echo "  bash infra/vast_gpu.sh pull <id>            # Save results locally"
+        echo "  bash infra/vast_gpu.sh destroy <id>         # Clean up"
         ;;
 esac

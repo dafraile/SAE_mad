@@ -393,9 +393,9 @@ def main():
                   f"{best_data['broken']:4d}/{data['n_control']:<3d} {best_data['net']:>+6d}")
 
     # Save
-    with open("/root/results/v2_generalization.json", "w") as f:
+    with open("results/v2_generalization.json", "w") as f:
         json.dump(all_results, f, indent=2)
-    print(f"\nResults saved to /root/results/v2_generalization.json")
+    print(f"\nResults saved to results/v2_generalization.json")
 
     del model, sae
     torch.cuda.empty_cache()

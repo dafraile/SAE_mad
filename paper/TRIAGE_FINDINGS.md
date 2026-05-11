@@ -629,8 +629,10 @@ encoding. **Format invariance is a property of the conceptual-encoding layers,
 not the lexical ones — and the model's ability to translate that conceptual
 encoding into a constrained letter improves with scale.**
 
-**Files**: `results/phase3b_12b_phase0.json`, `phase0_5.json`, `phase1b.json`,
-`phase2b.json`, `phase3b_12b_D_for_adjudication_adjudicated_paper.json`
+**Files**: `results/phase3b_12b_phase0.json`,
+`results/phase3b_12b_phase0_5.json`, `results/phase3b_12b_phase1b.json`,
+`results/phase3b_12b_phase2b.json`,
+`results/phase3b_12b_D_for_adjudication_adjudicated_paper.json`
 
 ## Phase 4 — Qwen Scope cross-family validation
 
@@ -762,8 +764,8 @@ zero.
 
 **Files**: `results/phase5_top_tokens.json`,
 `results/phase5_restricted_random.json`,
-`phase5_top_tokens_and_restricted_random.py`,
-`figures/fig4_top_tokens.{pdf,png}`.
+`paper/scripts/phase5_top_tokens_and_restricted_random.py`,
+`paper/figures/fig4_top_tokens.{pdf,png}`.
 
 ### Verdict
 

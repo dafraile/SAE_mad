@@ -8,5 +8,10 @@ Local helper scripts used by the `/gpu` slash-command skill
 - `vast_gpu.sh` — convenience wrappers for vast.ai instance lifecycle (search,
   launch, destroy).
 
+Run these from the project root, for example:
+```bash
+bash infra/vast_gpu.sh status
+```
+
 The skill itself is at `~/.claude/commands/gpu.md` and on GitHub at
 `github.com/dafraile/claude-gpu-skill`.
