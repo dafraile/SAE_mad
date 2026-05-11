@@ -359,7 +359,7 @@ Cell-level accuracy on the 60 paper-canonical cases:
 | NL: natural + forced-letter | 56.7% | **81.7%** |
 | NF: natural + free-text (GPT judge) | 71.7% | 81.7% |
 | NF: natural + free-text (Claude judge) | 76.7% | 78.3% |
-| NF: both judges agree correct | 70.0% | 76.7% |
+| NF: both judges agree correct | 70.0% | 73.3% |
 | Inter-rater agreement / κ | 88.3% / 0.797 | 76.7% / 0.634 |
 
 **On Gemma 4B, free-text NF outperforms forced-letter NL by +13–20pp
@@ -460,7 +460,7 @@ signature). At Gemma 4B L29: medical-feature ranks 10994 (67%), 470 (3%),
 2523 (15%), 7013 (43%), 10008 (61%); top-aligned features (3833, 10012, 980,
 9485, 755) are non-medical — candidates for the output-instruction features
 that respond to the forced-letter block tokens. Same mid-rank pattern at
-Gemma 12B L31 and L41 (medical features at 32%, 43%, 91%; 32%, 51%, 86%
+Gemma 12B L31 and L41 (medical features at 33%, 51%, 86%; 32%, 43%, 91%
 percentiles). At Qwen L31 two of three medical features sit at 89.5% and
 62.4% percentile (far from format direction); one at 0.1% (top-aligned),
 matching the mixed pattern in Gemma 4B L29.
@@ -549,9 +549,9 @@ mean residuals at content tokens; $\|v\| = 1{,}012$), then for each NL
 forward pass at $\alpha \in \{0, 0.5, 1.0, 2.0, 4.0\}$ register a hook
 that adds $-\alpha \cdot v$ to the L29 output at every token. Result:
 \textbf{accuracy is 33/60 = 55.0\% across all five $\alpha$}; only 2/60
-letter predictions change at $\alpha \in \{2, 4\}$ (cases E6 and F2,
-both gold = B/C, both shifting from C to B and remaining within the
-permissive gold range). The shift direction is opposite to what
+letter predictions change overall --- F2 first shifts at $\alpha=2.0$,
+E6 joins at $\alpha=4.0$ (both gold = B/C, both shifting from C to B
+and remaining within the permissive gold range). The shift direction is opposite to what
 NF-like behavior would predict, consistent with noise rather than
 meaningful causal signal at this perturbation magnitude
 (${\sim}6.7\%$ of the L29 residual norm at $\alpha = 4$).
@@ -635,7 +635,7 @@ the feature level. Where Basu et al. show that interpretability cannot
 
 \textbf{Behavioral scaling and the depth-dependent mechanistic pattern.}
 The forced-letter penalty at Gemma 3 4B (NL accuracy 56.7\% vs NF 70--77\%)
-essentially vanishes at Gemma 3 12B (NL 81.7\% vs NF 76.7--81.7\%).
+essentially vanishes at Gemma 3 12B (NL 81.7\% vs NF 73.3--81.7\%).
 Capability scaling closes the behavioral gap not by changing the clinical
 representation (which is preserved at both scales at deep layers) but by
 improving the output-mapping circuit's translation of that representation
