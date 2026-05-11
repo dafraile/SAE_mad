@@ -98,13 +98,13 @@ of model state) rather than what intervention-based methods, including
 ours, struggle to make them into (causally-sufficient correctors of
 behavior).
 
-**Full record.** [`TRIAGE_FINDINGS.md`](TRIAGE_FINDINGS.md) — phase-by-phase
-empirical record with bootstrap tables, sanity-check verdicts, and
-methodology lessons. [`PAPER_DRAFT.md`](PAPER_DRAFT.md) — workshop paper
-draft with all sections in prose form (currently AI-cadenced; the prose
-will be re-authored by the lead author before EMNLP submission).
-[`ABSTRACT_STRUCTURE.md`](ABSTRACT_STRUCTURE.md) — sentence-slot scaffold
-for the abstract.
+**Full record.** [`paper/TRIAGE_FINDINGS.md`](paper/TRIAGE_FINDINGS.md) —
+phase-by-phase empirical record with bootstrap tables, sanity-check
+verdicts, and methodology lessons. [`paper/PAPER_DRAFT.md`](paper/PAPER_DRAFT.md)
+— workshop paper draft with all sections in prose form (currently
+AI-cadenced; the prose will be re-authored by the lead author before
+EMNLP submission). [`paper/ABSTRACT_STRUCTURE.md`](paper/ABSTRACT_STRUCTURE.md)
+— sentence-slot scaffold for the abstract.
 
 ---
 
@@ -145,8 +145,8 @@ would also produce this result. The skill has subsequently caught two
 methodology-level issues in Phase 2 that smoke-testing alone would not have
 caught.
 
-**Full record.** [`FINDINGS.md`](FINDINGS.md) — complete empirical
-record including the retraction.
+**Full record.** [`exploratory/FINDINGS.md`](exploratory/FINDINGS.md) —
+complete empirical record including the retraction.
 
 ---
 
@@ -156,50 +156,58 @@ If you've just been given access, here's what to read for what.
 
 **Just want the gist** → this README + the headline finding above. ~5 min.
 
-**Reviewer-level read** → [`TRIAGE_FINDINGS.md`](TRIAGE_FINDINGS.md), the
-empirical record. Phase-by-phase, with bootstrap tables, sanity-check
+**Reviewer-level read** → [`paper/TRIAGE_FINDINGS.md`](paper/TRIAGE_FINDINGS.md),
+the empirical record. Phase-by-phase, with bootstrap tables, sanity-check
 verdicts, methodology lessons, and the convergent reading of Phases 5–7.
 ~30 min.
 
-**Paper read** → [`PAPER_DRAFT.md`](PAPER_DRAFT.md). All sections in prose
-form, with figure references and citation keys. Disclaimer: prose voice is
-recognizably AI-cadenced and will be re-authored by the lead author before
-EMNLP submission per ACL paper-integrity policy. The structure, arguments,
-and findings are stable; the words are not. The
-[`ABSTRACT_STRUCTURE.md`](ABSTRACT_STRUCTURE.md) is a sentence-slot
-scaffold for the abstract written so the author can fill in voice.
+**Paper read** → [`paper/PAPER_DRAFT.md`](paper/PAPER_DRAFT.md). All sections
+in prose form, with figure references and citation keys. Disclaimer: prose
+voice is recognizably AI-cadenced and will be re-authored by the lead author
+before EMNLP submission per ACL paper-integrity policy. The structure,
+arguments, and findings are stable; the words are not. The
+[`paper/ABSTRACT_STRUCTURE.md`](paper/ABSTRACT_STRUCTURE.md) is a
+sentence-slot scaffold for the abstract written so the author can fill in
+voice.
 
 **Want to verify a specific claim in the paper** → look up the relevant
-phase in [`TRIAGE_FINDINGS.md`](TRIAGE_FINDINGS.md), then go to the
-matching `phase*.py` script and `results/phase*_*.json` output. The
-figure-generation pipeline is `make_figures.py` and `make_fig4.py`,
-which re-run deterministically from the JSONs.
+phase in [`paper/TRIAGE_FINDINGS.md`](paper/TRIAGE_FINDINGS.md), then go to
+the matching `paper/scripts/phase*.py` script and `results/phase*_*.json`
+output. The figure-generation pipeline is `paper/make_figures.py` and
+`paper/make_fig4.py`, which re-run deterministically from the JSONs at the
+project root.
 
 **Clinician adjudication package** (out for review at time of writing)
 → [`clinician_package/`](clinician_package/). Sixteen blinded cases
 stratified by behavioral outcome; the unblinding key is in the same
 folder for our internal post-adjudication analysis.
 
-### File map
+### Layout
 
-| Path | Purpose |
-|---|---|
-| `TRIAGE_FINDINGS.md` | Phase 2 empirical record (canonical lab notebook) |
-| `PAPER_DRAFT.md` | Workshop paper draft (full prose, awaiting author rewrite) |
-| `ABSTRACT_STRUCTURE.md` | Sentence-slot scaffold for the abstract |
-| `references.bib` | Verified BibTeX entries for paper citations |
-| `FINDINGS.md` | Phase 1 empirical record (the closed null) |
-| `figures/` | `fig1`–`fig4` as PDF (vector, editable text) + PNG (preview) |
-| `make_figures.py`, `make_fig4.py` | Regenerate all paper figures from `results/*.json` |
-| `phase0_*.py` … `phase7_*.py` | Phase 2 experimental scripts (one per phase) |
-| `v1_*.py`, `v2_*.py`, `v3_*.py` | Phase 1 experimental scripts (closed null) |
-| `wire_adjudicator*.py` | Convert phase outputs to LLM-as-judge input format |
-| `build_clinician_package.py` | Build the blinded clinician adjudication CSV |
-| `results/` | All experiment outputs (JSON + CSV) |
-| `clinician_package/` | Blinded adjudication package + unblinding key |
-| `nature_triage_expanded_replication/` | Cloned reference corpus (gitignored, see Fraile Navarro 2026) |
+```
+.
+├── README.md                       # This file
+├── paper/                          # Active workshop paper
+│   ├── PAPER_DRAFT.md              # Full draft (awaiting author rewrite)
+│   ├── ABSTRACT_STRUCTURE.md       # Sentence-slot scaffold for the abstract
+│   ├── TRIAGE_FINDINGS.md          # Lab notebook — canonical empirical record
+│   ├── references.bib              # Verified BibTeX
+│   ├── make_figures.py, make_fig4.py
+│   ├── figures/                    # fig1–fig4 PDF (vector) + PNG (preview)
+│   └── scripts/                    # one script per phase
+├── exploratory/                    # Closed prior work (Phase 1 multilingual rescue null)
+│   ├── README.md, FINDINGS.md
+│   ├── corpus.json, corpus_template.json
+│   ├── hw{1..5}_*.py, v1_*.py, v2_*.py, v3_*.py
+├── results/                        # All experiment outputs (JSON + CSV)
+├── clinician_package/              # Blinded adjudication package + unblinding key
+├── infra/                          # Vast.ai bootstrap helpers
+└── nature_triage_expanded_replication/  # Cloned reference corpus (gitignored)
+```
 
 ### Phase index for the active project
+
+All scripts below live under `paper/scripts/`. Run from project root.
 
 | Phase | What it tests | Result | Script | Output |
 |---|---|---|---|---|
@@ -223,8 +231,8 @@ including the cross-family Qwen run; LLM-as-judge adjudicator API cost ≈
 $2 across two adjudication runs. The figures in `figures/` regenerate
 deterministically from the committed `results/*.json`.
 
-The Phase 1 pipeline is documented in the older sections of `FINDINGS.md`
-and is fully reproducible end-to-end on a 22GB GPU in ~3 hours, ~$0.80.
+The Phase 1 pipeline is documented in `exploratory/FINDINGS.md` and is fully
+reproducible end-to-end on a 22GB GPU in ~3 hours, ~$0.80.
 
 Models used (all gated on HuggingFace, requires HF auth):
 `google/gemma-3-4b-it`, `google/gemma-3-12b-it`, `Qwen/Qwen3-8B`.
@@ -254,7 +262,7 @@ The Phase 2 work sits at the intersection of three literatures:
   Kadavath 2022 (model self-knowledge), Turpin 2023 (unfaithful
   verbalization).
 
-Full BibTeX in [`references.bib`](references.bib).
+Full BibTeX in [`paper/references.bib`](paper/references.bib).
 
 ---
 
@@ -268,7 +276,7 @@ Full BibTeX in [`references.bib`](references.bib).
   year   = {2026},
   url    = {https://github.com/dafraile/SAE_mad},
   note   = {Workshop paper in preparation (target: EMNLP 2026 via ARR).
-            See TRIAGE_FINDINGS.md for the full empirical record.}
+            See paper/TRIAGE_FINDINGS.md for the full empirical record.}
 }
 ```
 
