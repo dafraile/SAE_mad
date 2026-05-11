@@ -461,9 +461,9 @@ def main():
             for m, r in steering_results.items()
         },
     }
-    with open("/root/results/v2_medical_rescue.json", "w") as f:
+    with open("results/v2_medical_rescue.json", "w") as f:
         json.dump(output, f, indent=2)
-    print(f"\nResults saved to /root/results/v2_medical_rescue.json")
+    print(f"\nResults saved to results/v2_medical_rescue.json")
 
     del model, sae
     torch.cuda.empty_cache()

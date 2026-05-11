@@ -468,9 +468,9 @@ def main():
     }
 
     # Save
-    with open("/root/results/v3_feature_validation.json", "w") as f:
+    with open("results/v3_feature_validation.json", "w") as f:
         json.dump(results, f, indent=2)
-    print(f"\nSaved to /root/results/v3_feature_validation.json")
+    print(f"\nSaved to results/v3_feature_validation.json")
 
     del model, sae
     torch.cuda.empty_cache()

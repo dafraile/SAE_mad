@@ -2,12 +2,12 @@
 v1 SAE Exploration: Cross-lingual representation analysis for Gemma 3 1B IT.
 
 Run after completing all hello-world scripts and editing the constants below.
-Requires corpus.json in the same directory.
+Requires exploratory/corpus.json.
 
 Usage:
-    python3 v1_exploration.py              # Run all analyses
-    python3 v1_exploration.py --collect     # Only collect activations
-    python3 v1_exploration.py --analyze     # Only run analyses (needs cached activations)
+    python3 exploratory/v1_exploration.py              # Run all analyses
+    python3 exploratory/v1_exploration.py --collect    # Only collect activations
+    python3 exploratory/v1_exploration.py --analyze    # Only run analyses (needs cached activations)
 """
 import argparse
 import json
@@ -37,9 +37,11 @@ SAE_CONFIG = {
 }
 TARGET_LAYERS = [7, 13, 22]  # early (~27%), middle (~50%), late (~85%)
 USE_CHAT_TEMPLATE = False  # HookedSAETransformer handles raw text directly
-CORPUS_FILE = "corpus.json"
-CACHE_FILE = "cached_activations.pt"
-RESULTS_DIR = "results"
+SCRIPT_DIR = Path(__file__).resolve().parent
+ROOT = SCRIPT_DIR.parent
+CORPUS_FILE = SCRIPT_DIR / "corpus.json"
+CACHE_FILE = ROOT / "cached_activations.pt"
+RESULTS_DIR = ROOT / "results"
 # ============================================================
 
 os.makedirs(RESULTS_DIR, exist_ok=True)

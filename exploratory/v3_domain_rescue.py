@@ -535,9 +535,9 @@ def main():
             print(f"  {s:>6.1f}x  {sgl:+.2%}  {t3:+.2%}  {rnd:+.2%}")
 
     # Save
-    with open("/root/results/v3_domain_rescue.json", "w") as f:
+    with open("results/v3_domain_rescue.json", "w") as f:
         json.dump(all_results, f, indent=2)
-    print(f"\nSaved to /root/results/v3_domain_rescue.json")
+    print(f"\nSaved to results/v3_domain_rescue.json")
 
     del model, sae
     torch.cuda.empty_cache()

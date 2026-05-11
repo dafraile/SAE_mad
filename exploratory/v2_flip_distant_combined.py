@@ -533,9 +533,9 @@ def main():
             print(f"  {cond:12s}: best {s}x -> rescued {d['rescued']}, broken {d['broken']}, net {d['net']:+d}")
 
     # Save
-    with open("/root/results/v2_flip_distant_combined.json", "w") as f:
+    with open("results/v2_flip_distant_combined.json", "w") as f:
         json.dump(all_results, f, indent=2)
-    print(f"\nSaved to /root/results/v2_flip_distant_combined.json")
+    print(f"\nSaved to results/v2_flip_distant_combined.json")
 
     del model, sae
     torch.cuda.empty_cache()

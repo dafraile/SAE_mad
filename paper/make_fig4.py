@@ -10,7 +10,7 @@ Two panels side-by-side:
          Top activations on clinical-content tokens, fire identically across
          NL and NF.
 
-Output: figures/fig4_top_tokens.{pdf,png}
+Output: paper/figures/fig4_top_tokens.{pdf,png}
 """
 from __future__ import annotations
 import json
@@ -21,8 +21,15 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 import seaborn as sns
 
-OUT_DIR = Path("figures")
+ROOT = Path(__file__).resolve().parents[1]
+RESULTS_DIR = ROOT / "results"
+OUT_DIR = Path(__file__).resolve().parent / "figures"
 OUT_DIR.mkdir(exist_ok=True)
+
+
+def load_result(name: str):
+    with (RESULTS_DIR / name).open() as f:
+        return json.load(f)
 
 sns.set_theme(style="white", context="paper", font_scale=1.0)
 mpl.rcParams["pdf.fonttype"] = 42
@@ -198,7 +205,7 @@ def render_panel_simple(ax, title, features, data, color):
 
 
 def main():
-    d = json.load(open("results/phase5_top_tokens.json"))
+    d = load_result("phase5_top_tokens.json")
     top = d["top_tokens"]
 
     # Two-panel figure

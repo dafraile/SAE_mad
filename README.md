@@ -228,7 +228,7 @@ All scripts below live under `paper/scripts/`. Run from project root.
 Phase 2 experiments run on `vast.ai` GPUs (medium tier, 22–48 GB VRAM
 depending on model). Total Phase 2 GPU cost ≈ $5 across all three models
 including the cross-family Qwen run; LLM-as-judge adjudicator API cost ≈
-$2 across two adjudication runs. The figures in `figures/` regenerate
+$2 across two adjudication runs. The figures in `paper/figures/` regenerate
 deterministically from the committed `results/*.json`.
 
 The Phase 1 pipeline is documented in `exploratory/FINDINGS.md` and is fully

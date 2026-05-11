@@ -421,9 +421,9 @@ def main():
         "baselines": baselines,
         "by_layer": {str(l): layer_results[l] for l in SWEEP_LAYERS},
     }
-    with open("/root/results/v3_layer_sweep.json", "w") as f:
+    with open("results/v3_layer_sweep.json", "w") as f:
         json.dump(output, f, indent=2)
-    print(f"\nSaved to /root/results/v3_layer_sweep.json")
+    print(f"\nSaved to results/v3_layer_sweep.json")
 
     del model
     torch.cuda.empty_cache()
