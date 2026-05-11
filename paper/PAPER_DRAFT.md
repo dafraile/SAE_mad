@@ -171,7 +171,16 @@ Qwen3 base checkpoints with $k{=}50$ active features per token out of
 65{,}536 (0.076\% sparsity, more aggressive than Gemma Scope's
 $\sim{}60$--$100$ active at width 16k). The two pipelines therefore make
 different reconstruction--sparsity trade-offs; we treat this as a feature
-of our cross-family validation rather than a confound.
+of our cross-family validation rather than a confound. Concurrent
+work~\cite{frasertaliente2026nla} introduces Natural Language Autoencoders
+(NLAs), an alternative unsupervised method that produces
+natural-language descriptions of LLM activations on Claude models.
+NLAs complement rather than replace SAE-based decomposition: they
+explain activations expressively but require two trained LLM modules
+per target model, making them heavyweight relative to the
+inference-time monitoring application we develop here. NLAs are not
+currently available for the open-weight model families our work uses,
+and we treat NLA-based extension of our analyses as future work.
 
 \textbf{Internal--external dissociation in LLMs.} The conceptual precedent
 for the distinction we test is well established. Probing methods recover
@@ -736,6 +745,17 @@ noise.
 12B and Qwen uses a hand-curated 30-prompt non-medical contrastive
 corpus. A larger, programmatically-generated corpus could surface
 different features and tighten our magnitude-matched random pools.
+
+\textbf{Activation-decomposition method.} We interpret the
+format-direction features identified in Phase~5 via manual top-token
+analysis on a held-out corpus. Concurrent work on Natural Language
+Autoencoders~\cite{frasertaliente2026nla} suggests an automated
+alternative: producing natural-language descriptions of activations
+directly, in place of token-level inspection. Applying NLAs to the
+format-direction features named here is a natural extension of this
+work but requires training NLAs on open-weight models like Gemma~3 and
+Qwen3, for which NLAs are not yet publicly available. We leave this
+cross-method comparison as future work.
 
 ## 7. Conclusion
 
