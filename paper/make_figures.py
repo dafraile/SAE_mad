@@ -128,13 +128,16 @@ def fig1_behavioral():
     ax.set_xticks(x)
     ax.set_xticklabels(cell_labels)
     ax.set_ylabel("Triage accuracy")
-    ax.set_ylim(0, 1.05)
+    # Headroom above the "82%" labels (which sit at data y≈0.88) so the
+    # upper-left legend at axes y≈[0.87, 1.0] does not overlap them.
+    ax.set_ylim(0, 1.25)
     ax.set_yticks(np.arange(0, 1.01, 0.2))
     ax.set_yticklabels([f"{int(t*100)}%" for t in np.arange(0, 1.01, 0.2)])
     ax.legend(loc="upper left", frameon=False, fontsize=9)
     ax.set_title("Behavioral phenomenon: format effect attenuates with scale",
                  fontsize=11, pad=8)
-    ax.text(0.02, -0.32, "Error bars: Wilson 95% CI. NF (free-text) scored by paper-faithful LLM-as-judge (both judges agree).",
+    ax.text(0.02, -0.32,
+            "Error bars: Wilson 95% CI. NF (free-text) scored by paper-faithful LLM-as-judge (both judges agree).",
             transform=ax.transAxes, fontsize=8, style="italic", color="#555555")
     plt.tight_layout()
     plt.savefig(OUT_DIR / "fig1_behavioral.pdf", bbox_inches="tight")
