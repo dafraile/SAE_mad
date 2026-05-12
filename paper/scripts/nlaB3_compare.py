@@ -40,11 +40,19 @@ MEDICAL_KW = {
     "history-taking", "anamnesis", "presenting", "complaint",
 }
 FORMAT_KW = {
-    "letter", "letters", "answer", "answers", "format", "instruction",
-    "instructions", "multiple-choice", "option", "options", "label",
-    "labels", "scaffold", "scaffolding", "response", "constrained",
-    "structured", "list", "enumeration", "enumerated", "choice", "choices",
-    "selection", "multiple choice", "exam", "test", "question-answering",
+    # Words specific to multiple-choice / forced-letter answer scaffolds.
+    # Deliberately exclude "format", "structured", "response", "instruction" —
+    # these appear in content-position descriptions too ("Medical Q&A format
+    # established", "structured clinical question", "response to a question"),
+    # which would double-count.
+    "letter", "letters", "lettered", "alphabetical",
+    "multiple-choice", "multiple choice", "quiz",
+    "option", "options", "choice", "choices",
+    "answer choice", "answer choices",
+    "scaffold", "scaffolding", "label", "labels",
+    "enumeration", "enumerated",
+    "A = ", "B = ", "C = ", "D = ",
+    "A=", "B=", "C=", "D=",
 }
 
 

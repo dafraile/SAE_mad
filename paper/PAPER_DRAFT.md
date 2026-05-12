@@ -574,11 +574,107 @@ their well-supported role as readouts; the complementary application
 of using these same features as causal steering levers is, on present
 evidence, not viable for this task at single-layer scale.
 
+### 4.9 Phase 8 --- Natural-language verification of feature interpretations
+
+\textbf{Motivation.} Phase~5 identifies the format-direction features
+$\{3833, 10012, 980\}$ at Gemma 4B L29 by their top-activating tokens
+(NL-only firing on the forced-letter scaffold ``A = \ldots'', ``B =
+\ldots'' positions, etc.). Concurrent work~\cite{frasertaliente2026nla}
+provides an alternative unsupervised method --- Natural Language
+Autoencoders (NLAs) --- that produces direct natural-language
+descriptions of residual-stream activation vectors. The released
+checkpoints include a pre-trained NLA actor-verbalizer (AV) for
+Gemma~3 12B IT at layer~32. We use this AV to verify, in natural
+language, the interpretation our top-token analysis gives to features
+identified at Gemma 12B L31. The NLA was trained at L32, one layer
+adjacent to our L31 SAE analysis; Version~B (medical $<$ random
+mod-index) holds at both L31 and L41 in our 12B data (\S4.4), so this
+one-layer drift sits inside a stable encoding region.
+
+\textbf{Protocol.} For each of the 60 paper-canonical cases we run
+two forward passes of Gemma~3 12B IT --- one with the NL
+(forced-letter) prompt, one with the NF (free-text) prompt --- and
+capture L32 residual-stream activations at seven token positions:
+``content'' (last clinical-content token; the ``?'' of ``how soon
+should I follow up?'', identical in NL and NF), ``pregen'' (NL-only;
+last user-message token whose hidden state drives the first generated
+letter), and the four NL-only answer-key letter tokens
+``letter\_A/B/C/D''. This yields $60\times 7 = 420$ activation records.
+Each is fed to the NLA AV under greedy decoding (temperature 0,
+max 200 new tokens), with the canonical actor prompt template,
+injection scale 80\,000, and the $\sqrt{d}$ embed-scaling Gemma~3
+requires.
+
+\textbf{Causal-attention sanity check.} The NL\_content and NF\_content
+L32 activations agree to median relative L2 difference $0.28\%$
+(maximum $0.90\%$) on residuals of norm ${\sim}60{,}000$ --- consistent
+with bf16 numerical noise as expected under causal attention with
+byte-identical prefix tokens. The NLA greedy outputs agree
+\emph{semantically} (both 100\% medical) at this position, with
+character-identical strings on 17/60 cases and minor surface variation
+on the rest.
+
+\textbf{Headline result.} Table~\ref{tab:phase8_nla} reports the
+percentage of NLA descriptions per position kind that contain
+clinical-content keywords (\textit{medical, clinical, patient,
+symptom, doctor, diagnosis,} \ldots) vs.\ multiple-choice-scaffold
+keywords (\textit{letter, lettered, quiz, option, choice, multiple
+choice, ``A = ''/``B = '',} \ldots; we deliberately exclude generic
+words like \textit{format} and \textit{structured} which appear in
+both modes).
+
+\begin{center}
+\small
+\begin{tabular}{lrrr}
+\toprule
+Position & Medical~\% & Scaffold~\% & Reading \\
+\midrule
+NF\_content & \textbf{100.0} & 3.3 & Clinical content \\
+NL\_content & \textbf{100.0} & 3.3 & Clinical content (same activation as NF) \\
+NL\_pregen  & 100.0 & \textbf{100.0} & Decision-point: clinical \emph{and} scaffold \\
+NL\_letter\_A & 98.3 & \textbf{100.0} & Scaffold (A = home) \\
+NL\_letter\_B & 6.7  & \textbf{100.0} & Scaffold (cleanest letter) \\
+NL\_letter\_C & 76.7 & \textbf{100.0} & Scaffold (24--48h) \\
+NL\_letter\_D & 100.0 & \textbf{100.0} & Scaffold (D = ER; clinically loaded) \\
+\bottomrule
+\end{tabular}
+\end{center}
+\label{tab:phase8_nla}
+
+\textbf{Representative NLA outputs.} At NL\_content (case E1, ``?''
+of ``follow up?''): \textit{``Medical Q\&A format established:
+structured clinical question seeking advice, with a patient asking
+about post-injury follow-up timing.''} At NL\_pregen (E1, ``.'' of
+``\ldots extra words.''): \textit{``Structured quiz format with answer
+choices, requiring a single lettered answer to follow the prompt
+about a medical/educational passage.''} At NL\_letter\_B (E1):
+\textit{``Structured quiz format with numbered options and a question
+prompt establishes a list of answer choices\ldots\ pattern of
+lettered options, requiring a second option label to follow.''}
+
+\textbf{Reading.} The NLA's natural-language descriptions and our
+Phase~5 top-token analysis are two unsupervised methods trained by
+different labs on different objectives. They converge on the same
+reading of the format direction: clinical content at the
+last-content-token position is described as medical (NF\_content =
+NL\_content = 100\% medical, 3\% scaffold), and scaffold-letter
+positions are described as multiple-choice answer options (letter\_B
+= 7\% medical, 100\% scaffold). The decision-point NL\_pregen
+activation --- the hidden state the model attends to in generating
+its first letter --- has both clinical context \emph{and} explicit
+multiple-choice-format encoding, which is precisely the pattern
+required for the constrained-letter mapping circuit to fire on a
+clinically grounded representation. This is cross-method validation
+rather than a new mechanistic finding; the SAE-based and NLA-based
+interpretations agree on what the format direction at deep layers
+represents, and disagree only on the surface vocabulary used to name
+it.
+
 ---
 
 ## 5. Discussion
 
-\textbf{Convergent evidence for Version B.} Four pieces of independent
+\textbf{Convergent evidence for Version B.} Five pieces of independent
 evidence converge on the same mechanistic conclusion. (i) Magnitude
 invariance: in all three models the deep-layer medical features fire within
 0--4\% per token on identical clinical content across format conditions, with
@@ -601,7 +697,15 @@ both produce near-null behavioral effects (0/60 and 2/60 prediction
 shifts respectively), establishing that the format direction is detectable
 in representation space but not, at single-layer perturbation magnitudes,
 isolatable to a few features or a single residual direction with sufficient
-causal control to drive letter outputs.
+causal control to drive letter outputs. (v) Independent-method
+verbalization: Natural Language Autoencoder descriptions of L32
+activations (Section~4.9) name the same dissociation in plain
+English --- 100\% of NLA descriptions at the last clinical-content
+token mention medical/clinical concepts, while 100\% of descriptions
+at the answer-key letter tokens mention multiple-choice-scaffold
+concepts (letter\_B: 7\% medical, 100\% scaffold) --- closing the
+loop on the top-token reading with a method trained by a different
+lab on a different objective.
 
 \textbf{Top-token analysis names the format-direction features.} In Gemma 3
 4B IT at L29, the top features by alignment with the (NL${-}$NF) max-pool
@@ -746,16 +850,16 @@ noise.
 corpus. A larger, programmatically-generated corpus could surface
 different features and tighten our magnitude-matched random pools.
 
-\textbf{Activation-decomposition method.} We interpret the
-format-direction features identified in Phase~5 via manual top-token
-analysis on a held-out corpus. Concurrent work on Natural Language
-Autoencoders~\cite{frasertaliente2026nla} suggests an automated
-alternative: producing natural-language descriptions of activations
-directly, in place of token-level inspection. Applying NLAs to the
-format-direction features named here is a natural extension of this
-work but requires training NLAs on open-weight models like Gemma~3 and
-Qwen3, for which NLAs are not yet publicly available. We leave this
-cross-method comparison as future work.
+\textbf{Activation-decomposition method scope.} We use both manual
+top-token analysis (Phase~5) and Natural Language Autoencoder
+verbalization (Phase~8 / \S4.9) to interpret the format direction.
+The NLA evidence is limited to Gemma~3 12B IT (the only open-weight
+NLA checkpoint in the published release~\cite{frasertaliente2026nla}
+at layer~32, one layer adjacent to our L31 SAE analysis), and to the
+specific token positions reported. NLA descriptions for Gemma~3 4B
+IT and Qwen3-8B --- needed to extend the cross-method validation
+across our full model coverage --- require training NLAs from
+scratch for those base models and are out of scope for this submission.
 
 ## 7. Conclusion
 

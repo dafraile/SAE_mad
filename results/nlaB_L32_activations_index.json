@@ -1,0 +1,4209 @@
+{
+  "model_id": "google/gemma-3-12b-it",
+  "layer": 32,
+  "d_model": 3840,
+  "n_records": 420,
+  "n_cases": 60,
+  "records": [
+    {
+      "record_id": "E1_NL_content",
+      "case_id": "E1",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 270,
+      "seq_len": 335
+    },
+    {
+      "record_id": "E1_NL_pregen",
+      "case_id": "E1",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 329,
+      "seq_len": 335
+    },
+    {
+      "record_id": "E1_NL_letter_A",
+      "case_id": "E1",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 280,
+      "seq_len": 335
+    },
+    {
+      "record_id": "E1_NL_letter_B",
+      "case_id": "E1",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 288,
+      "seq_len": 335
+    },
+    {
+      "record_id": "E1_NL_letter_C",
+      "case_id": "E1",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 299,
+      "seq_len": 335
+    },
+    {
+      "record_id": "E1_NL_letter_D",
+      "case_id": "E1",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 313,
+      "seq_len": 335
+    },
+    {
+      "record_id": "E1_NF_content",
+      "case_id": "E1",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 270,
+      "seq_len": 276
+    },
+    {
+      "record_id": "E2_NL_content",
+      "case_id": "E2",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 401,
+      "seq_len": 466
+    },
+    {
+      "record_id": "E2_NL_pregen",
+      "case_id": "E2",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 460,
+      "seq_len": 466
+    },
+    {
+      "record_id": "E2_NL_letter_A",
+      "case_id": "E2",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 411,
+      "seq_len": 466
+    },
+    {
+      "record_id": "E2_NL_letter_B",
+      "case_id": "E2",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 419,
+      "seq_len": 466
+    },
+    {
+      "record_id": "E2_NL_letter_C",
+      "case_id": "E2",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 430,
+      "seq_len": 466
+    },
+    {
+      "record_id": "E2_NL_letter_D",
+      "case_id": "E2",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 444,
+      "seq_len": 466
+    },
+    {
+      "record_id": "E2_NF_content",
+      "case_id": "E2",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 401,
+      "seq_len": 407
+    },
+    {
+      "record_id": "E3_NL_content",
+      "case_id": "E3",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 373,
+      "seq_len": 438
+    },
+    {
+      "record_id": "E3_NL_pregen",
+      "case_id": "E3",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 432,
+      "seq_len": 438
+    },
+    {
+      "record_id": "E3_NL_letter_A",
+      "case_id": "E3",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 383,
+      "seq_len": 438
+    },
+    {
+      "record_id": "E3_NL_letter_B",
+      "case_id": "E3",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 391,
+      "seq_len": 438
+    },
+    {
+      "record_id": "E3_NL_letter_C",
+      "case_id": "E3",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 402,
+      "seq_len": 438
+    },
+    {
+      "record_id": "E3_NL_letter_D",
+      "case_id": "E3",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 416,
+      "seq_len": 438
+    },
+    {
+      "record_id": "E3_NF_content",
+      "case_id": "E3",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 373,
+      "seq_len": 379
+    },
+    {
+      "record_id": "E4_NL_content",
+      "case_id": "E4",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 393,
+      "seq_len": 458
+    },
+    {
+      "record_id": "E4_NL_pregen",
+      "case_id": "E4",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 452,
+      "seq_len": 458
+    },
+    {
+      "record_id": "E4_NL_letter_A",
+      "case_id": "E4",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 403,
+      "seq_len": 458
+    },
+    {
+      "record_id": "E4_NL_letter_B",
+      "case_id": "E4",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 411,
+      "seq_len": 458
+    },
+    {
+      "record_id": "E4_NL_letter_C",
+      "case_id": "E4",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 422,
+      "seq_len": 458
+    },
+    {
+      "record_id": "E4_NL_letter_D",
+      "case_id": "E4",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 436,
+      "seq_len": 458
+    },
+    {
+      "record_id": "E4_NF_content",
+      "case_id": "E4",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 393,
+      "seq_len": 399
+    },
+    {
+      "record_id": "E5_NL_content",
+      "case_id": "E5",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 276,
+      "seq_len": 341
+    },
+    {
+      "record_id": "E5_NL_pregen",
+      "case_id": "E5",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 335,
+      "seq_len": 341
+    },
+    {
+      "record_id": "E5_NL_letter_A",
+      "case_id": "E5",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 286,
+      "seq_len": 341
+    },
+    {
+      "record_id": "E5_NL_letter_B",
+      "case_id": "E5",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 294,
+      "seq_len": 341
+    },
+    {
+      "record_id": "E5_NL_letter_C",
+      "case_id": "E5",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 305,
+      "seq_len": 341
+    },
+    {
+      "record_id": "E5_NL_letter_D",
+      "case_id": "E5",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 319,
+      "seq_len": 341
+    },
+    {
+      "record_id": "E5_NF_content",
+      "case_id": "E5",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 276,
+      "seq_len": 282
+    },
+    {
+      "record_id": "E6_NL_content",
+      "case_id": "E6",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 337,
+      "seq_len": 402
+    },
+    {
+      "record_id": "E6_NL_pregen",
+      "case_id": "E6",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 396,
+      "seq_len": 402
+    },
+    {
+      "record_id": "E6_NL_letter_A",
+      "case_id": "E6",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 347,
+      "seq_len": 402
+    },
+    {
+      "record_id": "E6_NL_letter_B",
+      "case_id": "E6",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 355,
+      "seq_len": 402
+    },
+    {
+      "record_id": "E6_NL_letter_C",
+      "case_id": "E6",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 366,
+      "seq_len": 402
+    },
+    {
+      "record_id": "E6_NL_letter_D",
+      "case_id": "E6",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 380,
+      "seq_len": 402
+    },
+    {
+      "record_id": "E6_NF_content",
+      "case_id": "E6",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 337,
+      "seq_len": 343
+    },
+    {
+      "record_id": "E7_NL_content",
+      "case_id": "E7",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 305,
+      "seq_len": 370
+    },
+    {
+      "record_id": "E7_NL_pregen",
+      "case_id": "E7",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 364,
+      "seq_len": 370
+    },
+    {
+      "record_id": "E7_NL_letter_A",
+      "case_id": "E7",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 315,
+      "seq_len": 370
+    },
+    {
+      "record_id": "E7_NL_letter_B",
+      "case_id": "E7",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 323,
+      "seq_len": 370
+    },
+    {
+      "record_id": "E7_NL_letter_C",
+      "case_id": "E7",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 334,
+      "seq_len": 370
+    },
+    {
+      "record_id": "E7_NL_letter_D",
+      "case_id": "E7",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 348,
+      "seq_len": 370
+    },
+    {
+      "record_id": "E7_NF_content",
+      "case_id": "E7",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 305,
+      "seq_len": 311
+    },
+    {
+      "record_id": "E8_NL_content",
+      "case_id": "E8",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 331,
+      "seq_len": 396
+    },
+    {
+      "record_id": "E8_NL_pregen",
+      "case_id": "E8",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 390,
+      "seq_len": 396
+    },
+    {
+      "record_id": "E8_NL_letter_A",
+      "case_id": "E8",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 341,
+      "seq_len": 396
+    },
+    {
+      "record_id": "E8_NL_letter_B",
+      "case_id": "E8",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 349,
+      "seq_len": 396
+    },
+    {
+      "record_id": "E8_NL_letter_C",
+      "case_id": "E8",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 360,
+      "seq_len": 396
+    },
+    {
+      "record_id": "E8_NL_letter_D",
+      "case_id": "E8",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 374,
+      "seq_len": 396
+    },
+    {
+      "record_id": "E8_NF_content",
+      "case_id": "E8",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 331,
+      "seq_len": 337
+    },
+    {
+      "record_id": "E9_NL_content",
+      "case_id": "E9",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 343,
+      "seq_len": 408
+    },
+    {
+      "record_id": "E9_NL_pregen",
+      "case_id": "E9",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 402,
+      "seq_len": 408
+    },
+    {
+      "record_id": "E9_NL_letter_A",
+      "case_id": "E9",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 353,
+      "seq_len": 408
+    },
+    {
+      "record_id": "E9_NL_letter_B",
+      "case_id": "E9",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 361,
+      "seq_len": 408
+    },
+    {
+      "record_id": "E9_NL_letter_C",
+      "case_id": "E9",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 372,
+      "seq_len": 408
+    },
+    {
+      "record_id": "E9_NL_letter_D",
+      "case_id": "E9",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 386,
+      "seq_len": 408
+    },
+    {
+      "record_id": "E9_NF_content",
+      "case_id": "E9",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 343,
+      "seq_len": 349
+    },
+    {
+      "record_id": "E10_NL_content",
+      "case_id": "E10",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 311,
+      "seq_len": 376
+    },
+    {
+      "record_id": "E10_NL_pregen",
+      "case_id": "E10",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 370,
+      "seq_len": 376
+    },
+    {
+      "record_id": "E10_NL_letter_A",
+      "case_id": "E10",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 321,
+      "seq_len": 376
+    },
+    {
+      "record_id": "E10_NL_letter_B",
+      "case_id": "E10",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 329,
+      "seq_len": 376
+    },
+    {
+      "record_id": "E10_NL_letter_C",
+      "case_id": "E10",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 340,
+      "seq_len": 376
+    },
+    {
+      "record_id": "E10_NL_letter_D",
+      "case_id": "E10",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 354,
+      "seq_len": 376
+    },
+    {
+      "record_id": "E10_NF_content",
+      "case_id": "E10",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 311,
+      "seq_len": 317
+    },
+    {
+      "record_id": "E11_NL_content",
+      "case_id": "E11",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 351,
+      "seq_len": 416
+    },
+    {
+      "record_id": "E11_NL_pregen",
+      "case_id": "E11",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 410,
+      "seq_len": 416
+    },
+    {
+      "record_id": "E11_NL_letter_A",
+      "case_id": "E11",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 361,
+      "seq_len": 416
+    },
+    {
+      "record_id": "E11_NL_letter_B",
+      "case_id": "E11",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 369,
+      "seq_len": 416
+    },
+    {
+      "record_id": "E11_NL_letter_C",
+      "case_id": "E11",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 380,
+      "seq_len": 416
+    },
+    {
+      "record_id": "E11_NL_letter_D",
+      "case_id": "E11",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 394,
+      "seq_len": 416
+    },
+    {
+      "record_id": "E11_NF_content",
+      "case_id": "E11",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 351,
+      "seq_len": 357
+    },
+    {
+      "record_id": "E12_NL_content",
+      "case_id": "E12",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 380,
+      "seq_len": 445
+    },
+    {
+      "record_id": "E12_NL_pregen",
+      "case_id": "E12",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 439,
+      "seq_len": 445
+    },
+    {
+      "record_id": "E12_NL_letter_A",
+      "case_id": "E12",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 390,
+      "seq_len": 445
+    },
+    {
+      "record_id": "E12_NL_letter_B",
+      "case_id": "E12",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 398,
+      "seq_len": 445
+    },
+    {
+      "record_id": "E12_NL_letter_C",
+      "case_id": "E12",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 409,
+      "seq_len": 445
+    },
+    {
+      "record_id": "E12_NL_letter_D",
+      "case_id": "E12",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 423,
+      "seq_len": 445
+    },
+    {
+      "record_id": "E12_NF_content",
+      "case_id": "E12",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 380,
+      "seq_len": 386
+    },
+    {
+      "record_id": "E13_NL_content",
+      "case_id": "E13",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 382,
+      "seq_len": 447
+    },
+    {
+      "record_id": "E13_NL_pregen",
+      "case_id": "E13",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 441,
+      "seq_len": 447
+    },
+    {
+      "record_id": "E13_NL_letter_A",
+      "case_id": "E13",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 392,
+      "seq_len": 447
+    },
+    {
+      "record_id": "E13_NL_letter_B",
+      "case_id": "E13",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 400,
+      "seq_len": 447
+    },
+    {
+      "record_id": "E13_NL_letter_C",
+      "case_id": "E13",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 411,
+      "seq_len": 447
+    },
+    {
+      "record_id": "E13_NL_letter_D",
+      "case_id": "E13",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 425,
+      "seq_len": 447
+    },
+    {
+      "record_id": "E13_NF_content",
+      "case_id": "E13",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 382,
+      "seq_len": 388
+    },
+    {
+      "record_id": "E14_NL_content",
+      "case_id": "E14",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 340,
+      "seq_len": 405
+    },
+    {
+      "record_id": "E14_NL_pregen",
+      "case_id": "E14",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 399,
+      "seq_len": 405
+    },
+    {
+      "record_id": "E14_NL_letter_A",
+      "case_id": "E14",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 350,
+      "seq_len": 405
+    },
+    {
+      "record_id": "E14_NL_letter_B",
+      "case_id": "E14",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 358,
+      "seq_len": 405
+    },
+    {
+      "record_id": "E14_NL_letter_C",
+      "case_id": "E14",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 369,
+      "seq_len": 405
+    },
+    {
+      "record_id": "E14_NL_letter_D",
+      "case_id": "E14",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 383,
+      "seq_len": 405
+    },
+    {
+      "record_id": "E14_NF_content",
+      "case_id": "E14",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 340,
+      "seq_len": 346
+    },
+    {
+      "record_id": "E15_NL_content",
+      "case_id": "E15",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 249,
+      "seq_len": 314
+    },
+    {
+      "record_id": "E15_NL_pregen",
+      "case_id": "E15",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 308,
+      "seq_len": 314
+    },
+    {
+      "record_id": "E15_NL_letter_A",
+      "case_id": "E15",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 259,
+      "seq_len": 314
+    },
+    {
+      "record_id": "E15_NL_letter_B",
+      "case_id": "E15",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 267,
+      "seq_len": 314
+    },
+    {
+      "record_id": "E15_NL_letter_C",
+      "case_id": "E15",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 278,
+      "seq_len": 314
+    },
+    {
+      "record_id": "E15_NL_letter_D",
+      "case_id": "E15",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 292,
+      "seq_len": 314
+    },
+    {
+      "record_id": "E15_NF_content",
+      "case_id": "E15",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 249,
+      "seq_len": 255
+    },
+    {
+      "record_id": "E16_NL_content",
+      "case_id": "E16",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 373,
+      "seq_len": 438
+    },
+    {
+      "record_id": "E16_NL_pregen",
+      "case_id": "E16",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 432,
+      "seq_len": 438
+    },
+    {
+      "record_id": "E16_NL_letter_A",
+      "case_id": "E16",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 383,
+      "seq_len": 438
+    },
+    {
+      "record_id": "E16_NL_letter_B",
+      "case_id": "E16",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 391,
+      "seq_len": 438
+    },
+    {
+      "record_id": "E16_NL_letter_C",
+      "case_id": "E16",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 402,
+      "seq_len": 438
+    },
+    {
+      "record_id": "E16_NL_letter_D",
+      "case_id": "E16",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 416,
+      "seq_len": 438
+    },
+    {
+      "record_id": "E16_NF_content",
+      "case_id": "E16",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 373,
+      "seq_len": 379
+    },
+    {
+      "record_id": "E17_NL_content",
+      "case_id": "E17",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 302,
+      "seq_len": 367
+    },
+    {
+      "record_id": "E17_NL_pregen",
+      "case_id": "E17",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 361,
+      "seq_len": 367
+    },
+    {
+      "record_id": "E17_NL_letter_A",
+      "case_id": "E17",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 312,
+      "seq_len": 367
+    },
+    {
+      "record_id": "E17_NL_letter_B",
+      "case_id": "E17",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 320,
+      "seq_len": 367
+    },
+    {
+      "record_id": "E17_NL_letter_C",
+      "case_id": "E17",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 331,
+      "seq_len": 367
+    },
+    {
+      "record_id": "E17_NL_letter_D",
+      "case_id": "E17",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 345,
+      "seq_len": 367
+    },
+    {
+      "record_id": "E17_NF_content",
+      "case_id": "E17",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 302,
+      "seq_len": 308
+    },
+    {
+      "record_id": "E18_NL_content",
+      "case_id": "E18",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 333,
+      "seq_len": 398
+    },
+    {
+      "record_id": "E18_NL_pregen",
+      "case_id": "E18",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 392,
+      "seq_len": 398
+    },
+    {
+      "record_id": "E18_NL_letter_A",
+      "case_id": "E18",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 343,
+      "seq_len": 398
+    },
+    {
+      "record_id": "E18_NL_letter_B",
+      "case_id": "E18",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 351,
+      "seq_len": 398
+    },
+    {
+      "record_id": "E18_NL_letter_C",
+      "case_id": "E18",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 362,
+      "seq_len": 398
+    },
+    {
+      "record_id": "E18_NL_letter_D",
+      "case_id": "E18",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 376,
+      "seq_len": 398
+    },
+    {
+      "record_id": "E18_NF_content",
+      "case_id": "E18",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 333,
+      "seq_len": 339
+    },
+    {
+      "record_id": "E19_NL_content",
+      "case_id": "E19",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 277,
+      "seq_len": 342
+    },
+    {
+      "record_id": "E19_NL_pregen",
+      "case_id": "E19",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 336,
+      "seq_len": 342
+    },
+    {
+      "record_id": "E19_NL_letter_A",
+      "case_id": "E19",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 287,
+      "seq_len": 342
+    },
+    {
+      "record_id": "E19_NL_letter_B",
+      "case_id": "E19",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 295,
+      "seq_len": 342
+    },
+    {
+      "record_id": "E19_NL_letter_C",
+      "case_id": "E19",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 306,
+      "seq_len": 342
+    },
+    {
+      "record_id": "E19_NL_letter_D",
+      "case_id": "E19",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 320,
+      "seq_len": 342
+    },
+    {
+      "record_id": "E19_NF_content",
+      "case_id": "E19",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 277,
+      "seq_len": 283
+    },
+    {
+      "record_id": "E20_NL_content",
+      "case_id": "E20",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 304,
+      "seq_len": 369
+    },
+    {
+      "record_id": "E20_NL_pregen",
+      "case_id": "E20",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 363,
+      "seq_len": 369
+    },
+    {
+      "record_id": "E20_NL_letter_A",
+      "case_id": "E20",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 314,
+      "seq_len": 369
+    },
+    {
+      "record_id": "E20_NL_letter_B",
+      "case_id": "E20",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 322,
+      "seq_len": 369
+    },
+    {
+      "record_id": "E20_NL_letter_C",
+      "case_id": "E20",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 333,
+      "seq_len": 369
+    },
+    {
+      "record_id": "E20_NL_letter_D",
+      "case_id": "E20",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 347,
+      "seq_len": 369
+    },
+    {
+      "record_id": "E20_NF_content",
+      "case_id": "E20",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 304,
+      "seq_len": 310
+    },
+    {
+      "record_id": "E21_NL_content",
+      "case_id": "E21",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 268,
+      "seq_len": 333
+    },
+    {
+      "record_id": "E21_NL_pregen",
+      "case_id": "E21",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 327,
+      "seq_len": 333
+    },
+    {
+      "record_id": "E21_NL_letter_A",
+      "case_id": "E21",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 278,
+      "seq_len": 333
+    },
+    {
+      "record_id": "E21_NL_letter_B",
+      "case_id": "E21",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 286,
+      "seq_len": 333
+    },
+    {
+      "record_id": "E21_NL_letter_C",
+      "case_id": "E21",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 297,
+      "seq_len": 333
+    },
+    {
+      "record_id": "E21_NL_letter_D",
+      "case_id": "E21",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 311,
+      "seq_len": 333
+    },
+    {
+      "record_id": "E21_NF_content",
+      "case_id": "E21",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 268,
+      "seq_len": 274
+    },
+    {
+      "record_id": "E22_NL_content",
+      "case_id": "E22",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 394,
+      "seq_len": 459
+    },
+    {
+      "record_id": "E22_NL_pregen",
+      "case_id": "E22",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 453,
+      "seq_len": 459
+    },
+    {
+      "record_id": "E22_NL_letter_A",
+      "case_id": "E22",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 404,
+      "seq_len": 459
+    },
+    {
+      "record_id": "E22_NL_letter_B",
+      "case_id": "E22",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 412,
+      "seq_len": 459
+    },
+    {
+      "record_id": "E22_NL_letter_C",
+      "case_id": "E22",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 423,
+      "seq_len": 459
+    },
+    {
+      "record_id": "E22_NL_letter_D",
+      "case_id": "E22",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 437,
+      "seq_len": 459
+    },
+    {
+      "record_id": "E22_NF_content",
+      "case_id": "E22",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 394,
+      "seq_len": 400
+    },
+    {
+      "record_id": "E23_NL_content",
+      "case_id": "E23",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 343,
+      "seq_len": 408
+    },
+    {
+      "record_id": "E23_NL_pregen",
+      "case_id": "E23",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 402,
+      "seq_len": 408
+    },
+    {
+      "record_id": "E23_NL_letter_A",
+      "case_id": "E23",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 353,
+      "seq_len": 408
+    },
+    {
+      "record_id": "E23_NL_letter_B",
+      "case_id": "E23",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 361,
+      "seq_len": 408
+    },
+    {
+      "record_id": "E23_NL_letter_C",
+      "case_id": "E23",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 372,
+      "seq_len": 408
+    },
+    {
+      "record_id": "E23_NL_letter_D",
+      "case_id": "E23",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 386,
+      "seq_len": 408
+    },
+    {
+      "record_id": "E23_NF_content",
+      "case_id": "E23",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 343,
+      "seq_len": 349
+    },
+    {
+      "record_id": "E24_NL_content",
+      "case_id": "E24",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 334,
+      "seq_len": 399
+    },
+    {
+      "record_id": "E24_NL_pregen",
+      "case_id": "E24",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 393,
+      "seq_len": 399
+    },
+    {
+      "record_id": "E24_NL_letter_A",
+      "case_id": "E24",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 344,
+      "seq_len": 399
+    },
+    {
+      "record_id": "E24_NL_letter_B",
+      "case_id": "E24",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 352,
+      "seq_len": 399
+    },
+    {
+      "record_id": "E24_NL_letter_C",
+      "case_id": "E24",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 363,
+      "seq_len": 399
+    },
+    {
+      "record_id": "E24_NL_letter_D",
+      "case_id": "E24",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 377,
+      "seq_len": 399
+    },
+    {
+      "record_id": "E24_NF_content",
+      "case_id": "E24",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 334,
+      "seq_len": 340
+    },
+    {
+      "record_id": "E25_NL_content",
+      "case_id": "E25",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 415,
+      "seq_len": 480
+    },
+    {
+      "record_id": "E25_NL_pregen",
+      "case_id": "E25",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 474,
+      "seq_len": 480
+    },
+    {
+      "record_id": "E25_NL_letter_A",
+      "case_id": "E25",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 425,
+      "seq_len": 480
+    },
+    {
+      "record_id": "E25_NL_letter_B",
+      "case_id": "E25",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 433,
+      "seq_len": 480
+    },
+    {
+      "record_id": "E25_NL_letter_C",
+      "case_id": "E25",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 444,
+      "seq_len": 480
+    },
+    {
+      "record_id": "E25_NL_letter_D",
+      "case_id": "E25",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 458,
+      "seq_len": 480
+    },
+    {
+      "record_id": "E25_NF_content",
+      "case_id": "E25",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 415,
+      "seq_len": 421
+    },
+    {
+      "record_id": "E26_NL_content",
+      "case_id": "E26",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 373,
+      "seq_len": 438
+    },
+    {
+      "record_id": "E26_NL_pregen",
+      "case_id": "E26",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 432,
+      "seq_len": 438
+    },
+    {
+      "record_id": "E26_NL_letter_A",
+      "case_id": "E26",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 383,
+      "seq_len": 438
+    },
+    {
+      "record_id": "E26_NL_letter_B",
+      "case_id": "E26",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 391,
+      "seq_len": 438
+    },
+    {
+      "record_id": "E26_NL_letter_C",
+      "case_id": "E26",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 402,
+      "seq_len": 438
+    },
+    {
+      "record_id": "E26_NL_letter_D",
+      "case_id": "E26",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 416,
+      "seq_len": 438
+    },
+    {
+      "record_id": "E26_NF_content",
+      "case_id": "E26",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 373,
+      "seq_len": 379
+    },
+    {
+      "record_id": "E27_NL_content",
+      "case_id": "E27",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 435,
+      "seq_len": 500
+    },
+    {
+      "record_id": "E27_NL_pregen",
+      "case_id": "E27",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 494,
+      "seq_len": 500
+    },
+    {
+      "record_id": "E27_NL_letter_A",
+      "case_id": "E27",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 445,
+      "seq_len": 500
+    },
+    {
+      "record_id": "E27_NL_letter_B",
+      "case_id": "E27",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 453,
+      "seq_len": 500
+    },
+    {
+      "record_id": "E27_NL_letter_C",
+      "case_id": "E27",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 464,
+      "seq_len": 500
+    },
+    {
+      "record_id": "E27_NL_letter_D",
+      "case_id": "E27",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 478,
+      "seq_len": 500
+    },
+    {
+      "record_id": "E27_NF_content",
+      "case_id": "E27",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 435,
+      "seq_len": 441
+    },
+    {
+      "record_id": "F1_NL_content",
+      "case_id": "F1",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 166,
+      "seq_len": 231
+    },
+    {
+      "record_id": "F1_NL_pregen",
+      "case_id": "F1",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 225,
+      "seq_len": 231
+    },
+    {
+      "record_id": "F1_NL_letter_A",
+      "case_id": "F1",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 176,
+      "seq_len": 231
+    },
+    {
+      "record_id": "F1_NL_letter_B",
+      "case_id": "F1",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 184,
+      "seq_len": 231
+    },
+    {
+      "record_id": "F1_NL_letter_C",
+      "case_id": "F1",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 195,
+      "seq_len": 231
+    },
+    {
+      "record_id": "F1_NL_letter_D",
+      "case_id": "F1",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 209,
+      "seq_len": 231
+    },
+    {
+      "record_id": "F1_NF_content",
+      "case_id": "F1",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 166,
+      "seq_len": 172
+    },
+    {
+      "record_id": "F2_NL_content",
+      "case_id": "F2",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 193,
+      "seq_len": 258
+    },
+    {
+      "record_id": "F2_NL_pregen",
+      "case_id": "F2",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 252,
+      "seq_len": 258
+    },
+    {
+      "record_id": "F2_NL_letter_A",
+      "case_id": "F2",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 203,
+      "seq_len": 258
+    },
+    {
+      "record_id": "F2_NL_letter_B",
+      "case_id": "F2",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 211,
+      "seq_len": 258
+    },
+    {
+      "record_id": "F2_NL_letter_C",
+      "case_id": "F2",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 222,
+      "seq_len": 258
+    },
+    {
+      "record_id": "F2_NL_letter_D",
+      "case_id": "F2",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 236,
+      "seq_len": 258
+    },
+    {
+      "record_id": "F2_NF_content",
+      "case_id": "F2",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 193,
+      "seq_len": 199
+    },
+    {
+      "record_id": "F3_NL_content",
+      "case_id": "F3",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 219,
+      "seq_len": 284
+    },
+    {
+      "record_id": "F3_NL_pregen",
+      "case_id": "F3",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 278,
+      "seq_len": 284
+    },
+    {
+      "record_id": "F3_NL_letter_A",
+      "case_id": "F3",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 229,
+      "seq_len": 284
+    },
+    {
+      "record_id": "F3_NL_letter_B",
+      "case_id": "F3",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 237,
+      "seq_len": 284
+    },
+    {
+      "record_id": "F3_NL_letter_C",
+      "case_id": "F3",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 248,
+      "seq_len": 284
+    },
+    {
+      "record_id": "F3_NL_letter_D",
+      "case_id": "F3",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 262,
+      "seq_len": 284
+    },
+    {
+      "record_id": "F3_NF_content",
+      "case_id": "F3",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 219,
+      "seq_len": 225
+    },
+    {
+      "record_id": "F4_NL_content",
+      "case_id": "F4",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 203,
+      "seq_len": 268
+    },
+    {
+      "record_id": "F4_NL_pregen",
+      "case_id": "F4",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 262,
+      "seq_len": 268
+    },
+    {
+      "record_id": "F4_NL_letter_A",
+      "case_id": "F4",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 213,
+      "seq_len": 268
+    },
+    {
+      "record_id": "F4_NL_letter_B",
+      "case_id": "F4",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 221,
+      "seq_len": 268
+    },
+    {
+      "record_id": "F4_NL_letter_C",
+      "case_id": "F4",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 232,
+      "seq_len": 268
+    },
+    {
+      "record_id": "F4_NL_letter_D",
+      "case_id": "F4",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 246,
+      "seq_len": 268
+    },
+    {
+      "record_id": "F4_NF_content",
+      "case_id": "F4",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 203,
+      "seq_len": 209
+    },
+    {
+      "record_id": "F5_NL_content",
+      "case_id": "F5",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 162,
+      "seq_len": 227
+    },
+    {
+      "record_id": "F5_NL_pregen",
+      "case_id": "F5",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 221,
+      "seq_len": 227
+    },
+    {
+      "record_id": "F5_NL_letter_A",
+      "case_id": "F5",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 172,
+      "seq_len": 227
+    },
+    {
+      "record_id": "F5_NL_letter_B",
+      "case_id": "F5",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 180,
+      "seq_len": 227
+    },
+    {
+      "record_id": "F5_NL_letter_C",
+      "case_id": "F5",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 191,
+      "seq_len": 227
+    },
+    {
+      "record_id": "F5_NL_letter_D",
+      "case_id": "F5",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 205,
+      "seq_len": 227
+    },
+    {
+      "record_id": "F5_NF_content",
+      "case_id": "F5",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 162,
+      "seq_len": 168
+    },
+    {
+      "record_id": "F6_NL_content",
+      "case_id": "F6",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 197,
+      "seq_len": 262
+    },
+    {
+      "record_id": "F6_NL_pregen",
+      "case_id": "F6",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 256,
+      "seq_len": 262
+    },
+    {
+      "record_id": "F6_NL_letter_A",
+      "case_id": "F6",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 207,
+      "seq_len": 262
+    },
+    {
+      "record_id": "F6_NL_letter_B",
+      "case_id": "F6",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 215,
+      "seq_len": 262
+    },
+    {
+      "record_id": "F6_NL_letter_C",
+      "case_id": "F6",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 226,
+      "seq_len": 262
+    },
+    {
+      "record_id": "F6_NL_letter_D",
+      "case_id": "F6",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 240,
+      "seq_len": 262
+    },
+    {
+      "record_id": "F6_NF_content",
+      "case_id": "F6",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 197,
+      "seq_len": 203
+    },
+    {
+      "record_id": "F7_NL_content",
+      "case_id": "F7",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 176,
+      "seq_len": 241
+    },
+    {
+      "record_id": "F7_NL_pregen",
+      "case_id": "F7",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 235,
+      "seq_len": 241
+    },
+    {
+      "record_id": "F7_NL_letter_A",
+      "case_id": "F7",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 186,
+      "seq_len": 241
+    },
+    {
+      "record_id": "F7_NL_letter_B",
+      "case_id": "F7",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 194,
+      "seq_len": 241
+    },
+    {
+      "record_id": "F7_NL_letter_C",
+      "case_id": "F7",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 205,
+      "seq_len": 241
+    },
+    {
+      "record_id": "F7_NL_letter_D",
+      "case_id": "F7",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 219,
+      "seq_len": 241
+    },
+    {
+      "record_id": "F7_NF_content",
+      "case_id": "F7",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 176,
+      "seq_len": 182
+    },
+    {
+      "record_id": "F8_NL_content",
+      "case_id": "F8",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 211,
+      "seq_len": 276
+    },
+    {
+      "record_id": "F8_NL_pregen",
+      "case_id": "F8",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 270,
+      "seq_len": 276
+    },
+    {
+      "record_id": "F8_NL_letter_A",
+      "case_id": "F8",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 221,
+      "seq_len": 276
+    },
+    {
+      "record_id": "F8_NL_letter_B",
+      "case_id": "F8",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 229,
+      "seq_len": 276
+    },
+    {
+      "record_id": "F8_NL_letter_C",
+      "case_id": "F8",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 240,
+      "seq_len": 276
+    },
+    {
+      "record_id": "F8_NL_letter_D",
+      "case_id": "F8",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 254,
+      "seq_len": 276
+    },
+    {
+      "record_id": "F8_NF_content",
+      "case_id": "F8",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 211,
+      "seq_len": 217
+    },
+    {
+      "record_id": "F9_NL_content",
+      "case_id": "F9",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 172,
+      "seq_len": 237
+    },
+    {
+      "record_id": "F9_NL_pregen",
+      "case_id": "F9",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 231,
+      "seq_len": 237
+    },
+    {
+      "record_id": "F9_NL_letter_A",
+      "case_id": "F9",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 182,
+      "seq_len": 237
+    },
+    {
+      "record_id": "F9_NL_letter_B",
+      "case_id": "F9",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 190,
+      "seq_len": 237
+    },
+    {
+      "record_id": "F9_NL_letter_C",
+      "case_id": "F9",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 201,
+      "seq_len": 237
+    },
+    {
+      "record_id": "F9_NL_letter_D",
+      "case_id": "F9",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 215,
+      "seq_len": 237
+    },
+    {
+      "record_id": "F9_NF_content",
+      "case_id": "F9",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 172,
+      "seq_len": 178
+    },
+    {
+      "record_id": "F10_NL_content",
+      "case_id": "F10",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 109,
+      "seq_len": 174
+    },
+    {
+      "record_id": "F10_NL_pregen",
+      "case_id": "F10",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 168,
+      "seq_len": 174
+    },
+    {
+      "record_id": "F10_NL_letter_A",
+      "case_id": "F10",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 119,
+      "seq_len": 174
+    },
+    {
+      "record_id": "F10_NL_letter_B",
+      "case_id": "F10",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 127,
+      "seq_len": 174
+    },
+    {
+      "record_id": "F10_NL_letter_C",
+      "case_id": "F10",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 138,
+      "seq_len": 174
+    },
+    {
+      "record_id": "F10_NL_letter_D",
+      "case_id": "F10",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 152,
+      "seq_len": 174
+    },
+    {
+      "record_id": "F10_NF_content",
+      "case_id": "F10",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 109,
+      "seq_len": 115
+    },
+    {
+      "record_id": "F11_NL_content",
+      "case_id": "F11",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 135,
+      "seq_len": 200
+    },
+    {
+      "record_id": "F11_NL_pregen",
+      "case_id": "F11",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 194,
+      "seq_len": 200
+    },
+    {
+      "record_id": "F11_NL_letter_A",
+      "case_id": "F11",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 145,
+      "seq_len": 200
+    },
+    {
+      "record_id": "F11_NL_letter_B",
+      "case_id": "F11",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 153,
+      "seq_len": 200
+    },
+    {
+      "record_id": "F11_NL_letter_C",
+      "case_id": "F11",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 164,
+      "seq_len": 200
+    },
+    {
+      "record_id": "F11_NL_letter_D",
+      "case_id": "F11",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 178,
+      "seq_len": 200
+    },
+    {
+      "record_id": "F11_NF_content",
+      "case_id": "F11",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 135,
+      "seq_len": 141
+    },
+    {
+      "record_id": "F12_NL_content",
+      "case_id": "F12",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 157,
+      "seq_len": 222
+    },
+    {
+      "record_id": "F12_NL_pregen",
+      "case_id": "F12",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 216,
+      "seq_len": 222
+    },
+    {
+      "record_id": "F12_NL_letter_A",
+      "case_id": "F12",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 167,
+      "seq_len": 222
+    },
+    {
+      "record_id": "F12_NL_letter_B",
+      "case_id": "F12",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 175,
+      "seq_len": 222
+    },
+    {
+      "record_id": "F12_NL_letter_C",
+      "case_id": "F12",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 186,
+      "seq_len": 222
+    },
+    {
+      "record_id": "F12_NL_letter_D",
+      "case_id": "F12",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 200,
+      "seq_len": 222
+    },
+    {
+      "record_id": "F12_NF_content",
+      "case_id": "F12",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 157,
+      "seq_len": 163
+    },
+    {
+      "record_id": "F13_NL_content",
+      "case_id": "F13",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 167,
+      "seq_len": 232
+    },
+    {
+      "record_id": "F13_NL_pregen",
+      "case_id": "F13",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 226,
+      "seq_len": 232
+    },
+    {
+      "record_id": "F13_NL_letter_A",
+      "case_id": "F13",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 177,
+      "seq_len": 232
+    },
+    {
+      "record_id": "F13_NL_letter_B",
+      "case_id": "F13",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 185,
+      "seq_len": 232
+    },
+    {
+      "record_id": "F13_NL_letter_C",
+      "case_id": "F13",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 196,
+      "seq_len": 232
+    },
+    {
+      "record_id": "F13_NL_letter_D",
+      "case_id": "F13",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 210,
+      "seq_len": 232
+    },
+    {
+      "record_id": "F13_NF_content",
+      "case_id": "F13",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 167,
+      "seq_len": 173
+    },
+    {
+      "record_id": "F14_NL_content",
+      "case_id": "F14",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 137,
+      "seq_len": 202
+    },
+    {
+      "record_id": "F14_NL_pregen",
+      "case_id": "F14",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 196,
+      "seq_len": 202
+    },
+    {
+      "record_id": "F14_NL_letter_A",
+      "case_id": "F14",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 147,
+      "seq_len": 202
+    },
+    {
+      "record_id": "F14_NL_letter_B",
+      "case_id": "F14",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 155,
+      "seq_len": 202
+    },
+    {
+      "record_id": "F14_NL_letter_C",
+      "case_id": "F14",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 166,
+      "seq_len": 202
+    },
+    {
+      "record_id": "F14_NL_letter_D",
+      "case_id": "F14",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 180,
+      "seq_len": 202
+    },
+    {
+      "record_id": "F14_NF_content",
+      "case_id": "F14",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 137,
+      "seq_len": 143
+    },
+    {
+      "record_id": "F15_NL_content",
+      "case_id": "F15",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 111,
+      "seq_len": 176
+    },
+    {
+      "record_id": "F15_NL_pregen",
+      "case_id": "F15",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 170,
+      "seq_len": 176
+    },
+    {
+      "record_id": "F15_NL_letter_A",
+      "case_id": "F15",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 121,
+      "seq_len": 176
+    },
+    {
+      "record_id": "F15_NL_letter_B",
+      "case_id": "F15",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 129,
+      "seq_len": 176
+    },
+    {
+      "record_id": "F15_NL_letter_C",
+      "case_id": "F15",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 140,
+      "seq_len": 176
+    },
+    {
+      "record_id": "F15_NL_letter_D",
+      "case_id": "F15",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 154,
+      "seq_len": 176
+    },
+    {
+      "record_id": "F15_NF_content",
+      "case_id": "F15",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 111,
+      "seq_len": 117
+    },
+    {
+      "record_id": "F16_NL_content",
+      "case_id": "F16",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 200,
+      "seq_len": 265
+    },
+    {
+      "record_id": "F16_NL_pregen",
+      "case_id": "F16",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 259,
+      "seq_len": 265
+    },
+    {
+      "record_id": "F16_NL_letter_A",
+      "case_id": "F16",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 210,
+      "seq_len": 265
+    },
+    {
+      "record_id": "F16_NL_letter_B",
+      "case_id": "F16",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 218,
+      "seq_len": 265
+    },
+    {
+      "record_id": "F16_NL_letter_C",
+      "case_id": "F16",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 229,
+      "seq_len": 265
+    },
+    {
+      "record_id": "F16_NL_letter_D",
+      "case_id": "F16",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 243,
+      "seq_len": 265
+    },
+    {
+      "record_id": "F16_NF_content",
+      "case_id": "F16",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 200,
+      "seq_len": 206
+    },
+    {
+      "record_id": "F17_NL_content",
+      "case_id": "F17",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 169,
+      "seq_len": 234
+    },
+    {
+      "record_id": "F17_NL_pregen",
+      "case_id": "F17",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 228,
+      "seq_len": 234
+    },
+    {
+      "record_id": "F17_NL_letter_A",
+      "case_id": "F17",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 179,
+      "seq_len": 234
+    },
+    {
+      "record_id": "F17_NL_letter_B",
+      "case_id": "F17",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 187,
+      "seq_len": 234
+    },
+    {
+      "record_id": "F17_NL_letter_C",
+      "case_id": "F17",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 198,
+      "seq_len": 234
+    },
+    {
+      "record_id": "F17_NL_letter_D",
+      "case_id": "F17",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 212,
+      "seq_len": 234
+    },
+    {
+      "record_id": "F17_NF_content",
+      "case_id": "F17",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 169,
+      "seq_len": 175
+    },
+    {
+      "record_id": "F18_NL_content",
+      "case_id": "F18",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 180,
+      "seq_len": 245
+    },
+    {
+      "record_id": "F18_NL_pregen",
+      "case_id": "F18",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 239,
+      "seq_len": 245
+    },
+    {
+      "record_id": "F18_NL_letter_A",
+      "case_id": "F18",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 190,
+      "seq_len": 245
+    },
+    {
+      "record_id": "F18_NL_letter_B",
+      "case_id": "F18",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 198,
+      "seq_len": 245
+    },
+    {
+      "record_id": "F18_NL_letter_C",
+      "case_id": "F18",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 209,
+      "seq_len": 245
+    },
+    {
+      "record_id": "F18_NL_letter_D",
+      "case_id": "F18",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 223,
+      "seq_len": 245
+    },
+    {
+      "record_id": "F18_NF_content",
+      "case_id": "F18",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 180,
+      "seq_len": 186
+    },
+    {
+      "record_id": "F19_NL_content",
+      "case_id": "F19",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 159,
+      "seq_len": 224
+    },
+    {
+      "record_id": "F19_NL_pregen",
+      "case_id": "F19",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 218,
+      "seq_len": 224
+    },
+    {
+      "record_id": "F19_NL_letter_A",
+      "case_id": "F19",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 169,
+      "seq_len": 224
+    },
+    {
+      "record_id": "F19_NL_letter_B",
+      "case_id": "F19",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 177,
+      "seq_len": 224
+    },
+    {
+      "record_id": "F19_NL_letter_C",
+      "case_id": "F19",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 188,
+      "seq_len": 224
+    },
+    {
+      "record_id": "F19_NL_letter_D",
+      "case_id": "F19",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 202,
+      "seq_len": 224
+    },
+    {
+      "record_id": "F19_NF_content",
+      "case_id": "F19",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 159,
+      "seq_len": 165
+    },
+    {
+      "record_id": "F20_NL_content",
+      "case_id": "F20",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 174,
+      "seq_len": 239
+    },
+    {
+      "record_id": "F20_NL_pregen",
+      "case_id": "F20",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 233,
+      "seq_len": 239
+    },
+    {
+      "record_id": "F20_NL_letter_A",
+      "case_id": "F20",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 184,
+      "seq_len": 239
+    },
+    {
+      "record_id": "F20_NL_letter_B",
+      "case_id": "F20",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 192,
+      "seq_len": 239
+    },
+    {
+      "record_id": "F20_NL_letter_C",
+      "case_id": "F20",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 203,
+      "seq_len": 239
+    },
+    {
+      "record_id": "F20_NL_letter_D",
+      "case_id": "F20",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 217,
+      "seq_len": 239
+    },
+    {
+      "record_id": "F20_NF_content",
+      "case_id": "F20",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 174,
+      "seq_len": 180
+    },
+    {
+      "record_id": "F21_NL_content",
+      "case_id": "F21",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 173,
+      "seq_len": 238
+    },
+    {
+      "record_id": "F21_NL_pregen",
+      "case_id": "F21",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 232,
+      "seq_len": 238
+    },
+    {
+      "record_id": "F21_NL_letter_A",
+      "case_id": "F21",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 183,
+      "seq_len": 238
+    },
+    {
+      "record_id": "F21_NL_letter_B",
+      "case_id": "F21",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 191,
+      "seq_len": 238
+    },
+    {
+      "record_id": "F21_NL_letter_C",
+      "case_id": "F21",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 202,
+      "seq_len": 238
+    },
+    {
+      "record_id": "F21_NL_letter_D",
+      "case_id": "F21",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 216,
+      "seq_len": 238
+    },
+    {
+      "record_id": "F21_NF_content",
+      "case_id": "F21",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 173,
+      "seq_len": 179
+    },
+    {
+      "record_id": "F22_NL_content",
+      "case_id": "F22",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 254,
+      "seq_len": 319
+    },
+    {
+      "record_id": "F22_NL_pregen",
+      "case_id": "F22",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 313,
+      "seq_len": 319
+    },
+    {
+      "record_id": "F22_NL_letter_A",
+      "case_id": "F22",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 264,
+      "seq_len": 319
+    },
+    {
+      "record_id": "F22_NL_letter_B",
+      "case_id": "F22",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 272,
+      "seq_len": 319
+    },
+    {
+      "record_id": "F22_NL_letter_C",
+      "case_id": "F22",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 283,
+      "seq_len": 319
+    },
+    {
+      "record_id": "F22_NL_letter_D",
+      "case_id": "F22",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 297,
+      "seq_len": 319
+    },
+    {
+      "record_id": "F22_NF_content",
+      "case_id": "F22",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 254,
+      "seq_len": 260
+    },
+    {
+      "record_id": "F23_NL_content",
+      "case_id": "F23",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 120,
+      "seq_len": 185
+    },
+    {
+      "record_id": "F23_NL_pregen",
+      "case_id": "F23",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 179,
+      "seq_len": 185
+    },
+    {
+      "record_id": "F23_NL_letter_A",
+      "case_id": "F23",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 130,
+      "seq_len": 185
+    },
+    {
+      "record_id": "F23_NL_letter_B",
+      "case_id": "F23",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 138,
+      "seq_len": 185
+    },
+    {
+      "record_id": "F23_NL_letter_C",
+      "case_id": "F23",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 149,
+      "seq_len": 185
+    },
+    {
+      "record_id": "F23_NL_letter_D",
+      "case_id": "F23",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 163,
+      "seq_len": 185
+    },
+    {
+      "record_id": "F23_NF_content",
+      "case_id": "F23",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 120,
+      "seq_len": 126
+    },
+    {
+      "record_id": "F24_NL_content",
+      "case_id": "F24",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 190,
+      "seq_len": 255
+    },
+    {
+      "record_id": "F24_NL_pregen",
+      "case_id": "F24",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 249,
+      "seq_len": 255
+    },
+    {
+      "record_id": "F24_NL_letter_A",
+      "case_id": "F24",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 200,
+      "seq_len": 255
+    },
+    {
+      "record_id": "F24_NL_letter_B",
+      "case_id": "F24",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 208,
+      "seq_len": 255
+    },
+    {
+      "record_id": "F24_NL_letter_C",
+      "case_id": "F24",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 219,
+      "seq_len": 255
+    },
+    {
+      "record_id": "F24_NL_letter_D",
+      "case_id": "F24",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 233,
+      "seq_len": 255
+    },
+    {
+      "record_id": "F24_NF_content",
+      "case_id": "F24",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 190,
+      "seq_len": 196
+    },
+    {
+      "record_id": "F25_NL_content",
+      "case_id": "F25",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 228,
+      "seq_len": 293
+    },
+    {
+      "record_id": "F25_NL_pregen",
+      "case_id": "F25",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 287,
+      "seq_len": 293
+    },
+    {
+      "record_id": "F25_NL_letter_A",
+      "case_id": "F25",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 238,
+      "seq_len": 293
+    },
+    {
+      "record_id": "F25_NL_letter_B",
+      "case_id": "F25",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 246,
+      "seq_len": 293
+    },
+    {
+      "record_id": "F25_NL_letter_C",
+      "case_id": "F25",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 257,
+      "seq_len": 293
+    },
+    {
+      "record_id": "F25_NL_letter_D",
+      "case_id": "F25",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 271,
+      "seq_len": 293
+    },
+    {
+      "record_id": "F25_NF_content",
+      "case_id": "F25",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 228,
+      "seq_len": 234
+    },
+    {
+      "record_id": "F26_NL_content",
+      "case_id": "F26",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 204,
+      "seq_len": 269
+    },
+    {
+      "record_id": "F26_NL_pregen",
+      "case_id": "F26",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 263,
+      "seq_len": 269
+    },
+    {
+      "record_id": "F26_NL_letter_A",
+      "case_id": "F26",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 214,
+      "seq_len": 269
+    },
+    {
+      "record_id": "F26_NL_letter_B",
+      "case_id": "F26",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 222,
+      "seq_len": 269
+    },
+    {
+      "record_id": "F26_NL_letter_C",
+      "case_id": "F26",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 233,
+      "seq_len": 269
+    },
+    {
+      "record_id": "F26_NL_letter_D",
+      "case_id": "F26",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 247,
+      "seq_len": 269
+    },
+    {
+      "record_id": "F26_NF_content",
+      "case_id": "F26",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 204,
+      "seq_len": 210
+    },
+    {
+      "record_id": "F27_NL_content",
+      "case_id": "F27",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 201,
+      "seq_len": 266
+    },
+    {
+      "record_id": "F27_NL_pregen",
+      "case_id": "F27",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 260,
+      "seq_len": 266
+    },
+    {
+      "record_id": "F27_NL_letter_A",
+      "case_id": "F27",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 211,
+      "seq_len": 266
+    },
+    {
+      "record_id": "F27_NL_letter_B",
+      "case_id": "F27",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 219,
+      "seq_len": 266
+    },
+    {
+      "record_id": "F27_NL_letter_C",
+      "case_id": "F27",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 230,
+      "seq_len": 266
+    },
+    {
+      "record_id": "F27_NL_letter_D",
+      "case_id": "F27",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 244,
+      "seq_len": 266
+    },
+    {
+      "record_id": "F27_NF_content",
+      "case_id": "F27",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 201,
+      "seq_len": 207
+    },
+    {
+      "record_id": "MH1_NL_content",
+      "case_id": "MH1",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 536,
+      "seq_len": 601
+    },
+    {
+      "record_id": "MH1_NL_pregen",
+      "case_id": "MH1",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 595,
+      "seq_len": 601
+    },
+    {
+      "record_id": "MH1_NL_letter_A",
+      "case_id": "MH1",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 546,
+      "seq_len": 601
+    },
+    {
+      "record_id": "MH1_NL_letter_B",
+      "case_id": "MH1",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 554,
+      "seq_len": 601
+    },
+    {
+      "record_id": "MH1_NL_letter_C",
+      "case_id": "MH1",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 565,
+      "seq_len": 601
+    },
+    {
+      "record_id": "MH1_NL_letter_D",
+      "case_id": "MH1",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 579,
+      "seq_len": 601
+    },
+    {
+      "record_id": "MH1_NF_content",
+      "case_id": "MH1",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 536,
+      "seq_len": 542
+    },
+    {
+      "record_id": "MH2_NL_content",
+      "case_id": "MH2",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 506,
+      "seq_len": 571
+    },
+    {
+      "record_id": "MH2_NL_pregen",
+      "case_id": "MH2",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 565,
+      "seq_len": 571
+    },
+    {
+      "record_id": "MH2_NL_letter_A",
+      "case_id": "MH2",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 516,
+      "seq_len": 571
+    },
+    {
+      "record_id": "MH2_NL_letter_B",
+      "case_id": "MH2",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 524,
+      "seq_len": 571
+    },
+    {
+      "record_id": "MH2_NL_letter_C",
+      "case_id": "MH2",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 535,
+      "seq_len": 571
+    },
+    {
+      "record_id": "MH2_NL_letter_D",
+      "case_id": "MH2",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 549,
+      "seq_len": 571
+    },
+    {
+      "record_id": "MH2_NF_content",
+      "case_id": "MH2",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 506,
+      "seq_len": 512
+    },
+    {
+      "record_id": "MH3_NL_content",
+      "case_id": "MH3",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 413,
+      "seq_len": 478
+    },
+    {
+      "record_id": "MH3_NL_pregen",
+      "case_id": "MH3",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 472,
+      "seq_len": 478
+    },
+    {
+      "record_id": "MH3_NL_letter_A",
+      "case_id": "MH3",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 423,
+      "seq_len": 478
+    },
+    {
+      "record_id": "MH3_NL_letter_B",
+      "case_id": "MH3",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 431,
+      "seq_len": 478
+    },
+    {
+      "record_id": "MH3_NL_letter_C",
+      "case_id": "MH3",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 442,
+      "seq_len": 478
+    },
+    {
+      "record_id": "MH3_NL_letter_D",
+      "case_id": "MH3",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 456,
+      "seq_len": 478
+    },
+    {
+      "record_id": "MH3_NF_content",
+      "case_id": "MH3",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 413,
+      "seq_len": 419
+    },
+    {
+      "record_id": "NH1_NL_content",
+      "case_id": "NH1",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 262,
+      "seq_len": 327
+    },
+    {
+      "record_id": "NH1_NL_pregen",
+      "case_id": "NH1",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 321,
+      "seq_len": 327
+    },
+    {
+      "record_id": "NH1_NL_letter_A",
+      "case_id": "NH1",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 272,
+      "seq_len": 327
+    },
+    {
+      "record_id": "NH1_NL_letter_B",
+      "case_id": "NH1",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 280,
+      "seq_len": 327
+    },
+    {
+      "record_id": "NH1_NL_letter_C",
+      "case_id": "NH1",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 291,
+      "seq_len": 327
+    },
+    {
+      "record_id": "NH1_NL_letter_D",
+      "case_id": "NH1",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 305,
+      "seq_len": 327
+    },
+    {
+      "record_id": "NH1_NF_content",
+      "case_id": "NH1",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 262,
+      "seq_len": 268
+    },
+    {
+      "record_id": "NH2_NL_content",
+      "case_id": "NH2",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 286,
+      "seq_len": 351
+    },
+    {
+      "record_id": "NH2_NL_pregen",
+      "case_id": "NH2",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 345,
+      "seq_len": 351
+    },
+    {
+      "record_id": "NH2_NL_letter_A",
+      "case_id": "NH2",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 296,
+      "seq_len": 351
+    },
+    {
+      "record_id": "NH2_NL_letter_B",
+      "case_id": "NH2",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 304,
+      "seq_len": 351
+    },
+    {
+      "record_id": "NH2_NL_letter_C",
+      "case_id": "NH2",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 315,
+      "seq_len": 351
+    },
+    {
+      "record_id": "NH2_NL_letter_D",
+      "case_id": "NH2",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 329,
+      "seq_len": 351
+    },
+    {
+      "record_id": "NH2_NF_content",
+      "case_id": "NH2",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 286,
+      "seq_len": 292
+    },
+    {
+      "record_id": "NH3_NL_content",
+      "case_id": "NH3",
+      "format": "NL",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 237,
+      "seq_len": 302
+    },
+    {
+      "record_id": "NH3_NL_pregen",
+      "case_id": "NH3",
+      "format": "NL",
+      "kind": "pregen",
+      "token_id": 236761,
+      "token_str": ".",
+      "chat_tok_idx": 296,
+      "seq_len": 302
+    },
+    {
+      "record_id": "NH3_NL_letter_A",
+      "case_id": "NH3",
+      "format": "NL",
+      "kind": "letter_A",
+      "token_id": 236776,
+      "token_str": "A",
+      "chat_tok_idx": 247,
+      "seq_len": 302
+    },
+    {
+      "record_id": "NH3_NL_letter_B",
+      "case_id": "NH3",
+      "format": "NL",
+      "kind": "letter_B",
+      "token_id": 236799,
+      "token_str": "B",
+      "chat_tok_idx": 255,
+      "seq_len": 302
+    },
+    {
+      "record_id": "NH3_NL_letter_C",
+      "case_id": "NH3",
+      "format": "NL",
+      "kind": "letter_C",
+      "token_id": 236780,
+      "token_str": "C",
+      "chat_tok_idx": 266,
+      "seq_len": 302
+    },
+    {
+      "record_id": "NH3_NL_letter_D",
+      "case_id": "NH3",
+      "format": "NL",
+      "kind": "letter_D",
+      "token_id": 236796,
+      "token_str": "D",
+      "chat_tok_idx": 280,
+      "seq_len": 302
+    },
+    {
+      "record_id": "NH3_NF_content",
+      "case_id": "NH3",
+      "format": "NF",
+      "kind": "content",
+      "token_id": 236881,
+      "token_str": "?",
+      "chat_tok_idx": 237,
+      "seq_len": 243
+    }
+  ]
+}
