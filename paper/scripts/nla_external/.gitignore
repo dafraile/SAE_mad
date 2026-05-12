@@ -1,0 +1,2 @@
+# We clone NLA repo locally for `import nla_inference` but don't track its files
+natural_language_autoencoders/
