@@ -614,61 +614,112 @@ byte-identical prefix tokens. The NLA greedy outputs agree
 character-identical strings on 17/60 cases and minor surface variation
 on the rest.
 
-\textbf{Headline result.} Table~\ref{tab:phase8_nla} reports the
-percentage of NLA descriptions per position kind that contain
-clinical-content keywords (\textit{medical, clinical, patient,
-symptom, doctor, diagnosis,} \ldots) vs.\ multiple-choice-scaffold
-keywords (\textit{letter, lettered, quiz, option, choice, multiple
-choice, ``A = ''/``B = '',} \ldots; we deliberately exclude generic
-words like \textit{format} and \textit{structured} which appear in
-both modes).
+\textbf{LLM-as-judge classification.} Each of the 420 NLA descriptions
+is read by two LLM judges (gpt-5.2-thinking-high and claude-sonnet-4.6,
+the same stack used for our Phase~0.5 NF adjudication) and classified
+on two independent axes:
+\textbf{MEDICAL} (does the description characterize the activation as
+a clinical/medical representation? \textsc{primary}/\textsc{partial}/\textsc{no})
+and \textbf{SCAFFOLD} (does it characterize the activation as a
+multiple-choice/forced-letter/quiz-format representation?
+\textsc{primary}/\textsc{partial}/\textsc{no}). \textsc{primary} means
+the description's load-bearing content is on this concept;
+\textsc{partial} means the concept appears but is not the description's
+primary frame (e.g.\ ``\emph{Medical Q\&A format established\ldots}'',
+which mentions medical but primarily frames the scaffold);
+\textsc{no} means the concept does not appear meaningfully. Inter-judge
+agreement is $96.7\%$ on MEDICAL and $96.2\%$ on SCAFFOLD; we
+consolidate disagreements by taking the more conservative (lower) of
+the two judges' levels.
+
+\textbf{Headline test: what state is the model in just before generation?}
+The comparison the constrained-output-artifact hypothesis predicts is
+between the model's pre-generation hidden state in NF (medical
+reasoning mode; about to write free text) and in NL (forced-letter
+mode; about to emit a single letter). The relevant positions are
+\textbf{NF\_content} (the ``?'' of ``follow up?'' --- the last user
+token in NF, where the model is about to begin its response) and
+\textbf{NL\_pregen} (the ``.'' of ``\ldots extra words.'' --- the
+last user token in NL, after the scaffold block, where the model is
+about to begin its lettered response). Table~\ref{tab:phase8_nla}
+reports the consolidated judge classifications across all seven
+position kinds; the headline cells are highlighted.
 
 \begin{center}
 \small
-\begin{tabular}{lrrr}
+\begin{tabular}{lcccccc}
 \toprule
-Position & Medical~\% & Scaffold~\% & Reading \\
+\multirow{2}{*}{Position} & \multicolumn{3}{c}{MEDICAL ($n{=}60$)} & \multicolumn{3}{c}{SCAFFOLD ($n{=}60$)} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+ & \textsc{primary} & \textsc{partial} & \textsc{no} & \textsc{primary} & \textsc{partial} & \textsc{no} \\
 \midrule
-NF\_content & \textbf{100.0} & 3.3 & Clinical content \\
-NL\_content & \textbf{100.0} & 3.3 & Clinical content (same activation as NF) \\
-NL\_pregen  & 100.0 & \textbf{100.0} & Decision-point: clinical \emph{and} scaffold \\
-NL\_letter\_A & 98.3 & \textbf{100.0} & Scaffold (A = home) \\
-NL\_letter\_B & 6.7  & \textbf{100.0} & Scaffold (cleanest letter) \\
-NL\_letter\_C & 76.7 & \textbf{100.0} & Scaffold (24--48h) \\
-NL\_letter\_D & 100.0 & \textbf{100.0} & Scaffold (D = ER; clinically loaded) \\
+\rowcolor[gray]{0.92} NF\_content    & \textbf{60} & 0 & 0 & 0 & 8 & \textbf{52} \\
+NL\_content    & 60 & 0 & 0 & 0 & 7 & 53 \\
+\rowcolor[gray]{0.92} NL\_pregen     & 0 & \textbf{60} & 0 & \textbf{60} & 0 & 0 \\
+NL\_letter\_A  & 0 & 60 & 0 & 60 & 0 & 0 \\
+NL\_letter\_B  & 0 & 8 & \textbf{52} & \textbf{60} & 0 & 0 \\
+NL\_letter\_C  & 0 & 57 & 3 & 60 & 0 & 0 \\
+NL\_letter\_D  & 0 & 60 & 0 & 60 & 0 & 0 \\
 \bottomrule
 \end{tabular}
 \end{center}
 \label{tab:phase8_nla}
 
-\textbf{Representative NLA outputs.} At NL\_content (case E1, ``?''
-of ``follow up?''): \textit{``Medical Q\&A format established:
-structured clinical question seeking advice, with a patient asking
-about post-injury follow-up timing.''} At NL\_pregen (E1, ``.'' of
-``\ldots extra words.''): \textit{``Structured quiz format with answer
-choices, requiring a single lettered answer to follow the prompt
-about a medical/educational passage.''} At NL\_letter\_B (E1):
-\textit{``Structured quiz format with numbered options and a question
-prompt establishes a list of answer choices\ldots\ pattern of
-lettered options, requiring a second option label to follow.''}
+\textbf{Reading the headline cells.} At the \textbf{NF pre-generation}
+position the activation is unambiguously a clinical representation
+($60/60$ \textsc{med-primary}; $52/60$ \textsc{sca-no}, with the
+remaining 8 cases at \textsc{sca-partial} because the NLA's description
+uses the word ``format'' in the context of ``\emph{Medical Q\&A format}''
+without invoking any scaffold structure). At the \textbf{NL
+pre-generation} position the activation flips:
+$0/60$ \textsc{med-primary}, $60/60$ \textsc{med-partial}, and
+$60/60$ \textsc{sca-primary}. The forced-letter scaffold does not
+strip clinical content from the residual stream --- medical context
+is still present and the judges note it --- but it demotes that
+content from the description's load-bearing concept to background
+context, while the multiple-choice scaffold becomes the
+representation's primary frame. The clinical encoding survives;
+the format encoding is added on top, and at the decision-point token
+the format encoding is what the description leads with.
 
-\textbf{Reading.} The NLA's natural-language descriptions and our
-Phase~5 top-token analysis are two unsupervised methods trained by
-different labs on different objectives. They converge on the same
-reading of the format direction: clinical content at the
-last-content-token position is described as medical (NF\_content =
-NL\_content = 100\% medical, 3\% scaffold), and scaffold-letter
-positions are described as multiple-choice answer options (letter\_B
-= 7\% medical, 100\% scaffold). The decision-point NL\_pregen
-activation --- the hidden state the model attends to in generating
-its first letter --- has both clinical context \emph{and} explicit
-multiple-choice-format encoding, which is precisely the pattern
-required for the constrained-letter mapping circuit to fire on a
-clinically grounded representation. This is cross-method validation
-rather than a new mechanistic finding; the SAE-based and NLA-based
-interpretations agree on what the format direction at deep layers
-represents, and disagree only on the surface vocabulary used to name
-it.
+\textbf{Representative NLA outputs.} At NF\_content (case E1, ``?''
+of ``follow up?''): \textit{``Medical Q\&A format established:
+structured clinical question seeking advice, with a patient
+reporting a post-surgical follow-up concern.''} At NL\_pregen (E1,
+``.'' of ``\ldots extra words.''): \textit{``Structured quiz format
+with answer choices, requiring a single lettered answer to follow
+the prompt about a medical/educational passage.''} At NL\_letter\_B
+(E1): \textit{``Structured quiz format with numbered options and a
+question prompt establishes a list of answer choices for a
+moral/ethical dilemma\ldots\ pattern of lettered options, requiring
+a second option label to follow.''}
+
+\textbf{Per-letter pattern (secondary detail).} Across the four
+NL-only answer-key letter tokens, all four are $60/60$
+\textsc{sca-primary}. They differ on the MEDICAL axis: \texttt{letter\_B}
+has $52/60$ \textsc{med-no}, the cleanest ``no medical content''
+verdict in the dataset, while \texttt{letter\_D} is $60/60$
+\textsc{med-partial} because ``\emph{D = Go to the ER now}'' carries
+strong clinical context. This per-token variation matches the literal
+clinical loading of each option's text, and matches Phase~5's top-token
+analysis (which identified individual SAE features firing on these
+same scaffold tokens).
+
+\textbf{Cross-method convergence.} Two unsupervised activation-
+interpretation methods --- SAE-based top-token analysis (Phase~5,
+Gemma Scope~2 pipeline) and NLA-based natural-language verbalization
+(Phase~8, the Fraser-Taliente et al.\ 2026 released
+checkpoint~\cite{frasertaliente2026nla}) --- trained by different
+labs on different objectives, agree on the reading: the deep-layer
+representation of the same clinical content is preserved across
+formats; what the forced-letter scaffold adds at the decision point
+is a multiple-choice-answer scaffold encoding that becomes the
+representation's primary frame while the clinical encoding remains
+present as background. Where the SAE pipeline names the format
+direction by listing individual features that fire on specific
+scaffold tokens, the NLA names it directly in English:
+``\emph{Structured quiz format with answer choices, requiring a
+single lettered answer.}''
 
 ---
 
@@ -699,13 +750,19 @@ in representation space but not, at single-layer perturbation magnitudes,
 isolatable to a few features or a single residual direction with sufficient
 causal control to drive letter outputs. (v) Independent-method
 verbalization: Natural Language Autoencoder descriptions of L32
-activations (Section~4.9) name the same dissociation in plain
-English --- 100\% of NLA descriptions at the last clinical-content
-token mention medical/clinical concepts, while 100\% of descriptions
-at the answer-key letter tokens mention multiple-choice-scaffold
-concepts (letter\_B: 7\% medical, 100\% scaffold) --- closing the
-loop on the top-token reading with a method trained by a different
-lab on a different objective.
+activations (Section~4.9), classified by two LLM judges with 96.7\%
+agreement, name the same dissociation in plain English. At the NF
+pre-generation position the activation is a clinical representation
+($60/60$ med-primary, $52/60$ scaffold-absent); at the NL
+pre-generation position --- the hidden state that drives the model's
+first generated letter --- the activation flips to a primarily
+multiple-choice scaffold representation with clinical content
+present only as background ($60/60$ scaffold-primary, $60/60$
+med-partial, $0/60$ med-primary). The forced-letter scaffold does
+not strip clinical content from the residual stream; it demotes
+that content from the representation's primary frame, exactly the
+pattern predicted by an output-mapping (rather than clinical-reasoning)
+account of the format effect.
 
 \textbf{Top-token analysis names the format-direction features.} In Gemma 3
 4B IT at L29, the top features by alignment with the (NL${-}$NF) max-pool

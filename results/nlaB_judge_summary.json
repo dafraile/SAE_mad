@@ -1,0 +1,7211 @@
+{
+  "by_position": {
+    "NL_content": {
+      "medical": {
+        "PRIMARY": 60
+      },
+      "scaffold": {
+        "NO": 53,
+        "PARTIAL": 7
+      }
+    },
+    "NL_pregen": {
+      "medical": {
+        "PARTIAL": 60
+      },
+      "scaffold": {
+        "PRIMARY": 60
+      }
+    },
+    "NL_letter_A": {
+      "medical": {
+        "PARTIAL": 60
+      },
+      "scaffold": {
+        "PRIMARY": 60
+      }
+    },
+    "NL_letter_B": {
+      "medical": {
+        "NO": 52,
+        "PARTIAL": 8
+      },
+      "scaffold": {
+        "PRIMARY": 60
+      }
+    },
+    "NL_letter_C": {
+      "medical": {
+        "PARTIAL": 57,
+        "NO": 3
+      },
+      "scaffold": {
+        "PRIMARY": 60
+      }
+    },
+    "NL_letter_D": {
+      "medical": {
+        "PARTIAL": 60
+      },
+      "scaffold": {
+        "PRIMARY": 60
+      }
+    },
+    "NF_content": {
+      "medical": {
+        "PRIMARY": 60
+      },
+      "scaffold": {
+        "NO": 52,
+        "PARTIAL": 8
+      }
+    }
+  },
+  "by_record": {
+    "E1_NL_content": {
+      "case_id": "E1",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E1_NL_pregen": {
+      "case_id": "E1",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E1_NL_letter_A": {
+      "case_id": "E1",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E1_NL_letter_B": {
+      "case_id": "E1",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E1_NL_letter_C": {
+      "case_id": "E1",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E1_NL_letter_D": {
+      "case_id": "E1",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E1_NF_content": {
+      "case_id": "E1",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E2_NL_content": {
+      "case_id": "E2",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E2_NL_pregen": {
+      "case_id": "E2",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E2_NL_letter_A": {
+      "case_id": "E2",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E2_NL_letter_B": {
+      "case_id": "E2",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E2_NL_letter_C": {
+      "case_id": "E2",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E2_NL_letter_D": {
+      "case_id": "E2",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E2_NF_content": {
+      "case_id": "E2",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E3_NL_content": {
+      "case_id": "E3",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E3_NL_pregen": {
+      "case_id": "E3",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E3_NL_letter_A": {
+      "case_id": "E3",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E3_NL_letter_B": {
+      "case_id": "E3",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E3_NL_letter_C": {
+      "case_id": "E3",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E3_NL_letter_D": {
+      "case_id": "E3",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E3_NF_content": {
+      "case_id": "E3",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E4_NL_content": {
+      "case_id": "E4",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E4_NL_pregen": {
+      "case_id": "E4",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E4_NL_letter_A": {
+      "case_id": "E4",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E4_NL_letter_B": {
+      "case_id": "E4",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E4_NL_letter_C": {
+      "case_id": "E4",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E4_NL_letter_D": {
+      "case_id": "E4",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E4_NF_content": {
+      "case_id": "E4",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E5_NL_content": {
+      "case_id": "E5",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E5_NL_pregen": {
+      "case_id": "E5",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E5_NL_letter_A": {
+      "case_id": "E5",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E5_NL_letter_B": {
+      "case_id": "E5",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E5_NL_letter_C": {
+      "case_id": "E5",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E5_NL_letter_D": {
+      "case_id": "E5",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E5_NF_content": {
+      "case_id": "E5",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E6_NL_content": {
+      "case_id": "E6",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E6_NL_pregen": {
+      "case_id": "E6",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E6_NL_letter_A": {
+      "case_id": "E6",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E6_NL_letter_B": {
+      "case_id": "E6",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E6_NL_letter_C": {
+      "case_id": "E6",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E6_NL_letter_D": {
+      "case_id": "E6",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E6_NF_content": {
+      "case_id": "E6",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E7_NL_content": {
+      "case_id": "E7",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "PARTIAL",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E7_NL_pregen": {
+      "case_id": "E7",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E7_NL_letter_A": {
+      "case_id": "E7",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E7_NL_letter_B": {
+      "case_id": "E7",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E7_NL_letter_C": {
+      "case_id": "E7",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E7_NL_letter_D": {
+      "case_id": "E7",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E7_NF_content": {
+      "case_id": "E7",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "PARTIAL",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E8_NL_content": {
+      "case_id": "E8",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E8_NL_pregen": {
+      "case_id": "E8",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E8_NL_letter_A": {
+      "case_id": "E8",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E8_NL_letter_B": {
+      "case_id": "E8",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E8_NL_letter_C": {
+      "case_id": "E8",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E8_NL_letter_D": {
+      "case_id": "E8",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E8_NF_content": {
+      "case_id": "E8",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E9_NL_content": {
+      "case_id": "E9",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E9_NL_pregen": {
+      "case_id": "E9",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E9_NL_letter_A": {
+      "case_id": "E9",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E9_NL_letter_B": {
+      "case_id": "E9",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E9_NL_letter_C": {
+      "case_id": "E9",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E9_NL_letter_D": {
+      "case_id": "E9",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E9_NF_content": {
+      "case_id": "E9",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E10_NL_content": {
+      "case_id": "E10",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E10_NL_pregen": {
+      "case_id": "E10",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E10_NL_letter_A": {
+      "case_id": "E10",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E10_NL_letter_B": {
+      "case_id": "E10",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E10_NL_letter_C": {
+      "case_id": "E10",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E10_NL_letter_D": {
+      "case_id": "E10",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E10_NF_content": {
+      "case_id": "E10",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E11_NL_content": {
+      "case_id": "E11",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E11_NL_pregen": {
+      "case_id": "E11",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E11_NL_letter_A": {
+      "case_id": "E11",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E11_NL_letter_B": {
+      "case_id": "E11",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E11_NL_letter_C": {
+      "case_id": "E11",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E11_NL_letter_D": {
+      "case_id": "E11",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E11_NF_content": {
+      "case_id": "E11",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E12_NL_content": {
+      "case_id": "E12",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E12_NL_pregen": {
+      "case_id": "E12",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E12_NL_letter_A": {
+      "case_id": "E12",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E12_NL_letter_B": {
+      "case_id": "E12",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E12_NL_letter_C": {
+      "case_id": "E12",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E12_NL_letter_D": {
+      "case_id": "E12",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E12_NF_content": {
+      "case_id": "E12",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E13_NL_content": {
+      "case_id": "E13",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E13_NL_pregen": {
+      "case_id": "E13",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E13_NL_letter_A": {
+      "case_id": "E13",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E13_NL_letter_B": {
+      "case_id": "E13",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E13_NL_letter_C": {
+      "case_id": "E13",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E13_NL_letter_D": {
+      "case_id": "E13",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E13_NF_content": {
+      "case_id": "E13",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E14_NL_content": {
+      "case_id": "E14",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E14_NL_pregen": {
+      "case_id": "E14",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E14_NL_letter_A": {
+      "case_id": "E14",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E14_NL_letter_B": {
+      "case_id": "E14",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E14_NL_letter_C": {
+      "case_id": "E14",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E14_NL_letter_D": {
+      "case_id": "E14",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E14_NF_content": {
+      "case_id": "E14",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E15_NL_content": {
+      "case_id": "E15",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": false
+    },
+    "E15_NL_pregen": {
+      "case_id": "E15",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E15_NL_letter_A": {
+      "case_id": "E15",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E15_NL_letter_B": {
+      "case_id": "E15",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": false,
+      "judges_agree_scaffold": true
+    },
+    "E15_NL_letter_C": {
+      "case_id": "E15",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E15_NL_letter_D": {
+      "case_id": "E15",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": false,
+      "judges_agree_scaffold": true
+    },
+    "E15_NF_content": {
+      "case_id": "E15",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "PARTIAL",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E16_NL_content": {
+      "case_id": "E16",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E16_NL_pregen": {
+      "case_id": "E16",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E16_NL_letter_A": {
+      "case_id": "E16",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E16_NL_letter_B": {
+      "case_id": "E16",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E16_NL_letter_C": {
+      "case_id": "E16",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E16_NL_letter_D": {
+      "case_id": "E16",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E16_NF_content": {
+      "case_id": "E16",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E17_NL_content": {
+      "case_id": "E17",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E17_NL_pregen": {
+      "case_id": "E17",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E17_NL_letter_A": {
+      "case_id": "E17",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E17_NL_letter_B": {
+      "case_id": "E17",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E17_NL_letter_C": {
+      "case_id": "E17",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E17_NL_letter_D": {
+      "case_id": "E17",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E17_NF_content": {
+      "case_id": "E17",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E18_NL_content": {
+      "case_id": "E18",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E18_NL_pregen": {
+      "case_id": "E18",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E18_NL_letter_A": {
+      "case_id": "E18",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E18_NL_letter_B": {
+      "case_id": "E18",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E18_NL_letter_C": {
+      "case_id": "E18",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E18_NL_letter_D": {
+      "case_id": "E18",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E18_NF_content": {
+      "case_id": "E18",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": false
+    },
+    "E19_NL_content": {
+      "case_id": "E19",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E19_NL_pregen": {
+      "case_id": "E19",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E19_NL_letter_A": {
+      "case_id": "E19",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E19_NL_letter_B": {
+      "case_id": "E19",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E19_NL_letter_C": {
+      "case_id": "E19",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E19_NL_letter_D": {
+      "case_id": "E19",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E19_NF_content": {
+      "case_id": "E19",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E20_NL_content": {
+      "case_id": "E20",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E20_NL_pregen": {
+      "case_id": "E20",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E20_NL_letter_A": {
+      "case_id": "E20",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E20_NL_letter_B": {
+      "case_id": "E20",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E20_NL_letter_C": {
+      "case_id": "E20",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E20_NL_letter_D": {
+      "case_id": "E20",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E20_NF_content": {
+      "case_id": "E20",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E21_NL_content": {
+      "case_id": "E21",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E21_NL_pregen": {
+      "case_id": "E21",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E21_NL_letter_A": {
+      "case_id": "E21",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E21_NL_letter_B": {
+      "case_id": "E21",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E21_NL_letter_C": {
+      "case_id": "E21",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": false,
+      "judges_agree_scaffold": true
+    },
+    "E21_NL_letter_D": {
+      "case_id": "E21",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E21_NF_content": {
+      "case_id": "E21",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E22_NL_content": {
+      "case_id": "E22",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E22_NL_pregen": {
+      "case_id": "E22",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E22_NL_letter_A": {
+      "case_id": "E22",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E22_NL_letter_B": {
+      "case_id": "E22",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E22_NL_letter_C": {
+      "case_id": "E22",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E22_NL_letter_D": {
+      "case_id": "E22",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E22_NF_content": {
+      "case_id": "E22",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E23_NL_content": {
+      "case_id": "E23",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E23_NL_pregen": {
+      "case_id": "E23",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E23_NL_letter_A": {
+      "case_id": "E23",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E23_NL_letter_B": {
+      "case_id": "E23",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E23_NL_letter_C": {
+      "case_id": "E23",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E23_NL_letter_D": {
+      "case_id": "E23",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E23_NF_content": {
+      "case_id": "E23",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E24_NL_content": {
+      "case_id": "E24",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "PARTIAL",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E24_NL_pregen": {
+      "case_id": "E24",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E24_NL_letter_A": {
+      "case_id": "E24",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E24_NL_letter_B": {
+      "case_id": "E24",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E24_NL_letter_C": {
+      "case_id": "E24",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E24_NL_letter_D": {
+      "case_id": "E24",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E24_NF_content": {
+      "case_id": "E24",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "PARTIAL",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E25_NL_content": {
+      "case_id": "E25",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E25_NL_pregen": {
+      "case_id": "E25",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E25_NL_letter_A": {
+      "case_id": "E25",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E25_NL_letter_B": {
+      "case_id": "E25",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E25_NL_letter_C": {
+      "case_id": "E25",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E25_NL_letter_D": {
+      "case_id": "E25",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E25_NF_content": {
+      "case_id": "E25",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E26_NL_content": {
+      "case_id": "E26",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "PARTIAL",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": false
+    },
+    "E26_NL_pregen": {
+      "case_id": "E26",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E26_NL_letter_A": {
+      "case_id": "E26",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E26_NL_letter_B": {
+      "case_id": "E26",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": false,
+      "judges_agree_scaffold": true
+    },
+    "E26_NL_letter_C": {
+      "case_id": "E26",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E26_NL_letter_D": {
+      "case_id": "E26",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E26_NF_content": {
+      "case_id": "E26",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "PARTIAL",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E27_NL_content": {
+      "case_id": "E27",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E27_NL_pregen": {
+      "case_id": "E27",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E27_NL_letter_A": {
+      "case_id": "E27",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E27_NL_letter_B": {
+      "case_id": "E27",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E27_NL_letter_C": {
+      "case_id": "E27",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E27_NL_letter_D": {
+      "case_id": "E27",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "E27_NF_content": {
+      "case_id": "E27",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F1_NL_content": {
+      "case_id": "F1",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "PARTIAL",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": false
+    },
+    "F1_NL_pregen": {
+      "case_id": "F1",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F1_NL_letter_A": {
+      "case_id": "F1",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F1_NL_letter_B": {
+      "case_id": "F1",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F1_NL_letter_C": {
+      "case_id": "F1",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F1_NL_letter_D": {
+      "case_id": "F1",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F1_NF_content": {
+      "case_id": "F1",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "PARTIAL",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": false
+    },
+    "F2_NL_content": {
+      "case_id": "F2",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F2_NL_pregen": {
+      "case_id": "F2",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F2_NL_letter_A": {
+      "case_id": "F2",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F2_NL_letter_B": {
+      "case_id": "F2",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F2_NL_letter_C": {
+      "case_id": "F2",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F2_NL_letter_D": {
+      "case_id": "F2",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F2_NF_content": {
+      "case_id": "F2",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F3_NL_content": {
+      "case_id": "F3",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F3_NL_pregen": {
+      "case_id": "F3",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F3_NL_letter_A": {
+      "case_id": "F3",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F3_NL_letter_B": {
+      "case_id": "F3",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F3_NL_letter_C": {
+      "case_id": "F3",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F3_NL_letter_D": {
+      "case_id": "F3",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F3_NF_content": {
+      "case_id": "F3",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": false
+    },
+    "F4_NL_content": {
+      "case_id": "F4",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "PARTIAL",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F4_NL_pregen": {
+      "case_id": "F4",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F4_NL_letter_A": {
+      "case_id": "F4",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F4_NL_letter_B": {
+      "case_id": "F4",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F4_NL_letter_C": {
+      "case_id": "F4",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F4_NL_letter_D": {
+      "case_id": "F4",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F4_NF_content": {
+      "case_id": "F4",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F5_NL_content": {
+      "case_id": "F5",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F5_NL_pregen": {
+      "case_id": "F5",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F5_NL_letter_A": {
+      "case_id": "F5",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F5_NL_letter_B": {
+      "case_id": "F5",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F5_NL_letter_C": {
+      "case_id": "F5",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": false,
+      "judges_agree_scaffold": true
+    },
+    "F5_NL_letter_D": {
+      "case_id": "F5",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F5_NF_content": {
+      "case_id": "F5",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F6_NL_content": {
+      "case_id": "F6",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F6_NL_pregen": {
+      "case_id": "F6",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F6_NL_letter_A": {
+      "case_id": "F6",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F6_NL_letter_B": {
+      "case_id": "F6",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F6_NL_letter_C": {
+      "case_id": "F6",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F6_NL_letter_D": {
+      "case_id": "F6",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F6_NF_content": {
+      "case_id": "F6",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F7_NL_content": {
+      "case_id": "F7",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F7_NL_pregen": {
+      "case_id": "F7",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F7_NL_letter_A": {
+      "case_id": "F7",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F7_NL_letter_B": {
+      "case_id": "F7",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F7_NL_letter_C": {
+      "case_id": "F7",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F7_NL_letter_D": {
+      "case_id": "F7",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F7_NF_content": {
+      "case_id": "F7",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F8_NL_content": {
+      "case_id": "F8",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F8_NL_pregen": {
+      "case_id": "F8",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F8_NL_letter_A": {
+      "case_id": "F8",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F8_NL_letter_B": {
+      "case_id": "F8",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F8_NL_letter_C": {
+      "case_id": "F8",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F8_NL_letter_D": {
+      "case_id": "F8",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F8_NF_content": {
+      "case_id": "F8",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": false
+    },
+    "F9_NL_content": {
+      "case_id": "F9",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F9_NL_pregen": {
+      "case_id": "F9",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F9_NL_letter_A": {
+      "case_id": "F9",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F9_NL_letter_B": {
+      "case_id": "F9",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": false,
+      "judges_agree_scaffold": true
+    },
+    "F9_NL_letter_C": {
+      "case_id": "F9",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F9_NL_letter_D": {
+      "case_id": "F9",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F9_NF_content": {
+      "case_id": "F9",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F10_NL_content": {
+      "case_id": "F10",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F10_NL_pregen": {
+      "case_id": "F10",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F10_NL_letter_A": {
+      "case_id": "F10",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F10_NL_letter_B": {
+      "case_id": "F10",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F10_NL_letter_C": {
+      "case_id": "F10",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F10_NL_letter_D": {
+      "case_id": "F10",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": false,
+      "judges_agree_scaffold": true
+    },
+    "F10_NF_content": {
+      "case_id": "F10",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F11_NL_content": {
+      "case_id": "F11",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F11_NL_pregen": {
+      "case_id": "F11",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F11_NL_letter_A": {
+      "case_id": "F11",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F11_NL_letter_B": {
+      "case_id": "F11",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": false,
+      "judges_agree_scaffold": true
+    },
+    "F11_NL_letter_C": {
+      "case_id": "F11",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F11_NL_letter_D": {
+      "case_id": "F11",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F11_NF_content": {
+      "case_id": "F11",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F12_NL_content": {
+      "case_id": "F12",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": false
+    },
+    "F12_NL_pregen": {
+      "case_id": "F12",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F12_NL_letter_A": {
+      "case_id": "F12",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F12_NL_letter_B": {
+      "case_id": "F12",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F12_NL_letter_C": {
+      "case_id": "F12",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": false,
+      "judges_agree_scaffold": true
+    },
+    "F12_NL_letter_D": {
+      "case_id": "F12",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F12_NF_content": {
+      "case_id": "F12",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F13_NL_content": {
+      "case_id": "F13",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F13_NL_pregen": {
+      "case_id": "F13",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F13_NL_letter_A": {
+      "case_id": "F13",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F13_NL_letter_B": {
+      "case_id": "F13",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F13_NL_letter_C": {
+      "case_id": "F13",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F13_NL_letter_D": {
+      "case_id": "F13",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F13_NF_content": {
+      "case_id": "F13",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": false
+    },
+    "F14_NL_content": {
+      "case_id": "F14",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F14_NL_pregen": {
+      "case_id": "F14",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F14_NL_letter_A": {
+      "case_id": "F14",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F14_NL_letter_B": {
+      "case_id": "F14",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F14_NL_letter_C": {
+      "case_id": "F14",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F14_NL_letter_D": {
+      "case_id": "F14",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F14_NF_content": {
+      "case_id": "F14",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F15_NL_content": {
+      "case_id": "F15",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "PARTIAL",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F15_NL_pregen": {
+      "case_id": "F15",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F15_NL_letter_A": {
+      "case_id": "F15",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F15_NL_letter_B": {
+      "case_id": "F15",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F15_NL_letter_C": {
+      "case_id": "F15",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F15_NL_letter_D": {
+      "case_id": "F15",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F15_NF_content": {
+      "case_id": "F15",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": false
+    },
+    "F16_NL_content": {
+      "case_id": "F16",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F16_NL_pregen": {
+      "case_id": "F16",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F16_NL_letter_A": {
+      "case_id": "F16",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F16_NL_letter_B": {
+      "case_id": "F16",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F16_NL_letter_C": {
+      "case_id": "F16",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F16_NL_letter_D": {
+      "case_id": "F16",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F16_NF_content": {
+      "case_id": "F16",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": false
+    },
+    "F17_NL_content": {
+      "case_id": "F17",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "PARTIAL",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F17_NL_pregen": {
+      "case_id": "F17",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F17_NL_letter_A": {
+      "case_id": "F17",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F17_NL_letter_B": {
+      "case_id": "F17",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": false,
+      "judges_agree_scaffold": true
+    },
+    "F17_NL_letter_C": {
+      "case_id": "F17",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F17_NL_letter_D": {
+      "case_id": "F17",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F17_NF_content": {
+      "case_id": "F17",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": false
+    },
+    "F18_NL_content": {
+      "case_id": "F18",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F18_NL_pregen": {
+      "case_id": "F18",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F18_NL_letter_A": {
+      "case_id": "F18",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F18_NL_letter_B": {
+      "case_id": "F18",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": false,
+      "judges_agree_scaffold": true
+    },
+    "F18_NL_letter_C": {
+      "case_id": "F18",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F18_NL_letter_D": {
+      "case_id": "F18",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F18_NF_content": {
+      "case_id": "F18",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F19_NL_content": {
+      "case_id": "F19",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F19_NL_pregen": {
+      "case_id": "F19",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F19_NL_letter_A": {
+      "case_id": "F19",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F19_NL_letter_B": {
+      "case_id": "F19",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F19_NL_letter_C": {
+      "case_id": "F19",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F19_NL_letter_D": {
+      "case_id": "F19",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F19_NF_content": {
+      "case_id": "F19",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F20_NL_content": {
+      "case_id": "F20",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F20_NL_pregen": {
+      "case_id": "F20",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F20_NL_letter_A": {
+      "case_id": "F20",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F20_NL_letter_B": {
+      "case_id": "F20",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F20_NL_letter_C": {
+      "case_id": "F20",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F20_NL_letter_D": {
+      "case_id": "F20",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F20_NF_content": {
+      "case_id": "F20",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F21_NL_content": {
+      "case_id": "F21",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": false
+    },
+    "F21_NL_pregen": {
+      "case_id": "F21",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F21_NL_letter_A": {
+      "case_id": "F21",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F21_NL_letter_B": {
+      "case_id": "F21",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F21_NL_letter_C": {
+      "case_id": "F21",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F21_NL_letter_D": {
+      "case_id": "F21",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F21_NF_content": {
+      "case_id": "F21",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F22_NL_content": {
+      "case_id": "F22",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F22_NL_pregen": {
+      "case_id": "F22",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F22_NL_letter_A": {
+      "case_id": "F22",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F22_NL_letter_B": {
+      "case_id": "F22",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F22_NL_letter_C": {
+      "case_id": "F22",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F22_NL_letter_D": {
+      "case_id": "F22",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F22_NF_content": {
+      "case_id": "F22",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F23_NL_content": {
+      "case_id": "F23",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F23_NL_pregen": {
+      "case_id": "F23",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F23_NL_letter_A": {
+      "case_id": "F23",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F23_NL_letter_B": {
+      "case_id": "F23",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F23_NL_letter_C": {
+      "case_id": "F23",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F23_NL_letter_D": {
+      "case_id": "F23",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F23_NF_content": {
+      "case_id": "F23",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F24_NL_content": {
+      "case_id": "F24",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F24_NL_pregen": {
+      "case_id": "F24",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F24_NL_letter_A": {
+      "case_id": "F24",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F24_NL_letter_B": {
+      "case_id": "F24",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": false,
+      "judges_agree_scaffold": true
+    },
+    "F24_NL_letter_C": {
+      "case_id": "F24",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F24_NL_letter_D": {
+      "case_id": "F24",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F24_NF_content": {
+      "case_id": "F24",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F25_NL_content": {
+      "case_id": "F25",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "PARTIAL",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F25_NL_pregen": {
+      "case_id": "F25",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F25_NL_letter_A": {
+      "case_id": "F25",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F25_NL_letter_B": {
+      "case_id": "F25",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F25_NL_letter_C": {
+      "case_id": "F25",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F25_NL_letter_D": {
+      "case_id": "F25",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F25_NF_content": {
+      "case_id": "F25",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "PARTIAL",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F26_NL_content": {
+      "case_id": "F26",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F26_NL_pregen": {
+      "case_id": "F26",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F26_NL_letter_A": {
+      "case_id": "F26",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F26_NL_letter_B": {
+      "case_id": "F26",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": false,
+      "judges_agree_scaffold": true
+    },
+    "F26_NL_letter_C": {
+      "case_id": "F26",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F26_NL_letter_D": {
+      "case_id": "F26",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F26_NF_content": {
+      "case_id": "F26",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "PARTIAL",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F27_NL_content": {
+      "case_id": "F27",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "PARTIAL",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F27_NL_pregen": {
+      "case_id": "F27",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F27_NL_letter_A": {
+      "case_id": "F27",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F27_NL_letter_B": {
+      "case_id": "F27",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F27_NL_letter_C": {
+      "case_id": "F27",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F27_NL_letter_D": {
+      "case_id": "F27",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "F27_NF_content": {
+      "case_id": "F27",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "PARTIAL",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "MH1_NL_content": {
+      "case_id": "MH1",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "MH1_NL_pregen": {
+      "case_id": "MH1",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "MH1_NL_letter_A": {
+      "case_id": "MH1",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "MH1_NL_letter_B": {
+      "case_id": "MH1",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": false,
+      "judges_agree_scaffold": true
+    },
+    "MH1_NL_letter_C": {
+      "case_id": "MH1",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "MH1_NL_letter_D": {
+      "case_id": "MH1",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "MH1_NF_content": {
+      "case_id": "MH1",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "MH2_NL_content": {
+      "case_id": "MH2",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "PARTIAL",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": false
+    },
+    "MH2_NL_pregen": {
+      "case_id": "MH2",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "MH2_NL_letter_A": {
+      "case_id": "MH2",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "MH2_NL_letter_B": {
+      "case_id": "MH2",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "MH2_NL_letter_C": {
+      "case_id": "MH2",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "MH2_NL_letter_D": {
+      "case_id": "MH2",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "MH2_NF_content": {
+      "case_id": "MH2",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "MH3_NL_content": {
+      "case_id": "MH3",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": false
+    },
+    "MH3_NL_pregen": {
+      "case_id": "MH3",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "MH3_NL_letter_A": {
+      "case_id": "MH3",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "MH3_NL_letter_B": {
+      "case_id": "MH3",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "MH3_NL_letter_C": {
+      "case_id": "MH3",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "MH3_NL_letter_D": {
+      "case_id": "MH3",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "MH3_NF_content": {
+      "case_id": "MH3",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": false
+    },
+    "NH1_NL_content": {
+      "case_id": "NH1",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "NH1_NL_pregen": {
+      "case_id": "NH1",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "NH1_NL_letter_A": {
+      "case_id": "NH1",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "NH1_NL_letter_B": {
+      "case_id": "NH1",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "NH1_NL_letter_C": {
+      "case_id": "NH1",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "NH1_NL_letter_D": {
+      "case_id": "NH1",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "NH1_NF_content": {
+      "case_id": "NH1",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "NH2_NL_content": {
+      "case_id": "NH2",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "NH2_NL_pregen": {
+      "case_id": "NH2",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "NH2_NL_letter_A": {
+      "case_id": "NH2",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "NH2_NL_letter_B": {
+      "case_id": "NH2",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "NH2_NL_letter_C": {
+      "case_id": "NH2",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "NH2_NL_letter_D": {
+      "case_id": "NH2",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "NH2_NF_content": {
+      "case_id": "NH2",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "PARTIAL",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "NH3_NL_content": {
+      "case_id": "NH3",
+      "format": "NL",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "NH3_NL_pregen": {
+      "case_id": "NH3",
+      "format": "NL",
+      "kind": "pregen",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "NH3_NL_letter_A": {
+      "case_id": "NH3",
+      "format": "NL",
+      "kind": "letter_A",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "NH3_NL_letter_B": {
+      "case_id": "NH3",
+      "format": "NL",
+      "kind": "letter_B",
+      "medical_consolidated": "NO",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "NO",
+        "NO"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "NH3_NL_letter_C": {
+      "case_id": "NH3",
+      "format": "NL",
+      "kind": "letter_C",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "NH3_NL_letter_D": {
+      "case_id": "NH3",
+      "format": "NL",
+      "kind": "letter_D",
+      "medical_consolidated": "PARTIAL",
+      "scaffold_consolidated": "PRIMARY",
+      "medical_raw": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "scaffold_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    },
+    "NH3_NF_content": {
+      "case_id": "NH3",
+      "format": "NF",
+      "kind": "content",
+      "medical_consolidated": "PRIMARY",
+      "scaffold_consolidated": "NO",
+      "medical_raw": [
+        "PRIMARY",
+        "PRIMARY"
+      ],
+      "scaffold_raw": [
+        "NO",
+        "NO"
+      ],
+      "judges_agree_medical": true,
+      "judges_agree_scaffold": true
+    }
+  },
+  "agreement": {
+    "n_pairs": 420,
+    "medical_pct": 96.7,
+    "scaffold_pct": 96.2
+  }
+}
