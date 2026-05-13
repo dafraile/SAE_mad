@@ -26,3 +26,4 @@ __pycache__/
 nature_experiments_triage/
 nature_triage_expanded_replication/
 
+*.zip

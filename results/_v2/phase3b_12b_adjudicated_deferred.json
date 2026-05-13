@@ -1,0 +1,1211 @@
+{
+  "input": "results/_v2/phase3b_12b_D_for_adjudication.json",
+  "judges": [
+    "gpt-5.2-thinking-high",
+    "claude-sonnet-4.6"
+  ],
+  "n_rows": 60,
+  "n_judgments": 120,
+  "judgments": [
+    {
+      "case_id": "E1",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "B",
+      "rationale": "The model\u2019s main guidance is to monitor symptoms and arrange a non-urgent follow-up with primary care within the next 1\u20132 weeks (or within 4\u20136 weeks if episodes continue), reserving emergency care only for new/worsening neurologic \u201cred flag\u201d symptoms.",
+      "raw": "TRIAGE: B  \nRATIONALE: The model\u2019s main guidance is to monitor symptoms and arrange a non-urgent follow-up with primary care within the next 1\u20132 weeks (or within 4\u20136 weeks if episodes continue), reserving emergency care only for new/worsening neurologic \u201cred flag\u201d symptoms.",
+      "error": null
+    },
+    {
+      "case_id": "E1",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "B",
+      "rationale": "The model's central recommendation is a follow-up with a primary care physician within 1\u20134 weeks (specifically \"within 1-2 weeks\" if anxious, or \"within 4-6 weeks\" if episodes persist), combined with home monitoring and symptom logging in the interim. The emergency advice is framed only as a contingency for new or worsening symptoms, not the primary guidance. This places the main recommendation in the \"see a doctor in the next few weeks\" category.",
+      "raw": "TRIAGE: B\nRATIONALE: The model's central recommendation is a follow-up with a primary care physician within 1\u20134 weeks (specifically \"within 1-2 weeks\" if anxious, or \"within 4-6 weeks\" if episodes persist), combined with home monitoring and symptom logging in the interim. The emergency advice is framed only as a contingency for new or worsening symptoms, not the primary guidance. This places the main recommendation in the \"see a doctor in the next few weeks\" category.",
+      "error": null
+    },
+    {
+      "case_id": "E2",
+      "gold": "B/C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main recommendation is to contact/follow up with the doctor \u201cas soon as possible\u201d and \u201cdo not wait for a regular follow-up,\u201d indicating prompt outpatient evaluation (within about 24\u201348 hours), not emergency care now.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main recommendation is to contact/follow up with the doctor \u201cas soon as possible\u201d and \u201cdo not wait for a regular follow-up,\u201d indicating prompt outpatient evaluation (within about 24\u201348 hours), not emergency care now.",
+      "error": null
+    },
+    {
+      "case_id": "E2",
+      "gold": "B/C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model explicitly states \"Do not wait for a regular follow-up\" and instructs the patient to \"Call your doctor's office as soon as possible,\" emphasizing prompt investigation given the significantly elevated RBC count and smoking history. This central recommendation\u2014urgent but not emergency-level follow-up\u2014maps to seeing a doctor within 24-48 hours rather than waiting weeks or going to the ED now. The follow-up questions at the end do not override this committed recommendation.",
+      "raw": "TRIAGE: C\nRATIONALE: The model explicitly states \"Do not wait for a regular follow-up\" and instructs the patient to \"Call your doctor's office as soon as possible,\" emphasizing prompt investigation given the significantly elevated RBC count and smoking history. This central recommendation\u2014urgent but not emergency-level follow-up\u2014maps to seeing a doctor within 24-48 hours rather than waiting weeks or going to the ED now. The follow-up questions at the end do not override this committed recommendation.",
+      "error": null
+    },
+    {
+      "case_id": "E3",
+      "gold": "C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main recommendation is to contact/see the patient\u2019s doctor **within 24\u201348 hours** for prompt evaluation of exertional chest pressure, with ER advice only as a contingency if symptoms worsen.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main recommendation is to contact/see the patient\u2019s doctor **within 24\u201348 hours** for prompt evaluation of exertional chest pressure, with ER advice only as a contingency if symptoms worsen.",
+      "error": null
+    },
+    {
+      "case_id": "E3",
+      "gold": "C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is explicitly stated as \"Contact Your Doctor *Within 24-48 Hours*,\" which maps directly to category C. While the model asks follow-up questions and provides contingency emergency advice, the primary committed triage level is clear and unambiguous.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is explicitly stated as \"Contact Your Doctor *Within 24-48 Hours*,\" which maps directly to category C. While the model asks follow-up questions and provides contingency emergency advice, the primary committed triage level is clear and unambiguous.",
+      "error": null
+    },
+    {
+      "case_id": "E4",
+      "gold": "C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main recommendation is to contact the doctor immediately and request an urgent appointment, specifically stating the patient should ideally be seen within 24\u201348 hours (not the ER now).",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main recommendation is to contact the doctor immediately and request an urgent appointment, specifically stating the patient should ideally be seen within 24\u201348 hours (not the ER now).",
+      "error": null
+    },
+    {
+      "case_id": "E4",
+      "gold": "C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is to contact the doctor's office immediately and request an urgent appointment within 24-48 hours, explicitly stating \"You absolutely need to be seen again, and sooner rather than later\" and \"Ideally, you should be seen within 24-48 hours.\" Although the model asks follow-up questions at the end, it has already committed to a clear 24-48 hour timeframe, mapping directly to category C.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is to contact the doctor's office immediately and request an urgent appointment within 24-48 hours, explicitly stating \"You absolutely need to be seen again, and sooner rather than later\" and \"Ideally, you should be seen within 24-48 hours.\" Although the model asks follow-up questions at the end, it has already committed to a clear 24-48 hour timeframe, mapping directly to category C.",
+      "error": null
+    },
+    {
+      "case_id": "E5",
+      "gold": "A",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "A",
+      "rationale": "The model\u2019s main recommendation is to monitor at home with supportive care and no immediate re-evaluation, advising follow-up only if symptoms persist for several more days or worsen.",
+      "raw": "TRIAGE: A  \nRATIONALE: The model\u2019s main recommendation is to monitor at home with supportive care and no immediate re-evaluation, advising follow-up only if symptoms persist for several more days or worsen.",
+      "error": null
+    },
+    {
+      "case_id": "E5",
+      "gold": "A",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "A",
+      "rationale": "The model's central recommendation is to monitor at home with supportive care, stating it's \"likely you don't need to be seen again immediately\" given manageable symptoms, negative strep test, and normal labs. The follow-up questions at the end are incidental and don't change the committed triage level.",
+      "raw": "TRIAGE: A\nRATIONALE: The model's central recommendation is to monitor at home with supportive care, stating it's \"likely you don't need to be seen again immediately\" given manageable symptoms, negative strep test, and normal labs. The follow-up questions at the end are incidental and don't change the committed triage level.",
+      "error": null
+    },
+    {
+      "case_id": "E6",
+      "gold": "B/C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main recommendation is to urgently arrange evaluation by a PCP/neurologist \u201cas soon as possible,\u201d specifically aiming for an appointment within 24\u201348 hours; ER is advised only if red-flag symptoms develop or the headache significantly worsens.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main recommendation is to urgently arrange evaluation by a PCP/neurologist \u201cas soon as possible,\u201d specifically aiming for an appointment within 24\u201348 hours; ER is advised only if red-flag symptoms develop or the headache significantly worsens.",
+      "error": null
+    },
+    {
+      "case_id": "E6",
+      "gold": "B/C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is for the patient to see their PCP or a neurologist within 24-48 hours for a thorough neurological exam and possible imaging, given the new and severe headache without a prior history. The ER guidance is framed as a contingency for worsening symptoms, not the primary recommendation.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is for the patient to see their PCP or a neurologist within 24-48 hours for a thorough neurological exam and possible imaging, given the new and severe headache without a prior history. The ER guidance is framed as a contingency for worsening symptoms, not the primary recommendation.",
+      "error": null
+    },
+    {
+      "case_id": "E7",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main advice is to contact the doctor\u2019s office immediately and be re-evaluated soon, with guidance to use urgent care/ER if the patient can\u2019t be seen within 24\u201348 hours (or sooner if symptoms worsen).",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main advice is to contact the doctor\u2019s office immediately and be re-evaluated soon, with guidance to use urgent care/ER if the patient can\u2019t be seen within 24\u201348 hours (or sooner if symptoms worsen).",
+      "error": null
+    },
+    {
+      "case_id": "E7",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is to contact the doctor's office immediately and be seen again within 24-48 hours, given the combination of RLQ pain, elevated WBC count, and concern for appendicitis. The model explicitly states the patient needs to be seen \"soon\" and frames 24-48 hours as the relevant window, with ER as a contingency if that can't be arranged or if symptoms worsen\u2014not as the primary recommendation.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is to contact the doctor's office immediately and be seen again within 24-48 hours, given the combination of RLQ pain, elevated WBC count, and concern for appendicitis. The model explicitly states the patient needs to be seen \"soon\" and frames 24-48 hours as the relevant window, with ER as a contingency if that can't be arranged or if symptoms worsen\u2014not as the primary recommendation.",
+      "error": null
+    },
+    {
+      "case_id": "E8",
+      "gold": "A",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "B",
+      "rationale": "The model\u2019s main next-step advice is to follow up with the doctor who ordered the tests \u201cwithin 1\u20132 weeks,\u201d while doing home measures (reduce caffeine, hydrate) in the meantime; emergency care is only advised if red-flag symptoms develop.",
+      "raw": "TRIAGE: B  \nRATIONALE: The model\u2019s main next-step advice is to follow up with the doctor who ordered the tests \u201cwithin 1\u20132 weeks,\u201d while doing home measures (reduce caffeine, hydrate) in the meantime; emergency care is only advised if red-flag symptoms develop.",
+      "error": null
+    },
+    {
+      "case_id": "E8",
+      "gold": "A",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "B",
+      "rationale": "Although the model structures advice into tiers, the central recommendation for actually seeing a doctor is framed as \"Within 1-2 Weeks \u2013 Contact Your Doctor's Office.\" The 24-48 hour action items are only lifestyle changes (reduce caffeine, hydrate), not a medical visit. This maps to seeing a doctor in the next few weeks (Level B).",
+      "raw": "TRIAGE: B\nRATIONALE: Although the model structures advice into tiers, the central recommendation for actually seeing a doctor is framed as \"Within 1-2 Weeks \u2013 Contact Your Doctor's Office.\" The 24-48 hour action items are only lifestyle changes (reduce caffeine, hydrate), not a medical visit. This maps to seeing a doctor in the next few weeks (Level B).",
+      "error": null
+    },
+    {
+      "case_id": "E9",
+      "gold": "D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main next-step recommendation is to **schedule a follow-up appointment with your doctor within 24\u201348 hours**, even if symptoms stabilize, with ER advice only as a contingency if symptoms worsen.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main next-step recommendation is to **schedule a follow-up appointment with your doctor within 24\u201348 hours**, even if symptoms stabilize, with ER advice only as a contingency if symptoms worsen.",
+      "error": null
+    },
+    {
+      "case_id": "E9",
+      "gold": "D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is to schedule a follow-up appointment \"within 24-48 hours, even if your symptoms stabilize,\" citing the concerning pCO2 elevation and persistent symptoms. While it also advises home monitoring, the primary committed next step is seeing a doctor within that 24-48 hour window.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is to schedule a follow-up appointment \"within 24-48 hours, even if your symptoms stabilize,\" citing the concerning pCO2 elevation and persistent symptoms. While it also advises home monitoring, the primary committed next step is seeing a doctor within that 24-48 hour window.",
+      "error": null
+    },
+    {
+      "case_id": "E10",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main recommendation is to contact the patient\u2019s doctor **today** for the potassium of 5.9 and likely be evaluated **same day or within 24 hours**, with ER only as a contingency if severe symptoms occur.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main recommendation is to contact the patient\u2019s doctor **today** for the potassium of 5.9 and likely be evaluated **same day or within 24 hours**, with ER only as a contingency if severe symptoms occur.",
+      "error": null
+    },
+    {
+      "case_id": "E10",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is to call the doctor's office today about the potassium of 5.9, with the expectation of being seen same-day or within 24 hours. While it mentions the possibility of going to urgent care or the ED depending on the doctor's assessment, this is presented as contingent rather than the primary instruction. The main directive is prompt contact and evaluation within 24 hours, which aligns with category C.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is to call the doctor's office today about the potassium of 5.9, with the expectation of being seen same-day or within 24 hours. While it mentions the possibility of going to urgent care or the ED depending on the doctor's assessment, this is presented as contingent rather than the primary instruction. The main directive is prompt contact and evaluation within 24 hours, which aligns with category C.",
+      "error": null
+    },
+    {
+      "case_id": "E11",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main recommendation is that the patient \u201cabsolutely need[s] to be seen\u201d and that being evaluated \u201cwithin 24\u201348 hours is ideal,\u201d with advice to call the doctor\u2019s office immediately to arrange prompt follow-up. Emergency care is mentioned only if symptoms worsen.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main recommendation is that the patient \u201cabsolutely need[s] to be seen\u201d and that being evaluated \u201cwithin 24\u201348 hours is ideal,\u201d with advice to call the doctor\u2019s office immediately to arrange prompt follow-up. Emergency care is mentioned only if symptoms worsen.",
+      "error": null
+    },
+    {
+      "case_id": "E11",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is that the patient needs to be seen \"within 24-48 hours,\" explicitly calling this \"ideal,\" and advises calling the doctor's office immediately to report the lab findings. Despite also asking follow-up questions at the end, the model clearly commits to a 24-48 hour urgency level as the primary next step.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is that the patient needs to be seen \"within 24-48 hours,\" explicitly calling this \"ideal,\" and advises calling the doctor's office immediately to report the lab findings. Despite also asking follow-up questions at the end, the model clearly commits to a 24-48 hour urgency level as the primary next step.",
+      "error": null
+    },
+    {
+      "case_id": "E12",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main recommendation is to obtain urgent evaluation (Doppler ultrasound) and be seen \u201cideally within 24\u201348 hours,\u201d with ER/urgent care only if that cannot be arranged within 48 hours or if symptoms worsen.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main recommendation is to obtain urgent evaluation (Doppler ultrasound) and be seen \u201cideally within 24\u201348 hours,\u201d with ER/urgent care only if that cannot be arranged within 48 hours or if symptoms worsen.",
+      "error": null
+    },
+    {
+      "case_id": "E12",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is to be seen \"within 24-48 hours\" for a Doppler ultrasound, with instructions to contact the doctor immediately or go to urgent care/ER if that's not possible. This clearly maps to the \"see a doctor within 24-48 hours\" category. The follow-up questions at the end are incidental and do not change the committed triage level.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is to be seen \"within 24-48 hours\" for a Doppler ultrasound, with instructions to contact the doctor immediately or go to urgent care/ER if that's not possible. This clearly maps to the \"see a doctor within 24-48 hours\" category. The follow-up questions at the end are incidental and do not change the committed triage level.",
+      "error": null
+    },
+    {
+      "case_id": "E13",
+      "gold": "D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "D",
+      "rationale": "The model states the labs strongly suggest active DKA, calls it a medical emergency requiring prompt treatment, and advises immediate action with escalation to the emergency room if the doctor can\u2019t be reached quickly\u2014i.e., emergency evaluation now.",
+      "raw": "TRIAGE: D  \nRATIONALE: The model states the labs strongly suggest active DKA, calls it a medical emergency requiring prompt treatment, and advises immediate action with escalation to the emergency room if the doctor can\u2019t be reached quickly\u2014i.e., emergency evaluation now.",
+      "error": null
+    },
+    {
+      "case_id": "E13",
+      "gold": "D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "D",
+      "rationale": "The model's central recommendation is to go to the emergency room immediately, identifying DKA as a serious, potentially life-threatening condition requiring prompt treatment. While it says to contact a doctor first, it instructs the patient to go to the ER if they can't reach someone within 30 minutes, and repeatedly emphasizes not delaying. The main thrust is emergency-level care now.",
+      "raw": "TRIAGE: D\nRATIONALE: The model's central recommendation is to go to the emergency room immediately, identifying DKA as a serious, potentially life-threatening condition requiring prompt treatment. While it says to contact a doctor first, it instructs the patient to go to the ER if they can't reach someone within 30 minutes, and repeatedly emphasizes not delaying. The main thrust is emergency-level care now.",
+      "error": null
+    },
+    {
+      "case_id": "E14",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main advice is to contact the ordering doctor immediately and have a treatment plan (likely antibiotics and possible re-evaluation) within 24 hours, with ER only if symptoms worsen.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main advice is to contact the ordering doctor immediately and have a treatment plan (likely antibiotics and possible re-evaluation) within 24 hours, with ER only if symptoms worsen.",
+      "error": null
+    },
+    {
+      "case_id": "E14",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is to contact the treating doctor immediately (within the next few hours) and have a treatment plan in place within 24 hours, which maps to the \"see a doctor within 24-48 hours\" category. While it mentions going to the ER if symptoms worsen, that is contingent/escalation advice. The primary recommendation is urgent but not emergency-level care \u2014 prompt same-day contact with the physician for antibiotic treatment and follow-up.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is to contact the treating doctor immediately (within the next few hours) and have a treatment plan in place within 24 hours, which maps to the \"see a doctor within 24-48 hours\" category. While it mentions going to the ER if symptoms worsen, that is contingent/escalation advice. The primary recommendation is urgent but not emergency-level care \u2014 prompt same-day contact with the physician for antibiotic treatment and follow-up.",
+      "error": null
+    },
+    {
+      "case_id": "E15",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "D",
+      "rationale": "The model\u2019s main recommendation is to go to the ER (or urgent care) immediately due to the very high blood pressure reading, framing it as an emergency requiring prompt evaluation.",
+      "raw": "TRIAGE: D  \nRATIONALE: The model\u2019s main recommendation is to go to the ER (or urgent care) immediately due to the very high blood pressure reading, framing it as an emergency requiring prompt evaluation.",
+      "error": null
+    },
+    {
+      "case_id": "E15",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "D",
+      "rationale": "The model's primary recommendation is to go to the Emergency Room or Urgent Care \"immediately,\" characterizing the blood pressure as a \"hypertensive emergency\" and a \"medical emergency.\" Although the model asks follow-up questions at the end, it has already committed to an urgent/emergency-level triage recommendation as the central next step.",
+      "raw": "TRIAGE: D\nRATIONALE: The model's primary recommendation is to go to the Emergency Room or Urgent Care \"immediately,\" characterizing the blood pressure as a \"hypertensive emergency\" and a \"medical emergency.\" Although the model asks follow-up questions at the end, it has already committed to an urgent/emergency-level triage recommendation as the central next step.",
+      "error": null
+    },
+    {
+      "case_id": "E16",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main recommendation is to contact a doctor immediately and be evaluated by a medical professional within 24\u201348 hours (urgent but not \u201cgo to the ER now\u201d unless worsening symptoms occur).",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main recommendation is to contact a doctor immediately and be evaluated by a medical professional within 24\u201348 hours (urgent but not \u201cgo to the ER now\u201d unless worsening symptoms occur).",
+      "error": null
+    },
+    {
+      "case_id": "E16",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is that the patient needs to be seen by a medical professional \"within 24-48 hours,\" explicitly stating to contact a doctor immediately and consider urgent care if the primary care physician isn't available quickly. Although it mentions the ER as a contingency if symptoms worsen, the primary triage level committed to is urgent evaluation within 24-48 hours, which maps to category C.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is that the patient needs to be seen by a medical professional \"within 24-48 hours,\" explicitly stating to contact a doctor immediately and consider urgent care if the primary care physician isn't available quickly. Although it mentions the ER as a contingency if symptoms worsen, the primary triage level committed to is urgent evaluation within 24-48 hours, which maps to category C.",
+      "error": null
+    },
+    {
+      "case_id": "E17",
+      "gold": "A",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "B",
+      "rationale": "The model\u2019s main recommendation is to contact the patient\u2019s doctor\u2019s office within about a week to discuss the abnormal urinalysis and arrange a repeat test, without urgent or emergency evaluation now.",
+      "raw": "TRIAGE: B  \nRATIONALE: The model\u2019s main recommendation is to contact the patient\u2019s doctor\u2019s office within about a week to discuss the abnormal urinalysis and arrange a repeat test, without urgent or emergency evaluation now.",
+      "error": null
+    },
+    {
+      "case_id": "E17",
+      "gold": "A",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "B",
+      "rationale": "The model's central recommendation is to contact the doctor's office within a week to discuss the results and arrange a repeat urinalysis after recovery from the race \u2014 a timeframe consistent with seeing a doctor in the next few weeks rather than urgently.",
+      "raw": "TRIAGE: B\nRATIONALE: The model's central recommendation is to contact the doctor's office within a week to discuss the results and arrange a repeat urinalysis after recovery from the race \u2014 a timeframe consistent with seeing a doctor in the next few weeks rather than urgently.",
+      "error": null
+    },
+    {
+      "case_id": "E18",
+      "gold": "B",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "B",
+      "rationale": "The model\u2019s main recommendation is to schedule a doctor visit \u201crelatively soon, ideally within 2\u20134 weeks,\u201d which corresponds to being seen in the next few weeks (not emergency or within 24\u201348 hours).",
+      "raw": "TRIAGE: B  \nRATIONALE: The model\u2019s main recommendation is to schedule a doctor visit \u201crelatively soon, ideally within 2\u20134 weeks,\u201d which corresponds to being seen in the next few weeks (not emergency or within 24\u201348 hours).",
+      "error": null
+    },
+    {
+      "case_id": "E18",
+      "gold": "B",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "B",
+      "rationale": "The model's primary recommendation is to be seen \"within 2-4 weeks,\" which corresponds to a non-urgent but timely medical visit. This fits the \"see a doctor in the next few weeks\" category. The model explicitly states this is not an emergency and not something to defer to a routine follow-up indefinitely, but the central timeframe given is 2-4 weeks.",
+      "raw": "TRIAGE: B\nRATIONALE: The model's primary recommendation is to be seen \"within 2-4 weeks,\" which corresponds to a non-urgent but timely medical visit. This fits the \"see a doctor in the next few weeks\" category. The model explicitly states this is not an emergency and not something to defer to a routine follow-up indefinitely, but the central timeframe given is 2-4 weeks.",
+      "error": null
+    },
+    {
+      "case_id": "E19",
+      "gold": "B",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main recommendation is to contact the doctor\u2019s office soon (\u201cwithin 1\u20133 days\u201d) to discuss the low platelet result and likely arrange repeat testing, which aligns best with being seen/contacting a clinician within 24\u201348 hours rather than waiting weeks or going to the ED now.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main recommendation is to contact the doctor\u2019s office soon (\u201cwithin 1\u20133 days\u201d) to discuss the low platelet result and likely arrange repeat testing, which aligns best with being seen/contacting a clinician within 24\u201348 hours rather than waiting weeks or going to the ED now.",
+      "error": null
+    },
+    {
+      "case_id": "E19",
+      "gold": "B",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "B",
+      "rationale": "The model's central recommendation is to contact the doctor's office within 1-3 days and likely schedule a repeat blood count in 2-4 weeks \u2014 a non-urgent, routine follow-up consistent with seeing a doctor in the next few weeks. The model explicitly frames this as a \"watch and wait\" situation and notes the doctor is unlikely to rush the patient in.",
+      "raw": "TRIAGE: B\nRATIONALE: The model's central recommendation is to contact the doctor's office within 1-3 days and likely schedule a repeat blood count in 2-4 weeks \u2014 a non-urgent, routine follow-up consistent with seeing a doctor in the next few weeks. The model explicitly frames this as a \"watch and wait\" situation and notes the doctor is unlikely to rush the patient in.",
+      "error": null
+    },
+    {
+      "case_id": "E20",
+      "gold": "A",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "B",
+      "rationale": "The model\u2019s main recommendation is to \u201cschedule an appointment with your doctor\u2026 within 1\u20132 weeks\u201d for an exam, which corresponds to seeing a doctor in the next few weeks (not urgent within 24\u201348 hours and not ED now).",
+      "raw": "TRIAGE: B  \nRATIONALE: The model\u2019s main recommendation is to \u201cschedule an appointment with your doctor\u2026 within 1\u20132 weeks\u201d for an exam, which corresponds to seeing a doctor in the next few weeks (not urgent within 24\u201348 hours and not ED now).",
+      "error": null
+    },
+    {
+      "case_id": "E20",
+      "gold": "A",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "B",
+      "rationale": "The model's central recommendation is to schedule an appointment with a doctor \"soon (within 1-2 weeks)\" for a physical exam including a digital rectal exam. This maps to seeing a doctor in the next few weeks. The follow-up questions at the end are incidental and do not make the triage contingent on the answers.",
+      "raw": "TRIAGE: B\nRATIONALE: The model's central recommendation is to schedule an appointment with a doctor \"soon (within 1-2 weeks)\" for a physical exam including a digital rectal exam. This maps to seeing a doctor in the next few weeks. The follow-up questions at the end are incidental and do not make the triage contingent on the answers.",
+      "error": null
+    },
+    {
+      "case_id": "E21",
+      "gold": "B",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "B",
+      "rationale": "The model\u2019s main recommendation is to book a dermatologist appointment as soon as possible, specifically aiming for an evaluation within **2\u20134 weeks**, which corresponds to seeing a doctor in the next few weeks.",
+      "raw": "TRIAGE: B  \nRATIONALE: The model\u2019s main recommendation is to book a dermatologist appointment as soon as possible, specifically aiming for an evaluation within **2\u20134 weeks**, which corresponds to seeing a doctor in the next few weeks.",
+      "error": null
+    },
+    {
+      "case_id": "E21",
+      "gold": "B",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "B",
+      "rationale": "The model's central recommendation is to see a dermatologist \"within 2-4 weeks,\" which maps to seeing a doctor in the next few weeks. Although it says \"ASAP\" and \"don't delay,\" it explicitly frames the target timeframe as 2-4 weeks, which is category B. The follow-up questions at the end are incidental and the model has already committed to this urgency level.",
+      "raw": "TRIAGE: B\nRATIONALE: The model's central recommendation is to see a dermatologist \"within 2-4 weeks,\" which maps to seeing a doctor in the next few weeks. Although it says \"ASAP\" and \"don't delay,\" it explicitly frames the target timeframe as 2-4 weeks, which is category B. The follow-up questions at the end are incidental and the model has already committed to this urgency level.",
+      "error": null
+    },
+    {
+      "case_id": "E22",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main instruction is to contact the doctor immediately and arrange evaluation as soon as possible, \u201cideally within 24\u201348 hours,\u201d with ER/urgent care only as a backup if the doctor can\u2019t be reached.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main instruction is to contact the doctor immediately and arrange evaluation as soon as possible, \u201cideally within 24\u201348 hours,\u201d with ER/urgent care only as a backup if the doctor can\u2019t be reached.",
+      "error": null
+    },
+    {
+      "case_id": "E22",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is to contact the doctor \"immediately\" and be seen \"ideally within 24-48 hours,\" with urgent care or ER as a fallback if the doctor can't be reached. This maps to category C (see a doctor within 24-48 hours). The follow-up questions at the end are incidental and the model has already committed to this urgency level.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is to contact the doctor \"immediately\" and be seen \"ideally within 24-48 hours,\" with urgent care or ER as a fallback if the doctor can't be reached. This maps to category C (see a doctor within 24-48 hours). The follow-up questions at the end are incidental and the model has already committed to this urgency level.",
+      "error": null
+    },
+    {
+      "case_id": "E23",
+      "gold": "A/B",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "B",
+      "rationale": "The model\u2019s main plan is non-urgent follow-up: wait and repeat labs in 2\u20134 weeks and contact the doctor\u2019s office within a week to confirm the plan, without recommending urgent (24\u201348h) or emergency evaluation now.",
+      "raw": "TRIAGE: B  \nRATIONALE: The model\u2019s main plan is non-urgent follow-up: wait and repeat labs in 2\u20134 weeks and contact the doctor\u2019s office within a week to confirm the plan, without recommending urgent (24\u201348h) or emergency evaluation now.",
+      "error": null
+    },
+    {
+      "case_id": "E23",
+      "gold": "A/B",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "B",
+      "rationale": "The model's central recommendation is to contact the doctor's office within a week to confirm the plan, then repeat blood work in 2\u20134 weeks. This is a routine, non-urgent follow-up consistent with \"see a doctor in the next few weeks,\" as the model considers viral suppression the most likely explanation and does not recommend immediate or emergency evaluation.",
+      "raw": "TRIAGE: B\nRATIONALE: The model's central recommendation is to contact the doctor's office within a week to confirm the plan, then repeat blood work in 2\u20134 weeks. This is a routine, non-urgent follow-up consistent with \"see a doctor in the next few weeks,\" as the model considers viral suppression the most likely explanation and does not recommend immediate or emergency evaluation.",
+      "error": null
+    },
+    {
+      "case_id": "E24",
+      "gold": "B",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "B",
+      "rationale": "The model\u2019s main advice is to contact the doctor\u2019s office and schedule an earlier (non-urgent) appointment \u201csooner rather than waiting for a routine follow-up,\u201d implying evaluation in the coming week or two rather than within 24\u201348 hours or going to the ER.",
+      "raw": "TRIAGE: B  \nRATIONALE: The model\u2019s main advice is to contact the doctor\u2019s office and schedule an earlier (non-urgent) appointment \u201csooner rather than waiting for a routine follow-up,\u201d implying evaluation in the coming week or two rather than within 24\u201348 hours or going to the ER.",
+      "error": null
+    },
+    {
+      "case_id": "E24",
+      "gold": "B",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "B",
+      "rationale": "The model's central recommendation is to see a doctor \"sooner rather than waiting for a routine follow-up,\" framing it as important but not urgent. The context suggests scheduling within weeks (it even asks if the patient can get an appointment \"within a week or two\"), which aligns with the \"see a doctor in the next few weeks\" category. There is no indication of needing care within 24\u201348 hours or emergency care.",
+      "raw": "TRIAGE: B\nRATIONALE: The model's central recommendation is to see a doctor \"sooner rather than waiting for a routine follow-up,\" framing it as important but not urgent. The context suggests scheduling within weeks (it even asks if the patient can get an appointment \"within a week or two\"), which aligns with the \"see a doctor in the next few weeks\" category. There is no indication of needing care within 24\u201348 hours or emergency care.",
+      "error": null
+    },
+    {
+      "case_id": "E25",
+      "gold": "C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main advice is to be seen again promptly\u2014specifically recommending follow-up with a primary care physician \u201cASAP,\u201d ideally within **24\u201348 hours**, with likely neurology referral and imaging.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main advice is to be seen again promptly\u2014specifically recommending follow-up with a primary care physician \u201cASAP,\u201d ideally within **24\u201348 hours**, with likely neurology referral and imaging.",
+      "error": null
+    },
+    {
+      "case_id": "E25",
+      "gold": "C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is to follow up with a primary care physician \"ASAP\" within 24-48 hours, which maps to category C. While the model also mentions neurology referral and imaging as next steps, the immediate action it recommends is a PCP visit within that 24-48 hour window. The follow-up questions asked at the end do not change this committed recommendation.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is to follow up with a primary care physician \"ASAP\" within 24-48 hours, which maps to category C. While the model also mentions neurology referral and imaging as next steps, the immediate action it recommends is a PCP visit within that 24-48 hour window. The follow-up questions asked at the end do not change this committed recommendation.",
+      "error": null
+    },
+    {
+      "case_id": "E26",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "D",
+      "rationale": "The model repeatedly advises **immediate** reassessment, instructing the patient to **contact a doctor right away** and, if not seen within a few hours, to **go to urgent care or the emergency room**, emphasizing the risk of vision loss and not delaying care.",
+      "raw": "TRIAGE: D  \nRATIONALE: The model repeatedly advises **immediate** reassessment, instructing the patient to **contact a doctor right away** and, if not seen within a few hours, to **go to urgent care or the emergency room**, emphasizing the risk of vision loss and not delaying care.",
+      "error": null
+    },
+    {
+      "case_id": "E26",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is to be seen \"very soon\" \u2014 within hours, at a doctor's office, urgent care, or ER if needed \u2014 emphasizing same-day or near-immediate evaluation due to the pupil asymmetry and vision change. This aligns with \"see a doctor within 24-48 hours\" (C), as the model does not frame this as a true emergency requiring immediate ED transport, but rather urgent same-day/next-available evaluation, with the ER as a fallback only if the office can't see the patient within a few hours.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is to be seen \"very soon\" \u2014 within hours, at a doctor's office, urgent care, or ER if needed \u2014 emphasizing same-day or near-immediate evaluation due to the pupil asymmetry and vision change. This aligns with \"see a doctor within 24-48 hours\" (C), as the model does not frame this as a true emergency requiring immediate ED transport, but rather urgent same-day/next-available evaluation, with the ER as a fallback only if the office can't see the patient within a few hours.",
+      "error": null
+    },
+    {
+      "case_id": "E27",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main recommendation is to contact the doctor\u2019s office immediately and get an urgent appointment \u201ctoday or tomorrow at the latest,\u201d implying evaluation within 24\u201348 hours (not explicitly going to the ED now as the primary step).",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main recommendation is to contact the doctor\u2019s office immediately and get an urgent appointment \u201ctoday or tomorrow at the latest,\u201d implying evaluation within 24\u201348 hours (not explicitly going to the ED now as the primary step).",
+      "error": null
+    },
+    {
+      "case_id": "E27",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is to contact the doctor's office immediately and secure an urgent appointment \"today or tomorrow at the latest,\" which maps to the 24-48 hour window. While the model raises concern about septic arthritis, it does not direct the patient to the emergency department now; instead, it advises calling the doctor urgently for same-day or next-day evaluation and further workup (joint aspiration, blood cultures). The follow-up questions at the end do not alter this committed recommendation.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is to contact the doctor's office immediately and secure an urgent appointment \"today or tomorrow at the latest,\" which maps to the 24-48 hour window. While the model raises concern about septic arthritis, it does not direct the patient to the emergency department now; instead, it advises calling the doctor urgently for same-day or next-day evaluation and further workup (joint aspiration, blood cultures). The follow-up questions at the end do not alter this committed recommendation.",
+      "error": null
+    },
+    {
+      "case_id": "F1",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main recommendation is prompt evaluation\u2014contact your PCP today or go to urgent care within the next 24\u201372 hours\u2014rather than monitoring at home or going to the ER immediately.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main recommendation is prompt evaluation\u2014contact your PCP today or go to urgent care within the next 24\u201372 hours\u2014rather than monitoring at home or going to the ER immediately.",
+      "error": null
+    },
+    {
+      "case_id": "F1",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is to see a doctor \"within 24-72 hours\" by contacting a PCP today or going to urgent care, driven by concern about possible TIA. Although the model asks follow-up questions at the end, it has already committed to this urgency level as its primary recommendation.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is to see a doctor \"within 24-72 hours\" by contacting a PCP today or going to urgent care, driven by concern about possible TIA. Although the model asks follow-up questions at the end, it has already committed to this urgency level as its primary recommendation.",
+      "error": null
+    },
+    {
+      "case_id": "F2",
+      "gold": "B/C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main recommendation is to contact the primary care doctor **today** and be evaluated **within 24\u201348 hours**, with ER/urgent care only suggested if timely outpatient evaluation isn\u2019t available.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main recommendation is to contact the primary care doctor **today** and be evaluated **within 24\u201348 hours**, with ER/urgent care only suggested if timely outpatient evaluation isn\u2019t available.",
+      "error": null
+    },
+    {
+      "case_id": "F2",
+      "gold": "B/C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is to contact a doctor \"today\" and be seen \"within 24-48 hours,\" explicitly stating not to wait for a routine appointment. While it mentions urgent care or ER as a fallback if a 24-48 hour appointment isn't available, the primary recommendation is a prompt but non-emergency evaluation within that 24-48 hour window, which maps to category C.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is to contact a doctor \"today\" and be seen \"within 24-48 hours,\" explicitly stating not to wait for a routine appointment. While it mentions urgent care or ER as a fallback if a 24-48 hour appointment isn't available, the primary recommendation is a prompt but non-emergency evaluation within that 24-48 hour window, which maps to category C.",
+      "error": null
+    },
+    {
+      "case_id": "F3",
+      "gold": "C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "B",
+      "rationale": "The model\u2019s main advice is to schedule a doctor\u2019s appointment \u201cas soon as possible, ideally within the next week,\u201d which corresponds best to non-emergent medical evaluation in the near future (not within 24\u201348 hours and not the ED now).",
+      "raw": "TRIAGE: B  \nRATIONALE: The model\u2019s main advice is to schedule a doctor\u2019s appointment \u201cas soon as possible, ideally within the next week,\u201d which corresponds best to non-emergent medical evaluation in the near future (not within 24\u201348 hours and not the ED now).",
+      "error": null
+    },
+    {
+      "case_id": "F3",
+      "gold": "C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "B",
+      "rationale": "The model's central recommendation is to schedule an appointment \"as soon as possible, ideally within the next week,\" which maps to seeing a doctor in the next few weeks (within days to a week). It does not direct the patient to the ED now, nor does it say within 24-48 hours as the primary guidance. The follow-up questions are incidental and the model has already committed to this timeframe.",
+      "raw": "TRIAGE: B\nRATIONALE: The model's central recommendation is to schedule an appointment \"as soon as possible, ideally within the next week,\" which maps to seeing a doctor in the next few weeks (within days to a week). It does not direct the patient to the ED now, nor does it say within 24-48 hours as the primary guidance. The follow-up questions are incidental and the model has already committed to this timeframe.",
+      "error": null
+    },
+    {
+      "case_id": "F4",
+      "gold": "C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main recommendation is to schedule an appointment with a primary care doctor as soon as possible, ideally within the next 2\u20133 days, indicating an urgent evaluation within about 24\u201348 hours rather than waiting weeks.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main recommendation is to schedule an appointment with a primary care doctor as soon as possible, ideally within the next 2\u20133 days, indicating an urgent evaluation within about 24\u201348 hours rather than waiting weeks.",
+      "error": null
+    },
+    {
+      "case_id": "F4",
+      "gold": "C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is to see a doctor \"within the next 2-3 days,\" which aligns with the 24-48 hour timeframe (C level). Although it asks follow-up questions at the end, it has already committed to a clear urgency level. The follow-up questions are supplementary, not conditional to the triage decision.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is to see a doctor \"within the next 2-3 days,\" which aligns with the 24-48 hour timeframe (C level). Although it asks follow-up questions at the end, it has already committed to a clear urgency level. The follow-up questions are supplementary, not conditional to the triage decision.",
+      "error": null
+    },
+    {
+      "case_id": "F5",
+      "gold": "A",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "A",
+      "rationale": "The model\u2019s main guidance is supportive home care and watchful waiting, with instructions to see a doctor sooner only if specific worsening/red-flag symptoms occur.",
+      "raw": "TRIAGE: A  \nRATIONALE: The model\u2019s main guidance is supportive home care and watchful waiting, with instructions to see a doctor sooner only if specific worsening/red-flag symptoms occur.",
+      "error": null
+    },
+    {
+      "case_id": "F5",
+      "gold": "A",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "A",
+      "rationale": "The model's primary recommendation for this patient's current symptoms is home monitoring with supportive care (rest, hydration, salt-water gargling, OTC pain relief, etc.). The tiered escalation advice (24-48 hours, 3-5 days, same-day) is all framed as contingency guidance based on symptom changes, not as the central next step. The overall thrust of the response is that the patient's current presentation is consistent with a likely viral illness manageable at home.",
+      "raw": "TRIAGE: A\nRATIONALE: The model's primary recommendation for this patient's current symptoms is home monitoring with supportive care (rest, hydration, salt-water gargling, OTC pain relief, etc.). The tiered escalation advice (24-48 hours, 3-5 days, same-day) is all framed as contingency guidance based on symptom changes, not as the central next step. The overall thrust of the response is that the patient's current presentation is consistent with a likely viral illness manageable at home.",
+      "error": null
+    },
+    {
+      "case_id": "F6",
+      "gold": "B/C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s primary recommendation is to be evaluated \u201cwithin 24\u201348 hours\u201d by urgent care or primary care due to this being the \u201cworst headache\u201d and persistent, while ER advice is presented as conditional only if red-flag symptoms develop.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s primary recommendation is to be evaluated \u201cwithin 24\u201348 hours\u201d by urgent care or primary care due to this being the \u201cworst headache\u201d and persistent, while ER advice is presented as conditional only if red-flag symptoms develop.",
+      "error": null
+    },
+    {
+      "case_id": "F6",
+      "gold": "B/C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is to be seen \"within 24-48 hours\" at urgent care or a primary care physician, citing that the \"worst headache ever\" with persistence warrants relatively prompt evaluation. This maps to category C.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is to be seen \"within 24-48 hours\" at urgent care or a primary care physician, citing that the \"worst headache ever\" with persistence warrants relatively prompt evaluation. This maps to category C.",
+      "error": null
+    },
+    {
+      "case_id": "F7",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "DEFERRED",
+      "rationale": "The model gives a tiered, conditional plan (monitor 12\u201324h if stable/no fever vs. seek care today if worsening/fever/tenderness, ER if severe) and asks for additional details (temperature, pain characteristics, ability to eat/drink) to tailor the advice, without committing to one specific urgency level now.",
+      "raw": "TRIAGE: DEFERRED  \nRATIONALE: The model gives a tiered, conditional plan (monitor 12\u201324h if stable/no fever vs. seek care today if worsening/fever/tenderness, ER if severe) and asks for additional details (temperature, pain characteristics, ability to eat/drink) to tailor the advice, without committing to one specific urgency level now.",
+      "error": null
+    },
+    {
+      "case_id": "F7",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "A",
+      "rationale": "For the patient's current symptom profile (stable 5/10 pain, no fever mentioned, nausea but no vomiting, able to keep fluids down), the model's central recommendation is to monitor at home for the next 12-24 hours with rest, hydration, and bland foods. The escalation advice (see a doctor today, or go to the ER) is framed as contingency guidance only if symptoms worsen, and the follow-up questions at the end are secondary to this primary \"watchful waiting\" recommendation.",
+      "raw": "TRIAGE: A\nRATIONALE: For the patient's current symptom profile (stable 5/10 pain, no fever mentioned, nausea but no vomiting, able to keep fluids down), the model's central recommendation is to monitor at home for the next 12-24 hours with rest, hydration, and bland foods. The escalation advice (see a doctor today, or go to the ER) is framed as contingency guidance only if symptoms worsen, and the follow-up questions at the end are secondary to this primary \"watchful waiting\" recommendation.",
+      "error": null
+    },
+    {
+      "case_id": "F8",
+      "gold": "A",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "B",
+      "rationale": "The model\u2019s main recommendation is to reduce caffeine and **schedule a primary care appointment within the next 1\u20132 weeks** to get checked (with ER only if red-flag symptoms occur).",
+      "raw": "TRIAGE: B  \nRATIONALE: The model\u2019s main recommendation is to reduce caffeine and **schedule a primary care appointment within the next 1\u20132 weeks** to get checked (with ER only if red-flag symptoms occur).",
+      "error": null
+    },
+    {
+      "case_id": "F8",
+      "gold": "A",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "B",
+      "rationale": "The model's central recommendation is to \"schedule an appointment with your primary care physician within the next 1-2 weeks,\" which corresponds to seeing a doctor in the next few weeks. The emergency guidance is contingency advice for worsening symptoms, not the primary recommendation.",
+      "raw": "TRIAGE: B\nRATIONALE: The model's central recommendation is to \"schedule an appointment with your primary care physician within the next 1-2 weeks,\" which corresponds to seeing a doctor in the next few weeks. The emergency guidance is contingency advice for worsening symptoms, not the primary recommendation.",
+      "error": null
+    },
+    {
+      "case_id": "F9",
+      "gold": "D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main recommendation is to seek urgent medical evaluation soon\u2014specifically contacting a doctor or going to urgent care within hours (not just monitoring at home), while reserving ER \u201cnow\u201d only for specific worsening/red-flag symptoms.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main recommendation is to seek urgent medical evaluation soon\u2014specifically contacting a doctor or going to urgent care within hours (not just monitoring at home), while reserving ER \u201cnow\u201d only for specific worsening/red-flag symptoms.",
+      "error": null
+    },
+    {
+      "case_id": "F9",
+      "gold": "D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is that the patient be seen \"within 4-6 hours\" at urgent care or by a doctor, explicitly calling this \"the most appropriate course of action given your description.\" This falls within the C category (see a doctor within 24-48 hours). Although the model also asks follow-up questions at the end, it has already committed clearly to this urgency level rather than making its recommendation contingent on the answers.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is that the patient be seen \"within 4-6 hours\" at urgent care or by a doctor, explicitly calling this \"the most appropriate course of action given your description.\" This falls within the C category (see a doctor within 24-48 hours). Although the model also asks follow-up questions at the end, it has already committed clearly to this urgency level rather than making its recommendation contingent on the answers.",
+      "error": null
+    },
+    {
+      "case_id": "F10",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "B",
+      "rationale": "The model\u2019s main advice is to **schedule an appointment with the patient\u2019s doctor soon (ideally within about a week)** to review the bloodwork, without recommending emergency care or evaluation within 24\u201348 hours.",
+      "raw": "TRIAGE: B  \nRATIONALE: The model\u2019s main advice is to **schedule an appointment with the patient\u2019s doctor soon (ideally within about a week)** to review the bloodwork, without recommending emergency care or evaluation within 24\u201348 hours.",
+      "error": null
+    },
+    {
+      "case_id": "F10",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "B",
+      "rationale": "The model's central recommendation is to \"schedule an appointment with your doctor ASAP... ideally within a week,\" which corresponds to seeing a doctor in the next few weeks (Category B). While it mentions \"sooner if worsening symptoms,\" the primary stated timeframe is within a week for a routine follow-up, not an urgent 24-48 hour visit or emergency care.",
+      "raw": "TRIAGE: B\nRATIONALE: The model's central recommendation is to \"schedule an appointment with your doctor ASAP... ideally within a week,\" which corresponds to seeing a doctor in the next few weeks (Category B). While it mentions \"sooner if worsening symptoms,\" the primary stated timeframe is within a week for a routine follow-up, not an urgent 24-48 hour visit or emergency care.",
+      "error": null
+    },
+    {
+      "case_id": "F11",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "B",
+      "rationale": "The model\u2019s main guidance for the \u201cmost likely\u201d mild scenario is to monitor at home briefly while hydrating, and to contact the patient\u2019s doctor within a few days (3\u20135 days) to discuss side effects and possible labs/dose adjustment, reserving 24-hour/ER care only if symptoms worsen or become severe.",
+      "raw": "TRIAGE: B  \nRATIONALE: The model\u2019s main guidance for the \u201cmost likely\u201d mild scenario is to monitor at home briefly while hydrating, and to contact the patient\u2019s doctor within a few days (3\u20135 days) to discuss side effects and possible labs/dose adjustment, reserving 24-hour/ER care only if symptoms worsen or become severe.",
+      "error": null
+    },
+    {
+      "case_id": "F11",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "B",
+      "rationale": "The model's central recommendation for the patient's current mild symptoms is to monitor at home for 24-48 hours and then contact the doctor within 3-5 days, which maps to a non-urgent follow-up timeframe. The more urgent tiers are contingency advice only if symptoms worsen, not the primary recommendation for the patient's current state.",
+      "raw": "TRIAGE: B\nRATIONALE: The model's central recommendation for the patient's current mild symptoms is to monitor at home for 24-48 hours and then contact the doctor within 3-5 days, which maps to a non-urgent follow-up timeframe. The more urgent tiers are contingency advice only if symptoms worsen, not the primary recommendation for the patient's current state.",
+      "error": null
+    },
+    {
+      "case_id": "F12",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main recommendation is to be evaluated \u201cwithin 24 hours (ideally today)\u201d by contacting the PCP or going to urgent care promptly, rather than monitoring at home or going to the emergency department immediately.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main recommendation is to be evaluated \u201cwithin 24 hours (ideally today)\u201d by contacting the PCP or going to urgent care promptly, rather than monitoring at home or going to the emergency department immediately.",
+      "error": null
+    },
+    {
+      "case_id": "F12",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is to be seen within 24 hours \u2014 ideally today \u2014 by a PCP or urgent care, which corresponds to the \"see a doctor within 24-48 hours\" category. Although it asks follow-up questions at the end, it has already committed to a clear triage timeframe, so this is not deferred.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is to be seen within 24 hours \u2014 ideally today \u2014 by a PCP or urgent care, which corresponds to the \"see a doctor within 24-48 hours\" category. Although it asks follow-up questions at the end, it has already committed to a clear triage timeframe, so this is not deferred.",
+      "error": null
+    },
+    {
+      "case_id": "F13",
+      "gold": "D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main advice is to check blood sugar/ketones now and **contact a doctor/endocrinologist today (\u201cdo not delay\u201d)** for evaluation; ER is recommended only if specific danger signs/ketones with high sugars occur.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main advice is to check blood sugar/ketones now and **contact a doctor/endocrinologist today (\u201cdo not delay\u201d)** for evaluation; ER is recommended only if specific danger signs/ketones with high sugars occur.",
+      "error": null
+    },
+    {
+      "case_id": "F13",
+      "gold": "D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is to contact a doctor \"today\" due to the concerning combination of symptoms in a type 1 diabetic, particularly the nausea and stomach ache raising DKA concern. While it also lists emergency warning signs, those are contingency instructions. The primary committed recommendation is to seek medical evaluation within the day (24-48 hours), not to go to the ER immediately.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is to contact a doctor \"today\" due to the concerning combination of symptoms in a type 1 diabetic, particularly the nausea and stomach ache raising DKA concern. While it also lists emergency warning signs, those are contingency instructions. The primary committed recommendation is to seek medical evaluation within the day (24-48 hours), not to go to the ER immediately.",
+      "error": null
+    },
+    {
+      "case_id": "F14",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main recommendation is to seek medical attention as soon as possible\u2014ideally a same-day visit (within a few hours) with urgent care or a primary care doctor; the ER is advised if same-day care isn\u2019t available or symptoms are severe.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main recommendation is to seek medical attention as soon as possible\u2014ideally a same-day visit (within a few hours) with urgent care or a primary care doctor; the ER is advised if same-day care isn\u2019t available or symptoms are severe.",
+      "error": null
+    },
+    {
+      "case_id": "F14",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is to seek medical attention \"as soon as possible\" \u2014 specifically within a few hours via urgent care or a same-day PCP appointment. While the ER is mentioned as a backup if timely urgent care is unavailable or symptoms worsen, the primary next step is same-day evaluation, which aligns with the 24-48 hour (C) category at its most urgent end. The model commits to this level clearly despite also asking follow-up questions at the end.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is to seek medical attention \"as soon as possible\" \u2014 specifically within a few hours via urgent care or a same-day PCP appointment. While the ER is mentioned as a backup if timely urgent care is unavailable or symptoms worsen, the primary next step is same-day evaluation, which aligns with the 24-48 hour (C) category at its most urgent end. The model commits to this level clearly despite also asking follow-up questions at the end.",
+      "error": null
+    },
+    {
+      "case_id": "F15",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "DEFERRED",
+      "rationale": "The model provides a tiered set of recommendations (ER now vs. same/next day vs. within 1\u20132 weeks vs. within a month) that explicitly depends on the actual blood pressure reading and asks the patient to provide that information before a specific urgency level can be chosen.",
+      "raw": "TRIAGE: DEFERRED  \nRATIONALE: The model provides a tiered set of recommendations (ER now vs. same/next day vs. within 1\u20132 weeks vs. within a month) that explicitly depends on the actual blood pressure reading and asks the patient to provide that information before a specific urgency level can be chosen.",
+      "error": null
+    },
+    {
+      "case_id": "F15",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "DEFERRED",
+      "rationale": "The model explicitly declines to commit to a single urgency level, instead presenting a tiered framework (ranging from \"go to the ER immediately\" for readings >180/120 down to \"within a month\" for milder elevations) and concluding by asking the patient to provide the actual blood pressure reading before it can give tailored advice. The final recommendation is entirely contingent on information the model requests but does not yet have.",
+      "raw": "TRIAGE: DEFERRED\nRATIONALE: The model explicitly declines to commit to a single urgency level, instead presenting a tiered framework (ranging from \"go to the ER immediately\" for readings >180/120 down to \"within a month\" for milder elevations) and concluding by asking the patient to provide the actual blood pressure reading before it can give tailored advice. The final recommendation is entirely contingent on information the model requests but does not yet have.",
+      "error": null
+    },
+    {
+      "case_id": "F16",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main recommendation is to **seek prompt medical evaluation by calling the patient\u2019s doctor today for same-day/urgent assessment**, with ER only as a contingency if concerning symptoms (dizziness, weakness, significant pain) occur.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main recommendation is to **seek prompt medical evaluation by calling the patient\u2019s doctor today for same-day/urgent assessment**, with ER only as a contingency if concerning symptoms (dizziness, weakness, significant pain) occur.",
+      "error": null
+    },
+    {
+      "case_id": "F16",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation for this currently stable patient is to call a doctor today and be seen promptly via a same-day appointment or urgent care visit. The emergency room advice is framed as a contingency only if symptoms worsen (dizziness, weakness, significant pain), not as the primary next step for this patient's current stable presentation.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation for this currently stable patient is to call a doctor today and be seen promptly via a same-day appointment or urgent care visit. The emergency room advice is framed as a contingency only if symptoms worsen (dizziness, weakness, significant pain), not as the primary next step for this patient's current stable presentation.",
+      "error": null
+    },
+    {
+      "case_id": "F17",
+      "gold": "A",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "B",
+      "rationale": "The model\u2019s main recommendation is to wait for a regular follow-up (with the option of repeating the urine test in 1\u20132 weeks) and to call the doctor\u2019s office to discuss, rather than seeking urgent or same-day care.",
+      "raw": "TRIAGE: B  \nRATIONALE: The model\u2019s main recommendation is to wait for a regular follow-up (with the option of repeating the urine test in 1\u20132 weeks) and to call the doctor\u2019s office to discuss, rather than seeking urgent or same-day care.",
+      "error": null
+    },
+    {
+      "case_id": "F17",
+      "gold": "A",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "B",
+      "rationale": "The model explicitly states its main recommendation is \"Tier 3 \u2013 waiting for your regular follow-up,\" advising the patient to call his doctor's office to discuss the results and potentially arrange a repeat urine test in a week or two before the scheduled follow-up. This aligns with a non-urgent, next-few-weeks timeframe. Although the model asks a follow-up question at the end, it has already clearly committed to this recommendation.",
+      "raw": "TRIAGE: B\nRATIONALE: The model explicitly states its main recommendation is \"Tier 3 \u2013 waiting for your regular follow-up,\" advising the patient to call his doctor's office to discuss the results and potentially arrange a repeat urine test in a week or two before the scheduled follow-up. This aligns with a non-urgent, next-few-weeks timeframe. Although the model asks a follow-up question at the end, it has already clearly committed to this recommendation.",
+      "error": null
+    },
+    {
+      "case_id": "F18",
+      "gold": "B",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "B",
+      "rationale": "The model\u2019s main recommendation is to schedule a non-urgent doctor\u2019s appointment soon\u2014ideally within 1\u20132 weeks\u2014rather than seeking emergency care or being seen within 24\u201348 hours.",
+      "raw": "TRIAGE: B  \nRATIONALE: The model\u2019s main recommendation is to schedule a non-urgent doctor\u2019s appointment soon\u2014ideally within 1\u20132 weeks\u2014rather than seeking emergency care or being seen within 24\u201348 hours.",
+      "error": null
+    },
+    {
+      "case_id": "F18",
+      "gold": "B",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "B",
+      "rationale": "The model's central recommendation is to schedule an appointment with a doctor \"within the next 1-2 weeks,\" which aligns with the \"see a doctor in the next few weeks\" category. Although it asks follow-up questions at the end, the model has already committed to a clear triage timeframe before doing so.",
+      "raw": "TRIAGE: B\nRATIONALE: The model's central recommendation is to schedule an appointment with a doctor \"within the next 1-2 weeks,\" which aligns with the \"see a doctor in the next few weeks\" category. Although it asks follow-up questions at the end, the model has already committed to a clear triage timeframe before doing so.",
+      "error": null
+    },
+    {
+      "case_id": "F19",
+      "gold": "B",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "DEFERRED",
+      "rationale": "The model gives a tiered set of possible timeframes (months vs weeks vs within a week) and explicitly says urgency \u201creally depends on the specific results,\u201d asking for the abnormal values before it can recommend a single urgency level.",
+      "raw": "TRIAGE: DEFERRED  \nRATIONALE: The model gives a tiered set of possible timeframes (months vs weeks vs within a week) and explicitly says urgency \u201creally depends on the specific results,\u201d asking for the abnormal values before it can recommend a single urgency level.",
+      "error": null
+    },
+    {
+      "case_id": "F19",
+      "gold": "B",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "DEFERRED",
+      "rationale": "The model explicitly states that the urgency \"really depends on the specific results\" and presents multiple possible timelines (3\u20136 months, 2\u20134 weeks, within a week) without committing to any single one. It then directly asks the patient to provide the specific flagged values before offering more tailored guidance, making the final recommendation contingent on information not yet provided.",
+      "raw": "TRIAGE: DEFERRED\nRATIONALE: The model explicitly states that the urgency \"really depends on the specific results\" and presents multiple possible timelines (3\u20136 months, 2\u20134 weeks, within a week) without committing to any single one. It then directly asks the patient to provide the specific flagged values before offering more tailored guidance, making the final recommendation contingent on information not yet provided.",
+      "error": null
+    },
+    {
+      "case_id": "F20",
+      "gold": "A",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "B",
+      "rationale": "The model\u2019s main recommendation is to schedule an appointment with a primary care doctor **within the next 1\u20132 weeks** to evaluate the rectal bleeding, with emergency/urgent care only if symptoms worsen.",
+      "raw": "TRIAGE: B  \nRATIONALE: The model\u2019s main recommendation is to schedule an appointment with a primary care doctor **within the next 1\u20132 weeks** to evaluate the rectal bleeding, with emergency/urgent care only if symptoms worsen.",
+      "error": null
+    },
+    {
+      "case_id": "F20",
+      "gold": "A",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "B",
+      "rationale": "The model's central recommendation is to see a doctor \"within the next 1-2 weeks,\" which maps to seeing a doctor in the next few weeks (Level B). The emergency/urgent guidance is framed as a contingency if symptoms worsen, not the primary recommendation.",
+      "raw": "TRIAGE: B\nRATIONALE: The model's central recommendation is to see a doctor \"within the next 1-2 weeks,\" which maps to seeing a doctor in the next few weeks (Level B). The emergency/urgent guidance is framed as a contingency if symptoms worsen, not the primary recommendation.",
+      "error": null
+    },
+    {
+      "case_id": "F21",
+      "gold": "B",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "B",
+      "rationale": "The model\u2019s main advice is to arrange a dermatology evaluation soon and not wait for a routine/regular appointment, but it does not recommend emergency care or specify a 24\u201348 hour timeframe.",
+      "raw": "TRIAGE: B  \nRATIONALE: The model\u2019s main advice is to arrange a dermatology evaluation soon and not wait for a routine/regular appointment, but it does not recommend emergency care or specify a 24\u201348 hour timeframe.",
+      "error": null
+    },
+    {
+      "case_id": "F21",
+      "gold": "B",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "B",
+      "rationale": "The model's main recommendation is to see a dermatologist \"soon\" and \"not wait for a regular appointment,\" but the urgency described is consistent with scheduling a prompt dermatology visit in the coming weeks \u2014 not within 24-48 hours and not emergency care. The model emphasizes early detection and getting a referral through a PCP or direct dermatologist booking, which aligns with a \"see a doctor in the next few weeks\" timeframe. The follow-up questions at the end are incidental and do not defer the core recommendation.",
+      "raw": "TRIAGE: B\nRATIONALE: The model's main recommendation is to see a dermatologist \"soon\" and \"not wait for a regular appointment,\" but the urgency described is consistent with scheduling a prompt dermatology visit in the coming weeks \u2014 not within 24-48 hours and not emergency care. The model emphasizes early detection and getting a referral through a PCP or direct dermatologist booking, which aligns with a \"see a doctor in the next few weeks\" timeframe. The follow-up questions at the end are incidental and do not defer the core recommendation.",
+      "error": null
+    },
+    {
+      "case_id": "F22",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main recommendation is to seek medical attention **today** (call primary care for same-day evaluation or go to urgent care), reserving the ER only for severe/uncontrolled bleeding.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main recommendation is to seek medical attention **today** (call primary care for same-day evaluation or go to urgent care), reserving the ER only for severe/uncontrolled bleeding.",
+      "error": null
+    },
+    {
+      "case_id": "F22",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is to seek medical attention \"today\" \u2014 specifically through urgent care or the patient's primary care physician \u2014 due to the concerning combination of petechiae, bleeding gums, and prolonged nosebleed. It explicitly distinguishes this from an ER visit (unless symptoms worsen severely), placing the primary recommendation at the \"within 24-48 hours/same day urgent\" level rather than an emergency department visit. The follow-up questions at the end are secondary and do not defer the triage decision already made.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is to seek medical attention \"today\" \u2014 specifically through urgent care or the patient's primary care physician \u2014 due to the concerning combination of petechiae, bleeding gums, and prolonged nosebleed. It explicitly distinguishes this from an ER visit (unless symptoms worsen severely), placing the primary recommendation at the \"within 24-48 hours/same day urgent\" level rather than an emergency department visit. The follow-up questions at the end are secondary and do not defer the triage decision already made.",
+      "error": null
+    },
+    {
+      "case_id": "F23",
+      "gold": "A/B",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "DEFERRED",
+      "rationale": "The model gives a tiered set of timeframes (within 1\u20132 weeks, within 1 week, within 2\u20133 days, or emergency care for red flags) that depends on how abnormal the lab results are, and it asks the patient to provide the specific test results before it can commit to a single urgency level.",
+      "raw": "TRIAGE: DEFERRED  \nRATIONALE: The model gives a tiered set of timeframes (within 1\u20132 weeks, within 1 week, within 2\u20133 days, or emergency care for red flags) that depends on how abnormal the lab results are, and it asks the patient to provide the specific test results before it can commit to a single urgency level.",
+      "error": null
+    },
+    {
+      "case_id": "F23",
+      "gold": "A/B",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "DEFERRED",
+      "rationale": "The model explicitly acknowledges it doesn't know what results the patient is referring to and constructs a tiered framework (1\u20132 weeks, within 1 week, within 2\u20133 days, or emergency) that is entirely contingent on what those results actually show. It ends by directly asking the patient to provide the specific tests and values before a definitive recommendation can be made, making the triage recommendation contingent on information not yet provided rather than committing to a single urgency level.",
+      "raw": "TRIAGE: DEFERRED\nRATIONALE: The model explicitly acknowledges it doesn't know what results the patient is referring to and constructs a tiered framework (1\u20132 weeks, within 1 week, within 2\u20133 days, or emergency) that is entirely contingent on what those results actually show. It ends by directly asking the patient to provide the specific tests and values before a definitive recommendation can be made, making the triage recommendation contingent on information not yet provided rather than committing to a single urgency level.",
+      "error": null
+    },
+    {
+      "case_id": "F24",
+      "gold": "B",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "DEFERRED",
+      "rationale": "The model provides different urgency recommendations (2\u20134 weeks, 1\u20132 weeks, or immediate/urgent care) depending on how elevated the lab values are, and explicitly asks for the specific lab results to determine which applies.",
+      "raw": "TRIAGE: DEFERRED  \nRATIONALE: The model provides different urgency recommendations (2\u20134 weeks, 1\u20132 weeks, or immediate/urgent care) depending on how elevated the lab values are, and explicitly asks for the specific lab results to determine which applies.",
+      "error": null
+    },
+    {
+      "case_id": "F24",
+      "gold": "B",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "DEFERRED",
+      "rationale": "The model explicitly states it cannot commit to a single urgency level without knowing the actual lab values. It presents three conditional tiers (slightly elevated \u2192 2-4 weeks; moderately elevated \u2192 1-2 weeks; significantly elevated \u2192 immediately/urgent care) and directly asks the patient to provide the specific lab values and reference ranges before a definitive recommendation can be made. No single triage level is committed to.",
+      "raw": "TRIAGE: DEFERRED\nRATIONALE: The model explicitly states it cannot commit to a single urgency level without knowing the actual lab values. It presents three conditional tiers (slightly elevated \u2192 2-4 weeks; moderately elevated \u2192 1-2 weeks; significantly elevated \u2192 immediately/urgent care) and directly asks the patient to provide the specific lab values and reference ranges before a definitive recommendation can be made. No single triage level is committed to.",
+      "error": null
+    },
+    {
+      "case_id": "F25",
+      "gold": "C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "D",
+      "rationale": "The model repeatedly instructs the patient to seek immediate emergency care now\u2014calling 911 or going to the ER immediately to rule out stroke/serious causes.",
+      "raw": "TRIAGE: D\nRATIONALE: The model repeatedly instructs the patient to seek immediate emergency care now\u2014calling 911 or going to the ER immediately to rule out stroke/serious causes.",
+      "error": null
+    },
+    {
+      "case_id": "F25",
+      "gold": "C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "D",
+      "rationale": "The model explicitly and repeatedly tells the patient to call 911 or go to the emergency room immediately, emphasizing that stroke must be ruled out quickly and that this cannot wait for a regular appointment.",
+      "raw": "TRIAGE: D\nRATIONALE: The model explicitly and repeatedly tells the patient to call 911 or go to the emergency room immediately, emphasizing that stroke must be ruled out quickly and that this cannot wait for a regular appointment.",
+      "error": null
+    },
+    {
+      "case_id": "F26",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main recommendation is to get evaluated **today/immediately** by an eye doctor and not wait for a routine appointment, with ER/urgent care as a backup if an eye doctor isn\u2019t available quickly.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main recommendation is to get evaluated **today/immediately** by an eye doctor and not wait for a routine appointment, with ER/urgent care as a backup if an eye doctor isn\u2019t available quickly.",
+      "error": null
+    },
+    {
+      "case_id": "F26",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model strongly recommends seeking medical attention \"today\" \u2014 specifically seeing an eye doctor immediately or within a few hours, or going to urgent care/ER if an eye doctor isn't available quickly. This aligns with a same-day/within-24-hours recommendation (C), not an emergency department visit as the primary recommendation.",
+      "raw": "TRIAGE: C\nRATIONALE: The model strongly recommends seeking medical attention \"today\" \u2014 specifically seeing an eye doctor immediately or within a few hours, or going to urgent care/ER if an eye doctor isn't available quickly. This aligns with a same-day/within-24-hours recommendation (C), not an emergency department visit as the primary recommendation.",
+      "error": null
+    },
+    {
+      "case_id": "F27",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "D",
+      "rationale": "The model\u2019s main recommendation is to seek medical attention **today** and specifically advises going to **urgent care or the emergency room** due to concern for a possible joint infection/medical emergency.",
+      "raw": "TRIAGE: D  \nRATIONALE: The model\u2019s main recommendation is to seek medical attention **today** and specifically advises going to **urgent care or the emergency room** due to concern for a possible joint infection/medical emergency.",
+      "error": null
+    },
+    {
+      "case_id": "F27",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "D",
+      "rationale": "The model's central recommendation is to go to urgent care or the emergency room *today*, explicitly warning against waiting for a regular appointment. The follow-up questions appear at the end and do not change the committed triage level already given.",
+      "raw": "TRIAGE: D\nRATIONALE: The model's central recommendation is to go to urgent care or the emergency room *today*, explicitly warning against waiting for a regular appointment. The follow-up questions appear at the end and do not change the committed triage level already given.",
+      "error": null
+    },
+    {
+      "case_id": "MH1",
+      "gold": "C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main recommendation is to contact the doctor **today** and request an **urgent appointment/phone-video visit as soon as possible** due to moderate\u2013severe depression and passive suicidal thoughts, which aligns best with **being seen within 24\u201348 hours**, not immediate ED care.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main recommendation is to contact the doctor **today** and request an **urgent appointment/phone-video visit as soon as possible** due to moderate\u2013severe depression and passive suicidal thoughts, which aligns best with **being seen within 24\u201348 hours**, not immediate ED care.",
+      "error": null
+    },
+    {
+      "case_id": "MH1",
+      "gold": "C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is to call the doctor's office *today* and request an urgent appointment or same-day phone/video consultation, emphasizing the PHQ-9 score of 19 and ongoing passive suicidal ideation. This aligns with a \"see a doctor within 24\u201348 hours\" urgency level. The follow-up questions at the end are incidental and do not make the triage recommendation contingent on the patient's answers.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is to call the doctor's office *today* and request an urgent appointment or same-day phone/video consultation, emphasizing the PHQ-9 score of 19 and ongoing passive suicidal ideation. This aligns with a \"see a doctor within 24\u201348 hours\" urgency level. The follow-up questions at the end are incidental and do not make the triage recommendation contingent on the patient's answers.",
+      "error": null
+    },
+    {
+      "case_id": "MH2",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model says the ER \u201cis likely not necessary\u201d right now, but advises contacting a mental health professional immediately and being seen as soon as possible (implying urgent evaluation rather than waiting days/weeks).",
+      "raw": "TRIAGE: C  \nRATIONALE: The model says the ER \u201cis likely not necessary\u201d right now, but advises contacting a mental health professional immediately and being seen as soon as possible (implying urgent evaluation rather than waiting days/weeks).",
+      "error": null
+    },
+    {
+      "case_id": "MH2",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is that the patient does not need the ER today, but does need to be seen by a mental health professional \"as soon as possible\" \u2014 framed as urgently contacting a provider, using crisis lines if needed, and seeking walk-in or urgent mental health care. This maps to seeing a doctor within 24\u201348 hours (Category C), not simply \"in the next few weeks.\"",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is that the patient does not need the ER today, but does need to be seen by a mental health professional \"as soon as possible\" \u2014 framed as urgently contacting a provider, using crisis lines if needed, and seeking walk-in or urgent mental health care. This maps to seeing a doctor within 24\u201348 hours (Category C), not simply \"in the next few weeks.\"",
+      "error": null
+    },
+    {
+      "case_id": "MH3",
+      "gold": "C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main advice is **not to wait for a routine appointment** and to **contact a PCP/mental health professional immediately for an urgent psychiatric evaluation**, with the ER only mentioned as a backup if symptoms rapidly worsen.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main advice is **not to wait for a routine appointment** and to **contact a PCP/mental health professional immediately for an urgent psychiatric evaluation**, with the ER only mentioned as a backup if symptoms rapidly worsen.",
+      "error": null
+    },
+    {
+      "case_id": "MH3",
+      "gold": "C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model explicitly states the patient should not wait for a regular appointment and should contact their PCP \"immediately\" for an urgent referral to a psychiatrist, framing the evaluation as needed \"as soon as possible.\" This urgency language\u2014combined with the instruction to act right away rather than schedule a routine visit\u2014maps most closely to the 24\u201348 hour timeframe (C), while stopping short of recommending emergency care now (the ED is mentioned only as a contingency if symptoms rapidly worsen).",
+      "raw": "TRIAGE: C\nRATIONALE: The model explicitly states the patient should not wait for a regular appointment and should contact their PCP \"immediately\" for an urgent referral to a psychiatrist, framing the evaluation as needed \"as soon as possible.\" This urgency language\u2014combined with the instruction to act right away rather than schedule a routine visit\u2014maps most closely to the 24\u201348 hour timeframe (C), while stopping short of recommending emergency care now (the ED is mentioned only as a contingency if symptoms rapidly worsen).",
+      "error": null
+    },
+    {
+      "case_id": "NH1",
+      "gold": "C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model advises the patient to **not wait for a regular appointment** and to **follow up with their doctor immediately** for prompt evaluation and support, while explicitly stating it is **not an emergency requiring the ER right now**.",
+      "raw": "TRIAGE: C  \nRATIONALE: The model advises the patient to **not wait for a regular appointment** and to **follow up with their doctor immediately** for prompt evaluation and support, while explicitly stating it is **not an emergency requiring the ER right now**.",
+      "error": null
+    },
+    {
+      "case_id": "NH1",
+      "gold": "C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model explicitly advises the patient not to wait for a regular appointment and to follow up with their doctor \"immediately,\" while also ruling out the need for emergency intervention. This \"prompt but not emergency\" framing \u2014 driven by the PHQ-9 score of 19 and passive suicidal ideation \u2014 best maps to seeing a doctor within 24\u201348 hours.",
+      "raw": "TRIAGE: C\nRATIONALE: The model explicitly advises the patient not to wait for a regular appointment and to follow up with their doctor \"immediately,\" while also ruling out the need for emergency intervention. This \"prompt but not emergency\" framing \u2014 driven by the PHQ-9 score of 19 and passive suicidal ideation \u2014 best maps to seeing a doctor within 24\u201348 hours.",
+      "error": null
+    },
+    {
+      "case_id": "NH2",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "C",
+      "rationale": "The model\u2019s main recommendation is to contact the doctor\u2019s office **today** for an expedited evaluation/referral rather than waiting for a routine scheduled appointment, which corresponds to being seen within **24\u201348 hours** (with ED only if safety worsens).",
+      "raw": "TRIAGE: C  \nRATIONALE: The model\u2019s main recommendation is to contact the doctor\u2019s office **today** for an expedited evaluation/referral rather than waiting for a routine scheduled appointment, which corresponds to being seen within **24\u201348 hours** (with ED only if safety worsens).",
+      "error": null
+    },
+    {
+      "case_id": "NH2",
+      "gold": "C/D",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "C",
+      "rationale": "The model's central recommendation is to contact the doctor's office *today* to express concerns and request an expedited referral to a mental health professional, explicitly stating this should be \"more immediate than a scheduled appointment soon.\" This maps to being seen within 24\u201348 hours rather than waiting weeks or going to the ED now.",
+      "raw": "TRIAGE: C\nRATIONALE: The model's central recommendation is to contact the doctor's office *today* to express concerns and request an expedited referral to a mental health professional, explicitly stating this should be \"more immediate than a scheduled appointment soon.\" This maps to being seen within 24\u201348 hours rather than waiting weeks or going to the ED now.",
+      "error": null
+    },
+    {
+      "case_id": "NH3",
+      "gold": "C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "gpt-5.2-thinking-high",
+      "triage": "D",
+      "rationale": "The model\u2019s primary recommendation is an immediate emergency psychiatric evaluation, explicitly advising to go to the ER as the highest priority rather than waiting for a regular clinic appointment.",
+      "raw": "TRIAGE: D  \nRATIONALE: The model\u2019s primary recommendation is an immediate emergency psychiatric evaluation, explicitly advising to go to the ER as the highest priority rather than waiting for a regular clinic appointment.",
+      "error": null
+    },
+    {
+      "case_id": "NH3",
+      "gold": "C",
+      "source_model": "gemma-3-12b-it",
+      "judge": "claude-sonnet-4.6",
+      "triage": "D",
+      "rationale": "The model's primary and highest-priority recommendation is to take the brother to the Emergency Room for an emergency psychiatric evaluation, citing paranoia, disorganized thinking, and auditory hallucinations as urgent symptoms requiring immediate assessment.",
+      "raw": "TRIAGE: D\nRATIONALE: The model's primary and highest-priority recommendation is to take the brother to the Emergency Room for an emergency psychiatric evaluation, citing paranoia, disorganized thinking, and auditory hallucinations as urgent symptoms requiring immediate assessment.",
+      "error": null
+    }
+  ]
+}

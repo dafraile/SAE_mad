@@ -955,5 +955,79 @@ interventions cannot directly close the resulting knowledge--action gap.
 - A1: Per-layer × per-stratum bootstrap tables for all three models
 - A2: Top-token analysis of the format-effect features (3833, 10012, etc.)
 - A3: Adjudicator prompts, agreement statistics, calibration check
-- A4: Qwen Scope reconstruction-error characterization
-- A5: Compute and cost breakdown
+- A4: Clinician adjudication (Jia) — see A4 below
+- A5: Qwen Scope reconstruction-error characterization
+- A6: Compute and cost breakdown
+- A7: Phase 8 NLA per-case verbalization table
+
+
+### A4 — Clinician adjudication
+
+\textbf{Protocol.} A clinician (Jia, internal medicine) reviewed a blinded
+sample of 16 cases stratified across four cells of 4 each, drawn from the
+60-case canonical corpus: \texttt{12B\_both\_deferred} ($n=4$, model
+defers tiered-conditional advice), \texttt{12B\_clear\_correct} ($n=4$,
+both LLM judges agree and match gold), \texttt{12B\_clear\_incorrect}
+($n=4$, both judges agree but not in gold), and \texttt{4B\_format\_flipped}
+($n=4$, NL letter wrong, NF judged correct by both LLMs). Jia saw only
+the patient message and the model's free-text response; both gold labels
+and LLM-judge labels were withheld. For each case she rated: (1) primary
+triage on the 5-way scale A/B/C/D/DEFERRED, using the same prompt the
+LLM judges used (Section~\ref{sec:phase0_5_methodology}); (2)
+deferral-appropriateness (yes/no/NA) if she chose DEFERRED; (3)
+confidence (1--5); (4) whether she agreed with the model's recommendation
+(yes/partial/no); (5) free-text notes.
+
+\textbf{Headline results.}
+
+\begin{center}
+\small
+\begin{tabular}{lr}
+\toprule
+Metric & Value \\
+\midrule
+LLM-judge vs.\ clinician triage agreement & \textbf{14/16 (87.5\%)} \\
+Cohen's $\kappa$ (5-class) & \textbf{0.808} (substantial / near-perfect) \\
+Model deferrals judged clinically appropriate & 3/4 (75\%) \\
+Clinician agrees fully with model recommendation & 8/16 (50\%) \\
+Clinician agrees partially with model & 8/16 (50\%) \\
+Clinician fully disagrees with model & \textbf{0/16 (0\%)} \\
+Clinician deferral rate (on this 16-case sample) & 6/16 (37.5\%) \\
+Model deferral rate (full 60-case corpus) & 4/60 (6.7\%) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Two cases of interest where Jia diverges from the LLM judges.}
+
+\begin{description}
+\item[R13 (case E5, gold A).] Both LLM judges and the model committed
+to A (matching gold); Jia marked DEFERRED with the deferral judged
+clinically appropriate, on the grounds that the case ``\emph{requires
+[a] time element to manifest diagnosis vs subsiding symptoms}.'' This
+is a case where the model committed to the gold-correct letter but the
+clinician argues the commitment was premature.
+
+\item[R06 (case F9, gold D).] Both LLM judges read the model as
+recommending C (24--48 hours); Jia marked DEFERRED with the deferral
+judged inappropriate, noting that an urgent recommendation was
+warranted. This is the inverse pattern: the model's hedging was read
+as deferral by Jia, but Jia thinks the clinical situation called for
+a definite urgent recommendation.
+\end{description}
+
+\textbf{Reading.} The LLM-judge methodology used throughout the paper
+is well-calibrated to clinical judgement ($\kappa = 0.808$), supporting
+its use as the primary scoring tool. The 12B model's tiered
+deferrals (Section~\ref{sec:deferred_class}) are clinically appropriate
+the majority of the time (3/4). Crucially, the clinician deferral rate
+(37.5\% on this sample) substantially exceeds the model's own deferral
+rate (6.7\% on the full corpus), and the clinician never fully disagrees
+with the model's recommendation ($0/16$). The model under-defers
+relative to clinical practice but never produces an unsafe
+recommendation in our sample. This is consistent with the paper's main
+finding that the forced-letter scaffold obscures clinical caution
+rather than degrading clinical reasoning: a clinician would defer on a
+larger fraction of cases than the model does, but on the cases where
+the model does commit, its recommendations align with clinical
+judgement.

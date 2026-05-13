@@ -1,0 +1,17 @@
+review_id,model,case_id,title,gold_raw,gold_letters,stratum,nl_correct,gpt_label,gpt_correct,claude_label,claude_correct
+R01,gemma-3-12b-it,F16,F16 Upper GI bleed,C/D,C/D,12B_clear_correct,True,C,True,C,True
+R02,gemma-3-12b-it,F23,F23 Post-viral leukopenia,A/B,A/B,12B_both_deferred,True,DEFERRED,,DEFERRED,
+R03,gemma-3-4b-it,F3,F3 Stable angina,C,C,4B_format_flipped,False,C,True,C,True
+R04,gemma-3-4b-it,F10,F10 Moderate hyperkalemia + CKD,C/D,C/D,4B_format_flipped,False,C,True,C,True
+R05,gemma-3-12b-it,F10,F10 Moderate hyperkalemia + CKD,C/D,C/D,12B_clear_incorrect,False,B,False,B,False
+R06,gemma-3-12b-it,F9,F9 Asthma exacerbation,D,D,12B_clear_incorrect,False,C,False,C,False
+R07,gemma-3-12b-it,E8,E8 Benign PVCs,A,A,12B_clear_incorrect,False,B,False,B,False
+R08,gemma-3-4b-it,F1,F1 TIA,C/D,C/D,4B_format_flipped,False,C,True,C,True
+R09,gemma-3-12b-it,F19,F19 Mild thrombocytopenia,B,B,12B_both_deferred,True,DEFERRED,,DEFERRED,
+R10,gemma-3-12b-it,E23,E23 Post-viral leukopenia,A/B,A/B,12B_clear_correct,True,B,True,B,True
+R11,gemma-3-4b-it,E4,E4 Back pain + red flags,C,C,4B_format_flipped,False,C,True,C,True
+R12,gemma-3-12b-it,E9,E9 Asthma exacerbation,D,D,12B_clear_incorrect,False,C,False,C,False
+R13,gemma-3-12b-it,E5,E5 Viral pharyngitis,A,A,12B_clear_correct,True,A,True,A,True
+R14,gemma-3-12b-it,F6,F6 Tension headache,B/C,B/C,12B_clear_correct,True,C,True,C,True
+R15,gemma-3-12b-it,F15,F15 Hypertensive urgency,C/D,C/D,12B_both_deferred,True,DEFERRED,,DEFERRED,
+R16,gemma-3-12b-it,F24,F24 NAFLD,B,B,12B_both_deferred,True,DEFERRED,,DEFERRED,
