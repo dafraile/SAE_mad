@@ -27,10 +27,17 @@ than the medical ones.
 
 The mechanistic invariance holds across the Gemma JumpReLU and Qwen TopK SAE
 training pipelines and across two model architectures. Bootstrap 95% confidence
-intervals exclude zero in every cell of every model. We also document a behavioral
-finding: the +13–20pp forced-letter penalty observed in Gemma 4B essentially vanishes
-in 12B, with scaling closing the gap between the model's preserved clinical encoding
-and its constrained output capacity.
+intervals exclude zero in every cell of every model. We also document a
+behavioral finding that refines the scaling story: the $+17$pp forced-letter
+penalty observed in Gemma 4B (NF $71.7\%$ vs NL $55.0\%$, both judges) does not
+simply attenuate at 12B; under the four-letter prompt, 12B shows a $10$pp
+NL-over-NF gap ($81.7\%$ vs $71.7\%$). A five-letter
+$\{A,B,C,D,\textsc{deferred}\}$ refinement of the LLM-as-judge reveals why:
+12B's free-text replies frequently take the form of tiered conditional advice
+that the four-letter scoring cannot capture, and on a clinician-adjudicated
+subset $3/4$ of the model's deferrals are clinically appropriate. The
+forced-letter scaffold suppresses this caution by forcing a single-letter
+commitment.
 
 We discuss implications for clinical-AI evaluation methodology and propose SAE
 features as deployable, format-invariant monitors of clinical groundedness.
@@ -130,14 +137,22 @@ design across all three models.
 residual-stream difference between conditions vanishes exactly; what survives
 in length-invariant max-pool aggregation loads onto non-medical features in
 the SAE basis rather than the medical ones.
-\item \textbf{Behavioral scaling.} The forced-letter penalty observed at 4B
-($+$13--20pp advantage for free-text in our paper-faithful adjudication)
-essentially vanishes at 12B ($\approx{}0$pp). This refines the Med-PaLM--era
-scaling claim~\cite{singhal2023large,singhal2025expert,wei2022emergent}:
-capability scaling closes the gap not just on internal medical knowledge but
-specifically on the model's ability to map that knowledge into a constrained
-output. Crucially, the \emph{mechanistic} invariance at deep layers persists
-across both scales.
+\item \textbf{Behavioral scaling and deferral.} The forced-letter penalty
+observed at 4B ($+17$pp NF advantage on the both-judges-correct metric;
+NF $71.7\%$ vs NL $55.0\%$) takes a different form at 12B. Under the
+four-letter NF prompt, 12B's NF accuracy is $71.7\%$ (both judges,
+$\kappa=1.000$) against an NL of $81.7\%$ --- a $10$pp \emph{NL-over-NF}
+gap. A five-letter $\{A,B,C,D,\textsc{deferred}\}$ refinement of the
+LLM-as-judge reveals why: $4/60$ of 12B's NF replies are explicit tiered
+conditional advice that the four-letter prompt cannot represent, and on
+a clinician-adjudicated subset $3/4$ of these deferrals are clinically
+appropriate. Capability scaling between 4B and 12B does not simply
+close a single behavioral gap; it changes the model's free-text response
+policy toward more cautious advice that the forced-letter scaffold then
+suppresses. The \emph{mechanistic} invariance at deep layers persists
+across both scales, refining the Med-PaLM--era scaling
+claim~\cite{singhal2023large,singhal2025expert,wei2022emergent}
+on what scaling does and does not change.
 \end{enumerate}
 
 Together, these results support Version B at scale and across families. The
@@ -404,33 +419,52 @@ population-level pattern rather than a small-sample artifact.
 
 ## 4. Results
 
-### 4.1 Behavioral phenomenon (Gemma 4B and 12B)
+### 4.1 Behavioral phenomenon (Gemma 4B and 12B) \label{sec:phase0_5_cells}
 
-Cell-level accuracy on the 60 paper-canonical cases:
+Cell-level accuracy on the 60 paper-canonical cases. NF responses are
+generated at \texttt{max\_new\_tokens=2000} (greedy) and scored by two
+LLM judges (gpt-5.2-thinking-high and claude-sonnet-4.6) under the
+paper-faithful four-letter adjudication prompt:
 
 | Cell | 4B | 12B |
 |---|---|---|
-| SL: structured + forced-letter | 60.0% | **81.7%** |
-| NL: natural + forced-letter | 56.7% | **81.7%** |
-| NF: natural + free-text (GPT judge) | 71.7% | 81.7% |
-| NF: natural + free-text (Claude judge) | 76.7% | 78.3% |
-| NF: both judges agree correct | 70.0% | 73.3% |
-| Inter-rater agreement / κ | 88.3% / 0.797 | 76.7% / 0.634 |
+| SL: structured + forced-letter            | 58.3% | **81.7%** |
+| NL: natural + forced-letter               | 55.0% | **81.7%** |
+| NF: natural + free-text (GPT judge)       | 73.3% | 71.7% |
+| NF: natural + free-text (Claude judge)    | 76.7% | 71.7% |
+| NF: both judges agree correct             | 71.7% | 71.7% |
+| Inter-rater agreement / κ (NF)            | 93.3% / 0.858 | **100\% / 1.000** |
 
-**On Gemma 4B, free-text NF outperforms forced-letter NL by +13–20pp
-(judge-dependent).** This replicates the prior behavioral observation that
-constrained output formats penalize Gemma 4B's apparent triage capability.
+\label{tab:phase0_5_cells}
 
-**On Gemma 12B, the gap essentially disappears (NL vs NF within 0–3pp across
-judges).** Twelve-billion-parameter Gemma is capable enough to map its clinical
-understanding onto a constrained letter output without the format penalty.
-This is a novel scaling finding consistent with Singhal et al. (2023):
-scaling improves performance on medical question answering, including
-specifically under constrained output formats.
+**On Gemma 4B, free-text NF outperforms forced-letter NL by +16–22pp
+(judge-dependent; +17pp on the both-judges-correct conservative metric).**
+This replicates the prior behavioral observation that
+constrained output formats penalize Gemma 4B's apparent triage capability:
+the model can clinically reason its way to the right disposition in
+free text but loses accuracy under the forced-letter scaffold.
 
-The free-text gain on 4B is concentrated in mid-acuity cases (gold C and C/D)
-rather than in emergencies or low-acuity (see appendix table). The 12B
-attenuation is across-the-board.
+**On Gemma 12B, the four-letter NF accuracy ($71.7\%$ both judges)
+sits ${\sim}10$pp \emph{below} NL ($81.7\%$).** This is a different
+pattern than 4B's, and on its face inverts the format-penalty story
+at scale. The interpretation is not that 12B's clinical reasoning has
+degraded; rather, 12B's free-text replies frequently take a different
+form that the four-letter prompt cannot capture (tiered conditional
+advice; see \S\ref{sec:deferred_class}). Both LLM judges agree on
+every case at 12B ($\kappa = 1.000$) under the four-letter prompt
+because, when forced to pick a letter, they read these tiered replies
+identically as the middle tier --- usually B. Adding a fifth
+\textsc{deferred} label changes the interpretation substantially
+(\S\ref{sec:deferred_class}).
+
+**On Gemma 4B, the same five-way refinement finds no deferral behavior
+(0/60 both-judges \textsc{deferred}), consistent with 4B's smaller
+capacity to construct tiered conditional reasoning.** The 4B story is
+unchanged from the four-letter analysis: the forced-letter format
+genuinely penalizes 4B's clinical capability.
+
+The 4B free-text gain is concentrated in mid-acuity cases (gold C and C/D)
+rather than in emergencies or low-acuity (see appendix table).
 
 ### 4.1.1 Deferral as a free-text response mode \label{sec:deferred_class}
 
@@ -971,12 +1005,20 @@ the feature level. Where Basu et al. show that interpretability cannot
 \emph{describe} where the gap lives.
 
 \textbf{Behavioral scaling and the depth-dependent mechanistic pattern.}
-The forced-letter penalty at Gemma 3 4B (NL accuracy 56.7\% vs NF 70--77\%)
-essentially vanishes at Gemma 3 12B (NL 81.7\% vs NF 73.3--81.7\%).
-Capability scaling closes the behavioral gap not by changing the clinical
-representation (which is preserved at both scales at deep layers) but by
-improving the output-mapping circuit's translation of that representation
-into a constrained letter answer. The 12B mechanistic data show a depth-
+The forced-letter penalty at Gemma 3 4B (NL $55.0\%$ vs NF $71.7\%$
+both-judges; $+17$pp gap) takes a different form at Gemma 3 12B. Under
+the four-letter NF prompt 12B scores $71.7\%$ (both judges, $\kappa=1.0$)
+against an NL of $81.7\%$, a $10$pp \emph{NL-over-NF} gap rather than a
+free-text advantage. A five-letter LLM-judge refinement
+(\S\ref{sec:deferred_class}) shows that this reversal is not a clinical-
+reasoning deficit: $4/60$ of 12B's NF replies are explicit tiered
+conditional advice that the four-letter prompt is forced to flatten,
+and on a clinician-adjudicated subset 3/4 of these deferrals are
+clinically appropriate. Capability scaling between 4B and 12B therefore
+does not just improve the output-mapping circuit (the original
+hypothesis); it also changes the model's free-text response policy
+toward more cautious, tiered advice that the forced-letter scaffold
+then suppresses. The 12B mechanistic data themselves show a depth-
 dependent nuance: at deep layers (31, 41) Version B holds and medical
 features are more invariant than the magnitude-matched random control,
 but at shallow/mid layers (12, 24) the medical features we identify show
@@ -1108,15 +1150,20 @@ prompt-length asymmetry between formats is controlled, the residual-stream
 difference vanishes; the residual-direction difference that survives
 length-invariant aggregation loads on non-medical features that we
 identify as firing on the forced-letter scaffold tokens themselves. The
-behavioral format penalty observed at 4B essentially vanishes at 12B,
-while the deep-layer mechanistic invariance persists across scales,
-families, and the depth at which clinical content is conceptually
-encoded.
+behavioral $+17$pp NF-over-NL gap observed at 4B takes a different form at
+12B: a $10$pp NL-over-NF gap under the four-letter prompt that resolves,
+under a five-letter $\{A,B,C,D,\textsc{deferred}\}$ refinement and
+clinician adjudication, into 12B's tendency to defer with tiered
+conditional advice on $4/60$ cases that the forced-letter scaffold then
+suppresses. Across both behavioral regimes, the deep-layer mechanistic
+invariance persists across scales, families, and the depth at which
+clinical content is conceptually encoded.
 
 The model's clinical encoding is preserved across the output formats
 whose accuracy scoring diverges: the failure mode the benchmark detects
-lives in output mapping, not in clinical reasoning. SAE features are a
-deployable, format-invariant monitor of clinical groundedness — an
+lives in output mapping (at 4B) or in suppression of appropriate
+deferral (at 12B), not in clinical reasoning. SAE features are a
+deployable, format-invariant monitor of clinical groundedness --- an
 application that plays to what SAE features have been shown to be
 (interpretable readouts) and complements concurrent
 work~\cite{basu2026interpretability} showing that mechanistic
