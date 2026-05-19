@@ -1,0 +1,39 @@
+{
+  "A_gemma_4b_L29_l0_distribution": {
+    "n_tokens": 3950,
+    "l0_median": 57.0,
+    "l0_mean": 58.15620253164557,
+    "l0_p5": 36.0,
+    "l0_p95": 86.0,
+    "l0_min": 16.0,
+    "l0_max": 168.0,
+    "per_token_norm_median": 59433.0390625,
+    "per_token_norm_mean": 59060.79829806171,
+    "n_prompts_sampled": 10
+  },
+  "B_phase6_diagnostic": {
+    "case_id": "E1",
+    "n_tokens": 335,
+    "contribution_norm_mean": 264.3919677734375,
+    "contribution_norm_peak": 6799.7177734375,
+    "contribution_norm_median": 0.0,
+    "pct_of_residual_mean": 0.43637484312057495,
+    "pct_of_residual_peak": 10.973786354064941,
+    "pct_of_residual_median": 0.0,
+    "per_token_residual_norm_mean": 60583.109375,
+    "per_token_residual_norm_peak": 294926.625,
+    "format_features": [
+      3833,
+      10012,
+      980
+    ]
+  },
+  "C_qwen_L31_recon_err": {
+    "n_tokens": 1663,
+    "rel_l2_mean": 0.40256995833644077,
+    "rel_l2_median": 0.3744080662727356,
+    "rel_l2_p5": 0.3062825411558151,
+    "rel_l2_p95": 0.6162207126617427,
+    "n_prompts_sampled": 5
+  }
+}

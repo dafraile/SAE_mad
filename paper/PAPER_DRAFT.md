@@ -169,7 +169,9 @@ that allows graded activation; \textit{Qwen-Scope}~\cite{qwen2026scope}
 trains $k$-sparse TopK SAEs~\cite{makhzani2013ksparse,gao2024scaling} on
 Qwen3 base checkpoints with $k{=}50$ active features per token out of
 65{,}536 (0.076\% sparsity, more aggressive than Gemma Scope's
-$\sim{}60$--$100$ active at width 16k). The two pipelines therefore make
+$\sim{}35$--$90$ active at width 16k --- median $57$ active features per
+content token at Gemma 3 4B IT L29 over a 3950-token sample, see
+Appendix~\ref{app:verified_baselines}). The two pipelines therefore make
 different reconstruction--sparsity trade-offs; we treat this as a feature
 of our cross-family validation rather than a confound. Concurrent
 work~\cite{frasertaliente2026nla} introduces Natural Language Autoencoders
@@ -256,8 +258,8 @@ cell codes are {SL, NL, NF}.
 
 | Model | Layers | d_model | SAE | SAE arch | d_sae | Sparsity |
 |---|---|---|---|---|---|---|
-| Gemma 3 4B IT | 34 | 2560 | gemma-scope-2-4b-it | JumpReLU, l0_medium | 16,384 | ~60–100 active |
-| Gemma 3 12B IT | 48 | 3584 | gemma-scope-2-12b-it | JumpReLU, l0_medium | 16,384 | ~60–100 active |
+| Gemma 3 4B IT | 34 | 2560 | gemma-scope-2-4b-it | JumpReLU, l0_medium | 16,384 | ~35–90 active (med. 57) |
+| Gemma 3 12B IT | 48 | 3584 | gemma-scope-2-12b-it | JumpReLU, l0_medium | 16,384 | ~35–90 active (med. 57) |
 | Qwen3-8B | 36 | 4096 | SAE-Res-Qwen3-8B-Base-W64K-L0_50 | TopK | 65,536 | k=50 fixed |
 
 For Gemma we sweep four matched-depth layers (4B: 9, 17, 22, 29 ≈ 27/50/65/85%;
@@ -1065,6 +1067,41 @@ but more sensitive to surface format. The headline interpretation
 (``a small number of monosemantic medical features carry format-
 invariant clinical content'') is what the sensitivity check
 quantifies, not contradicts.
+
+---
+
+### A1C — Verified baseline numerics \label{app:verified_baselines}
+
+A small number of numerical claims about SAE properties and intervention
+magnitudes appear in the main text without their derivation. We list
+the verified source values here, recomputed end-to-end from the same
+checkpoints we use for analysis.
+
+\begin{center}
+\small
+\begin{tabular}{p{6.5cm} l l}
+\toprule
+Claim & Reported & Verified \\
+\midrule
+Gemma 3 4B IT L29 per-token L0 (active features), $n{=}3950$ tokens & ``$\sim{}35$--$90$ active (median $57$)'' & median 57.0, mean 58.2, $[$p5, p95$] = [$36, 86$]$ \\
+Gemma 3 4B IT L29 per-token residual norm, same sample            & ``$\sim{}60{,}000$ per token''        & mean 60{,}583, median 59{,}433 \\
+Phase 6: mean norm subtracted per token (case E1, NL)              & 264                                   & 264.4 \\
+Phase 6: peak norm subtracted on a single token                     & 6{,}795                               & 6{,}799.7 \\
+Phase 6: mean contribution as \% of residual norm                   & ${\sim}0.4\%$                         & 0.44\% \\
+Phase 6: peak contribution as \% of residual norm                   & ${\sim}11\%$                          & 10.97\% \\
+Gemma Scope 2 4B L29 relative L2 reconstruction error              & ${\sim}14\%$                          & B\_mean 14.0\%, D\_mean 13.6\% \\
+Qwen Scope L31 relative L2 reconstruction error, $n{=}1663$ tokens & ${\sim}38\%$                          & median 37.4\%, mean 40.3\% \\
+Phase 7: $\alpha \cdot \|v\| / \|\text{residual}\|$ at $\alpha{=}4$  & ${\sim}6.7\%$                         & $4\cdot 1012.66 / 60{,}583 = 6.69\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Verification source: \texttt{results/verify\_residual\_claims.json}.
+Reconstruction error at L29 sourced from
+\texttt{results/phase1\_activation\_invariance.json} (B\_mean and D\_mean
+fields). Residual norms cross-checked against the mean-pooled
+\texttt{results/phase2\_residuals\_L29.npz} cache (median 58.3k,
+consistent with the per-token 60.5k).
 
 ---
 
