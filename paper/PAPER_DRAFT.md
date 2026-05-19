@@ -288,9 +288,14 @@ between the two judges as a calibration signal.
 ### 3.4 Mechanistic invariance test
 
 For each (model, layer, case, condition) we mean-pool SAE feature activations
-over user content tokens. For Gemma we identify content tokens by chat-template
-boundaries (`<start_of_turn>user\n` to `<end_of_turn>`); for Qwen we feed raw
-text and pool over the entire input. Per case, we compute:
+over user content tokens. The Gemma/Qwen content-pool conventions differ for
+in-distribution reasons: Gemma Scope 2 is trained on activations of the IT
+(instruction-tuned) models with chat-template structure, so we present
+chat-templated input and pool over user-content tokens between
+`<start_of_turn>user\n` and `<end_of_turn>`. Qwen-Scope is trained on
+activations of the *base* (pre-IT) Qwen3-8B checkpoint, so we feed raw text
+and pool over the entire input to keep the residual stream in-distribution
+for the SAE. Per case, we compute:
 
 - **Cosine similarity** between NL and NF feature vectors (over the medical
   feature subspace).
@@ -302,16 +307,32 @@ text and pool over the entire input. Per case, we compute:
 The control is a set of 30 random features per layer, drawn with a frozen seed
 from the pool of features whose mean activation across the union of NL+NF content
 falls in the band `[0.5 × min(med_means), 2.0 × max(med_means)]`. This
-**magnitude-matches** the random pool to the medical features, removing the
-small-feature-noise inflation that would otherwise depress the random mod-index.
-Pool sizes are typically 500–2200 features per layer per model.
+**magnitude-matches** the random pool to the medical features. Without this
+control, the random pool would be dominated by features that essentially never
+fire on this corpus; their modulation indices collapse to near zero through the
+denominator-floor in the mod-index formula, biasing the random mean downward and
+artificially narrowing the medical-vs-random gap. Magnitude-matching restricts
+the random pool to features that fire at comparable magnitudes to the medical
+features, making the comparison faithful. Pool sizes are typically 500–2200
+features per layer per model.
 
-We stratify by behavioral-test correctness × adjudicator-agreed correctness:
+We stratify by behavioral-test correctness × adjudicator-agreed correctness on
+the NF cell. Throughout this stratification, ``NF correct'' means both LLM
+judges (gpt-5.2-thinking-high and claude-sonnet-4.6) agree the NF response is
+correct; ``NF wrong'' likewise means unanimous-incorrect. Cases where the
+two judges disagree on NF correctness are placed in a separate stratum:
 
-- **format_flipped**: NL wrong AND both judges agree NF right.
-- **both_right**: NL correct AND both judges agree NF correct.
-- **both_wrong**: NL wrong AND both judges agree NF wrong.
-- **NL_only_right**: NL correct AND not both judges right.
+- **both_right**: NL correct AND NF correct (unanimous).
+- **both_wrong**: NL wrong AND NF wrong (unanimous).
+- **NF_only_right**: NL wrong AND NF correct (unanimous). The original
+  "format-flipped" stratum: forced-letter format breaks the model on a case
+  where its free-text reasoning is judged correct.
+- **NL_only_right**: NL correct AND NF wrong (unanimous). The inverse: the
+  forced-letter format yields the right letter on a case where the model's
+  free-text reasoning is judged incorrect.
+- **judges_disagree**: any case where the two NF judges assign different
+  correctness verdicts. Kept separate to avoid contaminating the other four
+  strata with ambiguous NF labels.
 
 Bootstrap 95% confidence intervals (2,000 resamples) on the per-case
 medical-minus-random mod-index difference.
@@ -415,31 +436,59 @@ attenuation is across-the-board.
 
 Bootstrap 95% CIs on (medical − random) modulation index, per layer × stratum:
 
-**Gemma 3 4B IT** (positive: medical *more* perturbed than random):
+**Gemma 3 4B IT** (re-aggregated under v2 NF adjudication):
 
 | Layer | Stratum | n | med_mod | rnd_mod | diff [95% CI] |
 |---|---|---|---|---|---|
-| 9 | format_flipped | 13 | 0.148 | 0.343 | **−0.196 [−0.223, −0.170]** |
-| 9 | both_right | 29 | 0.183 | 0.408 | **−0.224 [−0.255, −0.196]** |
-| 17 | format_flipped | 13 | 0.118 | 0.377 | **−0.259 [−0.325, −0.195]** |
-| 17 | both_right | 29 | 0.154 | 0.417 | **−0.263 [−0.303, −0.227]** |
-| 22 | format_flipped | 13 | 0.156 | 0.319 | **−0.163 [−0.205, −0.118]** |
-| 22 | both_right | 29 | 0.252 | 0.342 | **−0.090 [−0.145, −0.021]** |
-| 29 | format_flipped | 13 | 0.107 | 0.413 | **−0.305 [−0.371, −0.250]** |
-| 29 | both_right | 29 | 0.152 | 0.423 | **−0.271 [−0.323, −0.224]** |
+| 9  | both_right      | 30 | 0.182 | 0.411 | **−0.229 [−0.260, −0.202]** |
+| 9  | both_wrong      | 12 | 0.192 | 0.394 | **−0.202 [−0.239, −0.167]** |
+| 9  | NF_only_right   | 13 | 0.161 | 0.379 | **−0.218 [−0.247, −0.192]** |
+| 9  | NL_only_right   |  1 | 0.232 | 0.428 | −0.197 (n=1, no CI) |
+| 9  | judges_disagree |  4 | 0.179 | 0.386 | **−0.207 [−0.229, −0.190]** |
+| 17 | both_right      | 30 | 0.158 | 0.426 | **−0.269 [−0.305, −0.234]** |
+| 17 | both_wrong      | 12 | 0.144 | 0.434 | **−0.290 [−0.358, −0.225]** |
+| 17 | NF_only_right   | 13 | 0.140 | 0.397 | **−0.257 [−0.317, −0.201]** |
+| 17 | NL_only_right   |  1 | 0.222 | 0.428 | −0.206 (n=1, no CI) |
+| 17 | judges_disagree |  4 | 0.178 | 0.387 | **−0.209 [−0.269, −0.148]** |
+| 22 | both_right      | 30 | 0.256 | 0.342 | **−0.086 [−0.142, −0.024]** |
+| 22 | both_wrong      | 12 | 0.233 | 0.326 | −0.093 [−0.171, +0.014] |
+| 22 | NF_only_right   | 13 | 0.183 | 0.337 | **−0.154 [−0.195, −0.105]** |
+| 22 | NL_only_right   |  1 | 0.165 | 0.335 | −0.170 (n=1, no CI) |
+| 22 | judges_disagree |  4 | 0.186 | 0.328 | **−0.141 [−0.211, −0.052]** |
+| 29 | both_right      | 30 | 0.148 | 0.424 | **−0.276 [−0.328, −0.230]** |
+| 29 | both_wrong      | 12 | 0.096 | 0.432 | **−0.336 [−0.414, −0.267]** |
+| 29 | NF_only_right   | 13 | 0.098 | 0.440 | **−0.341 [−0.411, −0.274]** |
+| 29 | NL_only_right   |  1 | 0.155 | 0.488 | −0.334 (n=1, no CI) |
+| 29 | judges_disagree |  4 | 0.126 | 0.400 | **−0.274 [−0.331, −0.217]** |
 
-**At every layer × stratum on 4B, medical-feature mod-index is significantly
-lower than the magnitude-matched random control.** Effect sizes are large
-(0.09 to 0.37 in absolute mod-index) and 95% CIs clear zero at every cell.
+**At every adequately-powered cell on 4B (n≥4), medical-feature mod-index is
+significantly lower than the magnitude-matched random control.** Effect sizes
+range from 0.09 to 0.34 in absolute mod-index; the 95% CI clears zero at
+every cell except 4B L22 both_wrong (n=12; CI [−0.171, +0.014]). The single
+NL_only_right case at each layer is reported for completeness but is not used
+in the headline analysis. The `judges_disagree` stratum (n=4 at 4B) closely
+tracks `both_right` and `NF_only_right`, suggesting the medical-feature
+invariance does not depend on unanimous LLM-judge agreement on NF.
 
-**Gemma 3 12B IT** (depth-dependent):
+**Gemma 3 12B IT** (depth-dependent; re-aggregated under v2 NF adjudication.
+Under v2, the NF_only_right and judges_disagree strata at 12B are empty
+because both judges agree on every NF case and no case has NL wrong with
+NF unanimously correct):
 
-| Layer | n | med_mod | rnd_mod | diff [95% CI] |
-|---|---|---|---|---|
-| 12 | 60 | 0.253 | 0.213 | +0.040 [+0.001, +0.089] (medical *more* perturbed) |
-| 24 | 60 | 0.370 | 0.198 | +0.172 [+0.114, +0.237] (medical *more* perturbed) |
-| 31 | 60 | 0.157 | 0.395 | **−0.238 [−0.260, −0.219]** |
-| 41 | 60 | 0.181 | 0.285 | **−0.103 [−0.126, −0.081]** |
+| Layer | Stratum | n | med_mod | rnd_mod | diff [95% CI] |
+|---|---|---|---|---|---|
+| 12 | both_right    | 43 | 0.232 | 0.202 | +0.030 [−0.016, +0.081] |
+| 12 | both_wrong    | 11 | 0.312 | 0.222 | +0.090 [−0.007, +0.198] |
+| 12 | NL_only_right |  6 | 0.295 | 0.276 | +0.019 [−0.100, +0.217] |
+| 24 | both_right    | 43 | 0.322 | 0.191 | **+0.131 [+0.076, +0.196]** (medical *more* perturbed) |
+| 24 | both_wrong    | 11 | 0.442 | 0.202 | **+0.240 [+0.061, +0.460]** |
+| 24 | NL_only_right |  6 | 0.581 | 0.237 | **+0.344 [+0.212, +0.432]** |
+| 31 | both_right    | 43 | 0.148 | 0.385 | **−0.237 [−0.262, −0.213]** |
+| 31 | both_wrong    | 11 | 0.185 | 0.412 | **−0.227 [−0.258, −0.197]** |
+| 31 | NL_only_right |  6 | 0.171 | 0.439 | **−0.268 [−0.330, −0.215]** |
+| 41 | both_right    | 43 | 0.174 | 0.265 | **−0.091 [−0.117, −0.066]** |
+| 41 | both_wrong    | 11 | 0.193 | 0.303 | **−0.110 [−0.160, −0.067]** |
+| 41 | NL_only_right |  6 | 0.210 | 0.392 | **−0.182 [−0.219, −0.119]** |
 
 **The depth-dependent pattern is novel.** At deep layers (31, 41 ≈ 65–85%
 depth), medical features are more invariant than random — Version B replicates
@@ -536,21 +585,22 @@ control by additionally restricting the pool to features that fire on at
 least 25\% of the 120 prompts in the union NL${\,\cup\,}$NF. With this
 stricter control at Gemma 3 4B IT, L29, the medical${-}$random
 modulation-index gap shrinks but remains significant in every stratum:
-format-flipped diff $-0.196$ [95\% CI: $-0.261, -0.135$]; both-right
-$-0.189$ [$-0.243, -0.139$]; both-wrong $-0.297$ [$-0.380, -0.225$]. All
+NF\_only\_right diff $-0.196$ [95\% CI: $-0.261, -0.135$]; both\_right
+$-0.189$ [$-0.243, -0.139$]; both\_wrong $-0.297$ [$-0.380, -0.225$]. All
 CIs continue to exclude zero. The roughly $30$--$40\%$ shrinkage from the
 unrestricted bootstrap is the size we would expect from a more
 content-relevant random pool, and the qualitative direction is unchanged.
 
-### 4.7 Stratification at 4B: format-flipped cases
+### 4.7 Stratification at 4B: the NF\_only\_right stratum
 
-The format-flipped stratum (n=13 at 4B, where the format physically flipped the
-answer between NL wrong and both-judges-NF-right) is the most stringent. Per-token
-max activations on these cases are within 0–4% across NL and NF (table above for
-E3, E4, E9 — all in this stratum). Despite the model producing different letter
-outputs, the medical-feature signature on the clinical tokens is essentially
-identical. This is the cleanest evidence that the format effect operates
-downstream of the clinical encoding rather than within it.
+The NF\_only\_right stratum (n=13 at 4B; the cases where NL is wrong AND both
+LLM judges agree NF is correct --- formerly ``format-flipped'') is the most
+stringent. Per-token max activations on these cases are within 0--4\% across
+NL and NF (table above for E3, E4, E9 --- all in this stratum). Despite the
+model producing different letter outputs, the medical-feature signature on the
+clinical tokens is essentially identical. This is the cleanest evidence that
+the format effect operates downstream of the clinical encoding rather than
+within it.
 
 ### 4.8 Causal interventions on the format direction
 
@@ -904,7 +954,7 @@ within-family comparison.
 \textbf{Sample size.} 60 paper-canonical vignettes per model, matched
 exactly to the paper-faithful replication corpus~\cite{frailenavarro2026triage}
 without subsetting. Stratum-level sample sizes are correspondingly small
-($n{=}13$ in the format-flipped stratum at 4B), which is reflected in the
+($n{=}13$ in the NF\_only\_right stratum at 4B), which is reflected in the
 bootstrap confidence intervals reported throughout. We do not run
 multi-seed temperature-sampled behavioral runs; greedy decoding was used
 across the board.
