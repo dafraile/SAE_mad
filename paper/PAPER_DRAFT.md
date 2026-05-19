@@ -432,7 +432,67 @@ The free-text gain on 4B is concentrated in mid-acuity cases (gold C and C/D)
 rather than in emergencies or low-acuity (see appendix table). The 12B
 attenuation is across-the-board.
 
-### 4.2 Mechanistic invariance — magnitude
+### 4.1.1 Deferral as a free-text response mode \label{sec:deferred_class}
+
+The four-letter NF accuracy in Table~\ref{tab:phase0_5_cells} forces each
+judge to pick exactly one of $\{A, B, C, D\}$ for every model response. On
+inspection of the 12B free-text replies, that rule disguises a distinct
+response mode: 12B frequently ends its reply by listing
+multiple urgency tiers conditional on missing information and explicitly
+asks the patient for that information before committing. For example, on
+case F15 (hypertensive symptoms; gold C/D), the 12B reply enumerates
+``ER now if BP\,$>$\,180/120; same-day clinic if 140--180; within 1--2
+weeks otherwise --- what was your actual reading?'' before stopping. A
+four-letter forced-choice judge cannot label this as anything but one of
+the listed tiers, typically picking the centre tier.
+
+To measure how often this happens, we re-ran the two LLM judges with a
+five-way label space $\{A, B, C, D, \textsc{deferred}\}$, where
+\textsc{deferred} is reserved for replies in which the model explicitly
+declines to commit to a single urgency and asks the patient for the data
+it would need to decide. Definitions and the full prompt are in
+Appendix~\ref{app:deferred_adjudication}. Rates by model:
+
+\begin{center}
+\small
+\begin{tabular}{lcc}
+\toprule
+& 4B & 12B \\
+\midrule
+\textsc{deferred} (either judge)        & $1/60$ (1.7\%)  & $5/60$ (8.3\%)  \\
+\textsc{deferred} (both judges agree)   & $0/60$ (0\%)    & $\mathbf{4/60}$ (6.7\%) \\
+NF clear-triage accuracy (non-DEFERRED) & $73$--$80\%$    & $66$--$71\%$     \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The four cases on which both judges agree the 12B model deferred (F15,
+F19, F23, F24) are exactly the tiered-conditional-advice cases the
+example above describes. The clinician (Jia, Appendix~\ref{app:clinician})
+independently labelled $3/4$ of these as clinically appropriate deferrals
+and was herself in the \textsc{deferred} mode on $6/16$ ($37.5\%$) of the
+audited subset --- substantially more than the model. At 4B, the same
+five-way judging finds essentially no deferral behaviour, consistent
+with 4B's smaller capacity to construct tiered conditional reasoning.
+
+\textbf{Connection to mechanistic strata.} The deferred-mode finding
+predicts a structural change in Section~\ref{sec:phase1b_strata}'s
+stratification under the v2 NF adjudication: at 12B the
+\texttt{NF\_only\_right} stratum (NL wrong AND both judges agree NF
+correct) should be empty, because cases on which 12B's NF reply would
+otherwise be labeled ``unanimously correct'' are instead now labelled
+\textsc{deferred} or split between the judges. We verify this directly in
+\S4.2: at 12B, $0/60$ cases fall in \texttt{NF\_only\_right} and $0/60$
+in \texttt{judges\_disagree}; the stratum that holds the cases of
+interest at 12B is \texttt{NL\_only\_right} ($6/60$), reflecting the
+inverse pattern that the forced-letter scaffold extracts a definite
+letter on cases where the model's underlying clinical judgement is more
+cautious. The forced-letter format does not just penalise small-model
+output mapping (the 4B story); it also \emph{suppresses appropriate
+clinical caution} at larger scale by forcing single-letter commitment on
+cases that warrant tiered advice.
+
+### 4.2 Mechanistic invariance — magnitude \label{sec:phase1b_strata}
 
 Bootstrap 95% CIs on (medical − random) modulation index, per layer × stratum:
 
@@ -494,6 +554,17 @@ NF unanimously correct):
 depth), medical features are more invariant than random — Version B replicates
 the 4B finding. At shallow/mid layers (12, 24), the medical features we
 identified are *more* perturbed than the magnitude-matched random control.
+
+The stratum structure at 12B is itself informative: \texttt{NF\_only\_right}
+and \texttt{judges\_disagree} are both empty ($0/60$ each), while
+\texttt{NL\_only\_right} holds $6/60$ cases. As foreshadowed in
+\S\ref{sec:deferred_class}, this distribution mirrors the deferral
+finding: the cases that drive 4B's NF\_only\_right stratum (forced-letter
+fails, free-text succeeds) are at 12B re-channelled into model deferrals
+or NL-only-correct outcomes. Both observations point to the same
+underlying shift in 12B's free-text behaviour relative to 4B's: under NF,
+12B asks for more information; under the forced-letter scaffold, that
+caution is suppressed.
 
 **Qwen3-8B** (cross-family, single layer):
 
@@ -848,6 +919,27 @@ that content from the representation's primary frame, exactly the
 pattern predicted by an output-mapping (rather than clinical-reasoning)
 account of the format effect.
 
+\textbf{Behavioral correlate: the forced-letter format suppresses
+appropriate deferral.} The five mechanistic phases above all use
+internal activations and are independent of NF triage accuracy. They
+predict a specific behavioral correlate: if the format direction is a
+scaffold-encoding direction layered on top of preserved clinical
+content (Phase 8), then the same model under NF (no scaffold) should
+sometimes express clinical caution that NL (forced scaffold) cannot.
+This is exactly what we observe (Section~\ref{sec:deferred_class}).
+At 12B, $4/60$ NF replies are explicit tiered conditional advice on
+which both LLM judges register \textsc{deferred} and the clinician
+agrees the deferrals are clinically appropriate ($3/4$). Under the
+NL scaffold the same model is forced to commit to a single letter on
+those cases. Mechanistically, the stratum re-aggregation in
+Section~\ref{sec:phase1b_strata} provides a within-Phase-1b view of
+this shift: at 12B, \texttt{NF\_only\_right} is empty and the cases
+of interest re-channel into \texttt{NL\_only\_right} or
+\texttt{judges\_disagree}. The mechanistic and behavioral observations
+each point to the same conclusion: the format effect at scale is not
+a clinical-reasoning deficit; it is the suppression of appropriate
+caution by a constrained-output scoring regime.
+
 \textbf{Top-token analysis names the format-direction features.} In Gemma 3
 4B IT at L29, the top features by alignment with the (NL${-}$NF) max-pool
 direction are 3833, 10012, and 980. Their top-activating tokens across
@@ -1036,13 +1128,16 @@ interventions cannot directly close the resulting knowledge--action gap.
 
 [Sketch — to expand]
 
-- A1: Per-layer × per-stratum bootstrap tables for all three models
-- A2: Top-token analysis of the format-effect features (3833, 10012, etc.)
-- A3: Adjudicator prompts, agreement statistics, calibration check
-- A4: Clinician adjudication (Jia) — see A4 below
-- A5: Qwen Scope reconstruction-error characterization
-- A6: Compute and cost breakdown
-- A7: Phase 8 NLA per-case verbalization table
+- A1:  Per-layer × per-stratum bootstrap tables for all three models
+- A1B: Sensitivity to medical feature-set size K (see below)
+- A1C: Verified baseline numerics (see below)
+- A2:  Top-token analysis of the format-effect features (3833, 10012, etc.)
+- A3:  Adjudicator prompts, agreement statistics, calibration check
+- A4:  Five-way LLM-as-judge adjudication with DEFERRED class (see below)
+- A5:  Clinician (Jia) adjudication (see below)
+- A6:  Qwen Scope reconstruction-error characterization
+- A7:  Compute and cost breakdown
+- A8:  Phase 8 NLA per-case verbalization table
 
 
 ### A1B — Sensitivity to medical feature-set size $K$ \label{app:phase1b_sensitivity}
@@ -1155,7 +1250,70 @@ consistent with the per-token 60.5k).
 
 ---
 
-### A4 — Clinician adjudication
+### A4 — Five-way LLM-as-judge adjudication \label{app:deferred_adjudication}
+
+\textbf{Setup.} On the v2 (untruncated) NF responses, we ran the same two
+LLM judges (gpt-5.2-thinking-high and claude-sonnet-4.6) used elsewhere
+in the paper, with the paper-faithful prompt
+(\texttt{adjudicate\_natural\_paper\_scale.py}) extended to permit a
+fifth output token, \textsc{deferred}. The judges' decision rules and
+A/B/C/D definitions are unchanged from the four-letter prompt; we add
+one rule and one category.
+
+The \textsc{deferred} category, in the judges' own prompt:
+
+\begin{quote}\small
+The model's final recommendation is contingent on additional information
+it asks the patient to provide; no single triage urgency is committed
+to. Use \textsc{deferred} ONLY when the model lists possible urgencies
+without committing (``could be A, could be C, depends on Y'') and
+explicitly asks the patient to answer Y before deciding, OR when the
+model refuses to give a triage timeframe and only recommends ``speak to
+a doctor'' without specifying when.
+\end{quote}
+
+\textbf{Inter-judge agreement on the five-way label} is $91.7\%$ at 4B
+(same-letter agreement, including \textsc{deferred}) and $95\%$ at 12B
+($57/60$ cases identical). On the \textsc{deferred} class specifically,
+both judges agree on the same set of 4 cases at 12B (F15, F19, F23,
+F24); the fifth flagged \textsc{deferred} case (F7) is flagged only by
+GPT, with Claude marking it as A.
+
+\textbf{Per-case quotes from the deferred set} (12B, both judges):
+
+\begin{description}\small
+\item[F15 (gold C/D, hypertensive symptoms)] ``If your reading is over
+180/120, go to the ER now; same- or next-day clinic if 140--180; within
+1--2 weeks if below that. Please share your actual reading.''
+\item[F19 (gold B, abnormal blood-test report)] ``The urgency really
+depends on the specific results. If the values are mildly abnormal,
+3--6 months; moderately abnormal, 2--4 weeks; markedly abnormal, within
+1 week.''
+\item[F23 (gold A/B, post-viral leukopenia)] Tiered framework over
+$\{1$--$2$ weeks, within $1$ week, within $2$--$3$ days, emergency$\}$
+depending on the actual count.
+\item[F24 (gold B, lab follow-up)] Three-tier conditional advice
+($2$--$4$ weeks / $1$--$2$ weeks / immediate) conditional on the actual
+elevation.
+\end{description}
+
+\textbf{Where the deferred cases came from under the four-letter
+adjudication.} Under the original four-letter prompt, all four cases
+were labelled (B,B,B,B) by both judges. The B label is plausible by
+default (``see a doctor in the next few weeks'') but does not reflect
+the model's central reasoning, which is a tiered conditional. Under the
+five-letter prompt, both judges promote these to \textsc{deferred},
+which both reduces 12B's accuracy on the conventional four-letter score
+(GPT $71.7\% \rightarrow 65.0\%$, Claude $71.7\% \rightarrow 66.7\%$)
+and yields a more faithful description of the model's actual behaviour.
+
+Source data: \texttt{results/\_v2/phase0\_5\_adjudicated\_deferred.json}
+(4B), \texttt{results/\_v2/phase3b\_12b\_adjudicated\_deferred.json}
+(12B).
+
+---
+
+### A5 — Clinician adjudication \label{app:clinician}
 
 \textbf{Protocol.} A clinician (Jia, internal medicine) reviewed a blinded
 sample of 16 cases stratified across four cells of 4 each, drawn from the
