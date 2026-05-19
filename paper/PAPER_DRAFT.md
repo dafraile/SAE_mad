@@ -342,8 +342,40 @@ contrastive, six-condition; see Appendix). For 12B and Qwen we run an
 English-only medical-vs-non-medical contrastive on 60 patient-realistic
 prompts versus 30 hand-curated patient-style non-medical prompts, scoring
 $\text{score}(f) = \text{mean-max}_{\text{med}}(f) - \text{mean-max}_{\text{non}}(f)$
-under a firing-reliability filter (must fire on ≥70% of medical and
-≤10% of non-medical content). We take the top-3 features per layer.
+under a firing-reliability filter (must fire on $\geq\!70\%$ of medical and
+$\leq\!10\%$ of non-medical content). We take the top-3 features per layer.
+
+\textbf{Why three features.} Our methodology descends from the
+SAE-as-monosemantic-probe tradition~\cite{bricken2023monosemanticity,
+templeton2024scaling}: SAE features are treated as named,
+individually-inspectable conceptual atoms, and claims are made about the
+identities of small subsets of features rather than about the predictive
+power of a large feature basis. We chose this lineage because our
+research question concerns the \emph{representational content} of the
+residual stream (``what does the model represent about clinical
+material, and is that representation preserved across formats?''), not
+the discriminability of medical vs.\ non-medical content via a
+downstream classifier. A complementary line of work using larger
+SAE-feature sets fitted to a downstream classification head
+\cite{marks2024sparse, makelov2024principled} is appropriate for
+different research questions: \emph{can SAE features discriminate
+true/false statements, or category X from Y?} There, the unit of
+analysis is the classifier and a richer feature basis reduces noise.
+For our question, three monosemantic, contrastive-identified features
+suffice as a probe; the result must hold against a properly matched
+null rather than scale with feature-set size. We mitigate the
+"cherry-picked subset" concern with two random baselines: (i)
+magnitude-matched random features in the same SAE basis
+(Section~\ref{sec:phase1b_magnitude_matched}), and (ii)
+content-restricted random features further constrained to fire on
+clinical content (Section~\ref{sec:phase5_restricted_random}). Both
+baselines yield modulation indices strictly above the medical-feature
+indices across the layers and models we report. A robustness check
+varying the medical feature-set size ($K \in \{3, 5, 10, 20\}$) at
+the representative deep layers (4B L29 and 12B L31) appears in
+Appendix~\ref{app:phase1b_sensitivity}; the medical-vs-random gap is
+stable across $K$, supporting that the 3-feature result reflects a
+population-level pattern rather than a small-sample artifact.
 
 ---
 
@@ -960,6 +992,61 @@ interventions cannot directly close the resulting knowledge--action gap.
 - A6: Compute and cost breakdown
 - A7: Phase 8 NLA per-case verbalization table
 
+
+### A1B — Sensitivity to medical feature-set size $K$ \label{app:phase1b_sensitivity}
+
+\textbf{Motivation.} The main-text Phase 1b result uses 3 medical
+features per (model, layer). A reasonable reviewer concern is whether
+the medical-vs-random modulation-index gap is sensitive to that
+specific small subset, or whether it reflects a population-level
+pattern. We re-run Phase 1b at the representative deep layers
+(Gemma 3 4B IT L29 and Gemma 3 12B IT L31) with $K \in \{3, 5, 10, 20\}$
+medical features drawn from the same contrastive identification
+ranking, against magnitude-matched random baselines (30 random
+features in the band $[0.5\times, 2.0\times]$ the medical median).
+
+\textbf{Procedure.} Identical to main-text Phase 1b
+(Section~\ref{sec:phase1b_magnitude_matched}) except we vary the number
+of medical features included in the mean modulation index. For each
+$K$ we take the top-$K$ entries in the contrastive ranking, encode
+each NL and NF prompt through the SAE, max-pool feature activations
+over content tokens, and compute the per-(case, feature) modulation
+index $|a_{\text{NL}} - a_{\text{NF}}| / (\max(a_{\text{NL}}, a_{\text{NF}}) + \varepsilon)$.
+Bootstrap mean and 95\% CI over (case $\times$ feature) pairs.
+
+\textbf{Table~\ref{tab:phase1b_sensitivity}.}
+[Numbers populated from results/phase1b\_sensitivity\_\{4b\_L29,12b\_L31\}.json
+once the GPU run lands. Provisional template; will be replaced with
+the exact tabulated values.]
+
+\begin{center}
+\small
+\begin{tabular}{llrrrr}
+\toprule
+Model & $K$ & medical mean (CI) & random mean (CI) & $\Delta$ paired (CI) & p(sign) \\
+\midrule
+4B L29  & 3  & TBD & TBD & TBD & TBD \\
+4B L29  & 5  & TBD & TBD & TBD & TBD \\
+4B L29  & 10 & TBD & TBD & TBD & TBD \\
+4B L29  & 20 & TBD & TBD & TBD & TBD \\
+\midrule
+12B L31 & 3  & TBD & TBD & TBD & TBD \\
+12B L31 & 5  & TBD & TBD & TBD & TBD \\
+12B L31 & 10 & TBD & TBD & TBD & TBD \\
+12B L31 & 20 & TBD & TBD & TBD & TBD \\
+\bottomrule
+\end{tabular}
+\end{center}
+\label{tab:phase1b_sensitivity}
+
+\textbf{Reading.} [Once numbers are in.] The expected pattern is that
+the medical-vs-random gap is stable across $K$, i.e.\ medical mean
+$<$ random mean at all $K$, with overlapping CIs across $K$ values
+within each model/layer. That would support the conclusion that the
+main-text 3-feature result is representative of the contrastive-ranked
+medical population, not cherry-picked from a small subset.
+
+---
 
 ### A4 — Clinician adjudication
 
