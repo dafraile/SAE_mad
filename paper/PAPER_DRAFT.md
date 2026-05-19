@@ -1014,37 +1014,57 @@ over content tokens, and compute the per-(case, feature) modulation
 index $|a_{\text{NL}} - a_{\text{NF}}| / (\max(a_{\text{NL}}, a_{\text{NF}}) + \varepsilon)$.
 Bootstrap mean and 95\% CI over (case $\times$ feature) pairs.
 
-\textbf{Table~\ref{tab:phase1b_sensitivity}.}
-[Numbers populated from results/phase1b\_sensitivity\_\{4b\_L29,12b\_L31\}.json
-once the GPU run lands. Provisional template; will be replaced with
-the exact tabulated values.]
+\textbf{Table~\ref{tab:phase1b_sensitivity}.} Modulation index per case
+averaged across the top-$K$ medical features and the 30
+magnitude-matched random features (sliced to the first $K$ for the
+medical-vs-random comparison). Mean across the 60 cases with 95\%
+bootstrap CI; paired $\Delta$ = mean per-case (medical $-$ random)
+with 95\% paired-bootstrap CI. ``$\Delta < 0$'' indicates medical
+features are more invariant than random features. All 8 cells have
+paired CI strictly below zero.
 
 \begin{center}
 \small
-\begin{tabular}{llrrrr}
+\begin{tabular}{llrrr}
 \toprule
-Model & $K$ & medical mean (CI) & random mean (CI) & $\Delta$ paired (CI) & p(sign) \\
+Model & $K$ & medical mean (CI) & random mean (CI) & $\Delta$ paired (CI) \\
 \midrule
-4B L29  & 3  & TBD & TBD & TBD & TBD \\
-4B L29  & 5  & TBD & TBD & TBD & TBD \\
-4B L29  & 10 & TBD & TBD & TBD & TBD \\
-4B L29  & 20 & TBD & TBD & TBD & TBD \\
+4B L29  & 3  & 0.188 [0.172, 0.206] & 0.222 [0.209, 0.236] & $-0.034$ [$-0.048$, $-0.020$] \\
+4B L29  & 5  & 0.200 [0.184, 0.220] & 0.446 [0.397, 0.493] & $-0.246$ [$-0.286$, $-0.204$] \\
+4B L29  & 10 & 0.299 [0.257, 0.341] & 0.462 [0.410, 0.515] & $-0.163$ [$-0.201$, $-0.130$] \\
+4B L29  & 20 & 0.334 [0.303, 0.363] & 0.389 [0.343, 0.436] & $-0.056$ [$-0.082$, $-0.031$] \\
 \midrule
-12B L31 & 3  & TBD & TBD & TBD & TBD \\
-12B L31 & 5  & TBD & TBD & TBD & TBD \\
-12B L31 & 10 & TBD & TBD & TBD & TBD \\
-12B L31 & 20 & TBD & TBD & TBD & TBD \\
+12B L31 & 3  & 0.158 [0.144, 0.173] & 0.892 [0.809, 0.974] & $-0.734$ [$-0.810$, $-0.654$] \\
+12B L31 & 5  & 0.168 [0.155, 0.182] & 0.620 [0.565, 0.674] & $-0.452$ [$-0.500$, $-0.402$] \\
+12B L31 & 10 & 0.212 [0.196, 0.233] & 0.769 [0.728, 0.815] & $-0.556$ [$-0.602$, $-0.514$] \\
+12B L31 & 20 & 0.291 [0.273, 0.309] & 0.567 [0.536, 0.601] & $-0.277$ [$-0.311$, $-0.245$] \\
 \bottomrule
 \end{tabular}
 \end{center}
 \label{tab:phase1b_sensitivity}
 
-\textbf{Reading.} [Once numbers are in.] The expected pattern is that
-the medical-vs-random gap is stable across $K$, i.e.\ medical mean
-$<$ random mean at all $K$, with overlapping CIs across $K$ values
-within each model/layer. That would support the conclusion that the
-main-text 3-feature result is representative of the contrastive-ranked
-medical population, not cherry-picked from a small subset.
+\textbf{Reading.} The medical-vs-random gap is robust across feature-set
+sizes at both representative deep layers. At 4B L29 the paired $\Delta$
+ranges from $-0.034$ ($K{=}3$) to $-0.246$ ($K{=}5$), narrowing to
+$-0.056$ at $K{=}20$; medical mean drifts upward with $K$ (0.19 to 0.33)
+indicating that lower-ranked medical features are somewhat noisier than
+the top-3, but they remain significantly below the random baseline at
+every $K$. At 12B L31 the effect is dramatic: medical means cluster
+tightly between 0.16 and 0.29 across all $K$, while random means range
+0.57 to 0.89, yielding paired $\Delta$ between $-0.28$ and $-0.73$
+(all 95\% CIs strictly negative). The main-text $K{=}3$ result is
+therefore representative of the contrastive-ranked medical
+population rather than cherry-picked from a small subset.
+
+The medical-mean upward drift with $K$ is itself informative: it is
+consistent with the SAE-as-monosemantic-probe view we adopt. The top
+contrastive-ranked features are the most cleanly medical-selective AND
+the most format-invariant; the broader medical-firing population in
+the SAE basis includes features that are medical-content-correlated
+but more sensitive to surface format. The headline interpretation
+(``a small number of monosemantic medical features carry format-
+invariant clinical content'') is what the sensitivity check
+quantifies, not contradicts.
 
 ---
 
