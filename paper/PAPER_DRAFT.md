@@ -959,9 +959,13 @@ residual-stream difference between conditions vanishes to 0 at numerical
 precision. The corpus property that NL's prefix is byte-identical to NF
 makes this isolation as clean as the data allows. (iii) Length-invariant
 direction analysis: the residual difference that survives max-pool
-aggregation loads on \emph{non-medical} features in the SAE basis, with
-medical features sitting at the 13--90\% percentile of $|$alignment$|$
-across the three models. (iv) Causal-intervention nulls: discrete
+aggregation loads on \emph{non-medical} features in the SAE basis. Across
+the 12 (medical feature) $\times$ (model, layer) triples reported in
+\S4.4, the medical-feature percentile ranks of $|$alignment$|$ have
+median $\approx 51\%$ and span $0.1$--$91\%$; $11$ of $12$ sit outside
+the top decile, the single exception being one Qwen-Scope L31 feature at
+$0.1\%$ that we flag in \S4.4 as the mixed-pattern outlier. (iv)
+Causal-intervention nulls: discrete
 ablation of the top format-direction features (Section~4.8) and continuous
 ActAdd-style steering along the case-averaged format direction at L29
 both produce near-null behavioral effects (0/60 and 2/60 prediction
