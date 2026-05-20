@@ -373,7 +373,7 @@ For each aggregation we compute cosine alignment between the case-averaged
 (NL − NF) direction and each SAE feature's encoder direction `W_enc[:, f]`,
 rank features by `|alignment|`, and report where the medical features land.
 
-### 3.6 Medical-feature identification
+### 3.6 Medical-feature identification \label{sec:medical_feature_identification}
 
 For 4B we use the v3-validated medical features (cross-lingual
 contrastive, six-condition; see Appendix). For 12B and Qwen we run an
@@ -588,7 +588,27 @@ NF unanimously correct):
 **The depth-dependent pattern is novel.** At deep layers (31, 41 ≈ 65–85%
 depth), medical features are more invariant than random — Version B replicates
 the 4B finding. At shallow/mid layers (12, 24), the medical features we
-identified are *more* perturbed than the magnitude-matched random control.
+identified are *more* perturbed than the magnitude-matched random control,
+with the strongest cell at L24 NL\_only\_right ($\Delta=+0.344$ [+0.212,
++0.432], $n=6$ — also the smallest cell in the table, so we note this
+particular point estimate is correspondingly noisier).
+
+We read this as a feature-identification scope: the contrastive procedure
+in \S\ref{sec:medical_feature_identification} ranks features by their
+relative max-pool activation on medical vs.\ non-medical prompts at each
+target layer, and it picks the top-3 per layer. At deep layers
+(L31, L41) this procedure recovers features whose firing tracks
+conceptualized clinical state and is therefore stable across format
+conditions. At shallow/mid layers (L12, L24) the same procedure
+recovers features whose firing tracks the lexical surface of clinical
+content as much as its concept; because NL and NF differ only in the
+appended scaffold block, that surface change perturbs the
+shallow-layer ``medical'' features more than it perturbs equally
+high-activating random features in the same magnitude band. The
+invariance result is therefore a deep-layer claim: we make no
+positive claim about shallow- or mid-layer medical representation,
+and we discuss the mechanistic-depth interpretation further in
+\S\ref{sec:discussion}.
 
 The stratum structure at 12B is itself informative: \texttt{NF\_only\_right}
 and \texttt{judges\_disagree} are both empty ($0/60$ each), while
@@ -913,7 +933,7 @@ single lettered answer.}''
 
 ---
 
-## 5. Discussion
+## 5. Discussion \label{sec:discussion}
 
 \textbf{Convergent evidence for Version B.} Five pieces of independent
 evidence converge on the same mechanistic conclusion. (i) Magnitude
