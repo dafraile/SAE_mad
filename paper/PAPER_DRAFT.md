@@ -1131,11 +1131,17 @@ across the board.
 \textbf{LLM-as-judge dependence.} NF (free-text) scoring relies on two
 LLM judges (gpt-5.2-thinking-high and claude-sonnet-4.6) running the
 paper-faithful adjudication pipeline (paper-native A=home, D=ER scale).
-Inter-rater agreement is $76$--$88\%$ with Cohen's $\kappa$ in
-$[0.63, 0.80]$, calibrating the LLM judges against each other but not
-against a clinician. We additionally include a clinician-adjudicated
-subset of $\,n{=}16$ stratified cases (Appendix~A4) as ground-truth
-calibration of the LLM judges.
+Inter-rater agreement on the four-letter prompt is $93.3\%$ at 4B
+($\kappa{=}0.858$) and $100\%$ at 12B ($\kappa{=}1.000$); the $\kappa{=}1.0$
+at 12B is a property of the four-letter label space rather than the
+underlying responses, since the five-letter refinement with
+\textsc{deferred} (\S\ref{sec:deferred_class}) introduces some
+inter-judge disagreement on those same responses (4B
+$\kappa{=}\,$same-letter $91.7\%$, 12B $95\%$). The two LLM judges
+calibrate against each other but not against a clinician; for that we
+include a clinician-adjudicated subset of $n{=}16$ stratified cases
+(\S\ref{app:clinician}) where the LLM-judge vs.\ clinician agreement
+is $87.5\%$ ($\kappa{=}0.808$) on the same five-class label space.
 
 \textbf{Mechanistic-method scope.} We use mean-pool and max-pool
 aggregations of per-token feature activations, magnitude-matched random
