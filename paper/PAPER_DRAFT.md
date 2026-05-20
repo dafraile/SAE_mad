@@ -437,8 +437,9 @@ paper-faithful four-letter adjudication prompt:
 
 \label{tab:phase0_5_cells}
 
-**On Gemma 4B, free-text NF outperforms forced-letter NL by +16–22pp
-(judge-dependent; +17pp on the both-judges-correct conservative metric).**
+**On Gemma 4B, free-text NF outperforms forced-letter NL by +17–22pp
+(judge-dependent; $+17$pp on the both-judges-correct conservative metric
+and $+18$pp / $+22$pp on the individual GPT and Claude judges).**
 This replicates the prior behavioral observation that
 constrained output formats penalize Gemma 4B's apparent triage capability:
 the model can clinically reason its way to the right disposition in
