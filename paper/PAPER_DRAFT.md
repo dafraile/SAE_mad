@@ -570,6 +570,16 @@ Under v2, the NF_only_right and judges_disagree strata at 12B are empty
 because both judges agree on every NF case and no case has NL wrong with
 NF unanimously correct):
 
+*Per-case modulation indices are from the original 12B pipeline run
+(\texttt{results/phase3b\_12b\_phase1b.json}); an independent
+re-extraction under the v2 regen pipeline reproduces the same medical
+feature set $\{3, 338, 329\}$ at L24 and $\{130, 85, 4773\}$ at L31,
+and reproduces every qualitative cell of this table (L24
+NL\_only\_right: $\Delta{=}{+}0.344$ here vs.\ ${+}0.348$ under v2; L31
+both\_right: $-0.237$ vs.\ $-0.270$; all signs and significance
+preserved). Differences are within bf16 inference non-determinism
+across GPU instances.*
+
 | Layer | Stratum | n | med_mod | rnd_mod | diff [95% CI] |
 |---|---|---|---|---|---|
 | 12 | both_right    | 43 | 0.232 | 0.202 | +0.030 [−0.016, +0.081] |
