@@ -230,6 +230,37 @@ Source: `results/phase1b_sensitivity_maxpool.json` and `.md`. Max-pool sMAPE, to
 
 **Replacement for Appendix A1B caption / text:** the existing K-sweep numbers (medical 0.188, random 0.222 at K=3 for 4B) are MEAN-POOL and inconsistent with the main text's max-pool. Replace with the table above. Note in the caption: "All sMAPE values computed under max-pool aggregation, matching the main §4.2 table; the original mean-pool K-sweep is retained at `results/phase1b_sensitivity_4b_L29.json` / `_12b_L31.json` for reference."
 
+### 2f. The 4B "NL=B when gold=C" pattern (callout for §4.2, added 2026-05-22)
+
+Source: `results/gap_decomposition.md`. Buried inside §2b above is a much sharper claim than "single-notch miscalibration" for 4B specifically.
+
+Of the **14 NF_only_right cases** at 4B (the cases driving the −16.7 pp NF > NL gap):
+- **13 of 14 have NL letter = B AND gold letter = C** (the same exact pattern repeated)
+- The 14th has NL = A and gold = B (still adjacent, still under-triage)
+
+So at 4B, the forced-letter mode doesn't just *miscalibrate adjacently* — it has a **systematic B-preference when gold is C**. The model defaults to "see a doctor in the next few weeks" (B) when the gold answer is "see a doctor within 24–48 hours" (C).
+
+This is a specific, testable artifact rather than a vague format penalty. The §4.2 rewrite should call it out by name:
+
+> "At 4B, the NF > NL accuracy gap is dominated by a systematic 'NL = B when gold = C' miscalibration: 13 of 14 NF_only_right cases follow exactly this pattern. The model under-triages by one acuity step in forced-letter mode but produces the correct urgency in free-text on the same vignette."
+
+This pattern motivates a follow-up experiment (option-order randomization) flagged in §5 as the cleanest way to distinguish a position artifact ("model always picks position-2") from a content artifact ("model has a learned 'when in doubt, say B' prior"). We have not run this experiment yet; both readings are consistent with the output-mapping-artifact hypothesis.
+
+### 2g. Title and §3.1 wording (added 2026-05-22)
+
+**Title walk-back.** If the current paper title contains "clinical reasoning preserved" or similar, soften per Concern 2. Working suggestions, ordered:
+- "Format-Robust Medical-Content Representation in LLM Triage: A Cross-Family SAE Analysis"
+- "Apparent Triage Failures as Output-Mapping Artefacts: Mechanistic Evidence from SAE Analysis at Three Model Scales"
+- "What Gets Lost When LLMs Triage With Letters: Medical-Content Representation Survives Format Changes Across Three Models"
+
+Avoid "clinical reasoning preserved" / "deployable monitor" in the title.
+
+**§3.1 vignette wording.** "Byte-identical clinical content between NL and NF prompts" holds without qualification at Gemma 4B and 12B but not at Qwen — Qwen's BPE merges the trailing punctuation token of the vignette differently depending on what follows. See `results/verify_byte_identical_prefix.md` for the per-model diagnostic.
+
+Suggested phrasing for §3.1:
+
+> "The NL and NF prompts for a given case share the patient vignette text verbatim and differ only by an appended forced-letter scaffold in NL. Under causal masking, hidden states at vignette token positions cannot depend on later scaffold tokens, so SAE feature activations at vignette positions are byte-identical between NL and NF at the Gemma scales. At Qwen3-8B the BPE merges the trailing punctuation differently depending on what follows the vignette, which shifts the divergence one token earlier than the vignette end; the remaining ~99.6% of vignette tokens are byte-identical at Qwen too."
+
 Medical features stay invariant across all behavioral strata at Qwen;
 random features differ noticeably. Same direction as 4B and 12B.
 
