@@ -103,6 +103,16 @@ Source: `results/gap_decomposition.md` and `results/phase4b_qwen_post_adjudicati
 | Gemma 3 12B IT | 80.0% | 81.7% | 70.0% | **71.7%** | 81.7% | **+10.0 pp** |
 | Qwen3-8B       | 75.0% | 75.0% | 50.0% | **68.3%** | 76.7% | **+6.7 pp** |
 
+**Paired NL vs NF inference (Bucket A — added 2026-05-22):**
+
+| Model | 95% paired-boot CI on NL−NF | McNemar exact two-sided p |
+|---|---|---|
+| 4B  | [−30.0, −3.3] pp | **0.031** (sig) |
+| 12B | [+3.3, +18.3] pp | **0.031** (sig) |
+| Qwen| [−6.7, +20.0] pp | 0.45 (**not** sig) |
+
+→ The Qwen gap is not statistically significant on the paired McNemar with n=60; **this is the empirical reason to soften to "suggestive cross-family consistency"** rather than "confirmation." 4B and 12B gaps are both significant at α=0.05 by McNemar exact.
+
 Source files for replication:
 - 4B: `results/_v2/phase0_5_three_cells.json`, `results/_v2/phase0_5_D_for_adjudication_adjudicated_paper.json`, `results/_v2/phase0_5_adjudicated_deferred.json`
 - 12B: same pattern with `phase3b_12b_*`
@@ -122,6 +132,25 @@ Source files for replication:
 - 4B: 0 unanim DEFERRED
 
 **Adjacency dominates:** 19/20 NL_only_right cases and 15/20 NF_only_right cases across all three models are single-acuity-step miscalibrations (B↔C or C↔D).
+
+**Triage-direction breakdown (Bucket A — added 2026-05-22):**
+
+| Model | Format | Under-triage | Correct | Over-triage |
+|---|---|---|---|---|
+| 4B   | NL | **20** | 33 | 7 |
+| 4B   | NF | 5 | 43 | 8 |
+| 12B  | NL | 4 | 49 | 7 |
+| 12B  | NF | 8 | 43 | 9 |
+| Qwen | NL | **12** | 45 | 3 |
+| Qwen | NF | 8 | 37 | 6 |
+
+→ **Forced-letter mode systematically under-triages at 4B and Qwen** (20 and 12 cases respectively, vs. 7 and 3 over-triage). Free-text mode is more balanced at all three models. Under-triage is the clinically dangerous direction.
+
+**Per-acuity gradient (added 2026-05-22):**
+NF accuracy on **A-bucket (monitor-at-home)** cases is the weakest at every model: 4B 0/8, 12B 2/8, Qwen 3/8. NF over-triages low-acuity cases. Worth flagging in §6 limitations as a benchmark-design observation (the A-bucket is the smallest gold sample, n=8).
+
+**4B singleton-D failure (reviewer-flagged, confirmed 2026-05-22):**
+4B predicts D = **0/9** on D-only-gold cases in NL forced-letter mode; NF only 1/9. The model essentially never picks "emergency" as a singleton answer in forced-letter mode — clinically concerning and worth a sentence in §6.
 
 ### 2c. §4.3 Mechanistic invariance — new table with magnitude-matched controls
 
@@ -162,6 +191,44 @@ Source: `results/phase4b_qwen_post_adjudication_summary.md`.
 | NL_only_right    |  8 | 0.025 | 0.999 | 0.171 | 0.986 |
 | both_wrong       |  6 | 0.000 | 1.000 | 0.161 | 0.985 |
 | judges_disagree  |  5 | 0.046 | 1.000 | 0.267 | 0.982 |
+
+### 2e. Appendix A1B — K-sensitivity under max-pool sMAPE (Bucket B, added 2026-05-22)
+
+Reviewer Concern 4c: the current Appendix A1B reports **mean-pool** sMAPE while the main §4.2 table reports **max-pool**. Re-run with max-pool for consistency.
+
+Source: `results/phase1b_sensitivity_maxpool.json` and `.md`. Max-pool sMAPE, top-K medical features from the original contrastive ID, K-matched random pool from the same source. Bootstrap 1000 resamples over the 60 cases; paired delta = medical − random per case.
+
+**Gemma 3 4B IT L29:**
+
+| K | medical sMAPE (mean, 95% CI) | random sMAPE (mean, 95% CI) | Δ_paired (95% CI) | sig? |
+|---|---|---|---|---|
+| 3  | 0.0063 [0.003, 0.012] | 0.0312 [0.021, 0.044] | −0.0249 [−0.038, −0.013] | ✓ |
+| 5  | 0.0115 [0.003, 0.027] | 0.2285 [0.182, 0.278] | −0.2170 [−0.268, −0.168] | ✓ |
+| 10 | 0.1329 [0.097, 0.169] | 0.2601 [0.217, 0.306] | −0.1272 [−0.163, −0.094] | ✓ |
+| 20 | 0.1531 [0.131, 0.176] | 0.2139 [0.173, 0.256] | −0.0608 [−0.089, −0.034] | ✓ |
+
+**Gemma 3 12B IT L31:**
+
+| K | medical sMAPE (mean, 95% CI) | random sMAPE (mean, 95% CI) | Δ_paired (95% CI) | sig? |
+|---|---|---|---|---|
+| 3  | 0.0058 [0.003, 0.010] | 0.7414 [0.648, 0.833] | −0.7356 [−0.825, −0.643] | ✓ |
+| 5  | 0.0053 [0.004, 0.008] | 0.4549 [0.397, 0.512] | −0.4496 [−0.506, −0.392] | ✓ |
+| 10 | 0.0389 [0.023, 0.059] | 0.5920 [0.553, 0.639] | −0.5531 [−0.600, −0.507] | ✓ |
+| 20 | 0.0871 [0.071, 0.105] | 0.4120 [0.382, 0.446] | −0.3249 [−0.363, −0.291] | ✓ |
+
+**Qwen3-8B L31 (K=3 only; full top-20 contrastive ID is future work):**
+
+| K | medical sMAPE | random sMAPE | Δ_paired | sig? |
+|---|---|---|---|---|
+| 3 | 0.0348 [0.026, 0.045] | 0.0579 [0.013, 0.103] | −0.0231 [−0.072, +0.024] | ns |
+
+**Key findings:**
+- At every K ∈ {3, 5, 10, 20}, medical features show significantly lower sMAPE than the K-matched random pool, at both Gemma scales (paired-bootstrap 95% CI on Δ excludes 0).
+- 4B shows K-monotonicity: medical sMAPE grows from 0.006 (K=3) to 0.15 (K=20). The top 3 medical features are by far the most invariant; broadening to the top-20 set dilutes the effect (because lower-ranked contrastive features fire less reliably).
+- 12B is rock-solid invariant across all K (medical sMAPE 0.006–0.09 vs random 0.41–0.74). The 12B medical-feature subspace is the cleanest.
+- Qwen K=3 is the weakest result; the random pool there happens to be very invariant too (rnd = 0.058 vs med = 0.035). Consistent with the masked-invariance morning finding that the Qwen full-content gap is the smallest (med 0.026, rnd-mag-matched 0.128, perm-p 0.012). The K-sweep random pool definition here is tighter (mean-pool magnitude band) than the masked-invariance perm-test random pool (max-pool magnitude band) — the two analyses use different controls and report consistent direction but different magnitudes. This is a methods-section clarification we should add.
+
+**Replacement for Appendix A1B caption / text:** the existing K-sweep numbers (medical 0.188, random 0.222 at K=3 for 4B) are MEAN-POOL and inconsistent with the main text's max-pool. Replace with the table above. Note in the caption: "All sMAPE values computed under max-pool aggregation, matching the main §4.2 table; the original mean-pool K-sweep is retained at `results/phase1b_sensitivity_4b_L29.json` / `_12b_L31.json` for reference."
 
 Medical features stay invariant across all behavioral strata at Qwen;
 random features differ noticeably. Same direction as 4B and 12B.
@@ -265,23 +332,40 @@ If §6 currently says "single-family within-family comparison" — delete that, 
 
 ---
 
-## 4. Optional but recommended
+## 4. Now done (Buckets A + B, 2026-05-22)
 
-These were reviewer recommendations we partially address; the LaTeX-
-writer can decide whether to add each:
+1. ✅ **Paired McNemar / bootstrap CIs for NL vs NF gaps** —
+   `results/paired_tests_and_confusion.{json,md}`. See §2a for table
+   and the verdict (4B/12B significant at α=0.05, Qwen not).
 
-1. **Paired McNemar / bootstrap CIs for NL vs NF gaps** — easy to add
-   to §4.1 caption, no new compute. The decomposition data file
-   `results/gap_decomposition.json` has per-case labels suitable for
-   `scipy.stats.mcnemar`.
+2. ✅ **Per-acuity breakdown for 4B and 12B (and Qwen, already had it)** —
+   `results/paired_tests_and_confusion.md`, §(2). All three models
+   share the same gradient: A-bucket is the weakest NF accuracy
+   bucket. Worth a sentence in §4.1 or a column in Table 1.
 
-2. **Per-acuity breakdown** for Qwen — already computed, see
-   `results/phase4b_qwen_post_adjudication_summary.md` §"Per-acuity
-   breakdown". Worth including given the NF-worst-on-A-cases finding.
+3. ✅ **Confusion matrices + triage-direction breakdown** — same file,
+   §(3) and §(4). The under-triage finding is clinically meaningful and
+   reviewer-requested. Strong candidate for a new §4.1 sub-paragraph
+   ("Triage direction"). The 4B singleton-D = 0% failure is in the
+   confusion matrices and should be flagged in §6.
 
-3. **Confusion matrices / under-triage rates** — currently not
-   reported. Adding these would strengthen §4.1 and §6. Not a
-   blocker but reviewer specifically asked.
+4. ✅ **K-sweep with max-pool sMAPE** (Bucket B / Concern 4c) —
+   `results/phase1b_sensitivity_maxpool.{json,md}`. Table in §2e
+   above. Replaces the inconsistent mean-pool Appendix A1B table.
+
+## 4b. Wording fixes for the LaTeX-writer (no compute, just text)
+
+- **Encoder→detector relabeling** (Concern 4d): in §4.4 and Appendix
+  where we currently say "loading onto the SAE feature direction" or
+  "projection onto feature direction," replace with "detector
+  alignment" or "encoder-direction alignment." Encoder columns are
+  detector directions, not residual contribution directions.
+
+- **"Residual-dimension max-pool" interpretive caveat** (Concern 4e):
+  if any analysis uses max-over-tokens per residual *dimension* (as
+  opposed to max-over-tokens of *feature activations*), flag explicitly
+  that this creates a synthetic vector that may not occur at any token.
+  For feature activations max-pooling is fine and is what we do.
 
 ---
 
