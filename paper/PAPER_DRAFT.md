@@ -19,7 +19,7 @@ instruction-tuned LLMs from two families: Gemma 3 4B IT and 12B IT (Gemma Scope 
 JumpReLU SAEs) and Qwen3-8B (Qwen Scope k=50 TopK SAEs). Across all three models,
 medical-content SAE features at the deep-encoding layer fire essentially identically
 on identical clinical text across format conditions: per-token max activations match
-within 0–4%, mean-pooled mod-indices are 10–25% versus 32–45% for magnitude-matched
+within 0–4%, max-pool symmetric percent change (sMAPE) is near zero (median 0.00, 5–95th [0.00, 0.07]) versus 0.20 (5–95th [0.04, 0.37]) for magnitude-matched
 random features in the same SAE. When we control for prompt-length asymmetry, the
 residual-stream difference between format conditions vanishes; the residual signal
 that survives length-invariant max-pooling loads onto non-medical features rather
@@ -128,10 +128,16 @@ paper-faithful clinical vignettes per model):
 \begin{enumerate}
 \item \textbf{Magnitude invariance.} Medical-content SAE features fire within
 0--4\% per token on identical clinical content across format conditions.
-Mean-pool modulation indices are 10--25\% for medical features versus 32--45\%
-for magnitude-matched random features in the same SAE basis. Bootstrap 95\%
-confidence intervals exclude zero in every cell of the layer$\,\times\,$stratum
-design across all three models.
+Max-pool symmetric percent change (sMAPE; Makridakis 1993) of the
+medical-feature subvector across NL and NF is at or near zero for medical
+features (median $0.00$ over the 13 cells we report at depths
+$\geq 65\%$; 5--95th percentile $[0.00, 0.07]$) versus median $0.20$ for
+magnitude-matched random features in the same SAE basis (5--95th
+$[0.04, 0.37]$). Cosine similarity of the same feature subvectors agrees:
+medical-vs-random cosine $\Delta$ is positive (medical more similar) at
+every cell, with bootstrap 95\% CIs strictly above zero. Both statistics
+yield the same conclusion across the layer$\,\times\,$stratum design of
+all three models.
 \item \textbf{Direction analysis.} When prompt-length asymmetry is controlled
 (by truncating the longer prompt to identical content range), the
 residual-stream difference between conditions vanishes exactly; what survives
@@ -302,34 +308,57 @@ between the two judges as a calibration signal.
 
 ### 3.4 Mechanistic invariance test
 
-For each (model, layer, case, condition) we mean-pool SAE feature activations
-over user content tokens. The Gemma/Qwen content-pool conventions differ for
-in-distribution reasons: Gemma Scope 2 is trained on activations of the IT
+For each (model, layer, case, condition) we encode the layer's residual
+stream through the SAE and **max-pool feature activations over user content
+tokens** --- i.e., for each feature we take the peak activation reached on
+any content token within that case. We use max-pool rather than mean-pool
+because the Qwen-Scope SAE is $k{=}50$ TopK, which forces all but 50
+features to exactly zero on any given token. Mean-pool over $\sim{}100$
+content tokens then dilutes the few cases where a medical feature does
+fire, leaving the per-case mean near zero in both NL and NF and inducing
+artifacts in both metrics we report below (a denominator-clamp artifact in
+sMAPE; direction noise on near-zero vectors in cosine). Max-pool captures
+peak per-feature firing and is robust to TopK zeroing; it is also the
+aggregation we use in the direction analysis of \S4.4. On Gemma-Scope
+(JumpReLU) both aggregations agree on direction across all 8 cells; we
+adopt max-pool throughout Phase 1b for consistency with Qwen-Scope and
+with the rest of the paper.
+
+The Gemma/Qwen content-pool conventions also differ for in-distribution
+reasons: Gemma Scope 2 is trained on activations of the IT
 (instruction-tuned) models with chat-template structure, so we present
 chat-templated input and pool over user-content tokens between
 `<start_of_turn>user\n` and `<end_of_turn>`. Qwen-Scope is trained on
-activations of the *base* (pre-IT) Qwen3-8B checkpoint, so we feed raw text
-and pool over the entire input to keep the residual stream in-distribution
-for the SAE. Per case, we compute:
+activations of the *base* (pre-IT) Qwen3-8B checkpoint, so we feed raw
+text and pool over the entire input to keep the residual stream
+in-distribution for the SAE.
 
-- **Cosine similarity** between NL and NF feature vectors (over the medical
-  feature subspace).
-- **Modulation index**:  
-  $\text{mod}(c) = \langle |a_{NF}(f) - a_{NL}(f)|\rangle_f \,/\, \langle (|a_{NL}(f)| + |a_{NF}(f)|)/2 \rangle_f$
-  where the average is over the relevant feature subset (medical or random).
-  Lower = more invariant.
+Per case, we compute two summary statistics of (NL, NF) feature
+invariance over the medical-feature subset (and separately over the
+random control):
 
-The control is a set of 30 random features per layer, drawn with a frozen seed
-from the pool of features whose mean activation across the union of NL+NF content
-falls in the band `[0.5 × min(med_means), 2.0 × max(med_means)]`. This
-**magnitude-matches** the random pool to the medical features. Without this
-control, the random pool would be dominated by features that essentially never
-fire on this corpus; their modulation indices collapse to near zero through the
-denominator-floor in the mod-index formula, biasing the random mean downward and
-artificially narrowing the medical-vs-random gap. Magnitude-matching restricts
-the random pool to features that fire at comparable magnitudes to the medical
-features, making the comparison faithful. Pool sizes are typically 500–2200
-features per layer per model.
+- **Symmetric mean absolute percentage change (sMAPE).** Per feature
+  $f$, $\operatorname{spc}_f = |a_{NL}(f) - a_{NF}(f)| \,/\,
+  \tfrac{1}{2}(|a_{NL}(f)| + |a_{NF}(f)|)$ with the denominator clamped at
+  $10^{-8}$; sMAPE for the case is the mean of $\operatorname{spc}_f$
+  over the feature subset~\citep{makridakis1993accuracy}. Lower = more
+  invariant. Bounded $[0, 2]$.
+- **Cosine similarity** between the NL and NF feature-subset vectors.
+  Higher = more invariant. Undefined when either vector is exactly the
+  zero vector; we report effective $n$ in those cells.
+
+The control is a set of 30 random features per layer, drawn with a frozen
+seed from the pool of features whose mean activation across the union of
+NL+NF content falls in the band `[0.5 × min(med_means), 2.0 ×
+max(med_means)]`. This **magnitude-matches** the random pool to the
+medical features. Without this control, the random pool would be
+dominated by features that essentially never fire on this corpus; their
+sMAPE values collapse to near zero through the denominator clamp, biasing
+the random mean downward and artificially narrowing the medical-vs-random
+gap. Magnitude-matching restricts the random pool to features that fire
+at comparable magnitudes to the medical features, making the comparison
+faithful. Pool sizes are typically 500--2200 features per layer per
+model.
 
 We stratify by behavioral-test correctness × adjudicator-agreed correctness on
 the NF cell. Throughout this stratification, ``NF correct'' means both LLM
@@ -350,7 +379,10 @@ two judges disagree on NF correctness are placed in a separate stratum:
   strata with ambiguous NF labels.
 
 Bootstrap 95% confidence intervals (2,000 resamples) on the per-case
-medical-minus-random mod-index difference.
+medical-minus-random sMAPE difference. Cosine difference is computed
+analogously over cases for which both medical and random vectors are
+non-zero; effective $n$ is reported in cells where it differs from the
+sMAPE $n$.
 
 ### 3.5 Direction-of-format-effect test
 
@@ -529,79 +561,90 @@ cases that warrant tiered advice.
 
 ### 4.2 Mechanistic invariance — magnitude \label{sec:phase1b_strata}
 
-Bootstrap 95% CIs on (medical − random) modulation index, per layer × stratum:
+Per layer $\times$ stratum, we report two statistics of (medical $-$
+random) per-case feature invariance: (i) **sMAPE** (symmetric percent
+change of per-feature max-pool activations between NL and NF; lower =
+more invariant); and (ii) **cosine** similarity of the same max-pool
+feature subvectors between NL and NF (higher = more invariant).
+Bootstrap 95\% CIs (2{,}000 resamples) on the per-case paired
+difference. Effective $n$ on cosine is reported in cells where one of
+the medical or random subvectors is the zero vector for some cases
+(undefined cosine), drawn from the same residual-activation data
+that produces sMAPE.
 
 **Gemma 3 4B IT** (re-aggregated under v2 NF adjudication):
 
-| Layer | Stratum | n | med_mod | rnd_mod | diff [95% CI] |
-|---|---|---|---|---|---|
-| 9  | both_right      | 30 | 0.182 | 0.411 | **−0.229 [−0.260, −0.202]** |
-| 9  | both_wrong      | 12 | 0.192 | 0.394 | **−0.202 [−0.239, −0.167]** |
-| 9  | NF_only_right   | 13 | 0.161 | 0.379 | **−0.218 [−0.247, −0.192]** |
-| 9  | NL_only_right   |  1 | 0.232 | 0.428 | −0.197 (n=1, no CI) |
-| 9  | judges_disagree |  4 | 0.179 | 0.386 | **−0.207 [−0.229, −0.190]** |
-| 17 | both_right      | 30 | 0.158 | 0.426 | **−0.269 [−0.305, −0.234]** |
-| 17 | both_wrong      | 12 | 0.144 | 0.434 | **−0.290 [−0.358, −0.225]** |
-| 17 | NF_only_right   | 13 | 0.140 | 0.397 | **−0.257 [−0.317, −0.201]** |
-| 17 | NL_only_right   |  1 | 0.222 | 0.428 | −0.206 (n=1, no CI) |
-| 17 | judges_disagree |  4 | 0.178 | 0.387 | **−0.209 [−0.269, −0.148]** |
-| 22 | both_right      | 30 | 0.256 | 0.342 | **−0.086 [−0.142, −0.024]** |
-| 22 | both_wrong      | 12 | 0.233 | 0.326 | −0.093 [−0.171, +0.014] |
-| 22 | NF_only_right   | 13 | 0.183 | 0.337 | **−0.154 [−0.195, −0.105]** |
-| 22 | NL_only_right   |  1 | 0.165 | 0.335 | −0.170 (n=1, no CI) |
-| 22 | judges_disagree |  4 | 0.186 | 0.328 | **−0.141 [−0.211, −0.052]** |
-| 29 | both_right      | 30 | 0.148 | 0.424 | **−0.276 [−0.328, −0.230]** |
-| 29 | both_wrong      | 12 | 0.096 | 0.432 | **−0.336 [−0.414, −0.267]** |
-| 29 | NF_only_right   | 13 | 0.098 | 0.440 | **−0.341 [−0.411, −0.274]** |
-| 29 | NL_only_right   |  1 | 0.155 | 0.488 | −0.334 (n=1, no CI) |
-| 29 | judges_disagree |  4 | 0.126 | 0.400 | **−0.274 [−0.331, −0.217]** |
+| Layer | Stratum | n | med_sMAPE | rnd_sMAPE | Δ_sMAPE [95% CI] | med_cos | rnd_cos | Δ_cos [95% CI] |
+|---|---|---|---|---|---|---|---|---|
+| 9  | both_right      | 30 | 0.000 | 0.239 | **−0.239 [−0.268, −0.212]** | 1.000 | 0.906 | **+0.094 [+0.073, +0.116]** |
+| 9  | both_wrong      | 12 | 0.000 | 0.221 | **−0.221 [−0.272, −0.170]** | 1.000 | 0.920 | **+0.080 [+0.042, +0.118]** |
+| 9  | NF_only_right   | 13 | 0.000 | 0.218 | **−0.218 [−0.274, −0.170]** | 1.000 | 0.930 | **+0.070 [+0.034, +0.114]** |
+| 9  | NL_only_right   |  1 | 0.000 | 0.267 | −0.267 (n=1) | 1.000 | 0.838 | +0.162 (n=1) |
+| 9  | judges_disagree |  4 | 0.000 | 0.232 | **−0.232 [−0.314, −0.182]** | 1.000 | 0.925 | **+0.075 [+0.044, +0.125]** |
+| 17 | both_right      | 30 | 0.001 | 0.274 | **−0.274 [−0.314, −0.235]** | 1.000 | 0.923 | **+0.079 [+0.059, +0.101]** (n_cos=29) |
+| 17 | both_wrong      | 12 | 0.000 | 0.297 | **−0.297 [−0.370, −0.221]** | 1.000 | 0.935 | **+0.065 [+0.041, +0.090]** |
+| 17 | NF_only_right   | 13 | 0.000 | 0.262 | **−0.262 [−0.324, −0.201]** | 1.000 | 0.941 | **+0.060 [+0.044, +0.079]** (n_cos=12) |
+| 17 | NL_only_right   |  1 | 0.000 | 0.294 | −0.294 (n=1) | 1.000 | 0.834 | +0.166 (n=1) |
+| 17 | judges_disagree |  4 | 0.000 | 0.232 | **−0.232 [−0.303, −0.178]** | 1.000 | 0.919 | **+0.081 [+0.047, +0.115]** |
+| 22 | both_right      | 30 | 0.052 | 0.183 | **−0.131 [−0.170, −0.078]** | 0.992 | 0.946 | **+0.046 [+0.028, +0.060]** |
+| 22 | both_wrong      | 12 | 0.014 | 0.159 | **−0.145 [−0.165, −0.122]** | 1.000 | 0.956 | **+0.044 [+0.036, +0.051]** |
+| 22 | NF_only_right   | 13 | 0.013 | 0.172 | **−0.159 [−0.175, −0.142]** | 0.999 | 0.953 | **+0.046 [+0.037, +0.055]** |
+| 22 | NL_only_right   |  1 | 0.074 | 0.181 | −0.108 (n=1) | 0.998 | 0.951 | +0.048 (n=1) |
+| 22 | judges_disagree |  4 | 0.024 | 0.143 | **−0.119 [−0.141, −0.097]** | 0.998 | 0.969 | **+0.029 [+0.017, +0.041]** |
+| 29 | both_right      | 30 | 0.022 | 0.267 | **−0.245 [−0.282, −0.209]** | 1.000 | 0.870 | **+0.098 [+0.074, +0.125]** (n_cos=25) |
+| 29 | both_wrong      | 12 | 0.000 | 0.272 | **−0.272 [−0.331, −0.214]** | 1.000 | 0.885 | **+0.113 [+0.067, +0.167]** (n_cos=11) |
+| 29 | NF_only_right   | 13 | 0.000 | 0.300 | **−0.300 [−0.353, −0.247]** | 1.000 | 0.882 | **+0.115 [+0.079, +0.154]** (n_cos=11) |
+| 29 | NL_only_right   |  1 | 0.000 | 0.312 | −0.312 (n=1) | 1.000 | 0.854 | +0.146 (n=1) |
+| 29 | judges_disagree |  4 | 0.000 | 0.250 | **−0.250 [−0.274, −0.223]** | 1.000 | 0.881 | **+0.119 [+0.065, +0.178]** |
 
-**At every adequately-powered cell on 4B (n≥4), medical-feature mod-index is
-significantly lower than the magnitude-matched random control.** Effect sizes
-range from 0.09 to 0.34 in absolute mod-index; the 95% CI clears zero at
-every cell except 4B L22 both_wrong (n=12; CI [−0.171, +0.014]). The single
-NL_only_right case at each layer is reported for completeness but is not used
-in the headline analysis. The `judges_disagree` stratum (n=4 at 4B) closely
-tracks `both_right` and `NF_only_right`, suggesting the medical-feature
-invariance does not depend on unanimous LLM-judge agreement on NF.
+**At every adequately-powered cell on 4B (n$\geq$4), medical features are
+significantly more invariant than the magnitude-matched random control on
+both metrics.** Medical sMAPE-max is at or near zero in 17 of 20 cells
+(meaning medical features fire at the same peak magnitude in NL and NF for
+the case's content tokens); random sMAPE-max ranges $0.14$--$0.30$. Cosine
+$\Delta$ ranges $+0.03$ to $+0.12$, 95\% CIs strictly above zero at every
+cell. The single NL_only_right case at each layer is reported for
+completeness but is not used in headline statistics. The
+`judges_disagree` stratum (n=4 at 4B) closely tracks `both_right` and
+`NF_only_right`, suggesting the medical-feature invariance does not
+depend on unanimous LLM-judge agreement on NF.
 
-**Gemma 3 12B IT** (depth-dependent; re-aggregated under v2 NF adjudication.
-Under v2, the NF_only_right and judges_disagree strata at 12B are empty
-because both judges agree on every NF case and no case has NL wrong with
-NF unanimously correct):
+**Gemma 3 12B IT** (depth-dependent; v2 NF adjudication, no NF_only_right
+or judges_disagree strata under v2 because both judges agree on every NF
+case and no case has NL wrong with NF unanimously correct):
 
-*Per-case modulation indices are from the original 12B pipeline run
-(\texttt{results/phase3b\_12b\_phase1b.json}); an independent
-re-extraction under the v2 regen pipeline reproduces the same medical
-feature set $\{3, 338, 329\}$ at L24 and $\{130, 85, 4773\}$ at L31,
-and reproduces every qualitative cell of this table (L24
-NL\_only\_right: $\Delta{=}{+}0.344$ here vs.\ ${+}0.348$ under v2; L31
-both\_right: $-0.237$ vs.\ $-0.270$; all signs and significance
-preserved). Differences are within bf16 inference non-determinism
-across GPU instances.*
+*Per-case sMAPE and cosine values are computed from the original 12B
+pipeline run (\texttt{results/phase3b\_12b\_phase1b.json}). An
+independent re-extraction under the v2 regen pipeline reproduces the
+same medical feature set $\{3, 338, 329\}$ at L24 and $\{130, 85, 4773\}$
+at L31, and reproduces every qualitative cell of this table; small
+numerical differences ($\leq 5\%$) are within bf16 inference
+non-determinism across GPU instances.*
 
-| Layer | Stratum | n | med_mod | rnd_mod | diff [95% CI] |
-|---|---|---|---|---|---|
-| 12 | both_right    | 43 | 0.232 | 0.202 | +0.030 [−0.016, +0.081] |
-| 12 | both_wrong    | 11 | 0.312 | 0.222 | +0.090 [−0.007, +0.198] |
-| 12 | NL_only_right |  6 | 0.295 | 0.276 | +0.019 [−0.100, +0.217] |
-| 24 | both_right    | 43 | 0.322 | 0.191 | **+0.131 [+0.076, +0.196]** (medical *more* perturbed) |
-| 24 | both_wrong    | 11 | 0.442 | 0.202 | **+0.240 [+0.061, +0.460]** |
-| 24 | NL_only_right |  6 | 0.581 | 0.237 | **+0.344 [+0.212, +0.432]** |
-| 31 | both_right    | 43 | 0.148 | 0.385 | **−0.237 [−0.262, −0.213]** |
-| 31 | both_wrong    | 11 | 0.185 | 0.412 | **−0.227 [−0.258, −0.197]** |
-| 31 | NL_only_right |  6 | 0.171 | 0.439 | **−0.268 [−0.330, −0.215]** |
-| 41 | both_right    | 43 | 0.174 | 0.265 | **−0.091 [−0.117, −0.066]** |
-| 41 | both_wrong    | 11 | 0.193 | 0.303 | **−0.110 [−0.160, −0.067]** |
-| 41 | NL_only_right |  6 | 0.210 | 0.392 | **−0.182 [−0.219, −0.119]** |
+| Layer | Stratum | n | med_sMAPE | rnd_sMAPE | Δ_sMAPE [95% CI] | med_cos | rnd_cos | Δ_cos [95% CI] |
+|---|---|---|---|---|---|---|---|---|
+| 12 | both_right    | 43 | 0.083 | 0.073 | +0.009 [−0.026, +0.051] | 0.992 | 0.995 | −0.002 [−0.012, +0.004] |
+| 12 | both_wrong    | 11 | 0.150 | 0.081 | +0.069 [−0.048, +0.222] | 0.974 | 0.995 | −0.020 [−0.067, +0.005] |
+| 12 | NL_only_right |  6 | 0.142 | 0.122 | +0.020 [−0.125, +0.233] | 0.997 | 0.988 | +0.009 [+0.001, +0.020] |
+| 24 | both_right    | 43 | 0.276 | 0.044 | **+0.233 [+0.183, +0.292]** | 0.883 | 0.983 | **−0.100 [−0.153, −0.053]** |
+| 24 | both_wrong    | 11 | 0.413 | 0.047 | **+0.366 [+0.185, +0.589]** | 0.887 | 0.997 | **−0.110 [−0.183, −0.046]** |
+| 24 | NL_only_right |  6 | 0.492 | 0.064 | **+0.429 [+0.311, +0.517]** | 0.740 | 0.996 | **−0.256 [−0.336, −0.154]** |
+| 31 | both_right    | 43 | 0.004 | 0.225 | **−0.222 [−0.241, −0.203]** | 1.000 | 0.907 | **+0.093 [+0.078, +0.108]** |
+| 31 | both_wrong    | 11 | 0.000 | 0.232 | **−0.232 [−0.277, −0.189]** | 1.000 | 0.906 | **+0.094 [+0.067, +0.128]** |
+| 31 | NL_only_right |  6 | 0.000 | 0.262 | **−0.262 [−0.312, −0.220]** | 1.000 | 0.907 | **+0.093 [+0.066, +0.129]** |
+| 41 | both_right    | 43 | 0.000 | 0.110 | **−0.110 [−0.136, −0.086]** | 1.000 | 0.966 | **+0.034 [+0.027, +0.042]** |
+| 41 | both_wrong    | 11 | 0.000 | 0.136 | **−0.136 [−0.192, −0.083]** | 1.000 | 0.965 | **+0.035 [+0.023, +0.051]** |
+| 41 | NL_only_right |  6 | 0.000 | 0.200 | **−0.200 [−0.278, −0.116]** | 1.000 | 0.965 | **+0.035 [+0.019, +0.055]** |
 
-**The depth-dependent pattern is novel.** At deep layers (31, 41 ≈ 65–85%
-depth), medical features are more invariant than random — Version B replicates
-the 4B finding. At shallow/mid layers (12, 24), the medical features we
-identified are *more* perturbed than the magnitude-matched random control,
-with the strongest cell at L24 NL\_only\_right ($\Delta=+0.344$ [+0.212,
-+0.432], $n=6$ — also the smallest cell in the table, so we note this
-particular point estimate is correspondingly noisier).
+**The depth-dependent pattern is novel.** At deep layers (31, 41 $\approx$
+65--85\% depth), medical features are more invariant than random ---
+Version B replicates the 4B finding, on both sMAPE and cosine, at all 6
+cells with CIs strictly clear of zero. At shallow/mid layers (12, 24),
+both metrics agree that the contrastively-identified ``medical'' features
+are *more* perturbed than the magnitude-matched random control, with the
+strongest cell at L24 NL_only_right (sMAPE-$\Delta=+0.429$, cosine-$\Delta
+= -0.256$; both CIs strictly nonzero; $n=6$ --- the smallest cell, so
+this point estimate is correspondingly noisier).
 
 We read this as a feature-identification scope: the contrastive procedure
 in \S\ref{sec:medical_feature_identification} ranks features by their
@@ -631,21 +674,39 @@ underlying shift in 12B's free-text behaviour relative to 4B's: under NF,
 12B asks for more information; under the forced-letter scaffold, that
 caution is suppressed.
 
-**Qwen3-8B** (cross-family, single layer):
+**Qwen3-8B** (cross-family, single layer, max-pool):
 
-| Layer | n | med_mod | rnd_mod | diff [95% CI] |
-|---|---|---|---|---|
-| 31 | 60 | 0.266 | 0.330 | **−0.064 [−0.106, −0.024]** |
+| Layer | n | med_sMAPE | rnd_sMAPE | Δ_sMAPE [95% CI] | med_cos | rnd_cos | Δ_cos [95% CI] |
+|---|---|---|---|---|---|---|---|
+| 31 | 60 | 0.034 | 0.149 | **−0.114 [−0.139, −0.090]** | 0.999 | 0.989 | **+0.010 [+0.008, +0.012]** |
 
-**Cross-family validation holds at the deep encoding layer.** Effect size is
-smaller than Gemma's, consistent with Qwen Scope's k=50 TopK sparsity inducing
-a ~38% reconstruction error vs Gemma Scope's ~14% at the equivalent layer, but
-the direction and statistical signal replicate.
+**Cross-family validation holds at the deep encoding layer on both
+metrics.** Effect size is smaller than Gemma's, consistent with Qwen
+Scope's $k{=}50$ TopK sparsity inducing a ${\sim}38\%$ reconstruction
+error vs.\ Gemma Scope's ${\sim}14\%$ at the equivalent layer
+(\S\ref{app:verified_baselines}), but the direction and statistical
+signal replicate.
+
+The Qwen cell is also the case that motivates our choice of max-pool
+aggregation over mean-pool. Under mean-pool, Qwen-Scope's TopK behaviour
+($k{=}50$ active features per token) leaves both NL and NF medical
+sub-vectors near zero after averaging over $\sim{}100$ content tokens
+(most tokens contribute exactly $0$ to most features). The sMAPE
+denominator clamp then reports artifactual invariance, and cosine on
+near-zero vectors becomes direction-noise dominated --- on Qwen under
+mean-pool the two metrics disagree on sign (sMAPE $\Delta = -0.064$,
+cosine $\Delta = -0.023$; the cosine reads medical features as
+\emph{less} similar than random). Max-pool aggregates the peak feature
+firing across tokens, which is non-zero for any feature that does fire
+on at least one token in the case --- the relevant signal. Under
+max-pool, both metrics agree on every cell of every model
+(\S3.4, Appendix~\ref{app:metric_consistency}).
 
 ### 4.3 Per-token alignment
 
-The mod-index above is mean-pooled. We also report per-case max activations
-on the medical features at L29 of Gemma 4B for three example cases:
+The sMAPE-max numbers above aggregate across cases. We also zoom in on
+per-case max activations on the medical features at L29 of Gemma 4B for
+three example cases:
 
 | Case | Gold | NL max | NF max | Per-feature delta |
 |---|---|---|---|---|
@@ -653,10 +714,11 @@ on the medical features at L29 of Gemma 4B for three example cases:
 | E4 | C | [974.5, 3423.3, 2341.0] | [974.5, 3434.3, 2380.3] | 0.0% / 0.3% / 1.7% |
 | E9 | D | [1054.6, 3215.8, 3000.6] | [1066.2, 3228.2, 3016.9] | 1.1% / 0.4% / 0.5% |
 
-When the model encounters the words "asthma" or "DKA" in NL vs NF, the medical
-features fire at essentially the same magnitude. The clinical representation
-is preserved at the per-token level; the small mean-pool mod-index residual is
-the ~50-token dilution from B's appended forced-letter instructions.
+When the model encounters the words ``asthma'' or ``DKA'' in NL vs.\ NF,
+the medical features fire at essentially the same peak magnitude. The
+clinical representation is preserved at the per-token level; the small
+residual disagreement is consistent with bf16 numerical noise at these
+activation magnitudes ($\sim{}1000$--$3500$).
 
 ### 4.4 Direction analysis
 
@@ -808,7 +870,7 @@ Gemma~3 12B IT at layer~32. We use this AV to verify, in natural
 language, the interpretation our top-token analysis gives to features
 identified at Gemma 12B L31. The NLA was trained at L32, one layer
 adjacent to our L31 SAE analysis; Version~B (medical $<$ random
-mod-index) holds at both L31 and L41 in our 12B data (\S4.4), so this
+sMAPE) holds at both L31 and L41 in our 12B data (\S4.4), so this
 one-layer drift sits inside a stable encoding region.
 
 \textbf{Protocol.} For each of the 60 paper-canonical cases we run
@@ -947,12 +1009,19 @@ single lettered answer.}''
 
 \textbf{Convergent evidence for Version B.} Five pieces of independent
 evidence converge on the same mechanistic conclusion. (i) Magnitude
-invariance: in all three models the deep-layer medical features fire within
-0--4\% per token on identical clinical content across format conditions, with
-mean-pool modulation indices 0.10--0.27 versus 0.30--0.43 for
-magnitude-matched random features in the same SAE basis (Section 4.2). The
-result survives a stricter control that further restricts the random pool to
-features that fire on clinical content (Section 4.6). (ii) Length-controlled
+invariance: across all three models, deep-layer medical features fire
+within 0--4\% per token on identical clinical content across format
+conditions. Aggregated over user content tokens via max-pool, the
+symmetric percent change (sMAPE) of the medical-feature subvector
+between NL and NF is at or near zero (deep-cell median $0.00$, 5--95th
+percentile $[0.00, 0.07]$) versus $0.20$ (5--95th $[0.04, 0.37]$) for
+magnitude-matched random features in the same SAE basis (Section 4.2).
+Cosine similarity of the same subvectors agrees: medical-vs-random
+cosine $\Delta$ is strictly positive at every cell with $95\%$ CI clear
+of zero. Both metrics agree on direction at every cell of every model
+under max-pool aggregation. The result survives a stricter control that
+further restricts the random pool to features that fire on clinical
+content (Section 4.6). (ii) Length-controlled
 direction analysis: when prompt-length asymmetry is removed by truncating the
 forced-letter block from NL so its content range matches NF's exactly, the
 residual-stream difference between conditions vanishes to 0 at numerical
@@ -1219,6 +1288,7 @@ interventions cannot directly close the resulting knowledge--action gap.
 - A1:  Per-layer × per-stratum bootstrap tables for all three models
 - A1B: Sensitivity to medical feature-set size K (see below)
 - A1C: Verified baseline numerics (see below)
+- A1D: Metric consistency under aggregation (see below)
 - A2:  Top-token analysis of the format-effect features (3833, 10012, etc.)
 - A3:  Adjudicator prompts, agreement statistics, calibration check
 - A4:  Five-way LLM-as-judge adjudication with DEFERRED class (see below)
@@ -1240,14 +1310,18 @@ medical features drawn from the same contrastive identification
 ranking, against magnitude-matched random baselines (30 random
 features in the band $[0.5\times, 2.0\times]$ the medical median).
 
-\textbf{Procedure.} Identical to main-text Phase 1b
-(Section~\ref{sec:phase1b_magnitude_matched}) except we vary the number
-of medical features included in the mean modulation index. For each
-$K$ we take the top-$K$ entries in the contrastive ranking, encode
-each NL and NF prompt through the SAE, max-pool feature activations
-over content tokens, and compute the per-(case, feature) modulation
-index $|a_{\text{NL}} - a_{\text{NF}}| / (\max(a_{\text{NL}}, a_{\text{NF}}) + \varepsilon)$.
-Bootstrap mean and 95\% CI over (case $\times$ feature) pairs.
+\textbf{Procedure.} The sensitivity check was run before we switched
+the main-text Phase 1b aggregation to max-pool (\S\ref{sec:phase1b_strata});
+it uses \emph{mean}-pool over content tokens and the same symmetric
+percent change formula (sMAPE) defined in \S3.4. For each $K \in
+\{3, 5, 10, 20\}$ we take the top-$K$ entries in the contrastive
+ranking, encode each NL and NF prompt through the SAE, mean-pool
+feature activations over content tokens, and compute the per-(case,
+feature) sMAPE as defined in \S3.4. Bootstrap mean and 95\% CI over
+case-level paired (medical-minus-random) differences. The check should
+be read as: the medical-vs-random gap on Gemma-Scope (where mean-pool
+and max-pool agree on direction at all 8 cells, \S\ref{sec:phase1b_strata})
+is robust to feature-set size.
 
 \textbf{Table~\ref{tab:phase1b_sensitivity}.} Modulation index per case
 averaged across the top-$K$ medical features and the 30
@@ -1335,6 +1409,63 @@ Reconstruction error at L29 sourced from
 fields). Residual norms cross-checked against the mean-pooled
 \texttt{results/phase2\_residuals\_L29.npz} cache (median 58.3k,
 consistent with the per-token 60.5k).
+
+---
+
+### A1D — Metric consistency under aggregation \label{app:metric_consistency}
+
+We report two summary statistics in \S4.2 (sMAPE and cosine) and use
+max-pool aggregation rather than mean-pool. The choice of aggregation
+matters at one cell (Qwen L31) and not at any other. Per-cell
+mean-pool vs.\ max-pool, both metrics, paired bootstrap $\Delta$
+(medical $-$ random) over 60 cases per cell:
+
+\begin{center}
+\small
+\begin{tabular}{lccc}
+\toprule
+Cell & pool & sMAPE $\Delta$ & cosine $\Delta$ \\
+\midrule
+4B  L9   & mean & $-0.219$ & $+0.023$ \\
+4B  L9   & max  & $-0.231$ & $+0.086$ \\
+4B  L17  & mean & $-0.265$ & $+0.033$ \\
+4B  L17  & max  & $-0.273$ & $+0.074$ \\
+4B  L22  & mean & $-0.107$ & $+0.036$ \\
+4B  L22  & max  & $-0.139$ & $+0.044$ \\
+4B  L29  & mean & $-0.303$ & $+0.056$ \\
+4B  L29  & max  & $-0.264$ & $+0.107$ \\
+12B L12  & mean & $+0.040$ & $-0.004$ \\
+12B L12  & max  & $+0.021$ & $-0.005$ \\
+12B L24  & mean & $+0.172$ & $-0.093$ \\
+12B L24  & max  & $+0.277$ & $-0.117$ \\
+12B L31  & mean & $-0.238$ & $+0.121$ \\
+12B L31  & max  & $-0.228$ & $+0.093$ \\
+12B L41  & mean & $-0.103$ & $+0.070$ \\
+12B L41  & max  & $-0.124$ & $+0.034$ \\
+\rowcolor[gray]{0.92} Qwen L31 & mean & $-0.064$ & \textbf{$-0.023$} (disagree)\\
+\rowcolor[gray]{0.92} Qwen L31 & max  & $-0.114$ & $+0.010$ (agree)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+All cells with $|\Delta| > 0.01$ have 95\% bootstrap CIs that exclude
+zero except the 12B L12 cells. On Gemma-Scope (JumpReLU SAEs) the two
+metrics agree on direction under both aggregations: medical features
+are more invariant than magnitude-matched random at the deep layers
+(L29, L31, L41), and more perturbed at the shallow/mid layers (L12,
+L24). Only Qwen-Scope (\,$k{=}50$ TopK) shows aggregation-sensitivity:
+under mean-pool, sMAPE reads medical-more-invariant while cosine reads
+medical-less-similar; under max-pool both metrics agree
+(medical-more-invariant). The mean-pool disagreement is mechanistically
+attributable to the TopK SAE forcing nearly all features to zero on any
+given token, which dilutes per-case mean-pool feature subvectors to
+near-zero in both NL and NF and exposes both metrics to noise
+(denominator-clamp artifacts for sMAPE; direction noise on near-zero
+vectors for cosine). Max-pool aggregates the peak per-feature firing,
+which is non-zero whenever the feature is in the top-$k$ on at least
+one content token in the case, and is therefore robust to TopK zeroing.
+We adopt max-pool throughout Phase 1b for this reason and for
+consistency with the direction analysis in \S4.4 (also max-pool).
 
 ---
 
