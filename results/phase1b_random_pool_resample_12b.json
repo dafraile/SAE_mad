@@ -1,0 +1,133 @@
+{
+  "model_tag": "12b",
+  "n_cases": 60,
+  "d_sae": 16384,
+  "medical_features": [
+    130,
+    85,
+    4773
+  ],
+  "n_resamples": 1000,
+  "pool_size": 30,
+  "firing_pool_size": 9893,
+  "magnitude_matched_pool_size": 58,
+  "top_decile_pool_size": 990,
+  "medical_min_mean_activation": 3524.60888671875,
+  "vignette": {
+    "medical_median": 0.0026961131952703,
+    "firing_only": {
+      "medical_median": 0.0026961131952703,
+      "random_mean": 0.0021829894973197954,
+      "random_p5": 0.0011206942610442639,
+      "random_p50": 0.0019515692256391048,
+      "random_p95": 0.003043055743910372,
+      "random_std": 0.0036312470063227585,
+      "z_score": 0.14130784743011124,
+      "perm_p_one_sided_le": 0.879,
+      "n_resamples": 1000,
+      "candidate_pool_size": 9890
+    },
+    "magnitude_matched": {
+      "medical_median": 0.0026961131952703,
+      "random_mean": 0.005379981643520296,
+      "random_p5": 0.004612253280356526,
+      "random_p50": 0.005371427396312356,
+      "random_p95": 0.006152659002691507,
+      "random_std": 0.0004631846924036674,
+      "z_score": -5.7943807130633616,
+      "perm_p_one_sided_le": 0.0,
+      "n_resamples": 1000,
+      "candidate_pool_size": 55
+    },
+    "top_decile": {
+      "medical_median": 0.0026961131952703,
+      "random_mean": 0.005902085790643469,
+      "random_p5": 0.004705744492821395,
+      "random_p50": 0.005851398222148418,
+      "random_p95": 0.007259159465320408,
+      "random_std": 0.0007732948811604068,
+      "z_score": -4.145860361266434,
+      "perm_p_one_sided_le": 0.0,
+      "n_resamples": 1000,
+      "candidate_pool_size": 987
+    }
+  },
+  "full_content": {
+    "medical_median": 0.0027427729219198227,
+    "firing_only": {
+      "medical_median": 0.0027427729219198227,
+      "random_mean": 0.12562546028895302,
+      "random_p5": 0.009079770417883994,
+      "random_p50": 0.13403678685426712,
+      "random_p95": 0.25173458456993103,
+      "random_std": 0.06996327447786264,
+      "z_score": -1.7563884521430597,
+      "perm_p_one_sided_le": 0.023,
+      "n_resamples": 1000,
+      "candidate_pool_size": 9890
+    },
+    "magnitude_matched": {
+      "medical_median": 0.0027427729219198227,
+      "random_mean": 0.12316281658038497,
+      "random_p5": 0.07193004079163075,
+      "random_p50": 0.12374027073383331,
+      "random_p95": 0.17129292935132978,
+      "random_std": 0.03025787131877839,
+      "z_score": -3.979792312215005,
+      "perm_p_one_sided_le": 0.0,
+      "n_resamples": 1000,
+      "candidate_pool_size": 55
+    },
+    "top_decile": {
+      "medical_median": 0.0027427729219198227,
+      "random_mean": 0.25532679876312614,
+      "random_p5": 0.12156436406075954,
+      "random_p50": 0.24681102484464645,
+      "random_p95": 0.4172426626086235,
+      "random_std": 0.08791866737101596,
+      "z_score": -2.872928280126268,
+      "perm_p_one_sided_le": 0.0,
+      "n_resamples": 1000,
+      "candidate_pool_size": 987
+    }
+  },
+  "decision": {
+    "medical_median": 0.0,
+    "firing_only": {
+      "medical_median": 0.0,
+      "random_mean": 0.019050014162436128,
+      "random_p5": 0.0,
+      "random_p50": 0.0,
+      "random_p95": 0.06666667014360428,
+      "random_std": 0.034985298121491364,
+      "z_score": -0.5445148443864127,
+      "perm_p_one_sided_le": 0.743,
+      "n_resamples": 1000,
+      "candidate_pool_size": 9890
+    },
+    "magnitude_matched": {
+      "medical_median": 0.0,
+      "random_mean": 0.22914912582561373,
+      "random_p5": 0.11028657853603363,
+      "random_p50": 0.23360079526901245,
+      "random_p95": 0.3618917465209961,
+      "random_std": 0.07411268814221407,
+      "z_score": -3.091901421601411,
+      "perm_p_one_sided_le": 0.002,
+      "n_resamples": 1000,
+      "candidate_pool_size": 55
+    },
+    "top_decile": {
+      "medical_median": 0.0,
+      "random_mean": 0.11874167501181364,
+      "random_p5": 0.0,
+      "random_p50": 0.13333334028720856,
+      "random_p95": 0.2666666805744171,
+      "random_std": 0.07942806620625499,
+      "z_score": -1.494958654834564,
+      "perm_p_one_sided_le": 0.126,
+      "n_resamples": 1000,
+      "candidate_pool_size": 987
+    }
+  }
+}

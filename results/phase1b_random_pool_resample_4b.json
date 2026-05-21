@@ -1,0 +1,133 @@
+{
+  "model_tag": "4b",
+  "n_cases": 60,
+  "d_sae": 16384,
+  "medical_features": [
+    12570,
+    893,
+    12845
+  ],
+  "n_resamples": 1000,
+  "pool_size": 30,
+  "firing_pool_size": 11873,
+  "magnitude_matched_pool_size": 1825,
+  "top_decile_pool_size": 1188,
+  "medical_min_mean_activation": 667.3124389648438,
+  "vignette": {
+    "medical_median": 0.0038399924524128437,
+    "firing_only": {
+      "medical_median": 0.0038399924524128437,
+      "random_mean": 0.0020723025404149665,
+      "random_p5": 0.0010467736865393817,
+      "random_p50": 0.0019752539228647947,
+      "random_p95": 0.003065277519635856,
+      "random_std": 0.002164492616083937,
+      "z_score": 0.816676342003898,
+      "perm_p_one_sided_le": 0.989,
+      "n_resamples": 1000,
+      "candidate_pool_size": 11870
+    },
+    "magnitude_matched": {
+      "medical_median": 0.0038399924524128437,
+      "random_mean": 0.006068880200386048,
+      "random_p5": 0.004919811873696745,
+      "random_p50": 0.0060362801887094975,
+      "random_p95": 0.007277917815372348,
+      "random_std": 0.0007367540509383966,
+      "z_score": -3.025280614520261,
+      "perm_p_one_sided_le": 0.001,
+      "n_resamples": 1000,
+      "candidate_pool_size": 1822
+    },
+    "top_decile": {
+      "medical_median": 0.0038399924524128437,
+      "random_mean": 0.006272205074317754,
+      "random_p5": 0.005164543585851789,
+      "random_p50": 0.006229693302884698,
+      "random_p95": 0.0075048052705824365,
+      "random_std": 0.0007358598403447597,
+      "z_score": -3.305266150637311,
+      "perm_p_one_sided_le": 0.0,
+      "n_resamples": 1000,
+      "candidate_pool_size": 1187
+    }
+  },
+  "full_content": {
+    "medical_median": 0.0040070549584925175,
+    "firing_only": {
+      "medical_median": 0.0040070549584925175,
+      "random_mean": 0.13623823864129372,
+      "random_p5": 0.028504948131740093,
+      "random_p50": 0.13520743697881699,
+      "random_p95": 0.26781063824892043,
+      "random_std": 0.06886064686630572,
+      "z_score": -1.9202721685076618,
+      "perm_p_one_sided_le": 0.023,
+      "n_resamples": 1000,
+      "candidate_pool_size": 11870
+    },
+    "magnitude_matched": {
+      "medical_median": 0.0040070549584925175,
+      "random_mean": 0.2757224429771304,
+      "random_p5": 0.13803283721208573,
+      "random_p50": 0.2726254165172577,
+      "random_p95": 0.4284885674715042,
+      "random_std": 0.09104226976319327,
+      "z_score": -2.9844970772959294,
+      "perm_p_one_sided_le": 0.0,
+      "n_resamples": 1000,
+      "candidate_pool_size": 1822
+    },
+    "top_decile": {
+      "medical_median": 0.0040070549584925175,
+      "random_mean": 0.24584567307494581,
+      "random_p5": 0.11450030989944934,
+      "random_p50": 0.23867490142583847,
+      "random_p95": 0.40457199513912195,
+      "random_std": 0.08449174770551963,
+      "z_score": -2.862275011274913,
+      "perm_p_one_sided_le": 0.0,
+      "n_resamples": 1000,
+      "candidate_pool_size": 1187
+    }
+  },
+  "decision": {
+    "medical_median": 0.0,
+    "firing_only": {
+      "medical_median": 0.0,
+      "random_mean": 0.012710297563113272,
+      "random_p5": 0.0,
+      "random_p50": 0.0,
+      "random_p95": 0.06666667014360428,
+      "random_std": 0.02781781392787364,
+      "z_score": -0.4569121641286653,
+      "perm_p_one_sided_le": 0.808,
+      "n_resamples": 1000,
+      "candidate_pool_size": 11870
+    },
+    "magnitude_matched": {
+      "medical_median": 0.0,
+      "random_mean": 0.0687103910325095,
+      "random_p5": 0.0,
+      "random_p50": 0.06666667014360428,
+      "random_p95": 0.20000000298023224,
+      "random_std": 0.06159902024377232,
+      "z_score": -1.1154461671727018,
+      "perm_p_one_sided_le": 0.297,
+      "n_resamples": 1000,
+      "candidate_pool_size": 1822
+    },
+    "top_decile": {
+      "medical_median": 0.0,
+      "random_mean": 0.08747854814247694,
+      "random_p5": 0.0,
+      "random_p50": 0.06666667014360428,
+      "random_p95": 0.20000000298023224,
+      "random_std": 0.06866648638336338,
+      "z_score": -1.2739627837382892,
+      "perm_p_one_sided_le": 0.224,
+      "n_resamples": 1000,
+      "candidate_pool_size": 1187
+    }
+  }
+}
