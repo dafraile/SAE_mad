@@ -1,0 +1,110 @@
+[
+  {
+    "tag": "4b",
+    "model": "google/gemma-3-4b-it",
+    "n_cases": 60,
+    "K_shuffles": 3,
+    "n_shuffle_total": 180,
+    "same_letter_pct": 21.11111111111111,
+    "same_content_pct": 67.22222222222223,
+    "canonical_NL_acc_pct": 55.0,
+    "shuffled_NL_acc_pct": 71.66666666666667,
+    "NF_4way_both_judges_acc_pct": 71.66666666666667,
+    "letter_dist_canonical": {
+      "A": 3,
+      "B": 32,
+      "C": 25,
+      "D": 0
+    },
+    "letter_dist_shuffles": {
+      "A": 60,
+      "B": 41,
+      "C": 38,
+      "D": 41
+    },
+    "content_dist_canonical": {
+      "Fine to monitor at home": 3,
+      "See my doctor in the next few weeks": 32,
+      "See a doctor within 24-48 hours": 25,
+      "Go to the ER now": 0
+    },
+    "content_dist_shuffles": {
+      "Fine to monitor at home": 4,
+      "See my doctor in the next few weeks": 49,
+      "See a doctor within 24-48 hours": 127,
+      "Go to the ER now": 0
+    }
+  },
+  {
+    "tag": "12b",
+    "model": "google/gemma-3-12b-it",
+    "n_cases": 60,
+    "K_shuffles": 3,
+    "n_shuffle_total": 180,
+    "same_letter_pct": 25.0,
+    "same_content_pct": 80.55555555555556,
+    "canonical_NL_acc_pct": 81.66666666666667,
+    "shuffled_NL_acc_pct": 78.88888888888889,
+    "NF_4way_both_judges_acc_pct": 71.66666666666667,
+    "letter_dist_canonical": {
+      "A": 3,
+      "B": 17,
+      "C": 30,
+      "D": 10
+    },
+    "letter_dist_shuffles": {
+      "A": 52,
+      "B": 26,
+      "C": 43,
+      "D": 59
+    },
+    "content_dist_canonical": {
+      "Fine to monitor at home": 3,
+      "See my doctor in the next few weeks": 17,
+      "See a doctor within 24-48 hours": 30,
+      "Go to the ER now": 10
+    },
+    "content_dist_shuffles": {
+      "Fine to monitor at home": 6,
+      "See my doctor in the next few weeks": 42,
+      "See a doctor within 24-48 hours": 117,
+      "Go to the ER now": 15
+    }
+  },
+  {
+    "tag": "qwen",
+    "model": "Qwen/Qwen3-8B",
+    "n_cases": 60,
+    "K_shuffles": 3,
+    "n_shuffle_total": 180,
+    "same_letter_pct": 25.555555555555554,
+    "same_content_pct": 82.22222222222221,
+    "canonical_NL_acc_pct": 75.0,
+    "shuffled_NL_acc_pct": 72.77777777777777,
+    "NF_4way_both_judges_acc_pct": 68.33333333333333,
+    "letter_dist_canonical": {
+      "A": 16,
+      "B": 8,
+      "C": 33,
+      "D": 3
+    },
+    "letter_dist_shuffles": {
+      "A": 67,
+      "B": 28,
+      "C": 39,
+      "D": 46
+    },
+    "content_dist_canonical": {
+      "Fine to monitor at home": 16,
+      "See my doctor in the next few weeks": 8,
+      "See a doctor within 24-48 hours": 33,
+      "Go to the ER now": 3
+    },
+    "content_dist_shuffles": {
+      "Fine to monitor at home": 38,
+      "See my doctor in the next few weeks": 19,
+      "See a doctor within 24-48 hours": 108,
+      "Go to the ER now": 15
+    }
+  }
+]

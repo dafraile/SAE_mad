@@ -261,30 +261,61 @@ Suggested phrasing for §3.1:
 
 > "The NL and NF prompts for a given case share the patient vignette text verbatim and differ only by an appended forced-letter scaffold in NL. Under causal masking, hidden states at vignette token positions cannot depend on later scaffold tokens, so SAE feature activations at vignette positions are byte-identical between NL and NF at the Gemma scales. At Qwen3-8B the BPE merges the trailing punctuation differently depending on what follows the vignette, which shifts the divergence one token earlier than the vignette end; the remaining ~99.6% of vignette tokens are byte-identical at Qwen too."
 
-### 2h. The 4B "content prior, not position bias" finding (added 2026-05-22)
+### 2h. Cross-model option-order shuffle (4B + 12B + Qwen) (added 2026-05-22)
 
-Source: `results/option_order_shuffle_4b.json` (script `paper/scripts/option_order_shuffle_4b.py`).
+Source: `results/option_order_shuffle_{4b,12b,qwen}.json` + `option_order_shuffle_all_models.{json,md}` (script `paper/scripts/option_order_shuffle_4b.py`, generalized to take `--model`).
 
-Falsifiable test of the "NL = B when gold = C" pattern at 4B. For each of the 60 cases, we generated K=3 random non-identity permutations of the letter-to-content mapping in the forced-letter scaffold and ran 4B greedy forced-letter on each. Total 180 shuffled predictions.
+Falsifiable test of the "letter-binding interacts with content prior" hypothesis. For each of the 60 canonical cases, we generated K=3 random non-identity permutations of the letter→content mapping in the forced-letter scaffold and ran each model greedy forced-letter. Total 180 shuffled predictions per model.
 
-**Smoking gun:**
+**Cross-model headline table:**
 
-| Signal | Value | Reading |
+| Signal | 4B | 12B | Qwen |
+|---|---|---|---|
+| Same-letter % (chance ≈25%) | **21.1%** | 25.0% | 25.6% |
+| Same-content % (chance ≈25%) | **67.2%** | **80.6%** | **82.2%** |
+| Canonical NL acc | 55.0% | 81.7% | 75.0% |
+| **Shuffled NL acc** | **71.7%** | **78.9%** | **72.8%** |
+| NF (4-way both judges) acc | 71.7% | 71.7% | 68.3% |
+| Shuffled − canonical NL | **+16.7 pp** | −2.8 pp | −2.2 pp |
+| **Shuffled − NF (convergence gap)** | **+0.0 pp (EXACT)** | +7.2 pp | +4.4 pp |
+
+**Three big findings:**
+
+1. **No position bias at any model.** Same-letter % is at chance everywhere (21–26%). Strong content prior at all three (67–82%).
+
+2. **At 4B, the entire NL→NF format penalty IS the canonical letter-binding.** Shuffled NL accuracy = NF accuracy = 71.7% *to the case*. Randomize the letter assignment and forced-letter accuracy collapses *exactly* to free-text. This is a remarkably clean, falsifiable mechanistic claim.
+
+3. **At 12B and Qwen, canonical letter-binding mildly helps the model.** Canonical accuracy beats shuffled by +2.8 and +2.2 pp respectively. But shuffled forced-letter still beats free-text by +7.2 pp (12B) and +4.4 pp (Qwen) — meaning free-text mode at scale has its own accuracy penalty (the *adjacent-miscalibration in NF* of §2b) that is **separate from letter-binding**.
+
+**Letter distribution (canonical vs shuffled) shows the content-prior:**
+
+| Model | Canonical letter dist | Shuffled letter dist |
 |---|---|---|
-| Same **letter** under shuffle (e.g. picks "B" regardless of content) | **38/180 = 21.1%** | LOW → NOT a position bias |
-| Same **content** under shuffle (e.g. picks "see doctor 24-48h" regardless of letter) | **121/180 = 67.2%** | HIGH → CONTENT PRIOR |
-| Original NL accuracy (canonical mapping) | 33/60 = 55.0% | baseline |
-| **Shuffled NL accuracy** | **129/180 = 71.7%** | accuracy goes UP under shuffles |
-| Original NL letter distribution | A:3 B:32 C:25 **D:0** | model never picks ER |
-| Shuffled content distribution | Fine:4 Weeks:49 **24-48h:127** **ER:0** | dominant content prior toward 24-48h, never picks ER |
+| 4B   | A:3 B:32 C:25 **D:0**  | A:60 B:41 C:38 D:41 |
+| 12B  | A:3 B:17 C:30 D:10     | A:52 B:26 C:43 **D:59** |
+| Qwen | A:16 B:8 C:33 D:3      | A:67 B:28 C:39 D:46 |
 
-**Interpretation:** at 4B, the forced-letter output is driven by a *content prior* — the model has a learned preference for the "see a doctor within 24–48 hours" acuity content regardless of which letter that content is assigned to. The canonical scaffold (A=monitor, B=weeks, C=24-48h, D=ER) interacts with this content prior in a way that hurts accuracy on gold-C cases: the model wants to emit the 24-48h-content letter but the specific canonical mapping routes it into the letter for "see my doctor in next few weeks" (B) on cases where the textual context primes the weaker-urgency phrasing.
+**Shuffled content distribution (which acuity content is picked, regardless of letter):**
 
-**The model never picks "Go to ER now"** in any of the 240 forced-letter predictions (60 original + 180 shuffles). The content prior is strongly biased against the highest-acuity recommendation, regardless of letter or position.
+| Model | Fine | Weeks | 24-48h | ER |
+|---|---|---|---|---|
+| 4B   |   4 |   49 | **127** |  **0** |
+| 12B  |   6 |   42 | **117** | 15 |
+| Qwen |  38 |   19 | **108** | 15 |
 
-**Paper move:** the §4.2 rewrite should call this out by name. The "B-instead-of-C" pattern is no longer a vague format penalty — it's a measured content prior interacting with a specific scaffold structure. Position-2 default is ruled out. Suggested wording:
+All three models concentrate strongly on "See a doctor within 24-48 hours" content. **4B never picks "Go to ER now"** in any of its 240 forced-letter predictions across canonical + shuffled (capability-scaling signal — 12B and Qwen DO pick ER, though rarely).
 
-> "At 4B, an option-order randomization experiment (60 cases × 3 random non-identity permutations) shows that the forced-letter output is content-driven, not position-driven: across shuffles, the model picks the same acuity content 67.2% of the time but the same letter only 21.1% of the time. The model's dominant content prior is 'See a doctor within 24-48 hours' (picked 127 of 180 shuffled predictions), and it never emits 'Go to the ER now' regardless of letter assignment. The canonical A-B-C-D label structure interacts with this content prior to produce the systematic 'NL=B when gold=C' miscalibration observed in §4.1. Under shuffled labellings, 4B accuracy rises from 55% to 71.7%."
+**Unified mechanistic claim for the §4.2 rewrite:**
+
+> "Two distinct sources of format-dependent accuracy emerge from the cross-model option-order shuffle:
+>   (a) **canonical letter-binding × content-prior interaction** — scale-dependent: at 4B the canonical A-B-C-D mapping costs 16.7 pp; at 12B it gains 2.8 pp; at Qwen 2.2 pp.
+>   (b) **NF-mode adjacent-miscalibration** — present at 12B and Qwen but not at 4B (where shuffled NL exactly matches NF).
+>
+> Across all three models, NONE show a position bias (same-letter % ≈ chance); ALL show a strong content prior (same-content % 67–82%). Under random letter labels the three models' accuracies converge to a narrow 72–79% range, suggesting the canonical NL accuracy spread (55–82%) is largely an artifact of how well each model's content prior aligns with the canonical A-B-C-D acuity ordering."
+
+**Paper move:** the §4.2 rewrite should call this out across all three models. The "format penalty" is no longer a vague concept — at every scale, position bias is ruled out (same-letter % ≈ chance) and content prior is confirmed (same-content % 67–82%). The canonical letter-binding's effect on accuracy is scale-dependent and not always negative. Suggested wording:
+
+> "An option-order randomization experiment (60 cases × 3 random non-identity permutations of the letter→content mapping) tests whether the forced-letter accuracy depends on position or on content. Across all three models, the picked-letter is at chance under shuffles (21–26%, vs same-content 67–82%): no position bias, strong content prior. At 4B, randomising the labels recovers the free-text accuracy to the case (shuffled NL 71.7% = NF 71.7%) — the entire NL→NF format penalty at 4B is the canonical A-B-C-D letter-binding interacting with the model's 'see-a-doctor-within-24-48h' content prior. At 12B and Qwen the canonical mapping mildly *helps* the model (canonical accuracy beats shuffled by 2–3 pp), but shuffled forced-letter still beats free-text by 4–7 pp — at scale, free-text mode has its own accuracy penalty (the adjacent-miscalibration documented above) that is separate from letter-binding. The convergence of shuffled accuracies (72–79%) across scales is in itself informative: the canonical NL accuracy spread (55–82%) is partly an artifact of how well each model's content prior aligns with the canonical acuity ordering."
 
 ### 2i. Decision-token logit attribution: v3 medical features are silent at the decision token (added 2026-05-22)
 
