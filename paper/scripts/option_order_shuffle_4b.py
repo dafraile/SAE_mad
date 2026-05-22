@@ -1,6 +1,9 @@
 """option_order_shuffle_4b.py -- option-order randomization experiment
-for Gemma 3 4B IT, to distinguish position-bias from content-bias in
-the "NL = B when gold = C" pattern observed at 4B.
+for SAE-paper triage models, to distinguish position-bias from content-
+bias in the canonical forced-letter prediction patterns.
+
+Originally written for Gemma 3 4B IT (hence the filename) but generalised
+via --model to run identically against any of {4b, 12b, qwen}.
 
 Background: at 4B, the NF > NL accuracy gap is driven by 13 of 14
 NF_only_right cases where NL = B and gold = C. The forced-letter
@@ -8,12 +11,13 @@ mode systematically defaults to B (which contains "See my doctor in
 the next few weeks") when the gold answer is C ("See a doctor within
 24-48 hours"). This could be:
 
-  (a) A POSITION ARTIFACT: 4B has a learned bias toward emitting "B"
-      (position-2 of A/B/C/D) when the prompt is ambiguous, regardless
-      of which acuity content is mapped to "B".
-  (b) A CONTENT-PRIOR ARTIFACT: 4B has a learned bias toward the
-      acuity content "see doctor in next few weeks" when uncertain,
-      regardless of which letter that content is assigned.
+  (a) A POSITION ARTIFACT: the model has a learned bias toward
+      emitting position-2 ("B") when the prompt is ambiguous,
+      regardless of which acuity content is mapped to "B".
+  (b) A CONTENT-PRIOR ARTIFACT: the model has a learned bias toward
+      a specific acuity content (e.g., "see doctor in next few
+      weeks") when uncertain, regardless of which letter that content
+      is assigned.
 
 We can distinguish these by SHUFFLING the letter→content mapping in
 the forced-letter scaffold and seeing what the model picks. For each
@@ -26,8 +30,14 @@ score:
 The two hypotheses make opposite predictions; the experiment should
 distinguish them cleanly on n=60 cases × K shuffles.
 
+The 4B result (2026-05-22): 21.1% same letter, 67.2% same content,
+shuffled accuracy 71.7% > canonical 55%. Content prior, not position
+bias. This script now extends the test to 12B and Qwen.
+
 Usage:
-  python3 paper/scripts/option_order_shuffle_4b.py --k 3 --device cuda
+  python3 paper/scripts/option_order_shuffle_4b.py --model 4b   --k 3
+  python3 paper/scripts/option_order_shuffle_4b.py --model 12b  --k 3
+  python3 paper/scripts/option_order_shuffle_4b.py --model qwen --k 3
 """
 from __future__ import annotations
 
@@ -41,8 +51,13 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL_ID = "google/gemma-3-4b-it"
 VIGNETTES = ROOT / "paper/data/canonical_forced_letter_vignettes.json"
+
+MODEL_IDS = {
+    "4b":   "google/gemma-3-4b-it",
+    "12b":  "google/gemma-3-12b-it",
+    "qwen": "Qwen/Qwen3-8B",
+}
 
 # The canonical acuity content -> id (0=lowest, 3=highest)
 CONTENTS = {
@@ -137,30 +152,44 @@ def gold_letters_under_mapping(gold_raw: str, mapping: dict[str, int]) -> list[s
 
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--model", choices=list(MODEL_IDS), default="4b",
+                    help="Which model to run (default 4b)")
     ap.add_argument("--k", type=int, default=3,
                     help="Number of non-identity shuffles per case (default 3)")
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--device", default="cuda")
-    ap.add_argument("--max-new-tokens", type=int, default=10)
+    ap.add_argument("--max-new-tokens", type=int, default=20,
+                    help="Qwen with enable_thinking=False usually emits a letter "
+                         "directly; 20 tokens leaves headroom for any leading newlines")
     args = ap.parse_args()
+    model_id = MODEL_IDS[args.model]
 
     vignettes = json.loads(VIGNETTES.read_text())
     rng = np.random.default_rng(args.seed)
 
-    print(f"Loading {MODEL_ID}...")
-    tok = AutoTokenizer.from_pretrained(MODEL_ID, trust_remote_code=True)
+    print(f"Loading {model_id}...")
+    tok = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
     model = AutoModelForCausalLM.from_pretrained(
-        MODEL_ID, torch_dtype=torch.bfloat16, device_map=args.device,
+        model_id, torch_dtype=torch.bfloat16, device_map=args.device,
         trust_remote_code=True,
     )
     model.eval()
 
     def generate(prompt: str) -> str:
         messages = [{"role": "user", "content": prompt}]
-        ids = tok.apply_chat_template(
-            messages, add_generation_prompt=True, tokenize=True,
-            return_tensors="pt", return_dict=False,
-        )
+        # Qwen3: enable_thinking=False to suppress <think>...</think> reasoning
+        # trace and force a direct one-letter answer; Gemma ignores the kwarg
+        try:
+            ids = tok.apply_chat_template(
+                messages, add_generation_prompt=True, tokenize=True,
+                return_tensors="pt", return_dict=False,
+                enable_thinking=False,
+            )
+        except TypeError:
+            ids = tok.apply_chat_template(
+                messages, add_generation_prompt=True, tokenize=True,
+                return_tensors="pt", return_dict=False,
+            )
         if not isinstance(ids, torch.Tensor):
             ids = ids["input_ids"]
         ids = ids.to(model.device)
@@ -271,7 +300,8 @@ def main():
     n_shuf_total = sum(len(r["shuffles"]) for r in rows)
 
     summary = {
-        "model": MODEL_ID,
+        "model": model_id,
+        "model_tag": args.model,
         "n_cases": n,
         "K_shuffles_per_case": K,
         "n_shuffle_total": n_shuf_total,
@@ -300,7 +330,7 @@ def main():
         "per_case": rows,
     }
 
-    out_path = ROOT / "results/option_order_shuffle_4b.json"
+    out_path = ROOT / f"results/option_order_shuffle_{args.model}.json"
     out_path.write_text(json.dumps(summary, indent=2, default=str))
     print(f"\nWrote {out_path}")
     print()
