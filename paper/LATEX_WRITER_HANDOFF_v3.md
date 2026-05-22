@@ -131,7 +131,7 @@ Source files for replication:
 - Qwen: 2 unanim DEFERRED produce 4-way judge disagreement → live in `judges_disagree` → contribute partially to the gap
 - 4B: 0 unanim DEFERRED
 
-**Adjacency dominates:** 19/20 NL_only_right cases and 15/20 NF_only_right cases across all three models are single-acuity-step miscalibrations (B↔C or C↔D).
+**Adjacency dominates (corrected 2026-05-22 after reviewer audit):** **14/15 NL_only_right cases and 15/20 NF_only_right cases across all three models are single-acuity-step miscalibrations.** Earlier drafts said "19/20 NL_only_right" — this was a stale tally from before the Qwen numbers landed. Source of truth: `results/gap_decomposition.json`. See V3_CHANGES.md for the single-table source-of-truth tally and the formal adjacency definition.
 
 **Triage-direction breakdown (Bucket A — added 2026-05-22):**
 

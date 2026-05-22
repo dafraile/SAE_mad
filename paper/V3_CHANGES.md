@@ -82,8 +82,39 @@ Numbering follows the GPT-5.5-Pro review (Concerns 1–6).
 - We ran a full case-by-case decomposition of the gap drivers across all three models. (`paper/scripts/gap_decomposition.py`)
 - At 4B, all 14 NF_only_right cases are adjacent miscalibrations; 13/14 follow the exact pattern "NL=B, gold=C."
 - At 12B, 5/6 NL_only_right cases are adjacent miscalibrations; 0/6 are unanimous deferrals.
-- At Qwen, 8/8 NL_only_right are adjacent; 6/6 NF_only_right are adjacent miscalibrations in the opposite direction (mostly "NL=A, gold=C" — a 2-step under-triage pattern).
-- Overall, 19/20 NL_only_right and 15/20 NF_only_right cases across all three models are single-acuity-step miscalibrations.
+- At Qwen, 8/8 NL_only_right are adjacent; **only 1/6 NF_only_right are adjacent** — the other 5/6 are non-adjacent 2-step miscalibrations (the "NL=A, gold ∈ {B, C, or C/D}" pattern where the forced-letter mode severely under-triages by two acuity steps).
+- **Overall (corrected 2026-05-22 after reviewer audit): 14/15 NL_only_right and 15/20 NF_only_right cases across all three models are single-acuity-step miscalibrations (29/35 combined).** Earlier drafts had "19/20 NL_only_right" — this was a stale arithmetic from before Qwen's NL_only_right count landed at 8 (not 12), and before the Qwen NF_only_right adjacency breakdown was properly tallied.
+
+**Formal adjacency definition (single source of truth for the paper):** given a predicted letter `p ∈ {A,B,C,D}` and gold letter set `G ⊆ {A,B,C,D}`, define `d(p, G) = min_{g ∈ G} |i_p − i_g|` where `i_X` is the acuity index (`A=0, B=1, C=2, D=3`). A case is **adjacent** iff `d(p, G) = 1` for both the NL and NF predictions (one of which is in `G` by definition of the NL_only_right / NF_only_right strata); equivalently the wrong prediction is exactly one acuity step from the closest gold letter. This is the operational definition `paper/scripts/gap_decomposition.py` uses (under the hood: `adjacency_class(NL, NF)`, which equals the gold-distance definition whenever one of {NL, NF} is in `G`).
+
+| Model | NL_only_right (n, adj, non-adj) | NF_only_right (n, adj, non-adj) |
+|---|---|---|
+| 4B   | 1 (1 adj, 0 non) | 14 (14 adj, 0 non) |
+| 12B  | 6 (5 adj, 1 non) | 0 (—) |
+| Qwen | 8 (8 adj, 0 non) | 6 (1 adj, 5 non) |
+| **Total** | **15 (14 adj, 1 non)** | **20 (15 adj, 5 non)** |
+
+### Manuscript edit needed: `latex/v2_short/main.tex`
+
+The bad `19/20 NL_only_right` claim was propagated into the manuscript. **Two lines to patch in `latex/v2_short/main.tex`:**
+
+- **Line 711–712 (currently):**
+  ```
+  Across all three models, $19/20$ \texttt{NL\_only\_right} cases and $15/20$ \texttt{NF\_only\_right} cases are adjacent miscalibrations
+  ```
+  **Replace with:**
+  ```
+  Across all three models, $14/15$ \texttt{NL\_only\_right} cases and $15/20$ \texttt{NF\_only\_right} cases are adjacent miscalibrations ($29/35$ combined)
+  ```
+
+- **Line 1349–1350 (currently):**
+  ```
+  appear at lower magnitude with $19/20$ \texttt{NL\_only\_right} + $\texttt{NF\_only\_right}$ cases being adjacent miscalibrations
+  ```
+  **Replace with:**
+  ```
+  appear at lower magnitude with $29/35$ \texttt{NL\_only\_right} $+$ \texttt{NF\_only\_right} cases being adjacent miscalibrations
+  ```
 
 **Where it lives:**
 - `results/gap_decomposition.{json,md}` — the full per-case decomposition table
