@@ -294,10 +294,6 @@ def main():
                 "contrib_D": float(contribs[ti, 3]),
             })
 
-        # Also: contrib distribution across letters (which letter does each
-        # feature push toward the most?)
-        feature_argmax_letter = "ABCD"[int(contribs[:, :].argmax(axis=1).argmax())]
-
         # Total contribution to each letter from all features (linear)
         total_per_letter = {L: float(contribs[:, j].sum()) for j, L in enumerate("ABCD")}
         # Actual letter logits
