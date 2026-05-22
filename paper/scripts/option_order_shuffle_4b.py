@@ -140,6 +140,24 @@ def generate_shuffles(case_id: str, k: int, rng: np.random.Generator) -> list[di
     return perms
 
 
+def all_exhaustive_shuffles(case_id: str) -> list[dict]:
+    """Return all 23 non-identity permutations of (A,B,C,D) -> (0,1,2,3)."""
+    from itertools import permutations
+    perms = []
+    for order in permutations(range(4)):
+        mapping = {"A": order[0], "B": order[1], "C": order[2], "D": order[3]}
+        if order == (0, 1, 2, 3):
+            continue  # identity, skip
+        perms.append({
+            "case_id": case_id,
+            "shuffle_idx": len(perms),
+            "letter_to_content_id": mapping,
+            "letter_to_content_text": {L: CONTENTS[mapping[L]] for L in "ABCD"},
+        })
+    assert len(perms) == 23
+    return perms
+
+
 def gold_letters_under_mapping(gold_raw: str, mapping: dict[str, int]) -> list[str]:
     """The gold acuity is fixed (e.g. 'C/D' = contents 2 and 3). Under a
     shuffle, the LETTERS that map to those contents may be different."""
@@ -155,7 +173,12 @@ def main():
     ap.add_argument("--model", choices=list(MODEL_IDS), default="4b",
                     help="Which model to run (default 4b)")
     ap.add_argument("--k", type=int, default=3,
-                    help="Number of non-identity shuffles per case (default 3)")
+                    help="Number of non-identity shuffles per case (default 3). "
+                         "Ignored when --exhaustive is set.")
+    ap.add_argument("--exhaustive", action="store_true",
+                    help="Enumerate all 23 non-identity permutations per case "
+                         "instead of K random ones. 60 cases * 23 perms = "
+                         "1380 prompts per model (~20 min A100).")
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--device", default="cuda")
     ap.add_argument("--max-new-tokens", type=int, default=20,
@@ -217,8 +240,11 @@ def main():
         pred_orig_content_id = (ORIGINAL_LETTER_TO_CONTENT[pred_orig]
                                  if pred_orig in "ABCD" else None)
 
-        # Generate K shuffles
-        shuffles = generate_shuffles(case_id, args.k, rng)
+        # Generate K shuffles (or all 23 if --exhaustive)
+        if args.exhaustive:
+            shuffles = all_exhaustive_shuffles(case_id)
+        else:
+            shuffles = generate_shuffles(case_id, args.k, rng)
         case_rows = []
         for shuf in shuffles:
             mapping = shuf["letter_to_content_id"]
@@ -330,7 +356,9 @@ def main():
         "per_case": rows,
     }
 
-    out_path = ROOT / f"results/option_order_shuffle_{args.model}.json"
+    # Distinct filename for exhaustive runs so we don't clobber the K=3 baseline
+    suffix = "_exhaustive" if args.exhaustive else ""
+    out_path = ROOT / f"results/option_order_shuffle_{args.model}{suffix}.json"
     out_path.write_text(json.dumps(summary, indent=2, default=str))
     print(f"\nWrote {out_path}")
     print()
