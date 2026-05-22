@@ -244,23 +244,40 @@ The 4B singleton-D failure the reviewer flagged is confirmed: 4B picks D = 0 of 
 
 **Where:** `results/paired_tests_and_confusion.{json,md}`.
 
-### Cross-model option-order shuffle (4B + 12B + Qwen)
+### Cross-model option-order shuffle (4B + 12B + Qwen) — K=3 baseline and K=23 exhaustive
 
-The single strongest new finding. For each case, 3 random non-identity permutations of the letter→content mapping; greedy forced-letter; score same-letter % vs same-content % vs accuracy.
+The single strongest new finding. For each case, randomize the letter→content mapping in the forced-letter scaffold and re-run greedy forced-letter. Two passes:
+
+- **K=3 baseline (initial run):** 3 random non-identity permutations per case → 180 shuffles per model.
+- **K=23 exhaustive (added after reviewer audit, 2026-05-22):** all 23 non-identity permutations per case → 1380 shuffles per model. Kills the "lucky shuffle" objection and tightens the same-letter CI by ~6× at 4B.
+
+**K=23 + case-clustered bootstrap (B=2000) headline:**
 
 | | 4B | 12B | Qwen |
 |---|---|---|---|
-| Same-letter % | 21.1% | 25.0% | 25.6% |
-| Same-content % | 67.2% | 80.6% | 82.2% |
+| Same-letter % [95% CI] | **22.4% [21.4, 23.4]** | **20.8% [18.6, 23.0]** | 23.3% [20.5, 26.5] |
+| Same-content % [95% CI] | **64.5% [55.9, 73.0]** | **80.3% [73.6, 86.6]** | **82.6% [76.2, 88.4]** |
 | Canonical NL acc | 55.0% | 81.7% | 75.0% |
-| Shuffled NL acc | 71.7% | 78.9% | 72.8% |
+| Shuffled NL acc [95% CI] | 69.8% [60.7, 78.3] | 76.3% [66.3, 85.3] | 75.4% [66.0, 84.5] |
 | NF (4-way both judges) acc | 71.7% | 71.7% | 68.3% |
-| Shuffled vs canonical | +16.7 pp | −2.8 pp | −2.2 pp |
-| **Shuffled vs NF** | **+0.0 pp (EXACT)** | +7.2 pp | +4.4 pp |
+| Shuffled − canonical | +14.8 pp | −5.4 pp | +0.4 pp |
+| **Shuffled − NF** | **−1.9 pp** | **+4.6 pp** | **+7.1 pp** |
 
-At 4B the format penalty *is* the canonical letter-binding interacting with content prior. At 12B and Qwen the canonical mapping helps slightly, but there is a separate NF-mode penalty (the adjacent-miscalibration of §4.2) that is independent of letter-binding.
+**Honesty correction on the 4B "shuffled NL = NF" claim:** at K=3 the shuffled NL accuracy = NF accuracy = 71.7% *to the case*, which we initially framed as the entire format penalty being the canonical letter-binding. The K=23 estimate is shuffled NL = 69.8%, with case-clustered 95% CI [60.7%, 78.3%]. The CI **contains NF (71.7%)**, so the corrected claim is **"shuffled NL accuracy is statistically indistinguishable from NF accuracy at 4B (n=60 cases)"** — the qualitative story (canonical letter-binding × content prior explains essentially all of 4B's format penalty) survives, but the exact-equality at K=3 was a small-sample coincidence.
 
-**Where:** `results/option_order_shuffle_{4b,12b,qwen}.json` + `results/option_order_shuffle_all_models.{json,md}`.
+**Position-bias claim is now ironclad under K=23.** Same-letter % is significantly below chance (25%) at α=0.05 at 4B and 12B with case-clustered CIs (CI upper bound < 25%). Qwen's CI [20.5, 26.5] just barely touches 25% but the point estimate is below. With K=3 the CIs straddled chance.
+
+**4B "never picks ER" finding reinforced under exhaustive shuffles** (this was the K=3 finding I previously worried might be small-sample artifact, but isn't):
+
+| Model | "Go to ER" content picks under K=23 (out of 1380) |
+|---|---|
+| 4B | **2 / 1380 = 0.14%** — essentially zero across exhaustive permutations |
+| 12B | 126 / 1380 = 9.1% |
+| Qwen | 97 / 1380 = 7.0% |
+
+Even when the canonical D position is randomized to any letter, 4B essentially never emits the letter mapped to "Go to the ER now." This is a content-prior fact, not a position artifact: 4B has a learned aversion to the ER-content phrase regardless of letter label. The "capability scaling: only larger models recommend ER" framing survives the exhaustive test.
+
+**Where:** `results/option_order_shuffle_{4b,12b,qwen}{,_exhaustive}.json`, `results/option_order_shuffle_all_models.{json,md}` (K=3 cross-model table), `results/option_order_shuffle_exhaustive_summary.md` (K=3-vs-K=23 comparison + clustered-bootstrap CIs), `results/option_order_shuffle_clustered_bootstrap.{json,md}` (all CIs for both K values).
 
 ---
 

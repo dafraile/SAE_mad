@@ -267,7 +267,7 @@ Source: `results/option_order_shuffle_{4b,12b,qwen}.json` + `option_order_shuffl
 
 Falsifiable test of the "letter-binding interacts with content prior" hypothesis. For each of the 60 canonical cases, we generated K=3 random non-identity permutations of the letter→content mapping in the forced-letter scaffold and ran each model greedy forced-letter. Total 180 shuffled predictions per model.
 
-**Cross-model headline table:**
+**Cross-model headline table (K=3 baseline) — see `results/option_order_shuffle_exhaustive_summary.md` for the K=23 exhaustive results with case-clustered 95% CIs that should be the manuscript headline numbers:**
 
 | Signal | 4B | 12B | Qwen |
 |---|---|---|---|
@@ -277,7 +277,18 @@ Falsifiable test of the "letter-binding interacts with content prior" hypothesis
 | **Shuffled NL acc** | **71.7%** | **78.9%** | **72.8%** |
 | NF (4-way both judges) acc | 71.7% | 71.7% | 68.3% |
 | Shuffled − canonical NL | **+16.7 pp** | −2.8 pp | −2.2 pp |
-| **Shuffled − NF (convergence gap)** | **+0.0 pp (EXACT)** | +7.2 pp | +4.4 pp |
+| **Shuffled − NF (convergence gap)** | **+0.0 pp (K=3 lucky shuffle artifact)** | +7.2 pp | +4.4 pp |
+
+**K=23 exhaustive + case-clustered bootstrap (the headline numbers for the manuscript):**
+
+| Signal | 4B | 12B | Qwen |
+|---|---|---|---|
+| Same-letter % [95% CI] | **22.4% [21.4, 23.4]** | **20.8% [18.6, 23.0]** | 23.3% [20.5, 26.5] |
+| Same-content % [95% CI] | 64.5% [55.9, 73.0] | 80.3% [73.6, 86.6] | 82.6% [76.2, 88.4] |
+| Shuffled NL acc [95% CI] | 69.8% [60.7, 78.3] | 76.3% [66.3, 85.3] | 75.4% [66.0, 84.5] |
+| **Shuffled − NF** | **−1.9 pp (CI contains NF)** | +4.6 pp | +7.1 pp |
+
+**Honesty correction on 4B (added 2026-05-22 after reviewer K=23 audit):** the K=3 "shuffled NL = NF = 71.7% exactly" was a lucky-shuffle coincidence. The K=23 estimate is 69.8% with 95% CI [60.7%, 78.3%] which *contains* NF (71.7%). The corrected manuscript claim should be **"shuffled NL accuracy is statistically indistinguishable from NF accuracy at 4B"** rather than "exactly equal." The qualitative story (canonical letter-binding × content prior explains essentially all of 4B's format penalty) survives.
 
 **Three big findings:**
 
