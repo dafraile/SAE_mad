@@ -348,7 +348,33 @@ At both scales, the letter prediction is driven by features other than the v3-va
 
 > "We test the reviewer's hypothesised 'scaffold-primary, medical-partial' decision-token state directly via linear logit-lens decomposition of the A/B/C/D letter logits. At both 4B (L29) and 12B (L31), the three v3-validated medical-content features have *zero activation* at the last prompt position in 60/60 cases. The letter prediction is decoded by approximately 50 other features that *are* active at that position, none of which are the contrastively-identified medical-content detectors. Combined with §4.3's finding that medical features peak in the shared clinical vignette content in 81–100% of (case × feature) combinations, this gives a clean mechanistic picture: medical content is internally represented during clinical-narrative processing but is not in the letter-decision pathway. The clinical content was 'received' but the output-mapping circuit doesn't draw on the same features that detected it."
 
-**Caveat (be honest about it):** the "scaffold-proxy" features we used (top 30 by `B_max_content - B_max_vignette` from the masked-invariance run) are features that *peak* somewhere in B's scaffold positions — they may not be the same features that fire *at the specific decision token*. A cleaner taxonomy would re-identify "decision-token-firing features" directly from B_decision activations and characterize them via top-activating contexts. That's future work; the current evidence already shows medical features are 0-active at the decision token, which is the load-bearing claim.
+**Caveat (be honest about it):** the "scaffold-proxy" features we used (top 30 by `B_max_content - B_max_vignette` from the masked-invariance run) are features that *peak* somewhere in B's scaffold positions — they may not be the same features that fire *at the specific decision token*. See §2j below for the proper decision-token-firing analysis using saved B_decision/D_decision dumps.
+
+### 2j. Decision-token feature characterization (added 2026-05-22)
+
+Source: `results/decision_token_top_features_{4b,12b,qwen}.json` + `_summary.md` (script `paper/scripts/decision_token_top_features.py`).
+
+Direct test of the reviewer's "scaffold-primary, medical-partial at NL pre-generation" framing using saved decision-token activation vectors. For each case, identify top-20 features by activation at the NL decision token (`B_decision`) and at the NF decision token (`D_decision`). Quantify (a) overlap, (b) where NL-only features peak in B, (c) where NF-only features peak in D.
+
+| Model | NL∩NF top-20 (Jaccard) | NL-only features peaking in **B scaffold** | NF-only features peaking in **D vignette** | v3 medical in NL top-20 | v3 medical in NF top-20 |
+|---|---|---|---|---|---|
+| 4B  | **0.000** | **87.0%** | 27.8% | 0/60 | 0/60 |
+| 12B | **0.001** | **88.3%** | 8.9% | 0/60 | 0/60 |
+| Qwen | 0.324 | **94.7%** | 10.4% | 0/60 | 0/60 |
+
+**Three findings, each more direct than the logit-lens version above:**
+
+1. **NL and NF use essentially disjoint top-20 feature sets at the decision token at both Gemma scales** (Jaccard overlap ≈ 0 across all 60 cases at each scale). Different format → completely different computational pathway at the decision token. At Qwen the overlap rises to ~33%, but the asymmetry pattern still holds.
+
+2. **87–95% of NL-only top-20 decision-token features peak on B's scaffold tokens** across all three models. Direct mechanistic confirmation of "scaffold-primary at NL." The feature pool driving forced-letter prediction is dominated by features that fire on the answer-key scaffold text, not on the vignette.
+
+3. **v3 medical features are 0/60 in NL's top-20 AND 0/60 in NF's top-20 at every model.** Combined with the §2i logit-attribution finding that medical features are 0-active at the NL decision token in 60/60 cases at 4B and 12B, the cleanest framing is **medical-absent at the decision token, not medical-partial.**
+
+**Paper move:** §2j should replace the caveated §2i framing. Suggested wording:
+
+> "At the NL pre-generation position, top-20 active features are essentially disjoint from those at the NF pre-generation position (Jaccard ≈ 0 at 4B and 12B, ≈ 0.32 at Qwen). Of the NL-unique top-20 features at every model, 87–95% have their peak activation on the forced-letter scaffold tokens (the 'Reply with exactly one letter' instruction and the A/B/C/D answer-key bullets). The v3-validated medical-content features are not in the top-20 at either NL or NF pre-generation positions at any model (0/60 across all three). Combined with the masked-invariance finding (§4.3) that medical features peak inside the shared clinical vignette in 81–100% of (case × feature) combinations, the mechanistic picture is: medical content IS represented during clinical-narrative processing, but by the time the model reaches the pre-generation position, the feature pool has shifted to scaffold-firing features (NL) or chat-template-suffix features (NF), with medical-content features absent in both. The forced-letter mechanism is reading the scaffold, not the patient narrative."
+
+This finding deserves its own §4.4 or §4.5 sub-section (perhaps "Decision-token feature analysis") given how clean and direct it is.
 
 Medical features stay invariant across all behavioral strata at Qwen;
 random features differ noticeably. Same direction as 4B and 12B.
