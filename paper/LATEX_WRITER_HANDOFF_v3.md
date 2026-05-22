@@ -261,6 +261,64 @@ Suggested phrasing for §3.1:
 
 > "The NL and NF prompts for a given case share the patient vignette text verbatim and differ only by an appended forced-letter scaffold in NL. Under causal masking, hidden states at vignette token positions cannot depend on later scaffold tokens, so SAE feature activations at vignette positions are byte-identical between NL and NF at the Gemma scales. At Qwen3-8B the BPE merges the trailing punctuation differently depending on what follows the vignette, which shifts the divergence one token earlier than the vignette end; the remaining ~99.6% of vignette tokens are byte-identical at Qwen too."
 
+### 2h. The 4B "content prior, not position bias" finding (added 2026-05-22)
+
+Source: `results/option_order_shuffle_4b.json` (script `paper/scripts/option_order_shuffle_4b.py`).
+
+Falsifiable test of the "NL = B when gold = C" pattern at 4B. For each of the 60 cases, we generated K=3 random non-identity permutations of the letter-to-content mapping in the forced-letter scaffold and ran 4B greedy forced-letter on each. Total 180 shuffled predictions.
+
+**Smoking gun:**
+
+| Signal | Value | Reading |
+|---|---|---|
+| Same **letter** under shuffle (e.g. picks "B" regardless of content) | **38/180 = 21.1%** | LOW → NOT a position bias |
+| Same **content** under shuffle (e.g. picks "see doctor 24-48h" regardless of letter) | **121/180 = 67.2%** | HIGH → CONTENT PRIOR |
+| Original NL accuracy (canonical mapping) | 33/60 = 55.0% | baseline |
+| **Shuffled NL accuracy** | **129/180 = 71.7%** | accuracy goes UP under shuffles |
+| Original NL letter distribution | A:3 B:32 C:25 **D:0** | model never picks ER |
+| Shuffled content distribution | Fine:4 Weeks:49 **24-48h:127** **ER:0** | dominant content prior toward 24-48h, never picks ER |
+
+**Interpretation:** at 4B, the forced-letter output is driven by a *content prior* — the model has a learned preference for the "see a doctor within 24–48 hours" acuity content regardless of which letter that content is assigned to. The canonical scaffold (A=monitor, B=weeks, C=24-48h, D=ER) interacts with this content prior in a way that hurts accuracy on gold-C cases: the model wants to emit the 24-48h-content letter but the specific canonical mapping routes it into the letter for "see my doctor in next few weeks" (B) on cases where the textual context primes the weaker-urgency phrasing.
+
+**The model never picks "Go to ER now"** in any of the 240 forced-letter predictions (60 original + 180 shuffles). The content prior is strongly biased against the highest-acuity recommendation, regardless of letter or position.
+
+**Paper move:** the §4.2 rewrite should call this out by name. The "B-instead-of-C" pattern is no longer a vague format penalty — it's a measured content prior interacting with a specific scaffold structure. Position-2 default is ruled out. Suggested wording:
+
+> "At 4B, an option-order randomization experiment (60 cases × 3 random non-identity permutations) shows that the forced-letter output is content-driven, not position-driven: across shuffles, the model picks the same acuity content 67.2% of the time but the same letter only 21.1% of the time. The model's dominant content prior is 'See a doctor within 24-48 hours' (picked 127 of 180 shuffled predictions), and it never emits 'Go to the ER now' regardless of letter assignment. The canonical A-B-C-D label structure interacts with this content prior to produce the systematic 'NL=B when gold=C' miscalibration observed in §4.1. Under shuffled labellings, 4B accuracy rises from 55% to 71.7%."
+
+### 2i. Decision-token logit attribution: v3 medical features are silent at the decision token (added 2026-05-22)
+
+Source: `results/decision_token_logit_attribution_4b.json` and `_12b.json` (script `paper/scripts/decision_token_logit_attribution.py`).
+
+For each of the 60 NL prompts at 4B and 12B, at the last prompt position (where the model emits the forced letter), we (a) capture the residual at the SAE layer, (b) SAE-encode to get feature activations, (c) for each active feature compute the linear contribution `act_i * W_dec[i] @ W_unembed[L]` for each letter L ∈ {A,B,C,D}. This is the standard logit-lens decomposition for SAE features (nostalgebraist 2020). It ignores non-linearities between the SAE layer and the unembedding — magnitudes are approximate, directional breakdown is informative.
+
+**Headline finding:**
+
+> The v3-validated medical-content features have ZERO activation at the decision token in 60/60 cases at both 4B and 12B.
+
+This is the strongest mechanistic answer to the reviewer's Concern 5. The combined picture across the two Phase-1b analyses:
+
+| Stage | Where do medical features fire? |
+|---|---|
+| Clinical-narrative tokens (shared vignette) | **Yes**, in 81–100% of (case × feature) peak positions across all three models |
+| B-prompt scaffold tokens | Minimal |
+| Decision token (last prompt position) | **No, 0/60 cases active at 4B; 0/60 at 12B** |
+
+Linear logit-lens decomposition of mean contribution to predicted letter (across 60 cases):
+
+| Model | Medical (v3) | Scaffold-proxy (top 30) | Other (~47 features) |
+|---|---|---|---|
+| 4B  L29 | 0.0   | 2.0   | **2627** |
+| 12B L31 | 0.0   | 199   | **266**  |
+
+At both scales, the letter prediction is driven by features other than the v3-validated medical-content detectors. At 12B the scaffold-proxy and "other" categories both contribute substantially; at 4B "other" dominates strongly (the scaffold-proxy set defined from the masked-invariance run may not catch the format-related features that actually fire at the decision token — that's a known limitation of using the B_max_content–B_max_vignette proxy).
+
+**Paper move:** elevate to a new sub-section (perhaps §4.4 or as a Phase-2 mechanistic-invariance complement). Suggested wording:
+
+> "We test the reviewer's hypothesised 'scaffold-primary, medical-partial' decision-token state directly via linear logit-lens decomposition of the A/B/C/D letter logits. At both 4B (L29) and 12B (L31), the three v3-validated medical-content features have *zero activation* at the last prompt position in 60/60 cases. The letter prediction is decoded by approximately 50 other features that *are* active at that position, none of which are the contrastively-identified medical-content detectors. Combined with §4.3's finding that medical features peak in the shared clinical vignette content in 81–100% of (case × feature) combinations, this gives a clean mechanistic picture: medical content is internally represented during clinical-narrative processing but is not in the letter-decision pathway. The clinical content was 'received' but the output-mapping circuit doesn't draw on the same features that detected it."
+
+**Caveat (be honest about it):** the "scaffold-proxy" features we used (top 30 by `B_max_content - B_max_vignette` from the masked-invariance run) are features that *peak* somewhere in B's scaffold positions — they may not be the same features that fire *at the specific decision token*. A cleaner taxonomy would re-identify "decision-token-firing features" directly from B_decision activations and characterize them via top-activating contexts. That's future work; the current evidence already shows medical features are 0-active at the decision token, which is the load-bearing claim.
+
 Medical features stay invariant across all behavioral strata at Qwen;
 random features differ noticeably. Same direction as 4B and 12B.
 
