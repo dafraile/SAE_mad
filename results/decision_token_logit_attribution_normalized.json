@@ -1,0 +1,1878 @@
+{
+  "4b": {
+    "n_cases_used": 60,
+    "medical": {
+      "abs_fraction_mean": 0.0,
+      "abs_fraction_median": 0.0,
+      "abs_fraction_p5": 0.0,
+      "abs_fraction_p95": 0.0,
+      "margin_share_mean": 0.0,
+      "margin_share_median": 0.0,
+      "margin_share_p5": 0.0,
+      "margin_share_p95": 0.0
+    },
+    "scaffold": {
+      "abs_fraction_mean": 0.0011469303209915584,
+      "abs_fraction_median": 0.0009756030300368613,
+      "abs_fraction_p5": 0.0,
+      "abs_fraction_p95": 0.003628696448680196,
+      "margin_share_mean": 0.0012359177036319177,
+      "margin_share_median": 0.0,
+      "margin_share_p5": -0.004071897994448948,
+      "margin_share_p95": 0.01045819030146889
+    },
+    "other": {
+      "abs_fraction_mean": 0.9988530696790083,
+      "abs_fraction_median": 0.9990243969699631,
+      "abs_fraction_p5": 0.9963713035513199,
+      "abs_fraction_p95": 1.0,
+      "margin_share_mean": 0.998764082296368,
+      "margin_share_median": 1.0,
+      "margin_share_p5": 0.9895418096985311,
+      "margin_share_p95": 1.004071897994449
+    },
+    "model": "google/gemma-3-4b-it",
+    "layer": 29,
+    "model_tag": "4b",
+    "per_case_normalized": [
+      {
+        "case_id": "E1",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0009834626274597324,
+          "other": 0.9990165373725403
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.003116569375150358,
+          "other": 1.0031165693751503
+        }
+      },
+      {
+        "case_id": "E2",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0010222045341455718,
+          "other": 0.9989777954658544
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.003494398935129053,
+          "other": 1.003494398935129
+        }
+      },
+      {
+        "case_id": "E3",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "E4",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "E5",
+        "pred_letter": "A",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.005599804907556031,
+          "other": 0.9944001950924439
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.01039758625522229,
+          "other": 0.9896024137447778
+        }
+      },
+      {
+        "case_id": "E6",
+        "pred_letter": "C",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "E7",
+        "pred_letter": "C",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "E8",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0011737093621732011,
+          "other": 0.9988262906378268
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.0030201060111495607,
+          "other": 1.0030201060111497
+        }
+      },
+      {
+        "case_id": "E9",
+        "pred_letter": "C",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0026911714086281483,
+          "other": 0.9973088285913718
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.005572714742679412,
+          "other": 0.9944272852573206
+        }
+      },
+      {
+        "case_id": "E10",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "E11",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "E12",
+        "pred_letter": "C",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "E13",
+        "pred_letter": "C",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0025663617112164088,
+          "other": 0.9974336382887836
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.004036138123414971,
+          "other": 0.995963861876585
+        }
+      },
+      {
+        "case_id": "E14",
+        "pred_letter": "C",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0033020029602694634,
+          "other": 0.9966979970397305
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.005045179217695995,
+          "other": 0.994954820782304
+        }
+      },
+      {
+        "case_id": "E15",
+        "pred_letter": "C",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0027136596991800097,
+          "other": 0.99728634030082
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.00733734523440043,
+          "other": 0.9926626547655996
+        }
+      },
+      {
+        "case_id": "E16",
+        "pred_letter": "C",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "E17",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0010389797550280414,
+          "other": 0.9989610202449719
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.0029767923661307,
+          "other": 1.0029767923661308
+        }
+      },
+      {
+        "case_id": "E18",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0012840477633550063,
+          "other": 0.998715952236645
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.003373374660246736,
+          "other": 1.0033733746602467
+        }
+      },
+      {
+        "case_id": "E19",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "E20",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0010091188160118534,
+          "other": 0.9989908811839882
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.0027663333297536317,
+          "other": 1.0027663333297536
+        }
+      },
+      {
+        "case_id": "E21",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0010001275617873876,
+          "other": 0.9989998724382126
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.0031453760942294017,
+          "other": 1.0031453760942295
+        }
+      },
+      {
+        "case_id": "E22",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "E23",
+        "pred_letter": "B",
+        "runner_up_letter": "A",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "E24",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "E25",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "E26",
+        "pred_letter": "C",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0025606039404578317,
+          "other": 0.9974393960595421
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.00838357845667193,
+          "other": 0.9916164215433281
+        }
+      },
+      {
+        "case_id": "E27",
+        "pred_letter": "C",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.002613668072550645,
+          "other": 0.9973863319274494
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.01160966718015438,
+          "other": 0.9883903328198457
+        }
+      },
+      {
+        "case_id": "F1",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": -0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "F2",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": -0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "F3",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "F4",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": -0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "F5",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.002297948158216008,
+          "other": 0.997702051841784
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.02305971247424912,
+          "other": 0.9769402875257509
+        }
+      },
+      {
+        "case_id": "F6",
+        "pred_letter": "C",
+        "runner_up_letter": "D",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "F7",
+        "pred_letter": "C",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "F8",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0011212395867730123,
+          "other": 0.998878760413227
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.005798303022400835,
+          "other": 1.005798303022401
+        }
+      },
+      {
+        "case_id": "F9",
+        "pred_letter": "C",
+        "runner_up_letter": "D",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0028186004917835107,
+          "other": 0.9971813995082165
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.002805409506812763,
+          "other": 0.9971945904931873
+        }
+      },
+      {
+        "case_id": "F10",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0012208471378036597,
+          "other": 0.9987791528621963
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.004149122567565493,
+          "other": 1.0041491225675654
+        }
+      },
+      {
+        "case_id": "F11",
+        "pred_letter": "C",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "F12",
+        "pred_letter": "C",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "F13",
+        "pred_letter": "C",
+        "runner_up_letter": "D",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0032443419749096174,
+          "other": 0.9967556580250904
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0028274470664569266,
+          "other": 0.9971725529335431
+        }
+      },
+      {
+        "case_id": "F14",
+        "pred_letter": "C",
+        "runner_up_letter": "D",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0032369275688457822,
+          "other": 0.9967630724311543
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0028399929208147174,
+          "other": 0.9971600070791853
+        }
+      },
+      {
+        "case_id": "F15",
+        "pred_letter": "C",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "F16",
+        "pred_letter": "C",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "F17",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "F18",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.00096774343261399,
+          "other": 0.999032256567386
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.002738858356574683,
+          "other": 1.0027388583565746
+        }
+      },
+      {
+        "case_id": "F19",
+        "pred_letter": "A",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0015516987772314654,
+          "other": 0.9984483012227685
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.018131697181674105,
+          "other": 0.9818683028183259
+        }
+      },
+      {
+        "case_id": "F20",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0010960443468487875,
+          "other": 0.9989039556531513
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.00411816367529066,
+          "other": 1.0041181636752907
+        }
+      },
+      {
+        "case_id": "F21",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0012394169826274214,
+          "other": 0.9987605830173726
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.003900846572099115,
+          "other": 1.003900846572099
+        }
+      },
+      {
+        "case_id": "F22",
+        "pred_letter": "C",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "F23",
+        "pred_letter": "A",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0016679301123513702,
+          "other": 0.9983320698876487
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0016788598388882527,
+          "other": 0.9983211401611117
+        }
+      },
+      {
+        "case_id": "F24",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "F25",
+        "pred_letter": "C",
+        "runner_up_letter": "D",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.003845685271146665,
+          "other": 0.9961543147288533
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.003500535082162393,
+          "other": 0.9964994649178376
+        }
+      },
+      {
+        "case_id": "F26",
+        "pred_letter": "C",
+        "runner_up_letter": "D",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0034920931998926224,
+          "other": 0.9965079068001074
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0030401209111910123,
+          "other": 0.996959879088809
+        }
+      },
+      {
+        "case_id": "F27",
+        "pred_letter": "C",
+        "runner_up_letter": "D",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0036172759843398562,
+          "other": 0.9963827240156602
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0031853319898424645,
+          "other": 0.9968146680101575
+        }
+      },
+      {
+        "case_id": "MH1",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "MH2",
+        "pred_letter": "C",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.002644887849984179,
+          "other": 0.9973551121500158
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0038565258136916206,
+          "other": 0.9961434741863083
+        }
+      },
+      {
+        "case_id": "MH3",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.001142828058389525,
+          "other": 0.9988571719416105
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.004069462958615174,
+          "other": 1.004069462958615
+        }
+      },
+      {
+        "case_id": "NH1",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": -0.0,
+          "other": 1.0
+        }
+      },
+      {
+        "case_id": "NH2",
+        "pred_letter": "C",
+        "runner_up_letter": "D",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.004051387205916725,
+          "other": 0.9959486127940833
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0035149281462276893,
+          "other": 0.9964850718537723
+        }
+      },
+      {
+        "case_id": "NH3",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.0,
+          "other": 1.0
+        }
+      }
+    ]
+  },
+  "12b": {
+    "n_cases_used": 60,
+    "medical": {
+      "abs_fraction_mean": 0.0,
+      "abs_fraction_median": 0.0,
+      "abs_fraction_p5": 0.0,
+      "abs_fraction_p95": 0.0,
+      "margin_share_mean": 0.0,
+      "margin_share_median": 0.0,
+      "margin_share_p5": 0.0,
+      "margin_share_p95": 0.0
+    },
+    "scaffold": {
+      "abs_fraction_mean": 0.5029581101553368,
+      "abs_fraction_median": 0.5035023218741725,
+      "abs_fraction_p5": 0.4558586026103965,
+      "abs_fraction_p95": 0.5492504854988997,
+      "margin_share_mean": 0.26496913769163094,
+      "margin_share_median": 0.32299323973566507,
+      "margin_share_p5": -0.27393080192085534,
+      "margin_share_p95": 0.6361968437822948
+    },
+    "other": {
+      "abs_fraction_mean": 0.4970418898446633,
+      "abs_fraction_median": 0.49649767812582746,
+      "abs_fraction_p5": 0.4507495145011003,
+      "abs_fraction_p95": 0.5441413973896034,
+      "margin_share_mean": 0.7350308623083692,
+      "margin_share_median": 0.6770067602643349,
+      "margin_share_p5": 0.36380315621770504,
+      "margin_share_p95": 1.2739308019208546
+    },
+    "model": "google/gemma-3-12b-it",
+    "layer": 31,
+    "model_tag": "12b",
+    "per_case_normalized": [
+      {
+        "case_id": "E1",
+        "pred_letter": "B",
+        "runner_up_letter": "A",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.4829447181646549,
+          "other": 0.5170552818353451
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.41108592034722763,
+          "other": 0.5889140796527723
+        }
+      },
+      {
+        "case_id": "E2",
+        "pred_letter": "C",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5037055324730294,
+          "other": 0.4962944675269706
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.26207547718507856,
+          "other": 0.7379245228149214
+        }
+      },
+      {
+        "case_id": "E3",
+        "pred_letter": "C",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.4838037692220869,
+          "other": 0.5161962307779131
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.2180851558187368,
+          "other": 0.7819148441812632
+        }
+      },
+      {
+        "case_id": "E4",
+        "pred_letter": "C",
+        "runner_up_letter": "D",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5309164828881147,
+          "other": 0.46908351711188534
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.2861698252043062,
+          "other": 0.7138301747956938
+        }
+      },
+      {
+        "case_id": "E5",
+        "pred_letter": "A",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.4562070235010367,
+          "other": 0.5437929764989633
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.24934501974583217,
+          "other": 0.7506549802541678
+        }
+      },
+      {
+        "case_id": "E6",
+        "pred_letter": "C",
+        "runner_up_letter": "A",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5492434841109193,
+          "other": 0.4507565158890807
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.2490341668601889,
+          "other": 1.249034166860189
+        }
+      },
+      {
+        "case_id": "E7",
+        "pred_letter": "C",
+        "runner_up_letter": "D",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5387554664763382,
+          "other": 0.46124453352366174
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.2631677425519017,
+          "other": 0.7368322574480983
+        }
+      },
+      {
+        "case_id": "E8",
+        "pred_letter": "B",
+        "runner_up_letter": "A",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.46294793905024334,
+          "other": 0.5370520609497567
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.39439275609361046,
+          "other": 0.6056072439063895
+        }
+      },
+      {
+        "case_id": "E9",
+        "pred_letter": "C",
+        "runner_up_letter": "D",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5304387303525726,
+          "other": 0.46956126964742734
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.2796221124357384,
+          "other": 0.7203778875642616
+        }
+      },
+      {
+        "case_id": "E10",
+        "pred_letter": "C",
+        "runner_up_letter": "D",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5151867131457265,
+          "other": 0.4848132868542735
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.3602831225935788,
+          "other": 0.6397168774064212
+        }
+      },
+      {
+        "case_id": "E11",
+        "pred_letter": "C",
+        "runner_up_letter": "D",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.48917867687655653,
+          "other": 0.5108213231234435
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.2324116210326395,
+          "other": 0.7675883789673605
+        }
+      },
+      {
+        "case_id": "E12",
+        "pred_letter": "C",
+        "runner_up_letter": "D",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5202823825706122,
+          "other": 0.4797176174293878
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.27130671437207776,
+          "other": 0.7286932856279222
+        }
+      },
+      {
+        "case_id": "E13",
+        "pred_letter": "D",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5396053277820246,
+          "other": 0.46039467221797536
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 1.5719311773655393,
+          "other": -0.5719311773655393
+        }
+      },
+      {
+        "case_id": "E14",
+        "pred_letter": "C",
+        "runner_up_letter": "D",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5028836276879839,
+          "other": 0.4971163723120161
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.36920768793742037,
+          "other": 0.6307923120625796
+        }
+      },
+      {
+        "case_id": "E15",
+        "pred_letter": "D",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5190587559018742,
+          "other": 0.4809412440981257
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 1.1786321849855046,
+          "other": -0.17863218498550462
+        }
+      },
+      {
+        "case_id": "E16",
+        "pred_letter": "C",
+        "runner_up_letter": "D",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5197009199862692,
+          "other": 0.4802990800137308
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.4155663875482606,
+          "other": 0.5844336124517394
+        }
+      },
+      {
+        "case_id": "E17",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.473791321866024,
+          "other": 0.526208678133976
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.4070232842281692,
+          "other": 0.5929767157718309
+        }
+      },
+      {
+        "case_id": "E18",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.4753318118749253,
+          "other": 0.5246681881250747
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.3780704081504736,
+          "other": 0.6219295918495263
+        }
+      },
+      {
+        "case_id": "E19",
+        "pred_letter": "B",
+        "runner_up_letter": "A",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.48873799862358025,
+          "other": 0.5112620013764198
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.33351603562756876,
+          "other": 0.6664839643724313
+        }
+      },
+      {
+        "case_id": "E20",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.478201020458608,
+          "other": 0.521798979541392
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.37558882534151183,
+          "other": 0.6244111746584882
+        }
+      },
+      {
+        "case_id": "E21",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5027245933590857,
+          "other": 0.49727540664091435
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.3407017077921033,
+          "other": 0.6592982922078967
+        }
+      },
+      {
+        "case_id": "E22",
+        "pred_letter": "D",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5075191441108761,
+          "other": 0.4924808558891239
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.4771897833512632,
+          "other": 0.5228102166487367
+        }
+      },
+      {
+        "case_id": "E23",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.4673960329066595,
+          "other": 0.5326039670933406
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.3931458736767321,
+          "other": 0.6068541263232679
+        }
+      },
+      {
+        "case_id": "E24",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.4806675567806126,
+          "other": 0.5193324432193874
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.40298433815833024,
+          "other": 0.5970156618416698
+        }
+      },
+      {
+        "case_id": "E25",
+        "pred_letter": "C",
+        "runner_up_letter": "D",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.514138431443532,
+          "other": 0.485861568556468
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.32031275788129393,
+          "other": 0.679687242118706
+        }
+      },
+      {
+        "case_id": "E26",
+        "pred_letter": "D",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5115808107139603,
+          "other": 0.4884191892860397
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.45570662667119816,
+          "other": 0.5442933733288019
+        }
+      },
+      {
+        "case_id": "E27",
+        "pred_letter": "D",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5243223303501711,
+          "other": 0.475677669649829
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.4499941027943127,
+          "other": 0.5500058972056873
+        }
+      },
+      {
+        "case_id": "F1",
+        "pred_letter": "C",
+        "runner_up_letter": "A",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5255915281219044,
+          "other": 0.47440847187809565
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.19989024734491942,
+          "other": 1.1998902473449193
+        }
+      },
+      {
+        "case_id": "F2",
+        "pred_letter": "C",
+        "runner_up_letter": "A",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5235305832444056,
+          "other": 0.47646941675559434
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.26010900245989765,
+          "other": 1.2601090024598978
+        }
+      },
+      {
+        "case_id": "F3",
+        "pred_letter": "C",
+        "runner_up_letter": "A",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5041036242529336,
+          "other": 0.49589637574706635
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.23786780171413274,
+          "other": 1.2378678017141327
+        }
+      },
+      {
+        "case_id": "F4",
+        "pred_letter": "C",
+        "runner_up_letter": "D",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5090724886380306,
+          "other": 0.49092751136196944
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.2705535445070841,
+          "other": 0.729446455492916
+        }
+      },
+      {
+        "case_id": "F5",
+        "pred_letter": "A",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.484295335134927,
+          "other": 0.5157046648650729
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.13609404387941965,
+          "other": 0.8639059561205803
+        }
+      },
+      {
+        "case_id": "F6",
+        "pred_letter": "C",
+        "runner_up_letter": "A",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5428734311157787,
+          "other": 0.4571265688842214
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.12780124392440315,
+          "other": 1.1278012439244032
+        }
+      },
+      {
+        "case_id": "F7",
+        "pred_letter": "C",
+        "runner_up_letter": "A",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5493835118705276,
+          "other": 0.45061648812947247
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.245680123172343,
+          "other": 1.2456801231723431
+        }
+      },
+      {
+        "case_id": "F8",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.43182157264788995,
+          "other": 0.56817842735211
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.3791258707392286,
+          "other": 0.6208741292607715
+        }
+      },
+      {
+        "case_id": "F9",
+        "pred_letter": "C",
+        "runner_up_letter": "D",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5223906949148966,
+          "other": 0.4776093050851034
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.2622825044706483,
+          "other": 0.7377174955293516
+        }
+      },
+      {
+        "case_id": "F10",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.4890172814433332,
+          "other": 0.5109827185566668
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.32567372159003616,
+          "other": 0.6743262784099638
+        }
+      },
+      {
+        "case_id": "F11",
+        "pred_letter": "C",
+        "runner_up_letter": "A",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5399337641453124,
+          "other": 0.4600662358546876
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.21411557558256547,
+          "other": 1.2141155755825654
+        }
+      },
+      {
+        "case_id": "F12",
+        "pred_letter": "C",
+        "runner_up_letter": "A",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5221438303239911,
+          "other": 0.47785616967600886
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.20173325855416097,
+          "other": 1.201733258554161
+        }
+      },
+      {
+        "case_id": "F13",
+        "pred_letter": "D",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.4903194413116906,
+          "other": 0.5096805586883094
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.5329547773554192,
+          "other": 0.4670452226445808
+        }
+      },
+      {
+        "case_id": "F14",
+        "pred_letter": "D",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.4981441819453856,
+          "other": 0.5018558180546144
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.632792598480395,
+          "other": 0.367207401519605
+        }
+      },
+      {
+        "case_id": "F15",
+        "pred_letter": "C",
+        "runner_up_letter": "D",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.54290400092661,
+          "other": 0.45709599907339005
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.2611975670907771,
+          "other": 0.7388024329092229
+        }
+      },
+      {
+        "case_id": "F16",
+        "pred_letter": "C",
+        "runner_up_letter": "D",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5065573282003906,
+          "other": 0.4934426717996094
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.34163842162535935,
+          "other": 0.6583615783746406
+        }
+      },
+      {
+        "case_id": "F17",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.45731258837512395,
+          "other": 0.5426874116248761
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.4178808044092549,
+          "other": 0.5821191955907451
+        }
+      },
+      {
+        "case_id": "F18",
+        "pred_letter": "B",
+        "runner_up_letter": "A",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.44923860568823276,
+          "other": 0.5507613943117673
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.4362677073425102,
+          "other": 0.5637322926574898
+        }
+      },
+      {
+        "case_id": "F19",
+        "pred_letter": "B",
+        "runner_up_letter": "A",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5785194515147454,
+          "other": 0.4214805484852546
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.4159533496327821,
+          "other": 0.5840466503672179
+        }
+      },
+      {
+        "case_id": "F20",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.4452983223575952,
+          "other": 0.5547016776424049
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.31003745355644446,
+          "other": 0.6899625464435556
+        }
+      },
+      {
+        "case_id": "F21",
+        "pred_letter": "B",
+        "runner_up_letter": "A",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.47416693462523796,
+          "other": 0.525833065374762
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.4403726100518118,
+          "other": 0.5596273899481883
+        }
+      },
+      {
+        "case_id": "F22",
+        "pred_letter": "C",
+        "runner_up_letter": "D",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.536160913657638,
+          "other": 0.46383908634236204
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.2810701014228089,
+          "other": 0.7189298985771911
+        }
+      },
+      {
+        "case_id": "F23",
+        "pred_letter": "A",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.4748861360765963,
+          "other": 0.5251138639234036
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.2318405465525067,
+          "other": 0.7681594534474933
+        }
+      },
+      {
+        "case_id": "F24",
+        "pred_letter": "B",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5519179219605981,
+          "other": 0.448082078039402
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.5918327002165984,
+          "other": 0.4081672997834016
+        }
+      },
+      {
+        "case_id": "F25",
+        "pred_letter": "D",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5027932262547085,
+          "other": 0.4972067737452916
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.7008775045183945,
+          "other": 0.29912249548160547
+        }
+      },
+      {
+        "case_id": "F26",
+        "pred_letter": "D",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.49095566616368475,
+          "other": 0.5090443338363152
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.44713825908448673,
+          "other": 0.5528617409155133
+        }
+      },
+      {
+        "case_id": "F27",
+        "pred_letter": "D",
+        "runner_up_letter": "C",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.4923143129115603,
+          "other": 0.5076856870884398
+        },
+        "margin_share": {
+          "medical": -0.0,
+          "scaffold": 0.4257458637126405,
+          "other": 0.5742541362873594
+        }
+      },
+      {
+        "case_id": "MH1",
+        "pred_letter": "C",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5120287971185431,
+          "other": 0.4879712028814569
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.2620417248058834,
+          "other": 0.7379582751941166
+        }
+      },
+      {
+        "case_id": "MH2",
+        "pred_letter": "C",
+        "runner_up_letter": "A",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5032991112753157,
+          "other": 0.4967008887246844
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.902566278011392,
+          "other": 1.9025662780113919
+        }
+      },
+      {
+        "case_id": "MH3",
+        "pred_letter": "C",
+        "runner_up_letter": "B",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.481875564906039,
+          "other": 0.518124435093961
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.30689445829000633,
+          "other": 0.6931055417099937
+        }
+      },
+      {
+        "case_id": "NH1",
+        "pred_letter": "C",
+        "runner_up_letter": "A",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.47754411241756056,
+          "other": 0.5224558875824394
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.5365449916790525,
+          "other": 1.5365449916790523
+        }
+      },
+      {
+        "case_id": "NH2",
+        "pred_letter": "C",
+        "runner_up_letter": "A",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.48192488119052446,
+          "other": 0.5180751188094755
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": -0.6993739151853146,
+          "other": 1.6993739151853147
+        }
+      },
+      {
+        "case_id": "NH3",
+        "pred_letter": "C",
+        "runner_up_letter": "D",
+        "abs_fraction": {
+          "medical": 0.0,
+          "scaffold": 0.5158968619104112,
+          "other": 0.4841031380895889
+        },
+        "margin_share": {
+          "medical": 0.0,
+          "scaffold": 0.26508208376131526,
+          "other": 0.7349179162386847
+        }
+      }
+    ]
+  }
+}
