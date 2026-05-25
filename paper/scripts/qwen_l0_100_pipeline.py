@@ -411,12 +411,36 @@ def main():
     print(f"  NL-NF paired Δ (med-rnd): {nl_nf_agg['paired_diff_mean']:+.4f}  CI {nl_nf_agg['paired_diff_95ci']}")
     print(f"  SL-SF paired Δ (med-rnd): {sl_sf_agg['paired_diff_mean']:+.4f}  CI {sl_sf_agg['paired_diff_95ci']}")
 
+    # Defensive incremental save: dump mechanistic aggregates BEFORE the
+    # logit-attribution step so a crash there doesn't lose the mechanistic
+    # data. (We learned this the hard way on the L0_100 first run.)
+    partial = {
+        "sae_repo": SAE_REPO, "layer": LAYER, "topk": TOPK,
+        "model_id": MODEL_ID, "n_cases": n_cases,
+        "feature_id": fid_out,
+        "NL_NF": nl_nf_agg,
+        "SL_SF": sl_sf_agg,
+        "per_case": per_case,
+        "_incremental": True,
+    }
+    (ROOT / "results/qwen_l0_100_masked_invariance.json").write_text(
+        json.dumps(partial, indent=2, default=str))
+    print(f"  [defensive save] wrote results/qwen_l0_100_masked_invariance.json (incremental)")
+
     # ===== Step 5: Decision-token logit attribution =====
     print("\n=== Step 5: decision-token logit attribution (NL only, matches paper) ===")
     W_U = model.lm_head.weight.data.T.to("cuda").float()  # [d_model, vocab]
     letter_ids = [letter_tokens[L] for L in "ABCD"]
     letter_dirs = W_U[:, letter_ids].cpu().numpy()  # [d_model, 4]
-    W_dec_cpu = sae.w_dec.cpu().float().numpy()    # [d_sae, d_model]
+    # Qwen-Scope's stored W_dec is [d_model, d_sae]; index as W_dec[:, f].T to
+    # get the [d_model] decoder column for feature f, then arrange as
+    # [n_active, d_model] for the matmul below.
+    W_dec_raw = sae.w_dec.cpu().float().numpy()
+    if W_dec_raw.shape[0] == sae.d_sae:
+        W_dec_cpu = W_dec_raw                       # already [d_sae, d_model]
+    else:
+        W_dec_cpu = W_dec_raw.T                     # transpose to [d_sae, d_model]
+    print(f"  W_dec shape (raw): {W_dec_raw.shape}; normalized to [d_sae, d_model] = {W_dec_cpu.shape}")
 
     # Active features at NL decision token per case
     nl_decision_arr = np.stack(cond_decision["NL"])      # [n_cases, d_sae]
