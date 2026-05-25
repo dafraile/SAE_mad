@@ -1,0 +1,43 @@
+{
+  "models": {
+    "4b": {
+      "n": 60,
+      "SL_acc": 58.333333333333336,
+      "NL_acc": 55.0,
+      "NF_both_acc": 71.66666666666667,
+      "NF_either_acc": 78.33333333333333,
+      "NF_unan_deferred_pct": 0.0,
+      "NF_unan_deferred_n": 0,
+      "SF_both_acc": 63.333333333333336,
+      "SF_either_acc": 73.33333333333333,
+      "SF_unan_deferred_pct": 6.666666666666667,
+      "SF_unan_deferred_n": 4
+    },
+    "12b": {
+      "n": 60,
+      "SL_acc": 81.66666666666667,
+      "NL_acc": 81.66666666666667,
+      "NF_both_acc": 71.66666666666667,
+      "NF_either_acc": 71.66666666666667,
+      "NF_unan_deferred_pct": 6.666666666666667,
+      "NF_unan_deferred_n": 4,
+      "SF_both_acc": 73.33333333333333,
+      "SF_either_acc": 80.0,
+      "SF_unan_deferred_pct": 3.3333333333333335,
+      "SF_unan_deferred_n": 2
+    },
+    "qwen": {
+      "n": 60,
+      "SL_acc": 75.0,
+      "NL_acc": 75.0,
+      "NF_both_acc": 68.33333333333333,
+      "NF_either_acc": 76.66666666666667,
+      "NF_unan_deferred_pct": 3.3333333333333335,
+      "NF_unan_deferred_n": 2,
+      "SF_both_acc": 70.0,
+      "SF_either_acc": 71.66666666666667,
+      "SF_unan_deferred_pct": 0.0,
+      "SF_unan_deferred_n": 0
+    }
+  }
+}

@@ -228,6 +228,41 @@ For each case, compute top-20 features by activation at the NL decision token an
 
 These came out of the reviewer-prompted investigation but are paper-strengthening contributions in their own right.
 
+### SF cell — completing the 2×2 input × output factorial (added 2026-05-25)
+
+Original Phase 0.5 / 3b / 4b runs covered SL, NL, NF and **deliberately skipped SF** (Structured input + Free-text output) for clinical-mismatch reasons (clinician-style notes + patient-facing free-text is a less canonical workflow). On user request, we filled in the missing 4th cell for 2×2 completeness ahead of v3 submission. SF prompt = `structured_forced_letter` with the "Reply with exactly one letter only. A/B/C/D" scaffold stripped; the opening question persists and drives the free-text response. Greedy, max_new_tokens=2000.
+
+**Full 2×2 (LLM-judge 4-way both-judges-correct):**
+
+|  | Forced-Letter output | Free-Text output | NL−NF gap | SL−SF gap |
+|---|---|---|---|---|
+| **4B structured**    | SL: 58.3% | SF: **63.3%** | – | **−5.0 pp** |
+| **4B natural**       | NL: 55.0% | NF: **71.7%** | **−16.7 pp** | – |
+| **12B structured**   | SL: 81.7% | SF: **73.3%** | – | **+8.3 pp** |
+| **12B natural**      | NL: 81.7% | NF: 71.7% | **+10.0 pp** | – |
+| **Qwen structured**  | SL: 75.0% | SF: **70.0%** | – | **+5.0 pp** |
+| **Qwen natural**     | NL: 75.0% | NF: 68.3% | **+6.7 pp** | – |
+
+**Key finding: the format-effect inversion is consistent across input style.**
+
+- At **4B**, free-text > forced-letter in BOTH rows (NF > NL by 17 pp, SF > SL by 5 pp). Removing the forced-letter constraint helps at 4B regardless of input style; magnitude is larger with natural input.
+- At **12B**, forced-letter > free-text in BOTH rows (NL > NF by 10 pp, SL > SF by 8 pp). Consistent.
+- At **Qwen**, forced-letter > free-text in BOTH rows (NL > NF by 7 pp, SL > SF by 5 pp). Consistent.
+
+The "scaling-dependent format-effect inversion" claim is now **supported across two input styles**, which is strong evidence that the mechanism is an **output-side constraint**, not an input-format artifact.
+
+**DEFERRED rate inversion by scale (unanimous 5-way):**
+
+| Model | NF unanimous DEFERRED | SF unanimous DEFERRED |
+|---|---|---|
+| 4B   | 0/60 | **4/60** |
+| 12B  | **4/60** | 2/60 |
+| Qwen | 2/60 | 0/60 |
+
+At 4B, structured input induces deferral that natural input doesn't — possibly because the clinician-notes style primes a clinician-like tiered/conditional response. At 12B and Qwen, the pattern flips: natural input induces more deferral. Worth a sentence in §4.2 once the LaTeX writer integrates SF.
+
+**Where:** `results/sf_behavioral_{4b,12b,qwen}.json` + `results/sf_{tag}_D_for_adjudication_adjudicated_paper.json` + `results/sf_{tag}_adjudicated_deferred.json` + `results/sf_2x2_comparison.{json,md}` (the consolidated 2×2 with the natural+structured rows side-by-side).
+
 ### Cross-family Qwen behavioral 4-cell evaluation
 
 The v2 draft used Qwen3-8B for mechanistic analysis only. We added a full SL/NL/NF behavioral evaluation on the 60 canonical vignettes, plus 4-way and 5-way LLM-judge adjudication.

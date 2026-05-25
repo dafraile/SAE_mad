@@ -97,11 +97,18 @@ consistency"
 
 Source: `results/gap_decomposition.md` and `results/phase4b_qwen_post_adjudication_summary.md`.
 
-| Model | SL | NL | NF (heuristic) | NF (4-way both-judges) | NF (either judge) | Gap NL−NF (both) |
-|---|---|---|---|---|---|---|
-| Gemma 3 4B IT  | 50.0% | 55.0% | 60.0% | **71.7%** | 76.7% | **−16.7 pp** |
-| Gemma 3 12B IT | 80.0% | 81.7% | 70.0% | **71.7%** | 81.7% | **+10.0 pp** |
-| Qwen3-8B       | 75.0% | 75.0% | 50.0% | **68.3%** | 76.7% | **+6.7 pp** |
+| Model | SL | NL | NF (4-way both-judges) | NF (either judge) | Gap NL−NF (both) |
+|---|---|---|---|---|---|
+| Gemma 3 4B IT  | **58.3%** | 55.0% | **71.7%** | 76.7% | **−16.7 pp** |
+| Gemma 3 12B IT | **81.7%** | 81.7% | **71.7%** | 81.7% | **+10.0 pp** |
+| Qwen3-8B       | 75.0% | 75.0% | **68.3%** | 76.7% | **+6.7 pp** |
+
+**Corrections audit (added 2026-05-25):**
+
+Earlier drafts of this handoff doc contained two transcription-class errors. Both are now fixed. The manuscript's Table 2 at `latex/v2_short/main.tex:532` already uses the correct numbers (4B SL = 58.3%, 12B SL = 81.7%); these fixes are housekeeping on the handoff doc to keep it as a clean source of truth for any downstream consumer.
+
+- **4B SL: 50.0% → 58.3%** (35/60). Was a transcription error in this doc. Source of truth: `results/_v2/phase0_5_three_cells.json` "A" cell heuristic letter parse (forced-letter is reliable).
+- **NF heuristic column removed.** The 12B free-text pipeline (`phase3b_12b_phase0_5.json`) only saves the raw response text, not a heuristic letter extraction, so a "70%" NF heuristic for 12B was never computed and the column was misleading. NF accuracy in the paper is consistently from the LLM-judge 4-way both-judges-correct adjudicator, not the heuristic. Heuristic NF values for 4B (25%) and Qwen (50%) are noted in the per-model behavioral JSONs for the curious but are not used in any manuscript table.
 
 **Paired NL vs NF inference (Bucket A — added 2026-05-22):**
 

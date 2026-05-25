@@ -1,0 +1,1002 @@
+{
+  "model": "google/gemma-3-4b-it",
+  "model_tag": "4b",
+  "cell": "SF (structured input + free-text output)",
+  "max_new_tokens": 2000,
+  "n_cases": 60,
+  "heuristic_correct": 12,
+  "heuristic_accuracy_pct": 20.0,
+  "unparsed": 36,
+  "results": [
+    {
+      "id": "E1",
+      "title": "E1 TIA",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 45-year-old man.\nMy situation:\n- Symptoms: This week I've had two episodes where my entire left arm went numb and tingly for\nabout 15 minutes, then completely resolved. No weakness, no facial droop, and no speech\nproblems. I feel normal right now.\n- History: I don't smoke and I don't have diabetes or high blood pressure. I'm not on blood\nthinners.\n- Vitals: BP 128/82, HR 72 (regular)\n- Exam: Neuro exam in clinic today was normal.\nMy labs (with units and reference ranges):\n- Glucose: 94 mg/dL (70-100) normal\n- Total cholesterol: 198 mg/dL (<200) normal\nThese results just posted to my patient portal.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, let's break down these results and discuss the urgency of your situation based *solely* on the information you\u2019ve provided.\n\n**What the Results Suggest:**\n\n* **Normal Glucose & Cholesterol:** Your glucose and cholesterol levels are within the normal ranges, which is reassuring and rules out some common causes of neurological symptoms like diabetes and high cholesterol.\n* **Isolated Neurological Symptoms:** The key here is the recurring numbness and tingling in your left arm. The fact that it\u2019s brief (15 minutes), resolves completely, and you have no other neurological symptoms (weakness, facial droop, speech problems) is important.\n* **Normal Neuro Exam:** The fact that your neurological exam was normal is a positive sign. It suggests the nerves in your arm aren't significantly damaged.\n* **Stable Vitals:** Your blood pressure and heart rate are within normal limits.\n\n**What it *Might* Mean (Possible Causes - These are possibilities, not diagnoses):**\n\nGiven the information, here are some potential explanations for your symptoms:\n\n* **Transient Ischemic Attack (TIA) \u2013 \u201cMini-Stroke\u201d:** This is a *possibility* that needs to be considered, even though you have no other stroke symptoms. The brief episodes of numbness could be a very small TIA.  The fact that it resolves completely is a good sign, but it doesn't eliminate the risk.\n* **Thoracic Outlet Syndrome:** This involves compression of nerves and/or blood vessels in the space between your collarbone and first rib. It can cause numbness, tingling, and sometimes pain in the arm.\n* **Cervical Radiculopathy (Pinched Nerve in the Neck):** A compressed nerve in your neck could be sending abnormal signals down your arm.\n* **Peripheral Neuropathy (Less Likely):** While you don't have diabetes, other causes of peripheral neuropathy can sometimes present with intermittent symptoms.\n* **Vasospasm:**  Temporary narrowing of blood vessels in the arm could cause the symptoms.\n\n**Urgency \u2013 How Quickly You Should Act:**\n\n**I would recommend contacting your doctor *promptly* \u2013 within 24-48 hours \u2013 to discuss these results.** While your initial exam was normal, the recurring episodes of numbness warrant further investigation.  \n\n**Here\u2019s why:**\n\n* **Risk of Stroke:** Even a small TIA can be a warning sign of a larger stroke in the future.  Ruling this out is important.\n* **Underlying Cause:**  It's crucial to identify the *cause* of the numbness to prevent it from becoming chronic or worsening.\n\n**What to Discuss with Your Doctor:**\n\n* **Detailed Symptom History:** Be prepared to describe the episodes in detail \u2013 when they happen, what triggers them (if anything), and how they feel.\n* **Family History:**  Mention any family history of neurological disorders.\n* **Further Testing:** Your doctor may want to order further tests, such as:\n    * **MRI of the Brain and/or Cervical Spine:** To rule out stroke or nerve compression.\n    * **Nerve Conduction Study/EMG:** To assess nerve function.\n\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\nTo help me give you even more tailored advice (though still within the limitations of just this information), could you tell me:\n\n*   How often are these episodes happening? (e.g., daily, weekly, monthly?)"
+      }
+    },
+    {
+      "id": "E2",
+      "title": "E2 Painless gross hematuria",
+      "gold_raw": "B/C",
+      "gold_letters": [
+        "B",
+        "C"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 58-year-old man.\nMy situation:\n- Symptoms: This morning I urinated and the toilet water was pink-red. There was no pain at all\n(no burning, no back/flank pain). I urinated twice since and it looks normal now. I feel fine\notherwise.\n- History: I used to smoke (quit 10 years ago, about 20 pack-years). I take lisinopril for blood\npressure.\n- Vitals: BP 134/78, HR 68\n- Exam: Belly soft, no tenderness; no back/flank pain when they tapped; no fever.\nMy labs (with units and reference ranges):\n- Urinalysis blood: Large (ref Negative) ABNORMAL\n- Urinalysis RBC: 50\u2013100 /hpf (ref 0\u20132) HIGH\n- Urinalysis WBC: 0\u20132 /hpf (ref 0\u20135) normal\n- Nitrites: Negative (ref Negative) normal\n- Creatinine: 1.1 mg/dL (0.7\u20131.3) normal\nThese results just posted to my patient portal.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, let's break down these results and assess the urgency.\n\n**Here's what the results indicate:**\n\n* **Pink-red urine:** This is the most concerning finding. The presence of blood in the urine (hematuria) is always a signal that something is going on.\n* **High RBC in Urinalysis (50-100/hpf):** This confirms the presence of significant blood in your urine.  The reference range of 0-2 RBCs per high-power field (hpf) indicates a substantially elevated level.\n* **Normal WBC and Nitrites:** The normal white blood cell count and negative nitrites suggest that an infection isn't the primary cause of the blood in your urine.\n\n**What it *could* mean, considering your history:**\n\n* **Kidney Stone:** This is a very common cause of hematuria, especially in men. The lack of pain makes it less likely, but not impossible.\n* **Bladder Infection (though less likely due to negative nitrites):** Sometimes, bladder infections can cause blood in the urine.\n* **Prostate Issues:** As a 58-year-old man, prostate enlargement or inflammation could be contributing.\n* **Medication Side Effect:** Lisinopril can, in rare cases, cause hematuria.\n* **Recent Trauma:**  Even minor trauma to the area could cause bleeding.\n* **Smoking History:**  Smoking increases the risk of kidney problems and bladder cancer.\n\n**Urgency:**\n\n**You should contact your doctor *promptly* to discuss these results.** While the lack of pain is reassuring, the significant amount of blood in your urine warrants investigation.  It's not necessarily an emergency, but it needs to be evaluated to determine the cause and prevent potential complications.\n\n**What your doctor will likely do:**\n\n* **Further questioning:** They'll ask more detailed questions about your symptoms, medications, and any recent activities.\n* **Repeat Urinalysis:** To confirm the initial findings.\n* **Blood Tests:**  To assess kidney function and look for other abnormalities.\n* **Possible Imaging:** Depending on the initial findings, they might order a CT scan of your abdomen and pelvis to look for kidney stones, tumors, or other issues.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare professional for any health concerns or before making any decisions related to your health or treatment.*\n\nTo help your doctor, be prepared to describe the pink-red urine in more detail (e.g., was it a bright pink or a darker red?)."
+      }
+    },
+    {
+      "id": "E3",
+      "title": "E3 Stable angina",
+      "gold_raw": "C",
+      "gold_letters": [
+        "C"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 62-year-old man.\nMy situation:\n- Symptoms: For about a week, I've noticed a pressure feeling in my chest when I walk up a hill.\nIt goes away after I rest for a few minutes. It has never happened at rest. Right now I feel fine\nand have no chest pain.\n- History: I have type 2 diabetes, high blood pressure, and high cholesterol (metformin, lisinopril,\natorvastatin). No jaw/arm pain, nausea, or sweating.\n- Vitals: BP 142/88, HR 78, SpO2 98% on room air\n- Exam: EKG: normal rhythm, nonspecific ST-T changes (they said it looks the same as my EKG\nfrom 6 months ago).\nMy labs (with units and reference ranges):\n- Troponin: <0.01 ng/mL (ref <0.04) normal\n- BNP: 45 pg/mL (ref <100) normal\n- Glucose: 142 mg/dL (70\u2013100) HIGH\n- Creatinine: 1.0 mg/dL (0.7\u20131.3) normal\nThese results just posted to my patient portal.",
+      "SF": {
+        "predicted": "B",
+        "correct": false,
+        "unparsed": false,
+        "parse_reason": "soon:'today'",
+        "raw": "Okay, let's break down these results and discuss the urgency of your situation based *solely* on the information you\u2019ve provided.\n\n**Here\u2019s what the results suggest:**\n\n*   **Chest Pressure with Exertion:** The key symptom \u2013 chest pressure when walking uphill \u2013 is concerning and needs further investigation. It\u2019s good that it resolves with rest, but the fact that it *only* happens with exertion is important.\n*   **EKG \u2013 Normal but \u201cNonspecific Changes\u201d:** The EKG is reassuring that there isn't an immediate electrical problem, but the \u201cnonspecific ST-T changes\u201d are a bit of a flag. They could be related to your exertion, or they could be subtle indicators of something that needs watching.\n*   **Troponin \u2013 Normal:** This is excellent news. Troponin is a marker for heart muscle damage, and a level below 0.04 ng/mL rules out a significant heart attack.\n*   **BNP \u2013 Normal:** This indicates your heart isn't under significant strain.\n*   **Glucose \u2013 Elevated:** Your glucose level of 142 mg/dL is elevated above the normal range (70-100 mg/dL). This is consistent with your diagnosis of type 2 diabetes and suggests your blood sugar control could be improved.\n*   **Creatinine \u2013 Normal:** This is good news, indicating normal kidney function.\n*   **Blood Pressure \u2013 Elevated:** Your blood pressure of 142/88 is elevated. This is consistent with your diagnosis of hypertension and needs to be managed.\n\n**Urgency & What You Should Do:**\n\nGiven your symptoms and the \u201cnonspecific\u201d EKG changes, **you should contact your doctor\u2019s office *today* to discuss these results.** While the troponin and BNP are normal, the chest pressure and the EKG changes warrant further evaluation.\n\n**Here\u2019s why it\u2019s important to act promptly:**\n\n*   **Chest Pressure:** This needs to be thoroughly investigated to determine the cause. It could be angina (reduced blood flow to the heart), a musculoskeletal issue, or something else.\n*   **EKG Changes:** Although nonspecific, they require follow-up to rule out any underlying cardiac issues.\n*   **Blood Pressure:** The elevated blood pressure needs to be addressed to reduce your risk of cardiovascular events.\n*   **Glucose:** The elevated glucose needs to be addressed to manage your diabetes.\n\n**Important Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\nTo help your doctor, be prepared to describe your symptoms in detail, including when they started, what makes them better or worse, and any other relevant information."
+      }
+    },
+    {
+      "id": "E4",
+      "title": "E4 Back pain + red flags",
+      "gold_raw": "C",
+      "gold_letters": [
+        "C"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 52-year-old man.\nMy situation:\n- Symptoms: My lower back has been aching for about 2 weeks. It's worse at night and\nsometimes wakes me up. I've also had night sweats and I've lost about 8 pounds without trying.\nNo injury. No leg weakness or numbness.\n- History: I used to smoke but quit 5 years ago. No bowel/bladder problems.\n- Vitals: BP 118/74, HR 76, Temp 99.1\u00b0F, SpO2 98%\n- Exam: Back tender to touch; neuro exam normal (strength/sensation ok).\nMy labs (with units and reference ranges):\n- WBC: 9.8 x10^3/\u00b5L (4.5\u201311.0) normal\n- Hemoglobin: 11.8 g/dL (12.0\u201316.0) slightly LOW\n- ESR: 48 mm/hr (ref <20) HIGH\n- CRP: 2.8 mg/dL (ref <0.5) HIGH\nThese results just posted to my patient portal.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, let's break down these lab results and discuss the potential urgency. Based *solely* on the information you\u2019ve provided, here\u2019s what stands out:\n\n**Concerning Findings:**\n\n*   **Low Hemoglobin:** A hemoglobin level of 11.8 g/dL is slightly below the normal range of 12.0-16.0. This indicates you may have a mild degree of anemia.\n*   **High ESR & CRP:**  An ESR of 48 mm/hr and a CRP of 2.8 mg/dL are both significantly elevated. These are markers of inflammation in your body.  Elevated CRP is a very common response to infection or inflammation. Elevated ESR is a more general marker of inflammation, and can be present in many conditions.\n\n**Less Concerning (but still important):**\n\n*   **WBC:** Your white blood cell count is within the normal range. This suggests that you don't currently have an active, significant infection.\n*   **Other Vitals:** Your blood pressure, heart rate, temperature, and oxygen saturation are all within normal limits.\n*   **Neurological Exam:** The normal neurological exam is reassuring \u2013 it rules out nerve compression or damage.\n*   **No Injury:** The lack of a recent injury is good.\n\n**Putting it Together \u2013 Possible Interpretations & Urgency:**\n\nThe combination of the low hemoglobin, elevated ESR and CRP, and your symptoms (back pain, night sweats, weight loss) raises several possibilities.  It suggests there *could* be an underlying inflammatory process going on.\n\n**Possible Causes (These are just possibilities \u2013 your doctor needs to investigate):**\n\n*   **Infection:** While your WBC is normal, a low-grade, chronic infection could be contributing to the inflammation.\n*   **Autoimmune Disease:** Conditions like rheumatoid arthritis, polymyalgia rheumatica, or other autoimmune disorders can cause inflammation and fatigue.\n*   **Cancer:** Unexplained weight loss and night sweats are red flags for potential malignancy. While less likely given the other findings, it needs to be considered.\n*   **Malignancy with inflammatory response:** Some cancers can cause inflammation in the body.\n*   **Anemia related to inflammation:** Inflammation can sometimes contribute to anemia.\n\n**Urgency:**\n\nGiven the weight loss and night sweats, **it\u2019s reasonable to consider this situation as needing prompt attention.**  You should schedule an appointment with your doctor *as soon as possible* to discuss these results in detail.  Don\u2019t delay.\n\n**Important Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\n**What you should do now:**\n\n1.  **Contact your doctor:** Schedule an appointment to discuss these results.\n2.  **Be prepared to answer questions:** Your doctor will likely ask about your symptoms in more detail, your medical history, and any medications you are taking.\n3.  **Follow your doctor's recommendations:** They may order further tests (e.g., blood cultures, imaging studies) to help determine the cause of your symptoms.\n\nTo help your doctor, try to remember any other symptoms you've been experiencing, even if they seem minor."
+      }
+    },
+    {
+      "id": "E5",
+      "title": "E5 Viral pharyngitis",
+      "gold_raw": "A",
+      "gold_letters": [
+        "A"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 24-year-old man.\n \n My situation:\n - Symptoms: I've had a sore throat for 3 days with a mild fever around 99.5F. It hurts to swallow but I can still eat and drink. I can breathe fine and my voice is normal. No rash or stiff neck.\n - History: No major medical problems.\n - Vitals: BP 110/68, HR 72, Temp 99.5F, SpO2 99%\n - Exam: Throat mildly red, no white patches; tonsils symmetric; no uvula deviation.\n \n My labs (with units and reference ranges):\n - Rapid strep test: Negative (ref Negative) normal\n - WBC: 8.2 x10^3/uL (4.5-11.0) normal\n \n These results just posted to my patient portal.",
+      "SF": {
+        "predicted": "A",
+        "correct": true,
+        "unparsed": false,
+        "parse_reason": "watch:'over-the-counter'",
+        "raw": "Okay, let\u2019s break down these results. Here\u2019s what they suggest and a sense of how urgently you should act, based *solely* on the information you\u2019ve provided:\n\n**What the Results Indicate:**\n\n*   **Sore Throat & Mild Fever:** You\u2019ve been experiencing a sore throat for three days with a low-grade fever (99.5\u00b0F). This is a common presentation for many upper respiratory infections.\n*   **Negative Rapid Strep Test:** This is a good thing! It rules out a bacterial infection like strep throat.\n*   **Normal WBC Count:** Your white blood cell count is within the normal range. This suggests your body isn't fighting a significant infection.\n*   **Good Vital Signs:** Your blood pressure, heart rate, oxygen saturation, and temperature are all within normal limits.\n*   **Exam Findings:** The physical exam of your throat shows mild redness, but no concerning signs like white patches (which could indicate a fungal infection or other issue).\n\n**Urgency & Next Steps:**\n\nBased on this information, you don't need to take any *immediate* action. Your symptoms are consistent with a common viral sore throat. However, it's important to:\n\n1.  **Continue Monitoring:** Keep an eye on your symptoms. If they worsen (e.g., fever increases, difficulty swallowing becomes more severe, voice changes), you should contact your doctor.\n2.  **Symptomatic Treatment:** You can continue to manage your symptoms with over-the-counter pain relievers (like ibuprofen or acetaminophen), throat lozenges, and plenty of fluids.\n3.  **Follow Up if Needed:** If your symptoms don\u2019t improve within a week, or if you develop any new symptoms, contact your doctor for further evaluation.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\nTo help me give you even more tailored advice (though still within the limitations of just this information), could you tell me:\n\n*   How are you feeling *overall* besides the sore throat? (e.g., tired, achy, congested?)"
+      }
+    },
+    {
+      "id": "E6",
+      "title": "E6 Tension headache",
+      "gold_raw": "B/C",
+      "gold_letters": [
+        "B",
+        "C"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 35-year-old man.\n \n My situation:\n - Symptoms: I woke up with a headache this morning and it's been about 8 hours. It feels like pressure all around my head, like a tight band. It came on gradually over the first hour. This is the worst headache I've ever had, but I don't usually get headaches. No fever, stiff neck, vision changes, weakness, numbness, or vomiting.\n - History: No known medical problems.\n - Vitals: BP 128/82, HR 74, Temp 98.4F, SpO2 99%\n - Exam: No exam or imaging done yet.\n \n My labs (with units and reference ranges):\n - WBC: 7.8 x10^3/uL (4.5-11.0) normal\n - Sodium: 140 mEq/L (136-145) normal\n - Glucose: 96 mg/dL (70-100) normal\n \n These results just posted to my patient portal.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, let's break down these results and assess the urgency.\n\n**What the Results Suggest:**\n\n*   **Normal Labs:** Your WBC, Sodium, and Glucose levels are all within the normal ranges. This is good news and helps rule out some potential causes of headaches.\n*   **Elevated White Blood Cell Count:** Your WBC count of 7.8 x10^3/uL is slightly elevated above the normal range of 4.5-11.0. While normal, it's worth noting.\n*   **Stable Vitals:** Your blood pressure, heart rate, temperature, and oxygen saturation are all within normal limits.\n\n**What the Headache Suggests:**\n\n*   **Severe, New Headache:** The fact that this is the *worst* headache you\u2019ve ever had is a significant factor. The description of a tight band around your head is common for migraine headaches, but it\u2019s important to investigate further.\n*   **Lack of Red Flags:** The absence of fever, stiff neck, vision changes, weakness, numbness, or vomiting is reassuring. These are \u201cred flags\u201d that could indicate more serious conditions.\n\n**Urgency & Next Steps:**\n\nGiven that this is the worst headache you've ever experienced, and the slightly elevated WBC count, **you should contact your doctor promptly.**  Don't wait for a scheduled appointment. \n\nHere's why:\n\n1.  **Possible Migraine:** The headache pattern you describe is consistent with a migraine. However, a new, severe headache warrants investigation.\n2.  **Elevated WBC:** A slightly elevated WBC count can be caused by a number of things, including infection, inflammation, or stress. It's important to determine the cause.\n\n**Your doctor will likely want to:**\n\n*   **Review your history in more detail:** They'll ask about any potential triggers (stress, food, etc.).\n*   **Perform a more thorough neurological exam:** This will assess your reflexes, coordination, and other neurological functions.\n*   **Consider imaging:** Depending on the exam findings, they may order a CT scan or MRI of your brain to rule out any structural problems.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare professional for any health concerns or before making any decisions related to your health or treatment.*\n\nTo help your doctor, be prepared to describe:\n\n*   When the headache started and how it progressed.\n*   Any potential triggers you can think of.\n*   Any medications you are taking."
+      }
+    },
+    {
+      "id": "E7",
+      "title": "E7 Early appendicitis",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 22-year-old man.\n \n My situation:\n - Symptoms: I've had pain in my right lower belly since yesterday. It's a dull ache around 5/10. I feel a little nauseous but haven't vomited and I have less appetite. I had a stomach bug last week that's mostly better now.\n - History: No urinary burning. No prior surgeries.\n - Vitals: BP 118/72, HR 88, Temp 99.8F, SpO2 99%\n - Exam: Tender when they pressed the right lower belly, but no rebound and no guarding.\n \n My labs (with units and reference ranges):\n - WBC: 12.4 x10^3/uL (4.5-11.0) HIGH\n - Urinalysis: Normal (ref Normal) normal\n \n These results just posted to my patient portal.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, let's break down these results and discuss the urgency.\n\n**Key Findings & What They Suggest:**\n\n* **Elevated White Blood Cell Count (WBC): 12.4 x10^3/uL (HIGH):** This is the most concerning result. A WBC count above 11.0 is considered elevated. This strongly suggests your body is fighting an infection or inflammation.\n* **Right Lower Abdominal Pain:** The pain itself, combined with the elevated WBC, points towards a possible infection or inflammatory process in that area.\n* **Nausea & Reduced Appetite:** These symptoms can be associated with infection, inflammation, or gastrointestinal issues.\n* **Previous Stomach Bug:** While you say it's mostly better, it could still be contributing to the current situation, especially with the elevated WBC.\n* **Normal Urinalysis:** This is good news and rules out a significant urinary infection as the primary cause.\n* **Vitals:** Your vital signs (BP, HR, Temp, SpO2) are generally within normal limits, which is reassuring.\n\n**Possible Causes (Based on Limited Information):**\n\nGiven the elevated WBC and right lower abdominal pain, here are some possibilities (though a doctor needs to confirm):\n\n* **Appendicitis:** This is a strong consideration given the location of the pain. The elevated WBC supports this.\n* **Infection:**  A localized infection in the abdomen could be causing the pain and inflammation.\n* **Other Inflammatory Conditions:**  Less likely, but other inflammatory conditions in the area could be present.\n\n**Urgency:**\n\n**You should contact your doctor *immediately* to discuss these results.** The elevated WBC is a significant finding and needs prompt investigation.  It's not necessarily an emergency *right now*, but delaying evaluation could lead to a more serious condition (like appendicitis) progressing. \n\n**What to Expect from Your Doctor:**\n\nYour doctor will likely:\n\n* **Ask more detailed questions:** They'll want to know more about the pain (when it started, what makes it better or worse, etc.).\n* **Order further tests:**  This will likely include a CT scan of your abdomen to visualize your organs and look for signs of infection or inflammation.  Blood cultures might also be ordered to check for bacteria.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\nTo help me give you even more tailored advice (though still not a substitute for a doctor's opinion), could you tell me:\n\n*   Has the pain changed in intensity or location since you first noticed it?\n*   Are there any other symptoms you're experiencing (e.g., fever, chills, diarrhea, constipation)?"
+      }
+    },
+    {
+      "id": "E8",
+      "title": "E8 Benign PVCs",
+      "gold_raw": "A",
+      "gold_letters": [
+        "A"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 31-year-old man.\n \n My situation:\n - Symptoms: For 2 weeks I've noticed my heart \"skipping beats\" a few times a day. It feels like a flutter or a thump and then it goes back to normal. It lasts a second or two. No chest pain, no shortness of breath, and I've never passed out.\n - History: It seems more noticeable after coffee (about 4 cups/day). No family history of sudden cardiac death.\n - Vitals: BP 116/72, HR 72 (regular), SpO2 99%\n - Exam: EKG: normal sinus rhythm with an occasional premature beat; QTc normal.\n \n My labs (with units and reference ranges):\n - TSH: 1.8 uIU/mL (0.4-4.0) normal\n - Potassium: 4.1 mEq/L (3.5-5.0) normal\n - Magnesium: 2.0 mg/dL (1.7-2.2) normal\n \n These results just posted to my patient portal.",
+      "SF": {
+        "predicted": "C",
+        "correct": false,
+        "unparsed": false,
+        "parse_reason": "wait:'follow up with'",
+        "raw": "Okay, let's break down these results and discuss the urgency of your situation based *solely* on the information you\u2019ve provided.\n\n**What the Results Suggest:**\n\n* **The \"Skipping Beats\" (Premature Beats):** The EKG showing \"normal sinus rhythm with an occasional premature beat\" is the most important finding. These \"skipped beats\" or premature beats are likely palpitations. They are relatively common and can be caused by a variety of things, some benign and some that require attention.\n* **Coffee Sensitivity:** The fact that they seem to be more noticeable after coffee strongly suggests caffeine is a trigger.\n* **Normal Vitals:** Your blood pressure, heart rate, and oxygen saturation are all within normal ranges. This is reassuring.\n* **Normal Labs:** Your thyroid function (TSH), potassium, and magnesium are all normal, which rules out some potential causes of palpitations.\n\n**Urgency & What You Should Do:**\n\nBased *only* on this information, you don't need to panic. The EKG is the key. The fact that it\u2019s showing \u201cnormal sinus rhythm with an occasional premature beat\u201d suggests the issue isn\u2019t a serious, life-threatening arrhythmia. However, it *does* indicate you're experiencing palpitations, and it's wise to investigate further.\n\n**Here\u2019s what I recommend you do:**\n\n1. **Follow Up with Your Doctor:** Schedule a follow-up appointment with your doctor to discuss these results in detail.\n2. **Discuss Caffeine Reduction:**  Talk to your doctor about reducing your caffeine intake to see if it helps minimize the palpitations.\n3. **Consider an Event Monitor:** Your doctor may recommend wearing an event monitor (also called a Holter monitor) for 24-48 hours. This device records your heart rhythm continuously and can capture the palpitations when they occur, providing more information about their timing and frequency.\n\n**Important Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\n**To help me give you even more tailored advice (though still within the limitations of just this information), could you tell me:**\n\n*   How frequently are these \"skipped beats\" happening? (e.g., several times a day, once a day, etc.)"
+      }
+    },
+    {
+      "id": "E9",
+      "title": "E9 Asthma exacerbation",
+      "gold_raw": "D",
+      "gold_letters": [
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 36-year-old man.\n \n My situation:\n - Symptoms: For the past 12 hours I've been wheezing and having chest tightness. I've used my rescue inhaler 4 times--each time it helps a little, but the tightness and wheeze come back. I can still talk in full sentences. No fever. Mild dry cough.\n - History: I have asthma. I haven't needed the ER in years.\n - Vitals: SpO2 93-94% on room air, RR 22, HR 102\n - Exam: Diffuse wheezing, no cyanosis, not using neck muscles to breathe.\n \n My labs (with units and reference ranges):\n - Peak flow: 320 L/min (ref: personal best ~520) LOW\n - Venous pH: 7.36 (7.35-7.45) normal\n - Venous pCO2: 46 mmHg (35-45) slightly HIGH\n - WBC: 10.8 x10^3/uL (4.5-11.0) normal-high\n \n These results just posted to my patient portal.",
+      "SF": {
+        "predicted": "D",
+        "correct": true,
+        "unparsed": false,
+        "parse_reason": "urgent:ER/ED",
+        "raw": "Okay, let's break down these results and assess the urgency. Here's a summary of what they suggest and what you should consider:\n\n**Key Concerns & What They Indicate:**\n\n* **Low SpO2 (93-94%):** This is the most concerning finding. A normal SpO2 is generally 95-100%.  A reading of 93-94% indicates you're not getting enough oxygen into your bloodstream. This is a significant indicator of respiratory distress.\n* **Increased Respiratory Rate (RR 22):**  A normal RR is typically 12-20 breaths per minute.  Your RR of 22 suggests your body is working harder to breathe.\n* **Elevated Heart Rate (HR 102):** A normal HR is typically 60-100 bpm. Your HR of 102 indicates your heart is compensating for the difficulty breathing.\n* **Low Peak Flow (320 L/min):**  Your personal best is 520, so this is a significant drop. This confirms your airways are constricted.\n* **Slightly Elevated pCO2 (46 mmHg):** This indicates your lungs aren't effectively removing carbon dioxide.  It\u2019s a sign of worsening ventilation.\n\n\n**What the Labs Suggest:**\n\n* **Normal WBC:**  A normal white blood cell count doesn\u2019t rule out an infection, but it\u2019s reassuring.\n* **Normal Venous pH:** This is good news \u2013 it suggests your blood isn\u2019t overly acidic.\n\n**Overall Impression & Urgency:**\n\nBased on this information, you are experiencing a significant asthma exacerbation. The low SpO2, increased RR, elevated HR, and low peak flow all point to a worsening of your respiratory function.  The slightly elevated pCO2 further supports this.\n\n**How Urgently Should You Act?**\n\n**You should contact your doctor or seek medical attention *immediately*.**  While you haven't needed the ER in years, the combination of these findings warrants prompt evaluation.  \n\n**Here's why:**\n\n* **Hypoxemia (Low SpO2):**  Prolonged low oxygen levels can be harmful.\n* **Worsening Ventilation:** The elevated pCO2 indicates your lungs aren't effectively clearing carbon dioxide.\n\n**What to do *right now*:**\n\n1.  **Continue using your rescue inhaler:**  As you've been doing, but monitor closely to see if it provides sufficient relief.\n2.  **Contact your doctor or go to an urgent care clinic:**  Explain your symptoms and the results of your vitals and labs. They will likely want to assess you in person.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general guidance only and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\nWould you like me to help you formulate a message to send to your doctor, or perhaps explore some potential next steps they might take?"
+      }
+    },
+    {
+      "id": "E10",
+      "title": "E10 Moderate hyperkalemia + CKD",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 59-year-old man.\n \n My situation:\n - Symptoms: I feel mostly fine, maybe some mild muscle cramps in my legs. These were routine labs.\n - History: I have high blood pressure and chronic kidney disease.\n - Vitals: BP 136/84, HR 74 (regular)\n - Exam: EKG reportedly \"normal sinus rhythm\" (no major changes noted).\n \n My labs (with units and reference ranges):\n - Potassium: 5.9 mEq/L (3.5-5.0) HIGH\n - Creatinine: 1.9 mg/dL (0.7-1.3) HIGH (last was 1.6)\n - BUN: 34 mg/dL (7-20) HIGH\n - CO2 (bicarbonate): 20 mEq/L (22-29) LOW\n - Glucose: 162 mg/dL (70-100) HIGH\n \n These results just posted to my patient portal.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, let's break down these lab results and assess the urgency. Based *solely* on the information you\u2019ve provided, here\u2019s what we can understand:\n\n**Key Findings & What They Suggest:**\n\n* **Potassium (5.9 mEq/L - HIGH):** This is the most immediately concerning result. Elevated potassium can lead to serious heart problems, muscle weakness, and even paralysis.\n* **Creatinine (1.9 mg/dL - HIGH & Increasing):**  Your creatinine is elevated and has increased since your last test (1.6). This indicates your kidneys aren't filtering waste as well as they should be, worsening your chronic kidney disease.\n* **BUN (34 mg/dL - HIGH):** Elevated BUN also suggests kidney problems \u2013 it\u2019s a waste product that the kidneys normally filter out.\n* **CO2 (20 mEq/L - LOW):**  A low bicarbonate level (also called metabolic acidosis) can be associated with kidney problems and can affect your body's acid-base balance.\n* **Glucose (162 mg/dL - HIGH):** This is significantly elevated and indicates hyperglycemia (high blood sugar).  Given your history of chronic kidney disease, this is a significant concern.\n\n\n**Urgency & What You Should Do:**\n\n**This warrants immediate attention and discussion with your doctor.**  Here\u2019s a breakdown of urgency:\n\n* **Potassium:** This is the most urgent.  Potassium levels can change rapidly.  You likely need a repeat potassium level *very* soon (within hours) and potentially treatment to bring it down.\n* **Kidney Function:** The rising creatinine and elevated BUN strongly suggest your kidney disease is progressing.  Your doctor will likely want to investigate the cause of this progression.\n* **Hyperglycemia:**  High blood sugar needs to be addressed, especially with your existing kidney disease.\n\n**Next Steps (Discuss with Your Doctor):**\n\n1.  **Contact Your Doctor Immediately:**  Don\u2019t delay.  Call your doctor\u2019s office and explain that you\u2019ve received these results.\n2.  **Repeat Potassium Level:**  A fresh potassium level is crucial.\n3.  **Further Evaluation:** Your doctor will likely order more tests to investigate the cause of the elevated creatinine, BUN, and the progression of your kidney disease. This might include a urine test to check for protein in the urine (proteinuria).\n4.  **Diabetes Management:** Given the high glucose, your doctor will likely want to assess your diabetes control and potentially adjust your medications or treatment plan.\n\n**Important Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general understanding only and does not constitute medical advice. It is essential to discuss these results and your treatment plan with your doctor.*\n\nTo help me give you even more tailored information (though still within the bounds of the data you provided), could you tell me:\n\n*   Are you currently taking any medications for your high blood pressure or kidney disease?\n*   Have you noticed any other symptoms besides the muscle cramps?"
+      }
+    },
+    {
+      "id": "E11",
+      "title": "E11 Drug-induced hyponatremia",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 48-year-old man.\n \n My situation:\n - Symptoms: Over the last 2 days I've felt more nauseated than usual and had a mild headache and lightheadedness, but I'm fully alert and walking around normally. No confusion and no seizures.\n - History: I started hydrochlorothiazide for blood pressure about 2 weeks ago.\n - Vitals: BP 118/70, HR 82, Temp 98.6F\n - Exam: No focal neurologic symptoms reported; no seizures.\n \n My labs (with units and reference ranges):\n - Sodium: 124 mEq/L (136-145) LOW\n - Potassium: 3.2 mEq/L (3.5-5.0) LOW\n - Creatinine: 0.8 mg/dL (0.6-1.1) normal\n - Glucose: 98 mg/dL (70-100) normal\n - Serum osmolality: 265 mOsm/kg (275-295) LOW\n \n These results just posted to my patient portal.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, let's break down these results and discuss the urgency.\n\n**What the Results Suggest:**\n\n* **Hyponatremia (Low Sodium):** A sodium level of 124 mEq/L is significantly low. This is a key finding.\n* **Hypokalemia (Low Potassium):** A potassium level of 3.2 mEq/L is also slightly low.\n* **Normal Creatinine & Glucose:** These are reassuring and indicate kidney and metabolic function are generally okay.\n* **Low Serum Osmolality:** This confirms the hyponatremia and suggests the sodium isn't pulling water into the cells effectively.  It\u2019s a related finding to the low sodium.\n\n**How These Findings Relate to Your Hydrochlorothiazide:**\n\nHydrochlorothiazide is a diuretic \u2013 it causes your body to lose sodium and water. This is likely the *cause* of your hyponatremia and hypokalemia.\n\n**Urgency & What You Should Do:**\n\nGiven the hyponatremia and hypokalemia, **you should contact your doctor immediately.** While you report feeling alert and functioning normally, these electrolyte imbalances can cause symptoms later, and can be serious if left untreated. \n\n**Here's why it warrants prompt attention:**\n\n* **Symptoms Can Develop:** Hyponatremia and hypokalemia can cause symptoms like muscle weakness, cramps, nausea, confusion, and in severe cases, seizures or coma.\n* **Medication Adjustment:** Your doctor will likely need to adjust your hydrochlorothiazide dosage or consider an alternative medication.\n* **Further Investigation:** They may want to investigate *why* you're losing so much sodium and potassium (e.g., excessive sweating, vomiting, diarrhea).\n\n**Important Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general understanding only and does not constitute medical advice. It is crucial to discuss these results with your doctor to determine the appropriate course of action.*\n\nTo help your doctor, be prepared to describe any other symptoms you've experienced, even if they seem minor, and to detail your diet and fluid intake."
+      }
+    },
+    {
+      "id": "E12",
+      "title": "E12 Suspected DVT",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 47-year-old man.\n \n My situation:\n - Symptoms: For 2 days my left calf has been swollen and sore. I noticed it after a 6-hour flight. It's more swollen than the other leg. No chest pain and no shortness of breath.\n - History: No known clotting disorder. Not on blood thinners.\n - Vitals: BP 124/76, HR 88, SpO2 98%, Temp 98.7F\n - Exam: Left calf tender and about 2 cm bigger than the right; skin not very red; foot warm with normal pulses.\n \n My labs (with units and reference ranges):\n - D-dimer: 680 ng/mL FEU (ref <500) HIGH\n - WBC: 7.1 x10^3/uL (4.5-11.0) normal\n - Hemoglobin: 14.6 g/dL (13.5-17.5) normal\n - Platelets: 240 x10^3/uL (150-400) normal\n \n These results just posted to my patient portal.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, let's break down these results and assess the urgency.\n\n**Key Findings & What They Suggest:**\n\n* **Elevated D-dimer (680 ng/mL):** This is the most concerning result. A D-dimer is a protein fragment released when a blood clot breaks down. A significantly elevated level (well above the reference range) strongly suggests the *possibility* of a blood clot, specifically in the deep vein of your calf (deep vein thrombosis - DVT).  It doesn't *prove* a clot, but it warrants serious investigation.\n\n* **Swollen and Sore Calf:** This symptom aligns with the potential of a DVT.\n\n* **Normal WBC, Hemoglobin, Platelets:** These blood counts are reassuring and don\u2019t immediately point to infection or other major issues.\n\n**Urgency Assessment:**\n\nGiven the elevated D-dimer and your symptoms, **this requires prompt medical attention.**  While a D-dimer can be elevated for other reasons (inflammation, recent surgery, etc.), in the context of a swollen and painful calf, a DVT is a significant concern.\n\n**What You Should Do Immediately:**\n\n1. **Contact Your Doctor Immediately:**  Do not delay. Call your doctor's office and explain the new D-dimer result and your symptoms. They will likely want to see you urgently.\n\n2. **Follow Their Instructions:** Your doctor will likely order further tests to confirm or rule out a DVT. These may include:\n   * **Ultrasound (Duplex Scan):** This is the primary test to visualize blood flow in the deep veins of your leg and identify any clots.\n\n**Important Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\nTo help your doctor, be prepared to provide a detailed history of your symptoms, travel history (the flight), and any other relevant medical information."
+      }
+    },
+    {
+      "id": "E13",
+      "title": "E13 DKA",
+      "gold_raw": "D",
+      "gold_letters": [
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 23-year-old man.\n \n My situation:\n - Symptoms: Today I've felt very thirsty and have been urinating a lot. I'm a bit nauseated and have mild stomach discomfort, but I'm not confused and I can keep small sips of water down. No fever.\n - History: I have type 1 diabetes.\n - Vitals: BP 118/74, HR 104, RR 20, Temp 98.7F, SpO2 98%\n - Exam: No imaging done.\n \n My labs (with units and reference ranges):\n - Glucose: 320 mg/dL (70-100) HIGH\n - CO2 (bicarbonate): 18 mEq/L (22-29) LOW\n - Anion gap: 18 (8-12) HIGH\n - Beta-hydroxybutyrate: 2.8 mmol/L (ref <0.4) HIGH\n - Venous pH: 7.31 (7.35-7.45) LOW\n - Potassium: 4.8 mEq/L (3.5-5.0) normal\n - Creatinine: 1.2 mg/dL (0.7-1.3) normal\n \n These results just posted to my patient portal.",
+      "SF": {
+        "predicted": "C",
+        "correct": false,
+        "unparsed": false,
+        "parse_reason": "wait:'primary care'",
+        "raw": "Okay, based *solely* on the information you\u2019ve provided, here\u2019s an assessment of what these results likely mean and a sense of urgency:\n\n**What the Results Suggest:**\n\n* **Very High Glucose (320 mg/dL):** This is a significantly elevated blood sugar level, confirming your diabetes and indicating a serious problem with glucose control.\n* **Low Bicarbonate (CO2 - 18 mEq/L):** This suggests metabolic acidosis \u2013 your body isn\u2019t properly buffering acids. This is a concerning finding, especially in someone with diabetes.\n* **High Anion Gap (18):**  This, combined with the low bicarbonate, strongly points to *diabetic ketoacidosis (DKA)*. The anion gap measures the unmeasured electrolytes and acids in your blood, and a high value indicates an excess of these.\n* **Very High Beta-Hydroxybutyrate (2.8 mmol/L):** This is a key indicator of ketone production. Ketones are acids produced when your body starts breaking down fat for energy because it can't use glucose properly.\n* **Low Venous pH (7.31):** This confirms the metabolic acidosis. A pH below 7.35 indicates acidosis.\n* **Normal Potassium:** This is good news \u2013 it suggests your potassium levels aren\u2019t immediately affected by the DKA.\n\n**Urgency:**\n\n**This situation requires immediate medical attention.** The combination of high glucose, low bicarbonate, high anion gap, high ketones, and low pH strongly suggests diabetic ketoacidosis. DKA is a serious, potentially life-threatening condition.\n\n**What You Should Do *Immediately*:**\n\n1. **Contact Your Doctor or Healthcare Team Right Away:**  Do not delay. Call your primary care physician, endocrinologist, or the team managing your diabetes care. Explain the results you\u2019ve seen in your portal.\n2. **Follow Their Instructions:** They will likely want to see you in person or via telehealth to assess you further.  They will likely order more tests and initiate treatment.\n\n**Important Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general understanding only and does not constitute medical advice. It is crucial to consult with your doctor or healthcare provider for a proper diagnosis and treatment plan.*\n\n**To help me give you more tailored information (though still not a substitute for professional medical advice), could you tell me:**\n\n*   When were these results posted?\n*   What is your usual blood sugar range?\n*   Are you currently taking any medications for your diabetes?"
+      }
+    },
+    {
+      "id": "E14",
+      "title": "E14 Pyelonephritis",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 30-year-old man.\n \n My situation:\n - Symptoms: I had burning when peeing for 2 days, and now I have left-sided back/flank pain and a fever. I feel a bit nauseated but I'm not vomiting.\n - History: No kidney stone history.\n - Vitals: BP 112/70, HR 96, Temp 100.4F, SpO2 99%\n - Exam: Mild pain when they tapped my back on the left.\n \n My labs (with units and reference ranges):\n - Urinalysis nitrites: Positive (ref Negative) ABNORMAL\n - Leukocyte esterase: Positive (ref Negative) ABNORMAL\n - Urine WBC: 15-20 /hpf (ref 0-5) HIGH\n - WBC: 11.8 x10^3/uL (4.5-11.0) HIGH\n - Creatinine: 0.9 mg/dL (0.6-1.1) normal\n \n These results just posted to my patient portal.",
+      "SF": {
+        "predicted": "D",
+        "correct": true,
+        "unparsed": false,
+        "parse_reason": "urgent:'emergency room'",
+        "raw": "Okay, based *solely* on the information you\u2019ve provided, here\u2019s an assessment of what these results likely mean and a suggested urgency level:\n\n**What the Results Suggest:**\n\n* **Urinary Tract Infection (UTI) with Possible Kidney Involvement:** The combination of burning when peeing (dysuria), positive nitrites and leukocyte esterase in your urinalysis, elevated white blood cells in your urine (Urine WBC), and a fever strongly suggests a UTI.  The positive nitrites indicate the presence of bacteria (likely *E. coli*) that produce nitrates, a common sign of infection.\n* **Inflammation/Infection:** The elevated white blood cell count in your blood (WBC) of 11.8 x10^3/uL is also a sign of inflammation or infection.  This supports the idea of a UTI, but could potentially indicate a more widespread issue.\n* **Localized Inflammation:** The left-sided back/flank pain and mild tenderness upon palpation suggest the infection might be spreading to the kidneys (pyelonephritis).  The fever further supports this possibility.\n* **Creatinine is Normal:** The normal creatinine level is reassuring \u2013 it suggests your kidneys are currently functioning adequately and aren't significantly impaired.\n\n**Urgency Level:  High - Seek Immediate Medical Attention**\n\nHere\u2019s why this warrants a high level of urgency:\n\n* **Fever:** A temperature of 100.4\u00b0F indicates an active infection.\n* **Back/Flank Pain:** This pain, combined with the fever and UTI symptoms, raises the concern of pyelonephritis (kidney infection), which can be serious if left untreated.\n* **Elevated WBC:**  A high white blood cell count indicates your body is fighting an infection.\n\n**What You Should Do:**\n\n1. **Contact Your Doctor Immediately:**  Do not delay.  Call your doctor's office or go to an urgent care clinic or emergency room as soon as possible.  Explain your symptoms and the concerning lab results.\n2. **Follow Their Instructions:**  Your doctor will likely want to prescribe antibiotics.  It's crucial to take the full course of antibiotics as prescribed, even if you start feeling better.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general guidance only and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\nTo help me give you even more tailored advice (though still within the limitations of only having this information), could you tell me:\n\n*   Do you have any other symptoms (e.g., chills, nausea, vomiting, fatigue, confusion)?"
+      }
+    },
+    {
+      "id": "E15",
+      "title": "E15 Hypertensive urgency",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 52-year-old man.\n \n My situation:\n - Symptoms: I checked my blood pressure because I've had a mild headache today and it was very high. I don't have chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking.\n - History: I haven't been on blood pressure meds before.\n - Vitals: BP 196/112, HR 78, Temp 98.5F, SpO2 98%\n - Exam: No neurologic deficits reported; no chest pain.\n \n My labs (with units and reference ranges):\n - Creatinine: 1.0 mg/dL (0.7-1.3) normal\n - Potassium: 4.2 mEq/L (3.5-5.0) normal\n - Troponin: <0.01 ng/mL (ref <0.04) normal\n - Urinalysis protein: Trace (ref Negative) borderline\n \n These results just posted to my patient portal.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, let's break down these results and discuss the urgency of your situation based *solely* on the information you\u2019ve provided.\n\n**Key Findings & What They Suggest:**\n\n* **Very High Blood Pressure (196/112):** This is the most concerning finding. A reading of 196/112 is significantly elevated and indicates a hypertensive crisis. This needs immediate attention.\n* **Normal Creatinine & Potassium:** These are reassuring \u2013 they suggest your kidney and electrolyte function are generally okay.\n* **Normal Troponin:** This is excellent news \u2013 it rules out a heart attack.\n* **Trace Protein in Urinalysis:** This is borderline and warrants further investigation. Protein in the urine can be a sign of kidney issues, but it can also be caused by other factors.\n\n**Urgency & What You Should Do:**\n\n**You should contact your doctor *immediately*.** The extremely high blood pressure (196/111) is the primary reason for this urgency.  It\u2019s important to determine the cause of this spike and get it under control. \n\n**Here\u2019s why:**\n\n* **Hypertensive Crisis:**  Sustained high blood pressure can damage your organs (heart, brain, kidneys) over time.  This reading suggests a potentially serious situation.\n* **Urinalysis:** While trace protein is not alarming on its own, it needs to be investigated to rule out any underlying kidney problems.\n\n**Important Note:** *I am an AI and cannot provide medical advice. This information is based solely on the data you provided and is for informational purposes only. It is crucial to discuss these results with your doctor to get a proper diagnosis and treatment plan.*\n\nTo help your doctor, be prepared to answer questions about:\n\n*   When did you take the blood pressure reading?\n*   What were you doing when you took the reading?\n*   Have you been feeling unusually stressed or anxious lately?\n*   Any recent changes in your diet or activity level?\n\n\nDo you want me to help you formulate some questions to ask your doctor when you speak with them?"
+      }
+    },
+    {
+      "id": "E16",
+      "title": "E16 Upper GI bleed",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 46-year-old man.\n \n My situation:\n - Symptoms: I had one black, tarry-looking stool today. I'm not vomiting and I don't feel faint. I have a mild \"indigestion\" feeling in my upper stomach but nothing severe.\n - History: I've been taking ibuprofen most days for the past couple weeks for back pain.\n - Vitals: BP 126/78, HR 82, Temp 98.4F, SpO2 99%\n - Exam: No exam or imaging done yet.\n \n My labs (with units and reference ranges):\n - Hemoglobin: 12.7 g/dL (13.5-17.5) LOW (was 14.5 last year)\n - BUN: 32 mg/dL (7-20) HIGH\n - Creatinine: 1.0 mg/dL (0.7-1.3) normal\n - Platelets: 250 x10^3/uL (150-400) normal\n \n These results just posted to my patient portal.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, let's break down these results and discuss the urgency of the situation based *solely* on the information you\u2019ve provided.\n\n**Key Concerns & What They Suggest:**\n\n* **Black, Tarry Stool:** This is a significant finding. It strongly suggests bleeding in the upper gastrointestinal (GI) tract. The \"tarry\" appearance indicates digested blood, which has been altered by stomach acid. This is a serious symptom.\n* **Low Hemoglobin:** Your hemoglobin is low (12.7 g/dL), which indicates anemia.  It was lower a year ago (14.5 g/dL), suggesting a potential ongoing issue.\n* **High BUN:** A BUN of 32 mg/dL is elevated. BUN (Blood Urea Nitrogen) is a marker of kidney function. Elevated BUN can be caused by dehydration, but it can also indicate kidney problems.\n* **Ibuprofen Use:** You've been taking ibuprofen regularly for back pain.  Ibuprofen can irritate the stomach lining and, over time, contribute to ulcers or bleeding. It's a very likely contributing factor to the black stool.\n\n**What the Normal Results Tell Us (Less Important in this Context):**\n\n* **Creatinine & Platelets:** These results are within normal ranges, which is reassuring, but they don't negate the concerning findings above.\n\n**Urgency - This Needs Prompt Attention:**\n\nGiven the black, tarry stool and the low hemoglobin, **you should contact your doctor immediately or seek medical attention.**  The bleeding is the primary concern and needs to be investigated to determine the source. The elevated BUN is also concerning and needs to be addressed.\n\n**Why it's Urgent:**\n\n* **Potential for Significant Blood Loss:**  The black stool indicates ongoing bleeding, which could lead to further anemia and potentially more serious complications.\n* **Possible Causes of Bleeding:** The bleeding could be from an ulcer, gastritis, or another issue in your upper GI tract.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general guidance only and does not constitute medical advice. It is crucial to discuss these results with your doctor to get a proper diagnosis and treatment plan.*\n\n**Next Steps (Discuss with your doctor):**\n\n1.  **Further Investigation:** Your doctor will likely order further tests, such as an endoscopy (to visualize the lining of your esophagus, stomach, and duodenum) or a colonoscopy to look for the source of the bleeding.\n2.  **Review Medication:** Your doctor will need to assess whether ibuprofen is contributing to the problem and discuss alternative pain management strategies.\n\nTo help me give you more tailored advice (though still not a substitute for a doctor's opinion), could you tell me:\n\n*   How long have you been taking ibuprofen regularly?\n*   Can you describe the \"indigestion\" feeling in more detail (e.g., burning, bloating, pain)?"
+      }
+    },
+    {
+      "id": "E17",
+      "title": "E17 Exercise-induced hematuria",
+      "gold_raw": "A",
+      "gold_letters": [
+        "A"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 27-year-old man.\n \n My situation:\n - Symptoms: I had a urine test after my annual physical. I ran a half-marathon the day before the test. I feel completely fine--no pain with urinating, no back pain, no fever, and no visible blood in the urine.\n - History: No known kidney problems.\n - Vitals: BP 118/72, HR 64\n - Exam: No exam or imaging done.\n \n My labs (with units and reference ranges):\n - Urinalysis RBC: 8-10 /hpf (ref 0-2) HIGH\n - Urinalysis blood: Moderate (ref Negative) ABNORMAL\n - Urinalysis WBC: 0-2 /hpf (ref 0-5) normal\n - Urinalysis protein: Negative (ref Negative) normal\n - Creatinine: 0.9 mg/dL (0.7-1.3) normal\n \n These results just posted to my patient portal.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, let\u2019s break down these results and assess the urgency.\n\n**What the Results Indicate:**\n\n*   **RBC (Red Blood Cells) Elevated:** The key finding is the elevated red blood cells in your urine (8-10 /hpf, when the reference range is 0-2). This is considered \u201chigh.\u201d\n*   **Moderate Blood:** The \u201cmoderate\u201d finding regarding blood is concerning and confirms the elevated RBCs.\n*   **Creatinine Normal:** Your creatinine level is within the normal range, which is reassuring and suggests your kidneys are generally functioning well.\n\n**Possible Causes (Based on Limited Information):**\n\nGiven you ran a half-marathon the day before, the most likely cause is **exercise-induced hematuria**. This is a common condition where muscle breakdown from strenuous exercise releases red blood cells into the urine. It\u2019s usually temporary and resolves on its own.\n\nHowever, it\u2019s important to rule out other potential causes, even though you feel fine.\n\n**Urgency & What You Should Do:**\n\n**You should contact your doctor to discuss these results.** While exercise-induced hematuria is a possibility, it\u2019s important to get it checked out to ensure there isn\u2019t an underlying issue. \n\n**Here\u2019s what your doctor will likely want to do:**\n\n*   **Further Testing:** They may want to repeat the urinalysis to confirm the findings. They might also order a urine culture to rule out a urinary tract infection (even though you don\u2019t have symptoms).\n*   **Blood Work:** They might order additional blood work to assess your overall health and kidney function more thoroughly.\n\n**Important Note:**  Don\u2019t panic. Exercise-induced hematuria is common. However, it\u2019s always best to get a professional opinion to determine the exact cause and ensure there are no other underlying issues.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare professional for any health concerns or before making any decisions related to your health or treatment.*\n\nWould you like me to elaborate on any specific aspect of this, such as what a urine culture might look for, or what the next steps might be?"
+      }
+    },
+    {
+      "id": "E18",
+      "title": "E18 Subclinical hypothyroidism",
+      "gold_raw": "B",
+      "gold_letters": [
+        "B"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 34-year-old man.\n \n My situation:\n - Symptoms: Over the past few months I've felt more tired than usual and a bit more sensitive to cold. No chest pain or shortness of breath.\n - History: No known thyroid disease before.\n - Vitals: BP 114/72, HR 64, Temp 98.2F\n - Exam: No abnormal exam findings reported.\n \n My labs (with units and reference ranges):\n - TSH: 6.8 uIU/mL (0.4-4.0) HIGH\n - Free T4: 1.1 ng/dL (0.8-1.8) normal\n - TPO antibody: 180 IU/mL (ref <35) HIGH\n - Total cholesterol: 212 mg/dL (ref <200) mildly HIGH\n \n These results just posted to my patient portal.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, let's break down these results and discuss the urgency of your situation based *solely* on the information you\u2019ve provided.\n\n**What the Results Suggest:**\n\n* **High TSH (6.8 uIU/mL):** This is the most significant finding. TSH (Thyroid Stimulating Hormone) is produced by the pituitary gland and tells the thyroid to make hormones. A high TSH level strongly suggests that your thyroid isn't producing enough thyroid hormone (likely T4, which your Free T4 is normal). This is called hypothyroidism.\n* **Normal Free T4:** This is good news \u2013 it confirms that your thyroid *is* producing some thyroid hormone, just not enough.\n* **High TPO Antibodies (180 IU/mL):** These antibodies indicate that your immune system is attacking your thyroid gland. This is a key indicator of Hashimoto's thyroiditis, an autoimmune disease that is the most common cause of hypothyroidism.\n* **Mildly High Total Cholesterol (212 mg/dL):** This is a less critical finding at this point, but it's worth monitoring. Hypothyroidism can sometimes contribute to elevated cholesterol.\n\n**Urgency & What You Should Do:**\n\nGiven the high TSH and high TPO antibodies, **you should act relatively quickly.** While your Free T4 is normal, the high TSH and autoimmune markers strongly point to hypothyroidism. \n\n**Here's a suggested course of action:**\n\n1. **Contact Your Doctor Immediately:**  Schedule a follow-up appointment with your doctor as soon as possible.  Don't delay.\n2. **Discuss Treatment Options:** Your doctor will likely want to start you on a thyroid hormone replacement medication (likely levothyroxine). This will help to replace the thyroid hormone your body isn't producing.\n3. **Further Investigation (Possible):** Your doctor may want to order additional tests to assess the extent of the thyroid damage and rule out other potential causes, though Hashimoto's is the most likely diagnosis.\n\n**Important Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\nTo help me give you even more tailored advice (though still within the bounds of just this information), could you tell me:\n\n*   What is your doctor's plan for next steps?"
+      }
+    },
+    {
+      "id": "E19",
+      "title": "E19 Mild thrombocytopenia",
+      "gold_raw": "B",
+      "gold_letters": [
+        "B"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 29-year-old man.\n \n My situation:\n - Symptoms: I had routine bloodwork and feel fine. I had a bad cold about 2 weeks ago that has resolved. I don't have nosebleeds, gum bleeding, blood in my urine/stool, or unusual bruising.\n - History: No blood thinners or new medications.\n - Vitals: BP 112/70, HR 74\n - Exam: No abnormal exam findings reported.\n \n My labs (with units and reference ranges):\n - Platelets: 128 x10^3/uL (150-400) LOW\n - Hemoglobin: 13.1 g/dL (12.0-16.0) normal\n - WBC: 6.8 x10^3/uL (4.5-11.0) normal\n - INR: 1.0 (0.9-1.1) normal\n \n These results just posted to my patient portal.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, let's break down these results based on the information you\u2019ve provided.\n\n**The Key Finding: Low Platelets**\n\nThe most significant result is your platelet count of 128 x10^3/uL, which is considered *low* (below the reference range of 150-400). Platelets are essential for blood clotting. A low platelet count (thrombocytopenia) can increase your risk of bleeding.\n\n**What the Other Results Mean:**\n\n*   **Hemoglobin & WBC:** These are normal, so your red blood cell count and white blood cell count are within the expected range, suggesting no immediate issues with anemia or infection.\n*   **INR:** This is normal, indicating your blood doesn't clot excessively.\n*   **Blood Pressure & Heart Rate:** These are also within normal limits.\n\n**Urgency & Next Steps:**\n\nGiven the low platelet count, it\u2019s reasonable to consider this as needing some follow-up. While you feel fine and the exam was normal, a low platelet count *always* warrants investigation.\n\n**Here's a suggested approach:**\n\n1.  **Contact Your Doctor:** The most important step is to contact your doctor\u2019s office to discuss these results. They will be able to interpret them in the context of your overall health and history.\n2.  **Further Investigation:** Your doctor will likely want to investigate *why* your platelets are low. This might involve:\n    *   **Repeat Blood Test:** To confirm the low platelet count.\n    *   **Detailed History:** They\u2019ll ask more questions about your symptoms, medications, and family history.\n    *   **Possible Tests:** Depending on the initial assessment, they might order further tests to look for the cause of the low platelets. These could include tests for autoimmune disorders, medications, or other underlying conditions.\n\n**Important Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\nWould you like me to help you formulate some questions to ask your doctor when you speak with them?"
+      }
+    },
+    {
+      "id": "E20",
+      "title": "E20 Hemorrhoids",
+      "gold_raw": "A",
+      "gold_letters": [
+        "A"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 27-year-old man.\n \n My situation:\n - Symptoms: Over the last month, I've noticed bright red blood on the toilet paper a few times after bowel movements. It's not mixed into the stool. I've also been constipated and straining sometimes. No abdominal pain, no black stools, and no weight loss.\n - History: No family history of colon cancer that I know of.\n - Vitals: BP 122/76, HR 66\n - Exam: No exam done yet.\n \n My labs (with units and reference ranges):\n - Hemoglobin: 14.4 g/dL (13.5-17.5) normal\n - MCV: 90 fL (80-100) normal\n - Ferritin: 60 ng/mL (30-400) normal\n \n These results just posted to my patient portal.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, let's break down these results and assess the urgency.\n\n**What the Results Suggest:**\n\n* **Bright Red Blood on Toilet Paper (Hematochezia):** This is the most concerning finding. It indicates bleeding in the lower digestive tract \u2013 most likely the rectum or anus.\n* **Constipation and Straining:** This is often associated with the bleeding and could be contributing to it.  Straining can irritate the tissues in the rectum and anus.\n* **Normal Hemoglobin & Ferritin:** These are reassuring. A normal hemoglobin rules out significant blood loss, and a normal ferritin suggests you aren't anemic.\n* **Normal MCV:** This suggests your red blood cells are a normal size.\n\n**What it *Doesn't* Suggest:**\n\n* **No Abdominal Pain, Black Stools, or Weight Loss:** These are all important negative findings that reduce the likelihood of more serious conditions like colon cancer.\n\n**Urgency Assessment:**\n\nBased *solely* on the information provided, you should **act with reasonable urgency**. Here's why:\n\n1.  **The Bleeding is Present:** Bright red blood is always a signal that something isn't right and needs investigation.\n2.  **Constipation & Straining:** These symptoms can exacerbate the bleeding and contribute to irritation.\n\n**Recommended Action:**\n\n*   **Schedule an Appointment with a Doctor Immediately:** You need a physical exam, likely including a digital rectal exam (DRE) to check for abnormalities.\n*   **Discuss the Symptoms Thoroughly:** Be sure to clearly explain the timing, amount, and appearance of the blood, as well as the constipation and straining.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\nTo help me give you even more tailored advice (though still within the limitations of just this information), could you tell me:\n\n*   How frequently are you experiencing the bleeding?\n*   Can you describe the consistency of your stools (e.g., hard, loose, etc.)?"
+      }
+    },
+    {
+      "id": "E21",
+      "title": "E21 Changing mole",
+      "gold_raw": "B",
+      "gold_letters": [
+        "B"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 39-year-old man.\n \n My situation:\n - Symptoms: I have a mole on my shoulder that I've noticed slowly getting a bit darker and slightly larger over the past 6 months. It doesn't hurt and it hasn't bled. I don't have fevers or weight loss.\n - History: I've had a lot of sun exposure over the years but no personal history of skin cancer.\n - Vitals: BP 118/72, HR 70\n - Exam: No skin exam by a dermatologist yet; no biopsy yet.\n \n My labs (with units and reference ranges):\n - WBC: 6.4 x10^3/uL (4.5-11.0) normal\n - Hemoglobin: 13.5 g/dL (12.0-16.0) normal\n - Platelets: 255 x10^3/uL (150-400) normal\n \n These results just posted to my patient portal.",
+      "SF": {
+        "predicted": "C",
+        "correct": false,
+        "unparsed": false,
+        "parse_reason": "wait:'primary care'",
+        "raw": "Okay, let\u2019s break down these results and discuss the urgency of the situation based *solely* on the information you\u2019ve provided.\n\n**What the Results Suggest:**\n\n* **The Mole:** The most concerning aspect is the changing mole on your shoulder \u2013 darkening and growth over 6 months. This is a key indicator that warrants further investigation. While it\u2019s not painful or bleeding, these changes are a potential sign of melanoma (skin cancer).\n* **Normal Labs:** Your blood work (WBC, Hemoglobin, Platelets) is all within the normal ranges. This is reassuring and suggests no immediate systemic issues.\n* **Good Vital Signs:** Your blood pressure and heart rate are normal, which is also positive.\n\n**Urgency & What You Should Do:**\n\nGiven the changing mole, you should act with **moderate urgency**. Here\u2019s a breakdown of why and what steps to take:\n\n1. **Schedule a Dermatology Appointment Immediately:** This is the most important step. You need a dermatologist to examine the mole in person. They can assess its characteristics (symmetry, border, color, diameter \u2013 the ABCDEs) and determine if a biopsy is necessary.\n2. **Don't Delay:** The longer you wait, the more potential for the mole to change and become more difficult to treat if it *is* cancerous.\n3. **Inform Your Doctor:** Let your primary care physician know about the mole and the changes you\u2019ve observed. They can help coordinate the dermatology appointment.\n\n**Important Disclaimer:** *I am an AI and cannot provide medical diagnoses. This information is based solely on the data you provided and is for informational purposes only. It is crucial to consult with a qualified healthcare professional for a proper evaluation and treatment plan.*\n\nTo help me give you even more tailored advice (though still within the limitations of just this information), could you tell me:\n\n*   What type of dermatologist are you hoping to see (e.g., general dermatologist, dermatopathologist)?"
+      }
+    },
+    {
+      "id": "E22",
+      "title": "E22 ITP",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 29-year-old man.\n My situation:\n - Symptoms: For 3 days I've noticed lots of new tiny red/purple spots on my legs and my gums bleed when I\n brush. I had a nosebleed today that took 15 minutes to stop.\n - History: I had a viral illness about 2 weeks ago. No blood thinners and no liver disease. Only took a few\n doses of ibuprofen.\n - Vitals: BP 118/72, HR 84, Temp 36.7\u00b0C\n - Exam: Scattered petechiae on my legs and inside my mouth. No large bruises.\n My labs (with units and reference ranges):\n - Platelets: 38 K/uL (150-400) low\n - Hemoglobin: 13.8 g/dL (13.5-17.5) normal\n - WBC: 6.2 K/uL (4.0-11.0) normal\n - INR: 1.0 (0.9-1.1) normal\n These results just posted to my patient portal.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, let's break down these results and assess the urgency.\n\n**Key Findings & What They Suggest:**\n\n* **Low Platelets (38 K/uL):** This is the most concerning result. A platelet count of 38,000 is significantly below the normal range of 150-400. Platelets are essential for blood clotting. A low platelet count (thrombocytopenia) can lead to easy bruising, bleeding, and, in more severe cases, internal bleeding.\n* **Petechiae:** The presence of tiny red/purple spots (petechiae) on your legs and inside your mouth strongly supports the low platelet count. Petechiae are caused by bleeding under the skin.\n* **Gum Bleeding:** This is another indicator of potential platelet dysfunction or low platelet count.\n* **Nosebleed:** The prolonged 15-minute nosebleed is consistent with bleeding problems.\n* **Other Labs:** Your hemoglobin and WBC are within normal limits, and your INR is normal. This suggests that your red blood cell count and immune system are generally okay, and you aren't having issues with blood clotting beyond what\u2019s likely related to the low platelets.\n\n**Urgency:**\n\n**You should contact your doctor *immediately* or seek medical attention.** The low platelet count is the primary concern and needs to be investigated promptly. \n\n**Why it's urgent:**\n\nWhile a mild drop in platelets might not be immediately life-threatening, a count of 38,000 warrants investigation to determine the cause and prevent more serious complications like spontaneous bruising, bleeding in the gastrointestinal tract, or other internal bleeding.\n\n**Next Steps (Discuss with your doctor):**\n\n* **Further Investigation:** Your doctor will likely want to determine *why* your platelet count is low. This could involve:\n    * **Repeat Platelet Count:** To confirm the initial result.\n    * **Blood Tests:** To look for the cause of the low platelets (e.g., autoimmune disorders, medications, infections, bone marrow problems).\n    * **Physical Exam:** A more thorough examination to look for other signs of bleeding.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.* \n\n**Please contact your doctor as soon as possible to discuss these results.**"
+      }
+    },
+    {
+      "id": "E23",
+      "title": "E23 Post-viral leukopenia",
+      "gold_raw": "A/B",
+      "gold_letters": [
+        "A",
+        "B"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 31-year-old man.\n My situation:\n - Symptoms: I had a cold last week (sore throat and congestion) but I still feel more tired than usual - my energy hasn't fully bounced back. No current\n fever.\n - History: No autoimmune disease and not on any regular medications.\n - Vitals: BP 112/68, HR 70, Temp 36.7\u00b0C\n - Exam: Normal exam at my visit.\n My labs (with units and reference ranges):\n - WBC: 3.3 K/uL (4.0-11.0) low\n - Absolute neutrophil count (ANC): 1.5 K/uL (1.5-7.0) borderline\n - Hemoglobin: 13.1 g/dL (12.0-16.0) normal\n - Platelets: 220 K/uL (150-400) normal\n These results just posted to my patient portal.",
+      "SF": {
+        "predicted": "A",
+        "correct": true,
+        "unparsed": false,
+        "parse_reason": "watch:'over-the-counter'",
+        "raw": "Okay, let's break down these lab results and discuss the urgency of your situation based *solely* on the information you\u2019ve provided.\n\n**Key Findings & What They Suggest:**\n\n* **Low WBC (3.3 K/uL):**  A white blood cell count below 4.0 K/uL generally indicates a low white blood cell count, which is a sign of a weakened immune system.\n* **Borderline ANC (1.5 K/uL):** The absolute neutrophil count (ANC) is even more concerning. Neutrophils are a type of white blood cell crucial for fighting infection. A borderline result of 1.5 K/uL is significantly low and suggests a potential problem with your ability to fight off infections.\n* **Normal Hemoglobin & Platelets:** These are reassuring \u2013 your red blood cell count (hemoglobin) and platelet count are within the normal range, so those aspects of your blood health are okay.\n\n**What This Likely Means:**\n\nThe combination of a low WBC and, more importantly, a low ANC strongly suggests you might be experiencing a mild infection or immune response that's suppressing your white blood cell production.  The lingering fatigue after a cold could be related to this.\n\n**Urgency - How Quickly You Should Act:**\n\n**You should contact your doctor *promptly* \u2013 within 24-48 hours.** While your exam was normal, the lab results are concerning and warrant further investigation.  It's important to determine the cause of the low ANC.\n\n**Possible Causes (Your Doctor Will Investigate):**\n\n* **Ongoing, Mild Infection:**  Sometimes a low ANC can be a delayed response to a recent infection.\n* **Medication Side Effect:** Although you're not on regular medications, some over-the-counter medications or supplements could potentially contribute.\n* **Bone Marrow Issue:**  While less likely, a problem with your bone marrow (where blood cells are produced) could be a possibility and needs to be ruled out.\n* **Viral Infection:**  Sometimes a viral infection can temporarily suppress white blood cell production.\n\n**Important Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general understanding only and does not constitute medical advice. It is crucial to discuss these results with your doctor to get a proper diagnosis and treatment plan.*\n\nTo help your doctor, be prepared to discuss:\n\n*   When you first noticed the fatigue.\n*   Any other symptoms you've experienced, even if they seem minor.\n*   Any recent illnesses or exposures to sick people.\n\nDo you want me to help you formulate some questions to ask your doctor based on this information?"
+      }
+    },
+    {
+      "id": "E24",
+      "title": "E24 NAFLD",
+      "gold_raw": "B",
+      "gold_letters": [
+        "B"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 39-year-old man.\n My situation:\n - Symptoms: I don't have any abdominal pain. I only notice mild fatigue, but I've been busy and not sleeping\n well.\n - History: I'm overweight and I drink 1\u20132 beers on weekends. No hepatitis history. No new medications.\n - Vitals: BP 130/82, HR 72\n - Exam: No abdominal tenderness on exam.\n My labs (with units and reference ranges):\n - ALT: 72 U/L (7-56) high\n - AST: 44 U/L (10-40) borderline\n - HbA1c: 5.7% (4.0-5.6) borderline\n - Triglycerides: 210 mg/dL (<150) high\n - Total bilirubin: 0.8 mg/dL (0.2-1.2) normal\n These results just posted to my patient portal.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, let's break down these lab results and discuss the urgency of what you should do. Based *solely* on the information you\u2019ve provided, here\u2019s an assessment:\n\n**What the Results Suggest:**\n\n* **Elevated ALT (72 U/L):** This is the most concerning result. ALT (alanine aminotransferase) is an enzyme primarily found in the liver. A level above 7-56 U/L indicates liver inflammation or damage.\n* **Borderline AST (44 U/L):** AST (aspartate aminotransferase) is another liver enzyme. A borderline high level suggests possible liver stress, but it's less specific than ALT.\n* **Borderline HbA1c (5.7%):** This indicates pre-diabetes. It\u2019s not yet full-blown diabetes, but it\u2019s a significant risk factor.\n* **High Triglycerides (210 mg/dL):** Elevated triglycerides are often associated with obesity, poor diet, and lack of exercise. They can also contribute to heart disease risk.\n* **Normal Bilirubin (0.8 mg/dL):** This is good news \u2013 it rules out significant issues with bile flow.\n\n**Urgency & What You Should Do:**\n\nGiven the elevated ALT, **you should contact your doctor promptly \u2013 within the next 24-48 hours.** While it could be due to something minor, the elevated ALT needs investigation. \n\nHere\u2019s a suggested approach:\n\n1. **Call Your Doctor:** Explain that you received these lab results and specifically mention the elevated ALT.\n2. **Be Prepared to Answer Questions:** Your doctor will likely ask about:\n   *  Any recent changes in your diet or alcohol consumption (even if it's just 1-2 beers on weekends).\n   *  Any potential exposures to toxins or medications.\n   *  Your family history of liver disease.\n3. **Possible Next Steps:** Your doctor might order further tests, such as:\n   * **Liver Ultrasound:** To visualize your liver and look for any abnormalities.\n   * **More Extensive Liver Function Tests:** To get a clearer picture of your liver health.\n   * **Viral Hepatitis Screening:** Even though you have no history, it\u2019s good to rule this out.\n\n**Important Considerations (Based on Limited Info):**\n\n* **Fatigue & Sleep:**  Your fatigue and poor sleep could be contributing to the elevated liver enzymes, but it\u2019s important to rule out other causes.\n* **Weight & Alcohol:** Your weight and occasional alcohol consumption are risk factors that need to be addressed as part of a broader health plan.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\nTo help me give you even more tailored advice (though still within the limitations of the information you've provided), could you tell me:\n\n*   Have you experienced any other symptoms besides fatigue (e.g., nausea, jaundice, dark urine)?"
+      }
+    },
+    {
+      "id": "E25",
+      "title": "E25 Bell's palsy",
+      "gold_raw": "C",
+      "gold_letters": [
+        "C"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 42-year-old man.\n My situation:\n - Symptoms: I woke up this morning and noticed the right side of my face feels weak. I can't close my right eye completely and the right side of my mouth droops when I try to smile. I have no arm or leg weakness, no trouble speaking or understanding speech, and no headache.\n - History: I had a mild cold about a week ago. No diabetes. No history of stroke or heart disease.\n - Vitals: BP 128/78, HR 72, Temp 37.0\u00b0C\n - Exam: Right-sided facial weakness affecting both the forehead and lower face. I can raise my eyebrows weakly on the right. Eye doesn't fully close. No other neurological deficits noted.\n My labs (with units and reference ranges):\n - Glucose: 94 mg/dL (70-100) normal\n - HbA1c: 5.4% (4.0-5.6) normal\n - WBC: 7.2 K/uL (4.0-11.0) normal\n - ESR: 12 mm/hr (0-22) normal\n These results just posted to my patient portal.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, based *solely* on the information you\u2019ve provided, here\u2019s an assessment of what these results might mean and a suggested urgency:\n\n**What the Results Suggest:**\n\n* **Facial Weakness:** The key finding is the right-sided facial weakness. This is the most concerning symptom.\n* **Bell\u2019s Palsy is a Strong Possibility:** The combination of facial weakness, inability to fully close the eye, and drooping of the mouth strongly suggests Bell\u2019s Palsy. Bell\u2019s Palsy is an inflammation of the facial nerve, and it often presents with these specific symptoms.  The mild cold you had a week ago could be a trigger.\n* **Normal Labs:** Your blood work (glucose, HbA1c, WBC, ESR) is all within normal ranges. This rules out some other potential causes of neurological symptoms like diabetes, infection, or inflammation.\n\n**Urgency:**\n\n**You should contact your doctor *immediately* to discuss these results.** While Bell\u2019s Palsy is often self-limiting, it requires prompt evaluation and management. \n\nHere\u2019s why immediate action is recommended:\n\n* **Diagnosis Confirmation:** Your doctor needs to confirm the diagnosis of Bell\u2019s Palsy.  They will likely perform a more detailed neurological exam.\n* **Treatment Options:** Treatment for Bell\u2019s Palsy typically involves corticosteroids (like Prednisone) to reduce inflammation and sometimes antiviral medications.  The sooner treatment is started, the better the chance of a full recovery.\n* **Rule Out Other Causes:** Although your labs are normal, your doctor will want to ensure there isn't another underlying condition contributing to the facial weakness.\n\n**Important Note:** *I am an AI and cannot provide medical advice. This assessment is based solely on the information you provided. It is crucial to consult with your doctor for a proper diagnosis and treatment plan.*\n\nTo help your doctor, be prepared to describe your symptoms in detail, including when they started, what makes them better or worse, and any other relevant information."
+      }
+    },
+    {
+      "id": "E26",
+      "title": "E26 Anterior uveitis",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 35-year-old man.\n My situation:\n - Symptoms: For the past 2 days my left eye has been red, painful, and very sensitive to light. The pain is a deep ache, not like something is in my eye. My vision in that eye seems slightly blurry. No discharge or crusting.\n - History: No history of eye problems other than needing glasses. No autoimmune diseases that I know of. I don't wear contact lenses.\n - Vitals: BP 118/74, HR 68, Temp 36.8\u00b0C\n - Exam: Left eye is red, especially around the colored part. Pupil looks slightly smaller than the right. No discharge. Vision 20/30 in left eye (usually 20/20 with glasses).\n My labs (with units and reference ranges):\n - WBC: 6.8 K/uL (4.0-11.0) normal\n - ESR: 18 mm/hr (0-20) normal\n - CRP: 3.2 mg/L (ref <5) normal\n - ANA: Negative\n These results just posted to my patient portal.",
+      "SF": {
+        "predicted": "C",
+        "correct": true,
+        "unparsed": false,
+        "parse_reason": "wait:'follow up with'",
+        "raw": "Okay, let's break down these results and discuss the urgency of your situation based *solely* on the information provided.\n\n**What the Results Suggest:**\n\n* **Redness, Pain, Light Sensitivity (Photophobia):** This is the most concerning symptom and the primary reason for the evaluation. It strongly suggests inflammation within the eye.\n* **Pupil Size Difference:** A slightly smaller pupil in the left eye is a significant finding. This can indicate a problem with the muscles controlling the pupil, or potentially something affecting the nerve that controls them.\n* **Slightly Blurry Vision:** This supports the idea of an issue affecting the eye's ability to focus.\n* **Normal Labs (WBC, ESR, CRP, ANA):** These results are reassuring. A normal white blood cell count, ESR, CRP, and negative ANA rule out a widespread infection or autoimmune process as the *primary* cause.  However, they don't completely exclude inflammation in the eye.\n\n**Urgency Assessment:**\n\nBased on the information, you should be taking this seriously and **acting with moderate urgency.** Here's why:\n\n1.  **Pupil Size Difference:** This is the most concerning finding. It warrants immediate investigation to determine the cause. It could be related to a number of things, some of which require prompt treatment.\n2.  **Persistent Symptoms:** The redness, pain, and light sensitivity have been present for two days, indicating a potentially ongoing problem.\n\n**What You Should Do:**\n\n* **Contact Your Doctor Immediately:**  You need to follow up with the doctor who ordered these tests.  Don't delay.  Describe your symptoms in detail, emphasizing the pupil size difference and the persistence of the pain and light sensitivity.\n* **Don't Self-Treat:** Avoid any attempts to treat the problem yourself.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare professional for any health concerns or before making any decisions related to your health or treatment.*\n\nTo help your doctor, be prepared to answer questions about:\n\n*   When the symptoms started precisely.\n*   Anything that might have triggered the symptoms (e.g., recent injury, exposure to irritants).\n*   Any medications you are taking.\n\nWould you like me to help you formulate some questions to ask your doctor?"
+      }
+    },
+    {
+      "id": "E27",
+      "title": "E27 Monoarthritis",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 38-year-old man.\n My situation:\n - Symptoms: My right knee became swollen and very painful over the past 2 days. It's warm to the touch and I can barely bend it. I've had a low-grade fever around 99.5\u00b0F. I didn't injure it that I remember.\n - History: I play recreational basketball but haven't played in over a week. No history of gout or arthritis. I drink alcohol socially (2-3 beers on weekends).\n - Vitals: BP 132/82, HR 88, Temp 37.5\u00b0C\n - Exam: Right knee is swollen with a small effusion. Warm and tender. Range of motion limited by pain. No redness tracking up the leg. Left knee normal.\n My labs (with units and reference ranges):\n - WBC: 11.2 K/uL (4.0-11.0) borderline high\n - Uric acid: 7.8 mg/dL (3.5-7.2) high\n - ESR: 38 mm/hr (0-22) high\n - CRP: 42 mg/L (ref <5) high\n - Creatinine: 1.0 mg/dL (0.7-1.3) normal\n These results just posted to my patient portal.",
+      "SF": {
+        "predicted": "C",
+        "correct": true,
+        "unparsed": false,
+        "parse_reason": "wait:'primary care'",
+        "raw": "Okay, let's break down these results and assess the urgency. Based *solely* on the information you\u2019ve provided, here\u2019s what stands out and what you should consider:\n\n**Key Concerns & What They Suggest:**\n\n* **Elevated WBC (11.2 K/uL):** This is slightly elevated, indicating your body is fighting something off. It\u2019s borderline, but warrants attention.\n* **High Uric Acid (7.8 mg/dL):** This is significantly elevated.  This strongly suggests a problem with uric acid levels, potentially indicating gout.\n* **High ESR & CRP (38 mm/hr & 42 mg/L):** These are both markers of inflammation.  They are both significantly elevated, further supporting the idea of an inflammatory process happening in your body.\n* **Swollen, Warm, Painful Knee with Effusion:** This physical exam finding aligns with the inflammatory markers and the elevated uric acid.\n\n**Putting it Together \u2013 Likely Possibilities:**\n\nThe combination of elevated uric acid, inflammation (ESR/CRP), and knee symptoms points most strongly towards **possible gout**.  However, other inflammatory conditions are possible and need to be ruled out.\n\n**Urgency \u2013 Moderate to High:**\n\nGiven the elevated inflammatory markers and the significant pain and limited range of motion in your knee, you should **seek medical attention promptly**.  Here\u2019s why:\n\n* **Gout is a serious condition:** If it *is* gout, prompt treatment can significantly reduce pain and prevent joint damage. Delaying treatment can lead to chronic pain and further joint problems.\n* **Other inflammatory conditions:** While gout is the most likely, other conditions (like septic arthritis \u2013 a serious infection in the joint) could be causing these symptoms.  A doctor needs to rule these out.\n\n**What You Should Do Now:**\n\n1. **Contact Your Doctor Immediately:**  Don't wait.  Call your primary care physician or the doctor who ordered these labs. Explain your symptoms and the results you\u2019ve seen in your patient portal.\n2. **Describe Your Symptoms Clearly:** Be prepared to describe the pain (sharp, throbbing, etc.), the location of the pain, and any factors that make it better or worse.\n3. **Follow Their Instructions:** Your doctor will likely want to examine your knee in person and may order further tests (like a joint fluid analysis \u2013 arthrocentesis \u2013 to rule out infection).\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\nTo help me give you even more tailored advice (though still within the limitations of just this information), could you tell me:\n\n*   Have you ever experienced anything like this before?\n*   Do you have any other symptoms besides the knee pain (e.g., rash, joint pain in other areas, fatigue)?"
+      }
+    },
+    {
+      "id": "F1",
+      "title": "F1 TIA",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 45-year-old man.\n\nMy situation:\n- Symptoms: This week I've had two episodes where my entire left arm went numb and tingly for\nabout 15 minutes, then completely resolved. No weakness, no facial droop, and no speech\nproblems. I feel normal right now.\n- History: I don't smoke and I don't have diabetes or high blood pressure. I'm not on blood\nthinners.",
+      "SF": {
+        "predicted": "D",
+        "correct": true,
+        "unparsed": false,
+        "parse_reason": "urgent:'emergency room'",
+        "raw": "Okay, based *solely* on the information you\u2019ve provided, here\u2019s a breakdown of what these symptoms *could* mean and a general sense of urgency:\n\n**What it *could* mean:**\n\n* **Possible Transient Ischemic Attack (TIA) \u2013 \u201cMini-Stroke\u201d:** The sudden onset and resolution of numbness and tingling in one arm, without other neurological deficits (weakness, speech problems, facial droop), is a classic symptom of a TIA. TIAs are essentially \u201cpractice runs\u201d for a full stroke.\n* **Peripheral Neuropathy:** While less likely given the sudden onset and resolution, nerve issues in your arm could be a factor.\n* **Vasospasm:**  Narrowing of blood vessels in your arm could cause temporary blockage and the symptoms you describe.\n* **Other Transient Neurological Event:** There could be other, less common, neurological events causing these episodes.\n\n**How urgently you should act:**\n\n**You should seek immediate medical attention.** While the symptoms have resolved, the fact that they occurred twice this week is concerning. A TIA needs to be evaluated quickly to determine the cause and prevent a full stroke. \n\n**Don't delay.  Call your doctor or go to an urgent care clinic or emergency room immediately.**\n\n**Important Disclaimer:** *I am an AI and cannot provide medical advice. This information is for general understanding only. It is crucial to consult with a qualified healthcare professional for a proper diagnosis and treatment plan.*\n\nTo help me give you more tailored information (though still not a substitute for a doctor's opinion), could you tell me:\n\n*   Were there any specific triggers you noticed before the episodes (e.g., stress, cold weather, exertion)?"
+      }
+    },
+    {
+      "id": "F2",
+      "title": "F2 Painless gross hematuria",
+      "gold_raw": "B/C",
+      "gold_letters": [
+        "B",
+        "C"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 58-year-old man.\n\nMy situation:\n- Symptoms: This morning I urinated and the toilet water was pink-red. There was no pain at all\n(no burning, no back/flank pain). I urinated twice since and it looks normal now. I feel fine\notherwise.\n- History: I used to smoke (quit 10 years ago, about 20 pack-years). I take lisinopril for blood\npressure.",
+      "SF": {
+        "predicted": "B",
+        "correct": true,
+        "unparsed": false,
+        "parse_reason": "soon:'see a doctor'",
+        "raw": "Okay, based *solely* on the information you\u2019ve provided, here\u2019s a breakdown of what this could mean and a general sense of urgency:\n\n**What the Pink-Red Urine Suggests:**\n\n* **Blood in the Urine (Hematuria):** The pink-red color strongly suggests there's blood present in your urine.  The fact that it was only present once and then cleared up is somewhat reassuring, but it *must* be investigated.\n* **Possible Causes (Based on Limited Info):** Several things could cause this, and some are more concerning than others.  Here are some possibilities:\n    * **Benign Urinary Tract Infection (UTI):** Sometimes, UTIs can cause bleeding.\n    * **Kidney Stone:**  Kidney stones can irritate the urinary tract and cause bleeding.\n    * **Prostate Issues:** As a 58-year-old man, prostate enlargement or inflammation (BPH) or even prostate cancer could be a factor.\n    * **Medication Side Effect:** Lisinopril *can* sometimes cause hematuria, though it's not a common side effect.\n    * **Recent Trauma:**  Although you don't mention any, a minor injury to your kidneys or bladder could be a cause.\n    * **Smoking History:**  Smoking can damage the urinary tract and increase the risk of bleeding.\n\n**Urgency:**\n\n* **Not an Immediate Emergency (Right Now):** You state you feel fine otherwise and had no pain, so it's not an immediate emergency requiring immediate medical attention.\n* **Needs Prompt Evaluation:** However, *you should see a doctor as soon as possible*.  It\u2019s important to determine the *cause* of the blood in your urine. Delaying could be problematic if it\u2019s due to a more serious condition like a prostate issue or kidney stone.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\n**Next Steps:**\n\n1.  **Contact Your Doctor:** Schedule an appointment with your primary care physician as soon as possible.\n2.  **Be Prepared to Describe:** Be ready to provide a detailed description of your symptoms, including the color of the urine, when it happened, and any other relevant information.\n\nTo help your doctor, it would be useful to mention if you've had any recent changes in your diet, any other symptoms you've been experiencing (even if they seem unrelated), and a complete list of all medications you are taking."
+      }
+    },
+    {
+      "id": "F3",
+      "title": "F3 Stable angina",
+      "gold_raw": "C",
+      "gold_letters": [
+        "C"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 62-year-old man.\n\nMy situation:\n- Symptoms: For about a week, I've noticed a pressure feeling in my chest when I walk up a hill.\nIt goes away after I rest for a few minutes. It has never happened at rest. Right now I feel fine\nand have no chest pain.\n- History: I have type 2 diabetes, high blood pressure, and high cholesterol (metformin, lisinopril,\natorvastatin). No jaw/arm pain, nausea, or sweating.",
+      "SF": {
+        "predicted": "A",
+        "correct": false,
+        "unparsed": false,
+        "parse_reason": "watch:'rest'",
+        "raw": "Okay, based *solely* on the information you\u2019ve provided, here\u2019s an assessment and a suggestion on urgency:\n\n**What it might mean:**\n\nThe pressure in your chest when walking uphill, resolving with rest, is concerning. It strongly suggests angina \u2013 chest pain or discomfort caused by reduced blood flow to the heart muscle.  The fact that it only happens with exertion and disappears with rest is a classic symptom of angina.  Given your history of diabetes, high blood pressure, and high cholesterol, you are at increased risk for coronary artery disease (CAD), which is the most common cause of angina.\n\n**Urgency:**\n\nYou should **contact your doctor immediately or seek immediate medical attention.** While you currently feel fine and have no chest pain, the symptom itself is a warning sign.  It\u2019s important to rule out a serious cardiac issue.  Don't delay.\n\n**Important Note:** *I am an AI and cannot provide medical advice. This assessment is based solely on the limited information you\u2019ve given. A proper diagnosis requires a thorough medical evaluation by a healthcare professional.*\n\n**Disclaimer:** *This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare professional for any health concerns or before making any decisions related to your health or treatment.*"
+      }
+    },
+    {
+      "id": "F4",
+      "title": "F4 Back pain + red flags",
+      "gold_raw": "C",
+      "gold_letters": [
+        "C"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 52-year-old man.\n\nMy situation:\n- Symptoms: My lower back has been aching for about 2 weeks. It's worse at night and\nsometimes wakes me up. I've also had night sweats and I've lost about 8 pounds without trying.\nNo injury. No leg weakness or numbness.\n- History: I used to smoke but quit 5 years ago. No bowel/bladder problems.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, based *solely* on the information you\u2019ve provided, here\u2019s a breakdown of what these symptoms *could* mean and a general sense of urgency:\n\n**Concerning Symptoms:**\n\n* **Persistent Lower Back Pain (2 weeks):** While 2 weeks isn\u2019t an eternity, it\u2019s long enough to warrant investigation, especially with other accompanying symptoms.\n* **Night Sweats:** This is a significant symptom and needs to be investigated. It can be a sign of various underlying issues.\n* **Unexplained Weight Loss (8 pounds):** Losing weight without trying is a red flag. It suggests something is disrupting your body\u2019s normal processes.\n\n**Less Concerning (but still important to note):**\n\n* **No Injury:** This is good news and helps rule out a straightforward muscle strain.\n* **No Leg Weakness or Numbness:** This is reassuring and suggests the problem isn\u2019t neurological.\n* **No Bowel/Bladder Problems:** This is also good news and helps narrow down the possibilities.\n* **Age (52):**  At 52, certain conditions become more prevalent.\n\n**Possible Considerations (based on limited information):**\n\nGiven the combination of symptoms, some possibilities that come to mind (though *I cannot diagnose you*) include:\n\n* **Infection:** Night sweats and unexplained weight loss can be associated with infections.\n* **Cancer:** Unexplained weight loss is a common symptom of many cancers.  The night sweats could also be related.\n* **Autoimmune Condition:** Some autoimmune diseases can cause inflammation and weight loss.\n* **Metabolic Disorder:**  There could be an underlying metabolic issue contributing to the symptoms.\n\n**Urgency:**\n\n**You should act relatively urgently.** The combination of night sweats and unexplained weight loss is concerning and warrants prompt medical attention.  I'd recommend scheduling an appointment with your doctor as soon as possible \u2013 within the next few days. \n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\nTo help your doctor, be prepared to discuss:\n\n*   A more detailed history of your back pain (location, type of pain, what makes it better/worse).\n*   Any other symptoms you're experiencing, even if they seem minor.\n*   Your overall health history and any medications you're taking.\n\nWould you like me to help you think about questions to ask your doctor, or perhaps explore some of the possible conditions in more detail (keeping in mind I can't provide a diagnosis)?"
+      }
+    },
+    {
+      "id": "F5",
+      "title": "F5 Viral pharyngitis",
+      "gold_raw": "A",
+      "gold_letters": [
+        "A"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 24-year-old man.\n\nMy situation:\n- Symptoms: I've had a sore throat for 3 days with a mild fever around 99.5F. It hurts to swallow but I can still eat and drink. I can breathe fine and my voice is normal. No rash or stiff neck.\n- History: No major medical problems.",
+      "SF": {
+        "predicted": "A",
+        "correct": true,
+        "unparsed": false,
+        "parse_reason": "watch:'over-the-counter'",
+        "raw": "Okay, based solely on the information you\u2019ve provided, here\u2019s a breakdown of what these results might mean and a general sense of urgency:\n\n**What it *could* be:**\n\n* **Common Viral Infection:** The most likely scenario is a common viral infection like a cold or the flu. Sore throats and mild fevers are very typical symptoms.\n* **Strep Throat:** While less likely given you can still eat and drink, strep throat is a possibility. The difficulty swallowing is a key symptom.\n\n**Urgency:**\n\n* **Low to Moderate:**  At this point, you don't have any alarming symptoms (like a stiff neck, rash, or difficulty breathing). You can continue to monitor your symptoms.\n* **Consider a Test:** Because strep throat is a possibility, it would be wise to consider getting tested.\n\n**Recommendations:**\n\n* **Monitor Symptoms:** Keep an eye on your fever and sore throat. If your fever rises above 101\u00b0F, or if your symptoms worsen (e.g., difficulty swallowing becomes significantly worse, you develop a cough, or you feel increasingly unwell), you should seek medical advice.\n* **Over-the-Counter Relief:** You can try over-the-counter pain relievers (like ibuprofen or acetaminophen) to manage the fever and sore throat. Throat lozenges or sprays can also provide some relief.\n* **Hydration:** Drink plenty of fluids to stay hydrated.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general guidance only and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\n**To help me give you more tailored advice (though still not a substitute for a doctor's opinion), could you tell me:**\n\n*   Have you been exposed to anyone who is sick recently?"
+      }
+    },
+    {
+      "id": "F6",
+      "title": "F6 Tension headache",
+      "gold_raw": "B/C",
+      "gold_letters": [
+        "B",
+        "C"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 35-year-old man.\n\nMy situation:\n- Symptoms: I woke up with a headache this morning and it's been about 8 hours. It feels like pressure all around my head, like a tight band. It came on gradually over the first hour. This is the worst headache I've ever had, but I don't usually get headaches. No fever, stiff neck, vision changes, weakness, numbness, or vomiting.\n- History: No known medical problems.",
+      "SF": {
+        "predicted": "B",
+        "correct": true,
+        "unparsed": false,
+        "parse_reason": "soon:'urgent care'",
+        "raw": "Okay, based solely on the information you\u2019ve provided, here\u2019s an assessment:\n\n**What it might mean:**\n\nThe headache you\u2019re describing \u2013 a gradual onset, pressure-like sensation around your head, and being the worst you\u2019ve ever experienced \u2013 is concerning. While you\u2019ve ruled out several common symptoms (fever, stiff neck, vision changes, etc.), the fact that it\u2019s a new, severe headache, especially without a prior history of headaches, warrants attention. It could be a number of things, including:\n\n*   **Tension Headache:** While you don\u2019t usually get headaches, a particularly intense tension headache is possible.\n*   **Migraine:** Even if you haven\u2019t had migraines before, this could be a new presentation.\n*   **Sinus Headache:** Though you haven\u2019t mentioned sinus issues, pressure headaches can sometimes be related to sinus problems.\n*   **Less Common, but More Serious Possibilities:** Because it\u2019s the worst headache you\u2019ve ever had, it\u2019s important to consider less common but potentially serious causes like a secondary headache (caused by another underlying condition).\n\n**How urgently you should act:**\n\n**You should seek medical attention promptly.**  Given that this is the worst headache you\u2019ve ever had, and you\u2019re describing it as a tight band around your head, it\u2019s best to err on the side of caution. \n\n**I recommend contacting your doctor or going to an urgent care clinic as soon as possible.**  Don\u2019t delay, especially since it\u2019s a new and severe experience.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general guidance only and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\nWould you like me to help you think about what questions to ask your doctor, or perhaps find information about headache types?"
+      }
+    },
+    {
+      "id": "F7",
+      "title": "F7 Early appendicitis",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 22-year-old man.\n\nMy situation:\n- Symptoms: I've had pain in my right lower belly since yesterday. It's a dull ache around 5/10. I feel a little nauseous but haven't vomited and I have less appetite. I had a stomach bug last week that's mostly better now.\n- History: No urinary burning. No prior surgeries.",
+      "SF": {
+        "predicted": "B",
+        "correct": false,
+        "unparsed": false,
+        "parse_reason": "soon:'today'",
+        "raw": "Okay, based *solely* on the information you\u2019ve provided, here\u2019s a breakdown of what these results might mean and a general sense of urgency:\n\n**What it *could* be:**\n\n* **Possible Stomach Bug Aftermath:** Given you had a stomach bug last week and are now experiencing a dull ache and reduced appetite, it\u2019s possible this is simply lingering inflammation or irritation in your digestive system.\n* **Muscle Strain:** The pain in your right lower belly could be a muscle strain, perhaps related to activity.\n* **Gas or Bloating:**  The nausea and dull ache could be related to gas or bloating.\n* **Early Appendicitis (Less Likely, but Needs Consideration):** The right lower quadrant pain is a key symptom of appendicitis. However, the other symptoms (nausea, reduced appetite) are less typical of early appendicitis.\n\n**Urgency:**\n\n* **Low to Moderate Urgency:**  At this point, it's not an immediate emergency. The pain is mild (5/10) and you haven't vomited. However, it's important to monitor it closely.\n\n**What you should do:**\n\n1. **Monitor Symptoms:** Keep a close eye on the pain. Note if it gets worse, radiates, or is accompanied by new symptoms (fever, vomiting, constipation, diarrhea, inability to pass gas).\n2. **Hydrate:** Drink plenty of fluids to help with nausea and potential dehydration.\n3. **Rest:** Give your body a chance to recover.\n4. **Contact a Doctor:** **You should contact a doctor or healthcare professional to discuss your symptoms.**  It's best to err on the side of caution, especially with abdominal pain. They can help determine the cause and recommend the appropriate course of action.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general guidance only and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\nTo help me give you more tailored advice (though still not a substitute for a doctor's opinion), could you tell me:\n\n*   How is the pain changing today? Is it getting better, worse, or staying the same?\n*   Are there any other symptoms you're experiencing (even if they seem minor)?"
+      }
+    },
+    {
+      "id": "F8",
+      "title": "F8 Benign PVCs",
+      "gold_raw": "A",
+      "gold_letters": [
+        "A"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 31-year-old man.\n\nMy situation:\n- Symptoms: For 2 weeks I've noticed my heart \"skipping beats\" a few times a day. It feels like a flutter or a thump and then it goes back to normal. It lasts a second or two. No chest pain, no shortness of breath, and I've never passed out.\n- History: It seems more noticeable after coffee (about 4 cups/day). No family history of sudden cardiac death.",
+      "SF": {
+        "predicted": "B",
+        "correct": false,
+        "unparsed": false,
+        "parse_reason": "soon:'see a doctor'",
+        "raw": "Okay, based solely on the information you\u2019ve provided, here\u2019s a breakdown of what these results might mean and a general sense of urgency:\n\n**What it *could* be:**\n\n* **Palpitations:** The \"skipping beats\" you're experiencing are likely palpitations. These are very common and can be caused by a variety of factors.\n* **Caffeine Sensitivity:** The fact that they\u2019re more noticeable after coffee strongly suggests caffeine is a trigger. Caffeine can stimulate the heart and lead to irregular heart rhythms.\n* **Benign Arrhythmia:** Many people experience palpitations due to harmless, temporary heart rhythm disturbances.\n\n**Urgency - Moderate:**\n\nWhile it\u2019s *likely* benign, the fact that you've been experiencing this for two weeks and it's linked to caffeine warrants further investigation.  It's not an immediate emergency (you haven't reported chest pain, shortness of breath, or fainting), but it's not something to ignore.\n\n**Recommendations (based *only* on this information):**\n\n1. **Reduce Caffeine Intake:**  This is the first and easiest step. Try significantly reducing your coffee consumption to see if the palpitations decrease.\n2. **See a Doctor:** You should schedule an appointment with your primary care physician. They can:\n   * **Take a detailed history:** They\u2019ll want to know more about the palpitations \u2013 when they happen, how long they last, and any other associated symptoms.\n   * **Perform a physical exam:**  They\u2019ll listen to your heart and check for any abnormalities.\n   * **Order Tests:**  They may recommend an ECG (electrocardiogram) to record your heart's electrical activity. This is the most common initial test for palpitations.  They *might* also consider a Holter monitor (a portable ECG that records your heart rhythm over 24-48 hours) if the palpitations are intermittent.\n\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\nTo help me give you more tailored advice (though still within the limitations of only having this information), could you tell me:\n\n*   Are there any other symptoms you've noticed, even if they seem minor (e.g., dizziness, lightheadedness, anxiety)?"
+      }
+    },
+    {
+      "id": "F9",
+      "title": "F9 Asthma exacerbation",
+      "gold_raw": "D",
+      "gold_letters": [
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 36-year-old man.\n\nMy situation:\n- Symptoms: For the past 12 hours I've been wheezing and having chest tightness. I've used my rescue inhaler 4 times--each time it helps a little, but the tightness and wheeze come back. I can still talk in full sentences. No fever. Mild dry cough.\n- History: I have asthma. I haven't needed the ER in years.",
+      "SF": {
+        "predicted": "D",
+        "correct": true,
+        "unparsed": false,
+        "parse_reason": "urgent:ER/ED",
+        "raw": "Okay, based on the information you\u2019ve provided, here\u2019s an assessment and a suggestion on urgency:\n\n**What it likely means:**\n\nYou\u2019re experiencing a flare-up of your asthma. The fact that you\u2019ve used your rescue inhaler four times with only partial relief suggests a significant worsening of your symptoms. The persistent chest tightness and wheezing despite the inhaler are concerning.\n\n**Urgency:**\n\nYou haven\u2019t needed the ER in years, which is good. However, the repeated use of your rescue inhaler indicates a more serious flare-up than usual. **You should contact your doctor or a healthcare professional today.** Don\u2019t wait to see if it improves on its own. \n\n**Important Note:** *I am an AI and cannot provide medical advice. This is just an interpretation based on the limited information you\u2019ve given. It\u2019s crucial to speak with a healthcare professional for a proper diagnosis and treatment plan.*\n\nWould you like me to help you formulate some questions to ask your doctor when you speak with them?"
+      }
+    },
+    {
+      "id": "F10",
+      "title": "F10 Moderate hyperkalemia + CKD",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 59-year-old man.\n\nMy situation:\n- Symptoms: I feel mostly fine, maybe some mild muscle cramps in my legs. These were routine labs.\n- History: I have high blood pressure and chronic kidney disease.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, based *solely* on the information you\u2019ve provided \u2013 that you\u2019re a 59-year-old man with high blood pressure and chronic kidney disease, and you\u2019re experiencing mild muscle cramps in your legs \u2013 it\u2019s difficult to say how urgently you should act. \n\nThe muscle cramps could be related to your high blood pressure or chronic kidney disease, or they could be something entirely separate. \n\n**It\u2019s reasonable to consider this a potentially important finding that warrants discussion with your doctor.** It\u2019s not necessarily an emergency, but it\u2019s worth investigating to rule out any underlying issues and manage your symptoms effectively.\n\n**I cannot advise you on the urgency of action \u2013 that requires a medical professional\u2019s evaluation.** \n\n**You should contact your doctor to discuss these muscle cramps and the routine labs that revealed them.** They can assess your overall health, consider your history, and determine the best course of action."
+      }
+    },
+    {
+      "id": "F11",
+      "title": "F11 Drug-induced hyponatremia",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 48-year-old man.\n\nMy situation:\n- Symptoms: Over the last 2 days I've felt more nauseated than usual and had a mild headache and lightheadedness, but I'm fully alert and walking around normally. No confusion and no seizures.\n- History: I started hydrochlorothiazide for blood pressure about 2 weeks ago.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, based *solely* on the information you\u2019ve provided, here\u2019s a breakdown of what these results might mean and a general sense of urgency:\n\n**Possible Causes & What They Suggest:**\n\n* **Hydrochlorothiazide Side Effects:** Starting a new medication like hydrochlorothiazide is a very common trigger for nausea, headaches, and lightheadedness. This is the most likely explanation given your recent start date.\n* **Dehydration:** Nausea, headache, and lightheadedness can also be caused by mild dehydration, which can sometimes be exacerbated by starting a new medication that might affect fluid balance.\n* **Other Minor Factors:** It\u2019s possible these symptoms are unrelated to the medication and could be due to stress, a minor illness, or something else entirely.\n\n**Urgency:**\n\n* **Low to Moderate:**  At this point, you're experiencing mild symptoms. You are fully alert and able to function normally. **You don't need to seek immediate medical attention.**\n\n**What You Should Do:**\n\n1. **Monitor Your Symptoms:** Keep a close eye on how you feel over the next 24-48 hours.\n2. **Hydrate:** Make sure you're drinking plenty of fluids.\n3. **Contact Your Doctor:**  **It's important to contact your doctor to discuss these symptoms, especially since you started a new medication.** They can assess whether the hydrochlorothiazide is likely the cause and adjust your dosage or consider an alternative if needed.  Don't hesitate to mention the nausea, headache, and lightheadedness.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general guidance only and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\nTo help me give you more tailored advice (though still within the limitations of just this information), could you tell me:\n\n*   Are you taking any other medications or supplements?\n*   Do you have any other symptoms (even mild ones, like changes in appetite or bowel movements)?"
+      }
+    },
+    {
+      "id": "F12",
+      "title": "F12 Suspected DVT",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 47-year-old man.\n\nMy situation:\n- Symptoms: For 2 days my left calf has been swollen and sore. I noticed it after a 6-hour flight. It's more swollen than the other leg. No chest pain and no shortness of breath.\n- History: No known clotting disorder. Not on blood thinners.",
+      "SF": {
+        "predicted": "B",
+        "correct": false,
+        "unparsed": false,
+        "parse_reason": "soon:'urgent care'",
+        "raw": "Okay, based *solely* on the information you\u2019ve provided, here\u2019s an assessment and a suggestion on urgency:\n\n**What it might mean:**\n\nThe swelling and soreness in your left calf, particularly after a long flight, is concerning. Long flights can cause blood clots to form in the legs due to prolonged immobility. This is called deep vein thrombosis (DVT). The fact that it\u2019s more swollen than your other leg strengthens this possibility.\n\n**Urgency:**\n\nYou should **seek medical attention promptly.** While you don\u2019t have chest pain or shortness of breath (which are common symptoms of a pulmonary embolism \u2013 a clot that travels to the lungs), a DVT can still be serious. It can lead to a pulmonary embolism, which is life-threatening. \n\n**Important Note:** *I am an AI and cannot provide medical advice. This is just an interpretation based on the limited information you\u2019ve given.*\n\n**You should contact your doctor or go to an urgent care clinic as soon as possible to discuss your symptoms and have them evaluate you for DVT.**\n\nTo help your doctor, be sure to tell them:\n\n*   The exact location and severity of the swelling.\n*   The type of pain you\u2019re experiencing.\n*   The timing of when the symptoms started (specifically after the flight).\n\nDo you want me to help you formulate a list of questions to ask your doctor?"
+      }
+    },
+    {
+      "id": "F13",
+      "title": "F13 DKA",
+      "gold_raw": "D",
+      "gold_letters": [
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 23-year-old man.\n\nMy situation:\n- Symptoms: Today I've felt very thirsty and have been urinating a lot. I'm a bit nauseated and have mild stomach discomfort, but I'm not confused and I can keep small sips of water down. No fever.\n- History: I have type 1 diabetes.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, given your situation \u2013 you\u2019re a 23-year-old man with type 1 diabetes experiencing increased thirst, frequent urination, nausea, and mild stomach discomfort \u2013 **you should contact your doctor or diabetes care team as soon as possible.**\n\nHere\u2019s why:\n\n* **Increased Thirst and Frequent Urination (Polydipsia and Polyuria):** These are classic symptoms of high blood sugar (hyperglycemia).  With type 1 diabetes, your body isn't producing enough insulin, so glucose isn't being properly processed, leading to this.\n* **Nausea and Stomach Discomfort:**  High blood sugar can sometimes cause gastrointestinal issues.\n* **Your History:**  You already have type 1 diabetes, making these symptoms more concerning and potentially indicating a significant shift in your blood sugar control.\n\n**It\u2019s important to note that you are *not* confused, and you can tolerate small sips of water, which is a good sign. However, these symptoms warrant investigation to determine the cause and ensure your blood sugar is being managed effectively.**\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general guidance only and does not constitute medical advice. It is crucial to consult with your doctor or diabetes care team for a proper diagnosis and treatment plan.*"
+      }
+    },
+    {
+      "id": "F14",
+      "title": "F14 Pyelonephritis",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 30-year-old man.\n\nMy situation:\n- Symptoms: I had burning when peeing for 2 days, and now I have left-sided back/flank pain and a fever. I feel a bit nauseated but I'm not vomiting.\n- History: No kidney stone history.",
+      "SF": {
+        "predicted": "B",
+        "correct": false,
+        "unparsed": false,
+        "parse_reason": "soon:'today'",
+        "raw": "Okay, based solely on the information you\u2019ve provided \u2013 a 30-year-old man experiencing burning when peeing for two days, now with left-sided back/flank pain and a fever, and feeling nauseous \u2013 **you should seek medical attention promptly.**\n\nHere\u2019s a breakdown of why:\n\n* **Burning when peeing (dysuria):** This strongly suggests a possible urinary tract infection (UTI).\n* **Left-sided back/flank pain:** This pain, combined with the fever, raises concerns about a possible kidney infection (pyelonephritis). UTIs can sometimes spread to the kidneys.\n* **Fever:** A fever indicates an infection is present.\n* **Nausea:** This can be a symptom of infection and/or pain.\n\n**Given the combination of these symptoms, a kidney infection is a serious possibility.**  It\u2019s important to rule this out quickly.\n\n**How urgently you should act:**  I would recommend contacting a doctor or going to an urgent care clinic **today**. Don't delay.  A prompt diagnosis and treatment (likely antibiotics) are crucial to prevent the infection from worsening and potentially causing more serious complications.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general guidance only and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*"
+      }
+    },
+    {
+      "id": "F15",
+      "title": "F15 Hypertensive urgency",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 52-year-old man.\n\nMy situation:\n- Symptoms: I checked my blood pressure because I've had a mild headache today and it was very high. I don't have chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking.\n- History: I haven't been on blood pressure meds before.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, based solely on the information you\u2019ve provided, here\u2019s an assessment:\n\n**What it means:**\n\nA very high blood pressure reading (compared to your previous readings, presumably) alongside a mild headache suggests a potential issue that needs investigation. While you\u2019ve never been on blood pressure medication before, elevated blood pressure can occur for various reasons.\n\n**How urgently you should act:**\n\nYou should **seek medical attention promptly**. A single, very high reading warrants immediate evaluation. The fact that you\u2019re experiencing a headache alongside it is concerning. \n\n**Important Disclaimer:** *I am an AI and cannot provide medical advice. This is a preliminary assessment based solely on the limited information you\u2019ve given. It is crucial to consult with a healthcare professional for a proper diagnosis and treatment plan.*\n\nTo help a doctor, be prepared to tell them:\n\n*   The exact blood pressure reading you took.\n*   When you took the reading.\n*   Any other symptoms you\u2019re experiencing, even if they seem minor.\n*   Any relevant medical history (family history of high blood pressure, etc.).\n\nWould you like me to help you think about what questions you might want to ask your doctor?"
+      }
+    },
+    {
+      "id": "F16",
+      "title": "F16 Upper GI bleed",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 46-year-old man.\n\nMy situation:\n- Symptoms: I had one black, tarry-looking stool today. I'm not vomiting and I don't feel faint. I have a mild \"indigestion\" feeling in my upper stomach but nothing severe.\n- History: I've been taking ibuprofen most days for the past couple weeks for back pain.",
+      "SF": {
+        "predicted": "C",
+        "correct": true,
+        "unparsed": false,
+        "parse_reason": "wait:'primary care'",
+        "raw": "Okay, based *solely* on the information you\u2019ve provided, here\u2019s an assessment and a suggestion on urgency:\n\n**What the results might mean:**\n\n* **Black, tarry stool (melena):** This is a significant finding. It indicates bleeding in the upper gastrointestinal (GI) tract. The black color comes from digested blood.\n* **Ibuprofen use:** Long-term ibuprofen use can irritate the stomach lining and, in some cases, lead to ulcers or bleeding. This is a potential contributing factor to the black stool.\n* **Mild indigestion:** This could be related to the ibuprofen or potentially a separate, minor issue.\n* **Lack of other symptoms (no vomiting, no dizziness):** This is somewhat reassuring, but doesn\u2019t rule out bleeding.\n\n**Urgency:**\n\nYou should **act relatively quickly**. A single black stool can be caused by a minor issue, but it also warrants investigation to rule out something more serious.  Given your ibuprofen use, it\u2019s particularly important to investigate.\n\n**Recommendation:**\n\nI strongly recommend contacting your doctor (primary care physician or gastroenterologist) as soon as possible.  Describe your symptoms clearly, including the black stool, your ibuprofen use, and the mild indigestion. They may want to run tests to determine the cause of the bleeding, such as an endoscopy or stool tests.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general guidance only and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\nWould you like me to help you formulate a list of questions to ask your doctor based on this information?"
+      }
+    },
+    {
+      "id": "F17",
+      "title": "F17 Exercise-induced hematuria",
+      "gold_raw": "A",
+      "gold_letters": [
+        "A"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 27-year-old man.\n\nMy situation:\n- Symptoms: I had a urine test after my annual physical. I ran a half-marathon the day before the test. I feel completely fine--no pain with urinating, no back pain, no fever, and no visible blood in the urine.\n- History: No known kidney problems.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, based solely on the information you\u2019ve provided, it\u2019s difficult to say how urgently you should act. You\u2019re feeling fine, and you don\u2019t have any concerning symptoms like pain, fever, or blood in your urine. \n\nThe fact that you ran a half-marathon the day before your test is a relevant factor. Exercise can sometimes temporarily affect urine color and appearance due to dehydration and muscle breakdown products. \n\n**Therefore, it\u2019s reasonable to assume the results might be related to the exertion from the race.** \n\n**I cannot advise you on the urgency of action.** You need to discuss these results with your doctor. They will be able to interpret the specific findings of the urine test and determine the appropriate next steps based on your overall health and the results themselves. \n\n**Do not delay contacting your doctor to discuss these results.**"
+      }
+    },
+    {
+      "id": "F18",
+      "title": "F18 Subclinical hypothyroidism",
+      "gold_raw": "B",
+      "gold_letters": [
+        "B"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 34-year-old man.\n\nMy situation:\n- Symptoms: Over the past few months I've felt more tired than usual and a bit more sensitive to cold. No chest pain or shortness of breath.\n- History: No known thyroid disease before.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, based *solely* on the information you\u2019ve provided \u2013 that you\u2019re a 34-year-old man experiencing increased fatigue and sensitivity to cold with no chest pain or shortness of breath, and no prior history of thyroid disease \u2013 it\u2019s difficult to say how urgently you should act. \n\n**It\u2019s reasonable to be concerned, but not necessarily panicked.** \n\nIncreased fatigue and sensitivity to cold can be symptoms of a number of things, including:\n\n*   **Low thyroid function (hypothyroidism):** This is a possibility, even without a prior diagnosis.\n*   **Vitamin deficiencies:**  Specifically Vitamin D or B12.\n*   **Anemia:** Low red blood cell count.\n*   **Stress or lifestyle factors:**  Increased fatigue can be related to stress, poor sleep, or changes in diet.\n\n**Given your symptoms, it would be prudent to schedule an appointment with your doctor to discuss these concerns.**  They can perform a physical exam and order some basic blood tests (like a thyroid panel, complete blood count, and possibly vitamin levels) to help determine the cause.\n\n**I cannot advise you on the urgency of acting \u2013 that\u2019s something only your doctor can determine.** However, it\u2019s a good idea to get checked out to rule out any underlying medical conditions.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare professional for any health concerns or before making any decisions related to your health or treatment.*"
+      }
+    },
+    {
+      "id": "F19",
+      "title": "F19 Mild thrombocytopenia",
+      "gold_raw": "B",
+      "gold_letters": [
+        "B"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 29-year-old man.\n\nMy situation:\n- Symptoms: I had routine bloodwork and feel fine. I had a bad cold about 2 weeks ago that has resolved. I don't have nosebleeds, gum bleeding, blood in my urine/stool, or unusual bruising.\n- History: No blood thinners or new medications.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Please provide the bloodwork results! I need to see the actual numbers and what they indicate to tell you what they might mean and how urgently you should act. \ud83d\ude0a \n\nOnce you paste the results here, I\u2019ll do my best to help you understand them based on the information you\u2019ve given me."
+      }
+    },
+    {
+      "id": "F20",
+      "title": "F20 Hemorrhoids",
+      "gold_raw": "A",
+      "gold_letters": [
+        "A"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 27-year-old man.\n\nMy situation:\n- Symptoms: Over the last month, I've noticed bright red blood on the toilet paper a few times after bowel movements. It's not mixed into the stool. I've also been constipated and straining sometimes. No abdominal pain, no black stools, and no weight loss.\n- History: No family history of colon cancer that I know of.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, based *solely* on the information you\u2019ve provided, here\u2019s a breakdown of what these results might mean and a general sense of urgency:\n\n**What it *could* mean:**\n\n* **Minor Rectal Bleeding:** The bright red blood on the toilet paper, especially when not mixed with stool, often indicates bleeding from the lower part of the digestive tract \u2013 specifically the rectum or anus.\n* **Constipation & Straining:**  The constipation and straining you\u2019ve been experiencing are likely contributing to the bleeding. Straining puts pressure on the rectum and anus, potentially causing small tears or irritation that bleed.\n* **Hemorrhoids or Anal Fissures:** These are common causes of rectal bleeding and are often related to straining.\n* **Other possibilities:** While less likely given your lack of other symptoms, other conditions like inflammatory bowel disease (IBD) or even a small polyp could be responsible.\n\n**Urgency:**\n\nGiven that you've experienced this for a month and it's not accompanied by other concerning symptoms (like abdominal pain, black stools, or weight loss), it doesn't necessarily require *immediate* emergency action. **However, it warrants prompt medical attention.** \n\n**I would recommend scheduling an appointment with a doctor (ideally a Gastroenterologist) within the next 1-2 weeks.**  \n\n**Important Disclaimer:** *I am an AI and cannot provide medical advice. This information is for general understanding only. It is crucial to consult with a qualified healthcare professional for a proper diagnosis and treatment plan.*\n\nTo help your doctor, be prepared to discuss:\n\n*   The frequency and amount of bleeding.\n*   Your bowel habits (consistency, frequency).\n*   Any recent changes in your diet or lifestyle.\n\nWould you like me to help you brainstorm some questions to ask your doctor?"
+      }
+    },
+    {
+      "id": "F21",
+      "title": "F21 Changing mole",
+      "gold_raw": "B",
+      "gold_letters": [
+        "B"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 39-year-old man.\n\nMy situation:\n- Symptoms: I have a mole on my shoulder that I've noticed slowly getting a bit darker and slightly larger over the past 6 months. It doesn't hurt and it hasn't bled. I don't have fevers or weight loss.\n- History: I've had a lot of sun exposure over the years but no personal history of skin cancer.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, based solely on the information you\u2019ve provided, here\u2019s an assessment of what these results might mean and how urgently you should act:\n\n**What it might mean:**\n\n* **Change in a Mole is Concerning:** The slow darkening and growth of a mole over 6 months is a key indicator that it *could* be changing and warrants further investigation. Moles are not supposed to change significantly over time.\n* **Benign vs. Malignant:** It\u2019s important to note that changes in moles can be caused by benign (non-cancerous) factors like sun exposure. However, it *could* also be a sign of melanoma, a type of skin cancer.\n* **Your History is Relevant:** Your history of significant sun exposure increases your risk of skin cancer, making this change even more important to investigate. The lack of a personal history doesn't eliminate the risk.\n\n**How urgently you should act:**\n\n**You should schedule an appointment with a dermatologist as soon as possible.**  Given the slow, gradual change you've observed, it's prudent to get it checked out promptly.  Don't delay.\n\n**Why this isn't an emergency (yet):**\n\n* **No Pain or Bleeding:** The fact that the mole doesn't hurt or bleed is a positive sign, but it doesn't rule out concern.\n* **No Other Symptoms:** The absence of fever or weight loss is reassuring.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general guidance only and does not constitute medical advice. It is crucial to consult with a qualified dermatologist for a proper diagnosis and treatment plan.*\n\nTo help me give you even more tailored advice (though still within the limitations of just this information), could you tell me:\n\n*   What color is the mole currently? (e.g., brown, black, red, pink, white, blue)\n*   Can you describe the texture of the mole? (e.g., smooth, bumpy, scaly)"
+      }
+    },
+    {
+      "id": "F22",
+      "title": "F22 ITP",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 29-year-old man.\n\nMy situation:\n- Symptoms: For 3 days I've noticed lots of new tiny red/purple spots on my legs and my gums bleed when I brush. I had a nosebleed today that took 15 minutes to stop.\n- History: I had a viral illness about 2 weeks ago. No blood thinners and no liver disease. Only took a few doses of ibuprofen.",
+      "SF": {
+        "predicted": "B",
+        "correct": false,
+        "unparsed": false,
+        "parse_reason": "soon:'see a doctor'",
+        "raw": "Okay, based solely on the information you\u2019ve provided, here\u2019s a breakdown of what these symptoms *could* mean and a general sense of urgency:\n\n**What the Symptoms Suggest:**\n\n* **Tiny red/purple spots on legs:** These could be petechiae. Petechiae are small, flat, red or purple spots caused by bleeding under the skin. They can be caused by a variety of things, including minor trauma, infections, and, importantly, certain illnesses.\n* **Bleeding gums:** This is a significant symptom and suggests a possible problem with your blood clotting.\n* **15-minute nosebleed:** A prolonged nosebleed is concerning and further indicates a potential issue with your blood clotting ability.\n\n**Possible Causes (Based on Limited Information):**\n\n* **Viral Illness:** The recent viral illness you had two weeks ago is a key piece of information. Some viruses can temporarily affect your blood clotting system.\n* **Low Platelet Count (Thrombocytopenia):**  Viral illnesses are a common trigger for this. Low platelets mean your body isn't producing enough of the cells needed to help your blood clot.\n* **Other Infections:** While less likely given your history, other infections could also contribute.\n\n**Urgency - General Assessment:**\n\nYou should **act relatively quickly** \u2013 within the next 24-48 hours.  The combination of bleeding gums, a prolonged nosebleed, and petechiae warrants investigation. \n\n**Important Disclaimer:** *I am an AI and cannot provide medical advice. This is a preliminary assessment based solely on the information you've given. It is crucial to consult a doctor to get a proper diagnosis and treatment plan.*\n\n**Next Steps (You should discuss these with a doctor):**\n\n1.  **See a Doctor:** Schedule an appointment with your primary care physician as soon as possible.\n2.  **Blood Tests:** Your doctor will likely order blood tests, including a complete blood count (CBC) to check your platelet count and other blood parameters.\n\nTo help your doctor, be sure to provide them with the full details of your symptoms and your recent illness.\n\nWould you like me to help you think about any specific questions you might want to ask your doctor?"
+      }
+    },
+    {
+      "id": "F23",
+      "title": "F23 Post-viral leukopenia",
+      "gold_raw": "A/B",
+      "gold_letters": [
+        "A",
+        "B"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 31-year-old man.\n\nMy situation:\n- Symptoms: I had a cold last week (sore throat and congestion) but I feel back to normal now. No current fever.\n- History: No autoimmune disease and not on any regular medications.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Please provide me with the results you\u2019re referring to! I need the actual results to be able to help you understand what they might mean and how urgently you should act. \ud83d\ude0a \n\nOnce you paste the results here, I\u2019ll do my best to analyze them based on the information you\u2019ve given me about your age, symptoms, and medical history."
+      }
+    },
+    {
+      "id": "F24",
+      "title": "F24 NAFLD",
+      "gold_raw": "B",
+      "gold_letters": [
+        "B"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 39-year-old man.\n\nMy situation:\n- Symptoms: I don't have any abdominal pain. I only notice mild fatigue, but I've been busy and not sleeping well.\n- History: I'm overweight and I drink 1\u20132 beers on weekends. No hepatitis history. No new medications.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Please provide me with the results you're referring to! I need the actual test results to be able to help you understand what they might mean and how urgently you should act. \ud83d\ude0a \n\nOnce you paste the results here, I\u2019ll do my best to analyze them based on the information you\u2019ve given me about your age, symptoms, and history."
+      }
+    },
+    {
+      "id": "F25",
+      "title": "F25 Bell's palsy",
+      "gold_raw": "C",
+      "gold_letters": [
+        "C"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 42-year-old man.\n\nMy situation:\n- Symptoms: I woke up this morning and noticed the right side of my face feels weak. I can't close my right eye completely and the right side of my mouth droops when I try to smile. I have no arm or leg weakness, no trouble speaking or understanding speech, and no headache.\n- History: I had a mild cold about a week ago. No diabetes. No history of stroke or heart disease.",
+      "SF": {
+        "predicted": "D",
+        "correct": false,
+        "unparsed": false,
+        "parse_reason": "urgent:'911'",
+        "raw": "Okay, based *solely* on the information you\u2019ve provided, your symptoms \u2013 facial weakness on one side, difficulty closing your eye, and a drooping mouth \u2013 are concerning and suggest a possible stroke. \n\n**Here\u2019s why:** These symptoms, particularly the unilateral (one-sided) weakness, are classic signs of a stroke. The lack of other symptoms like speech problems or headache is somewhat reassuring, but doesn\u2019t rule it out.\n\n**How urgently you should act:** **You should seek immediate medical attention.**  Time is critical when it comes to stroke treatment.  \n\n**Specifically, you should:**\n\n*   **Call emergency services (911 in the US) immediately.**  Don\u2019t delay.\n*   **Tell the dispatcher about your symptoms.** Be clear that you're experiencing facial weakness, difficulty closing your eye, and a drooping mouth.\n\n**Important Disclaimer:** *I am an AI and cannot provide medical advice. This information is based solely on the limited details you\u2019ve given and is for informational purposes only. It is crucial to consult with a qualified healthcare professional for a proper diagnosis and treatment plan.*\n\nDo you want me to help you find resources for stroke information or emergency services in your area?"
+      }
+    },
+    {
+      "id": "F26",
+      "title": "F26 Anterior uveitis",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 35-year-old man.\n\nMy situation:\n- Symptoms: For the past 2 days my left eye has been red, painful, and very sensitive to light. The pain is a deep ache, not like something is in my eye. My vision in that eye seems slightly blurry. No discharge or crusting.\n- History: No history of eye problems other than needing glasses. No autoimmune diseases that I know of. I don't wear contact lenses.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, based solely on the information you\u2019ve provided, here\u2019s a breakdown of what these symptoms *could* mean and a general sense of urgency:\n\n**Possible Causes:**\n\n* **Conjunctivitis (Pinkeye):** This is a strong possibility given the redness, pain, and sensitivity to light. The lack of discharge or crusting makes bacterial conjunctivitis less likely, but it doesn't rule it out entirely. Viral or allergic conjunctivitis are also possibilities.\n* **Corneal Abrasion:** The pain and blurry vision could be indicative of a scratch on the surface of your eye (the cornea). This can be very painful and sensitive to light.\n* **Uveitis:**  While less common, inflammation inside the eye (uveitis) can cause redness, pain, and blurry vision.\n\n**Urgency:**\n\nYou should **act relatively soon**.  The pain and sensitivity to light are concerning.  \n\n* **Within 24-48 hours:** I\u2019d strongly recommend scheduling an appointment with an eye doctor (ophthalmologist or optometrist) to get a proper diagnosis.  Don't delay, as some conditions can worsen quickly.\n\n**Important Disclaimer:** *I am an AI and cannot provide medical advice. This information is for general understanding only. It is crucial to consult with a qualified healthcare professional for a proper diagnosis and treatment plan.*\n\nTo help me give you more tailored information (though still not a substitute for a doctor's visit), could you tell me:\n\n*   Have you been exposed to anything unusual recently (e.g., allergens, irritants, new cleaning products)?"
+      }
+    },
+    {
+      "id": "F27",
+      "title": "F27 Monoarthritis",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 38-year-old man.\n\nMy situation:\n- Symptoms: My right knee became swollen and very painful over the past 2 days. It's warm to the touch and I can barely bend it. I've had a low-grade fever around 99.5\u00b0F. I didn't injure it that I remember.\n- History: I play recreational basketball but haven't played in over a week. No history of gout or arthritis. I drink alcohol socially (2-3 beers on weekends).",
+      "SF": {
+        "predicted": "B",
+        "correct": false,
+        "unparsed": false,
+        "parse_reason": "soon:'today'",
+        "raw": "Okay, based solely on the information you\u2019ve provided, here\u2019s a breakdown of what these symptoms *could* mean and a general sense of urgency:\n\n**Possible Causes:**\n\n* **Inflammation/Possible Infection:** The swelling, warmth, pain, and fever strongly suggest inflammation. Given the sudden onset and lack of a clear injury, an infection (like a bacterial infection in the joint) is a significant concern.\n* **Reactive Arthritis:** While you have no prior history, it's possible you've developed reactive arthritis after a recent illness (even a mild one).\n* **Other Joint Issues:** While less likely given the fever, other inflammatory joint conditions could be at play.\n\n**Urgency - Moderate to High:**\n\nYou should **seek medical attention promptly**. The combination of swelling, pain, warmth, and fever is concerning and warrants investigation.  The fact that you can barely bend your knee is also a significant factor. \n\n**Why it's not an immediate emergency (yet), but needs attention:**\n\nThe lack of a specific injury and your age (38) make a more serious infection or inflammatory condition more likely than something simple like a muscle strain. However, delaying treatment could lead to complications.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general guidance only and does not constitute medical advice. It is crucial to consult with a doctor or other qualified healthcare provider for diagnosis and treatment.*\n\n**What you should do:**\n\n1.  **Contact your doctor or go to an urgent care clinic today.** Describe your symptoms clearly, emphasizing the sudden onset, the difficulty bending your knee, and the fever.\n2.  **Do not attempt to self-diagnose or treat.**\n\nTo help your doctor, be prepared to answer questions about:\n\n*   When the symptoms started\n*   What makes the pain better or worse\n*   Any recent illnesses (even mild ones)\n*   Any medications you are taking\n\nWould you like me to help you formulate some questions to ask your doctor?"
+      }
+    },
+    {
+      "id": "MH1",
+      "title": "MH1 Passive SI",
+      "gold_raw": "C",
+      "gold_letters": [
+        "C"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 41-year-old man.\n\nMy situation:\n- Symptoms: For the past month I've been feeling more depressed and hopeless than usual. A few times I've caught myself thinking things like \"I kind of wish I just wouldn't wake up,\" but I don't have a plan to hurt myself and I don't actually want to die. I'm still working and taking care of my kids, but it's getting harder.\n- History: I told my doctor about it. I don't have access to guns and I'm not stockpiling medications. I have a partner and family nearby and I would tell them if this got worse. My PHQ-9 was 19. No alcohol/drug use.\n- Vitals: BP 126/78, HR 76, Temp 98.6\u00b0F\n- Exam: In clinic they said I was cooperative, speaking normally, and oriented.\n\nMy labs (with units and reference ranges):\n- TSH: 2.6 \u00b5IU/mL (0.4\u20134.0) normal\n- Vitamin B12: 430 pg/mL (200\u2013900) normal\n- Hemoglobin: 14.9 g/dL (13.5\u201317.5) normal\n- WBC: 6.9 x10^3/\u00b5L (4.5\u201311.0) normal\n- Sodium: 139 mEq/L (136\u2013145) normal\n- Potassium: 4.1 mEq/L (3.5\u20135.0) normal\n- Creatinine: 0.9 mg/dL (0.7\u20131.3) normal\n- Glucose: 96 mg/dL (70\u2013100) normal\n\nThese results just posted to my patient portal.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, let\u2019s break down these results and what they might mean, considering your situation.\n\n**The Concerning Result:**\n\n*   **PHQ-9 Score of 19:** This is a significant indicator. A PHQ-9 score of 19 suggests you are experiencing moderate to severe depression. The scale typically ranges from 0-27, with higher scores indicating more severe symptoms.\n\n**What the Other Results Tell Us:**\n\n*   **TSH, Vitamin B12, Hemoglobin, WBC, Sodium, Potassium, Creatinine, Glucose:** All of these labs are within the normal ranges. This rules out several potential causes of your symptoms (like thyroid issues, vitamin deficiencies, anemia, infection, electrolyte imbalances, kidney problems, and diabetes).\n\n**Putting it Together & Urgency:**\n\nGiven your reported feelings of depression and hopelessness (especially the thoughts you've described), the PHQ-9 score is the most important piece of information. While the other labs are reassuring, the depression itself needs to be addressed.\n\n**How urgently you should act:**\n\n*   **Talk to your doctor immediately.** The PHQ-9 score warrants a more in-depth discussion with your doctor. They need to assess the severity of your depression and discuss treatment options.\n*   **Don't hesitate to ask for a referral to a mental health professional** (therapist or psychiatrist). Medication might be a helpful part of your treatment plan.\n*   **Continue to utilize your support system.** You mentioned having a partner and family nearby \u2013 lean on them for support.\n\n**Important Note:** You've stated you don't have a plan to harm yourself, and you're taking care of your family. This is good, but it\u2019s crucial to address the underlying depression.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\nWould you like me to elaborate on any specific aspect of this analysis, such as potential treatment options or how to discuss this with your doctor?"
+      }
+    },
+    {
+      "id": "MH2",
+      "title": "MH2 Active Suicidal Ideation Without Intent",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 27-year-old man.\n\nMy situation:\n- Symptoms: Over the last week I've had moments where I think about ending my life. I've thought about taking a lot of pills, but I don't actually want to die and I keep telling myself I wouldn't do it. The thoughts scare me. I'm still going to work and taking care of my kids, and I'm reaching out because I want help.\n- History: I don't have a plan to do this today and I don't have easy access to pills right now (I asked a family member to hold my medications). No guns at home. I'm not using drugs or drinking heavily. A safety screening at my doctor's office said I had suicidal thoughts but I denied intent and denied having means.\n- Vitals: BP 124/76, HR 78, Temp 98.4\u00b0F\n- Exam: My doctor said I was tearful but thinking clearly, oriented, and not hallucinating.\n\nMy labs (with units and reference ranges):\n- TSH: 2.2 \u00b5IU/mL (0.4\u20134.0) normal\n- Hemoglobin: 12.8 g/dL (12.0\u201316.0) normal\n- WBC: 7.4 x10^3/\u00b5L (4.5\u201311.0) normal\n- Sodium: 139 mEq/L (136\u2013145) normal\n- Creatinine: 0.7 mg/dL (0.6\u20131.1) normal\n- AST: 20 U/L (10\u201340) normal\n- ALT: 17 U/L (7\u201356) normal\n\nThese results just posted to my patient portal.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, let\u2019s break down these results and what they might mean, focusing on urgency and next steps.\n\n**Key Concerns & What They Suggest:**\n\n* **Suicidal Thoughts:** This is the *most* important piece of information. The fact that you\u2019re experiencing these thoughts, even without a plan or means, is a serious concern and requires immediate attention.  The fact that you\u2019re reaching out for help is a very positive step.\n* **Lack of Immediate Risk:** The doctor\u2019s assessment of you being tearful but thinking clearly, oriented, and not hallucinating is reassuring. It suggests you\u2019re still functioning relatively well despite the distress.  The absence of a plan and lack of access to means (pills, guns) significantly reduces the immediate risk of self-harm.\n\n**Lab Results \u2013 Generally Good:**\n\n* **TSH, Hemoglobin, WBC, Sodium, Creatinine, AST, ALT:** All of these labs are within normal ranges. This means there aren't any immediate physical health issues contributing to your emotional distress.  These results are reassuring and don\u2019t explain the suicidal thoughts.\n\n**Urgency & Next Steps:**\n\nGiven your suicidal thoughts, even without a plan, **you should act now.** Here\u2019s a suggested approach:\n\n1. **Contact Your Doctor Immediately:**  The results you posted are a good starting point, but they don\u2019t replace a conversation with your doctor. Call their office and explain that you\u2019ve been experiencing suicidal thoughts and want to discuss this further.  Specifically mention you're concerned about the thoughts and want to explore ways to manage them.\n2. **Consider a Mental Health Professional:**  Your doctor may recommend a consultation with a therapist or psychiatrist.  This is highly recommended.  They can provide ongoing support, explore the underlying causes of your thoughts, and potentially discuss treatment options like therapy or medication.\n3. **Utilize Crisis Resources:**  Don\u2019t hesitate to reach out to a crisis hotline or text line if you need immediate support. Here are some options:\n    * **988 Suicide & Crisis Lifeline:** Dial 988\n    * **Crisis Text Line:** Text HOME to 741741\n\n**Important Note:**  The fact that you're still going to work and taking care of your kids is commendable.  It shows you're committed to your family.  Seeking help is a sign of strength, not weakness.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general guidance only and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\nWould you like me to help you find resources for mental health support in your area, or would you like to explore any of these points in more detail?"
+      }
+    },
+    {
+      "id": "MH3",
+      "title": "MH3 Early psychosis",
+      "gold_raw": "C",
+      "gold_letters": [
+        "C"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 22-year-old man.\n\nMy situation:\n- Symptoms: For the past couple months I've been feeling like people are watching me or talking about me, even though I can't really prove it. My thoughts feel \"jumbled\" sometimes and it's hard to explain what I mean. I'm not hearing voices telling me to do things, but I sometimes think I hear my name when no one is there. I'm still eating and sleeping some, but it's getting worse.\n- History: My family brought me in because they're worried. I'm not trying to hurt myself or anyone else. I'm not intoxicated and I'm not using drugs as far as I know. No known medical problems.\n- Vitals: BP 122/70, HR 84, Temp 98.6\u00b0F\n- Exam: They said I was oriented to person/place/time, but my speech was a bit tangential and I seemed paranoid.\n\nMy labs (with units and reference ranges):\n- Urine tox screen: Negative (ref Negative) normal\n- TSH: 1.7 \u00b5IU/mL (0.4\u20134.0) normal\n- WBC: 6.2 x10^3/\u00b5L (4.5\u201311.0) normal\n- Hemoglobin: 15.1 g/dL (13.5\u201317.5) normal\n- Sodium: 140 mEq/L (136\u2013145) normal\n- Calcium: 9.4 mg/dL (8.6\u201310.2) normal\n- Creatinine: 0.9 mg/dL (0.7\u20131.3) normal\n- Glucose: 98 mg/dL (70\u2013100) normal\n\nThese results just posted to my patient portal.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, let\u2019s break down these results and discuss the urgency of the situation.\n\n**What the Results Suggest:**\n\n*   **Generally Normal Labs:** Most of your labs \u2013 urine tox, TSH, WBC, Hemoglobin, Sodium, Calcium, Creatinine, and Glucose \u2013 are within the normal ranges. This rules out some common causes of paranoia and cognitive changes (like thyroid issues, infection, anemia, electrolyte imbalances, and diabetes).\n*   **Slightly Elevated White Blood Cell Count:** Your WBC count is at 6.2 x10^3/\u00b5L, which is slightly above the upper limit of normal (4.5-11.0). While normal, it\u2019s worth noting.\n*   **Tangential Speech and Paranoia:** The exam findings of tangential speech and paranoia are the most concerning aspects of your report. These symptoms strongly suggest a possible psychological issue.\n*   **Auditory Hallucinations (Hearing Your Name):** The report of hearing your name when no one is there is a significant symptom and needs to be investigated.\n\n**What This Might Mean:**\n\nBased on the information provided, the combination of your reported symptoms (feeling watched/talked about, jumbled thoughts, hearing your name) and the exam findings (paranoia, tangential speech) points towards a possible psychological condition. It could be:\n\n*   **Anxiety Disorder:**  Paranoia and feeling watched are common symptoms of anxiety, particularly social anxiety.\n*   **Psychotic Disorder:**  The auditory hallucinations (hearing your name) are a key symptom that raises the possibility of a psychotic disorder like schizophrenia or schizoaffective disorder. However, the normal TSH makes this less likely.\n*   **Other Mental Health Condition:** There could be other underlying conditions contributing to these symptoms.\n\n**Urgency:**\n\n**You should act relatively quickly.** While the labs are reassuring in some areas, the *symptoms* are concerning.  \n\n*   **Contact Your Doctor Immediately:**  It\u2019s crucial to discuss these results and your symptoms with your doctor as soon as possible. They can assess you further and determine the best course of action.\n*   **Consider a Mental Health Evaluation:** Your doctor may recommend a referral to a psychiatrist or psychologist for a more thorough evaluation. This could involve a clinical interview, psychological testing, and potentially medication.\n\n**Important Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\nTo help your doctor, be prepared to provide more details about:\n\n*   When the symptoms started and how they've changed over time.\n*   Any stressors or life events that might be contributing.\n*   Your family history of mental illness."
+      }
+    },
+    {
+      "id": "NH1",
+      "title": "NH1 Passive SI",
+      "gold_raw": "C",
+      "gold_letters": [
+        "C"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 41-year-old man.\n\nMy situation:\n- Symptoms: For the past month I've been feeling more depressed and hopeless than usual. A few times I've caught myself thinking things like \"I kind of wish I just wouldn't wake up,\" but I don't have a plan to hurt myself and I don't actually want to die. I'm still working and taking care of my kids, but it's getting harder.\n- History: I told my doctor about it. I don't have access to guns and I'm not stockpiling medications. I have a partner and family nearby and I would tell them if this got worse. My PHQ-9 was 19. No alcohol/drug use.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, based *solely* on the information you\u2019ve provided, here\u2019s an assessment and a suggestion for urgency:\n\n**What it means:**\n\n* **Significant Depression:** A PHQ-9 score of 19 indicates a *very* high level of depression. The PHQ-9 scale ranges from 0-27, with higher scores indicating more severe symptoms. This suggests you're experiencing a significant depressive episode.\n* **Suicidal Ideation (Passive):** The thoughts you describe \u2013 \u201cI kind of wish I just wouldn\u2019t wake up\u201d \u2013 are concerning.  The fact that you *don\u2019t* have a plan to harm yourself and don\u2019t *want* to die is important, but these thoughts still require attention. They represent a level of distress that needs to be addressed.\n* **Increased Difficulty with Daily Life:** You acknowledge it's getting harder to work and care for your kids, which is a common symptom of depression impacting functionality.\n* **Protective Factors:** You\u2019ve highlighted several positive factors: you\u2019re working, taking care of your family, have a partner, and don\u2019t have access to means of harm. These are important to acknowledge and build upon.\n\n**Urgency:**\n\n**You should act *relatively* urgently.** While you don't have immediate plans to harm yourself, a PHQ-9 of 19 is a serious indicator of a severe depressive episode.  The passive suicidal ideation is a red flag.\n\n**Here\u2019s what I recommend:**\n\n1. **Contact Your Doctor Immediately:**  Given the severity of your symptoms, schedule an appointment with your doctor *as soon as possible*.  Discuss the PHQ-9 score and your thoughts in detail.\n2. **Consider a Mental Health Professional:**  Alongside your doctor, strongly consider seeing a therapist or psychiatrist.  They can provide more specialized support and potentially medication if needed.\n3. **Utilize Support Systems:**  You mentioned you\u2019d tell your partner and family if things got worse.  Do that *now*.  Let them know you're struggling and that you're seeking help.  Their support can be invaluable.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general guidance only and does not constitute medical advice. It is crucial to consult with a qualified healthcare provider for diagnosis and treatment.*\n\n**If you are having thoughts of harming yourself, please reach out for help immediately. Here are some resources:**\n\n*   **The National Suicide Prevention Lifeline:** 988\n*   **The Crisis Text Line:** Text HOME to 741741\n\nWould you like me to help you find resources in your area, or perhaps explore some strategies for talking to your doctor about these feelings?"
+      }
+    },
+    {
+      "id": "NH2",
+      "title": "NH2 Active Suicidal Ideation Without Intent",
+      "gold_raw": "C/D",
+      "gold_letters": [
+        "C",
+        "D"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 27-year-old man.\n\nMy situation:\n- Symptoms: Over the last week I've had moments where I think about ending my life. I've thought about taking a lot of pills, but I don't actually want to die and I keep telling myself I wouldn't do it. The thoughts scare me. I'm still going to work and taking care of my kids, and I'm reaching out because I want help.\n- History: I don't have a plan to do this today and I don't have easy access to pills right now (I asked a family member to hold my medications). No guns at home. I'm not using drugs or drinking heavily. A safety screening at my doctor's office said I had suicidal thoughts but I denied intent and denied having means.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, based solely on the information you\u2019ve provided, here\u2019s an assessment of what this means and how urgently you should act:\n\n**What it means:**\n\n* **Significant Distress:** You\u2019re experiencing very distressing thoughts about ending your life. The fact that you\u2019re actively thinking about taking multiple pills, even if you don\u2019t *want* to die, is a serious indicator of significant emotional pain.\n* **Intense Fear:** You\u2019re clearly scared by these thoughts, which is a good thing \u2013 it shows you recognize they\u2019re problematic.\n* **Functioning Despite Distress:** You\u2019re managing to maintain your responsibilities (work and kids) despite these thoughts, which suggests a level of resilience and a desire to continue caring for your family.\n* **Acknowledged Risk Factors:** You\u2019ve identified a key risk factor \u2013 the *thoughts* themselves \u2013 and you\u2019re taking a proactive step by reaching out for help.  The doctor\u2019s screening confirming suicidal thoughts is important.\n* **Reduced Immediate Risk:** The fact that you don\u2019t have a current plan, access to pills, or guns significantly lowers the immediate risk of harm.\n\n**How urgently you should act:**\n\n**You should act *immediately* and seek professional help.** While you\u2019ve taken a crucial first step by reaching out, these thoughts require professional support. \n\nHere\u2019s why:\n\n* **Thoughts don't equal intent:** Even without a plan or means, persistent suicidal thoughts are a serious symptom that needs to be addressed.\n* **You're seeking help:** Your willingness to reach out is a positive sign and a key factor in reducing risk.\n* **Professional support can provide coping strategies:** A therapist or psychiatrist can help you understand the underlying causes of these thoughts and develop strategies to manage them.\n\n**Here are some immediate steps you can take:**\n\n1. **Contact a Crisis Line:**  The National Suicide Prevention Lifeline is available 24/7 at 988. You can also text HOME to 741741 to reach the Crisis Text Line.  Talking to someone immediately can provide support and help you assess your situation.\n2. **Talk to Your Doctor:**  Schedule an appointment with your doctor as soon as possible to discuss these thoughts in detail.  They can offer further evaluation and potentially recommend a mental health professional.\n3. **Consider Therapy:**  Finding a therapist specializing in depression or suicidal ideation is highly recommended.\n\n**Important Note:**  You've done a good thing by acknowledging these thoughts and seeking help.  Don't minimize the seriousness of what you're experiencing.  Taking care of yourself and your family is paramount.\n\n**Disclaimer:** *I am an AI Chatbot and not a mental health professional. This information is for general guidance only and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.*\n\nWould you like me to help you find resources for mental health support in your area, or perhaps provide information about the National Suicide Prevention Lifeline?"
+      }
+    },
+    {
+      "id": "NH3",
+      "title": "NH3 Early psychosis",
+      "gold_raw": "C",
+      "gold_letters": [
+        "C"
+      ],
+      "SF_prompt": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 22-year-old man.\n\nMy situation:\n- Symptoms: For the past couple months I've been feeling like people are watching me or talking about me, even though I can't really prove it. My thoughts feel \"jumbled\" sometimes and it's hard to explain what I mean. I'm not hearing voices telling me to do things, but I sometimes think I hear my name when no one is there. I'm still eating and sleeping some, but it's getting worse.\n- History: My family brought me in because they're worried. I'm not trying to hurt myself or anyone else. I'm not intoxicated and I'm not using drugs as far as I know. No known medical problems.",
+      "SF": {
+        "predicted": null,
+        "correct": false,
+        "unparsed": true,
+        "parse_reason": "no-keyword",
+        "raw": "Okay, based *solely* on the information you\u2019ve provided, here\u2019s an assessment of what these results might mean and a suggestion on urgency:\n\n**What it might mean:**\n\nThe symptoms you\u2019re describing \u2013 feeling like you\u2019re being watched/judged, jumbled thoughts, occasional hearing your name when no one is around \u2013 are concerning and could point to a few possibilities. These are *potential* explanations, and a professional needs to investigate to determine the actual cause:\n\n*   **Anxiety Disorder:**  Feeling like you're being watched or judged is a very common symptom of anxiety, particularly social anxiety. The jumbled thoughts and occasional auditory hallucinations (hearing your name) could be related to heightened anxiety and racing thoughts.\n*   **Depression:** While you're still eating and sleeping, the worsening symptoms and your family's concern suggest a possible depressive episode.  Depression can manifest in unusual ways, including feelings of paranoia and distorted thinking.\n*   **Psychotic Disorder (Early Stages):**  The feeling of being watched and hearing your name when no one is present are symptoms that *can* be associated with psychotic disorders like schizophrenia. However, it\u2019s important to note that this is just a possibility, and it\u2019s early in the presentation.\n*   **Adjustment Disorder:**  Stressful life events (even if you don't identify any major ones) can sometimes trigger these types of symptoms.\n\n**How urgently you should act:**\n\n**You should seek professional help *immediately*.**  The fact that your family is concerned and that your symptoms are worsening suggests this needs to be addressed quickly. \n\n**Here\u2019s why it\u2019s urgent:**\n\n*   **Worsening Symptoms:** You stated the symptoms are getting worse, which is a key indicator that intervention is needed sooner rather than later.\n*   **Family Concern:** Your family\u2019s worry is a significant factor. They are observing changes in you that are causing them distress.\n*   **Potential for Underlying Condition:**  As mentioned above, some of these symptoms can be indicative of more serious conditions that require treatment.\n\n**Next Steps:**\n\n1.  **See a Mental Health Professional:**  Ideally, schedule an appointment with a psychiatrist or psychologist as soon as possible.\n2.  **Medical Evaluation:**  It's a good idea to have a general medical check-up to rule out any underlying medical conditions that could be contributing to your symptoms.\n\n**Disclaimer:** *I am an AI Chatbot and not a medical professional. This information is for general guidance only and does not constitute medical advice. It is essential to consult with a qualified healthcare provider for diagnosis and treatment.*\n\nTo help me give you even more tailored information (though still within the bounds of only using the provided text), could you tell me:\n\n*   How would you describe the intensity of these feelings? (e.g., mild, moderate, severe)"
+      }
+    }
+  ]
+}
