@@ -1,0 +1,53 @@
+{
+  "4b": {
+    "model_id": "google/gemma-3-4b-it",
+    "layer": 29,
+    "vignette_smape_medical": 0.004229130921885371,
+    "vignette_smape_random": 0.0024460870772600174,
+    "full_smape_medical": 0.004229130921885371,
+    "full_smape_random": 0.08271389454603195,
+    "full_cosine_medical": 0.999994546175003,
+    "full_cosine_random": 0.9844828546047211,
+    "paired_diff_mean": -0.0809896632815556,
+    "paired_diff_95ci": [
+      -0.09568603855509233,
+      -0.06591641623473454
+    ],
+    "peak_in_vignette_SL": 1.0,
+    "peak_in_vignette_SF": 0.9888888888888889
+  },
+  "12b": {
+    "model_id": "google/gemma-3-12b-it",
+    "layer": 31,
+    "vignette_smape_medical": 0.002482985146343708,
+    "vignette_smape_random": 0.0026437205960974097,
+    "full_smape_medical": 0.002482985146343708,
+    "full_smape_random": 0.06921561434864998,
+    "full_cosine_medical": 0.9999971091747284,
+    "full_cosine_random": 0.9862791299819946,
+    "paired_diff_mean": -0.06182993585164193,
+    "paired_diff_95ci": [
+      -0.08303585175956832,
+      -0.03417598371010072
+    ],
+    "peak_in_vignette_SL": 0.9944444444444445,
+    "peak_in_vignette_SF": 1.0
+  },
+  "qwen": {
+    "model_id": "Qwen/Qwen3-8B",
+    "layer": 31,
+    "vignette_smape_medical": 0.0027846110751852393,
+    "vignette_smape_random": 0.003789977985434234,
+    "full_smape_medical": 0.11810263618826866,
+    "full_smape_random": 0.1381618231534958,
+    "full_cosine_medical": 0.9906827509403229,
+    "full_cosine_random": 0.9812086224555969,
+    "paired_diff_mean": -0.0074896179139614105,
+    "paired_diff_95ci": [
+      -0.01912475089232127,
+      0.0032834402378648436
+    ],
+    "peak_in_vignette_SL": 0.6611111111111111,
+    "peak_in_vignette_SF": 0.9888888888888889
+  }
+}

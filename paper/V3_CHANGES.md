@@ -228,6 +228,30 @@ For each case, compute top-20 features by activation at the NL decision token an
 
 These came out of the reviewer-prompted investigation but are paper-strengthening contributions in their own right.
 
+### SL−SF mechanistic invariance — input-style robustness (added 2026-05-25)
+
+After completing the 2×2 behavioral cell (SF), we ran a focused mechanistic spot-check on the structured-input pair SL−SF to test whether the medical-vs-random format-invariance finding from §4.3 (which used NL−NF) depends on natural-input style. Same protocol: forward-pass each model under SL and SF prompts at the headline layer, SAE-encode, max-pool feature activations over user content tokens, compute medical-vs-random sMAPE and cosine with paired bootstrap 95% CIs.
+
+**Headline table:**
+
+| Model | n | med sMAPE | rnd sMAPE | med cos | rnd cos | paired Δ med−rnd | 95% CI | Sig? |
+|---|---|---|---|---|---|---|---|---|
+| 4B L29 | 60 | **0.0042** | **0.0827** | 1.0000 | 0.9845 | **−0.0810** | [−0.096, −0.066] | ✓ |
+| 12B L31 | 60 | **0.0025** | **0.0692** | 1.0000 | 0.9863 | **−0.0618** | [−0.083, −0.034] | ✓ |
+| Qwen L31 | 60 | 0.1181 | 0.1382 | 0.9907 | 0.9812 | −0.0075 | [−0.019, +0.003] | ns |
+
+**Reading:**
+
+- **Gemma 4B and 12B SL−SF results reproduce the NL−NF finding qualitatively and quantitatively**: medical features significantly more invariant than magnitude-matched random features, paired Δ < 0 with CI well below zero. The format-effect localization (§4.3) is **not specific to natural input** — it generalizes to structured clinician-notes-style input.
+- **Qwen SL−SF is marginal**: paired Δ = −0.0075 with CI [−0.019, +0.003] crosses zero. Direction matches NL−NF but the gap is below the detection threshold at n=60. Consistent with Qwen Scope's higher reconstruction error (~38%) and the existing "suggestive cross-family consistency" framing.
+- **Medical-feature peak-in-vignette diagnostic**: 100%/99% at 4B, 99%/100% at 12B; Qwen drops to **66% under SL** (vs 99% under SF). Interpretation: under SL, 1/3 of Qwen's medical-feature peaks land on the answer-key scaffold (which mentions "ER", "doctor", "monitor at home") rather than in the vignette. Under SF (no scaffold), they re-anchor to the vignette. Qwen's medical features are less selective than Gemma's and partly fire on lexical mentions of clinical care.
+- **Vignette-mask sanity check passes**: shared-content sMAPE ≈ 0.002–0.004 for both medical and random across all three models, confirming causal-masking trivial invariance.
+
+**Manuscript implications:**
+Either (a) add a short sub-section under §4.3 ("Input-style robustness: the medical-vs-random gap holds on the SL−SF pair at both Gemma scales") plus a 1-sentence Qwen caveat, OR (b) put the full table in Appendix and reference it as input-style robustness from §4.3's main text. Either way, the paper's "Mechanistic analyses use the NL−NF pair throughout" decision in §3.1 can keep that statement but now points to this appendix for the robustness check.
+
+**Where:** `results/sl_sf_masked_invariance_{4b,12b,qwen}.json` + `results/sl_sf_masked_full_activations_{4b,12b,qwen}.npz` + `results/sl_sf_summary.{json,md}` (consolidated table).
+
 ### SF cell — completing the 2×2 input × output factorial (added 2026-05-25)
 
 Original Phase 0.5 / 3b / 4b runs covered SL, NL, NF and **deliberately skipped SF** (Structured input + Free-text output) for clinical-mismatch reasons (clinician-style notes + patient-facing free-text is a less canonical workflow). On user request, we filled in the missing 4th cell for 2×2 completeness ahead of v3 submission. SF prompt = `structured_forced_letter` with the "Reply with exactly one letter only. A/B/C/D" scaffold stripped; the opening question persists and drives the free-text response. Greedy, max_new_tokens=2000.

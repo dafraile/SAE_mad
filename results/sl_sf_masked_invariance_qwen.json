@@ -1,0 +1,2643 @@
+{
+  "n_cases": 60,
+  "model_id": "Qwen/Qwen3-8B",
+  "model_tag": "qwen",
+  "pair": "SL_vs_SF",
+  "layer": 31,
+  "medical_features": [
+    29074,
+    48973,
+    60699
+  ],
+  "random_features": [
+    4968,
+    5205,
+    5536,
+    7629,
+    11447,
+    12694,
+    23834,
+    25961,
+    28011,
+    28398,
+    28737,
+    29106,
+    32395,
+    33377,
+    34164,
+    35424,
+    41842,
+    42464,
+    45388,
+    46700,
+    47861,
+    49545,
+    50208,
+    50787,
+    51002,
+    53586,
+    54675,
+    55878,
+    60462,
+    63650
+  ],
+  "vignette_smape_medical_median": 0.0027846110751852393,
+  "vignette_smape_random_median": 0.003789977985434234,
+  "vignette_cosine_medical_median": 0.9999992847442627,
+  "vignette_cosine_random_median": 0.9999617040157318,
+  "full_smape_medical_median": 0.11810263618826866,
+  "full_smape_random_median": 0.1381618231534958,
+  "full_smape_medical_mean": 0.12330255843698978,
+  "full_smape_random_mean": 0.1307921763509512,
+  "full_cosine_medical_median": 0.9906827509403229,
+  "full_cosine_random_median": 0.9812086224555969,
+  "medical_peak_in_vignette_frac_SL": 0.6611111111111111,
+  "medical_peak_in_vignette_frac_SF": 0.9888888888888889,
+  "per_case": [
+    {
+      "case_id": "E1",
+      "SL_seq_len": 281,
+      "SF_seq_len": 224,
+      "vignette_token_count": 210,
+      "vignette_smape_medical": 0.00491569796577096,
+      "vignette_smape_random": 0.0030741991940885782,
+      "vignette_cosine_medical": 0.999983012676239,
+      "vignette_cosine_random": 0.9999794960021973,
+      "full_smape_medical": 0.1063995286822319,
+      "full_smape_random": 0.10099337995052338,
+      "full_cosine_medical": 0.994457483291626,
+      "full_cosine_random": 0.9860407114028931,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 123,
+          "SF_argmax": 123,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 247.67349243164062,
+          "SF_max": 247.14889526367188
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 242,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 151.41217041015625,
+          "SF_max": 111.05087280273438
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 133,
+          "SF_argmax": 133,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 226.63864135742188,
+          "SF_max": 228.80662536621094
+        }
+      ]
+    },
+    {
+      "case_id": "E2",
+      "SL_seq_len": 351,
+      "SF_seq_len": 294,
+      "vignette_token_count": 280,
+      "vignette_smape_medical": 0.0,
+      "vignette_smape_random": 0.0,
+      "vignette_cosine_medical": 1.0,
+      "vignette_cosine_random": 0.9999999403953552,
+      "full_smape_medical": 0.10953082889318466,
+      "full_smape_random": 0.08189087361097336,
+      "full_cosine_medical": 0.994708776473999,
+      "full_cosine_random": 0.9842352867126465,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 127,
+          "SF_argmax": 127,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 281.4188537597656,
+          "SF_max": 281.4188537597656
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 312,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 155.1966094970703,
+          "SF_max": 111.3963851928711
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 136,
+          "SF_argmax": 136,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 252.95758056640625,
+          "SF_max": 252.95758056640625
+        }
+      ]
+    },
+    {
+      "case_id": "E3",
+      "SL_seq_len": 373,
+      "SF_seq_len": 316,
+      "vignette_token_count": 302,
+      "vignette_smape_medical": 0.0,
+      "vignette_smape_random": 0.0,
+      "vignette_cosine_medical": 1.0,
+      "vignette_cosine_random": 1.0000001192092896,
+      "full_smape_medical": 0.11010119318962097,
+      "full_smape_random": 0.10035977512598038,
+      "full_cosine_medical": 0.9941844344139099,
+      "full_cosine_random": 0.9806807637214661,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 114,
+          "SF_argmax": 114,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 261.4512023925781,
+          "SF_max": 261.4512023925781
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 334,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 155.46981811523438,
+          "SF_max": 111.3963851928711
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 150,
+          "SF_argmax": 150,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 245.40609741210938,
+          "SF_max": 245.40609741210938
+        }
+      ]
+    },
+    {
+      "case_id": "E4",
+      "SL_seq_len": 350,
+      "SF_seq_len": 293,
+      "vignette_token_count": 279,
+      "vignette_smape_medical": 0.0,
+      "vignette_smape_random": 0.0,
+      "vignette_cosine_medical": 0.9999998807907104,
+      "vignette_cosine_random": 0.9999999403953552,
+      "full_smape_medical": 0.11229174584150314,
+      "full_smape_random": 0.09271705895662308,
+      "full_cosine_medical": 0.9895308017730713,
+      "full_cosine_random": 0.9809733033180237,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 131,
+          "SF_argmax": 131,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 14.32205581665039,
+          "SF_max": 14.32205581665039
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 311,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 156.52430725097656,
+          "SF_max": 111.3963851928711
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 130,
+          "SF_argmax": 130,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 234.8851318359375,
+          "SF_max": 234.8851318359375
+        }
+      ]
+    },
+    {
+      "case_id": "E5",
+      "SL_seq_len": 292,
+      "SF_seq_len": 235,
+      "vignette_token_count": 221,
+      "vignette_smape_medical": 0.0030785538256168365,
+      "vignette_smape_random": 0.0024634539149701595,
+      "vignette_cosine_medical": 0.999992311000824,
+      "vignette_cosine_random": 0.9999783635139465,
+      "full_smape_medical": 0.10977423191070557,
+      "full_smape_random": 0.07776680588722229,
+      "full_cosine_medical": 0.9884703159332275,
+      "full_cosine_random": 0.987572193145752,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 253,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 153.85267639160156,
+          "SF_max": 111.2364501953125
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 118,
+          "SF_argmax": 118,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 198.15257263183594,
+          "SF_max": 199.70399475097656
+        }
+      ]
+    },
+    {
+      "case_id": "E6",
+      "SL_seq_len": 334,
+      "SF_seq_len": 277,
+      "vignette_token_count": 263,
+      "vignette_smape_medical": 0.0,
+      "vignette_smape_random": 0.0,
+      "vignette_cosine_medical": 1.0,
+      "vignette_cosine_random": 1.0,
+      "full_smape_medical": 0.11995964497327805,
+      "full_smape_random": 0.08380486071109772,
+      "full_cosine_medical": 0.9873829483985901,
+      "full_cosine_random": 0.9825623035430908,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 144,
+          "SF_argmax": 144,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 15.28631591796875,
+          "SF_max": 15.28631591796875
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 309,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 160.2820587158203,
+          "SF_max": 111.3963851928711
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 143,
+          "SF_argmax": 143,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 225.20477294921875,
+          "SF_max": 225.20477294921875
+        }
+      ]
+    },
+    {
+      "case_id": "E7",
+      "SL_seq_len": 297,
+      "SF_seq_len": 240,
+      "vignette_token_count": 226,
+      "vignette_smape_medical": 0.004559732042253017,
+      "vignette_smape_random": 0.0036644376814365387,
+      "vignette_cosine_medical": 0.9999964237213135,
+      "vignette_cosine_random": 0.999970555305481,
+      "full_smape_medical": 0.11317969113588333,
+      "full_smape_random": 0.0868041068315506,
+      "full_cosine_medical": 0.9877848029136658,
+      "full_cosine_random": 0.9806792736053467,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 126,
+          "SF_argmax": 126,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 11.630043029785156,
+          "SF_max": 11.689777374267578
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 272,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 154.76756286621094,
+          "SF_max": 111.2364501953125
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 125,
+          "SF_argmax": 125,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 166.95530700683594,
+          "SF_max": 165.77090454101562
+        }
+      ]
+    },
+    {
+      "case_id": "E8",
+      "SL_seq_len": 337,
+      "SF_seq_len": 280,
+      "vignette_token_count": 266,
+      "vignette_smape_medical": 0.0,
+      "vignette_smape_random": 0.0,
+      "vignette_cosine_medical": 1.0,
+      "vignette_cosine_random": 1.0000001192092896,
+      "full_smape_medical": 0.10462769120931625,
+      "full_smape_random": 0.07590411603450775,
+      "full_cosine_medical": 0.9902359843254089,
+      "full_cosine_random": 0.9875362515449524,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 298,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 152.8708953857422,
+          "SF_max": 111.3963851928711
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 145,
+          "SF_argmax": 145,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 215.64453125,
+          "SF_max": 215.64453125
+        }
+      ]
+    },
+    {
+      "case_id": "E9",
+      "SL_seq_len": 365,
+      "SF_seq_len": 308,
+      "vignette_token_count": 294,
+      "vignette_smape_medical": 0.0,
+      "vignette_smape_random": 0.0,
+      "vignette_cosine_medical": 1.0000001192092896,
+      "vignette_cosine_random": 0.9999999403953552,
+      "full_smape_medical": 0.09585129469633102,
+      "full_smape_random": 0.16145578026771545,
+      "full_cosine_medical": 0.9914130568504333,
+      "full_cosine_random": 0.9632039666175842,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 340,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 148.8077392578125,
+          "SF_max": 111.3963851928711
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 156,
+          "SF_argmax": 156,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 82.35870361328125,
+          "SF_max": 82.35870361328125
+        }
+      ]
+    },
+    {
+      "case_id": "E10",
+      "SL_seq_len": 322,
+      "SF_seq_len": 265,
+      "vignette_token_count": 251,
+      "vignette_smape_medical": 0.0,
+      "vignette_smape_random": 0.0,
+      "vignette_cosine_medical": 1.0,
+      "vignette_cosine_random": 1.0,
+      "full_smape_medical": 0.10723548382520676,
+      "full_smape_random": 0.09609092026948929,
+      "full_cosine_medical": 0.9947182536125183,
+      "full_cosine_random": 0.9825273752212524,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 81,
+          "SF_argmax": 81,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 277.3446350097656,
+          "SF_max": 277.3446350097656
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 283,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 154.102783203125,
+          "SF_max": 111.3963851928711
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 93,
+          "SF_argmax": 93,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 240.5179901123047,
+          "SF_max": 240.5179901123047
+        }
+      ]
+    },
+    {
+      "case_id": "E11",
+      "SL_seq_len": 350,
+      "SF_seq_len": 293,
+      "vignette_token_count": 279,
+      "vignette_smape_medical": 0.0,
+      "vignette_smape_random": 0.0,
+      "vignette_cosine_medical": 0.9999998807907104,
+      "vignette_cosine_random": 1.0,
+      "full_smape_medical": 0.10708124190568924,
+      "full_smape_random": 0.0811370313167572,
+      "full_cosine_medical": 0.9946231245994568,
+      "full_cosine_random": 0.9890395998954773,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 108,
+          "SF_argmax": 108,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 271.1891784667969,
+          "SF_max": 271.1891784667969
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 311,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 154.02960205078125,
+          "SF_max": 111.3963851928711
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 121,
+          "SF_argmax": 121,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 239.90003967285156,
+          "SF_max": 239.90003967285156
+        }
+      ]
+    },
+    {
+      "case_id": "E12",
+      "SL_seq_len": 357,
+      "SF_seq_len": 300,
+      "vignette_token_count": 286,
+      "vignette_smape_medical": 0.0,
+      "vignette_smape_random": 0.0,
+      "vignette_cosine_medical": 1.0,
+      "vignette_cosine_random": 0.9999998807907104,
+      "full_smape_medical": 0.11489567160606384,
+      "full_smape_random": 0.08077920228242874,
+      "full_cosine_medical": 0.9922956824302673,
+      "full_cosine_random": 0.9834524393081665,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 108,
+          "SF_argmax": 108,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 225.94677734375,
+          "SF_max": 225.94677734375
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 332,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 157.78868103027344,
+          "SF_max": 111.3963851928711
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 117,
+          "SF_argmax": 117,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 220.82415771484375,
+          "SF_max": 220.82415771484375
+        }
+      ]
+    },
+    {
+      "case_id": "E13",
+      "SL_seq_len": 392,
+      "SF_seq_len": 335,
+      "vignette_token_count": 321,
+      "vignette_smape_medical": 0.002490668324753642,
+      "vignette_smape_random": 0.002387495245784521,
+      "vignette_cosine_medical": 0.9999940395355225,
+      "vignette_cosine_random": 0.9999879002571106,
+      "full_smape_medical": 0.0943579375743866,
+      "full_smape_random": 0.14775411784648895,
+      "full_cosine_medical": 0.9908031821250916,
+      "full_cosine_random": 0.9799745678901672,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 353,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 147.8738555908203,
+          "SF_max": 111.3963851928711
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 115,
+          "SF_argmax": 115,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 166.80258178710938,
+          "SF_max": 166.521240234375
+        }
+      ]
+    },
+    {
+      "case_id": "E14",
+      "SL_seq_len": 337,
+      "SF_seq_len": 280,
+      "vignette_token_count": 266,
+      "vignette_smape_medical": 0.0,
+      "vignette_smape_random": 0.0,
+      "vignette_cosine_medical": 1.0,
+      "vignette_cosine_random": 1.0,
+      "full_smape_medical": 0.11685609817504883,
+      "full_smape_random": 0.07641161233186722,
+      "full_cosine_medical": 0.9862313866615295,
+      "full_cosine_random": 0.9844328761100769,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 106,
+          "SF_argmax": 106,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 14.991790771484375,
+          "SF_max": 14.991790771484375
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 312,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 158.74850463867188,
+          "SF_max": 111.3963851928711
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 105,
+          "SF_argmax": 105,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 188.0662841796875,
+          "SF_max": 188.0662841796875
+        }
+      ]
+    },
+    {
+      "case_id": "E15",
+      "SL_seq_len": 322,
+      "SF_seq_len": 265,
+      "vignette_token_count": 251,
+      "vignette_smape_medical": 0.0,
+      "vignette_smape_random": 0.0,
+      "vignette_cosine_medical": 1.0,
+      "vignette_cosine_random": 1.0,
+      "full_smape_medical": 0.10530105978250504,
+      "full_smape_random": 0.14767861366271973,
+      "full_cosine_medical": 0.9945828914642334,
+      "full_cosine_random": 0.9795126914978027,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 106,
+          "SF_argmax": 106,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 272.91864013671875,
+          "SF_max": 272.91864013671875
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 283,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 153.18789672851562,
+          "SF_max": 111.3963851928711
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 116,
+          "SF_argmax": 116,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 221.17601013183594,
+          "SF_max": 221.17601013183594
+        }
+      ]
+    },
+    {
+      "case_id": "E16",
+      "SL_seq_len": 344,
+      "SF_seq_len": 287,
+      "vignette_token_count": 273,
+      "vignette_smape_medical": 0.0,
+      "vignette_smape_random": 0.0,
+      "vignette_cosine_medical": 1.0,
+      "vignette_cosine_random": 0.9999998807907104,
+      "full_smape_medical": 0.11389950662851334,
+      "full_smape_random": 0.0830163061618805,
+      "full_cosine_medical": 0.9882963299751282,
+      "full_cosine_random": 0.9815978407859802,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 121,
+          "SF_argmax": 121,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 17.28012466430664,
+          "SF_max": 17.28012466430664
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 305,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 157.30357360839844,
+          "SF_max": 111.3963851928711
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 121,
+          "SF_argmax": 121,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 215.77532958984375,
+          "SF_max": 215.77532958984375
+        }
+      ]
+    },
+    {
+      "case_id": "E17",
+      "SL_seq_len": 319,
+      "SF_seq_len": 262,
+      "vignette_token_count": 248,
+      "vignette_smape_medical": 0.0,
+      "vignette_smape_random": 0.0,
+      "vignette_cosine_medical": 1.0000001192092896,
+      "vignette_cosine_random": 1.0000001192092896,
+      "full_smape_medical": 0.11251446604728699,
+      "full_smape_random": 0.07587912678718567,
+      "full_cosine_medical": 0.9898233413696289,
+      "full_cosine_random": 0.9847836494445801,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 98,
+          "SF_argmax": 98,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 121.19297790527344,
+          "SF_max": 121.19297790527344
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 280,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 156.63198852539062,
+          "SF_max": 111.3963851928711
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 116,
+          "SF_argmax": 116,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 210.36553955078125,
+          "SF_max": 210.36553955078125
+        }
+      ]
+    },
+    {
+      "case_id": "E18",
+      "SL_seq_len": 298,
+      "SF_seq_len": 241,
+      "vignette_token_count": 227,
+      "vignette_smape_medical": 0.0037670352030545473,
+      "vignette_smape_random": 0.07064785063266754,
+      "vignette_cosine_medical": 0.9999982714653015,
+      "vignette_cosine_random": 0.9888249635696411,
+      "full_smape_medical": 0.10108354687690735,
+      "full_smape_random": 0.15071967244148254,
+      "full_cosine_medical": 0.9922861456871033,
+      "full_cosine_random": 0.9711833000183105,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 99,
+          "SF_argmax": 99,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 13.974143981933594,
+          "SF_max": 14.02872085571289
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 259,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 149.48207092285156,
+          "SF_max": 111.2364501953125
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 98,
+          "SF_argmax": 98,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 226.79449462890625,
+          "SF_max": 225.44537353515625
+        }
+      ]
+    },
+    {
+      "case_id": "E19",
+      "SL_seq_len": 321,
+      "SF_seq_len": 264,
+      "vignette_token_count": 250,
+      "vignette_smape_medical": 0.0,
+      "vignette_smape_random": 0.0,
+      "vignette_cosine_medical": 1.0,
+      "vignette_cosine_random": 1.0000001192092896,
+      "full_smape_medical": 0.12116307020187378,
+      "full_smape_random": 0.09415099769830704,
+      "full_cosine_medical": 0.9919096827507019,
+      "full_cosine_random": 0.9831030964851379,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 105,
+          "SF_argmax": 105,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 249.74545288085938,
+          "SF_max": 249.74545288085938
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 282,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 160.88140869140625,
+          "SF_max": 111.3963851928711
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 117,
+          "SF_argmax": 117,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 219.9783477783203,
+          "SF_max": 219.9783477783203
+        }
+      ]
+    },
+    {
+      "case_id": "E20",
+      "SL_seq_len": 297,
+      "SF_seq_len": 240,
+      "vignette_token_count": 226,
+      "vignette_smape_medical": 0.0037478639278560877,
+      "vignette_smape_random": 0.0042762672528624535,
+      "vignette_cosine_medical": 0.9999955892562866,
+      "vignette_cosine_random": 0.9999598264694214,
+      "full_smape_medical": 0.10624241828918457,
+      "full_smape_random": 0.08047285676002502,
+      "full_cosine_medical": 0.9903502464294434,
+      "full_cosine_random": 0.984641432762146,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 65,
+          "SF_argmax": 65,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 77.03355407714844,
+          "SF_max": 77.60411071777344
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 258,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 151.87701416015625,
+          "SF_max": 111.2364501953125
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 128,
+          "SF_argmax": 128,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 193.7637481689453,
+          "SF_max": 193.2939453125
+        }
+      ]
+    },
+    {
+      "case_id": "E21",
+      "SL_seq_len": 321,
+      "SF_seq_len": 264,
+      "vignette_token_count": 250,
+      "vignette_smape_medical": 0.0,
+      "vignette_smape_random": 0.0,
+      "vignette_cosine_medical": 1.0000001192092896,
+      "vignette_cosine_random": 1.0,
+      "full_smape_medical": 0.10716942697763443,
+      "full_smape_random": 0.08895424753427505,
+      "full_cosine_medical": 0.9896212816238403,
+      "full_cosine_random": 0.9864173531532288,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 130,
+          "SF_argmax": 130,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 11.12717056274414,
+          "SF_max": 11.12717056274414
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 282,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 154.07144165039062,
+          "SF_max": 111.3963851928711
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 129,
+          "SF_argmax": 129,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 213.21405029296875,
+          "SF_max": 213.21405029296875
+        }
+      ]
+    },
+    {
+      "case_id": "E22",
+      "SL_seq_len": 347,
+      "SF_seq_len": 290,
+      "vignette_token_count": 276,
+      "vignette_smape_medical": 0.0,
+      "vignette_smape_random": 0.0,
+      "vignette_cosine_medical": 0.9999999403953552,
+      "vignette_cosine_random": 1.0000001192092896,
+      "full_smape_medical": 0.10898742824792862,
+      "full_smape_random": 0.14500026404857635,
+      "full_cosine_medical": 0.9933133721351624,
+      "full_cosine_random": 0.9682407975196838,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 110,
+          "SF_argmax": 110,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 252.8880615234375,
+          "SF_max": 252.8880615234375
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 322,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 154.9368438720703,
+          "SF_max": 111.3963851928711
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 134,
+          "SF_argmax": 134,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 197.4178466796875,
+          "SF_max": 197.4178466796875
+        }
+      ]
+    },
+    {
+      "case_id": "E23",
+      "SL_seq_len": 316,
+      "SF_seq_len": 259,
+      "vignette_token_count": 245,
+      "vignette_smape_medical": 0.0,
+      "vignette_smape_random": 0.0,
+      "vignette_cosine_medical": 1.0,
+      "vignette_cosine_random": 1.0,
+      "full_smape_medical": 0.11325591057538986,
+      "full_smape_random": 0.0978953018784523,
+      "full_cosine_medical": 0.9884644746780396,
+      "full_cosine_random": 0.9838574528694153,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 106,
+          "SF_argmax": 106,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 13.419551849365234,
+          "SF_max": 13.419551849365234
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 277,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 156.9910888671875,
+          "SF_max": 111.3963851928711
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 105,
+          "SF_argmax": 105,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 216.56100463867188,
+          "SF_max": 216.56100463867188
+        }
+      ]
+    },
+    {
+      "case_id": "E24",
+      "SL_seq_len": 315,
+      "SF_seq_len": 258,
+      "vignette_token_count": 244,
+      "vignette_smape_medical": 0.0,
+      "vignette_smape_random": 0.0,
+      "vignette_cosine_medical": 1.0,
+      "vignette_cosine_random": 1.0000001192092896,
+      "full_smape_medical": 0.10030728578567505,
+      "full_smape_random": 0.14696724712848663,
+      "full_cosine_medical": 0.9916179180145264,
+      "full_cosine_random": 0.9685923457145691,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 108,
+          "SF_argmax": 108,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 13.106246948242188,
+          "SF_max": 13.106246948242188
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 276,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 150.85496520996094,
+          "SF_max": 111.3963851928711
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 107,
+          "SF_argmax": 107,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 229.29080200195312,
+          "SF_max": 229.29080200195312
+        }
+      ]
+    },
+    {
+      "case_id": "E25",
+      "SL_seq_len": 365,
+      "SF_seq_len": 308,
+      "vignette_token_count": 294,
+      "vignette_smape_medical": 0.0,
+      "vignette_smape_random": 0.0,
+      "vignette_cosine_medical": 1.0000001192092896,
+      "vignette_cosine_random": 0.9999999403953552,
+      "full_smape_medical": 0.12206689268350601,
+      "full_smape_random": 0.08325758576393127,
+      "full_cosine_medical": 0.987626314163208,
+      "full_cosine_random": 0.9863876700401306,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 131,
+          "SF_argmax": 131,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 19.41286849975586,
+          "SF_max": 19.41286849975586
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 340,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 161.33328247070312,
+          "SF_max": 111.3963851928711
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 139,
+          "SF_argmax": 139,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 238.62779235839844,
+          "SF_max": 238.62779235839844
+        }
+      ]
+    },
+    {
+      "case_id": "E26",
+      "SL_seq_len": 351,
+      "SF_seq_len": 294,
+      "vignette_token_count": 280,
+      "vignette_smape_medical": 0.0,
+      "vignette_smape_random": 0.0,
+      "vignette_cosine_medical": 1.0,
+      "vignette_cosine_random": 0.9999999403953552,
+      "full_smape_medical": 0.1193491742014885,
+      "full_smape_random": 0.09959722310304642,
+      "full_cosine_medical": 0.9870347380638123,
+      "full_cosine_random": 0.9727641344070435,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 136,
+          "SF_argmax": 136,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 14.412548065185547,
+          "SF_max": 14.412548065185547
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 326,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 159.97903442382812,
+          "SF_max": 111.3963851928711
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 136,
+          "SF_argmax": 136,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 215.9289093017578,
+          "SF_max": 215.9289093017578
+        }
+      ]
+    },
+    {
+      "case_id": "E27",
+      "SL_seq_len": 390,
+      "SF_seq_len": 333,
+      "vignette_token_count": 319,
+      "vignette_smape_medical": 0.00790498498827219,
+      "vignette_smape_random": 0.004417717456817627,
+      "vignette_cosine_medical": 0.9999961853027344,
+      "vignette_cosine_random": 0.999984085559845,
+      "full_smape_medical": 0.11622428894042969,
+      "full_smape_random": 0.10387396067380905,
+      "full_cosine_medical": 0.9891740679740906,
+      "full_cosine_random": 0.9843229651451111,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 147,
+          "SF_argmax": 147,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 12.204357147216797,
+          "SF_max": 12.416305541992188
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 365,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 155.5398712158203,
+          "SF_max": 111.3963851928711
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 146,
+          "SF_argmax": 146,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 216.92660522460938,
+          "SF_max": 216.77178955078125
+        }
+      ]
+    },
+    {
+      "case_id": "F1",
+      "SL_seq_len": 194,
+      "SF_seq_len": 137,
+      "vignette_token_count": 123,
+      "vignette_smape_medical": 0.004010279197245836,
+      "vignette_smape_random": 0.005786384921520948,
+      "vignette_cosine_medical": 0.9999957084655762,
+      "vignette_cosine_random": 0.999950647354126,
+      "full_smape_medical": 0.1438322365283966,
+      "full_smape_random": 0.15784654021263123,
+      "full_cosine_medical": 0.9844235777854919,
+      "full_cosine_random": 0.9888848066329956,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 123,
+          "SF_argmax": 123,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 248.54959106445312,
+          "SF_max": 248.2987060546875
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 155,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 170.06150817871094,
+          "SF_max": 110.13748168945312
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 103,
+          "SF_argmax": 103,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 89.77716827392578,
+          "SF_max": 90.02547454833984
+        }
+      ]
+    },
+    {
+      "case_id": "F2",
+      "SL_seq_len": 197,
+      "SF_seq_len": 140,
+      "vignette_token_count": 126,
+      "vignette_smape_medical": 0.004416041076183319,
+      "vignette_smape_random": 0.006752674467861652,
+      "vignette_cosine_medical": 0.9999943971633911,
+      "vignette_cosine_random": 0.9998639225959778,
+      "full_smape_medical": 0.13593710958957672,
+      "full_smape_random": 0.1588612198829651,
+      "full_cosine_medical": 0.9913157224655151,
+      "full_cosine_random": 0.9824995994567871,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 127,
+          "SF_argmax": 127,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 281.092529296875,
+          "SF_max": 282.2342224121094
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 158,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 165.6927490234375,
+          "SF_max": 110.13748168945312
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 126,
+          "SF_argmax": 126,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 243.91995239257812,
+          "SF_max": 244.1483154296875
+        }
+      ]
+    },
+    {
+      "case_id": "F3",
+      "SL_seq_len": 211,
+      "SF_seq_len": 154,
+      "vignette_token_count": 140,
+      "vignette_smape_medical": 0.006947632879018784,
+      "vignette_smape_random": 0.0070483386516571045,
+      "vignette_cosine_medical": 0.9999799132347107,
+      "vignette_cosine_random": 0.9998713135719299,
+      "full_smape_medical": 0.13698549568653107,
+      "full_smape_random": 0.15405304729938507,
+      "full_cosine_medical": 0.9878234267234802,
+      "full_cosine_random": 0.9757980704307556,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 114,
+          "SF_argmax": 114,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 260.51068115234375,
+          "SF_max": 262.4146728515625
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 172,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 164.9264373779297,
+          "SF_max": 110.13748168945312
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 112,
+          "SF_argmax": 112,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 124.91015625,
+          "SF_max": 124.24964904785156
+        }
+      ]
+    },
+    {
+      "case_id": "F4",
+      "SL_seq_len": 191,
+      "SF_seq_len": 134,
+      "vignette_token_count": 120,
+      "vignette_smape_medical": 0.004193289205431938,
+      "vignette_smape_random": 0.004771070089191198,
+      "vignette_cosine_medical": 0.9999880194664001,
+      "vignette_cosine_random": 0.9999615550041199,
+      "full_smape_medical": 0.14177937805652618,
+      "full_smape_random": 0.1606190949678421,
+      "full_cosine_medical": 0.9893990755081177,
+      "full_cosine_random": 0.9823248982429504,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 152,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 168.8712158203125,
+          "SF_max": 110.13748168945312
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 118,
+          "SF_argmax": 118,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 52.82619857788086,
+          "SF_max": 53.05495071411133
+        }
+      ]
+    },
+    {
+      "case_id": "F5",
+      "SL_seq_len": 176,
+      "SF_seq_len": 119,
+      "vignette_token_count": 105,
+      "vignette_smape_medical": 0.000809673685580492,
+      "vignette_smape_random": 0.003672856604680419,
+      "vignette_cosine_medical": 1.0,
+      "vignette_cosine_random": 0.9999542832374573,
+      "full_smape_medical": 0.13165625929832458,
+      "full_smape_random": 0.1587052345275879,
+      "full_cosine_medical": 1.0,
+      "full_cosine_random": 0.9814439415931702,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 137,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 166.10903930664062,
+          "SF_max": 111.3209457397461
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        }
+      ]
+    },
+    {
+      "case_id": "F6",
+      "SL_seq_len": 201,
+      "SF_seq_len": 144,
+      "vignette_token_count": 130,
+      "vignette_smape_medical": 0.004834345076233149,
+      "vignette_smape_random": 0.005343001801520586,
+      "vignette_cosine_medical": 0.9999784231185913,
+      "vignette_cosine_random": 0.9999146461486816,
+      "full_smape_medical": 0.145701602101326,
+      "full_smape_random": 0.09366529434919357,
+      "full_cosine_medical": 0.9836975932121277,
+      "full_cosine_random": 0.973560631275177,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 162,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 170.62149047851562,
+          "SF_max": 110.13748168945312
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 129,
+          "SF_argmax": 129,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 70.78661346435547,
+          "SF_max": 71.22999572753906
+        }
+      ]
+    },
+    {
+      "case_id": "F7",
+      "SL_seq_len": 183,
+      "SF_seq_len": 126,
+      "vignette_token_count": 112,
+      "vignette_smape_medical": 0.000809673685580492,
+      "vignette_smape_random": 0.005685786716639996,
+      "vignette_cosine_medical": 1.0,
+      "vignette_cosine_random": 0.9998893141746521,
+      "full_smape_medical": 0.13266929984092712,
+      "full_smape_random": 0.20875638723373413,
+      "full_cosine_medical": 1.0,
+      "full_cosine_random": 0.9332202076911926,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 144,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 166.63534545898438,
+          "SF_max": 111.3209457397461
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        }
+      ]
+    },
+    {
+      "case_id": "F8",
+      "SL_seq_len": 203,
+      "SF_seq_len": 146,
+      "vignette_token_count": 132,
+      "vignette_smape_medical": 0.003721224144101143,
+      "vignette_smape_random": 0.006051065865904093,
+      "vignette_cosine_medical": 0.9999967813491821,
+      "vignette_cosine_random": 0.9999008178710938,
+      "full_smape_medical": 0.1363987773656845,
+      "full_smape_random": 0.09629672020673752,
+      "full_cosine_medical": 0.9844970703125,
+      "full_cosine_random": 0.983249306678772,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 164,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 166.29322814941406,
+          "SF_max": 110.13748168945312
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 115,
+          "SF_argmax": 115,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 78.0479965209961,
+          "SF_max": 77.82161712646484
+        }
+      ]
+    },
+    {
+      "case_id": "F9",
+      "SL_seq_len": 197,
+      "SF_seq_len": 140,
+      "vignette_token_count": 126,
+      "vignette_smape_medical": 0.005383671727031469,
+      "vignette_smape_random": 0.07107019424438477,
+      "vignette_cosine_medical": 0.9999846816062927,
+      "vignette_cosine_random": 0.9714800119400024,
+      "full_smape_medical": 0.1112687885761261,
+      "full_smape_random": 0.15988604724407196,
+      "full_cosine_medical": 0.9947790503501892,
+      "full_cosine_random": 0.9505591988563538,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 158,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 153.0210418701172,
+          "SF_max": 110.13748168945312
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 117,
+          "SF_argmax": 117,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 43.68301010131836,
+          "SF_max": 44.02912521362305
+        }
+      ]
+    },
+    {
+      "case_id": "F10",
+      "SL_seq_len": 151,
+      "SF_seq_len": 94,
+      "vignette_token_count": 80,
+      "vignette_smape_medical": 0.0014017514185979962,
+      "vignette_smape_random": 0.004901090636849403,
+      "vignette_cosine_medical": 0.9999995231628418,
+      "vignette_cosine_random": 0.9998505115509033,
+      "full_smape_medical": 0.13980767130851746,
+      "full_smape_random": 0.156077042222023,
+      "full_cosine_medical": 0.9868181347846985,
+      "full_cosine_random": 0.9629233479499817,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 78,
+          "SF_argmax": 78,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 274.9714050292969,
+          "SF_max": 275.0222473144531
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 112,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 168.8680877685547,
+          "SF_max": 110.4635238647461
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 79,
+          "SF_argmax": 79,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 100.02088165283203,
+          "SF_max": 100.12740325927734
+        }
+      ]
+    },
+    {
+      "case_id": "F11",
+      "SL_seq_len": 179,
+      "SF_seq_len": 122,
+      "vignette_token_count": 108,
+      "vignette_smape_medical": 0.0024581856559962034,
+      "vignette_smape_random": 0.004804346244782209,
+      "vignette_cosine_medical": 0.9999986290931702,
+      "vignette_cosine_random": 0.9999475479125977,
+      "full_smape_medical": 0.13294917345046997,
+      "full_smape_random": 0.09379302710294724,
+      "full_cosine_medical": 0.9902542233467102,
+      "full_cosine_random": 0.9897367358207703,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 105,
+          "SF_argmax": 105,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 269.1500244140625,
+          "SF_max": 268.2847595214844
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 140,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 165.9247589111328,
+          "SF_max": 111.3209457397461
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 104,
+          "SF_argmax": 104,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 190.8778533935547,
+          "SF_max": 190.54876708984375
+        }
+      ]
+    },
+    {
+      "case_id": "F12",
+      "SL_seq_len": 175,
+      "SF_seq_len": 118,
+      "vignette_token_count": 104,
+      "vignette_smape_medical": 0.006728628184646368,
+      "vignette_smape_random": 0.004307342693209648,
+      "vignette_cosine_medical": 0.9999873638153076,
+      "vignette_cosine_random": 0.9999280571937561,
+      "full_smape_medical": 0.13591434061527252,
+      "full_smape_random": 0.1591932326555252,
+      "full_cosine_medical": 0.9858386516571045,
+      "full_cosine_random": 0.9676144123077393,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 105,
+          "SF_argmax": 105,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 226.9749298095703,
+          "SF_max": 226.11468505859375
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 136,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 165.25045776367188,
+          "SF_max": 111.3209457397461
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 96,
+          "SF_argmax": 96,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 73.16331481933594,
+          "SF_max": 74.19182586669922
+        }
+      ]
+    },
+    {
+      "case_id": "F13",
+      "SL_seq_len": 173,
+      "SF_seq_len": 116,
+      "vignette_token_count": 102,
+      "vignette_smape_medical": 0.0022263347636908293,
+      "vignette_smape_random": 0.06977164000272751,
+      "vignette_cosine_medical": 0.9999988079071045,
+      "vignette_cosine_random": 0.9982180595397949,
+      "full_smape_medical": 0.11515327543020248,
+      "full_smape_random": 0.1503438651561737,
+      "full_cosine_medical": 0.9976625442504883,
+      "full_cosine_random": 0.9874980449676514,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 134,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 157.11793518066406,
+          "SF_max": 111.3209457397461
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 99,
+          "SF_argmax": 99,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 27.705093383789062,
+          "SF_max": 27.587596893310547
+        }
+      ]
+    },
+    {
+      "case_id": "F14",
+      "SL_seq_len": 163,
+      "SF_seq_len": 106,
+      "vignette_token_count": 92,
+      "vignette_smape_medical": 0.008260627277195454,
+      "vignette_smape_random": 0.002530717058107257,
+      "vignette_cosine_medical": 0.9999990463256836,
+      "vignette_cosine_random": 0.9999686479568481,
+      "full_smape_medical": 0.14343802630901337,
+      "full_smape_random": 0.1541534811258316,
+      "full_cosine_medical": 0.9994374513626099,
+      "full_cosine_random": 0.9739081263542175,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 124,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 167.57693481445312,
+          "SF_max": 110.4822998046875
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 90,
+          "SF_argmax": 90,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 11.623000144958496,
+          "SF_max": 11.396843910217285
+        }
+      ]
+    },
+    {
+      "case_id": "F15",
+      "SL_seq_len": 174,
+      "SF_seq_len": 117,
+      "vignette_token_count": 103,
+      "vignette_smape_medical": 0.004165627062320709,
+      "vignette_smape_random": 0.004138328600674868,
+      "vignette_cosine_medical": 0.9999869465827942,
+      "vignette_cosine_random": 0.9999063611030579,
+      "full_smape_medical": 0.16785544157028198,
+      "full_smape_random": 0.15698835253715515,
+      "full_cosine_medical": 0.9923714995384216,
+      "full_cosine_random": 0.9722370505332947,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 103,
+          "SF_argmax": 103,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 274.876708984375,
+          "SF_max": 272.19622802734375
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 135,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 160.94212341308594,
+          "SF_max": 111.3209457397461
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 167,
+          "SF_argmax": 110,
+          "SL_in_vignette": false,
+          "SF_in_vignette": false,
+          "SL_max": 193.52894592285156,
+          "SF_max": 170.03236389160156
+        }
+      ]
+    },
+    {
+      "case_id": "F16",
+      "SL_seq_len": 179,
+      "SF_seq_len": 122,
+      "vignette_token_count": 108,
+      "vignette_smape_medical": 0.004021999891847372,
+      "vignette_smape_random": 0.07011807709932327,
+      "vignette_cosine_medical": 0.9999969601631165,
+      "vignette_cosine_random": 0.9962694048881531,
+      "full_smape_medical": 0.1429099589586258,
+      "full_smape_random": 0.21838074922561646,
+      "full_cosine_medical": 0.9918316602706909,
+      "full_cosine_random": 0.9762030839920044,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 140,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 170.342529296875,
+          "SF_max": 111.3209457397461
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 94,
+          "SF_argmax": 94,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 44.41743469238281,
+          "SF_max": 44.847557067871094
+        }
+      ]
+    },
+    {
+      "case_id": "F17",
+      "SL_seq_len": 174,
+      "SF_seq_len": 117,
+      "vignette_token_count": 103,
+      "vignette_smape_medical": 0.00473841093480587,
+      "vignette_smape_random": 0.0032805809751152992,
+      "vignette_cosine_medical": 0.9999968409538269,
+      "vignette_cosine_random": 0.9999606013298035,
+      "full_smape_medical": 0.15596844255924225,
+      "full_smape_random": 0.13698507845401764,
+      "full_cosine_medical": 0.98041832447052,
+      "full_cosine_random": 0.9623079895973206,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 95,
+          "SF_argmax": 95,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 119.95243835449219,
+          "SF_max": 119.79170227050781
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 135,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 165.51071166992188,
+          "SF_max": 111.3209457397461
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 102,
+          "SF_argmax": 107,
+          "SL_in_vignette": true,
+          "SF_in_vignette": false,
+          "SL_max": 29.522418975830078,
+          "SF_max": 31.824928283691406
+        }
+      ]
+    },
+    {
+      "case_id": "F18",
+      "SL_seq_len": 156,
+      "SF_seq_len": 99,
+      "vignette_token_count": 85,
+      "vignette_smape_medical": 0.0011175343533977866,
+      "vignette_smape_random": 0.004113591276109219,
+      "vignette_cosine_medical": 0.9999988675117493,
+      "vignette_cosine_random": 0.9998601078987122,
+      "full_smape_medical": 0.13779115676879883,
+      "full_smape_random": 0.10654380917549133,
+      "full_cosine_medical": 0.9854381680488586,
+      "full_cosine_random": 0.9721548557281494,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 117,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 168.0117645263672,
+          "SF_max": 110.4822998046875
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 83,
+          "SF_argmax": 83,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 70.71560668945312,
+          "SF_max": 70.69957733154297
+        }
+      ]
+    },
+    {
+      "case_id": "F19",
+      "SL_seq_len": 175,
+      "SF_seq_len": 118,
+      "vignette_token_count": 104,
+      "vignette_smape_medical": 0.0043236324563622475,
+      "vignette_smape_random": 0.06981483846902847,
+      "vignette_cosine_medical": 0.9999973773956299,
+      "vignette_cosine_random": 0.9969781041145325,
+      "full_smape_medical": 0.13747720420360565,
+      "full_smape_random": 0.33667656779289246,
+      "full_cosine_medical": 0.9857470989227295,
+      "full_cosine_random": 0.9431937336921692,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 102,
+          "SF_argmax": 102,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 249.1893310546875,
+          "SF_max": 248.77401733398438
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 136,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 167.31051635742188,
+          "SF_max": 111.3209457397461
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 100,
+          "SF_argmax": 100,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 47.869808197021484,
+          "SF_max": 48.29648971557617
+        }
+      ]
+    },
+    {
+      "case_id": "F20",
+      "SL_seq_len": 186,
+      "SF_seq_len": 129,
+      "vignette_token_count": 115,
+      "vignette_smape_medical": 0.005968247074633837,
+      "vignette_smape_random": 0.003907099366188049,
+      "vignette_cosine_medical": 0.9999794363975525,
+      "vignette_cosine_random": 0.9999166131019592,
+      "full_smape_medical": 0.1457269787788391,
+      "full_smape_random": 0.1571418195962906,
+      "full_cosine_medical": 0.9814370274543762,
+      "full_cosine_random": 0.9633113741874695,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 62,
+          "SF_argmax": 62,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 76.63155364990234,
+          "SF_max": 77.03578186035156
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 147,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 170.0277099609375,
+          "SF_max": 110.13748168945312
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 108,
+          "SF_argmax": 108,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 28.896160125732422,
+          "SF_max": 29.02313995361328
+        }
+      ]
+    },
+    {
+      "case_id": "F21",
+      "SL_seq_len": 187,
+      "SF_seq_len": 130,
+      "vignette_token_count": 116,
+      "vignette_smape_medical": 0.006130201276391745,
+      "vignette_smape_random": 0.0047854091972112656,
+      "vignette_cosine_medical": 0.9999999403953552,
+      "vignette_cosine_random": 0.9999580979347229,
+      "full_smape_medical": 0.15026383101940155,
+      "full_smape_random": 0.15810862183570862,
+      "full_cosine_medical": 0.9980236887931824,
+      "full_cosine_random": 0.9820033311843872,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 148,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 172.3858184814453,
+          "SF_max": 110.13748168945312
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 49,
+          "SF_argmax": 49,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 20.175079345703125,
+          "SF_max": 19.971702575683594
+        }
+      ]
+    },
+    {
+      "case_id": "F22",
+      "SL_seq_len": 193,
+      "SF_seq_len": 136,
+      "vignette_token_count": 122,
+      "vignette_smape_medical": 0.006454003509134054,
+      "vignette_smape_random": 0.0050962986424565315,
+      "vignette_cosine_medical": 0.9999914169311523,
+      "vignette_cosine_random": 0.9999365210533142,
+      "full_smape_medical": 0.1484357863664627,
+      "full_smape_random": 0.15562710165977478,
+      "full_cosine_medical": 0.9833565354347229,
+      "full_cosine_random": 0.9779449105262756,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 109,
+          "SF_argmax": 109,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 253.40737915039062,
+          "SF_max": 254.0184326171875
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 154,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 171.2210235595703,
+          "SF_max": 110.13748168945312
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 96,
+          "SF_argmax": 96,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 57.55648422241211,
+          "SF_max": 58.05910110473633
+        }
+      ]
+    },
+    {
+      "case_id": "F23",
+      "SL_seq_len": 156,
+      "SF_seq_len": 99,
+      "vignette_token_count": 85,
+      "vignette_smape_medical": 0.004152257461100817,
+      "vignette_smape_random": 0.004741325508803129,
+      "vignette_cosine_medical": 0.9999932646751404,
+      "vignette_cosine_random": 0.9999585747718811,
+      "full_smape_medical": 0.14625197649002075,
+      "full_smape_random": 0.20681190490722656,
+      "full_cosine_medical": 0.9944714903831482,
+      "full_cosine_random": 0.9787827730178833,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 117,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 170.89822387695312,
+          "SF_max": 110.4822998046875
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 79,
+          "SF_argmax": 79,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 36.22294616699219,
+          "SF_max": 35.88652420043945
+        }
+      ]
+    },
+    {
+      "case_id": "F24",
+      "SL_seq_len": 167,
+      "SF_seq_len": 110,
+      "vignette_token_count": 96,
+      "vignette_smape_medical": 0.003935385029762983,
+      "vignette_smape_random": 0.001879586954601109,
+      "vignette_cosine_medical": 0.9999893307685852,
+      "vignette_cosine_random": 0.9999618530273438,
+      "full_smape_medical": 0.13164183497428894,
+      "full_smape_random": 0.202490895986557,
+      "full_cosine_medical": 0.9905623197555542,
+      "full_cosine_random": 0.9380154609680176,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 128,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 163.71026611328125,
+          "SF_max": 110.4822998046875
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 82,
+          "SF_argmax": 82,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 53.3739128112793,
+          "SF_max": 53.73127365112305
+        }
+      ]
+    },
+    {
+      "case_id": "F25",
+      "SL_seq_len": 200,
+      "SF_seq_len": 143,
+      "vignette_token_count": 129,
+      "vignette_smape_medical": 0.0052963667549192905,
+      "vignette_smape_random": 0.07235217839479446,
+      "vignette_cosine_medical": 0.9999961256980896,
+      "vignette_cosine_random": 0.9971292614936829,
+      "full_smape_medical": 0.15189047157764435,
+      "full_smape_random": 0.14334997534751892,
+      "full_cosine_medical": 0.979496419429779,
+      "full_cosine_random": 0.9868417978286743,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 131,
+          "SF_argmax": 131,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 19.469867706298828,
+          "SF_max": 19.554054260253906
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 161,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 173.72955322265625,
+          "SF_max": 110.13748168945312
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 112,
+          "SF_argmax": 112,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 84.77010345458984,
+          "SF_max": 84.48950958251953
+        }
+      ]
+    },
+    {
+      "case_id": "F26",
+      "SL_seq_len": 197,
+      "SF_seq_len": 140,
+      "vignette_token_count": 126,
+      "vignette_smape_medical": 0.006501630414277315,
+      "vignette_smape_random": 0.005871698725968599,
+      "vignette_cosine_medical": 0.9999997019767761,
+      "vignette_cosine_random": 0.9998738765716553,
+      "full_smape_medical": 0.1405930370092392,
+      "full_smape_random": 0.1642226129770279,
+      "full_cosine_medical": 0.9962010383605957,
+      "full_cosine_random": 0.9637344479560852,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 158,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 167.0308837890625,
+          "SF_max": 110.13748168945312
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 105,
+          "SF_argmax": 105,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 30.706035614013672,
+          "SF_max": 30.362648010253906
+        }
+      ]
+    },
+    {
+      "case_id": "F27",
+      "SL_seq_len": 207,
+      "SF_seq_len": 150,
+      "vignette_token_count": 136,
+      "vignette_smape_medical": 0.009608909487724304,
+      "vignette_smape_random": 0.004288867581635714,
+      "vignette_cosine_medical": 0.9999876022338867,
+      "vignette_cosine_random": 0.9999686479568481,
+      "full_smape_medical": 0.15258289873600006,
+      "full_smape_random": 0.0935671254992485,
+      "full_cosine_medical": 0.9978415369987488,
+      "full_cosine_random": 0.9864290952682495,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 168,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 171.7569122314453,
+          "SF_max": 110.13748168945312
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 49,
+          "SF_argmax": 49,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 19.48824691772461,
+          "SF_max": 19.89324188232422
+        }
+      ]
+    },
+    {
+      "case_id": "MH1",
+      "SL_seq_len": 494,
+      "SF_seq_len": 437,
+      "vignette_token_count": 423,
+      "vignette_smape_medical": 0.0066569349728524685,
+      "vignette_smape_random": 0.003300874028354883,
+      "vignette_cosine_medical": 0.9999952912330627,
+      "vignette_cosine_random": 0.9999719262123108,
+      "full_smape_medical": 0.08016534149646759,
+      "full_smape_random": 0.0738275796175003,
+      "full_cosine_medical": 0.9951068758964539,
+      "full_cosine_random": 0.9897075295448303,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 455,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 139.8608856201172,
+          "SF_max": 111.411376953125
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 189,
+          "SF_argmax": 189,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 237.49105834960938,
+          "SF_max": 240.8519744873047
+        }
+      ]
+    },
+    {
+      "case_id": "MH2",
+      "SL_seq_len": 478,
+      "SF_seq_len": 421,
+      "vignette_token_count": 407,
+      "vignette_smape_medical": 0.004597900900989771,
+      "vignette_smape_random": 0.004936167038977146,
+      "vignette_cosine_medical": 0.9999997019767761,
+      "vignette_cosine_random": 0.9999673366546631,
+      "full_smape_medical": 0.08653257042169571,
+      "full_smape_random": 0.08737647533416748,
+      "full_cosine_medical": 0.9928835034370422,
+      "full_cosine_random": 0.9874090552330017,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 439,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 143.4940948486328,
+          "SF_max": 111.411376953125
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 201,
+          "SF_argmax": 201,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 192.2779083251953,
+          "SF_max": 193.79812622070312
+        }
+      ]
+    },
+    {
+      "case_id": "MH3",
+      "SL_seq_len": 491,
+      "SF_seq_len": 434,
+      "vignette_token_count": 420,
+      "vignette_smape_medical": 0.004247984383255243,
+      "vignette_smape_random": 0.004079085774719715,
+      "vignette_cosine_medical": 1.0,
+      "vignette_cosine_random": 0.9999375343322754,
+      "full_smape_medical": 0.10716729611158371,
+      "full_smape_random": 0.07893069088459015,
+      "full_cosine_medical": 0.9894794821739197,
+      "full_cosine_random": 0.9865036606788635,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 452,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 153.01588439941406,
+          "SF_max": 111.411376953125
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 187,
+          "SF_argmax": 187,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 208.54136657714844,
+          "SF_max": 209.96963500976562
+        }
+      ]
+    },
+    {
+      "case_id": "NH1",
+      "SL_seq_len": 250,
+      "SF_seq_len": 193,
+      "vignette_token_count": 179,
+      "vignette_smape_medical": 0.0008859584922902286,
+      "vignette_smape_random": 0.005308656021952629,
+      "vignette_cosine_medical": 0.9999999403953552,
+      "vignette_cosine_random": 0.999916136264801,
+      "full_smape_medical": 0.10647702217102051,
+      "full_smape_random": 0.13933856785297394,
+      "full_cosine_medical": 0.9985233545303345,
+      "full_cosine_random": 0.959686279296875,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 211,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 153.1111297607422,
+          "SF_max": 111.05087280273438
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 49,
+          "SF_argmax": 49,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 22.572025299072266,
+          "SF_max": 22.594341278076172
+        }
+      ]
+    },
+    {
+      "case_id": "NH2",
+      "SL_seq_len": 262,
+      "SF_seq_len": 205,
+      "vignette_token_count": 191,
+      "vignette_smape_medical": 0.0010354885598644614,
+      "vignette_smape_random": 0.003634096123278141,
+      "vignette_cosine_medical": 1.0,
+      "vignette_cosine_random": 0.9999555945396423,
+      "full_smape_medical": 0.1107771098613739,
+      "full_smape_random": 0.21744556725025177,
+      "full_cosine_medical": 1.0,
+      "full_cosine_random": 0.945677638053894,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 223,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 155.3110809326172,
+          "SF_max": 111.05087280273438
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        }
+      ]
+    },
+    {
+      "case_id": "NH3",
+      "SL_seq_len": 248,
+      "SF_seq_len": 191,
+      "vignette_token_count": 177,
+      "vignette_smape_medical": 0.000556569139007479,
+      "vignette_smape_random": 0.004984502214938402,
+      "vignette_cosine_medical": 1.0,
+      "vignette_cosine_random": 0.9999023079872131,
+      "full_smape_medical": 0.1444469541311264,
+      "full_smape_random": 0.21013380587100983,
+      "full_cosine_medical": 1.0,
+      "full_cosine_random": 0.9413760304450989,
+      "medical_peak_diagnostic": [
+        {
+          "feature": 29074,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        },
+        {
+          "feature": 48973,
+          "SL_argmax": 209,
+          "SF_argmax": 18,
+          "SL_in_vignette": false,
+          "SF_in_vignette": true,
+          "SL_max": 172.48463439941406,
+          "SF_max": 111.05087280273438
+        },
+        {
+          "feature": 60699,
+          "SL_argmax": 4,
+          "SF_argmax": 4,
+          "SL_in_vignette": true,
+          "SF_in_vignette": true,
+          "SL_max": 0.0,
+          "SF_max": 0.0
+        }
+      ]
+    }
+  ],
+  "paired_smape_diff_mean": -0.0074896179139614105,
+  "paired_smape_diff_95ci": [
+    -0.01912475089232127,
+    0.0032834402378648436
+  ]
+}
