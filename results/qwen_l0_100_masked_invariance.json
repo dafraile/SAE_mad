@@ -1,0 +1,1207 @@
+{
+  "sae_repo": "Qwen/SAE-Res-Qwen3-8B-Base-W64K-L0_100",
+  "layer": 31,
+  "topk": 100,
+  "model_id": "Qwen/Qwen3-8B",
+  "n_cases": 60,
+  "recon_err_l31_median": 0.3444356322288513,
+  "recon_err_l31_mean": 0.37225492909349417,
+  "feature_id": {
+    "sae_repo": "Qwen/SAE-Res-Qwen3-8B-Base-W64K-L0_100",
+    "layer": 31,
+    "topk": 100,
+    "n_features_total": 65536,
+    "n_selective_features": 946,
+    "medical_features": [
+      60699,
+      49288,
+      18272
+    ],
+    "medical_features_info": [
+      {
+        "feature": 60699,
+        "med_mean_max": 125.38864135742188,
+        "non_mean_max": 0.0,
+        "contrast": 125.38864135742188,
+        "med_fires": 0.7333333333333333,
+        "non_fires": 0.0
+      },
+      {
+        "feature": 49288,
+        "med_mean_max": 131.61746215820312,
+        "non_mean_max": 9.279020309448242,
+        "contrast": 122.33843994140625,
+        "med_fires": 1.0,
+        "non_fires": 0.1
+      },
+      {
+        "feature": 18272,
+        "med_mean_max": 117.7963638305664,
+        "non_mean_max": 0.9109625220298767,
+        "contrast": 116.8853988647461,
+        "med_fires": 1.0,
+        "non_fires": 0.06666666666666667
+      }
+    ],
+    "random_features": [
+      6159,
+      6172,
+      8684,
+      12872,
+      13137,
+      25819,
+      27998,
+      28152,
+      30221,
+      30329,
+      33205,
+      33237,
+      34237,
+      37603,
+      42519,
+      44666,
+      45034,
+      47528,
+      48936,
+      49419,
+      49727,
+      50974,
+      51517,
+      53402,
+      54809,
+      55116,
+      59903,
+      60329,
+      60980,
+      64993
+    ],
+    "random_pool_size": 327
+  },
+  "NL_NF": {
+    "smape_medical_median": 0.002108628978021443,
+    "smape_random_median": 0.05179960839450359,
+    "smape_medical_mean": 0.0029589042198495006,
+    "smape_random_mean": 0.07252886114098753,
+    "cosine_medical_median": 0.9999985992908478,
+    "cosine_random_median": 0.9957452714443207,
+    "paired_diff_mean": -0.06956995692113803,
+    "paired_diff_95ci": [
+      -0.08530438019421126,
+      -0.05415047101923848
+    ]
+  },
+  "SL_SF": {
+    "smape_medical_median": 0.002021616557613015,
+    "smape_random_median": 0.11255126819014549,
+    "smape_medical_mean": 0.014789567456561296,
+    "smape_random_mean": 0.1648403525100245,
+    "cosine_medical_median": 0.999998927116394,
+    "cosine_random_median": 0.989945650100708,
+    "paired_diff_mean": -0.1500507850534632,
+    "paired_diff_95ci": [
+      -0.18301896232945486,
+      -0.11739601975277765
+    ]
+  },
+  "decision_token": {
+    "K": 20,
+    "nl_decision_active_features_mean": 100.0,
+    "nf_decision_active_features_mean": 100.0,
+    "nl_nf_top_K_jaccard_mean": 0.06756577282893073,
+    "nl_nf_top_K_jaccard_median": 0.05263157894736842,
+    "nl_only_peak_in_scaffold_mean": 0.9135348583877996,
+    "nf_only_peak_in_vignette_mean": 0.14340069946107098,
+    "n_cases_medical_in_nl_top_K": 0,
+    "n_cases_medical_in_nf_top_K": 0,
+    "pred_letter_distribution_nl": {
+      "A": 16,
+      "C": 33,
+      "D": 3,
+      "B": 8
+    },
+    "contrib_medical_to_pred_mean_nl": 0.0,
+    "contrib_other_to_pred_mean_nl": 70.3944122950236
+  },
+  "per_case": [
+    {
+      "case_id": "E1",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 253,
+      "vignette_len_SL_SF": 210,
+      "NL_NF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.01944730058312416,
+        "cosine_medical": 1.0,
+        "cosine_random": 0.9969232678413391
+      },
+      "SL_SF": {
+        "smape_medical": 0.004656853619962931,
+        "smape_random": 0.05940452590584755,
+        "cosine_medical": 0.9999938011169434,
+        "cosine_random": 0.9973245859146118
+      }
+    },
+    {
+      "case_id": "E2",
+      "gold_raw": "B/C",
+      "vignette_len_NL_NF": 384,
+      "vignette_len_SL_SF": 280,
+      "NL_NF": {
+        "smape_medical": 0.0008293289574794471,
+        "smape_random": 0.01006043329834938,
+        "cosine_medical": 0.9999998211860657,
+        "cosine_random": 0.9998682141304016
+      },
+      "SL_SF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.058456920087337494,
+        "cosine_medical": 1.0,
+        "cosine_random": 0.9974402785301208
+      }
+    },
+    {
+      "case_id": "E3",
+      "gold_raw": "C",
+      "vignette_len_NL_NF": 361,
+      "vignette_len_SL_SF": 302,
+      "NL_NF": {
+        "smape_medical": 0.003359547583386302,
+        "smape_random": 0.023055078461766243,
+        "cosine_medical": 0.9999925494194031,
+        "cosine_random": 0.9971839189529419
+      },
+      "SL_SF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.03312453627586365,
+        "cosine_medical": 0.9999999403953552,
+        "cosine_random": 0.9956977963447571
+      }
+    },
+    {
+      "case_id": "E4",
+      "gold_raw": "C",
+      "vignette_len_NL_NF": 378,
+      "vignette_len_SL_SF": 279,
+      "NL_NF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.003873308887705207,
+        "cosine_medical": 1.0000001192092896,
+        "cosine_random": 0.9999104142189026
+      },
+      "SL_SF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.0012578273890540004,
+        "cosine_medical": 0.9999999403953552,
+        "cosine_random": 0.9999935030937195
+      }
+    },
+    {
+      "case_id": "E5",
+      "gold_raw": "A",
+      "vignette_len_NL_NF": 257,
+      "vignette_len_SL_SF": 221,
+      "NL_NF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.03531460836529732,
+        "cosine_medical": 1.0,
+        "cosine_random": 0.9992628693580627
+      },
+      "SL_SF": {
+        "smape_medical": 0.0026196048129349947,
+        "smape_random": 0.058961912989616394,
+        "cosine_medical": 0.9999938607215881,
+        "cosine_random": 0.9927690029144287
+      }
+    },
+    {
+      "case_id": "E6",
+      "gold_raw": "B/C",
+      "vignette_len_NL_NF": 316,
+      "vignette_len_SL_SF": 263,
+      "NL_NF": {
+        "smape_medical": 0.0031207017600536346,
+        "smape_random": 0.026422644034028053,
+        "cosine_medical": 0.9999943971633911,
+        "cosine_random": 0.996408224105835
+      },
+      "SL_SF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.09330923855304718,
+        "cosine_medical": 1.0,
+        "cosine_random": 0.9847624897956848
+      }
+    },
+    {
+      "case_id": "E7",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 286,
+      "vignette_len_SL_SF": 226,
+      "NL_NF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.02514815889298916,
+        "cosine_medical": 1.0,
+        "cosine_random": 0.9988994598388672
+      },
+      "SL_SF": {
+        "smape_medical": 0.0036630930844694376,
+        "smape_random": 0.03869187831878662,
+        "cosine_medical": 0.9999895095825195,
+        "cosine_random": 0.9958162307739258
+      }
+    },
+    {
+      "case_id": "E8",
+      "gold_raw": "A",
+      "vignette_len_NL_NF": 313,
+      "vignette_len_SL_SF": 266,
+      "NL_NF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.0204650666564703,
+        "cosine_medical": 1.0,
+        "cosine_random": 0.9988551139831543
+      },
+      "SL_SF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.028060464188456535,
+        "cosine_medical": 1.0000001192092896,
+        "cosine_random": 0.9980841875076294
+      }
+    },
+    {
+      "case_id": "E9",
+      "gold_raw": "D",
+      "vignette_len_NL_NF": 333,
+      "vignette_len_SL_SF": 294,
+      "NL_NF": {
+        "smape_medical": 0.01253522653132677,
+        "smape_random": 0.009110208600759506,
+        "cosine_medical": 0.999996542930603,
+        "cosine_random": 0.9998162388801575
+      },
+      "SL_SF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.0357385091483593,
+        "cosine_medical": 1.0000001192092896,
+        "cosine_random": 0.994690477848053
+      }
+    },
+    {
+      "case_id": "E10",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 297,
+      "vignette_len_SL_SF": 251,
+      "NL_NF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.01269572600722313,
+        "cosine_medical": 0.9999998807907104,
+        "cosine_random": 0.9992700815200806
+      },
+      "SL_SF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.09417643398046494,
+        "cosine_medical": 1.0,
+        "cosine_random": 0.9928689002990723
+      }
+    },
+    {
+      "case_id": "E11",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 334,
+      "vignette_len_SL_SF": 279,
+      "NL_NF": {
+        "smape_medical": 0.0018402383429929614,
+        "smape_random": 0.0822978988289833,
+        "cosine_medical": 0.9999986886978149,
+        "cosine_random": 0.9991309642791748
+      },
+      "SL_SF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.07880370318889618,
+        "cosine_medical": 1.0,
+        "cosine_random": 0.9962891340255737
+      }
+    },
+    {
+      "case_id": "E12",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 358,
+      "vignette_len_SL_SF": 286,
+      "NL_NF": {
+        "smape_medical": 0.005714429542422295,
+        "smape_random": 0.010174459777772427,
+        "cosine_medical": 0.9999818205833435,
+        "cosine_random": 0.9998412132263184
+      },
+      "SL_SF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.034013692289590836,
+        "cosine_medical": 1.0,
+        "cosine_random": 0.9992740750312805
+      }
+    },
+    {
+      "case_id": "E13",
+      "gold_raw": "D",
+      "vignette_len_NL_NF": 366,
+      "vignette_len_SL_SF": 321,
+      "NL_NF": {
+        "smape_medical": 0.003277924843132496,
+        "smape_random": 0.026763146743178368,
+        "cosine_medical": 0.9999898672103882,
+        "cosine_random": 0.9995589256286621
+      },
+      "SL_SF": {
+        "smape_medical": 0.0018142865737900138,
+        "smape_random": 0.10158585757017136,
+        "cosine_medical": 0.9999986886978149,
+        "cosine_random": 0.9905878305435181
+      }
+    },
+    {
+      "case_id": "E14",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 326,
+      "vignette_len_SL_SF": 266,
+      "NL_NF": {
+        "smape_medical": 0.0027863585855811834,
+        "smape_random": 0.050765469670295715,
+        "cosine_medical": 0.9999933838844299,
+        "cosine_random": 0.9955183863639832
+      },
+      "SL_SF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.06251151859760284,
+        "cosine_medical": 1.0000001192092896,
+        "cosine_random": 0.994459331035614
+      }
+    },
+    {
+      "case_id": "E15",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 240,
+      "vignette_len_SL_SF": 251,
+      "NL_NF": {
+        "smape_medical": 0.006166985258460045,
+        "smape_random": 0.07879508286714554,
+        "cosine_medical": 0.9999803900718689,
+        "cosine_random": 0.988391637802124
+      },
+      "SL_SF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.09552463889122009,
+        "cosine_medical": 0.9999999403953552,
+        "cosine_random": 0.9896369576454163
+      }
+    },
+    {
+      "case_id": "E16",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 357,
+      "vignette_len_SL_SF": 273,
+      "NL_NF": {
+        "smape_medical": 0.0033903520088642836,
+        "smape_random": 0.040047742426395416,
+        "cosine_medical": 0.999997079372406,
+        "cosine_random": 0.9983398914337158
+      },
+      "SL_SF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.0743856355547905,
+        "cosine_medical": 1.0,
+        "cosine_random": 0.9982612729072571
+      }
+    },
+    {
+      "case_id": "E17",
+      "gold_raw": "A",
+      "vignette_len_NL_NF": 290,
+      "vignette_len_SL_SF": 248,
+      "NL_NF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.05283374711871147,
+        "cosine_medical": 1.0000001192092896,
+        "cosine_random": 0.9967697262763977
+      },
+      "SL_SF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.09290265291929245,
+        "cosine_medical": 0.9999999403953552,
+        "cosine_random": 0.9973193407058716
+      }
+    },
+    {
+      "case_id": "E18",
+      "gold_raw": "B",
+      "vignette_len_NL_NF": 308,
+      "vignette_len_SL_SF": 227,
+      "NL_NF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.02019929699599743,
+        "cosine_medical": 0.9999999403953552,
+        "cosine_random": 0.9990851879119873
+      },
+      "SL_SF": {
+        "smape_medical": 0.00418548658490181,
+        "smape_random": 0.11354923993349075,
+        "cosine_medical": 0.9999892115592957,
+        "cosine_random": 0.9929092526435852
+      }
+    },
+    {
+      "case_id": "E19",
+      "gold_raw": "B",
+      "vignette_len_NL_NF": 264,
+      "vignette_len_SL_SF": 250,
+      "NL_NF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.08516690880060196,
+        "cosine_medical": 1.0000001192092896,
+        "cosine_random": 0.9976017475128174
+      },
+      "SL_SF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.09694147109985352,
+        "cosine_medical": 1.0000001192092896,
+        "cosine_random": 0.9939430952072144
+      }
+    },
+    {
+      "case_id": "E20",
+      "gold_raw": "A",
+      "vignette_len_NL_NF": 284,
+      "vignette_len_SL_SF": 226,
+      "NL_NF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.027926422655582428,
+        "cosine_medical": 1.0,
+        "cosine_random": 0.9959721565246582
+      },
+      "SL_SF": {
+        "smape_medical": 0.0028694001957774162,
+        "smape_random": 0.058310434222221375,
+        "cosine_medical": 0.9999969005584717,
+        "cosine_random": 0.9981064796447754
+      }
+    },
+    {
+      "case_id": "E21",
+      "gold_raw": "B",
+      "vignette_len_NL_NF": 252,
+      "vignette_len_SL_SF": 250,
+      "NL_NF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.072782002389431,
+        "cosine_medical": 0.9999998807907104,
+        "cosine_random": 0.9927632808685303
+      },
+      "SL_SF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.0980902761220932,
+        "cosine_medical": 0.9999998807907104,
+        "cosine_random": 0.9944701194763184
+      }
+    },
+    {
+      "case_id": "E22",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 378,
+      "vignette_len_SL_SF": 276,
+      "NL_NF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.023406747728586197,
+        "cosine_medical": 1.0000001192092896,
+        "cosine_random": 0.9988738894462585
+      },
+      "SL_SF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.08072977513074875,
+        "cosine_medical": 1.0000001192092896,
+        "cosine_random": 0.9930343627929688
+      }
+    },
+    {
+      "case_id": "E23",
+      "gold_raw": "A/B",
+      "vignette_len_NL_NF": 327,
+      "vignette_len_SL_SF": 245,
+      "NL_NF": {
+        "smape_medical": 0.002692073816433549,
+        "smape_random": 0.07926643639802933,
+        "cosine_medical": 0.9999963045120239,
+        "cosine_random": 0.9934799075126648
+      },
+      "SL_SF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.035554759204387665,
+        "cosine_medical": 1.0,
+        "cosine_random": 0.9980124235153198
+      }
+    },
+    {
+      "case_id": "E24",
+      "gold_raw": "B",
+      "vignette_len_NL_NF": 319,
+      "vignette_len_SL_SF": 244,
+      "NL_NF": {
+        "smape_medical": 0.004938464146107435,
+        "smape_random": 0.02143229730427265,
+        "cosine_medical": 0.9999921321868896,
+        "cosine_random": 0.9984890222549438
+      },
+      "SL_SF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.11155329644680023,
+        "cosine_medical": 1.0000001192092896,
+        "cosine_random": 0.9935063719749451
+      }
+    },
+    {
+      "case_id": "E25",
+      "gold_raw": "C",
+      "vignette_len_NL_NF": 395,
+      "vignette_len_SL_SF": 294,
+      "NL_NF": {
+        "smape_medical": 0.0020841960795223713,
+        "smape_random": 0.007580976467579603,
+        "cosine_medical": 0.999998152256012,
+        "cosine_random": 0.9998965263366699
+      },
+      "SL_SF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.06047947332262993,
+        "cosine_medical": 1.0,
+        "cosine_random": 0.9931532144546509
+      }
+    },
+    {
+      "case_id": "E26",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 351,
+      "vignette_len_SL_SF": 280,
+      "NL_NF": {
+        "smape_medical": 0.0017080670222640038,
+        "smape_random": 0.027154233306646347,
+        "cosine_medical": 0.9999997615814209,
+        "cosine_random": 0.9982469081878662
+      },
+      "SL_SF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.08172788470983505,
+        "cosine_medical": 1.0,
+        "cosine_random": 0.9902543425559998
+      }
+    },
+    {
+      "case_id": "E27",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 411,
+      "vignette_len_SL_SF": 319,
+      "NL_NF": {
+        "smape_medical": 0.0007579599623568356,
+        "smape_random": 0.029559701681137085,
+        "cosine_medical": 0.9999998807907104,
+        "cosine_random": 0.9988232851028442
+      },
+      "SL_SF": {
+        "smape_medical": 0.0008430926245637238,
+        "smape_random": 0.06770376116037369,
+        "cosine_medical": 0.9999996423721313,
+        "cosine_random": 0.9961754083633423
+      }
+    },
+    {
+      "case_id": "F1",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 154,
+      "vignette_len_SL_SF": 123,
+      "NL_NF": {
+        "smape_medical": 0.0038474618922919035,
+        "smape_random": 0.08890162408351898,
+        "cosine_medical": 0.9999982714653015,
+        "cosine_random": 0.9849414825439453
+      },
+      "SL_SF": {
+        "smape_medical": 0.001335807261057198,
+        "smape_random": 0.28935712575912476,
+        "cosine_medical": 0.9999995231628418,
+        "cosine_random": 0.9420851469039917
+      }
+    },
+    {
+      "case_id": "F2",
+      "gold_raw": "B/C",
+      "vignette_len_NL_NF": 180,
+      "vignette_len_SL_SF": 126,
+      "NL_NF": {
+        "smape_medical": 0.0060090660117566586,
+        "smape_random": 0.061607684940099716,
+        "cosine_medical": 0.999967098236084,
+        "cosine_random": 0.9900617003440857
+      },
+      "SL_SF": {
+        "smape_medical": 0.003022058866918087,
+        "smape_random": 0.20385603606700897,
+        "cosine_medical": 0.9999971985816956,
+        "cosine_random": 0.9561857581138611
+      }
+    },
+    {
+      "case_id": "F3",
+      "gold_raw": "C",
+      "vignette_len_NL_NF": 209,
+      "vignette_len_SL_SF": 140,
+      "NL_NF": {
+        "smape_medical": 0.000551923003513366,
+        "smape_random": 0.10824223607778549,
+        "cosine_medical": 0.9999997615814209,
+        "cosine_random": 0.9789056777954102
+      },
+      "SL_SF": {
+        "smape_medical": 0.009397742338478565,
+        "smape_random": 0.28943002223968506,
+        "cosine_medical": 0.9999578595161438,
+        "cosine_random": 0.9496380090713501
+      }
+    },
+    {
+      "case_id": "F4",
+      "gold_raw": "C",
+      "vignette_len_NL_NF": 189,
+      "vignette_len_SL_SF": 120,
+      "NL_NF": {
+        "smape_medical": 0.0010254890657961369,
+        "smape_random": 0.08925817161798477,
+        "cosine_medical": 0.9999993443489075,
+        "cosine_random": 0.9885018467903137
+      },
+      "SL_SF": {
+        "smape_medical": 0.005688987672328949,
+        "smape_random": 0.19102610647678375,
+        "cosine_medical": 0.9999992847442627,
+        "cosine_random": 0.9516540169715881
+      }
+    },
+    {
+      "case_id": "F5",
+      "gold_raw": "A",
+      "vignette_len_NL_NF": 146,
+      "vignette_len_SL_SF": 105,
+      "NL_NF": {
+        "smape_medical": 0.0013032915303483605,
+        "smape_random": 0.023985909298062325,
+        "cosine_medical": 0.9999991059303284,
+        "cosine_random": 0.9990613460540771
+      },
+      "SL_SF": {
+        "smape_medical": 0.0019859455060213804,
+        "smape_random": 0.12959837913513184,
+        "cosine_medical": 0.999995768070221,
+        "cosine_random": 0.990357518196106
+      }
+    },
+    {
+      "case_id": "F6",
+      "gold_raw": "B/C",
+      "vignette_len_NL_NF": 177,
+      "vignette_len_SL_SF": 130,
+      "NL_NF": {
+        "smape_medical": 0.00927527155727148,
+        "smape_random": 0.15737785398960114,
+        "cosine_medical": 0.9999980926513672,
+        "cosine_random": 0.9603310823440552
+      },
+      "SL_SF": {
+        "smape_medical": 0.0049819378182291985,
+        "smape_random": 0.34059393405914307,
+        "cosine_medical": 0.999998152256012,
+        "cosine_random": 0.8819713592529297
+      }
+    },
+    {
+      "case_id": "F7",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 160,
+      "vignette_len_SL_SF": 112,
+      "NL_NF": {
+        "smape_medical": 0.0008781906217336655,
+        "smape_random": 0.10324078053236008,
+        "cosine_medical": 1.0,
+        "cosine_random": 0.980810821056366
+      },
+      "SL_SF": {
+        "smape_medical": 0.0023756574373692274,
+        "smape_random": 0.2387460321187973,
+        "cosine_medical": 0.9999976754188538,
+        "cosine_random": 0.9302049279212952
+      }
+    },
+    {
+      "case_id": "F8",
+      "gold_raw": "A",
+      "vignette_len_NL_NF": 197,
+      "vignette_len_SL_SF": 132,
+      "NL_NF": {
+        "smape_medical": 0.003890368388965726,
+        "smape_random": 0.029154811054468155,
+        "cosine_medical": 0.9999985098838806,
+        "cosine_random": 0.9977895021438599
+      },
+      "SL_SF": {
+        "smape_medical": 0.006769873667508364,
+        "smape_random": 0.23117981851100922,
+        "cosine_medical": 0.9999712705612183,
+        "cosine_random": 0.995051920413971
+      }
+    },
+    {
+      "case_id": "F9",
+      "gold_raw": "D",
+      "vignette_len_NL_NF": 161,
+      "vignette_len_SL_SF": 126,
+      "NL_NF": {
+        "smape_medical": 0.008666816167533398,
+        "smape_random": 0.030457885935902596,
+        "cosine_medical": 0.9999939799308777,
+        "cosine_random": 0.9960199594497681
+      },
+      "SL_SF": {
+        "smape_medical": 0.006678545847535133,
+        "smape_random": 0.1982901245355606,
+        "cosine_medical": 0.9999958276748657,
+        "cosine_random": 0.9306193590164185
+      }
+    },
+    {
+      "case_id": "F10",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 99,
+      "vignette_len_SL_SF": 80,
+      "NL_NF": {
+        "smape_medical": 0.003748691873624921,
+        "smape_random": 0.2736414074897766,
+        "cosine_medical": 0.9999949336051941,
+        "cosine_random": 0.9409348368644714
+      },
+      "SL_SF": {
+        "smape_medical": 0.0016864623175933957,
+        "smape_random": 0.4090154469013214,
+        "cosine_medical": 0.999998927116394,
+        "cosine_random": 0.8101400136947632
+      }
+    },
+    {
+      "case_id": "F11",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 124,
+      "vignette_len_SL_SF": 108,
+      "NL_NF": {
+        "smape_medical": 0.0030380766838788986,
+        "smape_random": 0.12428822368383408,
+        "cosine_medical": 0.9999989867210388,
+        "cosine_random": 0.9928911328315735
+      },
+      "SL_SF": {
+        "smape_medical": 0.0013215480139479041,
+        "smape_random": 0.21105916798114777,
+        "cosine_medical": 0.9999994039535522,
+        "cosine_random": 0.9433540105819702
+      }
+    },
+    {
+      "case_id": "F12",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 144,
+      "vignette_len_SL_SF": 104,
+      "NL_NF": {
+        "smape_medical": 0.005713218357414007,
+        "smape_random": 0.04631071910262108,
+        "cosine_medical": 0.9999974370002747,
+        "cosine_random": 0.9914010763168335
+      },
+      "SL_SF": {
+        "smape_medical": 0.009745986200869083,
+        "smape_random": 0.2207116037607193,
+        "cosine_medical": 0.9999889135360718,
+        "cosine_random": 0.9299953579902649
+      }
+    },
+    {
+      "case_id": "F13",
+      "gold_raw": "D",
+      "vignette_len_NL_NF": 150,
+      "vignette_len_SL_SF": 102,
+      "NL_NF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.10225179046392441,
+        "cosine_medical": 1.0000001192092896,
+        "cosine_random": 0.9789569973945618
+      },
+      "SL_SF": {
+        "smape_medical": 0.006040624808520079,
+        "smape_random": 0.2948051393032074,
+        "cosine_medical": 0.9999997019767761,
+        "cosine_random": 0.9006217122077942
+      }
+    },
+    {
+      "case_id": "F14",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 122,
+      "vignette_len_SL_SF": 92,
+      "NL_NF": {
+        "smape_medical": 0.0021330618765205145,
+        "smape_random": 0.11677907407283783,
+        "cosine_medical": 0.9999949336051941,
+        "cosine_random": 0.9777673482894897
+      },
+      "SL_SF": {
+        "smape_medical": 0.0022493244614452124,
+        "smape_random": 0.36115896701812744,
+        "cosine_medical": 0.9999999403953552,
+        "cosine_random": 0.9072139263153076
+      }
+    },
+    {
+      "case_id": "F15",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 100,
+      "vignette_len_SL_SF": 103,
+      "NL_NF": {
+        "smape_medical": 0.00217236764729023,
+        "smape_random": 0.25226372480392456,
+        "cosine_medical": 0.9999983310699463,
+        "cosine_random": 0.9639145731925964
+      },
+      "SL_SF": {
+        "smape_medical": 0.05928744375705719,
+        "smape_random": 0.3570515811443329,
+        "cosine_medical": 0.9966250658035278,
+        "cosine_random": 0.916836678981781
+      }
+    },
+    {
+      "case_id": "F16",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 190,
+      "vignette_len_SL_SF": 108,
+      "NL_NF": {
+        "smape_medical": 0.002734798938035965,
+        "smape_random": 0.015962952747941017,
+        "cosine_medical": 0.9999923706054688,
+        "cosine_random": 0.9988939166069031
+      },
+      "SL_SF": {
+        "smape_medical": 0.007814297452569008,
+        "smape_random": 0.24328039586544037,
+        "cosine_medical": 0.9999977946281433,
+        "cosine_random": 0.9286236763000488
+      }
+    },
+    {
+      "case_id": "F17",
+      "gold_raw": "A",
+      "vignette_len_NL_NF": 154,
+      "vignette_len_SL_SF": 103,
+      "NL_NF": {
+        "smape_medical": 0.0009614496375434101,
+        "smape_random": 0.11348343640565872,
+        "cosine_medical": 1.0,
+        "cosine_random": 0.9815166592597961
+      },
+      "SL_SF": {
+        "smape_medical": 0.6670095920562744,
+        "smape_random": 0.3327955901622772,
+        "cosine_medical": 0.9971272349357605,
+        "cosine_random": 0.9102193713188171
+      }
+    },
+    {
+      "case_id": "F18",
+      "gold_raw": "B",
+      "vignette_len_NL_NF": 162,
+      "vignette_len_SL_SF": 85,
+      "NL_NF": {
+        "smape_medical": 0.000752108811866492,
+        "smape_random": 0.14098648726940155,
+        "cosine_medical": 1.0,
+        "cosine_random": 0.9788745641708374
+      },
+      "SL_SF": {
+        "smape_medical": 0.00205728760920465,
+        "smape_random": 0.34451398253440857,
+        "cosine_medical": 0.9999993443489075,
+        "cosine_random": 0.9304853677749634
+      }
+    },
+    {
+      "case_id": "F19",
+      "gold_raw": "B",
+      "vignette_len_NL_NF": 146,
+      "vignette_len_SL_SF": 104,
+      "NL_NF": {
+        "smape_medical": 0.00336961611174047,
+        "smape_random": 0.10054797679185867,
+        "cosine_medical": 0.9999971985816956,
+        "cosine_random": 0.9750290513038635
+      },
+      "SL_SF": {
+        "smape_medical": 0.005389250349253416,
+        "smape_random": 0.2927826941013336,
+        "cosine_medical": 0.9999972581863403,
+        "cosine_random": 0.9003941416740417
+      }
+    },
+    {
+      "case_id": "F20",
+      "gold_raw": "A",
+      "vignette_len_NL_NF": 158,
+      "vignette_len_SL_SF": 115,
+      "NL_NF": {
+        "smape_medical": 0.001268763211555779,
+        "smape_random": 0.13742442429065704,
+        "cosine_medical": 0.9999983310699463,
+        "cosine_random": 0.9765492081642151
+      },
+      "SL_SF": {
+        "smape_medical": 0.0021106789354234934,
+        "smape_random": 0.36256590485572815,
+        "cosine_medical": 0.9999969601631165,
+        "cosine_random": 0.9266295433044434
+      }
+    },
+    {
+      "case_id": "F21",
+      "gold_raw": "B",
+      "vignette_len_NL_NF": 158,
+      "vignette_len_SL_SF": 116,
+      "NL_NF": {
+        "smape_medical": 0.0013596010394394398,
+        "smape_random": 0.15467573702335358,
+        "cosine_medical": 0.9999982118606567,
+        "cosine_random": 0.9582851529121399
+      },
+      "SL_SF": {
+        "smape_medical": 0.0001185786968562752,
+        "smape_random": 0.43500521779060364,
+        "cosine_medical": 1.0,
+        "cosine_random": 0.8731008172035217
+      }
+    },
+    {
+      "case_id": "F22",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 240,
+      "vignette_len_SL_SF": 122,
+      "NL_NF": {
+        "smape_medical": 0.018224522471427917,
+        "smape_random": 0.08750618249177933,
+        "cosine_medical": 0.9999953508377075,
+        "cosine_random": 0.9862720966339111
+      },
+      "SL_SF": {
+        "smape_medical": 0.00605566194280982,
+        "smape_random": 0.22725868225097656,
+        "cosine_medical": 0.999998927116394,
+        "cosine_random": 0.9621385931968689
+      }
+    },
+    {
+      "case_id": "F23",
+      "gold_raw": "A/B",
+      "vignette_len_NL_NF": 108,
+      "vignette_len_SL_SF": 85,
+      "NL_NF": {
+        "smape_medical": 0.0018601136980578303,
+        "smape_random": 0.22923210263252258,
+        "cosine_medical": 0.9999961853027344,
+        "cosine_random": 0.9479286670684814
+      },
+      "SL_SF": {
+        "smape_medical": 0.008508510887622833,
+        "smape_random": 0.30672162771224976,
+        "cosine_medical": 0.9999978542327881,
+        "cosine_random": 0.9327926635742188
+      }
+    },
+    {
+      "case_id": "F24",
+      "gold_raw": "B",
+      "vignette_len_NL_NF": 170,
+      "vignette_len_SL_SF": 96,
+      "NL_NF": {
+        "smape_medical": 0.00037179506034590304,
+        "smape_random": 0.1569429337978363,
+        "cosine_medical": 0.9999998807907104,
+        "cosine_random": 0.9725245833396912
+      },
+      "SL_SF": {
+        "smape_medical": 0.006758691743016243,
+        "smape_random": 0.3917428255081177,
+        "cosine_medical": 0.9999983906745911,
+        "cosine_random": 0.8958882689476013
+      }
+    },
+    {
+      "case_id": "F25",
+      "gold_raw": "C",
+      "vignette_len_NL_NF": 210,
+      "vignette_len_SL_SF": 129,
+      "NL_NF": {
+        "smape_medical": 0.003991065546870232,
+        "smape_random": 0.0303080715239048,
+        "cosine_medical": 0.9999864101409912,
+        "cosine_random": 0.9954029321670532
+      },
+      "SL_SF": {
+        "smape_medical": 0.0073436894454061985,
+        "smape_random": 0.14237093925476074,
+        "cosine_medical": 0.999986469745636,
+        "cosine_random": 0.9792317748069763
+      }
+    },
+    {
+      "case_id": "F26",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 185,
+      "vignette_len_SL_SF": 126,
+      "NL_NF": {
+        "smape_medical": 0.0053192549385130405,
+        "smape_random": 0.19846655428409576,
+        "cosine_medical": 0.9999987483024597,
+        "cosine_random": 0.9793938398361206
+      },
+      "SL_SF": {
+        "smape_medical": 0.0011790242278948426,
+        "smape_random": 0.29294726252555847,
+        "cosine_medical": 0.9999999403953552,
+        "cosine_random": 0.953130841255188
+      }
+    },
+    {
+      "case_id": "F27",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 181,
+      "vignette_len_SL_SF": 136,
+      "NL_NF": {
+        "smape_medical": 0.0024395007640123367,
+        "smape_random": 0.11514771729707718,
+        "cosine_medical": 0.9999933838844299,
+        "cosine_random": 0.9828783869743347
+      },
+      "SL_SF": {
+        "smape_medical": 0.004785304889082909,
+        "smape_random": 0.24558153748512268,
+        "cosine_medical": 0.9999778270721436,
+        "cosine_random": 0.9709416627883911
+      }
+    },
+    {
+      "case_id": "MH1",
+      "gold_raw": "C",
+      "vignette_len_NL_NF": 500,
+      "vignette_len_SL_SF": 423,
+      "NL_NF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.011186507530510426,
+        "cosine_medical": 1.0000001192092896,
+        "cosine_random": 0.9994873404502869
+      },
+      "SL_SF": {
+        "smape_medical": 0.00841518770903349,
+        "smape_random": 0.01690695993602276,
+        "cosine_medical": 0.9999879002571106,
+        "cosine_random": 0.9989874958992004
+      }
+    },
+    {
+      "case_id": "MH2",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 476,
+      "vignette_len_SL_SF": 407,
+      "NL_NF": {
+        "smape_medical": 0.002317727543413639,
+        "smape_random": 0.012306882068514824,
+        "cosine_medical": 0.9999997615814209,
+        "cosine_random": 0.9996986389160156
+      },
+      "SL_SF": {
+        "smape_medical": 0.005990357603877783,
+        "smape_random": 0.006803933996707201,
+        "cosine_medical": 0.9999852776527405,
+        "cosine_random": 0.9998626112937927
+      }
+    },
+    {
+      "case_id": "MH3",
+      "gold_raw": "C",
+      "vignette_len_NL_NF": 390,
+      "vignette_len_SL_SF": 420,
+      "NL_NF": {
+        "smape_medical": 0.008069084025919437,
+        "smape_random": 0.027851838618516922,
+        "cosine_medical": 0.9999316334724426,
+        "cosine_random": 0.9989324808120728
+      },
+      "SL_SF": {
+        "smape_medical": 0.004118470009416342,
+        "smape_random": 0.03619511425495148,
+        "cosine_medical": 0.9999960064888,
+        "cosine_random": 0.9988495707511902
+      }
+    },
+    {
+      "case_id": "NH1",
+      "gold_raw": "C",
+      "vignette_len_NL_NF": 241,
+      "vignette_len_SL_SF": 179,
+      "NL_NF": {
+        "smape_medical": 0.0031021088361740112,
+        "smape_random": 0.07762175053358078,
+        "cosine_medical": 1.0,
+        "cosine_random": 0.9809572100639343
+      },
+      "SL_SF": {
+        "smape_medical": 0.0017770997947081923,
+        "smape_random": 0.14712780714035034,
+        "cosine_medical": 0.999997079372406,
+        "cosine_random": 0.9665500521659851
+      }
+    },
+    {
+      "case_id": "NH2",
+      "gold_raw": "C/D",
+      "vignette_len_NL_NF": 264,
+      "vignette_len_SL_SF": 191,
+      "NL_NF": {
+        "smape_medical": 0.0,
+        "smape_random": 0.07196037471294403,
+        "cosine_medical": 1.0,
+        "cosine_random": 0.9862499237060547
+      },
+      "SL_SF": {
+        "smape_medical": 0.001964506460353732,
+        "smape_random": 0.0714123472571373,
+        "cosine_medical": 0.9999978542327881,
+        "cosine_random": 0.9761174321174622
+      }
+    },
+    {
+      "case_id": "NH3",
+      "gold_raw": "C",
+      "vignette_len_NL_NF": 218,
+      "vignette_len_SL_SF": 177,
+      "NL_NF": {
+        "smape_medical": 0.013937593437731266,
+        "smape_random": 0.14061273634433746,
+        "cosine_medical": 0.9999677538871765,
+        "cosine_random": 0.9842390418052673
+      },
+      "SL_SF": {
+        "smape_medical": 0.002758094109594822,
+        "smape_random": 0.1829785257577896,
+        "cosine_medical": 0.999991774559021,
+        "cosine_random": 0.981128990650177
+      }
+    }
+  ]
+}
