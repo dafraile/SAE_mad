@@ -546,13 +546,26 @@ def main():
 
     # Reconstruction error sanity check
     print("\n=== Reconstruction error at L31 (Qwen L0_100) ===")
+    # Qwen-Scope W_dec is [d_model, d_sae]; decode = f @ W_dec.T + b_dec
+    # The reconstruction is: features @ decoder^T  to map [d_sae] -> [d_model]
     recon_errs = []
+    w_dec_decode = sae.w_dec  # shape [d_model, d_sae] if d_model < d_sae
+    # Verify orientation: we want the result of f @ X + b_dec to be [seq, d_model]
+    # f is [seq, d_sae], so X should be [d_sae, d_model]. If w_dec is stored as
+    # [d_model, d_sae] we need w_dec.T.
+    if w_dec_decode.shape[0] == sae.d_sae:
+        # already [d_sae, d_model]
+        decode_mat = w_dec_decode
+    else:
+        # stored [d_model, d_sae], transpose
+        decode_mat = w_dec_decode.T
+    print(f"  W_dec raw shape {tuple(w_dec_decode.shape)}; decode_mat shape {tuple(decode_mat.shape)}")
     for cid in case_ids[:5]:
         h, _, _ = get_per_token_residuals_chat(model, tok, nf[cid]["patient_realistic"], LAYER)
         h_dev = h.to(sae.w_enc.device).float()
         with torch.no_grad():
             f = sae.encode(h_dev)
-            r = (f.to(sae.w_dec.dtype) @ sae.w_dec + sae.b_dec).to(h_dev.dtype)
+            r = (f.to(decode_mat.dtype) @ decode_mat + sae.b_dec).to(h_dev.dtype)
         err = ((h_dev - r).norm(dim=-1) / h_dev.norm(dim=-1).clamp(min=1e-6)).cpu().numpy()
         recon_errs.extend(err.tolist())
     recon_arr = np.array(recon_errs)
