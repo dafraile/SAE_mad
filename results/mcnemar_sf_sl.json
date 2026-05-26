@@ -1,0 +1,65 @@
+[
+  {
+    "model": "Gemma 3 4B IT",
+    "tag": "4b",
+    "n": 60,
+    "SL_acc_pct": 58.333333333333336,
+    "SF_acc_pct": 63.333333333333336,
+    "diff_SF_minus_SL_pp": 5.0,
+    "contingency": {
+      "SL_right_SF_right": 28,
+      "SL_right_SF_wrong": 7,
+      "SL_wrong_SF_right": 10,
+      "SL_wrong_SF_wrong": 15
+    },
+    "n_discordant": 17,
+    "min_bc": 7,
+    "mcnemar_exact_p_two_sided": 0.629058837890625,
+    "paired_bootstrap_95ci_pp": [
+      -8.333333333333332,
+      18.333333333333332
+    ]
+  },
+  {
+    "model": "Gemma 3 12B IT",
+    "tag": "12b",
+    "n": 60,
+    "SL_acc_pct": 81.66666666666667,
+    "SF_acc_pct": 73.33333333333333,
+    "diff_SF_minus_SL_pp": -8.333333333333343,
+    "contingency": {
+      "SL_right_SF_right": 42,
+      "SL_right_SF_wrong": 7,
+      "SL_wrong_SF_right": 2,
+      "SL_wrong_SF_wrong": 9
+    },
+    "n_discordant": 9,
+    "min_bc": 2,
+    "mcnemar_exact_p_two_sided": 0.1796875,
+    "paired_bootstrap_95ci_pp": [
+      -18.333333333333332,
+      0.0416666666664393
+    ]
+  },
+  {
+    "model": "Qwen3-8B",
+    "tag": "qwen",
+    "n": 60,
+    "SL_acc_pct": 75.0,
+    "SF_acc_pct": 70.0,
+    "diff_SF_minus_SL_pp": -5.0,
+    "contingency": {
+      "SL_right_SF_right": 37,
+      "SL_right_SF_wrong": 8,
+      "SL_wrong_SF_right": 5,
+      "SL_wrong_SF_wrong": 10
+    },
+    "n_discordant": 13,
+    "min_bc": 5,
+    "mcnemar_exact_p_two_sided": 0.5810546875,
+    "paired_bootstrap_95ci_pp": [
+      -16.666666666666664,
+      6.666666666666667
+    ]
+  }
+]
