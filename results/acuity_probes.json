@@ -1,0 +1,183 @@
+{
+  "config": {
+    "n_perm": 1000,
+    "probe": "LogReg C=0.05 liblinear balanced, LOO",
+    "layers": {
+      "4b": 29,
+      "12b": 31,
+      "qwen": 31
+    }
+  },
+  "runs": {
+    "4b/NL/vignette": {
+      "auc_emergency": 0.9542410714285714,
+      "perm_p": 0.000999000999000999,
+      "null_auc_mean": 0.49522209821428564,
+      "null_auc_p95": 0.6685825892857142,
+      "auc_most_urgent_macro_ovr": 0.9759884884137602
+    },
+    "4b/NF/vignette": {
+      "auc_emergency": 0.9620535714285715,
+      "perm_p": 0.000999000999000999,
+      "null_auc_mean": 0.49624107142857143,
+      "null_auc_p95": 0.6652343749999999,
+      "auc_most_urgent_macro_ovr": 0.9785481739727664
+    },
+    "4b/NL/decision": {
+      "auc_emergency": 0.8705357142857143,
+      "perm_p": 0.000999000999000999,
+      "null_auc_mean": 0.4921986607142857,
+      "null_auc_p95": 0.6551339285714286,
+      "auc_most_urgent_macro_ovr": 0.8236872536430959
+    },
+    "4b/NF/decision": {
+      "auc_emergency": 0.8794642857142857,
+      "perm_p": 0.000999000999000999,
+      "null_auc_mean": 0.4934944196428571,
+      "null_auc_p95": 0.6551897321428571,
+      "auc_most_urgent_macro_ovr": 0.8536975035833732
+    },
+    "12b/NL/vignette": {
+      "auc_emergency": 0.9933035714285714,
+      "perm_p": 0.000999000999000999,
+      "null_auc_mean": 0.4972165178571429,
+      "null_auc_p95": 0.6764508928571429,
+      "auc_most_urgent_macro_ovr": 0.9881042313664596
+    },
+    "12b/NF/vignette": {
+      "auc_emergency": 0.9944196428571429,
+      "perm_p": 0.000999000999000999,
+      "null_auc_mean": 0.49740178571428567,
+      "null_auc_p95": 0.67421875,
+      "auc_most_urgent_macro_ovr": 0.9903927600931677
+    },
+    "12b/NL/decision": {
+      "auc_emergency": 0.8359375,
+      "perm_p": 0.001998001998001998,
+      "null_auc_mean": 0.4893515625,
+      "null_auc_p95": 0.6518973214285714,
+      "auc_most_urgent_macro_ovr": 0.8712813097228858
+    },
+    "12b/NF/decision": {
+      "auc_emergency": 0.7957589285714285,
+      "perm_p": 0.000999000999000999,
+      "null_auc_mean": 0.48989955357142856,
+      "null_auc_p95": 0.6506696428571428,
+      "auc_most_urgent_macro_ovr": 0.843462561215958
+    },
+    "qwen/NL/vignette": {
+      "auc_emergency": 0.9988839285714286,
+      "perm_p": 0.000999000999000999,
+      "null_auc_mean": 0.4962287946428572,
+      "null_auc_p95": 0.6664062499999999,
+      "auc_most_urgent_macro_ovr": 0.9934472049689441
+    },
+    "qwen/NF/vignette": {
+      "auc_emergency": 1.0,
+      "perm_p": 0.000999000999000999,
+      "null_auc_mean": 0.4958660714285714,
+      "null_auc_p95": 0.6674107142857142,
+      "auc_most_urgent_macro_ovr": 0.9934472049689441
+    },
+    "qwen/NL/decision": {
+      "auc_emergency": 0.5245535714285714,
+      "perm_p": 0.3806193806193806,
+      "null_auc_mean": 0.49257589285714287,
+      "null_auc_p95": 0.6674107142857142,
+      "auc_most_urgent_macro_ovr": 0.6778203386287627
+    },
+    "qwen/NF/decision": {
+      "auc_emergency": 0.48549107142857145,
+      "perm_p": 0.5254745254745254,
+      "null_auc_mean": 0.4909609375,
+      "null_auc_p95": 0.6540736607142856,
+      "auc_most_urgent_macro_ovr": 0.6570203057811753
+    }
+  },
+  "paired": {
+    "4b/vignette/NL-NF": {
+      "delta_auc": -0.007812500000000111,
+      "ci95": [
+        -0.029999999999999916,
+        0.0023923444976077235
+      ]
+    },
+    "4b/decision/NL-NF": {
+      "delta_auc": -0.008928571428571397,
+      "ci95": [
+        -0.09389429391027856,
+        0.07178163211057946
+      ]
+    },
+    "4b/NL/vignette-decision": {
+      "delta_auc": 0.0837053571428571,
+      "ci95": [
+        -0.01710732471602031,
+        0.2009256440897065
+      ]
+    },
+    "4b/NF/vignette-decision": {
+      "delta_auc": 0.08258928571428581,
+      "ci95": [
+        -0.007815151300904872,
+        0.18752893518518501
+      ]
+    },
+    "12b/vignette/NL-NF": {
+      "delta_auc": -0.0011160714285715079,
+      "ci95": [
+        -0.006696428571428603,
+        1.1102230246251565e-16
+      ]
+    },
+    "12b/decision/NL-NF": {
+      "delta_auc": 0.04017857142857151,
+      "ci95": [
+        -0.07007786429365948,
+        0.14239234069601128
+      ]
+    },
+    "12b/NL/vignette-decision": {
+      "delta_auc": 0.1573660714285714,
+      "ci95": [
+        0.053379816194779696,
+        0.2769945000617969
+      ]
+    },
+    "12b/NF/vignette-decision": {
+      "delta_auc": 0.1986607142857144,
+      "ci95": [
+        0.08795833333333339,
+        0.328144097222222
+      ]
+    },
+    "qwen/vignette/NL-NF": {
+      "delta_auc": -0.0011160714285713969,
+      "ci95": [
+        -0.006674082313681939,
+        0.0
+      ]
+    },
+    "qwen/decision/NL-NF": {
+      "delta_auc": 0.039062499999999944,
+      "ci95": [
+        -0.14844878472222223,
+        0.23620975251410015
+      ]
+    },
+    "qwen/NL/vignette-decision": {
+      "delta_auc": 0.4743303571428572,
+      "ci95": [
+        0.32145936843406253,
+        0.6149703621031746
+      ]
+    },
+    "qwen/NF/vignette-decision": {
+      "delta_auc": 0.5145089285714286,
+      "ci95": [
+        0.3670727482462744,
+        0.6674201714566298
+      ]
+    }
+  }
+}
